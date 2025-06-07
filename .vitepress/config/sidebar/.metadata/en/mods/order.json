@@ -1,0 +1,50 @@
+{
+  "adventure/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true,
+    "lastSeen": 1749253126605
+  },
+  "armor_tools/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true,
+    "lastSeen": 1749253126605
+  },
+  "cosmetic/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true,
+    "lastSeen": 1749253126605
+  },
+  "custom/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true,
+    "lastSeen": 1749253126605
+  },
+  "performance/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true,
+    "lastSeen": 1749253126605
+  },
+  "server/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true,
+    "lastSeen": 1749253126605
+  },
+  "storages/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true,
+    "lastSeen": 1749253126605
+  },
+  "tech/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true,
+    "lastSeen": 1749253126605
+  }
+}
