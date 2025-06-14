@@ -1,0 +1,69 @@
+{
+  "cooperation.md": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "dev.md": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "guide/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "rules.md": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "samples.md": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "sidebarTutorial.md": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "styleList.md": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "vscode-snippets-guide.md": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "doc/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "dev copy.md": {
+    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
+    "isUserSet": false,
+    "isActiveInStructure": false,
+    "lastSeen": 1749254446626
+  },
+  "dev Test.md": {
+    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
+    "isUserSet": false,
+    "isActiveInStructure": false,
+    "lastSeen": 1749254446626
+  },
+  "scripts.md": {
+    "valueHash": "d1ca3aaf52b41acd68ebb3bf69079bd1",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "litetree-guide.md": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  }
+}

@@ -15,6 +15,7 @@
 
     const wordCount = ref(0);
     const imageCount = ref(0);
+    const pageViews = ref(0);
 
     const readTime = computed(() =>
         utils.vitepress.readingTime.calculateTotalTime(
@@ -27,21 +28,37 @@
         if (typeof window !== 'undefined' && typeof document !== 'undefined') {
             utils.vitepress.contentAnalysis.cleanupMetadata();
 
-            const docDomContainer = window.document.querySelector("#VPContent");
-            const imgs = docDomContainer?.querySelectorAll<HTMLImageElement>(
-                ".content-container .main img"
-            );
-            imageCount.value = imgs?.length || 0;
+            const mainContainer = window.document.querySelector(".content-container .main");
+            if (!mainContainer) return;
 
-            const words =
-                docDomContainer?.querySelector(".content-container .main")
-                    ?.textContent || "";
+            // Clone the container to avoid modifying the live DOM
+            const clone = mainContainer.cloneNode(true) as HTMLElement;
+
+            // Remove all dialog cards from the cloned container before analysis
+            clone.querySelectorAll('.md-dialog-card').forEach(el => el.remove());
+
+            const imgs = clone.querySelectorAll<HTMLImageElement>("img");
+            imageCount.value = imgs?.length || 0;
+            
+            const words = clone.textContent || "";
             wordCount.value = utils.content.countWord(words);
         }
     }
 
     onMounted(() => {
         analyze();
+        
+        const checkPageViews = () => {
+            const pvElement = document.querySelector('#busuanzi_value_page_pv');
+            const text = pvElement?.innerHTML;
+            if (text && !isNaN(parseInt(text))) {
+                pageViews.value = parseInt(text);
+            }
+        };
+        
+        const interval = setInterval(checkPageViews, 1000);
+        setTimeout(() => clearInterval(interval), 10000);
+        setTimeout(checkPageViews, 2000);
     });
 
     const isMetadata = computed(() => {
@@ -55,13 +72,13 @@
         return utils.vitepress.getMetadataIcon(key);
     };
 
-    const data = ref([update, wordCount, readTime]);
+    const data = ref([update, wordCount, readTime, pageViews]);
 
     const metadataText = computed(() => {
         return utils.vitepress.getMetadataText(lang.value);
     });
 
-    const metadataKeys = ["update", "wordCount", "readTime"] as const;
+    const metadataKeys = ["update", "wordCount", "readTime", "pageViews"] as const;
 </script>
 
 <template>
@@ -84,6 +101,11 @@
         </div>
     </div>
     <State />
+    
+    <!-- 不蒜子统计元素 - 必须可见才能正确统计 -->
+    <span id="busuanzi_container_page_pv" style="position: absolute; left: -9999px;">
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
 </template>
 
 <style>
