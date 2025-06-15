@@ -1,9 +1,6 @@
 import { DefaultTheme, UserConfig } from "vitepress";
 import { resolve } from "path";
 import { fileURLToPath } from "node:url";
-import AutoImport from "unplugin-auto-import/vite";
-import Components from "unplugin-vue-components/vite";
-import { TDesignResolver } from "unplugin-vue-components/resolvers";
 import {
     groupIconVitePlugin,
     localIconLoader,
@@ -12,7 +9,9 @@ import {
     GitChangelog,
     GitChangelogMarkdownSection,
 } from "@nolebase/vitepress-plugin-git-changelog/vite";
+import llmstxt from "vitepress-plugin-llms";
 import * as config from "./markdown-plugins";
+import { sidebarPlugin } from "../utils/sidebar";
 
 import { search as zhSearch } from "./lang/zh";
 
@@ -89,7 +88,7 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
     vue: {
         template: {
             compilerOptions: {
-                whitespace: "preserve",
+                whitespace: "preserve"
             },
         },
     },
@@ -125,12 +124,47 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
             ],
         },
         optimizeDeps: {
-            exclude: ["@nolebase/*"],
+            exclude: [
+                "@nolebase/vitepress-plugin-git-changelog",
+                "@nolebase/vitepress-plugin-enhanced-readabilities",
+                "@nolebase/vitepress-plugin-inline-link-preview",
+                "shiki-magic-move",
+                "virtual:nolebase-git-changelog"
+            ],
+            include: [
+                'vue',
+                '@vueuse/core',
+                'mermaid',
+                'vitepress-plugin-nprogress',
+                'vitepress-plugin-tabs/client',
+                '@lite-tree/vue'
+            ],
+            force: true
         },
         ssr: {
-            noExternal: ["vuetify", "@nolebase/*"],
+            noExternal: [
+                "vuetify",
+                "@nolebase/*",
+                "vitepress-plugin-tabs",
+                "shiki-magic-move"
+            ],
         },
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    api: "modern",
+                },
+            },
+        },
+        cacheDir: '.vitepress/.vite',
         plugins: [
+            sidebarPlugin({
+                languages: ['zh', 'en'],
+                debug: process.env.NODE_ENV === 'development',
+                docsDir: './docs',
+                cacheDir: './.vitepress/cache/sidebar'
+            }),
+            llmstxt(),
             GitChangelog({
                 repoURL: () => "https://github.com/PickAID/CrychicDoc",
                 mapAuthors: contributors.map((author) => ({
@@ -166,30 +200,64 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                         import.meta.url,
                         "../../docs/public/svg/npm.svg"
                     ),
+                    neoforge: localIconLoader(
+                        import.meta.url,
+                        "../../docs/public/svg/neoforge.svg"
+                    ),
+                    forge: localIconLoader(
+                        import.meta.url,
+                        "../../docs/public/svg/forge.svg"
+                    ),
+                    fabric: localIconLoader(
+                        import.meta.url,
+                        "../../docs/public/svg/fabric.svg"
+                    ),
                     ts: "logos:typescript-icon-round",
                     java: "logos:java",
                     css: "logos:css-3",
                     git: "logos:git-icon",
                 },
-            }),
-            AutoImport({
-                resolvers: [
-                    TDesignResolver({
-                        library: "vue-next",
-                    }),
-                ],
-            }),
-            Components({
-                resolvers: [
-                    TDesignResolver({
-                        library: "vue-next",
-                    }),
-                ],
-            }),
+            })
         ],
     },
     head: [
         ["link", { rel: "icon", href: "https://docs.mihono.cn/favicon.ico" }],
     ],
     ignoreDeadLinks: true,
+    transformHead({ assets }) {
+        const preloadLinks = [];
+        
+        const scFontFile = assets.find(file => /HarmonyOS_Sans_SC_Regular\.[\w-]+\.ttf/.test(file));
+        if (scFontFile) {
+            preloadLinks.push([
+                'link',
+                {
+                    rel: 'preload',
+                    href: scFontFile,
+                    as: 'font',
+                    type: 'font/ttf',
+                    crossorigin: ''
+                }
+            ]);
+        }
+
+        const tcFontFile = assets.find(file => /HarmonyOS_Sans_TC_Regular\.[\w-]+\.ttf/.test(file));
+        if (tcFontFile) {
+            preloadLinks.push([
+                'link',
+                {
+                    rel: 'preload',
+                    href: tcFontFile,
+                    as: 'font',
+                    type: 'font/ttf',
+                    crossorigin: ''
+                }
+            ]);
+        }
+
+        return [
+            ...preloadLinks,
+            ["link", { rel: "icon", href: "https://docs.mihono.cn/favicon.ico" }],
+        ];
+    },
 };

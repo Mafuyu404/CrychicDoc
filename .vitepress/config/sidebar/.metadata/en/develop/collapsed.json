@@ -1,0 +1,26 @@
+{
+  "_self_": {
+    "valueHash": "b326b5062b2f0e69046810717534cb09",
+    "isUserSet": false,
+    "isActiveInStructure": true,
+    "lastSeen": 1749247314759
+  },
+  "modding/": {
+    "valueHash": "b326b5062b2f0e69046810717534cb09",
+    "isUserSet": false,
+    "isActiveInStructure": true,
+    "lastSeen": 1749253126427
+  },
+  "plugin/": {
+    "valueHash": "b326b5062b2f0e69046810717534cb09",
+    "isUserSet": false,
+    "isActiveInStructure": true,
+    "lastSeen": 1749253126427
+  },
+  "vanilla/": {
+    "valueHash": "b326b5062b2f0e69046810717534cb09",
+    "isUserSet": false,
+    "isActiveInStructure": true,
+    "lastSeen": 1749253126427
+  }
+}

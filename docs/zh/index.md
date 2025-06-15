@@ -1,5 +1,6 @@
 ---
 layout: home
+ 
 hero:
   name: CrychicDoc
   text: 一个由PickAID团队维护的我的世界文档.
@@ -49,6 +50,16 @@ features:
       Flow进行构建后发送给私人仓库再转运至物理服务器，优化中国用户的访问速度同时保证了网页的稳定性，而海外用户也有CloudFlare的CDN加速保障流畅使用。
 gitChangelog: false
 ---
+
+<Contributors
+  owner="PickAID"
+  repo="CrychicDoc"
+  :max-count="100"
+  :show-contributions="true"
+  :enable-cache="true"
+  title="贡献者"
+  locale="zh-CN"
+/>
 
 <commitsCounter
   username="PickAID"

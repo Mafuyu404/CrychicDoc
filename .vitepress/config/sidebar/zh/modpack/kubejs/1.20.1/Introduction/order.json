@@ -1,0 +1,15 @@
+{
+  "Addon/": 10000000000,
+  "Block/": 200,
+  "Description.md": -1000000000,
+  "Entity/": 300,
+  "Event/": 50,
+  "GlobalScope/": 2000,
+  "Item/": 110,
+  "LootTable/": 400,
+  "Miscellaneous/": 1000,
+  "Network/": 500,
+  "PotionEffect/": 350,
+  "Recipe/": 60,
+  "Tag/": 70
+}

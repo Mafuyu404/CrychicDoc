@@ -1,0 +1,17 @@
+{
+  "datapack/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "resourcepack/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "vanilla/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  }
+}

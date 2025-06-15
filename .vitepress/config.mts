@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from "vitepress";
 import { withMermaid } from "vitepress-plugin-mermaid";
 
 import {en_US} from "./config/lang/en"
@@ -15,6 +15,7 @@ export default withMermaid(
         locales: {
             root: { label: '简体中文', ...zh_CN },
             en: { label: 'English', ...en_US }
-        },
+            // Add other locales here
+        }
     })
 );

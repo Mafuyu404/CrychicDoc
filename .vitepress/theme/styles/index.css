@@ -9,15 +9,17 @@
  * 4. Component styles
  */
 
-/* ===== CONFIGURATION & VARIABLES ===== */
-@import "./config/variables.css";
+/* ================== GLOBAL STYLES ================== */
+
+/* ================== CONFIG VARIABLES ================== */
+@import "./config/base-variables.css";
 @import "./config/component-variables.css";
 
 /* ===== BASE STYLES ===== */
 @import "./base/colors.css";
 @import "./base/typography.css";
 @import "./base/foundation.css";
-@import "./base/hero.css";
+/* @import "./base/hero.css"; */
 @import "./base/nav.css";
 @import "./base/sidebar.css";
 
@@ -27,6 +29,7 @@
 @import "./plugins/code-groups.css";
 @import "./plugins/demo.css";
 @import "./plugins/link-icons.css";
+@import "./plugins/alert.css";
 @import "./iframe.css";
 
 /* ===== COMPONENT STYLES ===== */
@@ -47,6 +50,7 @@
 /* Other plugin styles */
 @import "@mdit/plugin-spoiler/style";
 @import "shiki-magic-move/style.css";
+@import "./components/fancybox.css";
 
 /* ===== SSR SUPPORT STYLES ===== */
 .ssr-placeholder {
