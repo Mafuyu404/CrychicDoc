@@ -10,53 +10,29 @@ import type { GitHubCommit, TranslationDictionary } from '../types';
  */
 export const githubApi = {
   /** Fetch all commits from a GitHub repository */
-  fetchAllCommits: async (username: string, repoName: string, maxPages: number = 10): Promise<GitHubCommit[]> => {
+  fetchAllCommits: async (username: string, repoName: string): Promise<GitHubCommit[]> => {
     let allCommits: GitHubCommit[] = [];
     let page = 1;
-    const maxRetries = 3;
-    let retryCount = 0;
 
-    while (page <= maxPages) {  // 🔧 限制最大页数
+    while (true) {
       try {
-        // 🔧 添加10秒超时
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 10000);
-
         const response = await fetch(
-          `https://api.github.com/repos/${username}/${repoName}/commits?page=${page}&per_page=100`,
-          { 
-            signal: controller.signal,
-            headers: { 'Accept': 'application/vnd.github.v3+json' }
-          }
+          `https://api.github.com/repos/${username}/${repoName}/commits?page=${page}&per_page=100`
         );
         
-        clearTimeout(timeoutId);
-        
         if (!response.ok) {
-          if (response.status === 403) {
-            console.warn("GitHub API rate limit exceeded");
-            break; // 🔧 API限流时优雅退出
-          }
           throw new Error(`GitHub API error: ${response.status}`);
         }
         
         const commits: GitHubCommit[] = await response.json();
+        
         if (commits.length === 0) break;
         
         allCommits = allCommits.concat(commits);
         page++;
-        retryCount = 0; // 重置重试计数
       } catch (error) {
         console.error("Error fetching GitHub commit data:", error);
-        retryCount++;
-        
-        if (retryCount >= maxRetries) {
-          console.error("Max retries exceeded, stopping GitHub API calls");
-          break; // 🔧 超过重试次数时退出
-        }
-        
-        // 等待后重试，避免频繁请求
-        await new Promise(resolve => setTimeout(resolve, 1000 * retryCount));
+        break;
       }
     }
 
