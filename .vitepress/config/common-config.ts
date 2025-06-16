@@ -123,6 +123,30 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                 },
             ],
         },
+        build: {
+            rollupOptions: {
+                output: {
+                    manualChunks: (id) => {
+                        if (id.includes('echarts')) {
+                            return 'echarts-vendor'
+                        }
+                        if (id.includes('markdown-it')) {
+                            return 'markdown-vendor'
+                        }
+                        if (id.includes('shiki')) {
+                            return 'highlight-vendor'
+                        }
+                        if (id.includes('node_modules')) {
+                            return 'vendor'
+                        }
+                    },
+                    chunkFileNames: 'assets/js/[name]-[hash].js',
+                    assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
+                }
+            },
+            chunkSizeWarningLimit: 1500,
+            sourcemap: false
+        },
         optimizeDeps: {
             exclude: [
                 "@nolebase/vitepress-plugin-git-changelog",
@@ -137,7 +161,9 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                 'mermaid',
                 'vitepress-plugin-nprogress',
                 'vitepress-plugin-tabs/client',
-                '@lite-tree/vue'
+                '@lite-tree/vue',
+                '@nolebase/vitepress-plugin-git-changelog',
+                '@nolebase/vitepress-plugin-enhanced-readabilities'
             ],
             force: true
         },
@@ -225,35 +251,36 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
     ],
     ignoreDeadLinks: true,
     transformHead({ assets }) {
-        const preloadLinks = [];
+        // const preloadLinks = [];
         
-        const scFontFile = assets.find(file => /HarmonyOS_Sans_SC_Regular\.[\w-]+\.ttf/.test(file));
-        if (scFontFile) {
-            preloadLinks.push([
-                'link',
-                {
-                    rel: 'preload',
-                    href: scFontFile,
-                    as: 'font',
-                    type: 'font/ttf',
-                    crossorigin: ''
-                }
-            ]);
-        }
+        // const scFontFile = assets.find(file => /HarmonyOS_Sans_SC_Regular\.[\w-]+\.ttf/.test(file));
+        // console.log(scFontFile);
+        // if (scFontFile) {
+        //     preloadLinks.push([
+        //         'link',
+        //         {
+        //             rel: 'preload',
+        //             href: scFontFile,
+        //             as: 'font',
+        //             type: 'font/ttf',
+        //             crossorigin: ''
+        //         }
+        //     ]);
+        // }
 
-        const tcFontFile = assets.find(file => /HarmonyOS_Sans_TC_Regular\.[\w-]+\.ttf/.test(file));
-        if (tcFontFile) {
-            preloadLinks.push([
-                'link',
-                {
-                    rel: 'preload',
-                    href: tcFontFile,
-                    as: 'font',
-                    type: 'font/ttf',
-                    crossorigin: ''
-                }
-            ]);
-        }
+        // const tcFontFile = assets.find(file => /HarmonyOS_Sans_TC_Regular\.[\w-]+\.ttf/.test(file));
+        // if (tcFontFile) {
+        //     preloadLinks.push([
+        //         'link',
+        //         {
+        //             rel: 'preload',
+        //             href: tcFontFile,
+        //             as: 'font',
+        //             type: 'font/ttf',
+        //             crossorigin: ''
+        //         }
+        //     ]);
+        // }
 
         return [
             ...preloadLinks,

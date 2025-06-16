@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { h } from "vue";
 import type { Theme } from "vitepress";
-import DefaultTheme from 'vitepress/theme-without-fonts'
+import DefaultTheme from 'vitepress/theme'
 import vitepressNprogress from "vitepress-plugin-nprogress";
 import { useData, useRoute, inBrowser } from "vitepress";
 import "./styles/index.css";
