@@ -130,11 +130,20 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                         if (id.includes('echarts')) {
                             return 'echarts-vendor'
                         }
+                        if (id.includes('mermaid')) {
+                            return 'charts'
+                        }
                         if (id.includes('markdown-it')) {
                             return 'markdown-vendor'
                         }
                         if (id.includes('shiki')) {
                             return 'highlight-vendor'
+                        }
+                        if (id.includes('vue')) {
+                            return 'vendor'
+                        }
+                        if (id.includes('vuetify')) {
+                            return 'ui'
                         }
                         if (id.includes('node_modules')) {
                             return 'vendor'
@@ -145,6 +154,8 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                 }
             },
             chunkSizeWarningLimit: 1500,
+            target: 'esnext',
+            minify: 'esbuild',
             sourcemap: false
         },
         optimizeDeps: {
@@ -164,8 +175,7 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                 '@lite-tree/vue',
                 '@nolebase/vitepress-plugin-git-changelog',
                 '@nolebase/vitepress-plugin-enhanced-readabilities'
-            ],
-            force: true
+            ]
         },
         ssr: {
             noExternal: [
@@ -283,7 +293,7 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
         // }
 
         return [
-            ...preloadLinks,
+            // ...preloadLinks,
             ["link", { rel: "icon", href: "https://docs.mihono.cn/favicon.ico" }],
         ];
     },

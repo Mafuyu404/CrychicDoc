@@ -16,7 +16,6 @@ import {
     NolebaseEnhancedReadabilitiesScreenMenu,
 } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
 import { NolebaseInlineLinkPreviewPlugin } from "@nolebase/vitepress-plugin-inline-link-preview/client";
-import { NolebaseGitChangelogPlugin } from "@nolebase/vitepress-plugin-git-changelog/client";
 
 // Import components
 import Layout from "./Layout.vue";
@@ -46,7 +45,6 @@ export default {
         return h(Animation, props, {
             slot: () => h(DefaultTheme.Layout, null, {
                 "aside-outline-after": () => null,
-                "doc-after": () => [h(Buttons), h(comment)],
                 "layout-bottom": () => h(Footer),
                 "doc-footer-before": () => h(ResponsibleEditor),
                 "not-found": () => [h(NotFound)],
@@ -61,12 +59,13 @@ export default {
         if (!import.meta.env.SSR) {
             ctx.app.use(vuetify);
             ctx.app.use(NolebaseInlineLinkPreviewPlugin);
-            ctx.app.use(NolebaseGitChangelogPlugin);
         }
         
         DefaultTheme.enhanceApp(ctx);
         vitepressNprogress(ctx);
         enhanceAppWithTabs(ctx.app);
+        
+        // 只调用一次组件注册，避免重复注册
         registerComponents(ctx.app);
     },
     
@@ -83,11 +82,26 @@ export default {
         
         onMounted(() => {
             if (!import.meta.env.SSR) {
-                setupLanguageControl();
+                // setupLanguageControl();
                 initMermaidConfig();
-                mermaid.init(undefined, ".mermaid");
+                
+                // 异步初始化Mermaid，防止阻塞页面渲染
+                setTimeout(async () => {
+                    try {
+                        await mermaid.init(undefined, ".mermaid");
+                    } catch (error) {
+                        console.warn('Mermaid initialization failed:', error);
+                    }
+                }, 100);
+                
                 bindFancybox();
-                watch(() => route.path, setupLanguageControl);
+                
+                // 简化路由监听器，避免可能的递归
+                // watch(() => route.path, () => {
+                //     setTimeout(() => {
+                //         setupLanguageControl();
+                //     }, 100);
+                // }, { immediate: false });
             }
         });
         

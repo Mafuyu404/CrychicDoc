@@ -317,33 +317,75 @@ function _getSidebarSyncInternal(lang: string): Record<string, any[]> {
     return {};
 }
 
-/**
- * 延迟加载的侧边栏获取函数
- * 
- * 返回一个代理对象，只有在VitePress真正使用时才执行生成
- */
 export function getSidebarSync(lang: string): any {
-    // 创建一个代理对象，延迟执行实际的侧边栏生成
+    let cachedSidebar: any = null;
+    let isGenerating = false;
     return new Proxy({}, {
         get(target, prop, receiver) {
-            // 当VitePress访问侧边栏时，才真正执行生成
-            const realSidebar = _getSidebarSyncInternal(lang);
-            return Reflect.get(realSidebar, prop, receiver);
+            if (isGenerating) {
+                return undefined;
+            }
+            if (cachedSidebar) {
+                return Reflect.get(cachedSidebar, prop, receiver);
+            }
+            try {
+                isGenerating = true;
+                cachedSidebar = _getSidebarSyncInternal(lang);
+                return Reflect.get(cachedSidebar, prop, receiver);
+            } catch (error) {
+                console.warn('[SidebarLib] Error generating sidebar:', error);
+                return undefined;
+            } finally {
+                isGenerating = false;
+            }
         },
         
         has(target, prop) {
-            const realSidebar = _getSidebarSyncInternal(lang);
-            return Reflect.has(realSidebar, prop);
+            if (isGenerating) return false;
+            if (!cachedSidebar) {
+                try {
+                    isGenerating = true;
+                    cachedSidebar = _getSidebarSyncInternal(lang);
+                } catch (error) {
+                    console.warn('[SidebarLib] Error generating sidebar:', error);
+                    return false;
+                } finally {
+                    isGenerating = false;
+                }
+            }
+            return cachedSidebar ? Reflect.has(cachedSidebar, prop) : false;
         },
         
         ownKeys(target) {
-            const realSidebar = _getSidebarSyncInternal(lang);
-            return Reflect.ownKeys(realSidebar);
+            if (isGenerating) return [];
+            if (!cachedSidebar) {
+                try {
+                    isGenerating = true;
+                    cachedSidebar = _getSidebarSyncInternal(lang);
+                } catch (error) {
+                    console.warn('[SidebarLib] Error generating sidebar:', error);
+                    return [];
+                } finally {
+                    isGenerating = false;
+                }
+            }
+            return cachedSidebar ? Reflect.ownKeys(cachedSidebar) : [];
         },
         
         getOwnPropertyDescriptor(target, prop) {
-            const realSidebar = _getSidebarSyncInternal(lang);
-            return Reflect.getOwnPropertyDescriptor(realSidebar, prop);
+            if (isGenerating) return undefined;
+            if (!cachedSidebar) {
+                try {
+                    isGenerating = true;
+                    cachedSidebar = _getSidebarSyncInternal(lang);
+                } catch (error) {
+                    console.warn('[SidebarLib] Error generating sidebar:', error);
+                    return undefined;
+                } finally {
+                    isGenerating = false;
+                }
+            }
+            return cachedSidebar ? Reflect.getOwnPropertyDescriptor(cachedSidebar, prop) : undefined;
         }
     });
 }
