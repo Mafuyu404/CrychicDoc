@@ -4,7 +4,6 @@
  */
 
 import { countWord } from '../functions';
-import gitbookParser from '../mdParser';
 
 /**
  * Text processing utilities
@@ -20,25 +19,15 @@ export const text = {
   },
 };
 
-/**
- * Parser utilities
- */
-export const parser = {
-  /** Parse GitBook-style SUMMARY.md files */
-  gitbook: (path: string) => new gitbookParser(path),
-  parseGitbook: (path: string) => new gitbookParser(path),
-};
 
 /**
  * Main content utilities export
  */
 export const contentUtils = {
   text,
-  parser,
   
   // Direct access
   countWord,
-  parseGitbook: (path: string) => new gitbookParser(path),
   getReadingTime: text.getReadingTime,
 };
 
