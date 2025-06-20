@@ -48,6 +48,15 @@
     text-justify: inter-word;
 }
 
+.vp-doc [class*="language-"] code {
+    font-size: var(--vp-code-font-size) !important;
+    line-height: var(--vp-code-line-height) !important;
+}
+
+.vp-doc code .diff.add {
+    padding: 1px 24px;
+}
+
 /* Font Size Utilities */
 .font-small {
     font-size: 13px;

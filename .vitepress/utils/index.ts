@@ -11,7 +11,6 @@ import { i18nUtils } from "./i18n";
 
 // Direct imports for backward compatibility
 import { countWord } from "./functions";
-import gitbookParser from "./mdParser";
 
 // Server-side only utility (will be undefined on client)
 const getSidebarGenerator = () => {
@@ -74,6 +73,5 @@ export { i18nUtils as i18n } from "./i18n";
 
 // Individual exports for direct access (backward compatibility)
 export * from "./functions";
-export * from "./mdParser";
 export * from "./type";
 export * from "./types";

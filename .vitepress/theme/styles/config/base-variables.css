@@ -29,6 +29,9 @@
     --hover-scale: 1.1;
     --fade-duration: 0.5s;
 
+    /* ===== CODE ===== */
+    --vp-code-font-size: 1.1rem;
+
     /* ===== GLOBAL SPACING ===== */
     --spacing-xs: 4px;
     --spacing-sm: 8px;
