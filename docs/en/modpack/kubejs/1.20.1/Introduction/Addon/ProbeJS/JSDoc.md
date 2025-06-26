@@ -9,6 +9,10 @@ progress: 100
 如果你是想要更深入地学习`JSDoc`，可以在文档内撰写好相关内容前查看[这一文档](https://jsdoc.app/)。
 :::
 
+::: v-warning TwoSlash已不被文档支持
+请将代码复制到`KubeJS`实例脚本中查看具体效果
+:::
+
 例如在[这个文档](../../Entity/PotionEffects.md)中，虽然可以使用 potionEffects 来修改实体的药水效果，但在尝试获取时可能会遇到问题：
 
 ```js
@@ -16,12 +20,11 @@ ItemEvents.entityInteracted(event => {
     const { entity, hand } = event;
     if (hand !== 'main_hand') return;
     entity.potionEffects.add('minecraft:night_vision', 200, 0, false, true);
-//                ^?
 })
 ```
 
 ::: justify
-可以看到，`potionEffects`并没有正确显示`Twoslash`提供的类型提示。
+可以看到，`potionEffects`并没有正确显示类型提示。
 
 这是因为`potionEffects`是`Internal.LivingEntity`的方法，同时
 
@@ -40,7 +43,6 @@ ItemEvents.entityInteracted(event => {
     /** @type {Internal.LivingEntity} */
     let livingentity = entity;
     livingentity.potionEffects.add('minecraft:night_vision', 200, 0, false, true);
-    //           ^?
 })
 ```
 <br>
@@ -133,14 +135,14 @@ function logUsername() {
 这样不仅可以获得更加精准的类型提示，还能提升代码的可读性和可维护性。
 
 ::: code-group
-```js [kubejs] twoslash
+```js [kubejs] 
 ItemEvents.modification(event=>{
     event.modify("diamond_sword", item=>{
         item.getTier()
     })
 })
 ```
-```js [kubejs] twoslash
+```js [kubejs] 
 ItemEvents.modification(event=>{
     event.modify("diamond_sword",/**@param {Internal.SwordItem} item */ item=>{
         item.getTier()
@@ -156,14 +158,14 @@ ItemEvents.modification(event=>{
 这时候可以通过使用 `@type`注释来明确指定变量的类型，从而获得更精确的类型信息和代码提示。
 
 ::: code-group
-```js [kubejs] twoslash
+```js [kubejs]
 ItemEvents.entityInteracted(event => {
     const { entity, target, hand, server, level } = event;
     if (hand !== 'main_hand') return;
     entity.potionEffects.add('minecraft:night_vision', 200, 0, false, true);
 })
 ```
-```js [kubejs] twoslash
+```js [kubejs]
 ItemEvents.entityInteracted(event => {
     const { entity, target, hand, server, level } = event;
     /**

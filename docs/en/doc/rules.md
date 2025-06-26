@@ -208,26 +208,6 @@ At the beginning of each Markdown file, use `---` to create frontmatter configur
 ---
 ```
 
-### Type Completion {#TwoSlash}
-
-:::alert {"type": "warning", "title": "Feature Status"}
-**TwoSlash type completion feature is currently unavailable**. We are undergoing technical upgrades and this feature will be re-enabled in future versions.
-:::
-
-This section actually belongs to the Plugin category, but it's quite special.
-
-If you've seen the two links mentioned in [Styles](#Style), you probably already know about `Codeblock`, a convenient feature for sharing code and displaying `syntax highlighting`.
-
-The documentation plans to include plugins for displaying `type completion`, enabling more beneficial code display for related tutorials.
-
-**Planned Type Completion Effect:**
-
-```js
-const String = "TypeScript"
-console.log(String)
-//              ^? (will show: const String: "TypeScript")
-```
-
 **Alternative Solutions:**
 - Use standard code block syntax highlighting
 - Add type explanations in comments manually

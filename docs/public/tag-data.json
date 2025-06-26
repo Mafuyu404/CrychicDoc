@@ -3532,7 +3532,7 @@
     },
     "KubeJS": {
       "name": "KubeJS",
-      "count": 15,
+      "count": 17,
       "pages": [
         {
           "title": "实体属性",
@@ -3652,8 +3652,8 @@
           "language": "zh"
         },
         {
-          "title": "向量与坐标",
-          "description": "Vector and Coordinates",
+          "title": "向量",
+          "description": "向量与坐标",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Vector",
           "tags": [
             "KubeJS",
@@ -3712,6 +3712,30 @@
             "Storage"
           ],
           "progress": 90,
+          "language": "zh"
+        },
+        {
+          "title": "JSDoc 在 KubeJS/ProbeJS 生态下的权威指南",
+          "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 100,
+          "language": "zh"
+        },
+        {
+          "title": "KubeJS/ProbeJS 场景下的 JSDoc 实践",
+          "description": "介绍如何在 KubeJS 脚本中用 JSDoc 提升类型补全，涵盖多种 JSDoc 标签在实际脚本中的独特应用。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocKubeJSUsage",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 95,
           "language": "zh"
         }
       ]
@@ -4008,8 +4032,8 @@
       "count": 1,
       "pages": [
         {
-          "title": "向量与坐标",
-          "description": "Vector and Coordinates",
+          "title": "向量",
+          "description": "向量与坐标",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Vector",
           "tags": [
             "KubeJS",
@@ -4238,6 +4262,133 @@
             "Storage"
           ],
           "progress": 90,
+          "language": "zh"
+        }
+      ]
+    },
+    "JSDoc": {
+      "name": "JSDoc",
+      "count": 4,
+      "pages": [
+        {
+          "title": "JSDoc 在 KubeJS/ProbeJS 生态下的权威指南",
+          "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 100,
+          "language": "zh"
+        },
+        {
+          "title": "JSDoc 基础语法与通用用法",
+          "description": "介绍 JSDoc 的基本语法、常用标签和在 JavaScript/KubeJS/ProbeJS 中的通用注释方法，适合新手入门。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocBasics",
+          "tags": [
+            "JSDoc",
+            "Basic"
+          ],
+          "progress": 90,
+          "language": "zh"
+        },
+        {
+          "title": "KubeJS/ProbeJS 场景下的 JSDoc 实践",
+          "description": "介绍如何在 KubeJS 脚本中用 JSDoc 提升类型补全，涵盖多种 JSDoc 标签在实际脚本中的独特应用。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocKubeJSUsage",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 95,
+          "language": "zh"
+        },
+        {
+          "title": "事件",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "zh"
+        }
+      ]
+    },
+    "ProbeJS": {
+      "name": "ProbeJS",
+      "count": 3,
+      "pages": [
+        {
+          "title": "JSDoc 在 KubeJS/ProbeJS 生态下的权威指南",
+          "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 100,
+          "language": "zh"
+        },
+        {
+          "title": "KubeJS/ProbeJS 场景下的 JSDoc 实践",
+          "description": "介绍如何在 KubeJS 脚本中用 JSDoc 提升类型补全，涵盖多种 JSDoc 标签在实际脚本中的独特应用。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocKubeJSUsage",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 95,
+          "language": "zh"
+        },
+        {
+          "title": "事件",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "zh"
+        }
+      ]
+    },
+    "Basic": {
+      "name": "Basic",
+      "count": 1,
+      "pages": [
+        {
+          "title": "JSDoc 基础语法与通用用法",
+          "description": "介绍 JSDoc 的基本语法、常用标签和在 JavaScript/KubeJS/ProbeJS 中的通用注释方法，适合新手入门。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocBasics",
+          "tags": [
+            "JSDoc",
+            "Basic"
+          ],
+          "progress": 90,
+          "language": "zh"
+        }
+      ]
+    },
+    "Events": {
+      "name": "Events",
+      "count": 1,
+      "pages": [
+        {
+          "title": "事件",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
           "language": "zh"
         }
       ]
@@ -7762,7 +7913,7 @@
     },
     {
       "name": "KubeJS",
-      "count": 15,
+      "count": 17,
       "pages": [
         {
           "title": "实体属性",
@@ -7882,8 +8033,8 @@
           "language": "zh"
         },
         {
-          "title": "向量与坐标",
-          "description": "Vector and Coordinates",
+          "title": "向量",
+          "description": "向量与坐标",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Vector",
           "tags": [
             "KubeJS",
@@ -7942,6 +8093,30 @@
             "Storage"
           ],
           "progress": 90,
+          "language": "zh"
+        },
+        {
+          "title": "JSDoc 在 KubeJS/ProbeJS 生态下的权威指南",
+          "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 100,
+          "language": "zh"
+        },
+        {
+          "title": "KubeJS/ProbeJS 场景下的 JSDoc 实践",
+          "description": "介绍如何在 KubeJS 脚本中用 JSDoc 提升类型补全，涵盖多种 JSDoc 标签在实际脚本中的独特应用。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocKubeJSUsage",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 95,
           "language": "zh"
         }
       ]
@@ -8046,6 +8221,58 @@
       ]
     },
     {
+      "name": "JSDoc",
+      "count": 4,
+      "pages": [
+        {
+          "title": "JSDoc 在 KubeJS/ProbeJS 生态下的权威指南",
+          "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 100,
+          "language": "zh"
+        },
+        {
+          "title": "JSDoc 基础语法与通用用法",
+          "description": "介绍 JSDoc 的基本语法、常用标签和在 JavaScript/KubeJS/ProbeJS 中的通用注释方法，适合新手入门。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocBasics",
+          "tags": [
+            "JSDoc",
+            "Basic"
+          ],
+          "progress": 90,
+          "language": "zh"
+        },
+        {
+          "title": "KubeJS/ProbeJS 场景下的 JSDoc 实践",
+          "description": "介绍如何在 KubeJS 脚本中用 JSDoc 提升类型补全，涵盖多种 JSDoc 标签在实际脚本中的独特应用。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocKubeJSUsage",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 95,
+          "language": "zh"
+        },
+        {
+          "title": "事件",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "zh"
+        }
+      ]
+    },
+    {
       "name": "LivingEntity",
       "count": 3,
       "pages": [
@@ -8083,6 +8310,47 @@
             "PotionEffects"
           ],
           "progress": 90,
+          "language": "zh"
+        }
+      ]
+    },
+    {
+      "name": "ProbeJS",
+      "count": 3,
+      "pages": [
+        {
+          "title": "JSDoc 在 KubeJS/ProbeJS 生态下的权威指南",
+          "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 100,
+          "language": "zh"
+        },
+        {
+          "title": "KubeJS/ProbeJS 场景下的 JSDoc 实践",
+          "description": "介绍如何在 KubeJS 脚本中用 JSDoc 提升类型补全，涵盖多种 JSDoc 标签在实际脚本中的独特应用。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocKubeJSUsage",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 95,
+          "language": "zh"
+        },
+        {
+          "title": "事件",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
           "language": "zh"
         }
       ]
@@ -8284,8 +8552,8 @@
       "count": 1,
       "pages": [
         {
-          "title": "向量与坐标",
-          "description": "Vector and Coordinates",
+          "title": "向量",
+          "description": "向量与坐标",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Vector",
           "tags": [
             "KubeJS",
@@ -8485,10 +8753,44 @@
           "language": "zh"
         }
       ]
+    },
+    {
+      "name": "Basic",
+      "count": 1,
+      "pages": [
+        {
+          "title": "JSDoc 基础语法与通用用法",
+          "description": "介绍 JSDoc 的基本语法、常用标签和在 JavaScript/KubeJS/ProbeJS 中的通用注释方法，适合新手入门。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocBasics",
+          "tags": [
+            "JSDoc",
+            "Basic"
+          ],
+          "progress": 90,
+          "language": "zh"
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "count": 1,
+      "pages": [
+        {
+          "title": "事件",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "zh"
+        }
+      ]
     }
   ],
-  "totalTags": 27,
-  "totalPages": 366,
+  "totalTags": 31,
+  "totalPages": 377,
   "language": null,
-  "generatedAt": "2025-06-26T11:53:49.148Z"
+  "generatedAt": "2025-06-26T12:42:05.030Z"
 }

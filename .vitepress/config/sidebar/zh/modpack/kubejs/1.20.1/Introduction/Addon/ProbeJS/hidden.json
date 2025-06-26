@@ -2,5 +2,8 @@
   "_self_": false,
   "JSDoc.md": false,
   "ProbeJS.md": false,
-  "ProbeJSClassFlie.md": false
+  "ProbeJSClassFlie.md": false,
+  "JSDocBasics.md": false,
+  "JSDocKubeJSUsage.md": false,
+  "ProbeJSEvents.md": false
 }

@@ -22,5 +22,20 @@
     "isUserSet": false,
     "isActiveInStructure": true,
     "lastSeen": 1749254447325
+  },
+  "JSDocBasics.md": {
+    "valueHash": "f3c4ee8e333d22ddae39269ad39ed9a1",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "JSDocKubeJSUsage.md": {
+    "valueHash": "ff0f2fad18f7fa8441fb426a02aea83e",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "ProbeJSEvents.md": {
+    "valueHash": "10b2761db5a8e089049df39675abc550",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

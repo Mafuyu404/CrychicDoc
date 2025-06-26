@@ -1,5 +1,8 @@
 {
   "JSDoc.md": 100,
   "ProbeJS.md": -100,
-  "ProbeJSClassFlie.md": 10000000000000
+  "ProbeJSClassFlie.md": 10000000000000,
+  "JSDocBasics.md": 200,
+  "JSDocKubeJSUsage.md": 300,
+  "ProbeJSEvents.md": 400
 }

@@ -212,38 +212,6 @@ state: preliminary #仅允许preliminary unfinished outdated renovating四种输
 ---
 ```
 
-### 类型补全 {#TwoSlash}
-
-:::alert {"type": "warning", "title": "Feature Status"}
-**TwoSlash当前无法使用**. 
-:::
-
-该部分实际算Plugin的范畴，但其过于特殊。
-
-如果你看过了[样式](#Style)所提及的两个链接，那么你想必已经知道了`Codeblock`这个方便分享代码并显示`代码高亮`的功能。
-
-文档在这个基础上内置了显示`类型补全`的插件，使得其可以提供更有利于相关教程的代码展示。
-
-例如，同样的代码块：
-
-::: demo
-```js
-const String = "No Twoslash"
-console.log(String)
-//              ^?        
-```
-:::
-
-但如果有了类型补全的话：
-
-::: demo
-```js
-const String = "Twoslash"
-console.log(String)
-//              ^?        
-```
-:::
-
 ## 内容 {#Content}
 
 <LiteTree>

@@ -30,12 +30,6 @@ tags:
 - [向量 Vector](./Vector.md)
 - [生成/刷怪 Spawn](./Spawn.md)
 
-## FAQ / 未完成 {#faq}
-
-::: alert {"type": "error", "title": "警告"}
-部分条目内容尚未完善，后续将持续补充。
-:::
-
 ## 常见问题解答 {#faq}
 
 ### 位置与移动相关 {#position-movement-faq}
