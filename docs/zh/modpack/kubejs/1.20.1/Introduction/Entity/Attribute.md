@@ -5,12 +5,10 @@ tags:
   - KubeJS
   - Attribute
   - LivingEntity
-  - Modifier
-  - BaseValue
 progress: 90
 ---
 
-# {{ $frontmatter.title }}
+# 实体属性
 
 ## 概述 {#overview}
 

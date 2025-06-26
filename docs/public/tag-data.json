@@ -9,7 +9,8 @@
           "path": "/zh/doc/samples",
           "tags": [
             "sample"
-          ]
+          ],
+          "language": "zh"
         }
       ]
     },
@@ -25,7 +26,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "02 第一个物品",
@@ -35,7 +37,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "03 创造模式物品栏",
@@ -45,7 +48,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "04 添加一个方块",
@@ -55,7 +59,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "05 方块状态",
@@ -65,7 +70,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "06 物品属性覆盖",
@@ -75,7 +81,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "07 数据生成",
@@ -85,7 +92,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "08 食物",
@@ -95,7 +103,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "09 武器",
@@ -105,7 +114,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "10 工具",
@@ -115,7 +125,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "11 装备",
@@ -125,7 +136,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "12 自定义方块模型和非实体方块",
@@ -135,7 +147,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "13 方块渲染类型",
@@ -145,7 +158,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "14 自定义物品模型",
@@ -155,7 +169,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "15 合成表",
@@ -165,7 +180,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "16 战利品表",
@@ -175,7 +191,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "17 Tag",
@@ -185,7 +202,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "18 OBJ模型",
@@ -195,7 +213,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "19 添加画",
@@ -205,7 +224,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "20 添加新的村民",
@@ -215,7 +235,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "21 第一方块实体和数据保存",
@@ -225,7 +246,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "22  实体方块tick",
@@ -235,7 +257,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "23 方块实体内置的数据同步",
@@ -245,7 +268,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "24 烘焙模型",
@@ -255,7 +279,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "25 方块实体渲染",
@@ -265,7 +290,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "26 物品特殊渲染",
@@ -275,7 +301,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "27 网络",
@@ -285,7 +312,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "28 便利添加创造模式物品栏【可选】",
@@ -295,7 +323,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "29 第一个实体",
@@ -305,7 +334,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "30 第一个生物",
@@ -315,7 +345,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "31 附魔",
@@ -325,7 +356,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "32 构建能力",
@@ -335,7 +367,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "33 原版提供的能力ItemHander物品处理能力",
@@ -345,7 +378,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "34 能力提供附加",
@@ -355,7 +389,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "35 LevelSaveData",
@@ -365,7 +400,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "36 第一个GUI",
@@ -375,7 +411,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "37 menu",
@@ -385,7 +422,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "38 HUD",
@@ -395,7 +433,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "39 注册热键",
@@ -405,7 +444,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "40 流体",
@@ -415,7 +455,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "41 饥渴值例子",
@@ -425,7 +466,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "42 矿物生成",
@@ -435,7 +477,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "43 结构生成",
@@ -445,7 +488,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "44 如何添加模组和lib",
@@ -455,7 +499,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "45 添加生物群系",
@@ -465,7 +510,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "46 添加维度",
@@ -475,7 +521,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "47 命令",
@@ -485,7 +532,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "48 成就",
@@ -495,7 +543,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "49 配置信息设置",
@@ -505,7 +554,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "50 药水效果和药水",
@@ -515,7 +565,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "51  粒子",
@@ -525,7 +576,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "52 声音",
@@ -535,7 +587,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "53 更新到Minecraft 1.20.6版本",
@@ -545,7 +598,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "01 环境配置",
@@ -555,7 +609,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "02 第一个物品",
@@ -565,7 +620,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "03 创造模式物品栏",
@@ -575,7 +631,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "04 添加一个方块",
@@ -585,7 +642,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "05 方块状态",
@@ -595,7 +653,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "06 物品属性覆盖",
@@ -605,7 +664,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "07 数据生成",
@@ -615,7 +675,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "08 食物",
@@ -625,7 +686,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "09 武器",
@@ -635,7 +697,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "10 工具",
@@ -645,7 +708,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "11 装备",
@@ -655,7 +719,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "12 自定义方块模型和非实体方块",
@@ -665,7 +730,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "13 方块渲染类型",
@@ -675,7 +741,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "14 自定义物品模型",
@@ -685,7 +752,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "15 合成表",
@@ -695,7 +763,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "16 战利品表",
@@ -705,7 +774,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "17 Tag",
@@ -715,7 +785,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "18 OBJ模型",
@@ -725,7 +796,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "19 添加画",
@@ -735,7 +807,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "20 添加新的村民",
@@ -745,7 +818,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "21 第一方块实体和数据保存",
@@ -755,7 +829,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "22  实体方块tick",
@@ -765,7 +840,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "23 方块实体内置的数据同步",
@@ -775,7 +851,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "24 烘焙模型",
@@ -785,7 +862,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "25 方块实体渲染",
@@ -795,7 +873,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "26 物品特殊渲染",
@@ -805,7 +884,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "27 网络",
@@ -815,7 +895,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "28 便利添加创造模式物品栏【可选】",
@@ -825,7 +906,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "29 第一个实体",
@@ -835,7 +917,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "30 第一个生物",
@@ -845,7 +928,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "31 附魔",
@@ -855,7 +939,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "32 构建能力",
@@ -865,7 +950,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "33 原版提供的能力ItemHander物品处理能力",
@@ -875,7 +961,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "34 能力提供附加",
@@ -885,7 +972,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "35 LevelSaveData",
@@ -895,7 +983,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "36 第一个GUI",
@@ -905,7 +994,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "37 menu",
@@ -915,7 +1005,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "38 HUD",
@@ -925,7 +1016,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "39 注册热键",
@@ -935,7 +1027,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "40 流体",
@@ -945,7 +1038,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "41 饥渴值例子",
@@ -955,7 +1049,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "42 矿物生成",
@@ -965,7 +1060,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "43 结构生成",
@@ -975,7 +1071,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "44 如何添加模组和lib",
@@ -985,7 +1082,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "45 添加生物群系",
@@ -995,7 +1093,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "46 添加维度",
@@ -1005,7 +1104,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "47 命令",
@@ -1015,7 +1115,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "48 成就",
@@ -1025,7 +1126,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "49 配置信息设置",
@@ -1035,7 +1137,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "50 药水效果和药水",
@@ -1045,7 +1148,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "51  粒子",
@@ -1055,7 +1159,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "52 声音",
@@ -1065,7 +1170,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "53 更新到Minecraft 1.20.6版本",
@@ -1075,7 +1181,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         }
       ]
     },
@@ -1091,7 +1198,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "02 第一个物品",
@@ -1101,7 +1209,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "03 创造模式物品栏",
@@ -1111,7 +1220,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "04 添加一个方块",
@@ -1121,7 +1231,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "05 方块状态",
@@ -1131,7 +1242,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "06 物品属性覆盖",
@@ -1141,7 +1253,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "07 数据生成",
@@ -1151,7 +1264,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "08 食物",
@@ -1161,7 +1275,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "09 武器",
@@ -1171,7 +1286,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "10 工具",
@@ -1181,7 +1297,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "11 装备",
@@ -1191,7 +1308,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "12 自定义方块模型和非实体方块",
@@ -1201,7 +1319,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "13 方块渲染类型",
@@ -1211,7 +1330,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "14 自定义物品模型",
@@ -1221,7 +1341,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "15 合成表",
@@ -1231,7 +1352,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "16 战利品表",
@@ -1241,7 +1363,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "17 Tag",
@@ -1251,7 +1374,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "18 OBJ模型",
@@ -1261,7 +1385,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "19 添加画",
@@ -1271,7 +1396,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "20 添加新的村民",
@@ -1281,7 +1407,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "21 第一方块实体和数据保存",
@@ -1291,7 +1418,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "22  实体方块tick",
@@ -1301,7 +1429,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "23 方块实体内置的数据同步",
@@ -1311,7 +1440,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "24 烘焙模型",
@@ -1321,7 +1451,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "25 方块实体渲染",
@@ -1331,7 +1462,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "26 物品特殊渲染",
@@ -1341,7 +1473,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "27 网络",
@@ -1351,7 +1484,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "28 便利添加创造模式物品栏【可选】",
@@ -1361,7 +1495,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "29 第一个实体",
@@ -1371,7 +1506,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "30 第一个生物",
@@ -1381,7 +1517,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "31 附魔",
@@ -1391,7 +1528,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "32 构建能力",
@@ -1401,7 +1539,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "33 原版提供的能力ItemHander物品处理能力",
@@ -1411,7 +1550,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "34 能力提供附加",
@@ -1421,7 +1561,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "35 LevelSaveData",
@@ -1431,7 +1572,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "36 第一个GUI",
@@ -1441,7 +1583,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "37 menu",
@@ -1451,7 +1594,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "38 HUD",
@@ -1461,7 +1605,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "39 注册热键",
@@ -1471,7 +1616,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "40 流体",
@@ -1481,7 +1627,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "41 饥渴值例子",
@@ -1491,7 +1638,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "42 矿物生成",
@@ -1501,7 +1649,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "43 结构生成",
@@ -1511,7 +1660,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "44 如何添加模组和lib",
@@ -1521,7 +1671,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "45 添加生物群系",
@@ -1531,7 +1682,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "46 添加维度",
@@ -1541,7 +1693,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "47 命令",
@@ -1551,7 +1704,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "48 成就",
@@ -1561,7 +1715,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "49 配置信息设置",
@@ -1571,7 +1726,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "50 药水效果和药水",
@@ -1581,7 +1737,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "51  粒子",
@@ -1591,7 +1748,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "52 声音",
@@ -1601,7 +1759,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "53 更新到Minecraft 1.20.6版本",
@@ -1611,7 +1770,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "01 环境配置",
@@ -1621,7 +1781,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "02 第一个物品",
@@ -1631,7 +1792,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "03 创造模式物品栏",
@@ -1641,7 +1803,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "04 添加一个方块",
@@ -1651,7 +1814,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "05 方块状态",
@@ -1661,7 +1825,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "06 物品属性覆盖",
@@ -1671,7 +1836,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "07 数据生成",
@@ -1681,7 +1847,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "08 食物",
@@ -1691,7 +1858,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "09 武器",
@@ -1701,7 +1869,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "10 工具",
@@ -1711,7 +1880,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "11 装备",
@@ -1721,7 +1891,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "12 自定义方块模型和非实体方块",
@@ -1731,7 +1902,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "13 方块渲染类型",
@@ -1741,7 +1913,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "14 自定义物品模型",
@@ -1751,7 +1924,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "15 合成表",
@@ -1761,7 +1935,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "16 战利品表",
@@ -1771,7 +1946,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "17 Tag",
@@ -1781,7 +1957,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "18 OBJ模型",
@@ -1791,7 +1968,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "19 添加画",
@@ -1801,7 +1979,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "20 添加新的村民",
@@ -1811,7 +1990,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "21 第一方块实体和数据保存",
@@ -1821,7 +2001,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "22  实体方块tick",
@@ -1831,7 +2012,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "23 方块实体内置的数据同步",
@@ -1841,7 +2023,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "24 烘焙模型",
@@ -1851,7 +2034,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "25 方块实体渲染",
@@ -1861,7 +2045,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "26 物品特殊渲染",
@@ -1871,7 +2056,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "27 网络",
@@ -1881,7 +2067,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "28 便利添加创造模式物品栏【可选】",
@@ -1891,7 +2078,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "29 第一个实体",
@@ -1901,7 +2089,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "30 第一个生物",
@@ -1911,7 +2100,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "31 附魔",
@@ -1921,7 +2111,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "32 构建能力",
@@ -1931,7 +2122,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "33 原版提供的能力ItemHander物品处理能力",
@@ -1941,7 +2133,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "34 能力提供附加",
@@ -1951,7 +2144,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "35 LevelSaveData",
@@ -1961,7 +2155,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "36 第一个GUI",
@@ -1971,7 +2166,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "37 menu",
@@ -1981,7 +2177,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "38 HUD",
@@ -1991,7 +2188,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "39 注册热键",
@@ -2001,7 +2199,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "40 流体",
@@ -2011,7 +2210,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "41 饥渴值例子",
@@ -2021,7 +2221,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "42 矿物生成",
@@ -2031,7 +2232,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "43 结构生成",
@@ -2041,7 +2243,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "44 如何添加模组和lib",
@@ -2051,7 +2254,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "45 添加生物群系",
@@ -2061,7 +2265,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "46 添加维度",
@@ -2071,7 +2276,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "47 命令",
@@ -2081,7 +2287,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "48 成就",
@@ -2091,7 +2298,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "49 配置信息设置",
@@ -2101,7 +2309,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "50 药水效果和药水",
@@ -2111,7 +2320,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "51  粒子",
@@ -2121,7 +2331,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "52 声音",
@@ -2131,7 +2342,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "53 更新到Minecraft 1.20.6版本",
@@ -2141,7 +2353,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         }
       ]
     },
@@ -2157,7 +2370,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "02 第一个物品",
@@ -2167,7 +2381,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "03 创造模式物品栏",
@@ -2177,7 +2392,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "04 添加一个方块",
@@ -2187,7 +2403,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "05 方块状态",
@@ -2197,7 +2414,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "06 物品属性覆盖",
@@ -2207,7 +2425,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "07 数据生成",
@@ -2217,7 +2436,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "08 食物",
@@ -2227,7 +2447,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "09 武器",
@@ -2237,7 +2458,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "10 工具",
@@ -2247,7 +2469,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "11 装备",
@@ -2257,7 +2480,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "12 自定义方块模型和非实体方块",
@@ -2267,7 +2491,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "13 方块渲染类型",
@@ -2277,7 +2502,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "14 自定义物品模型",
@@ -2287,7 +2513,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "15 合成表",
@@ -2297,7 +2524,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "16 战利品表",
@@ -2307,7 +2535,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "17 Tag",
@@ -2317,7 +2546,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "18 OBJ模型",
@@ -2327,7 +2557,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "19 添加画",
@@ -2337,7 +2568,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "20 添加新的村民",
@@ -2347,7 +2579,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "21 第一方块实体和数据保存",
@@ -2357,7 +2590,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "22  实体方块tick",
@@ -2367,7 +2601,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "23 方块实体内置的数据同步",
@@ -2377,7 +2612,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "24 烘焙模型",
@@ -2387,7 +2623,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "25 方块实体渲染",
@@ -2397,7 +2634,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "26 物品特殊渲染",
@@ -2407,7 +2645,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "27 网络",
@@ -2417,7 +2656,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "28 便利添加创造模式物品栏【可选】",
@@ -2427,7 +2667,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "29 第一个实体",
@@ -2437,7 +2678,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "30 第一个生物",
@@ -2447,7 +2689,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "31 附魔",
@@ -2457,7 +2700,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "32 构建能力",
@@ -2467,7 +2711,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "33 原版提供的能力ItemHander物品处理能力",
@@ -2477,7 +2722,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "34 能力提供附加",
@@ -2487,7 +2733,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "35 LevelSaveData",
@@ -2497,7 +2744,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "36 第一个GUI",
@@ -2507,7 +2755,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "37 menu",
@@ -2517,7 +2766,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "38 HUD",
@@ -2527,7 +2777,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "39 注册热键",
@@ -2537,7 +2788,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "40 流体",
@@ -2547,7 +2799,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "41 饥渴值例子",
@@ -2557,7 +2810,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "42 矿物生成",
@@ -2567,7 +2821,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "43 结构生成",
@@ -2577,7 +2832,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "44 如何添加模组和lib",
@@ -2587,7 +2843,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "45 添加生物群系",
@@ -2597,7 +2854,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "46 添加维度",
@@ -2607,7 +2865,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "47 命令",
@@ -2617,7 +2876,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "48 成就",
@@ -2627,7 +2887,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "49 配置信息设置",
@@ -2637,7 +2898,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "50 药水效果和药水",
@@ -2647,7 +2909,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "51  粒子",
@@ -2657,7 +2920,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "52 声音",
@@ -2667,7 +2931,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "53 更新到Minecraft 1.20.6版本",
@@ -2677,7 +2942,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "01 环境配置",
@@ -2687,7 +2953,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "02 第一个物品",
@@ -2697,7 +2964,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "03 创造模式物品栏",
@@ -2707,7 +2975,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "04 添加一个方块",
@@ -2717,7 +2986,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "05 方块状态",
@@ -2727,7 +2997,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "06 物品属性覆盖",
@@ -2737,7 +3008,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "07 数据生成",
@@ -2747,7 +3019,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "08 食物",
@@ -2757,7 +3030,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "09 武器",
@@ -2767,7 +3041,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "10 工具",
@@ -2777,7 +3052,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "11 装备",
@@ -2787,7 +3063,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "12 自定义方块模型和非实体方块",
@@ -2797,7 +3074,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "13 方块渲染类型",
@@ -2807,7 +3085,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "14 自定义物品模型",
@@ -2817,7 +3096,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "15 合成表",
@@ -2827,7 +3107,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "16 战利品表",
@@ -2837,7 +3118,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "17 Tag",
@@ -2847,7 +3129,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "18 OBJ模型",
@@ -2857,7 +3140,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "19 添加画",
@@ -2867,7 +3151,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "20 添加新的村民",
@@ -2877,7 +3162,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "21 第一方块实体和数据保存",
@@ -2887,7 +3173,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "22  实体方块tick",
@@ -2897,7 +3184,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "23 方块实体内置的数据同步",
@@ -2907,7 +3195,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "24 烘焙模型",
@@ -2917,7 +3206,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "25 方块实体渲染",
@@ -2927,7 +3217,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "26 物品特殊渲染",
@@ -2937,7 +3228,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "27 网络",
@@ -2947,7 +3239,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "28 便利添加创造模式物品栏【可选】",
@@ -2957,7 +3250,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "29 第一个实体",
@@ -2967,7 +3261,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "30 第一个生物",
@@ -2977,7 +3272,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "31 附魔",
@@ -2987,7 +3283,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "32 构建能力",
@@ -2997,7 +3294,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "33 原版提供的能力ItemHander物品处理能力",
@@ -3007,7 +3305,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "34 能力提供附加",
@@ -3017,7 +3316,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "35 LevelSaveData",
@@ -3027,7 +3327,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "36 第一个GUI",
@@ -3037,7 +3338,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "37 menu",
@@ -3047,7 +3349,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "38 HUD",
@@ -3057,7 +3360,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "39 注册热键",
@@ -3067,7 +3371,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "40 流体",
@@ -3077,7 +3382,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "41 饥渴值例子",
@@ -3087,7 +3393,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "42 矿物生成",
@@ -3097,7 +3404,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "43 结构生成",
@@ -3107,7 +3415,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "44 如何添加模组和lib",
@@ -3117,7 +3426,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "45 添加生物群系",
@@ -3127,7 +3437,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "46 添加维度",
@@ -3137,7 +3448,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "47 命令",
@@ -3147,7 +3459,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "48 成就",
@@ -3157,7 +3470,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "49 配置信息设置",
@@ -3167,7 +3481,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "50 药水效果和药水",
@@ -3177,7 +3492,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "51  粒子",
@@ -3187,7 +3503,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "52 声音",
@@ -3197,7 +3514,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "53 更新到Minecraft 1.20.6版本",
@@ -3207,7 +3525,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         }
       ]
     },
@@ -3222,14 +3541,13 @@
           "tags": [
             "KubeJS",
             "Attribute",
-            "LivingEntity",
-            "Modifier",
-            "BaseValue"
+            "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
-          "title": "大脑系统",
+          "title": "Brain",
           "description": "Brain 系统研究中",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -3238,7 +3556,8 @@
             "AI",
             "Research"
           ],
-          "progress": 10
+          "progress": 10,
+          "language": "zh"
         },
         {
           "title": "实体系统目录",
@@ -3250,11 +3569,12 @@
             "Catalogue",
             "Navigation"
           ],
-          "progress": 100
+          "progress": 100,
+          "language": "zh"
         },
         {
-          "title": "AI目标系统",
-          "description": "实体 AI 目标系统操作指南",
+          "title": "Goal",
+          "description": "操作Goal",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
           "tags": [
             "KubeJS",
@@ -3262,7 +3582,8 @@
             "AI",
             "Goal"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "生物实体",
@@ -3275,11 +3596,12 @@
             "Equipment",
             "AI"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "实体方法",
-          "description": "Entity Methods 在 KubeJS 中的完整操作指南",
+          "description": "Entity Methods",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
@@ -3288,7 +3610,8 @@
             "API",
             "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "怪物实体",
@@ -3301,7 +3624,8 @@
             "Pathfinding",
             "Behavior"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "玩家实体",
@@ -3311,7 +3635,8 @@
             "KubeJS",
             "Player"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "药水效果",
@@ -3323,7 +3648,19 @@
             "PotionEffects",
             "StatusEffects"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
+        },
+        {
+          "title": "向量与坐标",
+          "description": "Vector and Coordinates",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Vector",
+          "tags": [
+            "KubeJS",
+            "Vector"
+          ],
+          "progress": 95,
+          "language": "zh"
         },
         {
           "title": "集合接口",
@@ -3335,7 +3672,8 @@
             "Java",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         },
         {
           "title": "列表接口",
@@ -3347,7 +3685,8 @@
             "Array",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         },
         {
           "title": "映射接口",
@@ -3359,7 +3698,8 @@
             "HashMap",
             "键值对"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         },
         {
           "title": "持久化数据",
@@ -3371,19 +3711,8 @@
             "Data",
             "Storage"
           ],
-          "progress": 90
-        },
-        {
-          "title": "字符串工具",
-          "description": "JavaScript/Java String 在 KubeJS 中的使用指南和工具类",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/String",
-          "tags": [
-            "KubeJS",
-            "String",
-            "文本处理",
-            "工具类"
-          ],
-          "progress": 95
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3398,11 +3727,10 @@
           "tags": [
             "KubeJS",
             "Attribute",
-            "LivingEntity",
-            "Modifier",
-            "BaseValue"
+            "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3417,11 +3745,10 @@
           "tags": [
             "KubeJS",
             "Attribute",
-            "LivingEntity",
-            "Modifier",
-            "BaseValue"
+            "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "生物实体",
@@ -3434,11 +3761,12 @@
             "Equipment",
             "AI"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "实体方法",
-          "description": "Entity Methods 在 KubeJS 中的完整操作指南",
+          "description": "Entity Methods",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
@@ -3447,7 +3775,8 @@
             "API",
             "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "药水效果",
@@ -3459,45 +3788,8 @@
             "PotionEffects",
             "StatusEffects"
           ],
-          "progress": 90
-        }
-      ]
-    },
-    "Modifier": {
-      "name": "Modifier",
-      "count": 1,
-      "pages": [
-        {
-          "title": "实体属性",
-          "description": "Attribute 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Attribute",
-          "tags": [
-            "KubeJS",
-            "Attribute",
-            "LivingEntity",
-            "Modifier",
-            "BaseValue"
-          ],
-          "progress": 90
-        }
-      ]
-    },
-    "BaseValue": {
-      "name": "BaseValue",
-      "count": 1,
-      "pages": [
-        {
-          "title": "实体属性",
-          "description": "Attribute 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Attribute",
-          "tags": [
-            "KubeJS",
-            "Attribute",
-            "LivingEntity",
-            "Modifier",
-            "BaseValue"
-          ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3506,7 +3798,7 @@
       "count": 4,
       "pages": [
         {
-          "title": "大脑系统",
+          "title": "Brain",
           "description": "Brain 系统研究中",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -3515,7 +3807,8 @@
             "AI",
             "Research"
           ],
-          "progress": 10
+          "progress": 10,
+          "language": "zh"
         },
         {
           "title": "实体系统目录",
@@ -3527,11 +3820,12 @@
             "Catalogue",
             "Navigation"
           ],
-          "progress": 100
+          "progress": 100,
+          "language": "zh"
         },
         {
-          "title": "AI目标系统",
-          "description": "实体 AI 目标系统操作指南",
+          "title": "Goal",
+          "description": "操作Goal",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
           "tags": [
             "KubeJS",
@@ -3539,11 +3833,12 @@
             "AI",
             "Goal"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "实体方法",
-          "description": "Entity Methods 在 KubeJS 中的完整操作指南",
+          "description": "Entity Methods",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
@@ -3552,7 +3847,8 @@
             "API",
             "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3561,7 +3857,7 @@
       "count": 4,
       "pages": [
         {
-          "title": "大脑系统",
+          "title": "Brain",
           "description": "Brain 系统研究中",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -3570,11 +3866,12 @@
             "AI",
             "Research"
           ],
-          "progress": 10
+          "progress": 10,
+          "language": "zh"
         },
         {
-          "title": "AI目标系统",
-          "description": "实体 AI 目标系统操作指南",
+          "title": "Goal",
+          "description": "操作Goal",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
           "tags": [
             "KubeJS",
@@ -3582,7 +3879,8 @@
             "AI",
             "Goal"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "生物实体",
@@ -3595,7 +3893,8 @@
             "Equipment",
             "AI"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "怪物实体",
@@ -3608,7 +3907,8 @@
             "Pathfinding",
             "Behavior"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3617,7 +3917,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "大脑系统",
+          "title": "Brain",
           "description": "Brain 系统研究中",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -3626,7 +3926,8 @@
             "AI",
             "Research"
           ],
-          "progress": 10
+          "progress": 10,
+          "language": "zh"
         }
       ]
     },
@@ -3644,7 +3945,8 @@
             "Catalogue",
             "Navigation"
           ],
-          "progress": 100
+          "progress": 100,
+          "language": "zh"
         }
       ]
     },
@@ -3662,7 +3964,8 @@
             "Catalogue",
             "Navigation"
           ],
-          "progress": 100
+          "progress": 100,
+          "language": "zh"
         }
       ]
     },
@@ -3671,8 +3974,8 @@
       "count": 1,
       "pages": [
         {
-          "title": "AI目标系统",
-          "description": "实体 AI 目标系统操作指南",
+          "title": "Goal",
+          "description": "操作Goal",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
           "tags": [
             "KubeJS",
@@ -3680,7 +3983,8 @@
             "AI",
             "Goal"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3699,7 +4003,8 @@
             "Equipment",
             "AI"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3718,7 +4023,8 @@
             "Equipment",
             "AI"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3728,7 +4034,7 @@
       "pages": [
         {
           "title": "实体方法",
-          "description": "Entity Methods 在 KubeJS 中的完整操作指南",
+          "description": "Entity Methods",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
@@ -3737,7 +4043,8 @@
             "API",
             "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3747,7 +4054,7 @@
       "pages": [
         {
           "title": "实体方法",
-          "description": "Entity Methods 在 KubeJS 中的完整操作指南",
+          "description": "Entity Methods",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
@@ -3756,7 +4063,8 @@
             "API",
             "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3775,7 +4083,8 @@
             "Pathfinding",
             "Behavior"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3794,7 +4103,8 @@
             "Pathfinding",
             "Behavior"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3813,7 +4123,8 @@
             "Pathfinding",
             "Behavior"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3829,7 +4140,8 @@
             "KubeJS",
             "Player"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3847,7 +4159,8 @@
             "PotionEffects",
             "StatusEffects"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -3865,7 +4178,25 @@
             "PotionEffects",
             "StatusEffects"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
+        }
+      ]
+    },
+    "Vector": {
+      "name": "Vector",
+      "count": 1,
+      "pages": [
+        {
+          "title": "向量与坐标",
+          "description": "Vector and Coordinates",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Vector",
+          "tags": [
+            "KubeJS",
+            "Vector"
+          ],
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -3883,7 +4214,8 @@
             "Java",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -3901,7 +4233,8 @@
             "Java",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -3919,7 +4252,8 @@
             "Java",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         },
         {
           "title": "列表接口",
@@ -3931,7 +4265,8 @@
             "Array",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -3949,7 +4284,8 @@
             "Array",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -3967,7 +4303,8 @@
             "Array",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -3985,7 +4322,8 @@
             "HashMap",
             "键值对"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -4003,7 +4341,8 @@
             "HashMap",
             "键值对"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -4021,7 +4360,8 @@
             "HashMap",
             "键值对"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -4039,7 +4379,8 @@
             "Data",
             "Storage"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -4057,7 +4398,8 @@
             "Data",
             "Storage"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -4075,61 +4417,8 @@
             "Data",
             "Storage"
           ],
-          "progress": 90
-        }
-      ]
-    },
-    "String": {
-      "name": "String",
-      "count": 1,
-      "pages": [
-        {
-          "title": "字符串工具",
-          "description": "JavaScript/Java String 在 KubeJS 中的使用指南和工具类",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/String",
-          "tags": [
-            "KubeJS",
-            "String",
-            "文本处理",
-            "工具类"
-          ],
-          "progress": 95
-        }
-      ]
-    },
-    "文本处理": {
-      "name": "文本处理",
-      "count": 1,
-      "pages": [
-        {
-          "title": "字符串工具",
-          "description": "JavaScript/Java String 在 KubeJS 中的使用指南和工具类",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/String",
-          "tags": [
-            "KubeJS",
-            "String",
-            "文本处理",
-            "工具类"
-          ],
-          "progress": 95
-        }
-      ]
-    },
-    "工具类": {
-      "name": "工具类",
-      "count": 1,
-      "pages": [
-        {
-          "title": "字符串工具",
-          "description": "JavaScript/Java String 在 KubeJS 中的使用指南和工具类",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/String",
-          "tags": [
-            "KubeJS",
-            "String",
-            "文本处理",
-            "工具类"
-          ],
-          "progress": 95
+          "progress": 90,
+          "language": "zh"
         }
       ]
     }
@@ -4147,7 +4436,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "02 第一个物品",
@@ -4157,7 +4447,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "03 创造模式物品栏",
@@ -4167,7 +4458,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "04 添加一个方块",
@@ -4177,7 +4469,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "05 方块状态",
@@ -4187,7 +4480,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "06 物品属性覆盖",
@@ -4197,7 +4491,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "07 数据生成",
@@ -4207,7 +4502,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "08 食物",
@@ -4217,7 +4513,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "09 武器",
@@ -4227,7 +4524,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "10 工具",
@@ -4237,7 +4535,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "11 装备",
@@ -4247,7 +4546,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "12 自定义方块模型和非实体方块",
@@ -4257,7 +4557,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "13 方块渲染类型",
@@ -4267,7 +4568,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "14 自定义物品模型",
@@ -4277,7 +4579,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "15 合成表",
@@ -4287,7 +4590,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "16 战利品表",
@@ -4297,7 +4601,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "17 Tag",
@@ -4307,7 +4612,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "18 OBJ模型",
@@ -4317,7 +4623,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "19 添加画",
@@ -4327,7 +4634,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "20 添加新的村民",
@@ -4337,7 +4645,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "21 第一方块实体和数据保存",
@@ -4347,7 +4656,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "22  实体方块tick",
@@ -4357,7 +4667,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "23 方块实体内置的数据同步",
@@ -4367,7 +4678,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "24 烘焙模型",
@@ -4377,7 +4689,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "25 方块实体渲染",
@@ -4387,7 +4700,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "26 物品特殊渲染",
@@ -4397,7 +4711,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "27 网络",
@@ -4407,7 +4722,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "28 便利添加创造模式物品栏【可选】",
@@ -4417,7 +4733,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "29 第一个实体",
@@ -4427,7 +4744,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "30 第一个生物",
@@ -4437,7 +4755,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "31 附魔",
@@ -4447,7 +4766,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "32 构建能力",
@@ -4457,7 +4777,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "33 原版提供的能力ItemHander物品处理能力",
@@ -4467,7 +4788,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "34 能力提供附加",
@@ -4477,7 +4799,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "35 LevelSaveData",
@@ -4487,7 +4810,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "36 第一个GUI",
@@ -4497,7 +4821,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "37 menu",
@@ -4507,7 +4832,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "38 HUD",
@@ -4517,7 +4843,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "39 注册热键",
@@ -4527,7 +4854,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "40 流体",
@@ -4537,7 +4865,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "41 饥渴值例子",
@@ -4547,7 +4876,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "42 矿物生成",
@@ -4557,7 +4887,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "43 结构生成",
@@ -4567,7 +4898,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "44 如何添加模组和lib",
@@ -4577,7 +4909,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "45 添加生物群系",
@@ -4587,7 +4920,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "46 添加维度",
@@ -4597,7 +4931,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "47 命令",
@@ -4607,7 +4942,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "48 成就",
@@ -4617,7 +4953,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "49 配置信息设置",
@@ -4627,7 +4964,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "50 药水效果和药水",
@@ -4637,7 +4975,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "51  粒子",
@@ -4647,7 +4986,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "52 声音",
@@ -4657,7 +4997,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "53 更新到Minecraft 1.20.6版本",
@@ -4667,7 +5008,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "01 环境配置",
@@ -4677,7 +5019,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "02 第一个物品",
@@ -4687,7 +5030,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "03 创造模式物品栏",
@@ -4697,7 +5041,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "04 添加一个方块",
@@ -4707,7 +5052,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "05 方块状态",
@@ -4717,7 +5063,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "06 物品属性覆盖",
@@ -4727,7 +5074,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "07 数据生成",
@@ -4737,7 +5085,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "08 食物",
@@ -4747,7 +5096,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "09 武器",
@@ -4757,7 +5107,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "10 工具",
@@ -4767,7 +5118,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "11 装备",
@@ -4777,7 +5129,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "12 自定义方块模型和非实体方块",
@@ -4787,7 +5140,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "13 方块渲染类型",
@@ -4797,7 +5151,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "14 自定义物品模型",
@@ -4807,7 +5162,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "15 合成表",
@@ -4817,7 +5173,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "16 战利品表",
@@ -4827,7 +5184,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "17 Tag",
@@ -4837,7 +5195,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "18 OBJ模型",
@@ -4847,7 +5206,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "19 添加画",
@@ -4857,7 +5217,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "20 添加新的村民",
@@ -4867,7 +5228,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "21 第一方块实体和数据保存",
@@ -4877,7 +5239,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "22  实体方块tick",
@@ -4887,7 +5250,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "23 方块实体内置的数据同步",
@@ -4897,7 +5261,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "24 烘焙模型",
@@ -4907,7 +5272,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "25 方块实体渲染",
@@ -4917,7 +5283,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "26 物品特殊渲染",
@@ -4927,7 +5294,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "27 网络",
@@ -4937,7 +5305,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "28 便利添加创造模式物品栏【可选】",
@@ -4947,7 +5316,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "29 第一个实体",
@@ -4957,7 +5327,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "30 第一个生物",
@@ -4967,7 +5338,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "31 附魔",
@@ -4977,7 +5349,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "32 构建能力",
@@ -4987,7 +5360,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "33 原版提供的能力ItemHander物品处理能力",
@@ -4997,7 +5371,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "34 能力提供附加",
@@ -5007,7 +5382,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "35 LevelSaveData",
@@ -5017,7 +5393,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "36 第一个GUI",
@@ -5027,7 +5404,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "37 menu",
@@ -5037,7 +5415,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "38 HUD",
@@ -5047,7 +5426,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "39 注册热键",
@@ -5057,7 +5437,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "40 流体",
@@ -5067,7 +5448,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "41 饥渴值例子",
@@ -5077,7 +5459,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "42 矿物生成",
@@ -5087,7 +5470,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "43 结构生成",
@@ -5097,7 +5481,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "44 如何添加模组和lib",
@@ -5107,7 +5492,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "45 添加生物群系",
@@ -5117,7 +5503,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "46 添加维度",
@@ -5127,7 +5514,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "47 命令",
@@ -5137,7 +5525,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "48 成就",
@@ -5147,7 +5536,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "49 配置信息设置",
@@ -5157,7 +5547,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "50 药水效果和药水",
@@ -5167,7 +5558,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "51  粒子",
@@ -5177,7 +5569,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "52 声音",
@@ -5187,7 +5580,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "53 更新到Minecraft 1.20.6版本",
@@ -5197,7 +5591,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         }
       ]
     },
@@ -5213,7 +5608,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "02 第一个物品",
@@ -5223,7 +5619,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "03 创造模式物品栏",
@@ -5233,7 +5630,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "04 添加一个方块",
@@ -5243,7 +5641,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "05 方块状态",
@@ -5253,7 +5652,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "06 物品属性覆盖",
@@ -5263,7 +5663,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "07 数据生成",
@@ -5273,7 +5674,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "08 食物",
@@ -5283,7 +5685,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "09 武器",
@@ -5293,7 +5696,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "10 工具",
@@ -5303,7 +5707,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "11 装备",
@@ -5313,7 +5718,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "12 自定义方块模型和非实体方块",
@@ -5323,7 +5729,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "13 方块渲染类型",
@@ -5333,7 +5740,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "14 自定义物品模型",
@@ -5343,7 +5751,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "15 合成表",
@@ -5353,7 +5762,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "16 战利品表",
@@ -5363,7 +5773,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "17 Tag",
@@ -5373,7 +5784,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "18 OBJ模型",
@@ -5383,7 +5795,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "19 添加画",
@@ -5393,7 +5806,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "20 添加新的村民",
@@ -5403,7 +5817,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "21 第一方块实体和数据保存",
@@ -5413,7 +5828,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "22  实体方块tick",
@@ -5423,7 +5839,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "23 方块实体内置的数据同步",
@@ -5433,7 +5850,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "24 烘焙模型",
@@ -5443,7 +5861,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "25 方块实体渲染",
@@ -5453,7 +5872,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "26 物品特殊渲染",
@@ -5463,7 +5883,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "27 网络",
@@ -5473,7 +5894,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "28 便利添加创造模式物品栏【可选】",
@@ -5483,7 +5905,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "29 第一个实体",
@@ -5493,7 +5916,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "30 第一个生物",
@@ -5503,7 +5927,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "31 附魔",
@@ -5513,7 +5938,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "32 构建能力",
@@ -5523,7 +5949,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "33 原版提供的能力ItemHander物品处理能力",
@@ -5533,7 +5960,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "34 能力提供附加",
@@ -5543,7 +5971,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "35 LevelSaveData",
@@ -5553,7 +5982,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "36 第一个GUI",
@@ -5563,7 +5993,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "37 menu",
@@ -5573,7 +6004,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "38 HUD",
@@ -5583,7 +6015,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "39 注册热键",
@@ -5593,7 +6026,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "40 流体",
@@ -5603,7 +6037,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "41 饥渴值例子",
@@ -5613,7 +6048,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "42 矿物生成",
@@ -5623,7 +6059,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "43 结构生成",
@@ -5633,7 +6070,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "44 如何添加模组和lib",
@@ -5643,7 +6081,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "45 添加生物群系",
@@ -5653,7 +6092,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "46 添加维度",
@@ -5663,7 +6103,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "47 命令",
@@ -5673,7 +6114,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "48 成就",
@@ -5683,7 +6125,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "49 配置信息设置",
@@ -5693,7 +6136,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "50 药水效果和药水",
@@ -5703,7 +6147,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "51  粒子",
@@ -5713,7 +6158,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "52 声音",
@@ -5723,7 +6169,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "53 更新到Minecraft 1.20.6版本",
@@ -5733,7 +6180,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "01 环境配置",
@@ -5743,7 +6191,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "02 第一个物品",
@@ -5753,7 +6202,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "03 创造模式物品栏",
@@ -5763,7 +6213,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "04 添加一个方块",
@@ -5773,7 +6224,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "05 方块状态",
@@ -5783,7 +6235,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "06 物品属性覆盖",
@@ -5793,7 +6246,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "07 数据生成",
@@ -5803,7 +6257,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "08 食物",
@@ -5813,7 +6268,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "09 武器",
@@ -5823,7 +6279,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "10 工具",
@@ -5833,7 +6290,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "11 装备",
@@ -5843,7 +6301,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "12 自定义方块模型和非实体方块",
@@ -5853,7 +6312,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "13 方块渲染类型",
@@ -5863,7 +6323,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "14 自定义物品模型",
@@ -5873,7 +6334,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "15 合成表",
@@ -5883,7 +6345,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "16 战利品表",
@@ -5893,7 +6356,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "17 Tag",
@@ -5903,7 +6367,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "18 OBJ模型",
@@ -5913,7 +6378,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "19 添加画",
@@ -5923,7 +6389,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "20 添加新的村民",
@@ -5933,7 +6400,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "21 第一方块实体和数据保存",
@@ -5943,7 +6411,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "22  实体方块tick",
@@ -5953,7 +6422,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "23 方块实体内置的数据同步",
@@ -5963,7 +6433,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "24 烘焙模型",
@@ -5973,7 +6444,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "25 方块实体渲染",
@@ -5983,7 +6455,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "26 物品特殊渲染",
@@ -5993,7 +6466,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "27 网络",
@@ -6003,7 +6477,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "28 便利添加创造模式物品栏【可选】",
@@ -6013,7 +6488,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "29 第一个实体",
@@ -6023,7 +6499,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "30 第一个生物",
@@ -6033,7 +6510,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "31 附魔",
@@ -6043,7 +6521,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "32 构建能力",
@@ -6053,7 +6532,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "33 原版提供的能力ItemHander物品处理能力",
@@ -6063,7 +6543,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "34 能力提供附加",
@@ -6073,7 +6554,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "35 LevelSaveData",
@@ -6083,7 +6565,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "36 第一个GUI",
@@ -6093,7 +6576,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "37 menu",
@@ -6103,7 +6587,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "38 HUD",
@@ -6113,7 +6598,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "39 注册热键",
@@ -6123,7 +6609,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "40 流体",
@@ -6133,7 +6620,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "41 饥渴值例子",
@@ -6143,7 +6631,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "42 矿物生成",
@@ -6153,7 +6642,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "43 结构生成",
@@ -6163,7 +6653,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "44 如何添加模组和lib",
@@ -6173,7 +6664,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "45 添加生物群系",
@@ -6183,7 +6675,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "46 添加维度",
@@ -6193,7 +6686,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "47 命令",
@@ -6203,7 +6697,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "48 成就",
@@ -6213,7 +6708,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "49 配置信息设置",
@@ -6223,7 +6719,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "50 药水效果和药水",
@@ -6233,7 +6730,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "51  粒子",
@@ -6243,7 +6741,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "52 声音",
@@ -6253,7 +6752,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "53 更新到Minecraft 1.20.6版本",
@@ -6263,7 +6763,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         }
       ]
     },
@@ -6279,7 +6780,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "02 第一个物品",
@@ -6289,7 +6791,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "03 创造模式物品栏",
@@ -6299,7 +6802,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "04 添加一个方块",
@@ -6309,7 +6813,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "05 方块状态",
@@ -6319,7 +6824,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "06 物品属性覆盖",
@@ -6329,7 +6835,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "07 数据生成",
@@ -6339,7 +6846,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "08 食物",
@@ -6349,7 +6857,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "09 武器",
@@ -6359,7 +6868,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "10 工具",
@@ -6369,7 +6879,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "11 装备",
@@ -6379,7 +6890,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "12 自定义方块模型和非实体方块",
@@ -6389,7 +6901,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "13 方块渲染类型",
@@ -6399,7 +6912,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "14 自定义物品模型",
@@ -6409,7 +6923,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "15 合成表",
@@ -6419,7 +6934,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "16 战利品表",
@@ -6429,7 +6945,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "17 Tag",
@@ -6439,7 +6956,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "18 OBJ模型",
@@ -6449,7 +6967,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "19 添加画",
@@ -6459,7 +6978,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "20 添加新的村民",
@@ -6469,7 +6989,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "21 第一方块实体和数据保存",
@@ -6479,7 +7000,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "22  实体方块tick",
@@ -6489,7 +7011,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "23 方块实体内置的数据同步",
@@ -6499,7 +7022,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "24 烘焙模型",
@@ -6509,7 +7033,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "25 方块实体渲染",
@@ -6519,7 +7044,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "26 物品特殊渲染",
@@ -6529,7 +7055,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "27 网络",
@@ -6539,7 +7066,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "28 便利添加创造模式物品栏【可选】",
@@ -6549,7 +7077,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "29 第一个实体",
@@ -6559,7 +7088,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "30 第一个生物",
@@ -6569,7 +7099,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "31 附魔",
@@ -6579,7 +7110,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "32 构建能力",
@@ -6589,7 +7121,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "33 原版提供的能力ItemHander物品处理能力",
@@ -6599,7 +7132,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "34 能力提供附加",
@@ -6609,7 +7143,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "35 LevelSaveData",
@@ -6619,7 +7154,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "36 第一个GUI",
@@ -6629,7 +7165,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "37 menu",
@@ -6639,7 +7176,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "38 HUD",
@@ -6649,7 +7187,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "39 注册热键",
@@ -6659,7 +7198,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "40 流体",
@@ -6669,7 +7209,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "41 饥渴值例子",
@@ -6679,7 +7220,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "42 矿物生成",
@@ -6689,7 +7231,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "43 结构生成",
@@ -6699,7 +7242,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "44 如何添加模组和lib",
@@ -6709,7 +7253,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "45 添加生物群系",
@@ -6719,7 +7264,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "46 添加维度",
@@ -6729,7 +7275,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "47 命令",
@@ -6739,7 +7286,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "48 成就",
@@ -6749,7 +7297,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "49 配置信息设置",
@@ -6759,7 +7308,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "50 药水效果和药水",
@@ -6769,7 +7319,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "51  粒子",
@@ -6779,7 +7330,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "52 声音",
@@ -6789,7 +7341,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "53 更新到Minecraft 1.20.6版本",
@@ -6799,7 +7352,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "en"
         },
         {
           "title": "01 环境配置",
@@ -6809,7 +7363,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "02 第一个物品",
@@ -6819,7 +7374,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "03 创造模式物品栏",
@@ -6829,7 +7385,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "04 添加一个方块",
@@ -6839,7 +7396,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "05 方块状态",
@@ -6849,7 +7407,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "06 物品属性覆盖",
@@ -6859,7 +7418,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "07 数据生成",
@@ -6869,7 +7429,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "08 食物",
@@ -6879,7 +7440,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "09 武器",
@@ -6889,7 +7451,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "10 工具",
@@ -6899,7 +7462,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "11 装备",
@@ -6909,7 +7473,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "12 自定义方块模型和非实体方块",
@@ -6919,7 +7484,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "13 方块渲染类型",
@@ -6929,7 +7495,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "14 自定义物品模型",
@@ -6939,7 +7506,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "15 合成表",
@@ -6949,7 +7517,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "16 战利品表",
@@ -6959,7 +7528,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "17 Tag",
@@ -6969,7 +7539,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "18 OBJ模型",
@@ -6979,7 +7550,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "19 添加画",
@@ -6989,7 +7561,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "20 添加新的村民",
@@ -6999,7 +7572,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "21 第一方块实体和数据保存",
@@ -7009,7 +7583,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "22  实体方块tick",
@@ -7019,7 +7594,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "23 方块实体内置的数据同步",
@@ -7029,7 +7605,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "24 烘焙模型",
@@ -7039,7 +7616,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "25 方块实体渲染",
@@ -7049,7 +7627,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "26 物品特殊渲染",
@@ -7059,7 +7638,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "27 网络",
@@ -7069,7 +7649,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "28 便利添加创造模式物品栏【可选】",
@@ -7079,7 +7660,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "29 第一个实体",
@@ -7089,7 +7671,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "30 第一个生物",
@@ -7099,7 +7682,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "31 附魔",
@@ -7109,7 +7693,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "32 构建能力",
@@ -7119,7 +7704,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "33 原版提供的能力ItemHander物品处理能力",
@@ -7129,7 +7715,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "34 能力提供附加",
@@ -7139,7 +7726,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "35 LevelSaveData",
@@ -7149,7 +7737,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "36 第一个GUI",
@@ -7159,7 +7748,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "37 menu",
@@ -7169,7 +7759,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "38 HUD",
@@ -7179,7 +7770,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "39 注册热键",
@@ -7189,7 +7781,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "40 流体",
@@ -7199,7 +7792,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "41 饥渴值例子",
@@ -7209,7 +7803,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "42 矿物生成",
@@ -7219,7 +7814,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "43 结构生成",
@@ -7229,7 +7825,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "44 如何添加模组和lib",
@@ -7239,7 +7836,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "45 添加生物群系",
@@ -7249,7 +7847,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "46 添加维度",
@@ -7259,7 +7858,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "47 命令",
@@ -7269,7 +7869,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "48 成就",
@@ -7279,7 +7880,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "49 配置信息设置",
@@ -7289,7 +7891,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "50 药水效果和药水",
@@ -7299,7 +7902,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "51  粒子",
@@ -7309,7 +7913,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "52 声音",
@@ -7319,7 +7924,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         },
         {
           "title": "53 更新到Minecraft 1.20.6版本",
@@ -7329,7 +7935,8 @@
             "Minecraft1_20_4",
             "NeoForge20_3",
             "Tutorial"
-          ]
+          ],
+          "language": "zh"
         }
       ]
     },
@@ -7344,14 +7951,13 @@
           "tags": [
             "KubeJS",
             "Attribute",
-            "LivingEntity",
-            "Modifier",
-            "BaseValue"
+            "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
-          "title": "大脑系统",
+          "title": "Brain",
           "description": "Brain 系统研究中",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -7360,7 +7966,8 @@
             "AI",
             "Research"
           ],
-          "progress": 10
+          "progress": 10,
+          "language": "zh"
         },
         {
           "title": "实体系统目录",
@@ -7372,11 +7979,12 @@
             "Catalogue",
             "Navigation"
           ],
-          "progress": 100
+          "progress": 100,
+          "language": "zh"
         },
         {
-          "title": "AI目标系统",
-          "description": "实体 AI 目标系统操作指南",
+          "title": "Goal",
+          "description": "操作Goal",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
           "tags": [
             "KubeJS",
@@ -7384,7 +7992,8 @@
             "AI",
             "Goal"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "生物实体",
@@ -7397,11 +8006,12 @@
             "Equipment",
             "AI"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "实体方法",
-          "description": "Entity Methods 在 KubeJS 中的完整操作指南",
+          "description": "Entity Methods",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
@@ -7410,7 +8020,8 @@
             "API",
             "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "怪物实体",
@@ -7423,7 +8034,8 @@
             "Pathfinding",
             "Behavior"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "玩家实体",
@@ -7433,7 +8045,8 @@
             "KubeJS",
             "Player"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "药水效果",
@@ -7445,7 +8058,19 @@
             "PotionEffects",
             "StatusEffects"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
+        },
+        {
+          "title": "向量与坐标",
+          "description": "Vector and Coordinates",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Vector",
+          "tags": [
+            "KubeJS",
+            "Vector"
+          ],
+          "progress": 95,
+          "language": "zh"
         },
         {
           "title": "集合接口",
@@ -7457,7 +8082,8 @@
             "Java",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         },
         {
           "title": "列表接口",
@@ -7469,7 +8095,8 @@
             "Array",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         },
         {
           "title": "映射接口",
@@ -7481,7 +8108,8 @@
             "HashMap",
             "键值对"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         },
         {
           "title": "持久化数据",
@@ -7493,19 +8121,8 @@
             "Data",
             "Storage"
           ],
-          "progress": 90
-        },
-        {
-          "title": "字符串工具",
-          "description": "JavaScript/Java String 在 KubeJS 中的使用指南和工具类",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/String",
-          "tags": [
-            "KubeJS",
-            "String",
-            "文本处理",
-            "工具类"
-          ],
-          "progress": 95
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -7520,11 +8137,10 @@
           "tags": [
             "KubeJS",
             "Attribute",
-            "LivingEntity",
-            "Modifier",
-            "BaseValue"
+            "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "生物实体",
@@ -7537,11 +8153,12 @@
             "Equipment",
             "AI"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "实体方法",
-          "description": "Entity Methods 在 KubeJS 中的完整操作指南",
+          "description": "Entity Methods",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
@@ -7550,7 +8167,8 @@
             "API",
             "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "药水效果",
@@ -7562,7 +8180,8 @@
             "PotionEffects",
             "StatusEffects"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -7571,7 +8190,7 @@
       "count": 4,
       "pages": [
         {
-          "title": "大脑系统",
+          "title": "Brain",
           "description": "Brain 系统研究中",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -7580,7 +8199,8 @@
             "AI",
             "Research"
           ],
-          "progress": 10
+          "progress": 10,
+          "language": "zh"
         },
         {
           "title": "实体系统目录",
@@ -7592,11 +8212,12 @@
             "Catalogue",
             "Navigation"
           ],
-          "progress": 100
+          "progress": 100,
+          "language": "zh"
         },
         {
-          "title": "AI目标系统",
-          "description": "实体 AI 目标系统操作指南",
+          "title": "Goal",
+          "description": "操作Goal",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
           "tags": [
             "KubeJS",
@@ -7604,11 +8225,12 @@
             "AI",
             "Goal"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "实体方法",
-          "description": "Entity Methods 在 KubeJS 中的完整操作指南",
+          "description": "Entity Methods",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
@@ -7617,7 +8239,8 @@
             "API",
             "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -7626,7 +8249,7 @@
       "count": 4,
       "pages": [
         {
-          "title": "大脑系统",
+          "title": "Brain",
           "description": "Brain 系统研究中",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -7635,11 +8258,12 @@
             "AI",
             "Research"
           ],
-          "progress": 10
+          "progress": 10,
+          "language": "zh"
         },
         {
-          "title": "AI目标系统",
-          "description": "实体 AI 目标系统操作指南",
+          "title": "Goal",
+          "description": "操作Goal",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
           "tags": [
             "KubeJS",
@@ -7647,7 +8271,8 @@
             "AI",
             "Goal"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "生物实体",
@@ -7660,7 +8285,8 @@
             "Equipment",
             "AI"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         },
         {
           "title": "怪物实体",
@@ -7673,7 +8299,8 @@
             "Pathfinding",
             "Behavior"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -7691,7 +8318,8 @@
             "Java",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         },
         {
           "title": "列表接口",
@@ -7703,7 +8331,8 @@
             "Array",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -7716,7 +8345,8 @@
           "path": "/zh/doc/samples",
           "tags": [
             "sample"
-          ]
+          ],
+          "language": "zh"
         }
       ]
     },
@@ -7731,49 +8361,10 @@
           "tags": [
             "KubeJS",
             "Attribute",
-            "LivingEntity",
-            "Modifier",
-            "BaseValue"
+            "LivingEntity"
           ],
-          "progress": 90
-        }
-      ]
-    },
-    {
-      "name": "Modifier",
-      "count": 1,
-      "pages": [
-        {
-          "title": "实体属性",
-          "description": "Attribute 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Attribute",
-          "tags": [
-            "KubeJS",
-            "Attribute",
-            "LivingEntity",
-            "Modifier",
-            "BaseValue"
-          ],
-          "progress": 90
-        }
-      ]
-    },
-    {
-      "name": "BaseValue",
-      "count": 1,
-      "pages": [
-        {
-          "title": "实体属性",
-          "description": "Attribute 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Attribute",
-          "tags": [
-            "KubeJS",
-            "Attribute",
-            "LivingEntity",
-            "Modifier",
-            "BaseValue"
-          ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -7782,7 +8373,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "大脑系统",
+          "title": "Brain",
           "description": "Brain 系统研究中",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -7791,7 +8382,8 @@
             "AI",
             "Research"
           ],
-          "progress": 10
+          "progress": 10,
+          "language": "zh"
         }
       ]
     },
@@ -7809,7 +8401,8 @@
             "Catalogue",
             "Navigation"
           ],
-          "progress": 100
+          "progress": 100,
+          "language": "zh"
         }
       ]
     },
@@ -7827,7 +8420,8 @@
             "Catalogue",
             "Navigation"
           ],
-          "progress": 100
+          "progress": 100,
+          "language": "zh"
         }
       ]
     },
@@ -7836,8 +8430,8 @@
       "count": 1,
       "pages": [
         {
-          "title": "AI目标系统",
-          "description": "实体 AI 目标系统操作指南",
+          "title": "Goal",
+          "description": "操作Goal",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
           "tags": [
             "KubeJS",
@@ -7845,7 +8439,8 @@
             "AI",
             "Goal"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -7864,7 +8459,8 @@
             "Equipment",
             "AI"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -7883,7 +8479,8 @@
             "Equipment",
             "AI"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -7893,7 +8490,7 @@
       "pages": [
         {
           "title": "实体方法",
-          "description": "Entity Methods 在 KubeJS 中的完整操作指南",
+          "description": "Entity Methods",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
@@ -7902,7 +8499,8 @@
             "API",
             "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -7912,7 +8510,7 @@
       "pages": [
         {
           "title": "实体方法",
-          "description": "Entity Methods 在 KubeJS 中的完整操作指南",
+          "description": "Entity Methods",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
@@ -7921,7 +8519,8 @@
             "API",
             "LivingEntity"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -7940,7 +8539,8 @@
             "Pathfinding",
             "Behavior"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -7959,7 +8559,8 @@
             "Pathfinding",
             "Behavior"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -7978,7 +8579,8 @@
             "Pathfinding",
             "Behavior"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -7994,7 +8596,8 @@
             "KubeJS",
             "Player"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -8012,7 +8615,8 @@
             "PotionEffects",
             "StatusEffects"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -8030,7 +8634,25 @@
             "PotionEffects",
             "StatusEffects"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
+        }
+      ]
+    },
+    {
+      "name": "Vector",
+      "count": 1,
+      "pages": [
+        {
+          "title": "向量与坐标",
+          "description": "Vector and Coordinates",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Vector",
+          "tags": [
+            "KubeJS",
+            "Vector"
+          ],
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -8048,7 +8670,8 @@
             "Java",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -8066,7 +8689,8 @@
             "Java",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -8084,7 +8708,8 @@
             "Array",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -8102,7 +8727,8 @@
             "Array",
             "数据结构"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -8120,7 +8746,8 @@
             "HashMap",
             "键值对"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -8138,7 +8765,8 @@
             "HashMap",
             "键值对"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -8156,7 +8784,8 @@
             "HashMap",
             "键值对"
           ],
-          "progress": 95
+          "progress": 95,
+          "language": "zh"
         }
       ]
     },
@@ -8174,7 +8803,8 @@
             "Data",
             "Storage"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -8192,7 +8822,8 @@
             "Data",
             "Storage"
           ],
-          "progress": 90
+          "progress": 90,
+          "language": "zh"
         }
       ]
     },
@@ -8210,66 +8841,14 @@
             "Data",
             "Storage"
           ],
-          "progress": 90
-        }
-      ]
-    },
-    {
-      "name": "String",
-      "count": 1,
-      "pages": [
-        {
-          "title": "字符串工具",
-          "description": "JavaScript/Java String 在 KubeJS 中的使用指南和工具类",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/String",
-          "tags": [
-            "KubeJS",
-            "String",
-            "文本处理",
-            "工具类"
-          ],
-          "progress": 95
-        }
-      ]
-    },
-    {
-      "name": "文本处理",
-      "count": 1,
-      "pages": [
-        {
-          "title": "字符串工具",
-          "description": "JavaScript/Java String 在 KubeJS 中的使用指南和工具类",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/String",
-          "tags": [
-            "KubeJS",
-            "String",
-            "文本处理",
-            "工具类"
-          ],
-          "progress": 95
-        }
-      ]
-    },
-    {
-      "name": "工具类",
-      "count": 1,
-      "pages": [
-        {
-          "title": "字符串工具",
-          "description": "JavaScript/Java String 在 KubeJS 中的使用指南和工具类",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/String",
-          "tags": [
-            "KubeJS",
-            "String",
-            "文本处理",
-            "工具类"
-          ],
-          "progress": 95
+          "progress": 90,
+          "language": "zh"
         }
       ]
     }
   ],
-  "totalTags": 39,
-  "totalPages": 377,
-  "generatedAt": "2025-06-26T06:17:37.122Z"
+  "totalTags": 35,
+  "totalPages": 373,
+  "language": null,
+  "generatedAt": "2025-06-26T08:27:57.065Z"
 }
