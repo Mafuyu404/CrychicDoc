@@ -3532,7 +3532,7 @@
     },
     "KubeJS": {
       "name": "KubeJS",
-      "count": 14,
+      "count": 15,
       "pages": [
         {
           "title": "实体属性",
@@ -3547,95 +3547,87 @@
           "language": "zh"
         },
         {
-          "title": "Brain",
-          "description": "Brain 系统研究中",
+          "title": "Brain（AI 大脑）",
+          "description": "实体 AI Brain 系统机制、KubeJS 支持现状与用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
             "KubeJS",
             "Entity",
-            "AI",
-            "Research"
+            "Brain",
+            "AI"
           ],
-          "progress": 10,
+          "progress": 60,
           "language": "zh"
         },
         {
           "title": "实体系统目录",
-          "description": "KubeJS 实体系统完整文档目录",
+          "description": "KubeJS 实体系统相关文档导航与索引",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
           "tags": [
             "KubeJS",
-            "Entity",
-            "Catalogue",
-            "Navigation"
+            "Entity"
           ],
-          "progress": 100,
+          "progress": 70,
           "language": "zh"
         },
         {
           "title": "Goal",
-          "description": "操作Goal",
+          "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
           "tags": [
             "KubeJS",
             "Entity",
-            "AI",
             "Goal"
           ],
           "progress": 90,
           "language": "zh"
         },
         {
-          "title": "生物实体",
-          "description": "LivingEntity 在 KubeJS 中的完整操作指南",
+          "title": "LivingEntity（有生命实体）",
+          "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
           "tags": [
             "KubeJS",
-            "LivingEntity",
-            "Health",
-            "Equipment",
-            "AI"
+            "Entity",
+            "LivingEntity"
           ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         },
         {
-          "title": "实体方法",
-          "description": "Entity Methods",
+          "title": "实体常用方法",
+          "description": "KubeJS 实体 API 常用方法分类与用法参考",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
             "Entity",
-            "Methods",
-            "API",
-            "LivingEntity"
+            "Methods"
           ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         },
         {
-          "title": "怪物实体",
-          "description": "Mob 在 KubeJS 中的完整操作指南",
+          "title": "Mob（生物）",
+          "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
           "tags": [
             "KubeJS",
-            "Mob",
-            "AI",
-            "Pathfinding",
-            "Behavior"
+            "Entity",
+            "Mob"
           ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         },
         {
-          "title": "玩家实体",
-          "description": "Player 在 KubeJS 中的完整操作指南",
+          "title": "Player（玩家）",
+          "description": "Player 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
           "tags": [
             "KubeJS",
+            "Entity",
             "Player"
           ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         },
         {
@@ -3645,10 +3637,18 @@
           "tags": [
             "KubeJS",
             "LivingEntity",
-            "PotionEffects",
-            "StatusEffects"
+            "PotionEffects"
           ],
           "progress": 90,
+          "language": "zh"
+        },
+        {
+          "title": "生成实体",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Spawn",
+          "tags": [
+            "KubeJS",
+            "Entity"
+          ],
           "language": "zh"
         },
         {
@@ -3736,7 +3736,7 @@
     },
     "LivingEntity": {
       "name": "LivingEntity",
-      "count": 4,
+      "count": 3,
       "pages": [
         {
           "title": "实体属性",
@@ -3751,31 +3751,15 @@
           "language": "zh"
         },
         {
-          "title": "生物实体",
-          "description": "LivingEntity 在 KubeJS 中的完整操作指南",
+          "title": "LivingEntity（有生命实体）",
+          "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
           "tags": [
             "KubeJS",
-            "LivingEntity",
-            "Health",
-            "Equipment",
-            "AI"
-          ],
-          "progress": 90,
-          "language": "zh"
-        },
-        {
-          "title": "实体方法",
-          "description": "Entity Methods",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
-          "tags": [
-            "KubeJS",
             "Entity",
-            "Methods",
-            "API",
             "LivingEntity"
           ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         },
         {
@@ -3785,8 +3769,7 @@
           "tags": [
             "KubeJS",
             "LivingEntity",
-            "PotionEffects",
-            "StatusEffects"
+            "PotionEffects"
           ],
           "progress": 90,
           "language": "zh"
@@ -3795,176 +3778,137 @@
     },
     "Entity": {
       "name": "Entity",
-      "count": 4,
+      "count": 8,
       "pages": [
         {
-          "title": "Brain",
-          "description": "Brain 系统研究中",
+          "title": "Brain（AI 大脑）",
+          "description": "实体 AI Brain 系统机制、KubeJS 支持现状与用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
             "KubeJS",
             "Entity",
-            "AI",
-            "Research"
+            "Brain",
+            "AI"
           ],
-          "progress": 10,
+          "progress": 60,
           "language": "zh"
         },
         {
           "title": "实体系统目录",
-          "description": "KubeJS 实体系统完整文档目录",
+          "description": "KubeJS 实体系统相关文档导航与索引",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
           "tags": [
             "KubeJS",
-            "Entity",
-            "Catalogue",
-            "Navigation"
+            "Entity"
           ],
-          "progress": 100,
+          "progress": 70,
           "language": "zh"
         },
         {
           "title": "Goal",
-          "description": "操作Goal",
+          "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
           "tags": [
             "KubeJS",
             "Entity",
-            "AI",
             "Goal"
           ],
           "progress": 90,
           "language": "zh"
         },
         {
-          "title": "实体方法",
-          "description": "Entity Methods",
+          "title": "LivingEntity（有生命实体）",
+          "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 80,
+          "language": "zh"
+        },
+        {
+          "title": "实体常用方法",
+          "description": "KubeJS 实体 API 常用方法分类与用法参考",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
             "Entity",
-            "Methods",
-            "API",
-            "LivingEntity"
+            "Methods"
           ],
-          "progress": 90,
+          "progress": 80,
+          "language": "zh"
+        },
+        {
+          "title": "Mob（生物）",
+          "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 80,
+          "language": "zh"
+        },
+        {
+          "title": "Player（玩家）",
+          "description": "Player 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "zh"
+        },
+        {
+          "title": "生成实体",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Spawn",
+          "tags": [
+            "KubeJS",
+            "Entity"
+          ],
+          "language": "zh"
+        }
+      ]
+    },
+    "Brain": {
+      "name": "Brain",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Brain（AI 大脑）",
+          "description": "实体 AI Brain 系统机制、KubeJS 支持现状与用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Brain",
+            "AI"
+          ],
+          "progress": 60,
           "language": "zh"
         }
       ]
     },
     "AI": {
       "name": "AI",
-      "count": 4,
+      "count": 1,
       "pages": [
         {
-          "title": "Brain",
-          "description": "Brain 系统研究中",
+          "title": "Brain（AI 大脑）",
+          "description": "实体 AI Brain 系统机制、KubeJS 支持现状与用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
             "KubeJS",
             "Entity",
-            "AI",
-            "Research"
-          ],
-          "progress": 10,
-          "language": "zh"
-        },
-        {
-          "title": "Goal",
-          "description": "操作Goal",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
-          "tags": [
-            "KubeJS",
-            "Entity",
-            "AI",
-            "Goal"
-          ],
-          "progress": 90,
-          "language": "zh"
-        },
-        {
-          "title": "生物实体",
-          "description": "LivingEntity 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
-          "tags": [
-            "KubeJS",
-            "LivingEntity",
-            "Health",
-            "Equipment",
+            "Brain",
             "AI"
           ],
-          "progress": 90,
-          "language": "zh"
-        },
-        {
-          "title": "怪物实体",
-          "description": "Mob 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
-          "tags": [
-            "KubeJS",
-            "Mob",
-            "AI",
-            "Pathfinding",
-            "Behavior"
-          ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    "Research": {
-      "name": "Research",
-      "count": 1,
-      "pages": [
-        {
-          "title": "Brain",
-          "description": "Brain 系统研究中",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
-          "tags": [
-            "KubeJS",
-            "Entity",
-            "AI",
-            "Research"
-          ],
-          "progress": 10,
-          "language": "zh"
-        }
-      ]
-    },
-    "Catalogue": {
-      "name": "Catalogue",
-      "count": 1,
-      "pages": [
-        {
-          "title": "实体系统目录",
-          "description": "KubeJS 实体系统完整文档目录",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
-          "tags": [
-            "KubeJS",
-            "Entity",
-            "Catalogue",
-            "Navigation"
-          ],
-          "progress": 100,
-          "language": "zh"
-        }
-      ]
-    },
-    "Navigation": {
-      "name": "Navigation",
-      "count": 1,
-      "pages": [
-        {
-          "title": "实体系统目录",
-          "description": "KubeJS 实体系统完整文档目录",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
-          "tags": [
-            "KubeJS",
-            "Entity",
-            "Catalogue",
-            "Navigation"
-          ],
-          "progress": 100,
+          "progress": 60,
           "language": "zh"
         }
       ]
@@ -3975,53 +3919,12 @@
       "pages": [
         {
           "title": "Goal",
-          "description": "操作Goal",
+          "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
           "tags": [
             "KubeJS",
             "Entity",
-            "AI",
             "Goal"
-          ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    "Health": {
-      "name": "Health",
-      "count": 1,
-      "pages": [
-        {
-          "title": "生物实体",
-          "description": "LivingEntity 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
-          "tags": [
-            "KubeJS",
-            "LivingEntity",
-            "Health",
-            "Equipment",
-            "AI"
-          ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    "Equipment": {
-      "name": "Equipment",
-      "count": 1,
-      "pages": [
-        {
-          "title": "生物实体",
-          "description": "LivingEntity 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
-          "tags": [
-            "KubeJS",
-            "LivingEntity",
-            "Health",
-            "Equipment",
-            "AI"
           ],
           "progress": 90,
           "language": "zh"
@@ -4033,37 +3936,15 @@
       "count": 1,
       "pages": [
         {
-          "title": "实体方法",
-          "description": "Entity Methods",
+          "title": "实体常用方法",
+          "description": "KubeJS 实体 API 常用方法分类与用法参考",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
             "Entity",
-            "Methods",
-            "API",
-            "LivingEntity"
+            "Methods"
           ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    "API": {
-      "name": "API",
-      "count": 1,
-      "pages": [
-        {
-          "title": "实体方法",
-          "description": "Entity Methods",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
-          "tags": [
-            "KubeJS",
-            "Entity",
-            "Methods",
-            "API",
-            "LivingEntity"
-          ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         }
       ]
@@ -4073,57 +3954,15 @@
       "count": 1,
       "pages": [
         {
-          "title": "怪物实体",
-          "description": "Mob 在 KubeJS 中的完整操作指南",
+          "title": "Mob（生物）",
+          "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
           "tags": [
             "KubeJS",
-            "Mob",
-            "AI",
-            "Pathfinding",
-            "Behavior"
+            "Entity",
+            "Mob"
           ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    "Pathfinding": {
-      "name": "Pathfinding",
-      "count": 1,
-      "pages": [
-        {
-          "title": "怪物实体",
-          "description": "Mob 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
-          "tags": [
-            "KubeJS",
-            "Mob",
-            "AI",
-            "Pathfinding",
-            "Behavior"
-          ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    "Behavior": {
-      "name": "Behavior",
-      "count": 1,
-      "pages": [
-        {
-          "title": "怪物实体",
-          "description": "Mob 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
-          "tags": [
-            "KubeJS",
-            "Mob",
-            "AI",
-            "Pathfinding",
-            "Behavior"
-          ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         }
       ]
@@ -4133,14 +3972,15 @@
       "count": 1,
       "pages": [
         {
-          "title": "玩家实体",
-          "description": "Player 在 KubeJS 中的完整操作指南",
+          "title": "Player（玩家）",
+          "description": "Player 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
           "tags": [
             "KubeJS",
+            "Entity",
             "Player"
           ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         }
       ]
@@ -4156,27 +3996,7 @@
           "tags": [
             "KubeJS",
             "LivingEntity",
-            "PotionEffects",
-            "StatusEffects"
-          ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    "StatusEffects": {
-      "name": "StatusEffects",
-      "count": 1,
-      "pages": [
-        {
-          "title": "药水效果",
-          "description": "LivingEntity 药水效果系统完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/PotionEffects",
-          "tags": [
-            "KubeJS",
-            "LivingEntity",
-            "PotionEffects",
-            "StatusEffects"
+            "PotionEffects"
           ],
           "progress": 90,
           "language": "zh"
@@ -7942,7 +7762,7 @@
     },
     {
       "name": "KubeJS",
-      "count": 14,
+      "count": 15,
       "pages": [
         {
           "title": "实体属性",
@@ -7957,95 +7777,87 @@
           "language": "zh"
         },
         {
-          "title": "Brain",
-          "description": "Brain 系统研究中",
+          "title": "Brain（AI 大脑）",
+          "description": "实体 AI Brain 系统机制、KubeJS 支持现状与用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
             "KubeJS",
             "Entity",
-            "AI",
-            "Research"
+            "Brain",
+            "AI"
           ],
-          "progress": 10,
+          "progress": 60,
           "language": "zh"
         },
         {
           "title": "实体系统目录",
-          "description": "KubeJS 实体系统完整文档目录",
+          "description": "KubeJS 实体系统相关文档导航与索引",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
           "tags": [
             "KubeJS",
-            "Entity",
-            "Catalogue",
-            "Navigation"
+            "Entity"
           ],
-          "progress": 100,
+          "progress": 70,
           "language": "zh"
         },
         {
           "title": "Goal",
-          "description": "操作Goal",
+          "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
           "tags": [
             "KubeJS",
             "Entity",
-            "AI",
             "Goal"
           ],
           "progress": 90,
           "language": "zh"
         },
         {
-          "title": "生物实体",
-          "description": "LivingEntity 在 KubeJS 中的完整操作指南",
+          "title": "LivingEntity（有生命实体）",
+          "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
           "tags": [
             "KubeJS",
-            "LivingEntity",
-            "Health",
-            "Equipment",
-            "AI"
+            "Entity",
+            "LivingEntity"
           ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         },
         {
-          "title": "实体方法",
-          "description": "Entity Methods",
+          "title": "实体常用方法",
+          "description": "KubeJS 实体 API 常用方法分类与用法参考",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
             "Entity",
-            "Methods",
-            "API",
-            "LivingEntity"
+            "Methods"
           ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         },
         {
-          "title": "怪物实体",
-          "description": "Mob 在 KubeJS 中的完整操作指南",
+          "title": "Mob（生物）",
+          "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
           "tags": [
             "KubeJS",
-            "Mob",
-            "AI",
-            "Pathfinding",
-            "Behavior"
+            "Entity",
+            "Mob"
           ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         },
         {
-          "title": "玩家实体",
-          "description": "Player 在 KubeJS 中的完整操作指南",
+          "title": "Player（玩家）",
+          "description": "Player 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
           "tags": [
             "KubeJS",
+            "Entity",
             "Player"
           ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         },
         {
@@ -8055,10 +7867,18 @@
           "tags": [
             "KubeJS",
             "LivingEntity",
-            "PotionEffects",
-            "StatusEffects"
+            "PotionEffects"
           ],
           "progress": 90,
+          "language": "zh"
+        },
+        {
+          "title": "生成实体",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Spawn",
+          "tags": [
+            "KubeJS",
+            "Entity"
+          ],
           "language": "zh"
         },
         {
@@ -8127,8 +7947,107 @@
       ]
     },
     {
+      "name": "Entity",
+      "count": 8,
+      "pages": [
+        {
+          "title": "Brain（AI 大脑）",
+          "description": "实体 AI Brain 系统机制、KubeJS 支持现状与用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Brain",
+            "AI"
+          ],
+          "progress": 60,
+          "language": "zh"
+        },
+        {
+          "title": "实体系统目录",
+          "description": "KubeJS 实体系统相关文档导航与索引",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
+          "tags": [
+            "KubeJS",
+            "Entity"
+          ],
+          "progress": 70,
+          "language": "zh"
+        },
+        {
+          "title": "Goal",
+          "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Goal"
+          ],
+          "progress": 90,
+          "language": "zh"
+        },
+        {
+          "title": "LivingEntity（有生命实体）",
+          "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 80,
+          "language": "zh"
+        },
+        {
+          "title": "实体常用方法",
+          "description": "KubeJS 实体 API 常用方法分类与用法参考",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Methods"
+          ],
+          "progress": 80,
+          "language": "zh"
+        },
+        {
+          "title": "Mob（生物）",
+          "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 80,
+          "language": "zh"
+        },
+        {
+          "title": "Player（玩家）",
+          "description": "Player 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "zh"
+        },
+        {
+          "title": "生成实体",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Spawn",
+          "tags": [
+            "KubeJS",
+            "Entity"
+          ],
+          "language": "zh"
+        }
+      ]
+    },
+    {
       "name": "LivingEntity",
-      "count": 4,
+      "count": 3,
       "pages": [
         {
           "title": "实体属性",
@@ -8143,31 +8062,15 @@
           "language": "zh"
         },
         {
-          "title": "生物实体",
-          "description": "LivingEntity 在 KubeJS 中的完整操作指南",
+          "title": "LivingEntity（有生命实体）",
+          "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
           "tags": [
             "KubeJS",
-            "LivingEntity",
-            "Health",
-            "Equipment",
-            "AI"
-          ],
-          "progress": 90,
-          "language": "zh"
-        },
-        {
-          "title": "实体方法",
-          "description": "Entity Methods",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
-          "tags": [
-            "KubeJS",
             "Entity",
-            "Methods",
-            "API",
             "LivingEntity"
           ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         },
         {
@@ -8177,127 +8080,7 @@
           "tags": [
             "KubeJS",
             "LivingEntity",
-            "PotionEffects",
-            "StatusEffects"
-          ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    {
-      "name": "Entity",
-      "count": 4,
-      "pages": [
-        {
-          "title": "Brain",
-          "description": "Brain 系统研究中",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
-          "tags": [
-            "KubeJS",
-            "Entity",
-            "AI",
-            "Research"
-          ],
-          "progress": 10,
-          "language": "zh"
-        },
-        {
-          "title": "实体系统目录",
-          "description": "KubeJS 实体系统完整文档目录",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
-          "tags": [
-            "KubeJS",
-            "Entity",
-            "Catalogue",
-            "Navigation"
-          ],
-          "progress": 100,
-          "language": "zh"
-        },
-        {
-          "title": "Goal",
-          "description": "操作Goal",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
-          "tags": [
-            "KubeJS",
-            "Entity",
-            "AI",
-            "Goal"
-          ],
-          "progress": 90,
-          "language": "zh"
-        },
-        {
-          "title": "实体方法",
-          "description": "Entity Methods",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
-          "tags": [
-            "KubeJS",
-            "Entity",
-            "Methods",
-            "API",
-            "LivingEntity"
-          ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    {
-      "name": "AI",
-      "count": 4,
-      "pages": [
-        {
-          "title": "Brain",
-          "description": "Brain 系统研究中",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
-          "tags": [
-            "KubeJS",
-            "Entity",
-            "AI",
-            "Research"
-          ],
-          "progress": 10,
-          "language": "zh"
-        },
-        {
-          "title": "Goal",
-          "description": "操作Goal",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
-          "tags": [
-            "KubeJS",
-            "Entity",
-            "AI",
-            "Goal"
-          ],
-          "progress": 90,
-          "language": "zh"
-        },
-        {
-          "title": "生物实体",
-          "description": "LivingEntity 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
-          "tags": [
-            "KubeJS",
-            "LivingEntity",
-            "Health",
-            "Equipment",
-            "AI"
-          ],
-          "progress": 90,
-          "language": "zh"
-        },
-        {
-          "title": "怪物实体",
-          "description": "Mob 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
-          "tags": [
-            "KubeJS",
-            "Mob",
-            "AI",
-            "Pathfinding",
-            "Behavior"
+            "PotionEffects"
           ],
           "progress": 90,
           "language": "zh"
@@ -8369,58 +8152,39 @@
       ]
     },
     {
-      "name": "Research",
+      "name": "Brain",
       "count": 1,
       "pages": [
         {
-          "title": "Brain",
-          "description": "Brain 系统研究中",
+          "title": "Brain（AI 大脑）",
+          "description": "实体 AI Brain 系统机制、KubeJS 支持现状与用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
             "KubeJS",
             "Entity",
-            "AI",
-            "Research"
+            "Brain",
+            "AI"
           ],
-          "progress": 10,
+          "progress": 60,
           "language": "zh"
         }
       ]
     },
     {
-      "name": "Catalogue",
+      "name": "AI",
       "count": 1,
       "pages": [
         {
-          "title": "实体系统目录",
-          "description": "KubeJS 实体系统完整文档目录",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
+          "title": "Brain（AI 大脑）",
+          "description": "实体 AI Brain 系统机制、KubeJS 支持现状与用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
             "KubeJS",
             "Entity",
-            "Catalogue",
-            "Navigation"
+            "Brain",
+            "AI"
           ],
-          "progress": 100,
-          "language": "zh"
-        }
-      ]
-    },
-    {
-      "name": "Navigation",
-      "count": 1,
-      "pages": [
-        {
-          "title": "实体系统目录",
-          "description": "KubeJS 实体系统完整文档目录",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
-          "tags": [
-            "KubeJS",
-            "Entity",
-            "Catalogue",
-            "Navigation"
-          ],
-          "progress": 100,
+          "progress": 60,
           "language": "zh"
         }
       ]
@@ -8431,53 +8195,12 @@
       "pages": [
         {
           "title": "Goal",
-          "description": "操作Goal",
+          "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
           "tags": [
             "KubeJS",
             "Entity",
-            "AI",
             "Goal"
-          ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    {
-      "name": "Health",
-      "count": 1,
-      "pages": [
-        {
-          "title": "生物实体",
-          "description": "LivingEntity 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
-          "tags": [
-            "KubeJS",
-            "LivingEntity",
-            "Health",
-            "Equipment",
-            "AI"
-          ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    {
-      "name": "Equipment",
-      "count": 1,
-      "pages": [
-        {
-          "title": "生物实体",
-          "description": "LivingEntity 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
-          "tags": [
-            "KubeJS",
-            "LivingEntity",
-            "Health",
-            "Equipment",
-            "AI"
           ],
           "progress": 90,
           "language": "zh"
@@ -8489,37 +8212,15 @@
       "count": 1,
       "pages": [
         {
-          "title": "实体方法",
-          "description": "Entity Methods",
+          "title": "实体常用方法",
+          "description": "KubeJS 实体 API 常用方法分类与用法参考",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
             "KubeJS",
             "Entity",
-            "Methods",
-            "API",
-            "LivingEntity"
+            "Methods"
           ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    {
-      "name": "API",
-      "count": 1,
-      "pages": [
-        {
-          "title": "实体方法",
-          "description": "Entity Methods",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
-          "tags": [
-            "KubeJS",
-            "Entity",
-            "Methods",
-            "API",
-            "LivingEntity"
-          ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         }
       ]
@@ -8529,57 +8230,15 @@
       "count": 1,
       "pages": [
         {
-          "title": "怪物实体",
-          "description": "Mob 在 KubeJS 中的完整操作指南",
+          "title": "Mob（生物）",
+          "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
           "tags": [
             "KubeJS",
-            "Mob",
-            "AI",
-            "Pathfinding",
-            "Behavior"
+            "Entity",
+            "Mob"
           ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    {
-      "name": "Pathfinding",
-      "count": 1,
-      "pages": [
-        {
-          "title": "怪物实体",
-          "description": "Mob 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
-          "tags": [
-            "KubeJS",
-            "Mob",
-            "AI",
-            "Pathfinding",
-            "Behavior"
-          ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    {
-      "name": "Behavior",
-      "count": 1,
-      "pages": [
-        {
-          "title": "怪物实体",
-          "description": "Mob 在 KubeJS 中的完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
-          "tags": [
-            "KubeJS",
-            "Mob",
-            "AI",
-            "Pathfinding",
-            "Behavior"
-          ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         }
       ]
@@ -8589,14 +8248,15 @@
       "count": 1,
       "pages": [
         {
-          "title": "玩家实体",
-          "description": "Player 在 KubeJS 中的完整操作指南",
+          "title": "Player（玩家）",
+          "description": "Player 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
           "tags": [
             "KubeJS",
+            "Entity",
             "Player"
           ],
-          "progress": 90,
+          "progress": 80,
           "language": "zh"
         }
       ]
@@ -8612,27 +8272,7 @@
           "tags": [
             "KubeJS",
             "LivingEntity",
-            "PotionEffects",
-            "StatusEffects"
-          ],
-          "progress": 90,
-          "language": "zh"
-        }
-      ]
-    },
-    {
-      "name": "StatusEffects",
-      "count": 1,
-      "pages": [
-        {
-          "title": "药水效果",
-          "description": "LivingEntity 药水效果系统完整操作指南",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/PotionEffects",
-          "tags": [
-            "KubeJS",
-            "LivingEntity",
-            "PotionEffects",
-            "StatusEffects"
+            "PotionEffects"
           ],
           "progress": 90,
           "language": "zh"
@@ -8847,8 +8487,8 @@
       ]
     }
   ],
-  "totalTags": 35,
-  "totalPages": 373,
+  "totalTags": 27,
+  "totalPages": 366,
   "language": null,
-  "generatedAt": "2025-06-26T08:27:57.065Z"
+  "generatedAt": "2025-06-26T11:53:49.148Z"
 }

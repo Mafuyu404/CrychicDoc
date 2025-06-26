@@ -79,3 +79,4 @@
 /* Tag badge styles are now in the global CSS file */
 /* This allows for easier color customization via CSS variables */
 </style>
+ 

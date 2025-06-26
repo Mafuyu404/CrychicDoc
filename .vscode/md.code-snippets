@@ -5,7 +5,7 @@
     // if you change the prefix, you need to mofiy the documents
     // English bersion: doc/en/doc/vscode-snippets-guide.md
     // Chinese bersion: doc/zh/doc/vscode-snippets-guide.md
-    
+
     "@Page Template": {
         "prefix": "@page-template",
         "body": [
@@ -21,7 +21,7 @@
         ],
         "description": "Scaffold a standard VitePress documentation page."
     },
-    
+
     "@Root Section Template": {
         "prefix": "@root-template",
         "body": [
@@ -29,7 +29,7 @@
             "root: true",
             "title: ${1:Section Title}",
             "collapsed: ${2|true,false|}",
-            "layout: doc", 
+            "layout: doc",
             "prev: false",
             "next: false",
             "---",
@@ -40,18 +40,13 @@
         ],
         "description": "Scaffold a new root section for the sidebar."
     },
-    
+
     "@Frontmatter Block": {
         "prefix": "@frontmatter",
-        "body": [
-            "---",
-            "${1:key}: ${2:value}",
-            "---",
-            "$0"
-        ],
+        "body": ["---", "${1:key}: ${2:value}", "---", "$0"],
         "description": "Insert a basic frontmatter block."
     },
-    
+
     "@Frontmatter Complete": {
         "prefix": "@frontmatter-complete",
         "body": [
@@ -77,7 +72,7 @@
     },
 
     // ---------- Individual Frontmatter Fields ----------
-    
+
     "@fm: Title": {
         "prefix": "@fm-title",
         "body": ["title: ${1:Page Title}"],
@@ -110,10 +105,7 @@
     },
     "@fm: Prev/Next": {
         "prefix": "@fm-prevnext",
-        "body": [
-            "prev: ${1|false,true|}",
-            "next: ${2|false,true|}"
-        ],
+        "body": ["prev: ${1|false,true|}", "next: ${2|false,true|}"],
         "description": "Frontmatter: Set previous/next page navigation."
     },
     "@fm: Authors": {
@@ -133,30 +125,24 @@
     },
     "@fm: State": {
         "prefix": "@fm-state",
-        "body": ["state: ${1|preliminary,unfinished,outdated,renovating,published|}"],
+        "body": [
+            "state: ${1|preliminary,unfinished,outdated,renovating,published|}"
+        ],
         "description": "Frontmatter: Set the document's state."
     },
 
     // ===================================================================
     // ============== VITEPRESS BUILT-IN MARKDOWN FEATURES ===============
     // ===================================================================
-    
+
     "@vp: Info Container": {
         "prefix": "@vp-info",
-        "body": [
-            "::: info ${1:Info Title}",
-            "${2:Info content}",
-            ":::"
-        ],
+        "body": ["::: info ${1:Info Title}", "${2:Info content}", ":::"],
         "description": "VitePress info container."
     },
     "@vp: Tip Container": {
         "prefix": "@vp-tip",
-        "body": [
-            "::: tip ${1:Tip Title}",
-            "${2:Tip content}",
-            ":::"
-        ],
+        "body": ["::: tip ${1:Tip Title}", "${2:Tip content}", ":::"],
         "description": "VitePress tip container."
     },
     "@vp: Warning Container": {
@@ -170,11 +156,7 @@
     },
     "@vp: Danger Container": {
         "prefix": "@vp-danger",
-        "body": [
-            "::: danger ${1:Danger Title}",
-            "${2:Danger content}",
-            ":::"
-        ],
+        "body": ["::: danger ${1:Danger Title}", "${2:Danger content}", ":::"],
         "description": "VitePress danger container."
     },
     "@vp: Details Container": {
@@ -214,14 +196,10 @@
     },
     "@vp: Code with Highlighting": {
         "prefix": "@vp-codehighlight",
-        "body": [
-            "```${1:js}{${2:2-4,6}}",
-            "${3:// Highlighted lines}",
-            "```"
-        ],
+        "body": ["```${1:js}{${2:2-4,6}}", "${3:// Highlighted lines}", "```"],
         "description": "Code block with specific lines highlighted."
     },
-    
+
     // ===================================================================
     // ================ CUSTOM PLUGINS & COMPONENTS ======================
     // ===================================================================
@@ -241,9 +219,7 @@
     },
     "@Dialog Trigger": {
         "prefix": "@dialog-trigger",
-        "body": [
-            ":::dialog#${1:my-dialog-id} ${2:Click here}:::"
-        ],
+        "body": [":::dialog#${1:my-dialog-id} ${2:Click here}:::"],
         "description": "Inline trigger for a dialog."
     },
     "@Dialog Full": {
@@ -262,7 +238,7 @@
         ],
         "description": "Complete dialog definition and trigger inside a demo block."
     },
-    
+
     // ---------- Alert Plugin ----------
     // Legacy v-alert format (kept for compatibility)
     "@Alert": {
@@ -276,38 +252,22 @@
     },
     "@Alert Success": {
         "prefix": "@alert-success",
-        "body": [
-            "::: v-success ${1:Success}",
-            "${2:Success message}",
-            ":::"
-        ],
+        "body": ["::: v-success ${1:Success}", "${2:Success message}", ":::"],
         "description": "Success alert (legacy format)."
     },
     "@Alert Info": {
         "prefix": "@alert-info",
-        "body": [
-            "::: v-info ${1:Information}",
-            "${2:Info message}",
-            ":::"
-        ],
+        "body": ["::: v-info ${1:Information}", "${2:Info message}", ":::"],
         "description": "Info alert (legacy format)."
     },
     "@Alert Warning": {
         "prefix": "@alert-warning",
-        "body": [
-            "::: v-warning ${1:Warning}",
-            "${2:Warning message}",
-            ":::"
-        ],
+        "body": ["::: v-warning ${1:Warning}", "${2:Warning message}", ":::"],
         "description": "Warning alert (legacy format)."
     },
     "@Alert Error": {
         "prefix": "@alert-error",
-        "body": [
-            "::: v-error ${1:Error}",
-            "${2:Error message}",
-            ":::"
-        ],
+        "body": ["::: v-error ${1:Error}", "${2:Error message}", ":::"],
         "description": "Error alert (legacy format)."
     },
 
@@ -430,7 +390,9 @@
     },
     "@Alert Config: Variant": {
         "prefix": "@alert-config-variant",
-        "body": ["\"variant\": \"${1|flat,elevated,tonal,outlined,text,plain|}\""],
+        "body": [
+            "\"variant\": \"${1|flat,elevated,tonal,outlined,text,plain|}\""
+        ],
         "description": "Alert variant property."
     },
     "@Alert Config: Density": {
@@ -465,10 +427,12 @@
     },
     "@Alert Config: Theme Colors": {
         "prefix": "@alert-config-theme-colors",
-        "body": ["\"lightColor\": \"${1:#e8f5e8}\", \"darkColor\": \"${2:#2d4a2d}\""],
+        "body": [
+            "\"lightColor\": \"${1:#e8f5e8}\", \"darkColor\": \"${2:#2d4a2d}\""
+        ],
         "description": "Alert light and dark theme colors."
     },
-    
+
     // ---------- Other Plugins & Components ----------
     "@Carousel": {
         "prefix": "@carousel",
@@ -476,7 +440,7 @@
             "::: carousels#{\"cycle\": ${1|true,false|}, \"interval\": ${2:2800}}",
             "@tab",
             "![${4:Image 1}](${5:/path/to/image1.png})",
-            "@tab", 
+            "@tab",
             "![${6:Image 2}](${7:/path/to/image2.png})",
             ":::"
         ],
@@ -536,7 +500,9 @@
     // ---------- LiteTree Variables ----------
     "@LiteTree Style Var": {
         "prefix": "@lite-style-var",
-        "body": ["#${1:styleName}=${2:color:red;font-weight:bold;background:#ffe6e6;padding:2px 6px;border-radius:3px;}"],
+        "body": [
+            "#${1:styleName}=${2:color:red;font-weight:bold;background:#ffe6e6;padding:2px 6px;border-radius:3px;}"
+        ],
         "description": "LiteTree style variable definition."
     },
     "@LiteTree Class Var": {
@@ -553,27 +519,37 @@
     // ---------- Common Icon Variables ----------
     "@Icon: Folder": {
         "prefix": "@icon-folder",
-        "body": ["folder=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTEwIDRIOGEyIDIgMCAwIDAtMiAydjEyYTIgMiAwIDAgMCAyIDJoOGEyIDIgMCAwIDAgMi0yVjhhMiAyIDAgMCAwLTItMmgtM2wtMi0yWiIvPjwvc3ZnPg=="],
+        "body": [
+            "folder=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTEwIDRIOGEyIDIgMCAwIDAtMiAydjEyYTIgMiAwIDAgMCAyIDJoOGEyIDIgMCAwIDAgMi0yVjhhMiAyIDAgMCAwLTItMmgtM2wtMi0yWiIvPjwvc3ZnPg=="
+        ],
         "description": "Folder icon variable for LiteTree."
     },
     "@Icon: File": {
         "prefix": "@icon-file",
-        "body": ["file=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTE0IDJINmEyIDIgMCAwIDAtMiAydjE2YTIgMiAwIDAgMCAyIDJoMTJhMiAyIDAgMCAwIDItMlY4bC02LTZtNCA5VjlsNCA0aC00WiIvPjwvc3ZnPg=="],
+        "body": [
+            "file=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTE0IDJINmEyIDIgMCAwIDAtMiAydjE2YTIgMiAwIDAgMCAyIDJoMTJhMiAyIDAgMCAwIDItMlY4bC02LTZtNCA5VjlsNCA0aC00WiIvPjwvc3ZnPg=="
+        ],
         "description": "File icon variable for LiteTree."
     },
     "@Icon: JavaScript": {
         "prefix": "@icon-js",
-        "body": ["js=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNmN2RmMWUiIGQ9Ik0zIDNoMTh2MThIM1ptMTYuNTI1IDE0LjVjLS4zLS4zNTQtLjc5NS0uNjI5LTEuNzE3LS42MjljLS44ODEgMC0xLjQzOS4zMTgtMS40MzkuNzE4YzAgLjM5Ni4zNzMuNjM3IDEuMTU2Ljk2N2MxLjMzMi41ODYgMi4yODEgMS4wOTMgMi4yODEgMi4zOGMwIDEuMzItMS4yMDMgMi4xNDMtMi45NzQgMi4xNDNjLTEuMjEzIDAtMi4yNzEtLjQ2Mi0yLjk1LTEuMDc0bC44NzUtMS4yNzNjLjQzMy4zODkgMS4wNjQuNzI0IDEuNjY0LjcyNGMuNzA2IDAgMS4wNjQtLjMzMSAxLjA2NC0uNzMzYzAtLjQ0OS0uMzc2LS43MjQtMS4yNDUtMS4wMzNjLTEuMzI1LS40ODgtMi4xMzItMS4yNS0yLjEzMi0yLjM2M2MwLTEuMzk0IDEuMDI5LTIuMTQzIDIuODU2LTIuMTQzYzEuMDY0IDAgMS43NDUuMzI4IDIuMzc3Ljg1OWwtLjgzIDEuMjQxWm0tNS44NDUtLjMzNWMuMzY2LjgxNS4zNjYgMS41NzcuMzY2IDIuNDd2My45MDZoLTEuODc2VjE5LjZjMC0xLjUyNy0uMDYtMi4xOC0uNTUtMi40OGMtLjQxLS4yODgtMS4wNzYtLjI3NC0xLjYxOC0uMTA3Yy0uMzc4LjExNy0uNzEzLjMzNS0uNzEzIDEuMDc0djUuMDU2SDYuNDI3VjEyLjgyaDEuODc2djIuMTEzYy43NDctLjM5OSAxLjU3Ny0uNzM4IDIuNjQ1LS43MzhjLjc2NCAwIDEuNTc3LjI1MyAyLjA2OS43ODdjLjQ5OC41NTIuNjI2IDEuMTU3LjcyMyAxLjk5MVoiLz48L3N2Zz4="],
+        "body": [
+            "js=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNmN2RmMWUiIGQ9Ik0zIDNoMTh2MThIM1ptMTYuNTI1IDE0LjVjLS4zLS4zNTQtLjc5NS0uNjI5LTEuNzE3LS42MjljLS44ODEgMC0xLjQzOS4zMTgtMS40MzkuNzE4YzAgLjM5Ni4zNzMuNjM3IDEuMTU2Ljk2N2MxLjMzMi41ODYgMi4yODEgMS4wOTMgMi4yODEgMi4zOGMwIDEuMzItMS4yMDMgMi4xNDMtMi45NzQgMi4xNDNjLTEuMjEzIDAtMi4yNzEtLjQ2Mi0yLjk1LTEuMDc0bC44NzUtMS4yNzNjLjQzMy4zODkgMS4wNjQuNzI0IDEuNjY0LjcyNGMuNzA2IDAgMS4wNjQtLjMzMSAxLjA2NC0uNzMzYzAtLjQ0OS0uMzc2LS43MjQtMS4yNDUtMS4wMzNjLTEuMzI1LS40ODgtMi4xMzItMS4yNS0yLjEzMi0yLjM2M2MwLTEuMzk0IDEuMDI5LTIuMTQzIDIuODU2LTIuMTQzYzEuMDY0IDAgMS43NDUuMzI4IDIuMzc3Ljg1OWwtLjgzIDEuMjQxWm0tNS44NDUtLjMzNWMuMzY2LjgxNS4zNjYgMS41NzcuMzY2IDIuNDd2My45MDZoLTEuODc2VjE5LjZjMC0xLjUyNy0uMDYtMi4xOC0uNTUtMi40OGMtLjQxLS4yODgtMS4wNzYtLjI3NC0xLjYxOC0uMTA3Yy0uMzc4LjExNy0uNzEzLjMzNS0uNzEzIDEuMDc0djUuMDU2SDYuNDI3VjEyLjgyaDEuODc2djIuMTEzYy43NDctLjM5OSAxLjU3Ny0uNzM4IDIuNjQ1LS43MzhjLjc2NCAwIDEuNTc3LjI1MyAyLjA2OS43ODdjLjQ5OC41NTIuNjI2IDEuMTU3LjcyMyAxLjk5MVoiLz48L3N2Zz4="
+        ],
         "description": "JavaScript icon variable for LiteTree."
     },
     "@Icon: TypeScript": {
         "prefix": "@icon-ts",
-        "body": ["ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTUgMTUiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMxNzhDNiIgZD0iTTEyLjUgOHYtLjE2N2MwLS43MzYtLjU5Ny0xLjMzMy0xLjMzMy0xLjMzM0gxMGExLjUgMS41IDAgMSAwIDAgM2gxYTEuNSAxLjUgMCAwIDEgMCAzaC0xQTEuNSAxLjUgMCAwIDEgOC41IDExTTggNi41SDNtMi41IDBWMTNNMS41LjVoMTN2MTRIOS41eiIvPjwvc3ZnPg=="],
+        "body": [
+            "ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTUgMTUiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMxNzhDNiIgZD0iTTEyLjUgOHYtLjE2N2MwLS43MzYtLjU5Ny0xLjMzMy0xLjMzMy0xLjMzM0gxMGExLjUgMS41IDAgMSAwIDAgM2gxYTEuNSAxLjUgMCAwIDEgMCAzaC0xQTEuNSAxLjUgMCAwIDEgOC41IDExTTggNi41SDNtMi41IDBWMTNNMS41LjVoMTN2MTRIOS41eiIvPjwvc3ZnPg=="
+        ],
         "description": "TypeScript icon variable for LiteTree."
     },
     "@Icon: Vue": {
         "prefix": "@icon-vue",
-        "body": ["vue=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM0Y2FmNTAiIGQ9Ik0yIDIwaDIwTDEyIDR6Ii8+PC9zdmc+"],
+        "body": [
+            "vue=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM0Y2FmNTAiIGQ9Ik0yIDIwaDIwTDEyIDR6Ii8+PC9zdmc+"
+        ],
         "description": "Vue.js icon variable for LiteTree."
     },
 
@@ -608,15 +584,31 @@
         ],
         "description": "Link card component."
     },
-    
+
     // ===================================================================
     // ===================== MARKDOWN UTILITIES ==========================
     // ===================================================================
 
-    "@H1": { "prefix": "@h1", "body": ["# ${1:Title}"], "description": "H1 Title" },
-    "@H2": { "prefix": "@h2", "body": ["## ${1:Title}"], "description": "H2 Title" },
-    "@H3": { "prefix": "@h3", "body": ["### ${1:Title}"], "description": "H3 Title" },
-    "@H4": { "prefix": "@h4", "body": ["#### ${1:Title}"], "description": "H4 Title" },
+    "@H1": {
+        "prefix": "@h1",
+        "body": ["# ${1:Title}"],
+        "description": "H1 Title"
+    },
+    "@H2": {
+        "prefix": "@h2",
+        "body": ["## ${1:Title}"],
+        "description": "H2 Title"
+    },
+    "@H3": {
+        "prefix": "@h3",
+        "body": ["### ${1:Title}"],
+        "description": "H3 Title"
+    },
+    "@H4": {
+        "prefix": "@h4",
+        "body": ["#### ${1:Title}"],
+        "description": "H4 Title"
+    },
 
     "@Table": {
         "prefix": "@table",
@@ -628,7 +620,7 @@
         ],
         "description": "Insert a Markdown table."
     },
-    
+
     "@Table of Contents": {
         "prefix": "@toc",
         "body": [
@@ -639,14 +631,10 @@
         ],
         "description": "Insert a Table of Contents."
     },
-    
+
     "@Demo Block": {
         "prefix": "@demo",
-        "body": [
-            "::: demo ${1:Demo Title}",
-            "${2:Demo content}",
-            ":::"
-        ],
+        "body": ["::: demo ${1:Demo Title}", "${2:Demo content}", ":::"],
         "description": "Demo block container for showcasing examples."
     },
 
@@ -1144,16 +1132,12 @@
     // ---------- Video Components ----------
     "@Bilibili Video": {
         "prefix": "@bilibili",
-        "body": [
-            "<BilibiliVideo bvid=\"${1:BV1rC4y1C7z2}\" />"
-        ],
+        "body": ["<BilibiliVideo bvid=\"${1:BV1rC4y1C7z2}\" />"],
         "description": "Bilibili video component."
     },
     "@YouTube Video": {
         "prefix": "@youtube",
-        "body": [
-            "<YoutubeVideo videoId=\"${1:IL7J9ueYRYc}\" />"
-        ],
+        "body": ["<YoutubeVideo videoId=\"${1:IL7J9ueYRYc}\" />"],
         "description": "YouTube video component."
     },
 
@@ -1208,9 +1192,7 @@
     // ---------- PDF Viewer Component ----------
     "@PDF Viewer": {
         "prefix": "@pdf-viewer",
-        "body": [
-            "<PdfViewer pdfSource=\"${1:/pdf/modding/java/test.pdf}\"/>"
-        ],
+        "body": ["<PdfViewer pdfSource=\"${1:/pdf/modding/java/test.pdf}\"/>"],
         "description": "PDF viewer component."
     },
 
@@ -1353,18 +1335,14 @@
     // ---------- Responsible Editor Component ----------
     "@Responsible Editor": {
         "prefix": "@responsible-editor",
-        "body": [
-            "<ResponsibleEditor />"
-        ],
+        "body": ["<ResponsibleEditor />"],
         "description": "Responsible editor component (uses frontmatter editor field)."
     },
 
     // ---------- Comment Component ----------
     "@Comment Section": {
         "prefix": "@comment",
-        "body": [
-            "<comment />"
-        ],
+        "body": ["<comment />"],
         "description": "Comment section component (Giscus integration)."
     },
 
@@ -1431,5 +1409,10 @@
             ":::"
         ],
         "description": "Demo block with damage chart component."
+    },
+    "@fm: Tags (Batch)": {
+        "prefix": "@fm-tags-batch",
+        "body": ["tags:", "  - ${1:tag1}", "  - ${2:tag2}", "  - ${3:tag3}"],
+        "description": "Frontmatter: 批量插入多个标签。"
     }
 }

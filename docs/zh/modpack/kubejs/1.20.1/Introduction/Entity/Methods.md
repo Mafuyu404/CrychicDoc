@@ -1,23 +1,78 @@
 ---
-title: 实体方法
-description: Entity Methods
+title: 实体常用方法
+description: KubeJS 实体 API 常用方法分类与用法参考
+progress: 80
 tags:
-    - KubeJS
-    - Entity
-    - Methods
-    - API
-    - LivingEntity
-progress: 90
+  - KubeJS
+  - Entity
+  - Methods
 ---
 
-# {{ $frontmatter.title }}
+# 实体常用方法
 
-> [!TIP] 提示
-> 此处介绍实体方法的完整 API 参考。通过 ProbeJS 查看其详细文档。
+## 概述 {#overview}
 
-## 基础 Entity 方法 {#basic-entity-methods}
+本页汇总 KubeJS 实体 API 的常用方法，涵盖属性、AI、状态、装备、数据等操作，便于查阅和脚本开发。
 
-### 实体信息获取
+## 方法分类与说明 {#categories}
+
+### 属性相关 {#attribute}
+- `getAttribute(name)`：获取属性实例
+- `modifyAttribute(name, id, amount, operation)`：添加属性修饰符
+- `removeAttributeModifier(name, id)`：移除属性修饰符
+
+### AI 相关 {#ai}
+- `addGoal(priority, goal)`：添加 AI 目标
+- `setTarget(entity)`：设置攻击目标
+- `getTarget()`：获取当前目标
+
+### 状态相关 {#status}
+- `getHealth()` / `setHealth(value)`：获取/设置生命值
+- `isAlive()` / `isDeadOrDying()`：生存状态判断
+- `addEffect(effect, duration, amplifier)`：添加药水效果
+- `removeEffect(effect)`：移除药水效果
+- `hasEffect(effect)`：检测药水效果
+
+### 装备相关 {#equipment}
+- `getItemBySlot(slot)`：获取指定装备位物品
+- `setItemSlot(slot, item)`：设置装备位物品
+- `mainHandItem` / `offHandItem`：主手/副手物品
+
+### 数据与持久化 {#data}
+- `persistentData`：自定义数据存储
+- `addTag(tag)` / `removeTag(tag)`：添加/移除标签
+
+## 用法示例 {#examples}
+
+```js
+// 获取并修改属性
+const attr = entity.getAttribute('generic.max_health');
+attr.setBaseValue(40);
+entity.modifyAttribute('generic.max_health', 'kubejs:bonus', 8, 'addition');
+
+// 添加 AI 目标
+const FloatGoal = Java.loadClass('net.minecraft.world.entity.ai.goal.FloatGoal');
+entity.goalSelector.addGoal(0, new FloatGoal(entity));
+
+// 状态与药水
+entity.setHealth(10);
+entity.addEffect('minecraft:regeneration', 200, 1);
+
+// 装备操作
+entity.setItemSlot('head', Item.of('minecraft:diamond_helmet'));
+
+// 数据存储
+entity.persistentData.putString('role', 'boss');
+```
+
+## 注意事项 {#notes}
+
+- 某些方法仅在服务端/特定事件中可用，注意兼容性。
+- 详细类型与参数建议参考 [Forge JavaDocs](https://mcstreetguy.github.io/ForgeJavaDocs/1.20.1-47.1.0/index.html)。
+
+## 基础 Entity 方法 {#basic_entity_methods}
+
+### 实体信息获取 {#entity_info}
 
 | 方法               | 参数 | 返回类型        | 描述                 |
 | ------------------ | ---- | --------------- | -------------------- |
@@ -30,7 +85,7 @@ progress: 90
 | `getCustomName()`  | -    | `Component`     | 获取自定义名称       |
 | `hasCustomName()`  | -    | `boolean`       | 是否有自定义名称     |
 
-### 位置与坐标
+### 位置与坐标 {#position}
 
 > [!NOTE] 详细信息
 > 关于向量、坐标系统和移动机制的详细说明，请参阅 [向量与坐标文档](./Vector)
@@ -44,7 +99,7 @@ progress: 90
 | `position()`                   | -        | `Vec3d`    | 获取精确位置向量 |
 | `getEyePosition()`             | -        | `Vec3d`    | 获取眼部位置     |
 
-### 朝向与旋转
+### 朝向与旋转 {#rotation}
 
 | 方法                          | 参数     | 返回类型 | 描述         |
 | ----------------------------- | -------- | -------- | ------------ |
@@ -135,11 +190,11 @@ entity.teleportTo("minecraft:the_nether", 0, 64, 0, 0, 0);
 
 :::
 
-## LivingEntity 方法 {#living-entity-methods}
+## LivingEntity 方法 {#living_entity_methods}
 
 继承自 Entity 的所有方法，并添加以下生物特有方法：
 
-### 生命值系统
+### 生命值系统 {#health}
 
 | 方法                                     | 参数                   | 返回类型  | 描述           |
 | ---------------------------------------- | ---------------------- | --------- | -------------- |
@@ -151,7 +206,7 @@ entity.teleportTo("minecraft:the_nether", 0, 64, 0, 0, 0);
 | `kill()`                                 | -                      | `void`    | 杀死实体       |
 | `isDeadOrDying()`                        | -                      | `boolean` | 是否死亡或垂死 |
 
-### 装备管理
+### 装备管理 {#equipment_manage}
 
 | 方法                                                | 参数                       | 返回类型              | 描述             |
 | --------------------------------------------------- | -------------------------- | --------------------- | ---------------- |
@@ -163,7 +218,7 @@ entity.teleportTo("minecraft:the_nether", 0, 64, 0, 0, 0);
 | `getArmorSlots()`                                   | -                          | `Iterable<ItemStack>` | 获取护甲槽位     |
 | `getHandSlots()`                                    | -                          | `Iterable<ItemStack>` | 获取手部槽位     |
 
-### 药水效果
+### 药水效果 {#potion_effects}
 
 | 方法                                               | 参数                        | 返回类型                        | 描述                 |
 | -------------------------------------------------- | --------------------------- | ------------------------------- | -------------------- |
@@ -175,7 +230,7 @@ entity.teleportTo("minecraft:the_nether", 0, 64, 0, 0, 0);
 | `getEffect(arg0: MobEffect)`                       | `MobEffect`                 | `MobEffectInstance`             | 获取效果实例         |
 | `getActiveEffects()`                               | -                           | `Collection<MobEffectInstance>` | 获取所有激活效果     |
 
-### 属性系统
+### 属性系统 {#attribute_system}
 
 | 方法                                     | 参数        | 返回类型            | 描述           |
 | ---------------------------------------- | ----------- | ------------------- | -------------- |
@@ -226,11 +281,11 @@ entity.removeAllEffects();
 
 :::
 
-## Player 方法 {#player-methods}
+## Player 方法 {#player_methods}
 
 继承自 LivingEntity 的所有方法，并添加以下玩家特有方法：
 
-### 背包管理
+### 背包管理 {#inventory}
 
 | 方法                                           | 参数                  | 返回类型       | 描述         |
 | ---------------------------------------------- | --------------------- | -------------- | ------------ |
@@ -246,7 +301,7 @@ entity.removeAllEffects();
 | `awardStat(arg0: ResourceLocation, arg1: number)` | `ResourceLocation, number` | `void`          | 给予统计点   |
 | `addXPLevels(l: number)`                          | `number`                   | `void`          | 给予经验等级 |
 
-### 玩家能力
+### 玩家能力 {#abilities}
 
 | 方法                  | 参数 | 返回类型    | 描述             |
 | --------------------- | ---- | ----------- | ---------------- |
@@ -300,9 +355,9 @@ player.onUpdateAbilities();
 
 :::
 
-## 数据存储方法 {#data-storage-methods}
+## 数据存储方法 {#data_storage_methods}
 
-### persistentData 操作
+### persistentData 操作 {#persistentdata}
 
 persistentData 是 KubeJS 的自定义数据存储系统，**不是 NBT 数据**。
 
@@ -317,7 +372,7 @@ persistentData 是 KubeJS 的自定义数据存储系统，**不是 NBT 数据**
 | `getBoolean(key)`        | `string`          | `boolean`     | 读取布尔值     |
 | `contains(key)`          | `string`          | `boolean`     | 检查键是否存在 |
 
-### NBT 操作
+### NBT 操作 {#nbt}
 
 | 方法                         | 参数          | 返回类型      | 描述          |
 | ---------------------------- | ------------- | ------------- | ------------- |
@@ -360,9 +415,9 @@ entity.mergeNbt({
 
 :::
 
-## 世界交互方法 {#world-interaction-methods}
+## 世界交互方法 {#world_interaction_methods}
 
-### 距离计算
+### 距离计算 {#distance}
 
 | 方法                                     | 参数             | 返回类型  | 描述                 |
 | ---------------------------------------- | ---------------- | --------- | -------------------- |
@@ -371,7 +426,7 @@ entity.mergeNbt({
 | `distanceToEntitySqr(arg0: Entity)`      | `Entity`         | `number`  | 计算到实体的距离平方 |
 | `closerThan(arg0: Entity, arg1: number)` | `Entity, number` | `boolean` | 是否比指定距离更近   |
 
-### 射线检测
+### 射线检测 {#raytrace}
 
 | 方法                                              | 参数                      | 返回类型           | 描述             |
 | ------------------------------------------------- | ------------------------- | ------------------ | ---------------- |
@@ -379,7 +434,7 @@ entity.mergeNbt({
 | `rayTrace(distance: number, fluids: boolean)`     | `number, boolean`         | `RayTraceResultJS` | 射线检测(含流体) |
 | `pick(arg0: number, arg1: number, arg2: boolean)` | `number, number, boolean` | `HitResult`        | 拾取检测         |
 
-### 碰撞检测
+### 碰撞检测 {#collision}
 
 | 方法                                            | 参数                   | 返回类型  | 描述             |
 | ----------------------------------------------- | ---------------------- | --------- | ---------------- |
@@ -417,10 +472,11 @@ if (rayTraceFluid.entity) {
 
 :::
 
-## 相关链接 {#related-links}
+## 相关链接 {#related_links}
 
 - [向量与坐标文档](./Vector) - 详细的坐标系统和移动机制说明
 - [LivingEntity 文档](./LivingEntity) - 生物实体特有方法
 - [Player 文档](./Player) - 玩家对象操作方法
 - [persistentData 文档](../Miscellaneous/persistentData) - 数据存储系统
 - [Forge Entity JavaDocs](https://mcstreetguy.github.io/ForgeJavaDocs/1.20.1-47.1.0/net/minecraft/world/entity/Entity.html) - 官方文档参考
+ 

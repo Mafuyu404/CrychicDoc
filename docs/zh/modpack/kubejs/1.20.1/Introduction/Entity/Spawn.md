@@ -1,12 +1,15 @@
 ---
 title: 生成实体
+tags:
+  - KubeJS
+  - Entity
 ---
 
 # 实体生成
 
-## 前言
+## 前言 {#introduction}
 
-## 指定的生成
+## 指定的生成 {#custom_spawn}
 
 - 借聊天事件为例，生成尸壳。
 

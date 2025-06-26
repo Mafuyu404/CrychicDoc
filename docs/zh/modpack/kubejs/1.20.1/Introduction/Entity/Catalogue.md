@@ -1,69 +1,40 @@
 ---
 title: 实体系统目录
-description: KubeJS 实体系统完整文档目录
+description: KubeJS 实体系统相关文档导航与索引
+progress: 70
 tags:
-    - KubeJS
-    - Entity
-    - Catalogue
-    - Navigation
-progress: 100
+  - KubeJS
+  - Entity
 ---
 
 # {{ $frontmatter.title }}
 
 ## 概述 {#overview}
 
-本目录提供了 KubeJS 实体系统所有相关文档的快速导航。实体系统是 Minecraft 中最复杂的组成部分之一，涵盖了从基础实体操作到高级 AI 行为的各个方面。
+本页为 KubeJS 实体系统相关文档的导航与索引，便于查阅各类实体操作、AI、属性、事件等内容。
 
-## 快速参考 {#quick-reference}
+## 分类 {#categories}
 
-### 常用操作 {#common-operations}
+## 用法示例 {#examples}
 
-```js
-// 基础实体检查
-entity.isPlayer(); // 是否为玩家
-entity.isLiving(); // 是否为生物
-entity.type; // 实体类型
+## 文档导航 {#docs}
 
-// 位置与移动
-entity.position(); // 获取位置向量
-entity.setMotion(x, y, z); // 设置移动速度
-entity.teleportTo(x, y, z); // 传送
+- [属性 Attribute](./Attribute.md)
+- [AI 目标 Goal](./Goal.md)
+- [AI 大脑 Brain](./Brain.md)
+- [方法 Methods](./Methods.md)
+- [生物实体 LivingEntity](./LivingEntity.md)
+- [生物 Mob](./Mob.md)
+- [玩家 Player](./Player.md)
+- [药水效果 PotionEffects](./PotionEffects.md)
+- [向量 Vector](./Vector.md)
+- [生成/刷怪 Spawn](./Spawn.md)
 
-// 生物实体操作
-entity.health; // 当前生命值
-entity.maxHealth; // 最大生命值
-entity.potionEffects.add(); // 添加药水效果
+## FAQ / 未完成 {#faq}
 
-// 玩家特有操作
-player.tell(); // 发送消息
-player.give(); // 给予物品
-player.teleportTo(); // 传送
-```
-
-### 数据存储 {#data-storage}
-
-```js
-// 使用 persistentData（KubeJS 自定义系统）
-entity.persistentData.putString(key, value);
-entity.persistentData.getString(key);
-
-// 实体标签（用于选择器）
-entity.addTag("custom_tag");
-entity.removeTag("custom_tag");
-```
-
-### AI 控制 {#ai-control}
-
-```js
-// 基础 AI 控制
-mob.setNoAi(true); // 禁用 AI
-mob.setTarget(entity); // 设置攻击目标
-
-// 高级 AI 目标（需要 Java.loadClass）
-const FloatGoal = Java.loadClass("net.minecraft.world.entity.ai.goal.FloatGoal");
-mob.goalSelector.addGoal(0, new FloatGoal(mob));
-```
+::: alert {"type": "error", "title": "警告"}
+部分条目内容尚未完善，后续将持续补充。
+:::
 
 ## 常见问题解答 {#faq}
 
