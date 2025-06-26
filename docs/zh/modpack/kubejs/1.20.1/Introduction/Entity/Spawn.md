@@ -1,3 +1,7 @@
+---
+title: 生成实体
+---
+
 # 实体生成
 
 ## 前言
@@ -22,5 +26,30 @@ PlayerEvents.chat(event => {
     husk.mergeNbt({ NoAI: true });
     // 生成 不调用此函数实体不生成
     husk.spawn();
+})
+```
+
+有时你会希望能够操作模组提供的生物或拥有特定方法的生物，却无法找到需要使用的方法，你需要查看[JSoc](../Addon/ProbeJS/JSDoc)章节
+
+例如我希望操作马匹穿脱马鞍马凯或控制驯服状态：
+
+```js
+ItemEvents.entityInteracted(event => {
+    const { player, target, item } = event;
+    if (target.type == "minecraft:horse") {
+        // 为了让相关方法正常补全，我们需要明确类型注解
+        /**
+         * @type {Internal.Horse} horse
+         */
+        const horse = target;
+        horse.setTamed(true);
+        horse.setOwner(player);
+        horse.setCustomName(Component.literal("§6我的坐骑"));
+        horse.setVariant("white");
+        if (horse.isArmor(item)) {
+            horse.setArmor(item);
+        }
+        horse.equipSaddle("players");
+    }
 })
 ```

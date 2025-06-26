@@ -23,7 +23,7 @@ import Layout from "./Layout.vue";
 import VPHero from "./components/VPHero.vue";
 import { bindFancybox, destroyFancybox } from "./components/media/ImgViewer";
 import { Animation, Preview, NotFound, Buttons } from "./components/ui";
-import { comment } from "./components/content";
+import { comment, PageTags } from "./components/content";
 import { Footer } from "./components/navigation";
 import { ResponsibleEditor } from "./components/content";
 
@@ -52,7 +52,7 @@ export default {
                 "not-found": () => [h(NotFound)],
                 "nav-bar-content-after": () => h(NolebaseEnhancedReadabilitiesMenu),
                 "nav-screen-content-after": () => h(NolebaseEnhancedReadabilitiesScreenMenu),
-                "doc-before": () => [h(Preview)],
+                "doc-before": () => [h(Preview), h(PageTags)],
             }),
         });
     },

@@ -142,5 +142,20 @@
     "isUserSet": false,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
+  },
+  "String.md": {
+    "valueHash": "ca1b5a884011c8da4a6b56525387015c",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "NBT.md": {
+    "valueHash": "6100072e43696646bbdf3259121739d0",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "persistentData.md": {
+    "valueHash": "0471f7e02d0ffba1b97fdcca2f427a18",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

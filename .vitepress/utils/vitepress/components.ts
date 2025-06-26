@@ -20,6 +20,7 @@ import {
 import MagicMoveContainer from "../../theme/components/ui/MagicMoveContainer.vue";
 import { defineAsyncComponent } from 'vue';
 import { LiteTree } from "@lite-tree/vue";
+import { TagsPage } from "../../theme/components/content";
 
 // Async components
 const CommitsCounter = defineAsyncComponent(() => import("../../theme/components/content/CommitsCounter.vue"));
@@ -49,7 +50,8 @@ const components = {
     // Vuetify components
     MdDialog,
     MdMultiPageDialog,
-    CustomAlert
+    CustomAlert,
+    TagsPage
 };
 
 export const registerComponents = (app: App) => {

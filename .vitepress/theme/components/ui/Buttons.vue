@@ -1,11 +1,12 @@
 <template>
-    <Transition name="fade">
-        <div
-            v-show="showBackTop"
-            class="floating-button top-button"
-            :title="translations.backToTop[lang as 'en-US' | 'zh-CN']"
-            @click="scrollToTop"
-        >
+    <template v-if="showButtons">
+        <Transition name="fade">
+            <div
+                v-show="showBackTop"
+                class="floating-button top-button"
+                :title="translations.backToTop[lang as 'en-US' | 'zh-CN']"
+                @click="scrollToTop"
+            >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -176,6 +177,7 @@
             />
         </svg>
     </button>
+    </template>
 </template>
 
 <script setup lang="ts">
@@ -187,6 +189,9 @@
 
     const showBackTop = ref(false);
     const copied = ref(false);
+    
+    // Check if buttons should be shown based on frontmatter
+    const showButtons = computed(() => frontmatter.value.buttons !== false);
 
     const translations = {
         backToTop: { "en-US": "Back to Top", "zh-CN": "返回顶部" },

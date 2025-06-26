@@ -2,5 +2,12 @@
   "Attribute.md": 100,
   "Catalogue.md": -1000000,
   "PotionEffects.md": 200,
-  "Spawn.md": 50
+  "Spawn.md": 50,
+  "Brain.md": 600,
+  "Goal.md": 700,
+  "LivingEntity.md": 300,
+  "Methods.md": 20,
+  "Mob.md": 400,
+  "Player.md": 500,
+  "Vector.md": 150
 }

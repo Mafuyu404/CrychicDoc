@@ -3,5 +3,12 @@
   "Attribute.md": false,
   "Catalogue.md": false,
   "PotionEffects.md": false,
-  "Spawn.md": false
+  "Spawn.md": false,
+  "Brain.md": false,
+  "Goal.md": false,
+  "LivingEntity.md": false,
+  "Methods.md": false,
+  "Mob.md": false,
+  "Player.md": false,
+  "Vector.md": false
 }

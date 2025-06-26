@@ -1,10 +1,24 @@
-# 属性
+---
+title: 实体属性
+description: Attribute 在 KubeJS 中的完整操作指南
+tags:
+  - KubeJS
+  - Attribute
+  - LivingEntity
+  - Modifier
+  - BaseValue
+progress: 90
+---
 
-- 一个属性（Attribute）有基础值（base）修饰符（Modifiers）总值（Total）。
+# {{ $frontmatter.title }}
 
-## 前言
+## 概述 {#overview}
 
-- 便捷查看属性注册名。
+实体属性（Attribute）由基础值（base）、修饰符（Modifiers）和总值（Total）组成。
+
+## 前言 {#introduction}
+
+便捷查看属性注册名。
 
 ```js
 /**
@@ -26,9 +40,9 @@ let specialAttribute;
 :::
 ::::
 
-## 属性基础值
+## 属性基础值 {#attribute-base-value}
 
-### 获取属性基础值
+### 获取属性基础值 {#get-base-value}
 
 - 获取属性基础值。
 
@@ -53,7 +67,7 @@ ItemEvents.entityInteracted(event => {
 });
 ```
 
-### 修改属性基础值
+### 修改属性基础值 {#modify-base-value}
 
 - 修改属性基础值。
 
@@ -86,9 +100,9 @@ ItemEvents.entityInteracted(event => {
 });
 ```
 
-## 属性修饰符
+## 属性修饰符 {#attribute-modifiers}
 
-### 属性操作符
+### 属性操作符 {#attribute-operations}
 
 - 用于指定属性修饰符在属性总值的计算中如何计算。
 
@@ -100,7 +114,7 @@ ItemEvents.entityInteracted(event => {
 
 - "multiply_base"：以修饰符值为乘数，对属性基础值进行乘法运算。
 
-### 添加属性修饰符
+### 添加属性修饰符 {#add-attribute-modifier}
 
 - 通过添加修饰符来修改属性。
 
@@ -129,7 +143,7 @@ ItemEvents.entityInteracted(event => {
 });
 ```
 
-### 获取属性修饰符
+### 获取属性修饰符 {#get-attribute-modifier}
 
 - 语句：livingEntity.getAttribute(属性注册名).getModifiers().forEach(attributeModifier=> {});
 

@@ -67,6 +67,8 @@ export const zh_CN = <DefaultTheme.Config>{
                 {text: "社区交流", link: "/zh/doc/guide/community"},
             ]},
             {text: "讨论区", link: "/zh/info"},
+            {text: "标签", link: "/zh/tags"},
+            // {text: "关于我们", link: "/zh/about"},
         ],
         sidebar: getSidebarSync("zh"),
         outline: {

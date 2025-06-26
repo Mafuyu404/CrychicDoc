@@ -22,5 +22,6 @@
   "Runnable.md": false,
   "SoundEvent.md": false,
   "Stat.md": false,
-  "Supplier.md": false
+  "Supplier.md": false,
+  "persistentData.md": false
 }

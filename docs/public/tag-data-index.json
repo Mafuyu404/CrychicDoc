@@ -1,0 +1,28 @@
+{
+  "languages": [
+    {
+      "code": "zh",
+      "name": "简体中文",
+      "dir": "zh",
+      "isDefault": true
+    },
+    {
+      "code": "en",
+      "name": "English",
+      "dir": "en"
+    }
+  ],
+  "generatedAt": "2025-06-26T08:09:29.608Z",
+  "summary": {
+    "zh": {
+      "totalTags": 37,
+      "totalPages": 216,
+      "language": "zh"
+    },
+    "en": {
+      "totalTags": 3,
+      "totalPages": 159,
+      "language": "en"
+    }
+  }
+}

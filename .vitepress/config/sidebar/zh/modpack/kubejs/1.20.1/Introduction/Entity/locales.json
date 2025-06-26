@@ -3,5 +3,12 @@
   "Attribute.md": "属性",
   "Catalogue.md": "目录",
   "PotionEffects.md": "药水效果",
-  "Spawn.md": "生成"
+  "Spawn.md": "生成",
+  "Brain.md": "Brain",
+  "Goal.md": "Goal",
+  "LivingEntity.md": "生物实体",
+  "Methods.md": "实体方法",
+  "Mob.md": "Mob",
+  "Player.md": "玩家实体",
+  "Vector.md": "向量与坐标"
 }

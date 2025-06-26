@@ -158,13 +158,16 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
         },
         cacheDir: '.vitepress/.vite',
         plugins: [
+            // @ts-ignore - VitePress plugin type compatibility
             sidebarPlugin({
                 languages: ['zh', 'en'],
                 debug: process.env.NODE_ENV === 'development',
                 docsDir: './docs',
                 cacheDir: './.vitepress/cache/sidebar'
             }),
+            // @ts-ignore - VitePress plugin type compatibility
             llmstxt(),
+            // @ts-ignore - VitePress plugin type compatibility
             GitChangelog({
                 repoURL: () => "https://github.com/PickAID/CrychicDoc",
                 mapAuthors: contributors.map((author) => ({
@@ -172,7 +175,9 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                     avatar: generateAvatarUrl(author.avatar),
                 })),
             }),
+            // @ts-ignore - VitePress plugin type compatibility
             GitChangelogMarkdownSection(),
+            // @ts-ignore - VitePress plugin type compatibility
             groupIconVitePlugin({
                 customIcon: {
                     mcmeta: localIconLoader(

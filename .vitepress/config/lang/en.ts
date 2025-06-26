@@ -66,6 +66,8 @@ export const en_US = <DefaultTheme.Config>{
                 {text: "Community", link: "/en/doc/guide/community"},
             ]},
             {text: "Discussion", link: "/en/info"},
+            {text: "Tag", link: "/en/tags"},
+            // {text: "About Us", link: "/en/about"},
         ],
         sidebar: getSidebarSync("en"),
         outline: {

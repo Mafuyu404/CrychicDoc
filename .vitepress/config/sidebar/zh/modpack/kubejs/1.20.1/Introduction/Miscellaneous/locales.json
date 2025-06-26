@@ -22,5 +22,6 @@
   "Runnable.md": "可运行",
   "SoundEvent.md": "音效事件",
   "Stat.md": "统计",
-  "Supplier.md": "提供器"
+  "Supplier.md": "提供器",
+  "persistentData.md": "持久化数据"
 }
