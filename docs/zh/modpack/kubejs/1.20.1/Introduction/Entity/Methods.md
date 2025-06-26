@@ -88,7 +88,7 @@ entity.persistentData.putString('role', 'boss');
 ### 位置与坐标 {#position}
 
 > [!NOTE] 详细信息
-> 关于向量、坐标系统和移动机制的详细说明，请参阅 [向量与坐标文档](./Vector)
+> 关于向量、坐标和移动机制的详细说明，请参阅 [向量与坐标文档](./Vector)
 
 | 方法                           | 参数     | 返回类型   | 描述             |
 | ------------------------------ | -------- | ---------- | ---------------- |
@@ -122,7 +122,7 @@ entity.persistentData.putString('role', 'boss');
 | `teleportTo(dimension, x, y, z, yaw, pitch)` | `ResourceLocation, number, number, number, number, number` | `void`   | 跨维度传送 |
 | `moveTo(x, y, z)`                        | `number, number, number`                                   | `void`   | 移动到位置 |
 
-### Motion 速度系统
+### Motion 速度
 
 > [!NOTE] 详细信息  
 > Motion 详细说明请参阅 [向量与坐标文档](./Vector#motion-system)
@@ -194,7 +194,7 @@ entity.teleportTo("minecraft:the_nether", 0, 64, 0, 0, 0);
 
 继承自 Entity 的所有方法，并添加以下生物特有方法：
 
-### 生命值系统 {#health}
+### 生命值 {#health}
 
 | 方法                                     | 参数                   | 返回类型  | 描述           |
 | ---------------------------------------- | ---------------------- | --------- | -------------- |
@@ -230,7 +230,7 @@ entity.teleportTo("minecraft:the_nether", 0, 64, 0, 0, 0);
 | `getEffect(arg0: MobEffect)`                       | `MobEffect`                 | `MobEffectInstance`             | 获取效果实例         |
 | `getActiveEffects()`                               | -                           | `Collection<MobEffectInstance>` | 获取所有激活效果     |
 
-### 属性系统 {#attribute_system}
+### 属性 {#attribute_system}
 
 | 方法                                     | 参数        | 返回类型            | 描述           |
 | ---------------------------------------- | ----------- | ------------------- | -------------- |
@@ -293,7 +293,7 @@ entity.removeAllEffects();
 | `give(item: ItemStack)`                        | `ItemStack`           | `void`         | 给予物品     |
 | `sendData(channel: string, data: CompoundTag)` | `string, CompoundTag` | `void`         | 发送数据包   |
 
-### 经验系统
+### 经验
 
 | 方法                                              | 参数                       | 返回类型        | 描述         |
 | ------------------------------------------------- | -------------------------- | --------------- | ------------ |
@@ -359,7 +359,7 @@ player.onUpdateAbilities();
 
 ### persistentData 操作 {#persistentdata}
 
-persistentData 是 KubeJS 的自定义数据存储系统，**不是 NBT 数据**。
+persistentData 是 KubeJS 的自定义数据存储，**不是 NBT 数据**。
 
 | 方法                     | 参数              | 返回类型      | 描述           |
 | ------------------------ | ----------------- | ------------- | -------------- |
@@ -471,12 +471,3 @@ if (rayTraceFluid.entity) {
 ```
 
 :::
-
-## 相关链接 {#related_links}
-
-- [向量与坐标文档](./Vector) - 详细的坐标系统和移动机制说明
-- [LivingEntity 文档](./LivingEntity) - 生物实体特有方法
-- [Player 文档](./Player) - 玩家对象操作方法
-- [persistentData 文档](../Miscellaneous/persistentData) - 数据存储系统
-- [Forge Entity JavaDocs](https://mcstreetguy.github.io/ForgeJavaDocs/1.20.1-47.1.0/net/minecraft/world/entity/Entity.html) - 官方文档参考
- 
