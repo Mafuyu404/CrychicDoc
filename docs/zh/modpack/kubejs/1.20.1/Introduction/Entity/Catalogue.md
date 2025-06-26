@@ -5,6 +5,7 @@ progress: 70
 tags:
   - KubeJS
   - Entity
+state: preliminary
 ---
 
 # {{ $frontmatter.title }}
@@ -12,23 +13,6 @@ tags:
 ## 概述 {#overview}
 
 本页为 KubeJS 实体系统相关文档的导航与索引，便于查阅各类实体操作、AI、属性、事件等内容。
-
-## 分类 {#categories}
-
-## 用法示例 {#examples}
-
-## 文档导航 {#docs}
-
-- [属性 Attribute](./Attribute.md)
-- [AI 目标 Goal](./Goal.md)
-- [AI 大脑 Brain](./Brain.md)
-- [方法 Methods](./Methods.md)
-- [生物实体 LivingEntity](./LivingEntity.md)
-- [生物 Mob](./Mob.md)
-- [玩家 Player](./Player.md)
-- [药水效果 PotionEffects](./PotionEffects.md)
-- [向量 Vector](./Vector.md)
-- [生成/刷怪 Spawn](./Spawn.md)
 
 ## 常见问题解答 {#faq}
 
@@ -52,10 +36,14 @@ A: 使用向量计算方向，然后设置 Motion。详细示例请参考 [向�
 
 A: persistentData 是 KubeJS 的自定义数据系统，不是 Minecraft 原生的 NBT。
 
-**Q：为什么我的Nbt修改不起作用？**
+**Q：为什么我的nbt修改不起作用？**
 
 A：KubeJS只允许使用mergeNbt()添加实体其已有的属性，例如当生物本就拥有`Sample`属性，就可以使用`mergeNbt({Sample:1})`来修改这个属性，但是无法新添加自定义的属性。
 
 **Q: 如何存储自定义数据？**
 
 A: 使用 `entity.persistentData.putString()`、`putInt()`、`putBoolean()` 等方法。
+
+**Q：文档有什么地方没有提到**
+
+A：文档无法涵盖所有内容，若你的问题属于某个实体子类的独有方法，尝试通过理解代码来实现自己的需求。
