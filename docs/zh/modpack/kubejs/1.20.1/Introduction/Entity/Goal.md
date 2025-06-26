@@ -44,11 +44,12 @@ mob.goalSelector.addGoal(7, new RandomStrollGoal(mob, 1.0));
 ### 移除目标 {#remove}
 
 ```js
-mob.goalSelector.removeAllGoals();
-mob.targetSelector.removeAllGoals();
+mob.goalSelector.removeAllGoals(goal => goal instanceof MeleeAttackGoal);
+mob.targetSelector.removeAllGoals(goal => goal instanceof NearestAttackableTargetGoal);
 ```
 
-- 可通过 `removeAllGoals()` 清空所有目标。
+- 可通过 `removeAllGoals(Internal.Predicate_<Internal.Goal>)` 清空某一种Goal。
+- 可通过 `removeAllGoals(goal => goal)` 清空某一实体的所有Goal。
 - 相关基础 AI 控制：
   - `mob.setTarget(targetEntity)` 设置攻击目标
   - `mob.getTarget()` 获取当前目标
@@ -109,8 +110,8 @@ EntityEvents.spawned(event => {
         const NearestAttackableTargetGoal = Java.loadClass("net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal");
         const PlayerClass = Java.loadClass("net.minecraft.world.entity.player.Player");
 
-        entity.goalSelector.removeAllGoals();
-        entity.targetSelector.removeAllGoals();
+        entity.goalSelector.removeAllGoals(goal => goal);
+        entity.targetSelector.removeAllGoals(goal => goal);
 
         entity.goalSelector.addGoal(0, new FloatGoal(entity));
         entity.goalSelector.addGoal(3, new MeleeAttackGoal(entity, 1.0, true));
