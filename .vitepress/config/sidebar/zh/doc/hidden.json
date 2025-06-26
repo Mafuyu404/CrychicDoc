@@ -9,5 +9,5 @@
   "litetree-guide.md": false,
   "vscode-snippets-guide.md": false,
   "scripts.md": false,
-  "guide/": false
+  "guide/": true
 }
