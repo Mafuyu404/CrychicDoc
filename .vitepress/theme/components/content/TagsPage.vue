@@ -145,7 +145,7 @@
 
             <!-- Selected Tag Pages -->
             <div
-                v-if="selectedTags.length > 0 && selectedTagPages.length > 0"
+                v-if="selectedTags.length > 0"
                 class="selected-tag-section"
             >
                 <div class="selected-tag-header">
@@ -176,7 +176,7 @@
                     </button>
                 </div>
 
-                <div class="pages-grid">
+                <div v-if="selectedTagPages.length > 0" class="pages-grid">
                     <a
                         v-for="page in selectedTagPages"
                         :key="page.path"
@@ -212,6 +212,13 @@
                             </span>
                         </div>
                     </a>
+                </div>
+
+                <!-- No matching pages message -->
+                <div v-else class="no-matching-pages">
+                    <div class="no-match-icon">🔍</div>
+                    <p>{{ t.noMatchingPages }}</p>
+                    <p class="no-match-hint">{{ t.noMatchingPagesHint }}</p>
                 </div>
             </div>
 
@@ -279,7 +286,9 @@
             languageNotSupported: 'Language not supported',
             loadingTagData: 'Loading tag data...',
             noTagsFound: 'No tags found for this language',
-            retry: 'Retry'
+            retry: 'Retry',
+            noMatchingPages: 'No pages found with all selected tags',
+            noMatchingPagesHint: 'Try removing some tags or selecting different ones'
         },
         'zh-CN': {
             searchPlaceholder: '搜索标签...',
@@ -295,7 +304,9 @@
             languageNotSupported: '不支持的语言',
             loadingTagData: '加载标签数据中...',
             noTagsFound: '该语言暂无标签',
-            retry: '重试'
+            retry: '重试',
+            noMatchingPages: '未找到包含所有选中标签的页面',
+            noMatchingPagesHint: '尝试移除一些标签或选择其他标签'
         }
     };
 
@@ -886,6 +897,37 @@
 
     .retry-button:hover {
         background-color: var(--vp-c-brand-2);
+    }
+
+    /* No matching pages state */
+    .no-matching-pages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 2rem;
+        text-align: center;
+        background-color: var(--vp-c-bg-soft);
+        border: 1px solid var(--vp-c-divider);
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+
+    .no-match-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        opacity: 0.6;
+    }
+
+    .no-matching-pages p {
+        margin: 0.5rem 0;
+        color: var(--vp-c-text-2);
+    }
+
+    .no-match-hint {
+        font-size: 0.875rem !important;
+        color: var(--vp-c-text-3) !important;
+        font-style: italic;
     }
 
     /* Responsive design */

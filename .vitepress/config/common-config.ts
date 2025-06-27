@@ -71,7 +71,7 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
             },
         ],
         langMenuLabel: "Change Language",
-        lastUpdated: {},
+        // lastUpdated: {},
         //@ts-ignore
         locales: {
             root: { label: "简体中文", lang: "zh-CN" },
