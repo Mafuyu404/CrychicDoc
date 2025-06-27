@@ -1,5 +1,6 @@
 ---
-title: 标签
+title: 标签云
+layout: page
 layoutClass: m-nav-layout
 buttons: false
 sidebar: false
@@ -10,9 +11,6 @@ editor: false
 gitChangelog: false
 showComment: false
 metadata: false
-outline: [2,2]
 ---
-
-# 标签
 
 <TagsPage /> 

@@ -1,5 +1,6 @@
 ---
 title: Tags
+layout: page
 buttons: false
 layoutClass: m-nav-layout
 sidebar: false
@@ -10,9 +11,6 @@ editor: false
 gitChangelog: false
 showComment: false
 metadata: false
-outline: [2,2]
 ---
-
-# Tags
 
 <TagsPage /> 

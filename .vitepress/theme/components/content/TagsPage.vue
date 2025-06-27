@@ -1,5 +1,10 @@
 <template>
     <div class="tags-page">
+        <!-- Page Title -->
+        <div class="page-header">
+            <h1 class="page-title">{{ page.frontmatter.title || t.pageTitle }}</h1>
+        </div>
+
         <!-- Loading State -->
         <div v-if="isLoading" class="loading-state">
             <div class="loading-spinner"></div>
@@ -273,6 +278,7 @@
     // Multi-language support
     const translations = {
         'en-US': {
+            pageTitle: 'Tags',
             searchPlaceholder: 'Search tags...',
             tagCloud: 'Tag Cloud',
             list: 'List',
@@ -291,6 +297,7 @@
             noMatchingPagesHint: 'Try removing some tags or selecting different ones'
         },
         'zh-CN': {
+            pageTitle: '标签',
             searchPlaceholder: '搜索标签...',
             tagCloud: '标签云',
             list: '列表',
@@ -541,6 +548,22 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 2rem 0;
+    }
+
+    /* Page Header */
+    .page-header {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--vp-c-divider);
+        text-align: center;
+    }
+
+    .page-title {
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--vp-c-text-1);
+        line-height: 1.2;
     }
 
     .tags-controls {
@@ -934,6 +957,10 @@
     @media (max-width: 768px) {
         .tags-page {
             padding: 1rem 0;
+        }
+
+        .page-title {
+            font-size: 2rem;
         }
 
         .tags-controls {
