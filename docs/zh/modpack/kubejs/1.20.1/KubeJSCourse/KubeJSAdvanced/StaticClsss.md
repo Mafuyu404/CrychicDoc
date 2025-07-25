@@ -4,24 +4,24 @@ kubejs提供了以下的全局静态类和对应的方法
 ## Utils
 | 方法 | 方法参数 | 方法作用 | 方法返回参数 | 备注 | 
 | :--: | :--: | :--: | :--: | :--: |
-| toTitleCase(string) | -> | 将传入字符串第一个文本转化为大写 | 处理后的字符串 string | 除了"a", "an", "the", "of", "on", "in", "and", "or", "but" 和 "for" |
+| toTitleCase(string) | -\> | 将传入字符串第一个文本转化为大写 | 处理后的字符串 string | 除了"a", "an", "the", "of", "on", "in", "and", "or", "but" 和 "for" |
 | getStat(ResourceLocation) | ~ | ~ | Stat<ResourceLocation\> | 后续补充 |
-| snakeCaseToTitleCase(string) | -> | 将蛇形命名转换为标题大小写 | 处理后的字符串 string |  如a_bc_def 转为 A Bc Def |
+| snakeCaseToTitleCase(string) | -\> | 将蛇形命名转换为标题大小写 | 处理后的字符串 string |  如a_bc_def 转为 A Bc Def |
 | newCountingMap() | - | 获取一个新的CountingMap | CountingMap | - |
-| toTitleCase(string,bool) | -> | 设置会true后将上面除了的内容也会进行大写 | 理后的字符串 string | - |
-| parseDouble(any,number) | -> | 将第一个参数转化为Double类型，如果失败了，则返回第二个数 | number | - |
+| toTitleCase(string,bool) | -\> | 设置会true后将上面除了的内容也会进行大写 | 理后的字符串 string | - |
+| parseDouble(any,number) | -\> | 将第一个参数转化为Double类型，如果失败了，则返回第二个数 | number | - |
 | getRandom() | - | 获取Random类 | Random | - |
 | newList() | - | 获取一个列表 | List<T\> | - |
 | rollChestLoot(ResourceLocation) | 战利品表id | 获取指定战利品表里的战利品数组 | List<ItemStack\> | - |
-| newRandom(number) | -> | 用一个数字当作种子生成一个Random类 | Random | - |
-| getRegistryIds(ResourceLocation) | -> | 获取指定注册表里的的所有id | List<ResourceLocation\> | - |
+| newRandom(number) | -\> | 用一个数字当作种子生成一个Random类 | Random | - |
+| getRegistryIds(ResourceLocation) | -\> | 获取指定注册表里的的所有id | List<ResourceLocation\> | - |
 | emptyList() | - | 获取一个不可变的空列表? | List<T\> | - |
 | getSystemTime() | - | 获取当前系统时间，以毫秒为单位 | number | - |
 | supplyAsync(Supplier<any\>) | ~ | ~ | CompletableFuture<any\> | 后续补充 |
-| id(string,string) | -> | 将字符串转为ResourceLocation | ResourceLocation | - |
+| id(string,string) | -\> | 将字符串转为ResourceLocation | ResourceLocation | - |
 | lazy(Supplier<T\>) | ~ | ~ | Lazy<T\> | ? |
-| isWrapped(any) | -> | 判断传入对象是否为WrappedJS | boolean | - |
-| snakeCaseToCamelCase(string) | -> | 将蛇形命名转化为驼峰命名 | 处理后的字符串 string | 如 a_bc_def 转为 aBcDef |
+| isWrapped(any) | -\> | 判断传入对象是否为WrappedJS | boolean | - |
+| snakeCaseToCamelCase(string) | -\> | 将蛇形命名转化为驼峰命名 | 处理后的字符串 string | 如 a_bc_def 转为 aBcDef |
 | findCreativeTab(ResourceLocation) | id | 获取该id的所在创造物品栏 | CreativeModeTab | - |
 | emptyMap() | - | 获取一个空的不可变的map? | Map<K, V\> | - |
 | expiringLazy(Supplier<T\>,number) | ~ | ~ | Lazy<T\> | 后续补充 | 
@@ -30,14 +30,14 @@ kubejs提供了以下的全局静态类和对应的方法
 | newMap() | - | 获取一个map | Map<any, any\> | - |
 | getRegistry(ResourceLocation) | id | 通过id获取对应的注册信息 | RegistryInfo<any\> | - |
 | particleOptions(any) | ~ | ~ | ParticleOptions | - |
-| copy(any) | -> | 复制一份传入的对象，如果不可以则返回本身 | any | - |
+| copy(any) | -\> | 复制一份传入的对象，如果不可以则返回本身 | any | - |
 | regex(string,number) | string pattern / number flags | ~ | Pattern | - |
-| id(string) | -> | 将字符串直接包装成ResourceLocation | ResourceLocation | - |
-| regex(any) | -> | ~ | Pattern | - |
-| runAsync(Runnable) | -> | ~ | CompletableFuture<void\> | - |
-| parseBlockState(any) | -> | 从输入内容中解析方块状态可能会抛出无效输入 | BlockState | - |
-| queueIO(Runnable) | -> | 立即在try-catch块中运行传递的可运行函数，并在它抛出异常时记录异常? | void | - |
-| parseInt(any,number) | -> | 将第一个参数转化为整数，如果失败则返回第二个参数 | number | - |
+| id(string) | -\> | 将字符串直接包装成ResourceLocation | ResourceLocation | - |
+| regex(any) | -\> | ~ | Pattern | - |
+| runAsync(Runnable) | -\> | ~ | CompletableFuture<void\> | - |
+| parseBlockState(any) | -\> | 从输入内容中解析方块状态可能会抛出无效输入 | BlockState | - |
+| queueIO(Runnable) | -\> | 立即在try-catch块中运行传递的可运行函数，并在它抛出异常时记录异常? | void | - |
+| parseInt(any,number) | -\> | 将第一个参数转化为整数，如果失败则返回第二个参数 | number | - |
 | getServer() | - | 获取游戏服务端，如果是在没有服务器的地方调用则为null(startup和client) | MinecraftServer | - |
 | rollChestLoot(ResourceLocation,Entity) | 战利品表id，触发实体 | 用指定实体生成一个战利品表物品列表 | List\<ItemStack\> | 不一定是箱子 |
 
@@ -45,21 +45,21 @@ kubejs提供了以下的全局静态类和对应的方法
 | 方法 | 方法参数 | 方法作用 | 方法返回参数 | 备注 | 
 | :--: | :--: | :--: | :--: | :--: |
 | readJson(path) | 路径字符串 | 读取指定路径的文件 | JsonElement | 文件必须为json |
-| toPrettyString(JsonElement) | -> | 将json转化为字符串 | string | - |
-| getJsonHashString(JsonElement) | -> | 获取json的hash值 | string | - |
-| toObject(JsonElement) | -> | 将json转化为对象??? | any | 后续测试 |
+| toPrettyString(JsonElement) | -\> | 将json转化为字符串 | string | - |
+| getJsonHashString(JsonElement) | -\> | 获取json的hash值 | string | - |
+| toObject(JsonElement) | -\> | 将json转化为对象??? | any | 后续测试 |
 | primitiveOf(any) | ? | ? | JsonPrimitive | 后续测试 |
 | readString(path) | 路径 | 读取指定路径的文件 | string | 读取为string格式 |
 | writeJsonHash(DataOutputStream,JsonElement) | ? | ~ | void | 后续测试 |
 | parseRaw(string) | ? | ? | JsonElement | 后续测试 |
-| write(path,JsonObject) | -> | 将json对象写入到指定路径的文件里 | void | 一定要是json对象，不能是数组 |
-| read(path) | -> | 读取指定路径的文件 | Map<any,any\> | 建议使用readJson |
-| toArray(JsonElement) | -> | 将JsonElement转为JsonArray | JsonArray | - |
-| parse(string) | -> | ? | any | 后续测试 |
-| toPrimitive(JsonElement) | -> | ? | any | 后续测试 |
-| copy(JsonElement) | -> | 复制一份JsonElement | JsonElement | - |
-| toString(JsonElement) | -> | 将json转为字符串 | string | - |
-| getJsonHashBytes(JsonElement) | -> | 将json转为hashByte | number[] | - |
+| write(path,JsonObject) | -\> | 将json对象写入到指定路径的文件里 | void | 一定要是json对象，不能是数组 |
+| read(path) | -\> | 读取指定路径的文件 | Map<any,any\> | 建议使用readJson |
+| toArray(JsonElement) | -\> | 将JsonElement转为JsonArray | JsonArray | - |
+| parse(string) | -\> | ? | any | 后续测试 |
+| toPrimitive(JsonElement) | -\> | ? | any | 后续测试 |
+| copy(JsonElement) | -\> | 复制一份JsonElement | JsonElement | - |
+| toString(JsonElement) | -\> | 将json转为字符串 | string | - |
+| getJsonHashBytes(JsonElement) | -\> | 将json转为hashByte | number[] | - |
 | of(any) | ? | ? | JsonElement | - |
 
 ## BlockPos
@@ -69,50 +69,50 @@ kubejs提供了以下的全局静态类和对应的方法
 | betweenClosed(n1,n2,n3,n4,n5,n6) | 依次顺序为x1,y1,z1,x2,y2,z2 | 通过两个坐标获取该区域内的所有坐标 | Iterable<BlockPos\> | - |
 | betweenClosedStream(BlockPos,BlockPos) | - | 同上 | Stream<BlockPos\> | - |
 | breadthFirstTraversal(BlockPos,number,BiConsumer<BlockPos, Consumer<BlockPos\>\>,Predicate<BlockPos\>) | 坐标，最大距离，-，回调用于处理每个遍历到的方块位置 | 按广度优先的顺序遍历周围的方块 | number | - |
-| containing(Position) | -> | 根据Position返回BlockPos | BlockPos | - |
+| containing(Position) | -\> | 根据Position返回BlockPos | BlockPos | - |
 | findClosestMatch(BlockPos,number,number,Predicate<BlockPos\>) | ~ | ~ | Optional<BlockPos\> | - |
 | getFlatIndex(number) | ~ | ~ | number | - |
-| getX(number) | -> | 获取对应值 | number | - |
-| getY(number) | -> | 获取对应值 | number | - |
-| getZ(number) | -> | 获取对应值 | number | - |
+| getX(number) | -\> | 获取对应值 | number | - |
+| getY(number) | -\> | 获取对应值 | number | - |
+| getZ(number) | -\> | 获取对应值 | number | - |
 | of(number) | 坐标数值（asLong获取的这种数字数值 | - | BlockPos | - |
 | offset(number,number,number) | ~ | ~ | number | - |
 | offset(number,Direction) | ~ | ~ | number | - |
 | offsetCodec(number) | ~ | ~ | Codec<Vec3i\> | - |
-| randomBetweenClosed(RandomSource,n1,n2,n3,n4,n5,n6) | -> | 在一个区域内随机生成坐标 | Iterable<BlockPos\> | - |
+| randomBetweenClosed(RandomSource,n1,n2,n3,n4,n5,n6) | -\> | 在一个区域内随机生成坐标 | Iterable<BlockPos\> | - |
 | randomInCube(RandomSource,number,BlockPos,number) | ? | 通过一个坐标中心点向外延申到指定距离的方块区域内生成坐标? | Iterable<BlockPos\> | - |
 | spiralAround(BlockPos,number,Direction,Direction) | ~ | 按照螺旋式路径遍历周围的方块位置 | Iterable<BlockPos$MutableBlockPos\> | - |
-| withinManhattan(BlockPos,number,number,number) | -> | 获取在曼哈顿距离范围内的所有坐标 | Iterable<BlockPos\> | - |
-| withinManhattanStream(BlockPos,number,number,number) | -> | 同上 | Stream<BlockPos\> | - |
+| withinManhattan(BlockPos,number,number,number) | -\> | 获取在曼哈顿距离范围内的所有坐标 | Iterable<BlockPos\> | - |
+| withinManhattanStream(BlockPos,number,number,number) | -\> | 同上 | Stream<BlockPos\> | - |
 
 ## Block 
 ## Vec3d
 ## KMath
 | 方法 | 方法参数 | 方法作用 | 方法返回参数 | 备注 | 
 | :--: | :--: | :--: | :--: | :--: |
-| block(n1,n2,n3) | -> | 根据xyz返回blockPos | BlockPos | - |
+| block(n1,n2,n3) | -\> | 根据xyz返回blockPos | BlockPos | - |
 | deg(number) | ? | ? | number | - |
-| v3d(n1,n2,n3) | -> | 根据xyz返回Vector3d | Vector3d | - |
+| v3d(n1,n2,n3) | -\> | 根据xyz返回Vector3d | Vector3d | - |
 | ceil(number) | ? | ? | number | - |
 | map(n1,n2,n3,n4,n5) | value,min1,max1,min2,max2 | ? | number | ? |
 | clamp(n1,n2.n3) | value,min,max | ? | number| ? |
-| v4f(n1,n2,n3,n4) | -> | 根据xyz和w（猜测是宽度）返回Vec4f | Vec4f | - |
+| v4f(n1,n2,n3,n4) | -\> | 根据xyz和w（猜测是宽度）返回Vec4f | Vec4f | - |
 | rad(number) | ? | ? | number | - |
 | degreesDifference(n1,n2) | current,target | ~ | number | 待测试 |
-| floor(number) | -> | 向下取整 | number | - |
-| poseStack() | - | -> | PoseStack | - |
+| floor(number) | -\> | 向下取整 | number | - |
+| poseStack() | - | -\> | PoseStack | - |
 | lerp(n1,n2,n3) | value,min,max | 线性插值，通过修改value的比例，返回特定的数值 | number | 举个栗子value=0.5,min=0,max=10,则会返回5 |
 | clampedLerp(n1,n2,n3) | 同上 | 同上但是不会超值max的值 | number | 同上但是不会超出max |
-| v3f(n1,n2,n3) | -> | 通过xyz返回Vec3f | Vec3f | - |
+| v3f(n1,n2,n3) | -\> | 通过xyz返回Vec3f | Vec3f | - |
 | rotateIfNecessary(n1,n2,n3) | current,target,max | ~ | number | - |
 | m4f() | - | ` | Matrix4f | - |
-| v3(n1,n2,n3) | -> | 通过xyz获取Vec3d | Vec3d | - |
+| v3(n1,n2,n3) | -\> | 通过xyz获取Vec3d | Vec3d | - |
 | quaternion(n1,n2,n3,n4) | 根据xyz和w（猜测是宽度）返回Quaternionf | Quaternionf | - |
-| wrapDegrees(number) | -> | 处理角度 | number | - |
+| wrapDegrees(number) | -\> | 处理角度 | number | - |
 | m3f() | - | - |Matrix3f | - |
 | approachDegrees(n1,n2,n3) | current,target,speed | ~ | number | - |
 | approach(n1,n2,n3) | current,target,speed | ~ | number | - |
-| isPowerOfTwo(number) | -> | 判断是否为 2 的幂次方 | bool | - |
+| isPowerOfTwo(number) | -\> | 判断是否为 2 的幂次方 | bool | - |
 | PI | - | - | 3.141592653589793 | - |
 | RADIANS_TO_DEGREES | - | - | 57.29577951308232 | - |
 | DEGREES_TO_RADIANS | - | - | 0.017453292519943295 | - |
