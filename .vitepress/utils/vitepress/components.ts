@@ -6,10 +6,14 @@ import {
     ResponsibleEditor,
     MdDialog,
     MdMultiPageDialog,
-    CustomAlert
+    CustomAlert,
+    ChatPanel,
+    ChatMessage,
+    Bills,
+    MarkMapView
 } from "../../theme/components/content";
 import { YoutubeVideo, BilibiliVideo, PdfViewer } from "../../theme/components/media";
-import { Footer, MNavLinks } from "../../theme/components/navigation";
+import { MNavLinks } from "../../theme/components/navigation";
 import {
     Buttons,
     Carousels,
@@ -22,12 +26,10 @@ import { defineAsyncComponent } from 'vue';
 import { LiteTree } from "@lite-tree/vue";
 import { TagsPage } from "../../theme/components/content";
 
-// Async components
 const CommitsCounter = defineAsyncComponent(() => import("../../theme/components/content/CommitsCounter.vue"));
 const Contributors = defineAsyncComponent(() => import("../../theme/components/content/Contributors.vue"));
 const MinecraftAdvancedDamageChart = defineAsyncComponent(() => import("../../theme/components/content/minecraft-advanced-damage-chart.vue"));
 
-// Component registry
 const components = {
     MdCarousel: Carousels,
     YoutubeVideo,
@@ -47,15 +49,17 @@ const components = {
     Animation,
     Preview,
     NotFound,
-    // Vuetify components
     MdDialog,
     MdMultiPageDialog,
     CustomAlert,
-    TagsPage
+    TagsPage,
+    ChatPanel,
+    ChatMessage,
+    Bills,
+    MarkMapView
 };
 
 export const registerComponents = (app: App) => {
-    // Register all components
     Object.entries(components).forEach(([name, component]) => {
         if (component) {
             app.component(name, component);

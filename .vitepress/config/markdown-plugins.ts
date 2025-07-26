@@ -6,6 +6,7 @@ import { MarkdownOptions } from "vitepress";
 import timeline from "vitepress-markdown-timeline";
 import { BiDirectionalLinks } from "@nolebase/markdown-it-bi-directional-links";
 import { InlineLinkPreviewElementTransform } from "@nolebase/vitepress-plugin-inline-link-preview/markdown-it";
+import multipleChoicePlugin from 'markdown-it-multiple-choice'
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 import mdFootnote from "markdown-it-footnote";
 import mdTaskLists from "markdown-it-task-lists";
@@ -32,6 +33,9 @@ import { card } from "../plugins/card";
 import { groupIconMdPlugin } from "vitepress-plugin-group-icons";
 import MagicMovePlugin from "../plugins/magic-move";
 import { dialogPlugin } from "../plugins/dialog";
+import { chatPlugin } from "../plugins/chat-message";
+import { withMarkmap } from "../plugins/markmap";
+import { isFeatureEnabled } from "./project-config";
 import ts from "typescript";
 
 import fs from "fs";
@@ -46,7 +50,6 @@ export const markdown: MarkdownOptions = {
         dark: "github-dark"
     },
     shikiSetup: async (shiki) => {
-        // Pre-load common languages for Magic Move
         const commonLanguages = [
             'javascript', 'js', 'typescript', 'ts', 'java', 'python', 'py',
             'cpp', 'c', 'csharp', 'cs', 'php', 'ruby', 'go', 'rust', 'swift',
@@ -60,9 +63,7 @@ export const markdown: MarkdownOptions = {
                 if (!shiki.getLoadedLanguages().includes(lang)) {
                     await shiki.loadLanguage(lang as any);
                 }
-            } catch (error) {
-                // Silently ignore languages that can't be loaded
-            }
+            } catch (error) {}
         }
         
         magicMoveShiki = shiki;
@@ -75,7 +76,9 @@ export const markdown: MarkdownOptions = {
         md.use(timeline);
         md.use(tabsMarkdownPlugin);
         md.use(dialogPlugin);
-
+        md.use(chatPlugin);
+        md.use(multipleChoicePlugin);
+        
         md.use(mdFootnote);
         md.use(mdTaskLists);
         md.use(mdDeflist);
@@ -93,15 +96,16 @@ export const markdown: MarkdownOptions = {
         md.use(mark);
         md.use(ins);
 
-        // Register tab-based plugins individually
         md.use(tab, stepper);
         md.use(tab, carousels);
         md.use(tab, iframes);
 
-        // Non-tab plugins
         md.use(card);
         
-        // Magic move plugin with shiki integration
+        if (isFeatureEnabled('markmap')) {
+            withMarkmap(md);
+        }
+        
         if (magicMoveShiki) {
             md.use(MagicMovePlugin, magicMoveShiki, {
                 light: "github-light",

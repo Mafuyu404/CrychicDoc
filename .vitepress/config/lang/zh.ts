@@ -1,10 +1,14 @@
 import type { DefaultTheme } from 'vitepress';
+import { getProjectInfo, getLanguageByCode, getLangCodeFromLink, getSearchLocaleKey } from '../project-config';
 import { getSidebarSync } from '../../utils/sidebar';
 
+const projectInfo = getProjectInfo();
+const langConfig = getLanguageByCode('zh-CN')!;
+
 export const zh_CN = <DefaultTheme.Config>{
-    label: '简体中文',
-    lang: 'zh-CN',
-    link: '/zh/',
+    label: langConfig.displayName,
+    lang: langConfig.giscusLang,
+    link: langConfig.link,
     title: 'CryChic文档',
     description: '一个包含 Minecraft 开发文档的网站。',
     themeConfig: {
@@ -70,12 +74,12 @@ export const zh_CN = <DefaultTheme.Config>{
             {text: "标签", link: "/zh/tags"},
             // {text: "关于我们", link: "/zh/about"},
         ],
-        sidebar: getSidebarSync("zh"),
+        // sidebar: getSidebarSync(getLangCodeFromLink(langConfig.link!)),
+        sidebar: getSidebarSync(getLangCodeFromLink(langConfig.link!)),
         outline: {
             level: "deep",
             label: "页面导航",
         },
-        outlineTitle: '本页目录',
         docFooter: {
             prev: "上一页",
             next: "下一页",
@@ -83,9 +87,12 @@ export const zh_CN = <DefaultTheme.Config>{
         lastUpdated: {
             text: "最后更新时间",
             formatOptions: {
-                dateStyle: "full",
+                dateStyle: "short",
                 timeStyle: "medium",
             },
+        },
+        editLink: {
+            text: "在 GitHub 上编辑此页面",
         },
         langMenuLabel: "切换语言",
         returnToTopLabel: "回到顶部",
@@ -97,7 +104,7 @@ export const zh_CN = <DefaultTheme.Config>{
 };
 
 export const search: DefaultTheme.AlgoliaSearchOptions["locales"] = {
-    root: {
+    [getSearchLocaleKey(langConfig.code)]: {
         placeholder: "搜索文档",
         translations: {
             button: {

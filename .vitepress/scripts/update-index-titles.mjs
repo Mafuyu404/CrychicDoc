@@ -3,13 +3,16 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import matter from 'gray-matter'
+import { getLanguageCodes } from "../config/project-config.js";
+import { getSrcPath, getVitepressPath } from "../utils/config/path-resolver.js";
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const PROJECT_ROOT = path.resolve(__dirname, '../..')
-const DOCS_ROOT = path.resolve(PROJECT_ROOT, 'docs')
-const CONFIG_ROOT = path.resolve(PROJECT_ROOT, '.vitepress/config/sidebar')
+const PROJECT_ROOT = process.cwd()
+const DOCS_ROOT = getSrcPath()
+const CONFIG_ROOT = getVitepressPath("config/sidebar")
 
 /**
  * Parse frontmatter from markdown content
@@ -45,25 +48,25 @@ function parseFrontmatter(content) {
 }
 
 /**
- * Get relative path from docs root to a given directory
+ * Get relative path from src root to a given directory
  * @param {string} absolutePath - Absolute path to directory
- * @returns {string} Relative path from docs root
+ * @returns {string} Relative path from src root
  */
-function getRelativePathFromDocs(absolutePath) {
+function getRelativePathFromSrc(absolutePath) {
     return path.relative(DOCS_ROOT, absolutePath).replace(/\\/g, '/')
 }
 
 /**
- * Get the config directory path for a given docs directory
+ * Get the config directory path for a given src directory
  * @param {string} lang - Language code
- * @param {string} docsPath - Relative path from docs root
+ * @param {string} srcPath - Relative path from src root
  * @returns {string} Config directory path
  */
-function getConfigDirPath(lang, docsPath) {
-    // Remove language prefix from docs path
-    const pathWithoutLang = docsPath.startsWith(`${lang}/`) 
-        ? docsPath.substring(lang.length + 1) 
-        : docsPath
+function getConfigDirPath(lang, srcPath) {
+    // Remove language prefix from src path
+    const pathWithoutLang = srcPath.startsWith(`${lang}/`)
+        ? srcPath.substring(lang.length + 1)
+        : srcPath
     
     return path.resolve(CONFIG_ROOT, lang, pathWithoutLang)
 }
@@ -106,130 +109,124 @@ function writeJsonFile(filePath, data) {
 }
 
 /**
- * Find all index.md files with title configuration
- * @param {string} lang - Language code
- * @returns {Array} Array of objects with path and title info
+ * Create or update index.md with proper title
+ * @param {string} indexPath - Path to index.md file
+ * @param {string} title - Title for the index
+ * @param {string} description - Description for the index
  */
-function findIndexFilesWithTitles(lang) {
-    const langDocsRoot = path.resolve(DOCS_ROOT, lang)
-    const results = []
-    
-    if (!fs.existsSync(langDocsRoot)) {
-        console.warn(`Language docs directory not found: ${langDocsRoot}`)
-        return results
+function updateIndexFile(indexPath, title, description) {
+    let content = '# Index\n\nThis is an auto-generated index file.\n'
+    let frontmatter = {
+        title: title,
+        description: description,
+        index: true
     }
-    
-    /**
-     * Recursively scan directory for index.md files
-     * @param {string} currentDir - Current directory being scanned
-     */
-    function scanDirectory(currentDir) {
+
+    if (fs.existsSync(indexPath)) {
         try {
-            const entries = fs.readdirSync(currentDir, { withFileTypes: true })
+            const existingContent = fs.readFileSync(indexPath, 'utf-8')
+            const parsed = matter(existingContent)
             
-            for (const entry of entries) {
-                const fullPath = path.resolve(currentDir, entry.name)
-                
-                if (entry.isDirectory()) {
-                    // Skip node_modules, .vitepress, etc.
-                    if (!entry.name.startsWith('.') && entry.name !== 'node_modules') {
-                        scanDirectory(fullPath)
-                    }
-                } else if (entry.name === 'index.md') {
-                    // Found an index.md file, check for title
-                    try {
-                        const content = fs.readFileSync(fullPath, 'utf-8')
-                        const frontmatter = parseFrontmatter(content)
-                        
-                        if (frontmatter.title && frontmatter.title.trim()) {
-                            const relativePath = getRelativePathFromDocs(currentDir)
-                            
-                            results.push({
-                                docsPath: relativePath,
-                                absolutePath: currentDir,
-                                title: frontmatter.title.trim(),
-                                indexFilePath: fullPath
-                            })
-                            
-                            console.log(`✓ Found index.md with title: ${relativePath} -> "${frontmatter.title}"`)
-                        }
-                    } catch (error) {
-                        console.warn(`Failed to read index.md at ${fullPath}: ${error.message}`)
-                    }
-                }
+            // Preserve existing frontmatter but update key fields
+            frontmatter = {
+                ...parsed.data,
+                title: title,
+                description: description,
+                index: true
+            }
+            
+            // Preserve existing content if it's not just the default
+            if (parsed.content.trim() && !parsed.content.includes('auto-generated index')) {
+                content = parsed.content
             }
         } catch (error) {
-            console.warn(`Failed to scan directory ${currentDir}: ${error.message}`)
+            console.warn(`Warning: Could not parse existing ${indexPath}:`, error.message)
         }
     }
-    
-    scanDirectory(langDocsRoot)
-    return results
+
+    const newContent = matter.stringify(content, frontmatter)
+    fs.writeFileSync(indexPath, newContent, 'utf-8')
 }
 
 /**
- * Update locales.json file with index title
+ * Process a directory recursively
+ * @param {string} currentDir - Current directory being processed
  * @param {string} lang - Language code
- * @param {Object} indexInfo - Index file information
  */
-function updateLocalesJson(lang, indexInfo) {
-    const configDir = getConfigDirPath(lang, indexInfo.docsPath)
-    const localesPath = path.resolve(configDir, 'locales.json')
+function scanDirectory(currentDir) {
+    const items = fs.readdirSync(currentDir)
     
-    // Read existing locales.json
-    const locales = readJsonFile(localesPath)
-    
-    // Update the _self_ key with the title from index.md
-    const hasChanges = locales._self_ !== indexInfo.title
-    
-    if (hasChanges) {
-        locales._self_ = indexInfo.title
-        writeJsonFile(localesPath, locales)
-        console.log(`✓ Updated locales.json: ${localesPath}`)
-        console.log(`  _self_: "${indexInfo.title}"`)
-        return true
-    } else {
-        console.log(`- No change needed for: ${localesPath}`)
-        return false
+    // Check if directory has markdown files (excluding index.md)
+    const hasMarkdownFiles = items.some(item => {
+        const itemPath = path.resolve(currentDir, item)
+        const stats = fs.statSync(itemPath)
+        return stats.isFile() && item.endsWith('.md') && item !== 'index.md'
+    })
+
+    // Check if directory has subdirectories with content
+    const hasSubdirectories = items.some(item => {
+        const itemPath = path.resolve(currentDir, item)
+        const stats = fs.statSync(itemPath)
+        return stats.isDirectory() && !item.startsWith('.')
+    })
+
+    if (hasMarkdownFiles || hasSubdirectories) {
+        const relativePath = getRelativePathFromSrc(currentDir)
+        const indexPath = path.resolve(currentDir, 'index.md')
+        
+        // Generate title from directory name
+        const dirName = path.basename(currentDir)
+        const title = dirName
+            .split(/[-_]/)
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ')
+
+        const indexInfo = {
+            path: indexPath,
+            srcPath: relativePath,
+            title: title,
+            description: `Index of ${title} section`
+        }
+
+        console.log(`📝 Processing: ${relativePath} -> "${title}"`)
+        updateIndexFile(indexPath, title, indexInfo.description)
     }
+
+    // Recursively process subdirectories
+    items.forEach(item => {
+        const itemPath = path.resolve(currentDir, item)
+        const stats = fs.statSync(itemPath)
+        
+        if (stats.isDirectory() && !item.startsWith('.')) {
+            scanDirectory(itemPath)
+        }
+    })
 }
 
 /**
- * Main function to update all index titles
- * @param {Array} languages - Array of language codes to process
+ * Main function to update index titles for all languages
  */
-async function updateIndexTitles(languages = ['en', 'zh']) {
-    console.log('🔍 Scanning for index.md files with title configuration...\n')
-    
-    let totalUpdated = 0
-    let totalScanned = 0
+function updateIndexTitles() {
+    console.log('🚀 Starting index title update process...')
+    console.log(`📂 Src root: ${DOCS_ROOT}`)
+    console.log(`⚙️  Config root: ${CONFIG_ROOT}\n`)
+
+    const languages = getLanguageCodes();
     
     for (const lang of languages) {
-        console.log(`\n📁 Processing language: ${lang}`)
-        console.log('=' .repeat(50))
+        console.log(`\n🌐 Processing language: ${lang}`)
         
-        const indexFiles = findIndexFilesWithTitles(lang)
-        totalScanned += indexFiles.length
+        const langSrcRoot = path.resolve(DOCS_ROOT, lang)
         
-        if (indexFiles.length === 0) {
-            console.log(`No index.md files with titles found for language: ${lang}`)
+        if (!fs.existsSync(langSrcRoot)) {
+            console.warn(`Language src directory not found: ${langSrcRoot}`)
             continue
         }
-        
-        console.log(`\nFound ${indexFiles.length} index.md files with titles`)
-        console.log('-'.repeat(30))
-        
-        for (const indexInfo of indexFiles) {
-            const updated = updateLocalesJson(lang, indexInfo)
-            if (updated) totalUpdated++
-        }
+
+        scanDirectory(langSrcRoot)
     }
-    
-    console.log('\n' + '='.repeat(60))
-    console.log('📊 Summary:')
-    console.log(`   Scanned: ${totalScanned} index.md files`)
-    console.log(`   Updated: ${totalUpdated} locales.json files`)
-    console.log('✅ Index title update completed!')
+
+    console.log('\n✅ Index title update completed!')
 }
 
 /**
@@ -239,47 +236,32 @@ const args = process.argv.slice(2)
 
 if (args.includes('--help') || args.includes('-h')) {
     console.log(`
-📝 Update Index Titles Script
+📝 Index Title Updater
 
-Usage: node update-index-titles.mjs [options] [languages...]
+This script automatically updates index.md files with proper titles based on directory names.
 
-Options:
-  --help, -h     Show this help message
-  --dry-run, -d  Show what would be updated without making changes
+Usage:
+  npm run title
 
-Examples:
-  node update-index-titles.mjs                    # Update all languages (en, zh)
-  node update-index-titles.mjs en                 # Update only English
-  node update-index-titles.mjs zh en              # Update Chinese and English
-  node update-index-titles.mjs --dry-run          # Preview changes without updating
+Features:
+  - Scans all language directories
+  - Creates index.md files where needed
+  - Updates frontmatter with proper titles
+  - Preserves existing content when possible
 
-Description:
-  This script scans for index.md files that have title frontmatter configuration
-  and updates the corresponding locales.json files with _self_ key.
-  
-  Only affects:
-  - Directories that have index.md files
-  - index.md files that have 'title' in frontmatter
-  - Will create locales.json if it doesn't exist
-  
-  Does NOT affect:
-  - Directories without index.md files
-  - index.md files without title frontmatter
-  - Other keys in existing locales.json files
+Example:
+  docs/src/zh/guide/ -> "Guide" (as title)
+  docs/src/en/tutorial/ -> "Tutorial" (as title)
 `)
     process.exit(0)
 }
 
-// Parse languages from arguments (excluding flags)
-const languages = args.filter(arg => !arg.startsWith('--') && !arg.startsWith('-'))
-const targetLanguages = languages.length > 0 ? languages : ['en', 'zh']
-
 try {
-    await updateIndexTitles(targetLanguages)
+    updateIndexTitles()
 } catch (error) {
     console.error('❌ Error during execution:', error.message)
     process.exit(1)
 }
 
 // Export for programmatic use
-export { updateIndexTitles, findIndexFilesWithTitles, updateLocalesJson } 
+export { updateIndexTitles } 

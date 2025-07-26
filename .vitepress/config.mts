@@ -1,21 +1,38 @@
 import { defineConfig } from "vitepress";
 import { withMermaid } from "vitepress-plugin-mermaid";
+import withDrawio from "@dhlx/vitepress-plugin-drawio";
 
-import {en_US} from "./config/lang/en"
-import {zh_CN} from "./config/lang/zh"
-import {commonConfig} from "./config/common-config"
+import { commonConfig } from "./config/common-config"
+import { generateLocalesConfigAuto, getProjectInfo, isFeatureEnabled } from "./config/project-config"
 
-/**
- * VitePress configuration with Mermaid support
- * Combines common configuration with locale-specific settings
- */
-export default withMermaid(
-    defineConfig({
-        ...commonConfig,
-        locales: {
-            root: { label: '简体中文', ...zh_CN },
-            en: { label: 'English', ...en_US }
-            // Add other locales here
-        }
-    })
-);
+const { locales, searchLocales } = await generateLocalesConfigAuto(true);
+const projectInfo = getProjectInfo();
+
+const finalConfig = {
+    ...(commonConfig as any),
+    locales,
+    themeConfig: {
+        ...commonConfig.themeConfig,
+        search: isFeatureEnabled('search') ? {
+            provider: "algolia",
+            options: {
+                appId: projectInfo.algolia.appId,
+                apiKey: projectInfo.algolia.apiKey, 
+                indexName: projectInfo.algolia.indexName,
+                locales: searchLocales
+            }
+        } : undefined,
+    }
+};
+
+let config = defineConfig(finalConfig);
+
+if (isFeatureEnabled('mermaid')) {
+    config = withMermaid(config);
+}
+
+if (isFeatureEnabled('drawio')) {
+    config = withDrawio(config, projectInfo.drawio);
+}
+
+export default config;

@@ -3,7 +3,7 @@
     import { withBase, useData } from "vitepress";
     import { slugify } from "@mdit-vue/shared";
 
-    import type { NavLink, NavIcon, NavThemeIcon } from "@utils/type";
+    import type { NavLink, NavIcon, NavThemeIcon } from "@utils/content/navLinkType";
 
     const { isDark } = useData();
 
