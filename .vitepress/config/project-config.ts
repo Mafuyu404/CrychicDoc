@@ -102,7 +102,7 @@ export const projectConfig: ProjectConfig = {
      * Enable or disable features as needed
      */
     features: {
-        search: false,
+        search: true,
         gitChangelog: true,
         mermaid: true,
         drawio: true,
