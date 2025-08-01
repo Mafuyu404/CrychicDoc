@@ -4,8 +4,8 @@
         "color": "#4CAF50",
         "darkColor": "#81C784",
         "snippets": [
-            "/give @p minecraft:diamond_sword{display:{Name:'{\"text\":\"神剑\",\"color\":\"gold\"}'},Enchantments:[{id:\"sharpness\",lvl:5}]} 1",
-            "/execute as @e[type=zombie,distance=..10] run effect give @s glowing 10 1",
+            "/give @p diamond_sword{Enchantments:[{id:\"sharpness\",lvl:5}]}",
+            "/execute as @e[type=zombie] run effect give @s glowing",
             "/gamerule keepInventory true",
             "/summon lightning_bolt ~ ~ ~"
         ]
@@ -15,8 +15,8 @@
         "color": "#FF5722",
         "darkColor": "#FF7043",
         "snippets": [
-            "@Mod(\"examplemod\")\npublic class ExampleMod {\n    public ExampleMod() {\n        // 注册事件监听器\n        MinecraftForge.EVENT_BUS.register(this);\n    }\n}",
-            "@SubscribeEvent\npublic void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event) {\n    Player player = event.getPlayer();\n    player.sendMessage(Component.literal(\"欢迎来到服务器！\"));\n}",
+            "@Mod(\"examplemod\")\npublic class ExampleMod { }",
+            "@SubscribeEvent\npublic void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event) { }",
             "public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);",
             "@ObjectHolder(\"examplemod:custom_block\")\npublic static final Block CUSTOM_BLOCK = null;"
         ]
@@ -26,10 +26,10 @@
         "color": "#2196F3",
         "darkColor": "#64B5F6",
         "snippets": [
-            "@Mod(ExampleMod.MODID)\npublic class ExampleMod {\n    public static final String MODID = \"examplemod\";\n    \n    public ExampleMod(IEventBus modEventBus) {\n        // NeoForge 新的事件总线注册方式\n        modEventBus.addListener(this::commonSetup);\n    }\n}",
-            "public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, MODID);",
-            "@SubscribeEvent\npublic void onServerStarting(ServerStartingEvent event) {\n    LOGGER.info(\"NeoForge mod server initialization\");\n}",
-            "public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register(\"example_item\", () -> new Item(new Item.Properties()));"
+            "@Mod(ExampleMod.MODID)\npublic class ExampleMod { }",
+            "public static final DeferredRegister<EntityType<?>> ENTITY_TYPES;",
+            "@SubscribeEvent\npublic void onServerStarting(ServerStartingEvent event) { }",
+            "public static final RegistryObject<Item> EXAMPLE_ITEM;"
         ]
     },
     {
@@ -37,10 +37,10 @@
         "color": "#9C27B0",
         "darkColor": "#BA68C8",
         "snippets": [
-            "public class ExampleMod implements ModInitializer {\n    public static final String MOD_ID = \"example-mod\";\n    \n    @Override\n    public void onInitialize() {\n        // Fabric mod initialization\n    }\n}",
-            "Registry.register(Registries.ITEM, new Identifier(MOD_ID, \"custom_item\"), CUSTOM_ITEM);",
-            "public static final Item CUSTOM_ITEM = new Item(new FabricItemSettings().maxCount(16));",
-            "@Environment(EnvType.CLIENT)\npublic class ExampleModClient implements ClientModInitializer {\n    @Override\n    public void onInitializeClient() {\n        // Client-side initialization\n    }\n}"
+            "public class ExampleMod implements ModInitializer { }",
+            "Registry.register(Registries.ITEM, new Identifier(MOD_ID, \"item\"));",
+            "public static final Item CUSTOM_ITEM = new Item(new FabricItemSettings());",
+            "@Environment(EnvType.CLIENT)\npublic class ExampleModClient { }"
         ]
     },
     {
@@ -48,10 +48,10 @@
         "color": "#FFC107",
         "darkColor": "#FFD54F",
         "snippets": [
-            "public class ExamplePlugin extends JavaPlugin {\n    @Override\n    public void onEnable() {\n        getLogger().info(\"插件已启用\");\n        getServer().getPluginManager().registerEvents(new ExampleListener(), this);\n    }\n}",
-            "@EventHandler\npublic void onPlayerJoin(PlayerJoinEvent event) {\n    Player player = event.getPlayer();\n    player.sendMessage(ChatColor.GREEN + \"欢迎来到服务器！\");\n}",
-            "public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {\n    if (cmd.getName().equalsIgnoreCase(\"example\")) {\n        // 命令处理逻辑\n        return true;\n    }\n    return false;\n}",
-            "@EventHandler\npublic void onBlockBreak(BlockBreakEvent event) {\n    Block block = event.getBlock();\n    Player player = event.getPlayer();\n    // 方块破坏事件处理\n}"
+            "public class ExamplePlugin extends JavaPlugin { }",
+            "@EventHandler\npublic void onPlayerJoin(PlayerJoinEvent event) { }",
+            "public boolean onCommand(CommandSender sender, Command cmd) { }",
+            "@EventHandler\npublic void onBlockBreak(BlockBreakEvent event) { }"
         ]
     },
     {
@@ -59,10 +59,10 @@
         "color": "#607D8B",
         "darkColor": "#90A4AE",
         "snippets": [
-            "onEvent('recipes', event => {\n    event.shaped('minecraft:diamond', [\n        'AAA',\n        'AAA',\n        'AAA'\n    ], {\n        A: 'minecraft:iron_ingot'\n    })\n})",
-            "onEvent('player.logged_in', event => {\n    if (!event.player.stages.has('starting_items')) {\n        event.player.give('minecraft:stone_sword')\n        event.player.stages.add('starting_items')\n    }\n})",
-            "onEvent('entity.death', event => {\n    if (event.entity.type == 'minecraft:zombie') {\n        event.server.runCommandSilent(`summon lightning_bolt ${event.entity.x} ${event.entity.y} ${event.entity.z}`)\n    }\n})",
-            "onEvent('block.right_click', event => {\n    if (event.block.id == 'minecraft:diamond_block') {\n        event.player.tell('你发现了一个钻石块！')\n    }\n})"
+            "onEvent('recipes', event => event.shaped('minecraft:diamond'))",
+            "onEvent('player.logged_in', event => event.player.give('stone_sword'))",
+            "onEvent('entity.death', event => event.server.runCommand('effect give @p strength'))",
+            "onEvent('block.right_click', event => event.player.tell('Hello!'))"
         ]
     }
 ]

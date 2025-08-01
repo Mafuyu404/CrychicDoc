@@ -10,13 +10,13 @@
  */
 export const projectConfig: ProjectConfig = {
     name: "CrychicDoc",
-
+    
     /**
      * IMPORTANT: Change this to your repository name for GitHub Pages deployment
      * Format: "/your-repo-name/"
      */
     base: "/",
-
+    
     keyWords: ["Minecraft", "Coding", "DataPack", "wiki", "KubeJS", "Modpack", "Modding"],
     version: "2.0.0",
     author: "PickAID",
@@ -119,9 +119,9 @@ export const projectConfig: ProjectConfig = {
      */
     copyLinkConfig: {
         removeLanguage: false,
-    },
-
-    /**
+        },
+        
+        /**
      * Header social media links
      */
     headerSocialLinks: [
@@ -184,8 +184,8 @@ export const projectConfig: ProjectConfig = {
         {
             name: "forum",
             title: "Visit our Forum",
-            link: "https://varied.xxybbs.com",
-            icon: '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="#ffffff" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>',
+            link: "https://varied.xyebbs.com",
+            icon: '<svg t="1754034976464" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2355" width="200" height="200"><path d="M896 256h-85.333333v384H256v85.333333c0 25.6 17.066667 42.666667 42.666667 42.666667h469.333333l170.666667 170.666667V298.666667c0-25.6-17.066667-42.666667-42.666667-42.666667z m-170.666667 256V128c0-25.6-17.066667-42.666667-42.666666-42.666667H128c-25.6 0-42.666667 17.066667-42.666667 42.666667v597.333333l170.666667-170.666666h426.666667c25.6 0 42.666667-17.066667 42.666666-42.666667z" p-id="2356" fill="#ffffff"></path></svg>'
         },
     ],
 
@@ -253,7 +253,7 @@ export const projectConfig: ProjectConfig = {
 
 /**
  * Language configuration interface for multi-language support
- *
+ * 
  * @example
  * ```ts
  * const enConfig: LanguageConfig = {
@@ -271,32 +271,32 @@ export const projectConfig: ProjectConfig = {
 export interface LanguageConfig {
     /** ISO 639-1 language code (e.g., "en-US", "zh-CN") - must match VitePress locale configuration */
     code: string;
-
+    
     /** Internal identifier for the language, typically same as code for consistency */
     name: string;
-
+    
     /** Human-readable name shown in language switcher dropdown and UI */
     displayName: string;
-
+    
     /** Set to true for default language (becomes "root" in VitePress config) */
     isDefault?: boolean;
-
+    
     /** URL path prefix like "/en-US/" - determines VitePress language routing behavior */
     link?: string;
-
+    
     /** Display label for UI components, falls back to displayName if not set */
     label?: string;
-
+    
     /** Translation file name (e.g., "en.ts", "zh.ts") for i18n message files */
     fileName?: string;
-
+    
     /** Language code for Giscus comment system integration */
     giscusLang?: string;
 }
 
 /**
  * File system paths configuration for VitePress project structure
- *
+ * 
  * @example
  * ```ts
  * const paths: PathConfig = {
@@ -317,34 +317,34 @@ export interface LanguageConfig {
 export interface PathConfig {
     /** Project root directory, typically "." for current directory */
     root: string;
-
+    
     /** Documentation source directory where .md files are located */
     docs: string;
-
+    
     /** Source files directory, usually same as docs for VitePress */
     src: string;
-
+    
     /** Static assets directory for images, favicons, and other public files */
     public: string;
-
+    
     /** VitePress configuration directory containing all VitePress-specific files */
     vitepress: string;
-
+    
     /** Configuration files directory for project settings and options */
     config: string;
-
+    
     /** Custom theme directory for theme overrides and customizations */
     theme: string;
-
+    
     /** Build and utility scripts directory for automation and tooling */
     scripts: string;
-
+    
     /** Utility functions directory for shared helper functions */
     utils: string;
-
+    
     /** Build cache directory for faster subsequent builds */
     cache: string;
-
+    
     /** Final build output directory where generated site files are placed */
     build: string;
 }
@@ -442,7 +442,7 @@ export interface MdVarConfig {
 /**
  * Deployment configuration interface for different deployment strategies
  * SSH credentials (host, username, private key) are managed via GitHub repository secrets for security
- *
+ * 
  * @example
  * ```ts
  * // GitHub Pages deployment (default) - no additional configuration needed
@@ -451,7 +451,7 @@ export interface MdVarConfig {
  *   server: { remotePath: '', port: 22, excludeFiles: [] },
  *   custom: { deployCommand: '', postDeployCommand: '' }
  * }
- *
+ * 
  * // Server deployment via SSH - credentials managed via GitHub secrets
  * const serverDeployment: DeploymentConfig = {
  *   type: 'server',
@@ -463,7 +463,7 @@ export interface MdVarConfig {
  *   custom: { deployCommand: '', postDeployCommand: '' }
  * }
  * // Note: Set SSH_HOST, SSH_USERNAME, SSH_PRIVATE_KEY in GitHub repository secrets
- *
+ * 
  * // Custom deployment with user-defined commands
  * const customDeployment: DeploymentConfig = {
  *   type: 'custom',
@@ -478,7 +478,7 @@ export interface MdVarConfig {
 export interface DeploymentConfig {
     /** Deployment strategy type: 'github-pages' | 'server' | 'custom' */
     type: "github-pages" | "server" | "custom";
-
+    
     /** Server deployment configuration (only used when type is 'server') - SSH credentials managed via GitHub secrets */
     server: {
         /** Remote path on server where files should be deployed (e.g., '/var/www/html', '/home/user/public_html') */
@@ -488,7 +488,7 @@ export interface DeploymentConfig {
         /** Files and directories to exclude from deployment (e.g., ['.git', 'node_modules', '*.log']) */
         excludeFiles: string[];
     };
-
+    
     /** Custom deployment configuration (only used when type is 'custom') */
     custom: {
         /** Custom deployment command (e.g., 'vercel deploy', 'docker push', 'rsync -avz ...') */
@@ -500,7 +500,7 @@ export interface DeploymentConfig {
 
 /**
  * Complete project configuration interface containing all VitePress site settings
- *
+ * 
  * @example
  * ```ts
  * const config: ProjectConfig = {
@@ -529,22 +529,22 @@ export interface DeploymentConfig {
 export interface ProjectConfig {
     /** Project name used in site title, metadata, and branding */
     name: string;
-
+    
     /** Base URL path for deployment - MUST match your repository name for GitHub Pages (e.g., "/my-repo/") */
     base: string;
-
+    
     /** SEO keywords array for meta tags and search engine optimization */
     keyWords: string[];
-
+    
     /** Current project version for display and tracking */
     version: string;
-
+    
     /** Project author name for copyright and metadata */
     author: string;
-
+    
     /** License type (e.g., "MIT", "Apache-2.0") for legal information */
     license: string;
-
+    
     /** Favicon path (relative to base) or external URL */
     favicon: string;
 
@@ -567,19 +567,19 @@ export interface ProjectConfig {
         /** Full repository URL for GitHub integration and edit links */
         url: string;
     };
-
+    
     /** Live site URL for canonical links and social media */
     homepage: string;
-
+    
     /** Default currency code for Bills component and financial calculations */
     defaultCurrency: string;
-
+    
     /** Multi-language configuration array for i18n support */
     languages: LanguageConfig[];
-
+    
     /** File system paths configuration for project structure */
     paths: PathConfig;
-
+    
     /** Feature toggle flags for enabling/disabling optional functionality */
     features: {
         /** Enable Algolia search integration (requires algolia config) */
@@ -599,10 +599,10 @@ export interface ProjectConfig {
         /** Enable edit link in page footer */
         editLink: boolean;
     };
-
+    
     /** Custom code snippet file names for hero page floating animation effects */
     customSnippetFileNames?: string[];
-
+    
     /** Algolia search service configuration (leave empty to disable search) */
     algolia: {
         /** Algolia application ID from your Algolia dashboard */
@@ -648,7 +648,7 @@ export interface ProjectConfig {
 /**
  * Get all configured languages from project configuration
  * @returns Array of all language configurations
- *
+ * 
  * @example
  * ```ts
  * const languages = getLanguages();
@@ -663,7 +663,7 @@ export function getLanguages(): LanguageConfig[] {
  * Get the default language configuration
  * Returns the language marked as default, or first language as fallback
  * @returns Default language configuration
- *
+ * 
  * @example
  * ```ts
  * const defaultLang = getDefaultLanguage();
@@ -680,7 +680,7 @@ export function getDefaultLanguage(): LanguageConfig {
 /**
  * Get array of all language codes for iteration and validation
  * @returns Array of language codes (e.g., ['en-US', 'zh-CN'])
- *
+ * 
  * @example
  * ```ts
  * const codes = getLanguageCodes();
@@ -711,7 +711,7 @@ export function getLanguageLinks(): string[] {
  * Find language configuration by language code
  * @param code - Language code to search for (e.g., 'en-US', 'zh-CN')
  * @returns Language configuration or undefined if not found
- *
+ * 
  * @example
  * ```ts
  * const chinese = getLanguageByCode('zh-CN');
@@ -728,11 +728,11 @@ export function getLanguageByCode(code: string): LanguageConfig | undefined {
  * Generate VitePress-compatible locales configuration
  * Converts our language config to the format VitePress expects
  * @returns VitePress locales configuration object
- *
+ * 
  * @example
  * ```ts
  * const locales = getLocalesConfig();
- * // Returns: {
+ * // Returns: { 
  * //   root: { label: 'English', lang: 'en-US', link: '/' },
  * //   'zh-CN': { label: '简体中文', lang: 'zh-CN', link: '/zh-CN/' }
  * // }
@@ -740,7 +740,7 @@ export function getLanguageByCode(code: string): LanguageConfig | undefined {
  */
 export function getLocalesConfig() {
     const locales: Record<string, any> = {};
-
+    
     projectConfig.languages.forEach((lang) => {
         const key = lang.isDefault ? "root" : lang.code;
         locales[key] = {
@@ -749,14 +749,14 @@ export function getLocalesConfig() {
             link: lang.link || (lang.isDefault ? "/" : `/${lang.code}/`),
         };
     });
-
+    
     return locales;
 }
 
 /**
  * Get the default currency setting for financial components
  * @returns Default currency code (e.g., 'CNY', 'USD', 'EUR')
- *
+ * 
  * @example
  * ```ts
  * const currency = getDefaultCurrency();
@@ -770,7 +770,7 @@ export function getDefaultCurrency(): string {
 /**
  * Get file system paths configuration for build tools and utilities
  * @returns Complete path configuration object
- *
+ * 
  * @example
  * ```ts
  * const paths = getPaths();
@@ -786,13 +786,13 @@ export function getPaths(): PathConfig {
  * Check if a specific feature is enabled in the configuration
  * @param feature - Feature name to check (e.g., 'search', 'mermaid', 'gitChangelog')
  * @returns True if feature is enabled, false otherwise
- *
+ * 
  * @example
  * ```ts
  * if (isFeatureEnabled('search')) {
  *   console.log('Search is enabled');
  * }
- *
+ * 
  * if (isFeatureEnabled('mermaid')) {
  *   // Initialize Mermaid diagrams
  * }
@@ -807,7 +807,7 @@ export function isFeatureEnabled(
 /**
  * Get consolidated project information for metadata and integrations
  * @returns Object containing basic project info, repository data, and Algolia config
- *
+ * 
  * @example
  * ```ts
  * const info = getProjectInfo();
@@ -887,7 +887,7 @@ export function getLangCodeFromLink(path: string): string {
  * Returns 'root' for default language, language code for others
  * @param langCode - Language code (e.g., 'en-US', 'zh-CN')
  * @returns 'root' for default language, or the language code for non-default languages
- *
+ * 
  * @example
  * ```ts
  * const searchKey = getSearchLocaleKey('en-US'); // returns 'root' if en-US is default
@@ -904,7 +904,7 @@ export function getSearchLocaleKey(langCode: string): string {
  * Imports and combines all language configurations from the lang directory
  * @param useRootForDefault - Whether to use 'root' key for default language (VitePress standard) or explicit language codes
  * @returns Promise resolving to VitePress-compatible locales configuration
- *
+ * 
  * @example
  * ```ts
  * // In config.mts with standard VitePress i18n
@@ -984,7 +984,7 @@ export async function generateLocalesConfig(
  * Automatically discover and import all language modules
  * Uses dynamic imports based on project configuration
  * @returns Promise resolving to object containing all language configurations and search locales
- *
+ * 
  * @example
  * ```ts
  * const result = await autoDiscoverLanguageModules();
@@ -1062,7 +1062,7 @@ export async function autoDiscoverLanguageModules(): Promise<{
  * Automatically discovers, imports, and configures all language modules
  * @param useRootForDefault - Whether to use 'root' key for default language (VitePress standard) or explicit language codes
  * @returns Promise resolving to VitePress-compatible locales configuration and search locales
- *
+ * 
  * @example
  * ```ts
  * // In config.mts - completely automated!
@@ -1091,7 +1091,7 @@ export async function generateLocalesConfigAuto(
  * @param langModules - Object containing imported language configurations
  * @param useRootForDefault - Whether to use 'root' key for default language (VitePress standard) or explicit language codes
  * @returns VitePress-compatible locales configuration object
- *
+ * 
  * @example
  * ```ts
  * // Manual approach (when you want to control module imports)
@@ -1174,7 +1174,7 @@ export function generateLocalesConfigFromModules(
  * Create auto-import helper for language modules
  * Generates import statements and langModules object based on project configuration
  * @returns Object containing import code and langModules object structure
- *
+ * 
  * @example
  * ```ts
  * // This helps you generate the imports automatically
