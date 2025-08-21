@@ -195,7 +195,7 @@ Component.clickRunCommand("/tell @s Harry"); // 点击时执行该命令
 Component.clickSuggestCommand("/tell @s Harry"); // 点击时将该命令加入聊天框中
 Component.clickCopy("剪贴板"); // 点击时将改内容复制到剪贴板中
 Component.clickChangePage("2"); // 点击时改变书的页数
-Component.clickOpenUrl("https://docs.mihono.cn"); // 点击时打开一个URL
+Component.clickOpenUrl("https://docs.variedmc.cc"); // 点击时打开一个URL
 Component.clickOpenFile("file.txt"); // 点击时打开一个文件
 
 Component.hover("其他东西"); // 将鼠标放到文本上时显示该内容

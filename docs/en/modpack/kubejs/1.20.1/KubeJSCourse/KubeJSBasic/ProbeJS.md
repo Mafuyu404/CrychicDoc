@@ -139,4 +139,4 @@ ItemEvents.firstLeftClicked(event=>{
 
 在ProbeJS中，大多数类都是在`Internal`下面`.`出来的，如果点不出来所需要的类，说明probejs没有找到，这个时候就得去找对应类的Java源码去找方法了(这个情况在原版的情况下很少出现)
 
-[点击查看更多JSDoc使用场景](https://docs.mihono.cn/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc)
+[点击查看更多JSDoc使用场景](https://docs.variedmc.cc/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc)

@@ -295,9 +295,9 @@ VuePress Theme Hope ++十分++ 强大。
 :::: demo 示例
 ::: carousels#{"cycle": true, "interval": 2800, "undelimiters": true}
 @tab
-![1](https://docs.mihono.cn/mods/adventure/champions-unofficial/1.png)
+![1](https://docs.variedmc.cc/mods/adventure/champions-unofficial/1.png)
 @tab
-![2](https://docs.mihono.cn/mods/adventure/champions-unofficial/2.png)
+![2](https://docs.variedmc.cc/mods/adventure/champions-unofficial/2.png)
 :::
 ::::
 

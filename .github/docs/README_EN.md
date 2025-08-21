@@ -1,6 +1,6 @@
 <div align="center"><img height="200" src="docs/public/logo.png" width="200"/></div>
 
-![GitHub Release Date](https://img.shields.io/github/created-at/PickAID/CrychicDoc) [![crychicdoc](https://img.shields.io/badge/CrychicDoc-Maintaining-green)](https://docs.mihono.cn)
+![GitHub Release Date](https://img.shields.io/github/created-at/PickAID/CrychicDoc) [![crychicdoc](https://img.shields.io/badge/CrychicDoc-Maintaining-green)](https://docs.variedmc.cc)
 
 ![GitHub issue custom search in repo](https://img.shields.io/github/issues/PickAID/CrychicDoc.svg) ![GitHub last commit](https://img.shields.io/github/last-commit/PickAID/CrychicDoc) ![Total Commits](https://img.shields.io/github/commit-activity/t/PickAID/CrychicDoc) ![GitHub branch status](https://img.shields.io/github/check-runs/PickAID/CrychicDoc/main) ![cc-by-sa-shield](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/PickAID/CrychicDoc)
@@ -9,7 +9,7 @@
 
 This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](LICENSE).
 
-Please include a link to this work when reproducing it: https://docs.mihono.cn
+Please include a link to this work when reproducing it: https://docs.variedmc.cc
 
 > **The project/team logo is created by Commercial commission and is authorized for non-commercial use. Please do not take it for any commercial activities.**
 

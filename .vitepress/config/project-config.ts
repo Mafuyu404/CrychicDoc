@@ -26,7 +26,7 @@ export const projectConfig: ProjectConfig = {
      * Favicon configuration
      * Can be a local file path (relative to base) or external URL
      */
-    favicon: "https://docs.mihono.cn/favicon.ico", // or "favicon.ico" or "https://example.com/icon.svg"
+    favicon: "https://docs.variedmc.cc/favicon.ico", // or "favicon.ico" or "https://example.com/icon.svg"
 
     /**
      * Logo configuration
@@ -41,7 +41,7 @@ export const projectConfig: ProjectConfig = {
         type: "git",
         url: "https://github.com/PickAID/CrychicDoc/",
     },
-    homepage: "https://docs.mihono.cn/",
+    homepage: "https://docs.variedmc.cc/",
 
     defaultCurrency: "CNY",
 

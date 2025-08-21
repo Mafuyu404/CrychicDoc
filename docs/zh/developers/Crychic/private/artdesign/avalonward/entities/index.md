@@ -28,15 +28,15 @@ next: false
 
 ::: carousels#{"arrows": true, "undelimiters": true }
 @tab
-![1](https://docs.mihono.cn/crychic/artdesign/avalonward/entities/mage/samples/1.png)
+![1](https://docs.variedmc.cc/crychic/artdesign/avalonward/entities/mage/samples/1.png)
 @tab
-![2](https://docs.mihono.cn/crychic/artdesign/avalonward/entities/mage/samples/2.png)
+![2](https://docs.variedmc.cc/crychic/artdesign/avalonward/entities/mage/samples/2.png)
 @tab
-![3](https://docs.mihono.cn/crychic/artdesign/avalonward/entities/mage/samples/3.png)
+![3](https://docs.variedmc.cc/crychic/artdesign/avalonward/entities/mage/samples/3.png)
 @tab
-![4](https://docs.mihono.cn/crychic/artdesign/avalonward/entities/mage/samples/4.png)
+![4](https://docs.variedmc.cc/crychic/artdesign/avalonward/entities/mage/samples/4.png)
 @tab
-![6](https://docs.mihono.cn/crychic/artdesign/avalonward/entities/mage/samples/5.png)
+![6](https://docs.variedmc.cc/crychic/artdesign/avalonward/entities/mage/samples/5.png)
 :::
 
 ![alt text](/crychic/artdesign/avalonward/entities/mage/guide1.png)
@@ -45,24 +45,24 @@ next: false
 
 ::: carousels#{"arrows": false,"undelimiters": false}
 @tab
-![1](https://docs.mihono.cn/crychic/artdesign/avalonward/entities/mage/bottles/1.png)
+![1](https://docs.variedmc.cc/crychic/artdesign/avalonward/entities/mage/bottles/1.png)
 @tab
-![1](https://docs.mihono.cn/crychic/artdesign/avalonward/entities/mage/bottles/2.png)
+![1](https://docs.variedmc.cc/crychic/artdesign/avalonward/entities/mage/bottles/2.png)
 @tab
-![1](https://docs.mihono.cn/crychic/artdesign/avalonward/entities/mage/bottles/3.png)
+![1](https://docs.variedmc.cc/crychic/artdesign/avalonward/entities/mage/bottles/3.png)
 @tab
-![1](https://docs.mihono.cn/crychic/artdesign/avalonward/entities/mage/bottles/4.png)
+![1](https://docs.variedmc.cc/crychic/artdesign/avalonward/entities/mage/bottles/4.png)
 @tab
-![1](https://docs.mihono.cn/crychic/artdesign/avalonward/entities/mage/bottles/5.png)
+![1](https://docs.variedmc.cc/crychic/artdesign/avalonward/entities/mage/bottles/5.png)
 @tab
-![1](https://docs.mihono.cn/crychic/artdesign/avalonward/entities/mage/bottles/6.png)
+![1](https://docs.variedmc.cc/crychic/artdesign/avalonward/entities/mage/bottles/6.png)
 :::
 
 卢恩文字参考图
 
 ::: carousels#{"undelimiters": false}
 @tab
-![1](https://docs.mihono.cn/crychic/artdesign/avalonward/entities/mage/lunes/1.png)
+![1](https://docs.variedmc.cc/crychic/artdesign/avalonward/entities/mage/lunes/1.png)
 @tab
-![1](https://docs.mihono.cn/crychic/artdesign/avalonward/entities/mage/lunes/2.png)
+![1](https://docs.variedmc.cc/crychic/artdesign/avalonward/entities/mage/lunes/2.png)
 :::

@@ -41,6 +41,11 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
     cleanUrls: true,
     metaChunk: true,
     ignoreDeadLinks: true,
+    
+    sitemap: {
+        hostname: 'https://docs.variedmc.cc',
+        lastmodDateOnly: false
+    },
 
     head: [
         ["link", { 
