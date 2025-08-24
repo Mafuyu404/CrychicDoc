@@ -59,10 +59,10 @@ You may find English version of readme on [here](/.github/docs/README_EN.md).
 
 ### Git 配置
 
-Git 大小写敏感配置会在克隆仓库时**自动完成**。如果自动配置失败，请运行：
+Git 忽略大小写敏感必须为false，代码如下：
 
 ```bash
-./setup-git.sh
+git config core.ignorecase false
 ```
 
 这将配置 Git 以正确处理文件名大小写，防止不同操作系统间的冲突。

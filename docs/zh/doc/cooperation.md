@@ -74,19 +74,11 @@ git remote add upstream https://github.com/PickAID/CrychicDoc.git
 
 4. **配置Git大小写敏感（重要）：**
 
-为了确保跨平台协作的一致性，请运行相应的设置脚本：
+为了确保未知错误，请使用如下代码：
 
 ::: code-group
-```bash [Linux/macOS/Git Bash]
-./.git-setup/setup-git-case-sensitivity.sh
-```
-
-```cmd [Windows 命令提示符]
-.git-setup\setup-git-case-sensitivity.bat
-```
-
-```powershell [Windows PowerShell]
-.\.git-setup\setup-git-case-sensitivity.ps1
+```bash [git]
+git config core.ignorecase false
 ```
 :::
 

@@ -73,12 +73,6 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
 
     markdown: { ...markdown },
 
-    mermaid: isFeatureEnabled('mermaid') ? {
-        startOnLoad: true,
-        securityLevel: "loose",
-        theme: "default",
-    } : undefined,
-
     vue: {
         template: {
             compilerOptions: {

@@ -1,0 +1,21 @@
+{
+    "author": "作者",
+    "codeCopied": "已复制!",
+    "copyCode": "复制",
+    "created": "创建日期",
+    "description": "模组描述",
+    "detailedDocs": "详细文档",
+    "downloadCount": "下载量",
+    "downloadTrend": "下载趋势",
+    "downloads": "下载",
+    "errorTitle": "获取数据失败",
+    "loading": "正在加载 XyeBBS 信息...",
+    "modLoaders": "模组加载器",
+    "noData": "暂无 XyeBBS 数据",
+    "statistics": "统计信息",
+    "supportedVersions": "支持版本",
+    "tags": "标签",
+    "title": "XyeBBS",
+    "updated": "更新日期",
+    "visitLink": "访问 XyeBBS 页面"
+}

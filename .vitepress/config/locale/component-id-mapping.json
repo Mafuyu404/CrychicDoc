@@ -12,6 +12,8 @@
         "tags-page": "content/TagsPage",
         "comment-component": "content/comment",
         "minecraft-damage-chart": "content/minecraft-advanced-damage-chart",
+        "XyebbsInfo": "content/XyebbsInfo",
+        "ModInfo": "content/ModInfo",
         "buttons-component": "ui/Buttons",
         "magic-move-container": "ui/MagicMoveContainer",
         "not-found": "ui/NotFound",

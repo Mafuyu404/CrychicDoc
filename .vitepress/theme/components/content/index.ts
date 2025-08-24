@@ -13,3 +13,6 @@ export { default as ChatPanel } from './ChatPanel.vue';
 export { default as ArticleMetadata } from './ArticleMetadata.vue';
 export { default as ResponsibleEditor } from './ResponsibleEditor.vue';
 export { default as MarkMapView } from './MarkMapView.vue';
+export { default as XyebbsInfo } from './XyebbsInfo.vue';
+export { default as ModInfo } from './ModInfo.vue';
+export { default as VChart } from './VChart.vue';

@@ -1,0 +1,21 @@
+{
+    "author": "Author",
+    "codeCopied": "Copied!",
+    "copyCode": "Copy",
+    "created": "Created",
+    "description": "Module Description",
+    "detailedDocs": "Detailed Documentation",
+    "downloadCount": "Download Count",
+    "downloadTrend": "Download Trend",
+    "downloads": "Downloads",
+    "errorTitle": "Failed to load data",
+    "loading": "Loading XyeBBS information...",
+    "modLoaders": "Mod Loaders",
+    "noData": "No XyeBBS data available",
+    "statistics": "Statistics",
+    "supportedVersions": "Supported Versions",
+    "tags": "Tags",
+    "title": "XyeBBS",
+    "updated": "Updated",
+    "visitLink": "Visit XyeBBS Page"
+}

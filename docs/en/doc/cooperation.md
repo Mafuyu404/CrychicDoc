@@ -74,19 +74,11 @@ git remote add upstream https://github.com/PickAID/CrychicDoc.git
 
 4. **Configure Git case sensitivity (IMPORTANT):**
 
-To ensure consistent behavior across all platforms, run the appropriate setup script:
+To ensure the correct function, run the appropriate commands:
 
 ::: code-group
-```bash [Linux/macOS/Git Bash]
-./.git-setup/setup-git-case-sensitivity.sh
-```
-
-```cmd [Windows Command Prompt]
-.git-setup\setup-git-case-sensitivity.bat
-```
-
-```powershell [Windows PowerShell]
-.\.git-setup\setup-git-case-sensitivity.ps1
+```bash [git]
+git config core.ignorecase false
 ```
 :::
 
