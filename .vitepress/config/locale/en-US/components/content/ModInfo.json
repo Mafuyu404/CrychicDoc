@@ -1,13 +1,13 @@
 {
-    "downloads": "downloads",
-    "loading": "Loading...",
     "checkCurseForge": "View CurseForge page",
-    "supportedVersions": "Supported Minecraft Versions",
-    "modAuthors": "Mod Authors",
     "dateCreated": "Created:",
-    "lastUpdated": "Last Updated:",
-    "unknown": "Unknown",
-    "usingCachedData": "Using cached data (API request failed)",
+    "downloads": "downloads",
     "failedToFetch": "Failed to fetch mod data:",
-    "failedToFetchModrinth": "Failed to fetch Modrinth mod data:"
+    "failedToFetchModrinth": "Failed to fetch Modrinth mod data:",
+    "lastUpdated": "Last Updated:",
+    "loading": "Loading...",
+    "modAuthors": "Mod Authors",
+    "supportedVersions": "Supported Minecraft Versions",
+    "unknown": "Unknown",
+    "usingCachedData": "Using cached data (API request failed)"
 }

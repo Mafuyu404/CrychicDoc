@@ -2,9 +2,6 @@
     import { ref, computed, onMounted } from "vue";
     import { useSafeI18n } from "../../../utils/i18n/locale";
 
-    /**
-     * Internationalization
-     */
     const { t } = useSafeI18n("ModInfo", {
         downloads: "downloads",
         loading: "Loading...",
@@ -36,7 +33,7 @@
             type: String,
             default: "",
         },
-        // 添加Modrinth相关属性
+
         modrinthId: {
             type: String,
             default: "",
@@ -46,7 +43,7 @@
             default: "",
         },
 
-        // 直接传入数据的props，用于测试
+
         testDownloads: {
             type: Number,
             default: 0,
@@ -73,7 +70,7 @@
         },
     });
 
-    // 响应式状态
+
     const modData = ref({
         downloadCount: 0,
         dateCreated: null,
@@ -83,7 +80,7 @@
         logoUrl: null,
     });
 
-    // Modrinth数据
+
     const modrinthData = ref({
         downloadCount: 0,
         dateCreated: null,
@@ -99,12 +96,12 @@
     const modrinthLoading = ref(false);
     const modrinthErrorMsg = ref("");
 
-    // API配置
+
     const CF_API_KEY = import.meta.env.VITE_CF_API_KEY || "";
     const CF_API_URL = "https://api.curseforge.com/v1/mods";
     const MODRINTH_API_URL = "https://api.modrinth.com/v2";
 
-    // 格式化工具函数
+
     const formatNumber = (num) => {
         if (num < 1000) return String(num);
         if (num < 1000000) return (num / 1000).toFixed(1) + "K";
@@ -121,7 +118,7 @@
         });
     };
 
-    // 计算属性
+
     const formattedDownloads = computed(() =>
         formatNumber(modData.value.downloadCount)
     );
@@ -136,7 +133,7 @@
             `https://www.curseforge.com/minecraft/mc-mods/${props.curseForgeId}`
     );
 
-    // Modrinth计算属性
+
     const formattedModrinthDownloads = computed(() =>
         formatNumber(modrinthData.value.downloadCount)
     );
@@ -149,7 +146,7 @@
         return null;
     });
 
-    // 版本排序
+
     const compareVersions = (a, b) => {
         const aParts = a.split(".").map(Number);
         const bParts = b.split(".").map(Number);
@@ -172,7 +169,7 @@
     const fetchModData = async () => {
         if (!props.projectId) return;
 
-        // Check if API key is available
+
         if (!CF_API_KEY) {
             errorMsg.value = "CurseForge API key is not configured";
             console.warn("CF_API_KEY environment variable is not set");
@@ -230,7 +227,7 @@
                     logoUrl: data.logo?.thumbnailUrl || null,
                 };
 
-                // 保存数据到本地存储以便离线使用
+
                 try {
                     localStorage.setItem(
                         `mod_data_${props.projectId}`,
@@ -245,7 +242,7 @@
                 }
             }
         } catch (error) {
-            // 尝试从本地存储加载缓存数据
+
             try {
                 const cachedData = localStorage.getItem(
                     `mod_data_${props.projectId}`
@@ -271,16 +268,16 @@
         }
     };
 
-    // 获取Modrinth数据
+
     const fetchModrinthData = async () => {
-        // 如果没有提供id或slug，则不进行请求
+
         if (!props.modrinthId && !props.modrinthSlug) return;
 
         modrinthLoading.value = true;
         modrinthErrorMsg.value = "";
 
         try {
-            // 确定要使用的标识符（id或slug）
+
             const identifier = props.modrinthId || props.modrinthSlug;
             const response = await fetch(
                 `${MODRINTH_API_URL}/project/${identifier}`,
@@ -311,7 +308,7 @@
                     iconUrl: data.icon_url || null,
                 };
 
-                // 保存数据到本地存储以便离线使用
+
                 try {
                     localStorage.setItem(
                         `modrinth_data_${identifier}`,
@@ -324,7 +321,7 @@
                     );
                 }
 
-                // 如果没有从CurseForge设置图标且有Modrinth图标，则使用Modrinth图标
+
                 if (
                     !props.iconUrl &&
                     !modData.value.logoUrl &&
@@ -334,7 +331,7 @@
                 }
             }
         } catch (error) {
-            // 尝试从本地存储加载缓存数据
+
             try {
                 const identifier = props.modrinthId || props.modrinthSlug;
                 const cachedData = localStorage.getItem(
@@ -365,9 +362,9 @@
         }
     };
 
-    // 生命周期钩子
+
     onMounted(async () => {
-        // 如果有测试数据，直接使用测试数据
+
         if (
             props.testDownloads > 0 ||
             props.testVersions.length > 0 ||
@@ -385,7 +382,7 @@
             await fetchModData();
         }
 
-        // 如果有Modrinth测试数据，直接使用
+
         if (props.testModrinthDownloads > 0) {
             modrinthData.value = {
                 downloadCount: props.testModrinthDownloads,
@@ -411,7 +408,7 @@
                 <h1 class="mod-title">{{ modName }}</h1>
 
                 <div class="mod-badges">
-                    <!-- CurseForge下载量 -->
+
                     <a
                         v-if="props.curseForgeId"
                         :href="curseForgeUrl"
@@ -482,7 +479,7 @@
                         </div>
                     </a>
 
-                    <!-- Modrinth下载量 -->
+
                     <a
                         v-if="modrinthUrl"
                         :href="modrinthUrl"
@@ -530,7 +527,7 @@
             </div>
         </div>
 
-        <!-- CurseForge/Modrinth 详细信息 -->
+
         <div
             v-if="
                 (projectId && !isLoading && !errorMsg) ||
@@ -682,7 +679,7 @@
         display: none !important;
     }
 
-    /* 禁用ModInfo组件内所有链接的图标 */
+
     .mod-info a::before {
         display: none !important;
     }
@@ -714,7 +711,7 @@
         border: 2px solid var(--vp-c-brand);
     }
 
-    /* Modrinth样式 */
+
     .modrinth-stats {
         --modrinth-color-rgb: 30, 215, 96;
     }

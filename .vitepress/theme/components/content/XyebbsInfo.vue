@@ -1,7 +1,6 @@
 <template>
     <div v-if="xyebbsId" class="xyebbs-container">
         <div class="xyebbs-card" :class="{ expanded: isExpanded }">
-            <!-- Header -->
             <div class="xyebbs-header" @click="toggleExpanded">
                 <div class="xyebbs-badge">
                     <div class="xyebbs-icon-wrapper">
@@ -35,10 +34,8 @@
                 </div>
             </div>
 
-            <!-- Content -->
             <Transition name="xyebbs-slide">
                 <div v-show="isExpanded" class="xyebbs-content">
-                    <!-- Loading State -->
                     <div v-if="isLoading" class="xyebbs-state-card loading">
                         <div class="state-icon">
                             <div class="loading-spinner"></div>
@@ -46,7 +43,6 @@
                         <div class="state-text">{{ t.loading }}</div>
                     </div>
 
-                    <!-- Error State -->
                     <div v-else-if="errorMsg" class="xyebbs-state-card error">
                         <div class="state-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24">
@@ -62,9 +58,7 @@
                         </div>
                     </div>
 
-                    <!-- Data Content -->
                     <div v-else-if="data.downloadCount > 0" class="xyebbs-data">
-                        <!-- Statistics Grid -->
                         <div class="stats-grid">
                             <div class="stat-card primary">
                                 <div class="stat-icon">
@@ -157,7 +151,6 @@
                             </div>
                         </div>
 
-                        <!-- Download Chart -->
                         <div v-if="chartData.length > 0" class="chart-section">
                             <div class="section-header">
                                 <h4 class="section-title">
@@ -165,15 +158,16 @@
                                 </h4>
                             </div>
                             <div class="chart-container">
-                                <v-chart
-                                    class="chart"
-                                    :option="chartOption"
-                                    autoresize
-                                />
+                                <ClientOnly>
+                                    <v-chart
+                                        class="chart"
+                                        :option="chartOption"
+                                        autoresize
+                                    />
+                                </ClientOnly>
                             </div>
                         </div>
 
-                        <!-- Description -->
                         <div v-if="data.description || data.coverUrl" class="content-section">
                             <div class="section-header">
                                 <h4 class="section-title">
@@ -197,7 +191,6 @@
                             </div>
                         </div>
 
-                        <!-- Tags and Versions -->
                         <div class="tags-grid">
                             <div
                                 v-if="data.gameVersions.length > 0"
@@ -252,7 +245,6 @@
                             </div>
                         </div>
 
-                        <!-- Detailed Documentation -->
                         <div v-if="data.text" class="content-section">
                             <div
                                 class="section-header expandable"
@@ -286,7 +278,6 @@
                             </Transition>
                         </div>
 
-                        <!-- Visit Link -->
                         <div class="action-section">
                             <a
                                 :href="xyebbsUrl"
@@ -311,7 +302,6 @@
                         </div>
                     </div>
 
-                    <!-- No Data State -->
                     <div v-else class="xyebbs-state-card no-data">
                         <div class="state-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24">
@@ -331,34 +321,36 @@
 
 <script setup>
     import { ref, computed } from "vue";
-    import { use } from "echarts/core";
-    import { CanvasRenderer } from "echarts/renderers";
-    import { LineChart } from "echarts/charts";
-    import {
-        TitleComponent,
-        TooltipComponent,
-        LegendComponent,
-        GridComponent,
-    } from "echarts/components";
-    import VChart from "vue-echarts";
+    import { defineAsyncComponent } from "vue";
     import MarkdownIt from "markdown-it";
     import hljs from "highlight.js";
     import "highlight.js/styles/github.css";
     import { useSafeI18n } from "../../../utils/i18n/locale";
 
-    // Register ECharts components
-    use([
-        CanvasRenderer,
-        LineChart,
-        TitleComponent,
-        TooltipComponent,
-        LegendComponent,
-        GridComponent,
-    ]);
+    const VChart = defineAsyncComponent(async () => {
+        const { default: VChart } = await import("vue-echarts");
+        const { use } = await import("echarts/core");
+        const { CanvasRenderer } = await import("echarts/renderers");
+        const { LineChart } = await import("echarts/charts");
+        const {
+            TitleComponent,
+            TooltipComponent,
+            LegendComponent,
+            GridComponent,
+        } = await import("echarts/components");
 
-    /**
-     * Component props definition
-     */
+        use([
+            CanvasRenderer,
+            LineChart,
+            TitleComponent,
+            TooltipComponent,
+            LegendComponent,
+            GridComponent,
+        ]);
+
+        return VChart;
+    });
+
     const props = defineProps({
         xyebbsId: {
             type: String,
@@ -366,9 +358,6 @@
         },
     });
 
-    /**
-     * Internationalization
-     */
     const { t } = useSafeI18n("XyebbsInfo", {
         title: "XyeBBS",
         downloads: "Downloads",
@@ -391,9 +380,6 @@
         codeCopied: "Copied!",
     });
 
-    /**
-     * Component state
-     */
     const isExpanded = ref(false);
     const isTextExpanded = ref(false);
     const isLoading = ref(false);
@@ -413,26 +399,16 @@
         text: null,
     });
 
-    /**
-     * API configuration
-     */
     const XYEBBS_API_URL =
         "https://resource-api.xyeidc.com/client/resources/identify";
 
-    /**
-     * Computed properties
-     */
     const xyebbsUrl = computed(() => {
         return `https://bbs.xyeidc.com/res-id/${props.xyebbsId}?tab=info`;
     });
 
-    /**
-     * Chart data - mock data for demonstration
-     */
     const chartData = computed(() => {
         if (!data.value || data.value.downloadCount === 0) return [];
 
-        // Generate mock trend data based on download count
         const count = data.value.downloadCount || 0;
         const days = 30;
         const mockData = [];
@@ -440,7 +416,7 @@
         for (let i = days; i >= 0; i--) {
             const date = new Date();
             date.setDate(date.getDate() - i);
-            const variance = Math.random() * 0.3 + 0.85; // 85-115% variance
+            const variance = Math.random() * 0.3 + 0.85;
             const dailyDownloads = Math.max(
                 1,
                 Math.floor((count / days) * variance)
@@ -454,11 +430,7 @@
         return mockData;
     });
 
-    /**
-     * Chart configuration
-     */
     const chartOption = computed(() => {
-        // Use CSS variables for theme compatibility
         const isDark = typeof window !== 'undefined' && 
                       document.documentElement.classList.contains('dark');
         
@@ -549,9 +521,6 @@
         };
     });
 
-    /**
-     * Process markdown text
-     */
     const processedText = computed(() => {
         if (!data.value.text) return null;
 
@@ -602,9 +571,6 @@
         }
     });
 
-    /**
-     * Utility methods
-     */
     const formatNumber = (num) => {
         if (num >= 1000000) {
             return (num / 1000000).toFixed(1) + "M";
@@ -620,9 +586,6 @@
         return date.toLocaleDateString();
     };
 
-    /**
-     * Event handlers
-     */
     const toggleExpanded = async () => {
         isExpanded.value = !isExpanded.value;
 
@@ -650,9 +613,6 @@
         }
     };
 
-    /**
-     * API data fetching
-     */
     const fetchData = async () => {
         isLoading.value = true;
         errorMsg.value = "";
@@ -705,9 +665,7 @@
         }
     };
 
-    /**
-     * Global code copy function
-     */
+
     if (typeof window !== "undefined") {
         window.copyCode = function (button) {
             const codeBlock = button.parentElement.nextElementSibling;
@@ -744,7 +702,6 @@
 </script>
 
 <style scoped>
-    /* Container */
     .xyebbs-container {
         margin: 24px 0;
     }
@@ -761,7 +718,6 @@
         border-color: var(--vp-c-brand);
     }
 
-    /* Header */
     .xyebbs-header {
         display: flex;
         align-items: center;
@@ -842,13 +798,11 @@
         color: var(--vp-c-brand);
     }
 
-    /* Content */
     .xyebbs-content {
         padding: 24px;
         transform-origin: top;
     }
 
-    /* State Cards */
     .xyebbs-state-card {
         display: flex;
         align-items: center;
@@ -912,7 +866,6 @@
         }
     }
 
-    /* Statistics Grid */
     .stats-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -972,7 +925,6 @@
         margin-top: 2px;
     }
 
-    /* Sections */
     .chart-section,
     .content-section {
         margin: 32px 0;
@@ -1029,7 +981,6 @@
         color: var(--vp-c-brand);
     }
 
-    /* Chart */
     .chart-container {
         background: var(--vp-c-bg-soft);
         border: 2px solid var(--vp-c-divider);
@@ -1043,7 +994,6 @@
         height: 100%;
     }
 
-    /* Content Cards */
     .content-card {
         background: var(--vp-c-bg-soft);
         border: 2px solid var(--vp-c-divider);
@@ -1090,7 +1040,6 @@
         font-size: 0.95rem;
     }
 
-    /* Tags */
     .tags-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1144,7 +1093,6 @@
         border: 2px solid var(--vp-c-divider);
     }
 
-    /* Action Section */
     .action-section {
         margin-top: 32px;
         padding-top: 24px;
@@ -1175,7 +1123,6 @@
         display: none;
     }
 
-    /* Documentation Content Styles */
     .content-card :deep(h1),
     .content-card :deep(h2),
     .content-card :deep(h3),
@@ -1280,7 +1227,6 @@
         border: 2px solid var(--vp-c-divider);
     }
 
-    /* Animations */
     .xyebbs-slide-enter-active {
         transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         overflow: hidden;
@@ -1321,7 +1267,6 @@
         transform: translateY(-2px) scale(0.995);
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
         .xyebbs-container {
             margin: 16px 0;
