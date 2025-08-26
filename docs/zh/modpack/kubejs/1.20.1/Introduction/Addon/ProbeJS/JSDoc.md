@@ -1,11 +1,13 @@
 ---
-title: JSDoc 在 KubeJS/ProbeJS 生态下的权威指南
+title: JSDoc文档
 description: 全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。
 tags:
   - JSDoc
   - KubeJS
   - ProbeJS
 progress: 100
+hidden: false
+priority: 100
 ---
 
 # JSDoc

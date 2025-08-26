@@ -1,11 +1,13 @@
 ---
-title: LivingEntity（有生命实体）
+title: 生物实体
 description: LivingEntity 类的属性、方法、事件与 KubeJS 用法
 progress: 80
 tags:
   - KubeJS
   - Entity
   - LivingEntity
+hidden: false
+priority: 300
 ---
 
 # LivingEntity

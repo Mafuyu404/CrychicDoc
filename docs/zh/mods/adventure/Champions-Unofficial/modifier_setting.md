@@ -1,3 +1,8 @@
+---
+title: modifier_setting
+hidden: false
+priority: 0
+---
 # 属性修饰符配置 Modifier Setting
 
 阅前须知：你需要知道Minecraft中的[数据包](https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E5%8C%85)，知晓部分游戏内容通过数据包加载到游戏中，知晓JSON文本及其语法。

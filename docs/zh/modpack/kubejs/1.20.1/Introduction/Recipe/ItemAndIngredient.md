@@ -1,6 +1,9 @@
 ---
-  authors:
+authors:
   - Eikidona
+title: 物品和原料
+hidden: false
+priority: 400
 ---
 # 物品与原料表示
 

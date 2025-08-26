@@ -1,3 +1,8 @@
+---
+title: Biome
+hidden: false
+priority: 0
+---
 # 生物群系标签
 
 ## 概述

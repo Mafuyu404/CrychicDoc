@@ -2,10 +2,12 @@
 title: Goal
 description: KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明
 tags:
-    - KubeJS
-    - Entity
-    - Goal
+  - KubeJS
+  - Entity
+  - Goal
 progress: 90
+hidden: false
+priority: 700
 ---
 
 # 实体目标（Goal）系统 {#KubeJsGoalSystem}

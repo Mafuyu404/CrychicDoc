@@ -1,5 +1,7 @@
 ---
 title: '@ModifyVariable'
+hidden: false
+priority: 0
 ---
 
 # @ModifyVariable

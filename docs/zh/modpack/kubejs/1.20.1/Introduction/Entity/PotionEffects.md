@@ -6,6 +6,8 @@ tags:
   - LivingEntity
   - PotionEffects
 progress: 90
+hidden: false
+priority: 200
 ---
 
 # {{ $frontmatter.title }}

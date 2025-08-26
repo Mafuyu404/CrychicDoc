@@ -1,3 +1,8 @@
+---
+title: 物品类型
+hidden: false
+priority: 200
+---
 # 物品类型
 
 - 该文件不再使用

@@ -1,12 +1,18 @@
 ---
 title: 11 装备
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 11 装备 相关教程
 image: ./covers/7798cca5464edd8c7d9dbf16226840800803137c.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
 draft: false
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 装备
 

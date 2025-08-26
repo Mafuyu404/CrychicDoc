@@ -1,3 +1,8 @@
+---
+title: Attribute
+hidden: false
+priority: 0
+---
 # 属性
 
 - 一个属性（Attribute）有基础值（base）修饰符（Modifiers）总值（Total）。

@@ -37,7 +37,7 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
     outDir: projectPaths.build,
     cacheDir: projectPaths.cache,
     
-    lastUpdated: true,
+    lastUpdated: false,
     cleanUrls: true,
     metaChunk: true,
     ignoreDeadLinks: true,

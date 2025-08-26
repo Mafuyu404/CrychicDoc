@@ -109,7 +109,7 @@ export const projectConfig: ProjectConfig = {
         markmap: true,
         multilingual: true,
         autoSidebar: true,
-        editLink: true,
+        editLink: false,
     },
 
     customSnippetFileNames: [],
@@ -158,11 +158,11 @@ export const projectConfig: ProjectConfig = {
     /**
      * Edit link configuration
      */
-    editLink: {
-        pattern:
-            "https://github.com/M1hono/M1honoVitepressTemplate/edit/main/docs/src/:path",
-        text: "Edit this page on GitHub",
-    },
+    // editLink: {
+    //     pattern:
+    //         "https://github.com/M1hono/M1honoVitepressTemplate/edit/main/docs/src/:path",
+    //     text: "Edit this page on GitHub",
+    // },
 
     /**
      * Configuration for floating social media buttons

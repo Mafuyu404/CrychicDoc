@@ -1,3 +1,8 @@
+---
+title: 熔炼
+hidden: false
+priority: 0
+---
 # 高炉
 
 ## 前言

@@ -10,6 +10,8 @@ next:
 order: 1
 authors:
   - M1hono
+hidden: false
+priority: 0
 ---
 
 # Introduction to Champions-Unofficial

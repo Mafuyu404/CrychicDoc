@@ -1,6 +1,10 @@
 ---
 title: Sidebar Configuration
-description: CrychicDoc sidebar configuration system complete guide, from basic to advanced comprehensive tutorial
+description: >-
+  CrychicDoc sidebar configuration system complete guide, from basic to advanced
+  comprehensive tutorial
+hidden: false
+priority: 0
 ---
 
 # Sidebar Configuration Tutorial

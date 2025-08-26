@@ -1,12 +1,17 @@
 ---
 title: 18 OBJ模型
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 18 OBJ模型 相关教程
 image: ./covers/9e6ec36a9a8a2f91e68c5af12c055f1248f63288.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
-
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 前言
 

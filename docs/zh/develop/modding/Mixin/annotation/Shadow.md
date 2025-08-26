@@ -1,5 +1,7 @@
 ---
 title: '@Shadow'
+hidden: false
+priority: 0
 ---
 
 # @Shadow

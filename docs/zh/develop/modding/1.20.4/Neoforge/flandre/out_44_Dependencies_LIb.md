@@ -1,12 +1,17 @@
 ---
 title: 44 如何添加模组和lib
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 44 如何添加模组和lib 相关教程
 image: ./covers/908b0f9eb44b349604fc2f5b3ff855374bc23664.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
-
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 添加使用模组和附属
 

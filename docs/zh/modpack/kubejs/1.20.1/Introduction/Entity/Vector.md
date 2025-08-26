@@ -2,9 +2,11 @@
 title: 向量
 description: 向量与坐标
 tags:
-    - KubeJS
-    - Vector
+  - KubeJS
+  - Vector
 progress: 95
+hidden: false
+priority: 150
 ---
 
 # 向量与坐标

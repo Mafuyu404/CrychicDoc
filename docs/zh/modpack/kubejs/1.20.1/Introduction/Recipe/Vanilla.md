@@ -1,3 +1,8 @@
+---
+title: 原版
+hidden: false
+priority: 300
+---
 # 原版配方
 
 ## 前言

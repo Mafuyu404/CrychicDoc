@@ -1,5 +1,7 @@
 ---
 title: '@Mixin'
+hidden: false
+priority: 0
 ---
 
 # @Mixin

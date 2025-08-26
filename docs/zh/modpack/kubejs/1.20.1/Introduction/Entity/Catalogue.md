@@ -1,11 +1,13 @@
 ---
-title: 实体系统目录
+title: 目录
 description: KubeJS 实体系统相关文档导航与索引
 progress: 70
 tags:
   - KubeJS
   - Entity
 state: preliminary
+hidden: false
+priority: -1000000
 ---
 
 # {{ $frontmatter.title }}

@@ -3,6 +3,9 @@ description: 简单的单方块机器设计
 state: unfinished
 progress: 10
 backPath: ./Catalogue
+title: SingleBlockBasic
+hidden: false
+priority: 0
 ---
 
 # 单方块机器 {#SingleBlockMachine}

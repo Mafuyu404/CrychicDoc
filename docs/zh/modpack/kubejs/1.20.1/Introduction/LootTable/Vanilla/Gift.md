@@ -1,3 +1,8 @@
+---
+title: 礼物
+hidden: false
+priority: 600
+---
 # 礼物类型战利品表
 
 ## 战利品表

@@ -1,3 +1,8 @@
+---
+title: ItemFilter
+hidden: false
+priority: 0
+---
 # ItemFilter
 
 物品过滤器是 LootJS 中的一个重要使用工具。主要用于根据给定的条件过滤物品。

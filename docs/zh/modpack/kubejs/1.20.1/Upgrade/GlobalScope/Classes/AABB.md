@@ -1,3 +1,8 @@
+---
+title: AABB
+hidden: false
+priority: 0
+---
 # AABB
 
 ## 介绍

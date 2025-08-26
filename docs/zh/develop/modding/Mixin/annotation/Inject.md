@@ -1,5 +1,7 @@
 ---
 title: '@Inject'
+hidden: false
+priority: 0
 ---
 
 # @Inject

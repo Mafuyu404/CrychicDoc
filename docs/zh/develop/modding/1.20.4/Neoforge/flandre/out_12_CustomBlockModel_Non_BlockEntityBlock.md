@@ -1,12 +1,17 @@
 ---
 title: 12 自定义方块模型和非实体方块
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 12 自定义方块模型和非实体方块 相关教程
 image: ./covers/33bba4aee6ecbb1717f43c720138144e1b1de251.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
-
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 本文参考了改内容
 

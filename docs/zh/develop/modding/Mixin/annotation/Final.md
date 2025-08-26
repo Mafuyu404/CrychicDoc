@@ -1,5 +1,7 @@
 ---
 title: '@Final'
+hidden: false
+priority: 0
 ---
 
 # @Final

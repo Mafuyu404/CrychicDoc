@@ -1,3 +1,8 @@
+---
+title: Event
+hidden: false
+priority: 0
+---
 # Loot Table Event
 
 :::v-info

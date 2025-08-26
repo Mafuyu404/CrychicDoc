@@ -1,6 +1,8 @@
 ---
 title: 侧边栏配置
 description: CrychicDoc 侧边栏配置系统完全指南，从基础到高级的全面教程
+hidden: false
+priority: 0
 ---
 
 # 侧边栏配置教程

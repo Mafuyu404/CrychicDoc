@@ -1,3 +1,8 @@
+---
+title: LootJS
+hidden: false
+priority: -1000000
+---
 # LootJs
 
 此教程为 `LootJs` Minecraft 1.21 NeoForge 版本教程

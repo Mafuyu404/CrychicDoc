@@ -10,6 +10,8 @@ authors:
 next:
   text: Introduction
   link: /en/mods\adventure\Champions-Unofficial\index
+hidden: false
+priority: 0
 ---
 
 #

@@ -10,6 +10,8 @@ prev:
 next:
   text: 配置
   link: /zh/mods/adventure/Champions-Unofficial/config
+hidden: false
+priority: 0
 ---
 
 # 冠军再续介绍

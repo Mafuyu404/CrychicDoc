@@ -1,3 +1,8 @@
+---
+title: 事件列表
+hidden: false
+priority: 0
+---
 # 客户端脚本事件列表
 
 ## 前言

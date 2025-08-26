@@ -4,6 +4,7 @@ description: 本站脚本工具的完整使用指南，包括 frontmatter 编辑
 progress: 100
 state: published
 priority: 10000000
+hidden: false
 ---
 
 # {{ $frontmatter.title }}

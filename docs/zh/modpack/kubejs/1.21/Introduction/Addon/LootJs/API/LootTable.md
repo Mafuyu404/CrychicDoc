@@ -1,3 +1,8 @@
+---
+title: LootTable
+hidden: false
+priority: 0
+---
 # LootTable
 
 战利品表用于决定在何种情况下生成何种物品。

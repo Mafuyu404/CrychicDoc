@@ -1,3 +1,8 @@
+---
+title: InvertedBonemeal
+hidden: false
+priority: 0
+---
 # 反转骨粉
 
 ::: v-info

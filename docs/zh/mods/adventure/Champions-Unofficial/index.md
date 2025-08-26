@@ -3,6 +3,9 @@ root: true
 title: 冠军再续
 Layout: doc
 backPath: ../
+hidden: false
+priority: 9007199254740991
+collapsed: true
 ---
 
 ## 冠军再续

@@ -1,5 +1,7 @@
 ---
 title: 文档样式一览
+hidden: false
+priority: 0
 ---
 # {{ $frontmatter.title }}
 

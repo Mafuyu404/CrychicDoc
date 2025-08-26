@@ -1,5 +1,7 @@
 ---
 title: Document Style Overview
+hidden: false
+priority: 0
 ---
 # {{ $frontmatter.title }}
 

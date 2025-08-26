@@ -1,3 +1,8 @@
+---
+title: Create
+hidden: false
+priority: 0
+---
 # Create a loot table
 
 LootJS支持我们创建自定义的战利品表。

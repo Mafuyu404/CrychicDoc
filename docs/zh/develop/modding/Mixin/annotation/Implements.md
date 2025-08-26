@@ -1,5 +1,7 @@
 ---
 title: '@Implements'
+hidden: false
+priority: 0
 ---
 
 # @Implements

@@ -1,6 +1,9 @@
 ---
 progress: 100
 state: preliminary
+title: Lazy
+hidden: false
+priority: 0
 ---
 # Lazy
 

@@ -1,3 +1,8 @@
+---
+title: 实体类型
+hidden: false
+priority: 0
+---
 # 实体类型标签
 
 ## 概述

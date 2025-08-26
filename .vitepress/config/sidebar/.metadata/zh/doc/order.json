@@ -22,7 +22,7 @@
   "samples.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "sidebarTutorial.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
@@ -62,6 +62,11 @@
     "isActiveInStructure": true
   },
   "litetree-guide.md": {
+    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "plugins.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
     "isActiveInStructure": true

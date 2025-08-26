@@ -1,5 +1,7 @@
 ---
 title: '@ModifyConstant'
+hidden: false
+priority: 0
 ---
 
 # @ModifyConstant

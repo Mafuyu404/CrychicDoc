@@ -1,6 +1,10 @@
 ---
 title: VSCode Snippets Guide
-description: A comprehensive guide to using VSCode Markdown snippets in the CrychicDoc project.
+description: >-
+  A comprehensive guide to using VSCode Markdown snippets in the CrychicDoc
+  project.
+hidden: false
+priority: 0
 ---
 
 # VSCode Snippets Guide

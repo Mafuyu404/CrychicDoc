@@ -1,3 +1,8 @@
+---
+title: 材质
+hidden: false
+priority: 400
+---
 # 资源文件
 
 ## 物品纹理

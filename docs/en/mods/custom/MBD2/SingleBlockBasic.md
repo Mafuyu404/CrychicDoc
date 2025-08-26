@@ -3,6 +3,9 @@ description: Simple single block machine design
 state: unfinished
 progress: 10
 backPath: ./Catalogue
+title: SingleBlockBasic
+hidden: false
+priority: 0
 ---
 
 # Single Block Machine {#SingleBlockMachine}

@@ -1,11 +1,13 @@
 ---
-title: Player（玩家）
+title: 玩家实体
 description: Player 类的属性、方法、事件与 KubeJS 用法
 progress: 80
 tags:
   - KubeJS
   - Entity
   - Player
+hidden: false
+priority: 500
 ---
 
 # Player

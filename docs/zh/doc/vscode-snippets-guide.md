@@ -1,6 +1,8 @@
 ---
 title: VSCode 代码片段使用指南
 description: CrychicDoc 项目中的 VSCode Markdown 代码片段完整使用指南
+hidden: false
+priority: 0
 ---
 
 # VSCode 代码片段使用指南

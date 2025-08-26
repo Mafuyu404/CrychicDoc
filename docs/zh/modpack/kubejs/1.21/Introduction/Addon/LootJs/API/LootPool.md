@@ -1,3 +1,8 @@
+---
+title: LootPool
+hidden: false
+priority: 0
+---
 # LootPool
 
 随机池用于决定在何种情况下生成何种物品。主要定义了若干待选的抽取项。它通过使用多个不同的池来帮助在战利品表中分组物品。

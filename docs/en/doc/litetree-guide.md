@@ -2,6 +2,8 @@
 title: LiteTree Component Guide
 description: Complete guide to using LiteTree for creating tree structures in VitePress
 layout: doc
+hidden: false
+priority: 0
 ---
 
 # LiteTree Component Guide

@@ -6,6 +6,8 @@ tags:
   - KubeJS
   - ProbeJS
 progress: 95
+hidden: false
+priority: 300
 ---
 
 # KubeJS/ProbeJS 场景下的 JSDoc 实践

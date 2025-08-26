@@ -1,6 +1,10 @@
 ---
 title: 环境配置与预览
-outline: [2,2]
+outline:
+  - 2
+  - 2
+hidden: false
+priority: 0
 ---
 
 # {{ $frontmatter.title }}

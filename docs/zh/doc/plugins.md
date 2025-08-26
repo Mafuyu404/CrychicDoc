@@ -1,12 +1,11 @@
 ---
 layout: doc
 title: 文档插件示例
-
 authors:
   - M1hono
   - skyraah
-tags:
-  - sample
+hidden: false
+priority: 0
 ---
 
 # 文档插件示例
@@ -58,17 +57,16 @@ public void onBlockRightClick(PlayerInteractEvent.RightClickBlock event) {
 
 ## 时间线插件示例
 
-:::: demo 示例
-::: timeline 2023-05-24
-- **do some thing1**
-- do some thing2
+::::: demo 示例
+:::: timeline density="default" direction="vertical"
+::: timeline-item type="info" opposite="2024-8"
+该文档开始进行维护
 :::
-
-::: timeline 2023-05-23
-do some thing3
-do some thing4
+::: timeline-item type="success" card="true"
+该文档维护至今
 :::
 ::::
+:::::
 
 ## B站视频示例
 

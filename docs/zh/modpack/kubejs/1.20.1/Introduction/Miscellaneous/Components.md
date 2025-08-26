@@ -1,3 +1,8 @@
+---
+title: 组件
+hidden: false
+priority: 0
+---
 # 文本组件 (Component)
 
 ## 前言

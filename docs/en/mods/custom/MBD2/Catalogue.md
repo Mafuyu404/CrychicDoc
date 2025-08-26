@@ -1,9 +1,13 @@
 ---
 title: Multiblock2
 progress: 5
-description: This documentation is being improved. If you have any questions, please feel free to leave a comment.
+description: >-
+  This documentation is being improved. If you have any questions, please feel
+  free to leave a comment.
 state: unfinished
 backPath: ../
+hidden: false
+priority: 0
 ---
 
 # Multiblocked 2

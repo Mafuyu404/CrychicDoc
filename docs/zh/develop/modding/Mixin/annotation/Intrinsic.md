@@ -1,5 +1,7 @@
 ---
 title: '@Intrinsic'
+hidden: false
+priority: 0
 ---
 
 # @Intrinsic

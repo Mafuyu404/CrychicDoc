@@ -1,6 +1,9 @@
 ---
-  authors:
+authors:
   - Eikidona
+title: RecipeFilter
+hidden: false
+priority: 0
 ---
 
 # 配方过滤器

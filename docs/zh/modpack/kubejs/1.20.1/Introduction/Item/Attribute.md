@@ -3,6 +3,8 @@ title: 物品属性修饰符
 progress: 90
 description: 物品（ItemStack）属性修饰符机制
 state: unfinished
+hidden: false
+priority: 0
 ---
 
 # 物品属性修饰符

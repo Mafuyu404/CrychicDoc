@@ -1,6 +1,9 @@
 ---
 prev: false
 next: false
+title: component
+hidden: false
+priority: 0
 ---
 
 # 组件

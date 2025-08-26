@@ -1,5 +1,7 @@
 ---
 title: '@Accessor'
+hidden: false
+priority: 0
 ---
 
 # @Accessor

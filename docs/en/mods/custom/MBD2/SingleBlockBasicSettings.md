@@ -3,6 +3,9 @@ description: Single block machine settings
 state: preliminary
 progress: 100
 backPath: ./Catalogue
+title: SingleBlockBasicSettings
+hidden: false
+priority: 0
 ---
 
 # Basic Settings {#BasicOptions}

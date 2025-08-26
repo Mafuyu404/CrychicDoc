@@ -1,7 +1,8 @@
 ---
 layout: doc
 title: 项目合作教程
-
+hidden: false
+priority: 0
 ---
 
 # 项目合作教程

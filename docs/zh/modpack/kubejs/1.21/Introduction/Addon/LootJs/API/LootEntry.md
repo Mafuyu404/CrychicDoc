@@ -1,3 +1,8 @@
+---
+title: LootEntry
+hidden: false
+priority: 0
+---
 # LootEntry
 
 战利品抽取项用于在战利品表中创建结果物品。它们被分为不同类型的抽取项。

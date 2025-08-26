@@ -1,3 +1,8 @@
+---
+title: Modify
+hidden: false
+priority: 0
+---
 # Modify your first loot table
 
 :::v-info

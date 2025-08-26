@@ -1,3 +1,8 @@
+---
+title: 物品修饰器
+hidden: false
+priority: 0
+---
 # 物品修饰器
 
 ## 概述

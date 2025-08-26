@@ -1,5 +1,7 @@
 ---
 title: '@Redirect'
+hidden: false
+priority: 0
 ---
 
 # @Redirect

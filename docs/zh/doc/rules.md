@@ -3,6 +3,8 @@ progress: 100
 title: 合作规范
 description: 该文章提供了本站文档编写规范！
 state: preliminary
+hidden: false
+priority: 0
 ---
 
 # 文档编写规范
@@ -31,33 +33,36 @@ state: preliminary
 folder=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTEwIDRIOGEyIDIgMCAwIDAtMiAydjEyYTIgMiAwIDAgMCAyIDJoOGEyIDIgMCAwIDAgMi0yVjhhMiAyIDAgMCAwLTItMmgtM2wtMi0yWiIvPjwvc3ZnPg==
 ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTUgMTUiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMxNzhDNiIgZD0iTTEyLjUgOHYtLjE2N2MwLS43MzYtLjU5Ny0xLjMzMy0xLjMzMy0xLjMzM0gxMGExLjUgMS41IDAgMSAwIDAgM2gxYTEuNSAxLjUgMCAwIDEgMCAzaC0xQTEuNSAxLjUgMCAwIDEgOC41IDExTTggNi41SDNtMi41IDBWMTNNMS41LjVoMTN2MTRIOS41eiIvPjwvc3ZnPg==
 js=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNmN2RmMWUiIGQ9Ik0zIDNoMTh2MThIM1ptMTYuNTI1IDE0LjVjLS4zLS4zNTQtLjc5NS0uNjI5LTEuNzE3LS42MjljLS44ODEgMC0xLjQzOS4zMTgtMS40MzkuNzE4YzAgLjM5Ni4zNzMuNjM3IDEuMTU2Ljk2N2MxLjMzMi41ODYgMi4yODEgMS4wOTMgMi4yODEgMi4zOGMwIDEuMzItMS4yMDMgMi4xNDMtMi45NzQgMi4xNDNjLTEuMjEzIDAtMi4yNzEtLjQ2Mi0yLjk1LTEuMDc0bC44NzUtMS4yNzNjLjQzMy4zODkgMS4wNjQuNzI0IDEuNjY0LjcyNGMuNzA2IDAgMS4wNjQtLjMzMSAxLjA2NC0uNzMzYzAtLjQ0OS0uMzc2LS43MjQtMS4yNDUtMS4wMzNjLTEuMzI1LS40ODgtMi4xMzItMS4yNS0yLjEzMi0yLjM2M2MwLTEuMzk0IDEuMDI5LTIuMTQzIDIuODU2LTIuMTQzYzEuMDY0IDAgMS43NDUuMzI4IDIuMzc3Ljg1OWwtLjgzIDEuMjQxWm0tNS44NDUtLjMzNWMuMzY2LjgxNS4zNjYgMS41NzcuMzY2IDIuNDd2My45MDZoLTEuODc2VjE5LjZjMC0xLjUyNy0uMDYtMi4xOC0uNTUtMi40OGMtLjQxLS4yODgtMS4wNzYtLjI3NC0xLjYxOC0uMTA3Yy0uMzc4LjExNy0uNzEzLjMzNS0uNzEzIDEuMDc0djUuMDU2SDYuNDI3VjEyLjgyaDEuODc2djIuMTEzYy43NDctLjM5OSAxLjU3Ny0uNzM4IDIuNjQ1LS43MzhjLjc2NCAwIDEuNTc3LjI1MyAyLjA2OS43ODdjLjQ5OC41NTIuNjI2IDEuMTU3LjcyMyAxLjk5MVoiLz48L3N2Zz4=
-md=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTIyLjI3IDEzLjU2VjE2YTIgMiAwIDAgMS0yIDJIOGExIDEgMCAwIDEtMSAxSDNhMSAxIDAgMCAxLTEtMXYtNmExIDEgMCAwIDEgMS0xaDR2LTFhMiAyIDAgMCAxIDItMmgxMi4yN2ExIDEgMCAwIDEgMSAxdi41NnptLTMuNzMtOC41NkgyYTIgMiAwIDAgMC0yIDJ2MTBhMiAyIDAgMCAwIDIgMmgxNi41NGEyIDIgMCAwIDAgMi0yVjdhMiAyIDAgMCAwLTItMlptLTcuNzQgOC4zOUwxMiAxNi4yNWwyLjI2LTEuOTFhLjc1Ljc1IDAgMCAxIC45NyAxLjE0bC0zIDIuNTNhLjc1Ljc1IDAgMCAxLS45NiAwbC0zLTIuNTNhLjc1Ljc1IDAgMCAxIC45Ny0xLjE0WiIvPjwvc3ZnPg==
+md=data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0Ij48IS0tIEljb24gZnJvbSBNYXRlcmlhbCBTeW1ib2xzIGJ5IEdvb2dsZSAtIGh0dHBzOi8vZ2l0aHViLmNvbS9nb29nbGUvbWF0ZXJpYWwtZGVzaWduLWljb25zL2Jsb2IvbWFzdGVyL0xJQ0VOU0UgLS0+PHBhdGggZmlsbD0iIzg4ODg4OCIgZD0iTTkgMThxLS44MjUgMC0xLjQxMi0uNTg3VDcgMTZWNHEwLS44MjUuNTg4LTEuNDEyVDkgMmg5cS44MjUgMCAxLjQxMy41ODhUMjAgNHYxMnEwIC44MjUtLjU4NyAxLjQxM1QxOCAxOHptLTQgNHEtLjgyNSAwLTEuNDEyLS41ODdUMyAyMFY2aDJ2MTRoMTF2MnptNS4yNS05aDEuNVY4LjVoMXYzaDEuNXYtM2gxVjEzaDEuNVY4cTAtLjQyNS0uMjg4LS43MTJUMTUuNzUgN2gtNC41cS0uNDI1IDAtLjcxMi4yODhUMTAuMjUgOHoiLz48L3N2Zz4=
+json=data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0Ij48IS0tIEljb24gZnJvbSBNYXRlcmlhbCBTeW1ib2xzIGJ5IEdvb2dsZSAtIGh0dHBzOi8vZ2l0aHViLmNvbS9nb29nbGUvbWF0ZXJpYWwtZGVzaWduLWljb25zL2Jsb2IvbWFzdGVyL0xJQ0VOU0UgLS0+PHBhdGggZmlsbD0iIzg4ODg4OCIgZD0iTTQuNzUgMTVINi41cS40MjUgMCAuNzEzLS4yODhUNy41IDE0VjlINnY0Ljc1SDVWMTIuNUgzLjc1VjE0cTAgLjQyNS4yODguNzEzVDQuNzUgMTVtNC40MjUgMGgxLjVxLjQyNSAwIC43MTMtLjI4OHQuMjg3LS43MTJ2LTEuNXEwLS40MjUtLjI4OC0uNzEydC0uNzEyLS4yODhoLTEuMjV2LTEuMjVoMXYuNWgxLjI1VjEwcTAtLjQyNS0uMjg4LS43MTJUMTAuNjc2IDloLTEuNXEtLjQyNSAwLS43MTIuMjg4VDguMTc1IDEwdjEuNXEwIC40MjUuMjg4LjcxM3QuNzEyLjI4N2gxLjI1djEuMjVoLTF2LS41aC0xLjI1VjE0cTAgLjQyNS4yODguNzEzdC43MTIuMjg3bTQuNC0xLjV2LTNoMXYzem0tLjI1IDEuNWgxLjVxLjQyNSAwIC43MTMtLjI4OHQuMjg3LS43MTJ2LTRxMC0uNDI1LS4yODctLjcxMlQxNC44MjUgOWgtMS41cS0uNDI1IDAtLjcxMi4yODh0LS4yODguNzEydjRxMCAuNDI1LjI4OC43MTN0LjcxMi4yODdtMy4xNzUgMGgxLjI1di0yLjYyNWwxIDIuNjI1SDIwVjloLTEuMjV2Mi42MjVMMTcuNzUgOUgxNi41ek0zIDIwcS0uODI1IDAtMS40MTItLjU4N1QxIDE4VjZxMC0uODI1LjU4OC0xLjQxMlQzIDRoMThxLjgyNSAwIDEuNDEzLjU4OFQyMyA2djEycTAgLjgyNS0uNTg3IDEuNDEzVDIxIDIweiIvPjwvc3ZnPg==
 ---
 {.important}CrychicDoc                         // {.important}主项目
     [folder] .github                            // {#script}CI/CD脚本
-        workflows                               // 自动构建脚本 //+
+        workflows                               // 自动构建脚本
     [folder] .vitepress                         // {#config}VitePress配置
-        [folder] config                         // {.important}本地化配置
-            [ts] index.ts                       // 主配置文件 //v
+        [folder] config                         // {.important}项目所有配置
+            [folder] lang                         // {.important}多语言配置
+            [folder] locale                         // {.important}本地化配置
+            [folder] sidebar                         // {.important}侧边栏配置
+            [ts] common-config.ts                      // VitePress配置
+            [json] contributors.json                      // 贡献者配置
+            [ts] markdown-plugins.ts                      // md插件配置
+            [ts] project-config.ts                       // 项目主配置
         [folder] plugins                        // {.important}自定义插件
-            [ts] custom-alert.ts                // 警告插件 //+
-            [ts] dialog.ts                      // 对话框插件 //+
         [folder] theme                          // {.important}自定义主题
-            [folder] components                 // Vue组件 //v
-            [folder] styles                     // CSS样式 //v
+            [folder] components                 // Vue组件
+            [folder] styles                     // CSS样式
         [ts] config.mts                         // {.important}VitePress配置
         [ts] index.ts                           // {.important}侧边栏配置
     [folder] .vscode                            // {#config}VS Code设置
-        [md] snippets                           // Markdown代码片段 //v
+        [md] snippets                           // Markdown代码片段
     [folder] docs                               // {#content}内容目录
-        [folder] public                         // 静态资源 //v
+        [folder] public                         // 静态资源
         [folder] zh                             // {#content}中文内容
-            [md] 各种文件                        // 文档文件 //+
+            [md] 各种文件                        // 文档文件
         [folder] en                             // {#content}英文内容
-            [md] 各种文件                        // 文档文件 //+
+            [md] 各种文件                        // 文档文件
     [md] README.md                              // {.important}项目说明
-    [js] ExtractClassScript.js                  // {#ignore}旧版脚本
-    [md] extracted_classes.md                   // {#ignore}旧版文件
     LICENSE                                     // {#config}CC BY-SA 4.0
     .gitignore                                  // {#config}Git忽略规则
 </LiteTree>
@@ -81,12 +86,12 @@ md=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmc
 .step=color:#1976d2;
 ---
 侧边栏配置方法
-    {#method1}方法一：基于Index.md控制                //v    {.pros}完全控制
+    {#method1}方法一：基于Index.md控制                   {.pros}完全控制
         {.step}在Index.md中配置children             // 完全自定义侧边栏
         {.step}无需单独的frontmatter设置           // 维护友好
         {.pros}适合复杂项目                       // 如KubeJS系列
         {.pros}可预测的结构生成                   // 完全控制子类别
-    {#method2}方法二：基于Frontmatter              //+    {.pros}简单设置
+    {#method2}方法二：基于Frontmatter                 {.pros}简单设置
         {.step}Index.md中基本root配置             // 最小化设置要求
         {.step}文章中设置noguide: true            // 单独文章控制
         {.step}在frontmatter中配置title           // 文章特定标题
@@ -129,12 +134,12 @@ md=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmc
 ---
 文档结构
     {#h1}# 一级标题                          // 每个文档只有一个 //!
-        {#h2}## 二级标题                    // 允许多个 //v
-            {#h3}### 三级标题               // 嵌套在H2下 //v
-                {#h4}#### 四级标题          // 嵌套在H3下 //v
-        {#h2}## 另一个二级标题              // 与上面同级 //v
-            {#h3}### 另一个三级标题         // 嵌套结构 //v
-                {#h4}#### 另一个四级标题    // 正确嵌套 //v
+        {#h2}## 二级标题                    // 允许多个
+            {#h3}### 三级标题               // 嵌套在H2下
+                {#h4}#### 四级标题          // 嵌套在H3下
+        {#h2}## 另一个二级标题              // 与上面同级
+            {#h3}### 另一个三级标题         // 嵌套结构
+                {#h4}#### 另一个四级标题    // 正确嵌套
 </LiteTree>
 
 ### 自定义锚点 {#anchor}
@@ -167,7 +172,7 @@ md=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmc
 
 ### 文档配置 {#doc-config}
 
-该文档文件都有以下[frontmatter](#frontmatter)配置字段：
+该文档文件都有以下`frontmatter`配置字段：
 
 :::alert {"type": "info", "title": "VitePress兼容性"}
 本站同时支持Vitepress的原生frontmatter样式，详情请见[此处](https://vitepress.dev/zh/reference/frontmatter-config)。
@@ -212,41 +217,23 @@ state: preliminary #仅允许preliminary unfinished outdated renovating四种输
 ---
 ```
 
-## 内容 {#Content}
+## 内容与合作 {#ContentAndCooperation}
 
-<LiteTree>
-// 定义优先级样式
-#critical=color:white;background:#d32f2f;padding:2px 6px;border-radius:3px;font-size:12px;
-#important=color:white;background:#ff9800;padding:2px 6px;border-radius:3px;font-size:12px;
-#guideline=color:white;background:#4caf50;padding:2px 6px;border-radius:3px;font-size:12px;
----
-内容指导原则
-    {#critical}内容准确性                           //!    首要标准
-        确保编写正确的内容                         // 验证信息准确性
-        与社区和QQ群众人交流探讨                  // 协作验证
-    {#guideline}内容创作流程                       //+    协作方式
-        进行不完美的初始创作                       // 不要担心完美
-        与合作者一起精改进与精进                   // 团队合作提升质量
-    {#important}社区沟通                          //v    重要实践
-        多与社群沟通                             // 保持连接
-        绝不擅自删改他人的创作                     // 尊重他人贡献
-</LiteTree>
+### 内容创作与沟通
+
+确保撰写的内容准确无误，并积极与社区和团队成员交流，以验证信息的准确性。
+
+- **初步创作**：完成初稿后，与合作者共同改进和完善，以提升团队合作质量。
+- **沟通与尊重**：保持与社群的沟通，尊重他人贡献，避免擅自修改他人的创作。
 
 :::alert {"type": "error", "title": "严重警告"}
-请不要擅自**删改**他人的创作！！！
+请勿擅自删改他人的创作，以维护合作的和谐与尊重。
 :::
 
-## 关于合作 {#Cooperation}
+### 关于合作 {#Cooperation}
 
-该文档在合作上并没有繁琐的规范，有且仅有一个：在进行修改前请**先询问原作者的意见**！！第三遍了！！
+该文档在合作上并没有繁琐的规范，有且仅有一个：在进行修改前请**先询问原作者的意见**。
 
 ### 第三方文档合作
 
 如果你是第三方文档的拥有者，要在作者一栏显示你的名字，你需要至少提交一次内容修改，才能被程序正确地识别，否则无法正常生成链接与头像。
-
-:::alert {"type": "success", "title": "合作总结"}
-- **尊重**：修改他人作品前务必先询问
-- **沟通**：与社区保持联系
-- **贡献**：至少提交一次修改以获得正确识别
-- **质量**：专注于内容准确性和一致性
-:::

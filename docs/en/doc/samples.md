@@ -1,6 +1,8 @@
 ---
 layout: doc
 title: Samples for coding CrychicDoc
+hidden: false
+priority: 0
 ---
 
 ## Mermaid Sample

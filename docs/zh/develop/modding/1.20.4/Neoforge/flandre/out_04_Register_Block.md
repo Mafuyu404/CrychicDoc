@@ -1,11 +1,16 @@
 ---
 title: 04 添加一个方块
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 04 添加一个方块 相关教程
 image: ./covers/03c577cdc4bd410a1bdf32827f6442f89e1ad15e.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
 draft: false
+hidden: false
+priority: 0
 ---
 # 第一个方块
 在Minecraft中，如果你想添加一个新的方块，你需要创建一个新的Java类来代表这个方块。这个类需要继承自Block类，并使用Properties类来设置方块的一些属性，如硬度、爆炸抗性等。在下面的代码中，我们创建了一个名为RubyBlock的类，这个类代表了一个新的方块，它的属性与石头相似，但硬度更高。

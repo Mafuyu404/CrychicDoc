@@ -1,7 +1,8 @@
 ---
 layout: doc
 title: Project Collaboration Tutorial
-
+hidden: false
+priority: 0
 ---
 
 # Git Tutorial

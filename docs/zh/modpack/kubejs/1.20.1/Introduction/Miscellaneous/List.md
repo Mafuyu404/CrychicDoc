@@ -1,5 +1,5 @@
 ---
-title: 列表接口
+title: 列表
 description: Java List 接口在 KubeJS 中的使用指南
 tags:
   - KubeJS
@@ -9,6 +9,8 @@ tags:
 authors:
   - 文档贡献者
 progress: 95
+hidden: false
+priority: 0
 ---
 
 # {{ $frontmatter.title }}

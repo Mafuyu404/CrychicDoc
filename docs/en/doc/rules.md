@@ -2,6 +2,8 @@
 title: Cooperation Guide
 progress: 100
 description: This article provides documentation writing standards for this site!
+hidden: false
+priority: 0
 ---
 
 # Documentation Writing Standards

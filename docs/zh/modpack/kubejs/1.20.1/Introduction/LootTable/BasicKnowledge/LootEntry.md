@@ -1,3 +1,8 @@
+---
+title: 战利品表条目
+hidden: false
+priority: 0
+---
 # 抽取项
 
 - 抽取项存在于每个随机池的抽取项列表中，以下信息引自[Minecraft-wiki/战利品表#抽取项](https://zh.minecraft.wiki/w/%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8#%E6%8A%BD%E5%8F%96%E9%A1%B9)
