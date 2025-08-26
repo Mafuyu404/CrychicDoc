@@ -11,7 +11,10 @@ import {
     ChatMessage,
     Bills,
     MarkMapView,
-    VChart
+    VChart,
+    ModInfo,
+    DamageChart,
+    XyebbsInfo
 } from "../../theme/components/content";
 import { YoutubeVideo, BilibiliVideo, PdfViewer } from "../../theme/components/media";
 import { MNavLinks } from "../../theme/components/navigation";
@@ -56,7 +59,10 @@ const components = {
     ChatMessage,
     Bills,
     MarkMapView,
-    VChart
+    VChart,
+    ModInfo: ModInfo,
+    DamageChart: DamageChart,
+    XyebbsInfo: XyebbsInfo
 };
 
 export const registerComponents = (app: App) => {

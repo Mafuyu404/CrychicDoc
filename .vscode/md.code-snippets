@@ -1601,7 +1601,7 @@
         "body": [
             "::::"
         ],
-        "description": "结束Timeline容器"
+        "description": "结束容器"
     },
 
     "@x3": {
@@ -1609,6 +1609,41 @@
         "body": [
             ":::"
         ],
-        "description": "结束Timeline容器"
-    }
+        "description": "结束容器"
+    },
+
+    "@x5": {
+        "prefix": "@:x5",
+        "body": [
+            ":::::"
+        ],
+        "description": "结束容器"
+    },
+
+    // ===================================================================
+    // ===================== MOD INFO COMPONENTS =========================
+    // ===================================================================
+
+    // ---------- ModInfo Component ----------
+    "@ModInfo": {
+        "prefix": "@modinfo",
+        "body": [
+            "<ModInfo",
+            "  modName=\"${1:Mod Name}\"",
+            "  modrinthSlug=\"${2:mod-slug}\"",
+            "  iconUrl=\"${3:/path/to/icon.png}\"",
+            "/>"
+        ],
+        "description": "推荐使用 Modrinth 的 ModInfo 组件（API 稳定可用）"
+    },
+
+
+    // ---------- XyebbsInfo Component ----------
+    "@XyebbsInfo": {
+        "prefix": "@xyebbsinfo",
+        "body": [
+            "<XyebbsInfo xyebbsId=\"${1:resource-id}\" />"
+        ],
+        "description": "Basic XyebbsInfo component for XyeBBS resources."
+    },
 }

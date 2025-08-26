@@ -16,3 +16,4 @@ export { default as MarkMapView } from './MarkMapView.vue';
 export { default as XyebbsInfo } from './XyebbsInfo.vue';
 export { default as ModInfo } from './ModInfo.vue';
 export { default as VChart } from './VChart.vue';
+export { default as DamageChart } from './minecraft-advanced-damage-chart.vue';
