@@ -404,8 +404,8 @@ GitHub头像会自动添加链接跳转到GitHub主页
 ::::: demo 多图表网格（3列）
 :::: chart-grid {"columns": 3, "gap": "20px"}
 
-::: chart radar {"title": "团队技能评估", "height": "280px"}
-前端 | 85, 后端: 90, 测试: 75, 文档: 80, 项目管理: 70
+::: chart radar {"title": "团队技能评估"}
+张三 | 前端:85, 后端: 90, 测试: 75, 文档: 80, 项目管理: 70
 :::
 
 ::: chart bar {"title": "月度工作量统计", "height": "280px"}
@@ -427,7 +427,7 @@ GitHub头像会自动添加链接跳转到GitHub主页
 ::::: demo 图表与表格混合
 :::: table-grid {"columns": 2, "gap": "24px"}
 
-::: chart radar {"title": "技能评估", "height": "300px"}
+::: chart radar {"title": "技能评估"}
 开发者A | 前端: 85, 后端: 75, 测试: 60, 文档: 90
 开发者B | 前端: 70, 后端: 95, 测试: 80, 文档: 65
 :::
@@ -481,13 +481,9 @@ GitHub头像会自动添加链接跳转到GitHub主页
 
 #### 示例：折线图 {#chart-example-line}
 
-::: chart line {"title": "", "height": "300px", "smooth": true, "legend": true}
+::: chart line {"title": "折线图", "height": "300px", "smooth": true, "legend": true}
 系列A | 一月: 120, 二月: 200, 三月: 150, 四月: 80
 系列B | 一月: 100, 二月: 180, 三月: 130, 四月: 120
-:::
-
-::: v-warning Warning
-当前折线图的title使用smooth时有时会出错，建议外部title。
 :::
 
 #### 示例：饼图 {#chart-example-pie}
@@ -501,13 +497,9 @@ Edge: 8
 
 #### 示例：雷达图 {#chart-example-radar}
 
-::: chart radar {"title": "", "height": "300px"}
+::: chart radar {"title": "雷达图"}
 张三 | 技术: 90, 沟通: 85, 创新: 88, 管理: 75
 李四 | 技术: 80, 沟通: 95, 创新: 70, 管理: 90
-:::
-
-::: v-warning Warning
-雷达图同理。
 :::
 
 ### 时间线 (`timeline`) {#timeline}

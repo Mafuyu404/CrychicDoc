@@ -405,7 +405,7 @@ Work Distribution | Development: 150, Testing: 80, Documentation: 60, Meetings: 
 :::: chart-grid {"columns": 3, "gap": "20px"}
 
 ::: chart radar {"title": "Team Skill Assessment", "height": "280px"}
-Frontend | 85, Backend: 90, Testing: 75, Documentation: 80, Project Management: 70
+SomeOne | Frontend: 85, Backend: 90, Testing: 75, Documentation: 80, Project Management: 70
 :::
 
 ::: chart bar {"title": "Monthly Workload Statistics", "height": "280px"}
@@ -481,13 +481,9 @@ Use `chart` container to render ECharts charts, supporting multiple chart types 
 
 #### Example: Line Chart {#chart-example-line}
 
-::: chart line {"title": "", "height": "300px", "smooth": true, "legend": true}
+::: chart line {"title": "Line Chart", "height": "300px", "smooth": true, "legend": true}
 Series A | January: 120, February: 200, March: 150, April: 80
 Series B | January: 100, February: 180, March: 130, April: 120
-:::
-
-::: v-warning Warning
-Currently line charts with title using smooth may sometimes error, external title recommended.
 :::
 
 #### Example: Pie Chart {#chart-example-pie}
@@ -501,13 +497,9 @@ Edge: 8
 
 #### Example: Radar Chart {#chart-example-radar}
 
-::: chart radar {"title": "", "height": "300px"}
+::: chart radar {"title": "Radar Chart", "height": "300px"}
 Zhang San | Technology: 90, Communication: 85, Innovation: 88, Management: 75
 Li Si | Technology: 80, Communication: 95, Innovation: 70, Management: 90
-:::
-
-::: v-warning Warning
-Same for radar charts.
 :::
 
 ### Timeline (`timeline`) {#timeline}
