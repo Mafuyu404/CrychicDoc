@@ -9,8 +9,8 @@ hidden: false
 
 # 文档编写规范 {#main}
 
-::: alert {"type": "success", "title": "🎉 欢迎贡献者！", "border": "start"}
-本文档是您参与 CrychicDoc 项目所需了解的**唯一**规范。它详细说明了协作流程、内容编写标准、侧边栏配置方法以及所有可用的样式与组件。
+::: alert {"type": "success", "title": "须知", "border": "start"}
+本文档是您参与 CrychicDoc 项目所需了解的**第一**规范。它详细说明了协作流程、内容编写标准、侧边栏配置方法以及所有可用的样式与组件。
 :::
 
 ## 合作 {#contribution}
@@ -30,12 +30,12 @@ hidden: false
     将您的分支推送到您 Fork 的仓库，并创建一个 Pull Request 到主仓库。
 </LiteTree>
 
-::: alert {"type": "warning", "title": "⚡ 重要提醒"}
+::: alert {"type": "warning", "title": "重要提醒"}
 请务必遵循 **Conventional Commits** 规范来编写提交信息，这有助于自动生成更新日志和版本管理。
 :::
 
 :::: stepper
-@tab 🔧 初始配置
+@tab 初始配置
 ```bash
 # Clone 您的 Fork
 git clone https://github.com/-%YourName/CrychicDoc.git
@@ -49,7 +49,7 @@ git remote add upstream https://github.com/PickAID/CrychicDoc.git
 第一次参与项目时的必要配置步骤。
 :::
 
-@tab 🚀 开始新的贡献
+@tab 开始新的贡献
 ```bash
 # 从主仓库同步最新更改
 git fetch upstream
@@ -60,7 +60,7 @@ git merge upstream/main
 git checkout -b -%branch
 ```
 
-@tab 📝 提交您的修改
+@tab 提交您的修改
 ```bash
 # 添加您的修改
 git add .
@@ -105,11 +105,15 @@ json=data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5
         [folder] config                         // {.important}项目所有配置
             [folder] lang                         // {.important}多语言配置
             [folder] locale                         // {.important}本地化配置
+                [folder] langcode                // {.important}语言对应的配置
+                    [folder] componennts            // 组件翻译键
+                    [folder] snippets               // 主页漂浮文字翻译键
+                    [ts] footer.ts                  //! footer配置
             [folder] sidebar                         // {.important}侧边栏配置
             [ts] common-config.ts                      // VitePress配置
-            [json] contributors.json                      // 贡献者配置
+            [json] contributors.json                      //! 贡献者配置
             [ts] markdown-plugins.ts                      // md插件配置
-            [ts] project-config.ts                       // 项目主配置
+            [ts] project-config.ts                       //! 项目主配置
         [folder] plugins                        // {.important}自定义插件
         [folder] theme                          // {.important}自定义主题
             [folder] components                 // Vue组件
@@ -174,24 +178,19 @@ state: preliminary
 ```
 :::
 
-### 📝 标题与锚点 {#headings-anchors}
+### 标题与锚点 {#headings-anchors}
 
 ::: stepper
-@tab 📑 标题层级
+@tab 标题层级
 - 每个文档**必须**有且只有一个 `H1` 级别的标题 (`#`)
 - 标题层级应逐级递增，不能跳级
 - 建议最多使用到 `H4` 级别
 
-@tab 🔗 锚点设置
+@tab 锚点设置
 为了生成清晰的 URL，请为所有标题添加自定义锚点：
 ```markdown
 ### 这是一个标题 {#a-clear-anchor}
 ```
-
-@tab ✅ 最佳实践
-- 锚点使用英文和连字符
-- 保持锚点简洁明了
-- 避免使用特殊字符
 :::
 
 ::::: chart-grid {"columns": 3, "gap": "20px"}

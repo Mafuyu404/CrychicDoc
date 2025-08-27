@@ -1,88 +1,88 @@
 ---
-title: Style and Plugins
-description: CrychicDoc 中所有可用的 Markdown 扩展、容器和自定义组件的全面指南。
+title: Styles and Plugins
+description: A comprehensive guide to all available Markdown extensions, containers, and custom components in CrychicDoc.
 progress: 95
 state: renovating
 priority: 30
 hidden: false
 ---
 
-# 样式与插件指南 {#main}
+# Styles and Plugins Guide {#main}
 
-本文档是 CrychicDoc 中所有可用的 Markdown 功能的完整参考，包括文本格式化、容器插件和自定义 Vue 组件。
+This document is a complete reference for all available Markdown features in CrychicDoc, including text formatting, container plugins, and custom Vue components.
 
-## 文本格式化扩展 {#text-formatting-extensions}
+## Text Formatting Extensions {#text-formatting-extensions}
 
-这些插件扩展了标准的 Markdown 语法，以支持更丰富的文本表示。
+These plugins extend standard Markdown syntax to support richer text representation.
 
-### 缩写词 (`abbr`) {#ext-abbr}
+### Abbreviations (`abbr`) {#ext-abbr}
 
-用于为术语创建缩写。
+Used to create abbreviations for terms.
 
-::: demo 示例
+::: demo Example
 *[HTML]: Hyper Text Markup Language
 *[W3C]:  World Wide Web Consortium
 The HTML specification is maintained by the W3C.
 :::
 
-### 上标与下标 (`sup` & `sub`) {#ext-sup-sub}
+### Superscript and Subscript (`sup` & `sub`) {#ext-sup-sub}
 
-用于创建角标。
+Used to create scripts.
 
-::: demo 示例
-下角标：H~2~O
-上标：19^th^
+::: demo Example
+Subscript: H~2~O
+Superscript: 19^th^
 :::
 
-### 标记与插入 (`mark` & `ins`) {#ext-mark-ins}
+### Mark and Insert (`mark` & `ins`) {#ext-mark-ins}
 
-用于高亮和标记文本。
+Used to highlight and mark text.
 
-::: demo 示例
-VuePress Theme Hope ==十分强大==。
-VuePress Theme Hope ++十分++ 强大。
+::: demo Example
+VuePress Theme Hope ==is very powerful==.
+VuePress Theme Hope ++is very++ powerful.
 :::
 
-### 旁注标记 (`ruby`) {#ext-ruby}
+### Ruby Annotation (`ruby`) {#ext-ruby}
 
-用于为字符添加旁注，常用于东亚语言。
+Used to add annotations to characters, commonly used in East Asian languages.
 
-::: demo 示例
-{中国:zhōng|guó}
+::: demo Example
+{China:zhōng|guó}
 :::
 
-### 隐藏内容 (`spoiler`) {#ext-spoiler}
+### Spoiler (`spoiler`) {#ext-spoiler}
 
-创建可以点击以显示的隐藏内容。
+Creates hidden content that can be clicked to reveal.
 
-::: demo 示例
-VuePress Theme Hope !!十分强大!!。
+::: demo Example
+VuePress Theme Hope !!is very powerful!!.
 :::
 
-## 内容元素扩展 {#content-element-extensions}
+## Content Element Extensions {#content-element-extensions}
 
-这些插件用于创建特定的内容结构。
+These plugins are used to create specific content structures.
 
-### 图片尺寸 (`img-size`) {#ext-img-size}
+### Image Size (`img-size`) {#ext-img-size}
 
-允许在 Markdown 图片语法中直接指定图片的宽高。在图片替代文字后面添加 `=widthxheight`。
+Allows specifying image width and height directly in Markdown image syntax. Add `=widthxheight` after the image alt text.
 
-::: demo 示例
+::: demo Example
 ![Logo =200x200](/logo.png)
 ![Logo =150x](/logo.png)
 ![Logo =x100](/logo.png)
 :::
 
-### 待办清单 (`todo`) {#ext-todo}
+### Todo List (`todo`) {#ext-todo}
 
-创建 GitHub 风格的可勾选任务列表。
+Creates GitHub-style checkable task lists.
 
-::: demo 示例
-- [ ] 未完成的任务
-- [x] 已完成的任务
+::: demo Example
+- [ ] Incomplete task
+- [x] Completed task
 :::
 
-### 多选题
+### Multiple Choice
 
 [?] Your question goes here?
 [ ] Wrong answer option
@@ -90,37 +90,37 @@ VuePress Theme Hope !!十分强大!!。
 [ ] Another wrong answer option
 [ ] Yet another wrong answer option
 
-## 容器插件 {#container-plugins}
+## Container Plugins {#container-plugins}
 
-容器插件使用 `:::` 语法来创建具有特殊样式或功能的块级内容。
+Container plugins use `:::` syntax to create block-level content with special styles or functionality.
 
-### 对齐容器 (`align`) {#container-align}
+### Alignment Container (`align`) {#container-align}
 
-用于控制内容的水平对齐方式。
+Used to control horizontal alignment of content.
 
-:::: demo 示例
+:::: demo Example
 ::: left
-左对齐的内容
+Left-aligned content
 :::
 
 ::: center
-居中的内容
+Centered content
 :::
 
 ::: right
-右对齐的内容
+Right-aligned content
 :::
 
 ::: justify
-两端对齐的内容
+Justified content
 :::
 ::::
 
-### 选项卡 (`tabs`) {#container-tabs}
+### Tabs (`tabs`) {#container-tabs}
 
-创建可以在多个面板之间切换的选项卡。
+Creates tabs that can switch between multiple panels.
 
-:::: demo 标签选项卡
+:::: demo Tab Example
 :::tabs key:ab
 == tab a
 a content
@@ -129,141 +129,141 @@ b content
 :::
 ::::
 
-### 步骤组 (`stepper`) {#container-stepper}
+### Stepper (`stepper`) {#container-stepper}
 
-创建一个视觉上表示连续步骤的选项卡。
+Creates tabs that visually represent consecutive steps.
 
-:::: demo 示例
+:::: demo Example
 ::: stepper
-@tab 第一步
-这是第一步
-@tab 第二步
-这是第二步
+@tab First Step
+This is the first step
+@tab Second Step
+This is the second step
 :::
 ::::
 
-### 卡片 (`card`) {#container-card}
+### Card (`card`) {#container-card}
 
-创建带有多种样式的卡片容器，可以包含标题和副标题。
+Creates card containers with multiple styles, can include titles and subtitles.
 
-::::: demo 示例
-:::text 标题#副标题
-这是text样式
+::::: demo Example
+:::text Title#Subtitle
+This is text style
 :::
-:::flat 只有标题
-这是flat样式
+:::flat Only Title
+This is flat style
 :::
-:::elevated #只有副标题
-这是elevated样式
+:::elevated #Only Subtitle
+This is elevated style
 :::
-:::tonal 标题#副标题
-这是tonal样式
+:::tonal Title#Subtitle
+This is tonal style
 :::
 :::outlined
-这是outlined样式，没有标题和副标题
+This is outlined style, no title or subtitle
 :::
-::::plain 标题#副标题
-这是plain样式  
-只能使用双空格或`\`换行
-:::tonal 嵌套
-支持嵌套，支持!!别的插件!!
+::::plain Title#Subtitle
+This is plain style  
+Only supports double space or `\` for line breaks
+:::tonal Nested
+Supports nesting, supports !!other plugins!!
 :::
 ::::
 :::::
 
-### 示例容器 (`demo`) {#container-demo}
+### Demo Container (`demo`) {#container-demo}
 
-用于展示 Markdown 示例及其渲染效果的容器。
+Container for showing Markdown examples and their rendered effects.
 
-:::: demo 示例
-::: demo 这是一个示例
+:::: demo Example
+::: demo This is an example
 **Markdown** is *awesome*!
 :::
 ::::
 
-### 警告框 (`alert` & `v-alert`) {#container-alert}
+### Alert Boxes (`alert` & `v-alert`) {#container-alert}
 
-#### 新版警告框 (推荐) {#alert-new}
+#### New Alert Box (Recommended) {#alert-new}
 
-新一代的警告框组件，通过 JSON 提供丰富的配置选项。
+Next-generation alert box component with rich configuration options via JSON.
 
-| 属性 | 类型 | 描述 | 可选值 |
+| Property | Type | Description | Optional Values |
 |:---|:---|:---|:---|
-| `type` | `string` | 警告框类型/颜色 | `success`, `info`, `warning`, `error` |
-| `title` | `string` | 警告框标题 | 任意字符串 |
-| `variant` | `string` | 视觉样式变体 | `flat`, `tonal`, `outlined`, `text`, `plain` |
-| `density` | `string` | 间距密度 | `default`, `comfortable`, `compact` |
-| `border` | `string`\|`boolean` | 边框位置 | `start`, `end`, `top`, `bottom`, `true` |
-| `icon` | `string` | 自定义 Material Design 图标 | 如 `mdi-star`, `mdi-heart` |
-| `color` | `string` | 自定义颜色 | 任意颜色值 |
-| `lightColor`| `string` | 亮色主题下的自定义颜色 | 任意颜色值 |
-| `darkColor` | `string` | 暗色主题下的自定义颜色 | 任意颜色值 |
+| `type` | `string` | Alert box type/color | `success`, `info`, `warning`, `error` |
+| `title` | `string` | Alert box title | Any string |
+| `variant` | `string` | Visual style variant | `flat`, `tonal`, `outlined`, `text`, `plain` |
+| `density` | `string` | Spacing density | `default`, `comfortable`, `compact` |
+| `border` | `string`\|`boolean` | Border position | `start`, `end`, `top`, `bottom`, `true` |
+| `icon` | `string` | Custom Material Design icon | e.g., `mdi-star`, `mdi-heart` |
+| `color` | `string` | Custom color | Any color value |
+| `lightColor`| `string` | Custom color for light theme | Any color value |
+| `darkColor` | `string` | Custom color for dark theme | Any color value |
 
-::::: demo 新版警告框示例
-::: alert {"type": "success", "title": "成功"}
-这是成功类型的警告框。
+::::: demo New Alert Box Examples
+::: alert {"type": "success", "title": "Success"}
+This is a success type alert box.
 :::
 
-::: alert {"type": "info", "title": "信息", "icon": "mdi-information"}
-这是信息类型的警告框，带有自定义图标。
+::: alert {"type": "info", "title": "Information", "icon": "mdi-information"}
+This is an info type alert box with custom icon.
 :::
 
-::: alert {"type": "warning", "title": "警告", "variant": "tonal"}
-这是警告类型的警告框，使用 tonal 变体。
+::: alert {"type": "warning", "title": "Warning", "variant": "tonal"}
+This is a warning type alert box using tonal variant.
 :::
 
-::: alert {"type": "error", "title": "错误", "border": "start"}
-这是错误类型的警告框，左边有边框。
+::: alert {"type": "error", "title": "Error", "border": "start"}
+This is an error type alert box with left border.
 :::
 :::::
 
-#### 传统警告框 (`v-alert`) {#alert-legacy}
+#### Legacy Alert Box (`v-alert`) {#alert-legacy}
 
-旧版的 Vuetify 风格警告框。
+Old-style Vuetify-styled alert boxes.
 
-::::: demo 传统警告框示例
-::: v-success 成功
-这是成功样式
+::::: demo Legacy Alert Box Examples
+::: v-success Success
+This is success style
 :::
-::: v-info 提示
-这是提示样式
+::: v-info Information
+This is info style
 :::
-::: v-warning 警告
-这是警告样式
+::: v-warning Warning
+This is warning style
 :::
-::: v-error 错误
-这是错误样式
+::: v-error Error
+This is error style
 :::
 :::::
 
-### 对话框 (`dialog`) {#container-dialog}
+### Dialog (`dialog`) {#container-dialog}
 
-用于创建可从任何地方触发的复杂对话框。
+Used to create complex dialogs that can be triggered from anywhere.
 
-| 配置字段 | 用途 | 类型 | 默认值 |
+| Configuration Field | Purpose | Type | Default Value |
 |:---|:---|:---|:---|
-| `title` | 对话框的标题 | `string` | `N/A` |
-| `width` | 对话框的最大宽度 | `string` \| `number` | `800` |
-| `fullscreen` | 是否以全屏模式显示 | `boolean` | `false` |
-| `persistent` | 点击外部是否关闭 | `boolean` | `false` |
+| `title` | Dialog title | `string` | `N/A` |
+| `width` | Dialog maximum width | `string` \| `number` | `800` |
+| `fullscreen` | Whether to display in fullscreen mode | `boolean` | `false` |
+| `persistent` | Whether clicking outside closes dialog | `boolean` | `false` |
 
-::::: demo 示例
-@@@ dialog-def#my-dialog {"title": "对话框示例", "width": 500}
-这是一个 **Markdown** 对话框。
+::::: demo Example
+@@@ dialog-def#my-dialog {"title": "Dialog Example", "width": 500}
+This is a **Markdown** dialog.
 
-- 它可以包含列表
-- `代码块`
-- 以及其他任何 Markdown 内容。
+- It can contain lists
+- `Code blocks`
+- And any other Markdown content.
 @@@
 
-点击 :::dialog#my-dialog 这里::: 来触发对话框。
+Click :::dialog#my-dialog here::: to trigger the dialog.
 :::::
 
-### 滚动横幅 (`carousels`) {#container-carousels}
+### Carousels (`carousels`) {#container-carousels}
 
-创建一个自定义内容的图片轮播。
+Creates an image carousel with custom content.
 
-:::: demo 示例
+:::: demo Example
 ::: carousels#{"cycle": true, "interval": 2800, "undelimiters": true}
 @tab
 ![1](https://docs.variedmc.cc/mods/adventure/champions-unofficial/1.png)
@@ -272,63 +272,63 @@ b content
 :::
 ::::
 
-### 内嵌外链 (`iframe`) {#container-iframe}
+### Embedded External Links (`iframe`) {#container-iframe}
 
-用于在页面中嵌入外部网页。
+Used to embed external web pages in the page.
 
-| 配置字段   | 用途                   | 类型           | 默认值    |
+| Configuration Field   | Purpose                   | Type           | Default Value    |
 | ---------- | ---------------------- | -------------- | --------- |
-| `src`      | 网页的链接，必填       | `string`       | `N/A`     |
-| `height`   | 设置元素的高度。       | `length value` | `140px`   |
+| `src`      | Web page link, required       | `string`       | `N/A`     |
+| `height`   | Set element height.       | `length value` | `140px`   |
 
-:::: demo 示例
+:::: demo Example
 :::iframes#{"src": "https://misode.github.io/"}
 :::
 ::::
 
-**注意：** 由于安全策略，某些网站可能不允许被嵌入，会显示空白或错误信息。
+**Note:** Due to security policies, some websites may not allow being embedded and will display blank or error messages.
 
-### 聊天对话 (`chat`) {#container-chat}
+### Chat Dialog (`chat`) {#container-chat}
 
-创建模拟聊天界面的对话容器，支持多种头像类型和消息样式。
+Creates simulated chat interface dialog containers, supporting multiple avatar types and message styles.
 
-#### `chat` 容器属性 {#chat-container}
+#### `chat` Container Properties {#chat-container}
 
-| 属性 | 类型 | 描述 | 默认值 |
+| Property | Type | Description | Default Value |
 |:---|:---|:---|:---|
-| `title` | `string` | 聊天面板标题 | `""` |
-| `max-height` | `string` | 最大高度 | `"400px"` |
+| `title` | `string` | Chat panel title | `""` |
+| `max-height` | `string` | Maximum height | `"400px"` |
 
-#### `message` 容器属性 {#message-container}
+#### `message` Container Properties {#message-container}
 
-| 属性 | 类型 | 描述 | 默认值 |
+| Property | Type | Description | Default Value |
 |:---|:---|:---|:---|
-| `nickname` | `string` | 用户昵称 | `""` |
-| `avatar-type` | `string` | 头像类型 | `"icon"` |
-| `location` | `string` | 消息位置 | `"left"` |
-| `avatar-link` | `string` | 头像点击链接 | `""` |
+| `nickname` | `string` | User nickname | `""` |
+| `avatar-type` | `string` | Avatar type | `"icon"` |
+| `location` | `string` | Message position | `"left"` |
+| `avatar-link` | `string` | Avatar click link | `""` |
 
-#### 头像类型 {#avatar-types}
+#### Avatar Types {#avatar-types}
 
-| 类型 | 描述 | 自动链接 |
+| Type | Description | Auto Link |
 |:---|:---|:---|
-| `icon` | 默认图标头像 | 无 |
-| `ai` | AI助手头像 | 无 |
-| `github` | GitHub头像 | 自动链接到GitHub主页 |
+| `icon` | Default icon avatar | None |
+| `ai` | AI assistant avatar | None |
+| `github` | GitHub avatar | Auto link to GitHub profile |
 
-#### 示例 {#chat-example}
+#### Example {#chat-example}
 
-::::: demo AI对话演示
-:::: chat title="AI对话演示"
-::: message nickname="用户" avatar-type="icon"
-你好，能帮我解释一下什么是Vue组合式API吗？
+::::: demo AI Conversation Demo
+:::: chat title="AI Conversation Demo"
+::: message nickname="User" avatar-type="icon"
+Hello, can you help me explain what Vue Composition API is?
 :::
 
-::: message nickname="AI助手" avatar-type="ai" location="right"
-当然可以！Vue组合式API是Vue 3中引入的新功能：
+::: message nickname="AI Assistant" avatar-type="ai" location="right"
+Of course! Vue Composition API is a new feature introduced in Vue 3:
 
-- **响应式数据**：使用`ref()`和`reactive()`
-- **生命周期钩子**：使用`onMounted()`等
+- **Reactive data**: Using `ref()` and `reactive()`
+- **Lifecycle hooks**: Using `onMounted()` etc.
 
 ```javascript
 import { ref, onMounted } from 'vue'
@@ -338,7 +338,7 @@ export default {
     const count = ref(0)
     
     onMounted(() => {
-      console.log('组件已挂载')
+      console.log('Component mounted')
     })
     
     return { count }
@@ -348,237 +348,237 @@ export default {
 :::
 
 ::: message nickname="octocat" avatar-type="github"
-GitHub头像会自动添加链接跳转到GitHub主页
+GitHub avatars automatically add links to GitHub profiles
 :::
 ::::
 :::::
 
-### 图表网格 (`chart-grid`) {#container-chart-grid}
+### Chart Grid (`chart-grid`) {#container-chart-grid}
 
-**专门为 Vue Chart 优化的网格布局容器**，提供更好的图表并列显示效果。
+**Grid layout container specifically optimized for Vue Charts**, providing better side-by-side chart display effects.
 
-| 配置字段 | 用途 | 类型 | 默认值 |
+| Configuration Field | Purpose | Type | Default Value |
 | -------- | ---- | ---- | ------ |
-| `columns` | 网格列数 | `number` | `2` |
-| `gap` | 图表间距 | `string` | `"24px"` |
-| `responsive` | 是否启用响应式 | `boolean` | `true` |
-| `equalHeight` | 是否等高显示 | `boolean` | `true` |
-| `minHeight` | 最小高度 | `string` | `"300px"` |
+| `columns` | Number of grid columns | `number` | `2` |
+| `gap` | Chart spacing | `string` | `"24px"` |
+| `responsive` | Whether to enable responsive design | `boolean` | `true` |
+| `equalHeight` | Whether to display with equal height | `boolean` | `true` |
+| `minHeight` | Minimum height | `string` | `"300px"` |
 
-#### 双图表并列 {#chart-grid-two}
+#### Two Charts Side by Side {#chart-grid-two}
 
-::::: demo 双列图表（columns=2）
+::::: demo Two-column Charts (columns=2)
 :::: chart-grid {"columns": 2, "gap": "24px"}
 
-::: chart pie {"title": "项目进度分布", "height": "300px"}
-已完成: 65
-进行中: 25
-待开始: 10
+::: chart pie {"title": "Project Progress Distribution", "height": "300px"}
+Completed: 65
+In Progress: 25
+To Start: 10
 :::
 
-::: chart line {"title": "月度完成趋势", "height": "300px", "smooth": true}
-月度完成 | 1月: 20, 2月: 35, 3月: 45, 4月: 65
+::: chart line {"title": "Monthly Completion Trend", "height": "300px", "smooth": true}
+Monthly Completion | Jan: 20, Feb: 35, Mar: 45, Apr: 65
 :::
 
 ::::
 :::::
 
-::::: demo 单列图表（columns=1）
+::::: demo Single Column Charts (columns=1)
 :::: chart-grid {"columns": 1, "gap": "24px"}
 
-::: chart bar {"title": "团队工作量分布", "height": "300px"}
-工作分布 | 开发: 150, 测试: 80, 文档: 60, 会议: 40
+::: chart bar {"title": "Team Workload Distribution", "height": "300px"}
+Work Distribution | Development: 150, Testing: 80, Documentation: 60, Meetings: 40
 :::
-::: chart bar {"title": "团队工作量分布", "height": "300px"}
-工作分布 | 开发: 150, 测试: 80, 文档: 60, 会议: 40
+::: chart bar {"title": "Team Workload Distribution", "height": "300px"}
+Work Distribution | Development: 150, Testing: 80, Documentation: 60, Meetings: 40
 :::
-::: chart bar {"title": "团队工作量分布", "height": "300px"}
-工作分布 | 开发: 150, 测试: 80, 文档: 60, 会议: 40
+::: chart bar {"title": "Team Workload Distribution", "height": "300px"}
+Work Distribution | Development: 150, Testing: 80, Documentation: 60, Meetings: 40
 :::
 
 ::::
 :::::
 
-#### 多图表网格 {#chart-grid-multi}
+#### Multi-Chart Grid {#chart-grid-multi}
 
-::::: demo 多图表网格（3列）
+::::: demo Multi-Chart Grid (3 columns)
 :::: chart-grid {"columns": 3, "gap": "20px"}
 
-::: chart radar {"title": "团队技能评估", "height": "280px"}
-前端 | 85, 后端: 90, 测试: 75, 文档: 80, 项目管理: 70
+::: chart radar {"title": "Team Skill Assessment", "height": "280px"}
+Frontend | 85, Backend: 90, Testing: 75, Documentation: 80, Project Management: 70
 :::
 
-::: chart bar {"title": "月度工作量统计", "height": "280px"}
-工作量统计 | 开发: 120, 测试: 80, 文档: 40, 会议: 30
+::: chart bar {"title": "Monthly Workload Statistics", "height": "280px"}
+Workload Statistics | Development: 120, Testing: 80, Documentation: 40, Meetings: 30
 :::
 
-::: chart pie {"title": "项目时间分配", "height": "280px"}
-前端开发: 40
-后端开发: 35
-测试验证: 15
-文档整理: 10
+::: chart pie {"title": "Project Time Allocation", "height": "280px"}
+Frontend Development: 40
+Backend Development: 35
+Testing Verification: 15
+Documentation: 10
 :::
 
 ::::
 :::::
 
-#### 图表与表格混合 {#chart-grid-mixed}
+#### Charts and Tables Mixed {#chart-grid-mixed}
 
-::::: demo 图表与表格混合
+::::: demo Charts and Tables Mixed
 :::: table-grid {"columns": 2, "gap": "24px"}
 
-::: chart radar {"title": "技能评估", "height": "300px"}
-开发者A | 前端: 85, 后端: 75, 测试: 60, 文档: 90
-开发者B | 前端: 70, 后端: 95, 测试: 80, 文档: 65
+::: chart radar {"title": "Skill Assessment", "height": "300px"}
+Developer A | Frontend: 85, Backend: 75, Testing: 60, Documentation: 90
+Developer B | Frontend: 70, Backend: 95, Testing: 80, Documentation: 65
 :::
 
-| 团队成员 | 主要技能 | 经验年限 |
+| Team Member | Main Skills | Years of Experience |
 |:---|:---|:---|
-| 开发者A | 前端开发 | 3年 |
-| 开发者B | 后端开发 | 5年 |
-| 测试工程师 | 质量保证 | 4年 |
+| Developer A | Frontend Development | 3 years |
+| Developer B | Backend Development | 5 years |
+| Test Engineer | Quality Assurance | 4 years |
 
 ::::
 :::::
 
-### 图表 (`chart`) {#charts}
+### Charts (`chart`) {#charts}
 
-使用 `chart` 容器来渲染 ECharts 图表，支持多种图表类型和丰富的配置选项。
+Use `chart` container to render ECharts charts, supporting multiple chart types and rich configuration options.
 
-#### 配置选项 {#chart-config}
+#### Configuration Options {#chart-config}
 
-| 属性 | 类型 | 描述 | 默认值 |
+| Property | Type | Description | Default Value |
 |:---|:---|:---|:---|
-| `title` | `string` | 图表主标题 | `""` |
-| `subtitle` | `string` | 图表副标题 | `""` |
-| `width` | `string` | 容器宽度 | `100%` |
-| `height` | `string` | 容器高度 | `400px` |
-| `theme` | `string` | 主题 | `auto` |
-| `legend` | `boolean` | 是否显示图例 | `false` |
-| `smooth` | `boolean` | 是否平滑曲线（仅折线图） | `false` |
+| `title` | `string` | Chart main title | `""` |
+| `subtitle` | `string` | Chart subtitle | `""` |
+| `width` | `string` | Container width | `100%` |
+| `height` | `string` | Container height | `400px` |
+| `theme` | `string` | Theme | `auto` |
+| `legend` | `boolean` | Whether to show legend | `false` |
+| `smooth` | `boolean` | Whether to smooth curves (line charts only) | `false` |
 
-#### 支持的图表类型 {#chart-types}
+#### Supported Chart Types {#chart-types}
 
-| 图表类型 | 语法 | 数据格式 |
+| Chart Type | Syntax | Data Format |
 |:---|:---|:---|
-| **折线图** | `line` | `系列名 \| 类别1: 值1, 类别2: 值2` |
-| **柱状图** | `bar` | `系列名 \| 类别1: 值1, 类别2: 值2` |
-| **面积图** | `area` | `系列名 \| 类别1: 值1, 类别2: 值2` |
-| **饼图** | `pie` | `类别: 值` |
-| **环形图** | `doughnut` | `类别: 值` |
-| **散点图** | `scatter` | `x值, y值` |
-| **雷达图** | `radar` | `系列名 \| 指标1: 值1, 指标2: 值2` |
-| **仪表盘** | `gauge` | `数值` |
-| **漏斗图** | `funnel` | `类别: 值` |
-| **热力图** | `heatmap` | `x, y, 值` |
-| **桑基图** | `sankey` | `源->目标: 值` |
-| **关系图** | `graph` | `节点1->节点2: 值` |
-| **K线图** | `candlestick`/`k` | `日期: 开盘,收盘,最低,最高` |
-| **箱线图** | `boxplot` | `最小值,下四分位,中位数,上四分位,最大值` |
-| **平行坐标** | `parallel` | `值1, 值2, 值3, ...` |
-| **主题河流** | `themeRiver` | `日期,类别: 值` |
-| **象形柱图** | `pictorialBar` | `类别: 值` |
+| **Line Chart** | `line` | `Series Name \| Category1: Value1, Category2: Value2` |
+| **Bar Chart** | `bar` | `Series Name \| Category1: Value1, Category2: Value2` |
+| **Area Chart** | `area` | `Series Name \| Category1: Value1, Category2: Value2` |
+| **Pie Chart** | `pie` | `Category: Value` |
+| **Doughnut Chart** | `doughnut` | `Category: Value` |
+| **Scatter Plot** | `scatter` | `x-value, y-value` |
+| **Radar Chart** | `radar` | `Series Name \| Metric1: Value1, Metric2: Value2` |
+| **Gauge** | `gauge` | `Numerical value` |
+| **Funnel Chart** | `funnel` | `Category: Value` |
+| **Heatmap** | `heatmap` | `x, y, value` |
+| **Sankey Diagram** | `sankey` | `Source->Target: Value` |
+| **Graph** | `graph` | `Node1->Node2: Value` |
+| **Candlestick Chart** | `candlestick`/`k` | `Date: Open,Close,Low,High` |
+| **Box Plot** | `boxplot` | `Min,Q1,Median,Q3,Max` |
+| **Parallel Coordinates** | `parallel` | `Value1, Value2, Value3, ...` |
+| **Theme River** | `themeRiver` | `Date,Category: Value` |
+| **Pictorial Bar** | `pictorialBar` | `Category: Value` |
 
-#### 示例：折线图 {#chart-example-line}
+#### Example: Line Chart {#chart-example-line}
 
 ::: chart line {"title": "", "height": "300px", "smooth": true, "legend": true}
-系列A | 一月: 120, 二月: 200, 三月: 150, 四月: 80
-系列B | 一月: 100, 二月: 180, 三月: 130, 四月: 120
+Series A | January: 120, February: 200, March: 150, April: 80
+Series B | January: 100, February: 180, March: 130, April: 120
 :::
 
 ::: v-warning Warning
-当前折线图的title使用smooth时有时会出错，建议外部title。
+Currently line charts with title using smooth may sometimes error, external title recommended.
 :::
 
-#### 示例：饼图 {#chart-example-pie}
+#### Example: Pie Chart {#chart-example-pie}
 
-::: chart pie {"title": "市场份额", "height": "300px"}
+::: chart pie {"title": "Market Share", "height": "300px"}
 Chrome: 65
 Firefox: 15
 Safari: 12
 Edge: 8
 :::
 
-#### 示例：雷达图 {#chart-example-radar}
+#### Example: Radar Chart {#chart-example-radar}
 
 ::: chart radar {"title": "", "height": "300px"}
-张三 | 技术: 90, 沟通: 85, 创新: 88, 管理: 75
-李四 | 技术: 80, 沟通: 95, 创新: 70, 管理: 90
+Zhang San | Technology: 90, Communication: 85, Innovation: 88, Management: 75
+Li Si | Technology: 80, Communication: 95, Innovation: 70, Management: 90
 :::
 
 ::: v-warning Warning
-雷达图同理。
+Same for radar charts.
 :::
 
-### 时间线 (`timeline`) {#timeline}
+### Timeline (`timeline`) {#timeline}
 
-使用 `timeline` 和 `timeline-item` 容器来创建垂直时间线，支持丰富的预设类型和自定义样式。
+Use `timeline` and `timeline-item` containers to create vertical timelines, supporting rich preset types and custom styles.
 
-#### `timeline` 容器属性 {#timeline-container}
+#### `timeline` Container Properties {#timeline-container}
 
-| 属性 | 类型 | 描述 | 默认值 |
+| Property | Type | Description | Default Value |
 |:---|:---|:---|:---|
-| `density` | `string` | 时间线密度 | `default` |
-| `direction` | `string` | 方向 | `vertical` |
+| `density` | `string` | Timeline density | `default` |
+| `direction` | `string` | Direction | `vertical` |
 
-可选值：
+Optional values:
 - `density`: `default`, `comfortable`, `compact`
 - `direction`: `vertical`, `horizontal`
 
-#### `timeline-item` 容器属性 {#timeline-item}
+#### `timeline-item` Container Properties {#timeline-item}
 
-| 属性 | 类型 | 描述 | 默认值 |
+| Property | Type | Description | Default Value |
 |:---|:---|:---|:---|
-| `type` | `string` | 预设类型 | `""` |
-| `dot-color` | `string` | 圆点颜色 | `""` |
-| `icon` | `string` | 圆点内的图标 | `""` |
-| `opposite` | `string` | 显示在时间线对侧的内容 | `""` |
-| `card` | `boolean` | 是否使用卡片样式 | `false` |
-| `card-title` | `string` | 卡片标题 | `""` |
+| `type` | `string` | Preset type | `""` |
+| `dot-color` | `string` | Dot color | `""` |
+| `icon` | `string` | Icon in dot | `""` |
+| `opposite` | `string` | Content displayed on opposite side of timeline | `""` |
+| `card` | `boolean` | Whether to use card style | `false` |
+| `card-title` | `string` | Card title | `""` |
 
-#### 预设类型 {#timeline-presets}
+#### Preset Types {#timeline-presets}
 
-| 类别 | 可用类型 |
+| Category | Available Types |
 |:---|:---|
-| **基础** | `success`, `info`, `warning`, `error`, `tip` |
-| **项目** | `start`, `finish`, `milestone`, `deadline`, `meeting`, `launch`, `pause`, `stop` |
-| **状态** | `review`, `approve`, `reject`, `pending`, `progress`, `complete`, `todo`, `doing`, `done` |
+| **Basic** | `success`, `info`, `warning`, `error`, `tip` |
+| **Project** | `start`, `finish`, `milestone`, `deadline`, `meeting`, `launch`, `pause`, `stop` |
+| **Status** | `review`, `approve`, `reject`, `pending`, `progress`, `complete`, `todo`, `doing`, `done` |
 | **Bug** | `bug`, `bug_investigating`, `bug_fixed` |
-| **功能** | `feature`, `feature_designing`, `feature_developing`, `feature_testing`, `feature_released` |
-| **任务** | `task_created`, `task_assigned`, `task_started`, `task_paused`, `task_resumed`, `task_completed`, `task_cancelled` |
-| **构建** | `build_started`, `build_success`, `build_failed` |
-| **部署** | `deploy`, `deploy_staging`, `deploy_production`, `rollback` |
-| **安全** | `security`, `security_issue`, `security_fixed` |
-| **性能** | `performance`, `performance_issue`, `performance_optimized` |
-| **其他** | `documentation`, `documentation_updated`, `release`, `hotfix`, `maintenance`, `optimization`, `testing`, `refactor`, `meeting_completed`, `decision_made`, `backup_created`, `user_feedback`, `issue_escalated`, `database_migration`, `api_deprecated`, `dependency_updated` |
+| **Feature** | `feature`, `feature_designing`, `feature_developing`, `feature_testing`, `feature_released` |
+| **Task** | `task_created`, `task_assigned`, `task_started`, `task_paused`, `task_resumed`, `task_completed`, `task_cancelled` |
+| **Build** | `build_started`, `build_success`, `build_failed` |
+| **Deploy** | `deploy`, `deploy_staging`, `deploy_production`, `rollback` |
+| **Security** | `security`, `security_issue`, `security_fixed` |
+| **Performance** | `performance`, `performance_issue`, `performance_optimized` |
+| **Other** | `documentation`, `documentation_updated`, `release`, `hotfix`, `maintenance`, `optimization`, `testing`, `refactor`, `meeting_completed`, `decision_made`, `backup_created`, `user_feedback`, `issue_escalated`, `database_migration`, `api_deprecated`, `dependency_updated` |
 
-#### 示例：项目时间线 {#timeline-example}
+#### Example: Project Timeline {#timeline-example}
 
-::::: demo 示例
+::::: demo Example
 :::: timeline
 ::: timeline-item type="start" opposite="2024-08"
-项目启动
+Project Started
 :::
-::: timeline-item type="milestone" card="true" card-title="v1.0 发布"
-我们成功发布了第一个主要版本！
+::: timeline-item type="milestone" card="true" card-title="v1.0 Release"
+We successfully released the first major version!
 :::
 ::: timeline-item type="refactor" opposite="2025-06"
-Sidebar系统完成重构，开始整理2.0
+Sidebar system refactoring completed, started organizing 2.0
 :::
 ::: timeline-item type="task_completed" opposite="2025-07"
-2.0版本完成
+Version 2.0 completed
 :::
 ::: timeline-item type="launch" opposite="2025-07"
-文档仍维护至今。
+Documentation still maintained to this day.
 :::
 ::::
 :::::
 
-## 自定义 Vue 组件 {#custom-vue-components}
+## Custom Vue Components {#custom-vue-components}
 
-可以直接在 Markdown 中使用的 Vue 组件。
+Vue components that can be used directly in Markdown.
 
-### Mermaid 图表 {#component-mermaid}
+### Mermaid Diagrams {#component-mermaid}
 
 :::demo
 ```mermaid
@@ -589,13 +589,13 @@ graph TD
 ```
 :::
 
-### Bilibili 视频 {#component-bilibili}
+### Bilibili Video {#component-bilibili}
 
 :::demo
 <BilibiliVideo bvid="BV1rC4y1C7z2" />
 :::
 
-### PDF 查看器 {#component-pdf-viewer}
+### PDF Viewer {#component-pdf-viewer}
 
 :::demo
 <PdfViewer pdfSource="/pdf/modding/java/test.pdf"/>

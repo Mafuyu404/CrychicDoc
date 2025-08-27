@@ -1,298 +1,487 @@
 ---
 title: LiteTree Component
-description: 在 VitePress 中使用 LiteTree 创建优雅、信息丰富的树形结构的完整指南。
+description: A complete guide to using LiteTree to create elegant and informative tree structures in VitePress.
 layout: doc
 priority: 40
 hidden: false
 ---
 
-# LiteTree 组件使用指南 {#main}
+# LiteTree Component Usage Guide {#main}
 
 ::: v-info
-LiteTree 是一个为 VitePress 设计的轻量级树形结构组件。它使用一种类似 YAML 的、基于缩进的语法，使其在 Markdown 文档中书写和维护变得异常简单和直观。
+[LiteTree](https://zhangfisher.github.io/lite-tree/) is a lightweight tree structure component designed for VitePress. It uses a YAML-like, indentation-based syntax that makes writing and maintaining it exceptionally simple and intuitive in Markdown documents.
 :::
 
-<Linkcard url="https://zhangfisher.github.io/lite-tree/" title="LiteTree 官方文档" description="查看官方文档以获取更多信息。" />
-
-## 核心特性 {#core-features}
+## Core Features {#core-features}
 
 <LiteTree>
 #feature=color:white;background:#1976d2;padding:2px 6px;border-radius:3px;font-size:12px;
 ---
-{#feature}轻量级
-    无任何第三方依赖，体积小巧。
-{#feature}Markdown 友好
-    使用基于缩进的 `lite` 格式，完美融入 Markdown。
-{#feature}高度可定制
-    支持自定义节点样式、标签、注释和图标。
-{#feature}强大的变量系统
-    支持定义和复用样式及图标。
-{#feature}内置标记
-    提供一组预设的标记符，用于表示不同的状态。
+{#feature}Lightweight
+    No third-party dependencies, small size.
+{#feature}Markdown Friendly
+    Uses indentation-based `lite` format, perfectly integrated into Markdown.
+{#feature}Highly Customizable
+    Supports custom node styles, tags, comments, and icons.
+{#feature}Powerful Variable System
+    Supports defining and reusing styles and icons.
+{#feature}Built-in Markers
+    Provides a set of preset markers to represent different states.
 </LiteTree>
 
-## 使用自定义图标 {#using-custom-icons}
+## Using Custom Icons {#using-custom-icons}
 
-`LiteTree` 的一大特色是支持自定义图标，但这需要将 SVG 图像转换为 Base64 编码的 Data URI。
+A major feature of `LiteTree` is support for custom icons, but this requires converting SVG images to Base64-encoded Data URIs.
 
 ::::: stepper
-@tab 步骤一：获取 SVG 图标
-首先，你需要一个 SVG 图像。你可以使用像 [Figma](https://www.figma.com/)、[Iconify](https://iconify.design/) 或 [Material Design Icons](https://materialdesignicons.com/) 这样的工具来获取或创建 SVG 图标。
+@tab Step 1: Get SVG Icons
+First, you need an SVG image. You can use tools like [Figma](https://www.figma.com/), [Iconify](https://iconify.design/), or [Material Design Icons](https://materialdesignicons.com/) to get or create SVG icons.
 
-::: v-success 提示
-确保你的 SVG 代码是简洁和优化过的，以减小文件大小。
+::: v-success Tip
+Make sure your SVG code is concise and optimized to reduce file size.
 :::
-@tab 步骤二：转换为 Base64 格式
-有许多免费的在线工具可以将你的 SVG 代码转换为 Base64。我们推荐使用 [SVG to Base64 Converter](https://www.base64-image.de/)，因为它非常简单直接。
+@tab Step 2: Convert to Base64 Format
+There are many free online tools that can convert your SVG code to Base64. We recommend using [SVG to Base64 Converter](https://uutool.cn/svg-base64/) because it's very simple and straightforward.
 
-1.  **粘贴 SVG 代码**: 将你的完整 SVG 代码（包括 `<svg>` 标签）粘贴到网站的输入框中。
-2.  **复制 Base64 URI**: 复制生成的 `data:image/svg+xml;base64,...` 格式的完整 URI。
-@tab 步骤三：在 LiteTree 中应用
-将复制的 URI 用作图标变量的值：
+1.  **Paste SVG Code**: Paste your complete SVG code (including `<svg>` tags) into the website's input box.
+2.  **Copy Base64 URI**: Copy the generated complete URI in `data:image/svg+xml;base64,...` format.
+@tab Step 3: Apply in LiteTree
+Use the copied URI as the value for an icon variable:
 ```markdown
 <LiteTree>
-// 定义你的自定义图标
+// Define your custom icon
 myIcon=data:image/svg+xml;base64,...
 ---
-[myIcon] 这是一个带有自定义图标的节点
+[myIcon] This is a node with a custom icon
 </LiteTree>
 ```
 :::::
 
-## 基础语法 {#basic-syntax}
+## Basic Syntax {#basic-syntax}
 
-### 创建简单树形结构 {#basic-tree}
+### Creating Simple Tree Structures {#basic-tree}
 
-通过缩进（推荐使用 4 个空格）来表示层级关系。
+Use indentation (4 spaces recommended) to represent hierarchical relationships.
 
-::: demo 基础树形结构
+::: demo Basic Tree Structure
 <LiteTree>
-公司架构
-    行政中心
-        总裁办
-        人力资源部
-    市场中心
-        市场部
-        销售部
+Company Structure
+    Administrative Center
+        President's Office
+        Human Resources Department
+    Marketing Center
+        Marketing Department
+        Sales Department
 </LiteTree>
 :::
 
-### 添加状态标记 {#tree-with-markers}
+### Adding Status Markers {#tree-with-markers}
 
-使用行尾注释 `//` 加上特定的符号，可以为节点添加状态标记。
+Use end-of-line comments `//` with specific symbols to add status markers to nodes.
 
-::: demo 标准标记符
+::: demo Standard Markers
 <LiteTree>
-项目状态
-    已完成任务      //v    成功标记
-    新增功能        //+    添加标记
-    废弃代码        //-    删除标记
-    发现错误        //x    错误标记
-    修改文件        //*    修改标记
-    重要项目        //!    重要标记
+Project Status
+    Completed Tasks      //v    Success marker
+    New Features        //+    Add marker
+    Deprecated Code     //-    Delete marker
+    Found Errors        //x    Error marker
+    Modified Files      //*    Modify marker
+    Important Projects  //!    Important marker
 </LiteTree>
 :::
 
-## 变量系统 {#variable-system}
+### Adding Tags {#tree-with-tags}
 
-::: alert {"type": "info", "title": "变量定义位置"}
-变量定义**必须**位于树内容的顶部，并以 `---` 分隔符与树的主体内容隔开。
+Use `(tag,tag,tag)` immediately after the node title to represent node tags, supporting multiple tags.
+
+::: alert {"type": "info", "title": "Tag Syntax Rules"}
+- Multiple tags are separated by `,`
+- Tags can have `{...CSS styles...}` specified before them for embedded styling
+- Tag content can also include `[iconName]`
 :::
 
-### 定义样式变量 (`#name=styles`) {#style-variables}
-
-用于定义可复用的 CSS 样式。
-
-::: demo 样式变量
+::: demo Basic Tags
 <LiteTree>
-// 定义样式变量
+Technology Stack
+    Frontend Development
+        Node.js Project(JavaScript,TypeScript,React)
+        Vue.js Project(Vue,Vite,Pinia)
+    Backend Development
+        API Services({color:white;background-color:#ff9e9e;border:1px solid red}Spring,{color:white;background-color:#9e9eff;border:1px solid blue}Express,{color:white;background-color:#bfffbf;border:1px solid green}FastAPI)
+</LiteTree>
+:::
+
+::: demo Tags with Icons
+<LiteTree>
+// Define icons
+github=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTEyIDJBMTAgMTAgMCAwIDAgMiAxMmMwIDQuNDIgMi44NyA4LjE3IDYuODQgOS41Yy41LjA4LjY2LS4yMy42Ni0uNXYtMS42OWMtMi43Ny42LTMuMzYtMS4zNC0zLjM2LTEuMzRjLS40Ni0xLjE2LTEuMTEtMS40Ny0xLjExLTEuNDdjLS45MS0uNjIuMDctLjYxLjA3LS42MWMxIDAtMS41MyAxLjAzLTEuNTMgMS4wM2MuODcgMS41MiAyLjM0IDEuMDcgMi45MS44M2MuMDktLjY1LjM1LTEuMDkuNjMtMS4zNGMtMi4yMi0uMjUtNC41NS0xLjExLTQuNTUtNC45MmMwLTEuMTEuMzgtMiAxLjAzLTIuNzFjLS4xLS4yNS0uNDUtMS4yOS4xLTIuNjRjMCAwIC44NC0uMjcgMi43NSAxLjAyYy44MS0uMjMgMS42OC0uMzQgMi41NC0uMzVjLjg2LjAxIDEuNzMuMTIgMi41NC4zNWMxLjkxLTEuMjkgMi43NS0xLjAyIDIuNzUtMS4wMmMuNTUgMS4zNS4yIDIuMzkuMSAyLjY0Yy42NS43MSAxLjAzIDEuNiAxLjAzIDIuNzFjMCAzLjgyLTIuMzQgNC42Ni00LjU3IDQuOTFjLjM2LjMxLjY4LjkyLjY4IDEuODV2Mi43NGMwIC4yNy4xNi41OS42Ny41QzE5LjE0IDIwLjE2IDIyIDE2LjQyIDIyIDEyQTEwIDEwIDAgMCAwIDEyIDJaIi8+PC9zdmc+
+gitee=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNkNzI4MjgiIGQ9Ik0xMiAyLjI1YzUuMzg0IDAgOS43NSA0LjM2NiA9Ljc1IDkuNzVzLTQuMzY2IDkuNzUtOS43NSA5Ljc1UzIuMjUgMTcuMzg0IDIuMjUgMTJTNi42MTYgMi4yNSAxMiAyLjI1WiIvPjxwYXRoIGZpbGw9IndoaXRlIiBkPSJNMTEuMzc4IDguNDc4SDcuNzIyYy0uMzMzIDAtLjYwMy4yNy0uNjAzLjYwM3YuOTE4YzAgLjMzMy4yNy42MDMuNjAzLjYwM2gzLjY1NnYuOTE4SDcuNzIyYy0uMzMzIDAtLjYwMy4yNy0uNjAzLjYwM3YuOTE4YzAgLjMzMy4yNy42MDMuNjAzLjYwM2gzLjY1NnYuOTE4SDcuNzIyYy0uMzMzIDAtLjYwMy4yNy0uNjAzLjYwM3YuOTE4YzAgLjMzMy4yNy42MDMuNjAzLjYwM2g4LjU1NmMuMzMzIDAgLjYwMy0uMjcuNjAzLS42MDNWOC40NzhjMC0uMzMzLS4yNy0uNjAzLS42MDMtLjYwM2gtNS41WiIvPjwvc3ZnPg==
+---
+Code Repository
+    Project Management
+        Main Repository([github]GitHub,Gitee)
+        Mirror Repository([gitee]Backup Repository)
+</LiteTree>
+:::
+
+### Adding Comments {#tree-with-comments}
+
+Content after `//` represents node comments, displayed on the far right.
+
+::: alert {"type": "warning", "title": "Comment Syntax Notes"}
+- Comment content is displayed in gray by default
+- Comment content can include `{...CSS styles...}` to specify embedded styling for comments
+- Comment content can also include `[iconName]` and hyperlinks
+- **Note**: There must be whitespace after `//`
+- Comments are not displayed on mobile (`@media screen and (max-width: 480px)`)
+:::
+
+::: demo Basic Comments
+<LiteTree>
+Project Files
+    Configuration Files
+        package.json                // Project dependency configuration
+        vite.config.js             // {color:white;background-color:#ff9e9e;border:1px solid red}Build configuration file
+    Source Code
+        main.js                     // Application entry file
+        App.vue                     // {color:blue;font-weight:bold}Root component
+</LiteTree>
+:::
+
+::: demo Comments with Icons and Links
+<LiteTree>
+// Define icons
+star=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImdvbGQiIGQ9Im0xMiAxNS40bC0zLjc2IDIuMjdhMS0xIDAgMCAxLTEuNTMtMS4xMUw3LjMgMTMuNGwtMy4yMy0uMjhhMS0xIDAgMCAxLS41Ni0xLjc1bDIuNjctMi4xMmwtLjY1LTMuMDlhMS0xIDAgMCAxIDEuNDgtMS4xM0wxMiA3LjRsNC4yOC0yLjQ3YTEgMSAwIDAgMSAxLjQ4IDEuMTNsLS42NSAzLjA5TDE5Ljc4IDExYTEgMSAwIDAgMS0uNTYgMS43NWwtMy4yMy4yOGMtLjUxIDIuMTYtLjYzIDMuNTUtMS43NiAyLjM3WiIvPjwvc3ZnPg==
+yes=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImdyZWVuIiBkPSJtMTAuNiAxNi4yIDcuODUtNy44NWMuMjMtLjIzLjIzLS42MSAwLS44NGwtLjg0LS44NGMtLjIzLS4yMy0uNjEtLjIzLS44NCAwTDEwLjE4IDE0LjJsLTMuNDktMy40OWMtLjIzLS4yMy0uNjEtLjIzLS44NCAwbC0uODQuODRjLS4yMy4yMy0uMjMuNjEgMCAuODRsNC43NiA0Ljc2Yy4yMy4yMy42MS4yMy44NCAwWiIvPjwvc3ZnPg==
+---
+Open Source Projects
+    Documentation Sites
+        VitePress                   // [star]Modern static site generator
+        Docusaurus                  // [yes]Facebook open source documentation framework
+    Frontend Tools
+        Vite                        // Build tool details[Website:star](https://vitejs.dev/)
+        Vue.js                      // [star]Progressive[yes]JavaScript framework
+</LiteTree>
+:::
+
+## Variable System {#variable-system}
+
+::: alert {"type": "info", "title": "Variable Definition Location"}
+Variable definitions **must** be located at the top of the tree content and separated from the main tree content by a `---` separator.
+:::
+
+### Defining Style Variables (`#name=styles`) {#style-variables}
+
+Used to define reusable CSS styles.
+
+::: demo Style Variables
+<LiteTree>
+// Define style variables
 #important=color:red;font-weight:bold;background:#ffe6e6;padding:2px 6px;border-radius:3px;
 #success=color:green;font-weight:bold;background:#e6ffe6;padding:2px 6px;border-radius:3px;
 ---
-项目文件
-    {#important}关键文件
-    {#success}已完成文件
+Project Files
+    {#important}Critical Files
+    {#success}Completed Files
 </LiteTree>
 :::
 
-### 定义类变量 (`.name=styles`) {#class-variables}
+### Defining Class Variables (`.name=styles`) {#class-variables}
 
-用于定义 CSS 类，便于统一样式。
+Used to define CSS classes for unified styling.
 
-::: demo 类变量
+::: demo Class Variables
 <LiteTree>
-// 定义类变量
+// Define class variables
 .folder=color:#1976d2;font-weight:500;
 .file=color:#666;
 ---
-{.folder}源代码
+{.folder}Source Code
     {.file}main.js
     {.file}config.json
 </LiteTree>
 :::
 
-### 定义图标变量 (`name=base64data`) {#icon-variables}
+### Defining Icon Variables (`name=base64data`) {#icon-variables}
 
-使用 Base64 编码的 SVG 定义自定义图标。
+Use Base64-encoded SVG to define custom icons.
 
-::: demo 图标变量
+::: demo Icon Variables
 <LiteTree>
-// 定义图标变量 (参见上面的转换指南)
+// Define icon variables (see conversion guide above)
 folder=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTEwIDRIOGEyIDIgMCAwIDAtMiAydjEyYTIgMiAwIDAgMCAyIDJoOGEyIDIgMCAwIDAgMi0yVjhhMiAyIDAgMCAwLTItMmgtM2wtMi0yWiIvPjwvc3ZnPg==
 file=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTE0IDJINmEyIDIgMCAwIDAtMiAydjE2YTIgMiAwIDAgMCAyIDJoMTJhMiAyIDAgMCAwIDItMlY4bC02LTZtNCA5VjlsNCA0aC00WiIvPjwvc3ZnPg==
 ---
-[folder] 前端项目
+[folder] Frontend Project
     [folder] src
         [file] Header.vue
     [file] package.json
 </LiteTree>
 :::
 
-## 完整示例 {#full-example}
+## Complete Example {#full-example}
 
-:::demo 完整示例
+:::demo Complete Example
 <LiteTree>
-// 样式定义
+// Style definitions
 #new=color:white;background:#4caf50;padding:1px 4px;border-radius:2px;font-size:12px;
 #deprecated=color:white;background:#f44336;padding:1px 4px;border-radius:2px;font-size:12px;
 .important=font-weight:bold;color:#1976d2;
-// 图标定义
+// Icon definitions
 vue=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM0Y2FmNTAiIGQ9Ik0yIDIwaDIwTDEyIDR6Ii8+PC9zdmc+
-ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTUgMTUiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMxNzhDNiIgZD0iTTEyLjUgOHYtLjE2N2MwLS43MzYtLjU5Ny0xLjMzMy0xLjMzMy0xLjMzM0gxMGExLjUgMSLNSAxIDAgMSAwIDAgM2gxYTEuNSAxLjUgMCAwIDEgMCAzaC0xQTEuNSAxLjUgMCAwIDEgOC41IDExTTggNi41SDNtMi4lIDBWMTNNMS41LjVoMTN2MTRIOS41eiIvPjwvc3ZnPg==
+ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTUgMTUiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMxNzhDNiIgZD0iTTEyLjUgOHYtLjE2N2MwLS43MzYtLjU5Ny0xLjMzMy0xLjMzMy0xLjMzM0gxMGExLjUgMS41IDAgMSAwIDAgM2gxYTEuNSAxLjUgMCAwIDEgMCAzaC0xQTEuNSAxLjUgMCAwIDEgOC41IDExTTggNi41SDNtMi41IDBWMTNNMS41LjVoMTN2MTRIOS41eiIvPjwvc3ZnPg==
 ---
-{.important}CrychicDoc 项目
-    .vitepress                    // {.important}配置目录
+{.important}CrychicDoc Project
+    .vitepress                    // {.important}Configuration directory
         config
-            [ts] index.ts         // {#new}更新配置
-        plugins                   // {.important}自定义插件
-            [ts] custom-alert.ts  // {#new}警告插件
+            [ts] index.ts         // {#new}Updated configuration
+        plugins                   // {.important}Custom plugins
+            [ts] custom-alert.ts  // {#new}Alert plugin
         theme
-            [vue] components      // {.important}Vue 组件
-                [vue] CustomAlert.vue  // {#new}新组件
+            [vue] components      // {.important}Vue components
+                [vue] CustomAlert.vue  // {#new}New component
     docs
-        zh                        // 中文文档
-            styleList.md          // {#deprecated}需要更新
-        en                        // 英文文档
-            litetree-guide.md   // {#new}本指南
-    package.json                  //v    项目配置
-    README.md                     //!    {.important}重要文档
+        zh                        // Chinese documentation
+            styleList.md          // {#deprecated}Needs update
+        en                        // English documentation
+            litetree-guide.md   // {#new}This guide
+    package.json                  //v    Project configuration
+    README.md                     //!    {.important}Important documentation
 </LiteTree>
 :::
 
-## 内联样式
+## Inline Styles
 
-### 直接颜色样式
+### Direct Color Styles
 
-使用 `{color:value}` 语法直接对文本应用样式:
+Use `{color:value}` syntax to apply styles directly to text:
 
-:::demo 内联颜色
+:::demo Inline Colors
 <LiteTree>
-项目状态
-    {color:green}已完成功能
-    {color:orange}进行中
-    {color:red}严重问题
-    {color:blue;font-weight:bold}重要说明
+Project Status
+    {color:green}Completed Features
+    {color:orange}In Progress
+    {color:red}Critical Issues
+    {color:blue;font-weight:bold}Important Notes
 </LiteTree>
 :::
 
-### 混合样式
+### Mixed Styles
 
-结合变量、内联样式、图标和标记符:
+Combining variables, inline styles, icons, and markers:
 
-:::demo 完整示例
+:::demo Complete Example
 <LiteTree>
-// 样式定义
+// Style definitions
 #new=color:white;background:#4caf50;padding:1px 4px;border-radius:2px;font-size:12px;
 #deprecated=color:white;background:#f44336;padding:1px 4px;border-radius:2px;font-size:12px;
 .important=font-weight:bold;color:#1976d2;
-// 图标定义
+// Icon definitions
 vue=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM0Y2FmNTAiIGQ9Ik0yIDIwaDIwTDEyIDR6Ii8+PC9zdmc+
-ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTUgMTUiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMxNzhDNiIgZD0iTTEyLjUgOHYtLjE2N2MwLS43MzYtLjU5Ny0xLjMzMy0xLjMzMy0xLjMzM0gxMGExLjUgMSLNSAxIDAgMSAwIDAgM2gxYTEuNSAxLjUgMCAwIDEgMCAzaC0xQTEuNSAxLjUgMCAwIDEgOC41IDExTTggNi41SDNtMi4lIDBWMTNNMS41LjVoMTN2MTRIOS41eiIvPjwvc3ZnPg==
+ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTUgMTUiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMxNzhDNiIgZD0iTTEyLjUgOHYtLjE2N2MwLS43MzYtLjU5Ny0xLjMzMy0xLjMzMy0xLjMzM0gxMGExLjUgMS41IDAgMSAwIDAgM2gxYTEuNSAxLjUgMCAwIDEgMCAzaC0xQTEuNSAxLjUgMCAwIDEgOC41IDExTTggNi41SDNtMi41IDBWMTNNMS41LjVoMTN2MTRIOS41eiIvPjwvc3ZnPg==
 ---
-{.important}CrychicDoc 项目
-    .vitepress                    // {.important}配置目录
+{.important}CrychicDoc Project
+    .vitepress                    // {.important}Configuration directory
         config
-            [ts] index.ts         // {#new}更新配置
-        plugins                   // {.important}自定义插件
-            [ts] custom-alert.ts  // {#new}警告插件
+            [ts] index.ts         // {#new}Updated configuration
+        plugins                   // {.important}Custom plugins
+            [ts] custom-alert.ts  // {#new}Alert plugin
         theme
-            [vue] components      // {.important}Vue 组件
-                [vue] CustomAlert.vue  // {#new}新组件
+            [vue] components      // {.important}Vue components
+                [vue] CustomAlert.vue  // {#new}New component
     docs
-        zh                        // 中文文档
-            styleList.md          // {#deprecated}需要更新
-        en                        // 英文文档
-            litetree-guide.md   // {#new}本指南
-    package.json                  //v    项目配置
-    README.md                     //!    {.important}重要文档
+        zh                        // Chinese documentation
+            styleList.md          // {#deprecated}Needs update
+        en                        // English documentation
+            litetree-guide.md   // {#new}This guide
+    package.json                  //v    Project configuration
+    README.md                     //!    {.important}Important documentation
 </LiteTree>
 :::
 
-## 常见用例
+## Advanced Features {#advanced-features}
 
-### 项目文件结构
+### Combined Use of Tags and Comments {#tags-and-comments-combined}
 
-:::demo 项目结构
+Tags and comments can be used simultaneously to create richer node information.
+
+::: demo Tags and Comments Combined
 <LiteTree>
-// 文件类型样式
+// Define icons and styles
+#priority=color:white;background:#e91e63;padding:1px 4px;border-radius:2px;font-size:11px;
+#status=color:white;background:#4caf50;padding:1px 4px;border-radius:2px;font-size:11px;
+star=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImdvbGQiIGQ9Im0xMiAxNS40bC0zLjc2IDIuMjdhMS0xIDAgMCAxLTEuNTMtMS4xMUw3LjMgMTMuNGwtMy4yMy0uMjhhMS0xIDAgMCAxLS41Ni0xLjc1bDIuNjctMi4xMmwtLjY1LTMuMDlhMS0xIDAgMCAxIDEuNDgtMS4xM0wxMiA3LjRsNC4yOC0yLjQ3YTEgMSAwIDAgMSAxLjQ4IDEuMTNsLS42NSAzLjA5TDE5Ljc4IDExYTEgMSAwIDAgMS0uNTYgMS43NWwtMy4yMy4yOGMtLjUxIDIuMTYtLjYzIDMuNTUtMS43NiAyLjM3WiIvPjwvc3ZnPg==
+---
+Product Development Plan
+    Core Features(Vue.js,TypeScript,{#priority}High)    // [star]Framework core - {#status}In development
+    User Interface(CSS,Vuetify,{#priority}Medium)       // UI component library - {#status}Design phase
+    API Interface(Node.js,Express)                      // Backend service - To be started
+</LiteTree>
+:::
+
+### Deep Nesting and Complex Structures {#complex-nested-structures}
+
+LiteTree supports arbitrary depth nesting, suitable for representing complex hierarchical structures.
+
+::: demo Complex Nested Structure
+<LiteTree>
+// Define various styles and icons
+#module=color:white;background:#2196f3;padding:2px 6px;border-radius:3px;font-size:12px;
+#component=color:white;background:#ff9800;padding:2px 6px;border-radius:3px;font-size:12px;
+#utility=color:#666;background:#f5f5f5;padding:2px 6px;border-radius:3px;font-size:12px;
+.folder=color:#1976d2;font-weight:500;
+.file=color:#666;
+---
+{.folder}Large Frontend Project Architecture                         // {#module}Micro-frontend architecture
+    {.folder}Infrastructure Layer                          //! Core infrastructure
+        {.folder}Build Tools                        // Development toolchain
+            webpack.config.js                   // Main configuration file
+            babel.config.js                     // JS transpilation configuration
+            {.folder}Plugin Extensions                     // Custom plugins
+                custom-loader.js                // {#utility}Custom loader
+                optimize-plugin.js              // {#utility}Optimization plugin
+        {.folder}Development Server                       // Local development environment
+            dev-server.js                       // Development server configuration
+            proxy.config.js                     // Proxy configuration
+    {.folder}Application Layer                              // {#module}Business logic layer
+        {.folder}Page Components                         // Page-level components
+            {.folder}User Management                     // User-related pages
+                UserList.vue                    // {#component}User list
+                UserDetail.vue                  // {#component}User details
+                UserForm.vue                    // {#component}User form
+            {.folder}Order Management                     // Order-related pages
+                OrderList.vue                   // {#component}Order list
+                OrderTracking.vue               // {#component}Order tracking
+        {.folder}Common Components                         // Reusable components
+            Button.vue                          // {#component}Button component
+            Modal.vue                           // {#component}Modal component
+            DataTable.vue                       // {#component}Data table
+    {.folder}Service Layer                              // {#module}Data service layer
+        {.folder}API Services                         // External interfaces
+            user.service.js                     // User API service
+            order.service.js                    // Order API service
+        {.folder}State Management                         // Application state
+            store.js                            // Vuex/Pinia storage
+            modules                             // State modules
+</LiteTree>
+:::
+
+## Common Use Cases
+
+### Project File Structure
+
+:::demo Project Structure
+<LiteTree>
+// File type styles
 .folder=color:#1976d2;font-weight:500;
 .file=color:#666;
 .config=color:#f57c00;font-weight:500;
 .doc=color:#8bc34a;
-// 状态样式
+// Status styles
 #completed=color:green;background:#e6ffe6;padding:1px 3px;border-radius:2px;font-size:11px;
 #inprogress=color:orange;background:#fff3e0;padding:1px 3px;border-radius:2px;font-size:11px;
 #todo=color:red;background:#ffe6e6;padding:1px 3px;border-radius:2px;font-size:11px;
 ---
-{.folder}我的项目
-    {.folder}src                  //v    {#completed}结构完成
-        {.folder}components       //+    {#inprogress}添加组件中
-            {.file}Header.vue     //v    {#completed}已完成
-            {.file}Footer.vue     //+    {#todo}待办
+{.folder}My Project
+    {.folder}src                  //v    {#completed}Structure complete
+        {.folder}components       //+    {#inprogress}Adding components
+            {.file}Header.vue     //v    {#completed}Completed
+            {.file}Footer.vue     //+    {#todo}To do
         {.folder}pages
-            {.file}Home.vue       //v    {#completed}已完成
-            {.file}About.vue      //*    {#inprogress}更新中
-    {.config}package.json         //v    {#completed}已配置
-    {.config}vite.config.js       //*    {#inprogress}优化中
-    {.doc}README.md               //!    {#todo}需要文档
+            {.file}Home.vue       //v    {#completed}Completed
+            {.file}About.vue      //*    {#inprogress}Updating
+    {.config}package.json         //v    {#completed}Configured
+    {.config}vite.config.js       //*    {#inprogress}Optimizing
+    {.doc}README.md               //!    {#todo}Documentation needed
 </LiteTree>
 :::
 
-### 团队组织
+### Team Organization
 
-:::demo 团队结构
+:::demo Team Structure
 <LiteTree>
-// 团队角色样式
+// Team role styles
 #lead=color:white;background:#1976d2;padding:2px 6px;border-radius:3px;font-size:12px;
 #senior=color:#1976d2;background:#e3f2fd;padding:2px 6px;border-radius:3px;font-size:12px;
 #junior=color:#666;background:#f5f5f5;padding:2px 6px;border-radius:3px;font-size:12px;
 ---
-开发团队
-    前端团队                      // {#lead}团队负责人: 张三
-        React 开发者              //+    团队扩充中
-            李四                  // {#senior}高级开发
-            王五                  // {#junior}初级开发
-        Vue 开发者                //v    团队完整
-            赵六                  // {#senior}高级开发
-            钱七                  // {#junior}初级开发
-    后端团队                      // {#lead}团队负责人: 孙八
-        API 开发                  //*    重构中
-            周九                  // {#senior}高级开发
-            吴十                  // {#junior}初级开发
-        数据库团队                //!    关键项目
-            郑一                  // {#senior}高级开发
+Development Team
+    Frontend Team                      // {#lead}Team Lead: Zhang San
+        React Developers              //+    Team expansion
+            Li Si                  // {#senior}Senior Developer
+            Wang Wu                  // {#junior}Junior Developer
+        Vue Developers                //v    Complete team
+            Zhao Liu                  // {#senior}Senior Developer
+            Qian Qi                  // {#junior}Junior Developer
+    Backend Team                      // {#lead}Team Lead: Sun Ba
+        API Development                  //*    Refactoring
+            Zhou Jiu                  // {#senior}Senior Developer
+            Wu Shi                  // {#junior}Junior Developer
+        Database Team                //!    Critical project
+            Zheng Yi                  // {#senior}Senior Developer
 </LiteTree>
 :::
 
-## VSCode 代码片段
+## VSCode Code Snippets {#vscode-snippets}
 
-项目包含 LiteTree 的完整 VSCode 代码片段。主要片段包括:
+The project includes complete VSCode code snippets for LiteTree to help you quickly create various tree structures.
 
-- **`@file-tree`** - 基础树结构
-- **`@file-tree-advanced`** - 带变量和样式的树
-- **`@lite-style-var`** - 样式变量定义
-- **`@lite-class-var`** - 类变量定义
-- **`@lite-icon-var`** - 图标变量定义
-- **`@icon-folder`**, **`@icon-file`**, **`@icon-js`**, **`@icon-ts`**, **`@icon-vue`** - 常用图标
-- **`@lite-status-styles`** - 预定义状态样式
-- **`@lite-filetype-styles`** - 预定义文件类型样式
+### Basic Snippets {#basic-snippets}
+
+::: alert {"type": "info", "title": "Usage"}
+In Markdown files, type the snippet prefix (like `@file-tree`) and press `Tab` to insert the corresponding code template.
+:::
+
+| Snippet Prefix | Description | Purpose |
+|:---|:---|:---|
+| `@file-tree` | Basic tree structure | Create simple file directory trees |
+| `@file-tree-advanced` | Advanced tree structure | Complete tree with variable definitions and styles |
+| `@lite-tree-with-tags` | Tree with tags | Tree structure showing tag functionality |
+| `@lite-tree-with-comments` | Tree with comments | Tree structure showing comment functionality |
+
+### Variable Definition Snippets {#variable-snippets}
+
+| Snippet Prefix | Description | Generated Content |
+|:---|:---|:---|
+| `@lite-style-var` | Style variable definition | `#name=color:value;background:value;` |
+| `@lite-class-var` | Class variable definition | `.name=color:value;font-weight:value;` |
+| `@lite-icon-var` | Icon variable definition | `name=data:image/svg+xml;base64,...` |
+
+### Preset Icon Snippets {#icon-snippets}
+
+| Snippet Prefix | Icon Type | Base64 Encoding |
+|:---|:---|:---|
+| `@icon-folder` | Folder icon | Blue folder SVG |
+| `@icon-file` | File icon | Generic file SVG |
+| `@icon-js` | JavaScript icon | JS file type icon |
+| `@icon-ts` | TypeScript icon | TS file type icon |
+| `@icon-vue` | Vue.js icon | Vue component icon |
+| `@icon-github` | GitHub icon | GitHub brand icon |
+| `@icon-star` | Star icon | Gold star icon |
+
+### Preset Style Snippets {#preset-style-snippets}
+
+| Snippet Prefix | Description | Included Styles |
+|:---|:---|:---|
+| `@lite-status-styles` | Status style set | Success, warning, error, info status styles |
+| `@lite-filetype-styles` | File type styles | Folder, file, configuration file styles |
+| `@lite-priority-styles` | Priority styles | High, medium, low priority tag styles |
+
+### Complete Example Snippets {#example-snippets}
+
+::: demo Tree Structure Created with Code Snippets
+<LiteTree>
+// Generated by @lite-status-styles
+#success=color:white;background:#4caf50;padding:2px 6px;border-radius:3px;font-size:12px;
+#warning=color:white;background:#ff9800;padding:2px 6px;border-radius:3px;font-size:12px;
+#error=color:white;background:#f44336;padding:2px 6px;border-radius:3px;font-size:12px;
+// Generated by @icon-folder etc.
+folder=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTEwIDRIOGEyIDIgMCAwIDAtMiAydjEyYTIgMiAwIDAgMCAyIDJoOGEyIDIgMCAwIDAgMi0yVjhhMiAyIDAgMCAwLTItMmgtM2wtMi0yWiIvPjwvc3ZnPg==
+---
+[folder] Project Root Directory                        // {#success}Code snippet demo
+    src                                  // Source code directory
+        components({#warning}Vue,React)   // Component library
+        utils                            // {#error}Utility functions
+</LiteTree>
+:::
