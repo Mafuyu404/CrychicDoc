@@ -574,6 +574,93 @@ Documentation still maintained to this day.
 ::::
 :::::
 
+## Code and Chart Plugins {#code-and-chart-plugins}
+
+### Markmap Mind Maps {#markmap}
+
+Use the Markmap plugin to render Markdown content as interactive mind maps.
+
+#### Basic Syntax
+
+````markdown
+```markmap
+# Topic
+## Branch 1
+### Sub-branch 1.1
+### Sub-branch 1.2
+## Branch 2
+### Sub-branch 2.1
+### Sub-branch 2.2
+```
+````
+
+#### Rendered Result
+
+```markmap
+# Topic
+## Branch 1
+### Sub-branch 1.1
+### Sub-branch 1.2
+## Branch 2
+### Sub-branch 2.1
+### Sub-branch 2.2
+```
+
+#### Features
+
+- **Auto-fit**: Mind map automatically adjusts size to fit container
+- **Dark mode support**: Automatically adapts to current theme's dark/light mode
+- **Interactive**: Support clicking nodes to expand/collapse
+- **Colored branches**: Different levels use different colors for distinction
+
+### Magic Move Code Animation {#magic-move}
+
+Used to showcase the gradual evolution of code with highlighted changes.
+
+#### Basic Syntax
+
+````markdown
+:::magic-move
+
+```js [js]
+const hello = 'world'
+```
+
+```ts [ts]
+const hello = 'world' as String
+```
+
+:::
+````
+
+#### Rendered Result
+
+:::magic-move
+
+```js [js]
+const hello = 'world'
+```
+
+```ts [ts]
+const hello = 'world' as String
+```
+
+:::
+
+#### Syntax Explanation
+
+- **Container syntax**: Use `:::magic-move` and `:::` to wrap multiple code blocks
+- **Filename**: Use `[filename]` in code block info to specify filename
+- **Highlight lines**: Use `{1,3-5}` syntax to highlight specific lines
+- **Step switching**: Click top tabs to switch between different steps
+
+#### Features
+
+- **Smooth transitions**: Smooth animation effects when code changes
+- **Syntax highlighting**: Support syntax highlighting for multiple programming languages
+- **File icons**: Automatically display corresponding icons based on file extensions
+- **Dark mode**: Automatically adapts to theme mode
+
 ## Custom Vue Components {#custom-vue-components}
 
 Vue components that can be used directly in Markdown.
