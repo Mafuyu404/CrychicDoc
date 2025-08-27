@@ -3,6 +3,7 @@ title: VSCode代码片段
 description: 文档 VSCode 代码片段，旨在提高文档编写效率。
 layout: doc
 hidden: false
+state: outdated
 priority: 50
 ---
 
