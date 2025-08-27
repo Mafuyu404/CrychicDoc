@@ -82,7 +82,15 @@ VuePress Theme Hope !!十分强大!!。
 - [x] 已完成的任务
 :::
 
-### 多选题
+### 多选题 {#multiple-choice}
+
+```markdown
+[?] Your question goes here?
+[ ] Wrong answer option
+[x] Correct answer option (marked with 'x')
+[ ] Another wrong answer option
+[ ] Yet another wrong answer option
+```
 
 [?] Your question goes here?
 [ ] Wrong answer option
