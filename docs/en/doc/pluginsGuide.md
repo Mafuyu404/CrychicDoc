@@ -82,7 +82,15 @@ Creates GitHub-style checkable task lists.
 - [x] Completed task
 :::
 
-### Multiple Choice
+### Multiple Choice {#multiple-choice}
+
+```markdown
+[?] Your question goes here?
+[ ] Wrong answer option
+[x] Correct answer option (marked with 'x')
+[ ] Another wrong answer option
+[ ] Yet another wrong answer option
+```
 
 [?] Your question goes here?
 [ ] Wrong answer option
