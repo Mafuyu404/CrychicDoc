@@ -13,12 +13,12 @@
   "guide/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "rules.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "samples.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
@@ -48,26 +48,26 @@
   "doc/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "sidebarGuide.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "pluginsGuide.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "litetreeGuide.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "vscodeSnippetsGuide.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   }
 }

@@ -1,6 +1,6 @@
 ---
 title: guide
-hidden: false
+hidden: true
 priority: 0
 collapsed: true
 ---
