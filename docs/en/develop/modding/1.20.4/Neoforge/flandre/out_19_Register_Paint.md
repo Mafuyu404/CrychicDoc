@@ -1,12 +1,17 @@
 ---
 title: 19 添加画
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 19 添加画 相关教程
 image: ./covers/9ca1e418b3a11d6f74c00b0e86e36a790e3173db.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
-
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 画
 

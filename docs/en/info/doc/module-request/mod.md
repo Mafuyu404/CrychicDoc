@@ -1,6 +1,9 @@
 ---
 prev: false
 next: false
+title: mod
+hidden: false
+priority: 0
 ---
 
 # 模组开发

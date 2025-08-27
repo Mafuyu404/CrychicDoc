@@ -1,53 +1,87 @@
 ---
-title: LiteTree 组件使用指南
-description: 在 VitePress 中使用 LiteTree 创建树形结构的完整指南
+title: LiteTree组件
+description: 在 VitePress 中使用 LiteTree 创建优雅、信息丰富的树形结构的完整指南。
 layout: doc
+priority: 40
 hidden: false
-priority: 0
 ---
 
-# LiteTree 组件使用指南
+# LiteTree 组件使用指南 {#main}
 
-LiteTree 是一个为 React/Vue/VitePress 设计的轻量级树组件，使用类似 YAML 的缩进格式而非 JSON，非常适合在 Markdown 文档中使用。
+::: v-info
+LiteTree 是一个为 VitePress 设计的轻量级树形结构组件。它使用一种类似 YAML 的、基于缩进的语法，使其在 Markdown 文档中书写和维护变得异常简单和直观。
+:::
 
-**基于**: [LiteTree 官方文档](https://zhangfisher.github.io/lite-tree/) 和 [GitHub 仓库](https://github.com/zhangfisher/lite-tree)
+<Linkcard url="https://zhangfisher.github.io/lite-tree/" title="LiteTree 官方文档" description="查看官方文档以获取更多信息。" />
 
-## 概述
+## 核心特性 {#core-features}
 
-**主要特性:**
-- 体积小，无第三方依赖
-- 支持 React/Vue 版本
-- 使用 `lite` 格式（基于缩进）完美适配 Markdown
-- 支持自定义节点样式、标签、注释、图标
-- 变量系统支持样式和图标定义
-- 内置标记符表示不同状态
-- 对非标准数据具有良好的容错性
-
-## 基础语法
-
-### 简单树形结构
-
-:::demo 基础树形结构
 <LiteTree>
-A公司
+#feature=color:white;background:#1976d2;padding:2px 6px;border-radius:3px;font-size:12px;
+---
+{#feature}轻量级
+    无任何第三方依赖，体积小巧。
+{#feature}Markdown 友好
+    使用基于缩进的 `lite` 格式，完美融入 Markdown。
+{#feature}高度可定制
+    支持自定义节点样式、标签、注释和图标。
+{#feature}强大的变量系统
+    支持定义和复用样式及图标。
+{#feature}内置标记
+    提供一组预设的标记符，用于表示不同的状态。
+</LiteTree>
+
+## 使用自定义图标 {#using-custom-icons}
+
+`LiteTree` 的一大特色是支持自定义图标，但这需要将 SVG 图像转换为 Base64 编码的 Data URI。
+
+::::: stepper
+@tab 步骤一：获取 SVG 图标
+首先，你需要一个 SVG 图像。你可以使用像 [Figma](https://www.figma.com/)、[Iconify](https://iconify.design/) 或 [Material Design Icons](https://materialdesignicons.com/) 这样的工具来获取或创建 SVG 图标。
+
+::: v-success 提示
+确保你的 SVG 代码是简洁和优化过的，以减小文件大小。
+:::
+@tab 步骤二：转换为 Base64 格式
+有许多免费的在线工具可以将你的 SVG 代码转换为 Base64。我们推荐使用 [SVG to Base64 Converter](https://www.base64-image.de/)，因为它非常简单直接。
+
+1.  **粘贴 SVG 代码**: 将你的完整 SVG 代码（包括 `<svg>` 标签）粘贴到网站的输入框中。
+2.  **复制 Base64 URI**: 复制生成的 `data:image/svg+xml;base64,...` 格式的完整 URI。
+@tab 步骤三：在 LiteTree 中应用
+将复制的 URI 用作图标变量的值：
+```markdown
+<LiteTree>
+// 定义你的自定义图标
+myIcon=data:image/svg+xml;base64,...
+---
+[myIcon] 这是一个带有自定义图标的节点
+</LiteTree>
+```
+:::::
+
+## 基础语法 {#basic-syntax}
+
+### 创建简单树形结构 {#basic-tree}
+
+通过缩进（推荐使用 4 个空格）来表示层级关系。
+
+::: demo 基础树形结构
+<LiteTree>
+公司架构
     行政中心
         总裁办
         人力资源部
-        财务部
     市场中心
         市场部
         销售部
-    研发中心
-        开发团队
-        测试团队
 </LiteTree>
 :::
 
-### 带标记符的树
+### 添加状态标记 {#tree-with-markers}
 
-LiteTree 支持各种内置标记符来表示不同状态:
+使用行尾注释 `//` 加上特定的符号，可以为节点添加状态标记。
 
-:::demo 标准标记符
+::: demo 标准标记符
 <LiteTree>
 项目状态
     已完成任务      //v    成功标记
@@ -59,74 +93,89 @@ LiteTree 支持各种内置标记符来表示不同状态:
 </LiteTree>
 :::
 
-**可用标记符:**
-- `//+` - 添加/新增项目 (绿色加号图标)
-- `//-` - 删除/移除项目 (红色减号图标)
-- `//x` - 错误/失败项目 (红色X图标)
-- `//v` - 成功/完成项目 (绿色对勾图标)
-- `//*` - 修改/变更项目 (橙色星号图标)
-- `//!` - 重要/优先项目 (红色感叹号图标)
+## 变量系统 {#variable-system}
 
-## 变量系统
+::: alert {"type": "info", "title": "变量定义位置"}
+变量定义**必须**位于树内容的顶部，并以 `---` 分隔符与树的主体内容隔开。
+:::
 
-LiteTree 支持三种类型的变量，必须在 `---` 分隔符之前定义:
+### 定义样式变量 (`#name=styles`) {#style-variables}
 
-### 样式变量 (`#name=styles`)
+用于定义可复用的 CSS 样式。
 
-定义可重用的 CSS 样式:
-
-:::demo 样式变量
+::: demo 样式变量
 <LiteTree>
 // 定义样式变量
 #important=color:red;font-weight:bold;background:#ffe6e6;padding:2px 6px;border-radius:3px;
 #success=color:green;font-weight:bold;background:#e6ffe6;padding:2px 6px;border-radius:3px;
-#warning=color:orange;background:#fff3e0;padding:2px 6px;border-radius:3px;
 ---
 项目文件
     {#important}关键文件
     {#success}已完成文件
-    {#warning}需要审查
 </LiteTree>
 :::
 
-### 类变量 (`.name=styles`)
+### 定义类变量 (`.name=styles`) {#class-variables}
 
-定义 CSS 类:
+用于定义 CSS 类，便于统一样式。
 
-:::demo 类变量
+::: demo 类变量
 <LiteTree>
 // 定义类变量
 .folder=color:#1976d2;font-weight:500;
 .file=color:#666;
-.important=font-weight:bold;color:#d32f2f;
 ---
 {.folder}源代码
-    {.important}main.js
+    {.file}main.js
     {.file}config.json
-    {.file}package.json
 </LiteTree>
 :::
 
-### 图标变量 (`name=base64data`)
+### 定义图标变量 (`name=base64data`) {#icon-variables}
 
-使用 base64 编码的 SVG 定义自定义图标:
+使用 Base64 编码的 SVG 定义自定义图标。
 
-:::demo 图标变量
+::: demo 图标变量
 <LiteTree>
-// 定义图标变量
+// 定义图标变量 (参见上面的转换指南)
 folder=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTEwIDRIOGEyIDIgMCAwIDAtMiAydjEyYTIgMiAwIDAgMCAyIDJoOGEyIDIgMCAwIDAgMi0yVjhhMiAyIDAgMCAwLTItMmgtM2wtMi0yWiIvPjwvc3ZnPg==
 file=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTE0IDJINmEyIDIgMCAwIDAtMiAydjE2YTIgMiAwIDAgMCAyIDJoMTJhMiAyIDAgMCAwIDItMlY4bC02LTZtNCA5VjlsNCA0aC00WiIvPjwvc3ZnPg==
-js=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNmN2RmMWUiIGQ9Ik0zIDNoMTh2MThIM1ptMTYuNTI1IDE0LjVjLS4zLS4zNTQtLjc5NS0uNjI5LTEuNzE3LS42MjljLS44ODEgMC0xLjQzOS4zMTgtMS40MzkuNzE4YzAgLjM5Ni4zNzMuNjM3IDEuMTU2Ljk2N2MxLjMzMi41ODYgMi4yODEgMS4wOTMgMi4yODEgMi4zOGMwIDEuMzItMS4yMDMgMi4xNDMtMi45NzQgMi4xNDNjLTEuMjEzIDAtMi4yNzEtLjQ2Mi0yLjk1LTEuMDc0bC44NzUtMS4yNzNjLjQzMy4zODkgMS4wNjQuNzI0IDEuNjY0LjcyNGMuNzA2IDAgMS4wNjQtLjMzMSAxLjA2NC0uNzMzYzAtLjQ0OS0uMzc2LS43MjQtMS4yNDUtMS4wMzNjLTEuMzI1LS40ODgtMi4xMzItMS4yNS0yLjEzMi0yLjM2M2MwLTEuMzk0IDEuMDI5LTIuMTQzIDIuODU2LTIuMTQzYzEuMDY0IDAgMS43NDUuMzI4IDIuMzc3Ljg1OWwtLjgzIDEuMjQxWm0tNS44NDUtLjMzNWMuMzY2LjgxNS4zNjYgMS41NzcuMzY2IDIuNDd2My45MDZoLTEuODc2VjE5LjZjMC0xLjUyNy0uMDYtMi4xOC0uNTUtMi40OGMtLjQxLS4yODgtMS4wNzYtLjI3NC0xLjYxOC0uMTA3Yy0uMzc4LjExNy0uNzEzLjMzNS0uNzEzIDEuMDc0djUuMDU2SDYuNDI3VjEyLjgyaDEuODc2djIuMTEzYy43NDctLjM5OSAxLjU3Ny0uNzM4IDIuNjQ1LS43MzhjLjc2NCAwIDEuNTc3LjI1MyAyLjA2OS43ODdjLjQ5OC41NTIuNjI2IDEuMTU3LjcyMyAxLjk5MVoiLz48L3N2Zz4=
 ---
 [folder] 前端项目
     [folder] src
-        [folder] components
-            [file] Header.vue
-            [file] Footer.vue
-        [folder] utils
-            [js] helpers.js
-            [js] api.js
+        [file] Header.vue
     [file] package.json
+</LiteTree>
+:::
+
+## 完整示例 {#full-example}
+
+:::demo 完整示例
+<LiteTree>
+// 样式定义
+#new=color:white;background:#4caf50;padding:1px 4px;border-radius:2px;font-size:12px;
+#deprecated=color:white;background:#f44336;padding:1px 4px;border-radius:2px;font-size:12px;
+.important=font-weight:bold;color:#1976d2;
+// 图标定义
+vue=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM0Y2FmNTAiIGQ9Ik0yIDIwaDIwTDEyIDR6Ii8+PC9zdmc+
+ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTUgMTUiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMxNzhDNiIgZD0iTTEyLjUgOHYtLjE2N2MwLS43MzYtLjU5Ny0xLjMzMy0xLjMzMy0xLjMzM0gxMGExLjUgMSLNSAxIDAgMSAwIDAgM2gxYTEuNSAxLjUgMCAwIDEgMCAzaC0xQTEuNSAxLjUgMCAwIDEgOC41IDExTTggNi41SDNtMi4lIDBWMTNNMS41LjVoMTN2MTRIOS41eiIvPjwvc3ZnPg==
+---
+{.important}CrychicDoc 项目
+    .vitepress                    // {.important}配置目录
+        config
+            [ts] index.ts         // {#new}更新配置
+        plugins                   // {.important}自定义插件
+            [ts] custom-alert.ts  // {#new}警告插件
+        theme
+            [vue] components      // {.important}Vue 组件
+                [vue] CustomAlert.vue  // {#new}新组件
+    docs
+        zh                        // 中文文档
+            styleList.md          // {#deprecated}需要更新
+        en                        // 英文文档
+            litetree-guide.md   // {#new}本指南
+    package.json                  //v    项目配置
+    README.md                     //!    {.important}重要文档
 </LiteTree>
 :::
 
@@ -158,7 +207,7 @@ js=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmc
 .important=font-weight:bold;color:#1976d2;
 // 图标定义
 vue=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM0Y2FmNTAiIGQ9Ik0yIDIwaDIwTDEyIDR6Ii8+PC9zdmc+
-ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTUgMTUiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMxNzhDNiIgZD0iTTEyLjUgOHYtLjE2N2MwLS43MzYtLjU5Ny0xLjMzMy0xLjMzMy0xLjMzM0gxMGExLjUgMS41IDAgMSAwIDAgM2gxYTEuNSAxLjUgMCAwIDEgMCAzaC0xQTEuNSAxLjUgMCAwIDEgOC41IDExTTggNi41SDNtMi41IDBWMTNNMS41LjVoMTN2MTRIOS41eiIvPjwvc3ZnPg==
+ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTUgMTUiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMxNzhDNiIgZD0iTTEyLjUgOHYtLjE2N2MwLS43MzYtLjU5Ny0xLjMzMy0xLjMzMy0xLjMzM0gxMGExLjUgMSLNSAxIDAgMSAwIDAgM2gxYTEuNSAxLjUgMCAwIDEgMCAzaC0xQTEuNSAxLjUgMCAwIDEgOC41IDExTTggNi41SDNtMi4lIDBWMTNNMS41LjVoMTN2MTRIOS41eiIvPjwvc3ZnPg==
 ---
 {.important}CrychicDoc 项目
     .vitepress                    // {.important}配置目录
@@ -166,17 +215,14 @@ ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmc
             [ts] index.ts         // {#new}更新配置
         plugins                   // {.important}自定义插件
             [ts] custom-alert.ts  // {#new}警告插件
-            [ts] dialog.ts        // {#new}对话框插件
         theme
             [vue] components      // {.important}Vue 组件
                 [vue] CustomAlert.vue  // {#new}新组件
-                [vue] Dialog.vue       // {#new}新组件
     docs
         zh                        // 中文文档
             styleList.md          // {#deprecated}需要更新
         en                        // 英文文档
-            samples.md            // {#new}新示例
-            {color:blue}litetree-guide.md   // {#new}本指南
+            litetree-guide.md   // {#new}本指南
     package.json                  //v    项目配置
     README.md                     //!    {.important}重要文档
 </LiteTree>
@@ -250,36 +296,3 @@ ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmc
 - **`@icon-folder`**, **`@icon-file`**, **`@icon-js`**, **`@icon-ts`**, **`@icon-vue`** - 常用图标
 - **`@lite-status-styles`** - 预定义状态样式
 - **`@lite-filetype-styles`** - 预定义文件类型样式
-
-## 最佳实践
-
-1. **使用变量**: 在顶部定义可重用的样式和图标
-2. **一致命名**: 为变量使用清晰、描述性的名称
-3. **逻辑分组**: 将相关项目分组在一起
-4. **恰当标记**: 一致使用标记符表示状态
-5. **颜色编码**: 有意义地使用颜色 (红色=错误, 绿色=成功等)
-6. **图标使用**: 适度使用图标以避免杂乱
-7. **缩进**: 保持一致的缩进 (推荐4个空格)
-
-## 故障排除
-
-### 变量不工作
-- 确保变量在 `---` 分隔符之前定义
-- 检查变量定义中的语法错误
-- 验证图标变量的 base64 编码
-
-### 样式问题
-- 确保 CSS 属性有效
-- 检查样式定义中是否缺少分号
-- 测试内联样式以调试变量问题
-
-### 图标不显示
-- 验证 base64 编码正确
-- 确保 SVG 格式正确
-- 检查图标名称是否与使用匹配
-
-## 参考资料
-
-- [LiteTree 官方文档](https://zhangfisher.github.io/lite-tree/)
-- [LiteTree GitHub 仓库](https://github.com/zhangfisher/lite-tree)
-- [LiteTree 变量指南](https://zhangfisher.github.io/lite-tree/guide/vars.html) 

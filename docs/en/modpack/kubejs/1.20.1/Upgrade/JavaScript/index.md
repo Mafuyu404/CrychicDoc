@@ -8,6 +8,9 @@ next:
   text: JavaScript相关概念
   link: /zh/modpack/kubejs/JavaScript/index
   authors:
-  - Eikidona
+    - Eikidona
+hidden: false
+priority: 9007199254740991
+collapsed: true
 ---
 

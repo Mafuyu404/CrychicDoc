@@ -1,11 +1,3 @@
 {
-  "_self_": false,
-  "rules.md": false,
-  "styleList.md": false,
-  "guide/": false,
-  "litetree-guide.md": false,
-  "cooperation.md": false,
-  "samples.md": false,
-  "sidebarTutorial.md": false,
-  "vscode-snippets-guide.md": false
+  "_self_": false
 }

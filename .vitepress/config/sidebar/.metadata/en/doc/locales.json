@@ -8,45 +8,65 @@
   "cooperation.md": {
     "valueHash": "9df4d48c65dedc67db6c82adc9556053",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "guide/": {
     "valueHash": "a0c391dc49c440fc9962168353cedde3",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "rules.md": {
     "valueHash": "87ba0cba7ef594d7d4698807e5c88371",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "samples.md": {
     "valueHash": "6fcf4430a7b50db2699182a979129636",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "sidebarTutorial.md": {
     "valueHash": "c6924975ddbec80f27cccc6cb533c650",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "styleList.md": {
     "valueHash": "7d57b9ddb133d566c6192428b67e5783",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "vscode-snippets-guide.md": {
     "valueHash": "49d719c04ecf56e6a8300c41d6fc096a",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "litetree-guide.md": {
     "valueHash": "536e5409a708ad3e8d506e8cb54e0ce9",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "doc/": {
     "valueHash": "9a09b4dfda82e3e665e31092d1c3ec8d",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "sidebarGuide.md": {
+    "valueHash": "965bdcc2a98596d4d427f19cd54d16da",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "pluginsGuide.md": {
+    "valueHash": "f348768ae42affeb1c0437405930efd7",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "litetreeGuide.md": {
+    "valueHash": "4c1ebeb3858384d2de85ad3d50585cb2",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "vscodeSnippetsGuide.md": {
+    "valueHash": "7b05d38f32413c414c6daf098464464c",
     "isUserSet": false,
     "isActiveInStructure": false
   }

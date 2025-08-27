@@ -244,7 +244,7 @@ export const projectConfig: ProjectConfig = {
      * Markdown Variables plugin configuration
      */
     mdVar: {
-        prefix: "%",
+        prefix: "-%",
         noVarPrefix: "\\%",
         persistence: true,
         styling: "default",

@@ -1,11 +1,3 @@
 {
-  "_self_": "文档相关",
-  "rules.md": "Cooperation Guide",
-  "styleList.md": "Document Style Overview",
-  "guide/": "guide",
-  "litetree-guide.md": "LiteTree Component Guide",
-  "cooperation.md": "Project Collaboration Tutorial",
-  "samples.md": "Samples for coding CrychicDoc",
-  "sidebarTutorial.md": "Sidebar Configuration",
-  "vscode-snippets-guide.md": "VSCode Snippets Guide"
+  "_self_": "文档相关"
 }

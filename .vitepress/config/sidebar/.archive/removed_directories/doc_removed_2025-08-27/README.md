@@ -1,6 +1,6 @@
 # Archived Directory: doc
 
-**Archive Date**: 2025-06-15T00:46:02.584Z
+**Archive Date**: 2025-08-27T13:20:20.806Z
 **Original Location**: doc/doc
 **Reason**: Physical directory no longer exists in docs structure
 
@@ -14,19 +14,19 @@ This archive contains both the configuration files and metadata for a directory 
 To restore this directory:
 
 1. **Recreate the physical directory**: 
-   `mkdir -p docs/zh/doc/doc/`
+   `mkdir -p docs/en/doc/doc/`
 
 2. **Restore configuration files**:
-   `cp -r config/doc/ .vitepress/config/sidebar/zh/doc/doc/`
+   `cp -r config/doc/ .vitepress/config/sidebar/en/doc/doc/`
 
 3. **Restore metadata files**:
-   `cp -r metadata/doc/ .vitepress/config/sidebar/.metadata/zh/doc/doc/`
+   `cp -r metadata/doc/ .vitepress/config/sidebar/.metadata/en/doc/doc/`
 
 4. **Restart the development server**
 
 ## Archive Structure
 ```
-doc_removed_2025-06-15/
+doc_removed_2025-08-27/
 ├── README.md (this file)
 ├── config/doc/     # Original config files
 └── metadata/doc/   # Original metadata files

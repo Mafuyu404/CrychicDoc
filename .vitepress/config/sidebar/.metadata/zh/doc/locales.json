@@ -8,12 +8,12 @@
   "cooperation.md": {
     "valueHash": "b7615c47bd9e4dc840dbf5d8053b0e4b",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "dev.md": {
     "valueHash": "b532a256dbcd3266fa562e3cf0813ba0",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "guide/": {
     "valueHash": "a0c391dc49c440fc9962168353cedde3",
@@ -21,7 +21,7 @@
     "isActiveInStructure": true
   },
   "rules.md": {
-    "valueHash": "467cd306a585d80576eae4228970db38",
+    "valueHash": "5c4d4dbbc3bdf395cdaa0786ef99d309",
     "isUserSet": false,
     "isActiveInStructure": true
   },
@@ -33,17 +33,17 @@
   "sidebarTutorial.md": {
     "valueHash": "5fb10394a8d81d55adc5b8c16195ba2e",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "styleList.md": {
     "valueHash": "cf2f9c2b6039f25a11ba537c4982f362",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "vscode-snippets-guide.md": {
     "valueHash": "7b05d38f32413c414c6daf098464464c",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "doc/": {
     "valueHash": "9a09b4dfda82e3e665e31092d1c3ec8d",
@@ -65,15 +65,60 @@
   "scripts.md": {
     "valueHash": "1eb8a40cf9334cbd3e496f8c92c0a8cc",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "litetree-guide.md": {
     "valueHash": "4c1ebeb3858384d2de85ad3d50585cb2",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "plugins.md": {
     "valueHash": "7243595b75f3eda293a000832dcfa5e5",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "plugins-guide.md": {
+    "valueHash": "817474808bdd78fe2547c1916f2e2ab4",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "contribution-guide.md": {
+    "valueHash": "4a9e69850d1a68563d2426ded2af32b6",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "refactor-plan.md": {
+    "valueHash": "c74c0160ca6aa4fc3b813ee42b647a93",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "sidebarGuide.md": {
+    "valueHash": "965bdcc2a98596d4d427f19cd54d16da",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "contributionGuide.md": {
+    "valueHash": "4a9e69850d1a68563d2426ded2af32b6",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "refactorPlan.md": {
+    "valueHash": "c74c0160ca6aa4fc3b813ee42b647a93",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "pluginsGuide.md": {
+    "valueHash": "f348768ae42affeb1c0437405930efd7",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "litetreeGuide.md": {
+    "valueHash": "4c1ebeb3858384d2de85ad3d50585cb2",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "vscodeSnippetsGuide.md": {
+    "valueHash": "7b05d38f32413c414c6daf098464464c",
     "isUserSet": false,
     "isActiveInStructure": true
   }

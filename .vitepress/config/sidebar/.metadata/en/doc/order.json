@@ -2,45 +2,65 @@
   "cooperation.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "guide/": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "rules.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "samples.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "sidebarTutorial.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "styleList.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "vscode-snippets-guide.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "litetree-guide.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "doc/": {
     "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "sidebarGuide.md": {
+    "valueHash": "98f13708210194c475687be6106a3b84",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "pluginsGuide.md": {
+    "valueHash": "34173cb38f07f89ddbebc2ac9128303f",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "litetreeGuide.md": {
+    "valueHash": "d645920e395fedad7bbbed0eca3fe2e0",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "vscodeSnippetsGuide.md": {
+    "valueHash": "c0c7c76d30bd3dcaefc96f40275bdc0a",
     "isUserSet": false,
     "isActiveInStructure": false
   }

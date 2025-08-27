@@ -1,6 +1,9 @@
 ---
 prev: false
 next: false
+title: newSection
+hidden: false
+priority: 0
 ---
 
 # 收集处

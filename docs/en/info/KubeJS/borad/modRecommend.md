@@ -1,6 +1,9 @@
 ---
 prev: false
 next: false
+title: modRecommend
+hidden: false
+priority: 0
 ---
 
 # 模组推荐

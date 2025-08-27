@@ -1,5 +1,8 @@
 ---
 root: true
+title: Develop
+hidden: false
+collapsed: true
 ---
 
 ---

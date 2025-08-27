@@ -21,6 +21,7 @@ import { demo } from "@mdit/plugin-demo";
 import { dl } from "@mdit/plugin-dl";
 import { stepper } from "../plugins/stepper";
 import { vuetifyTimeline } from "../plugins/vuetify-timeline";
+import { chartGrid } from "../plugins/table-grid";
 import { tab } from "@mdit/plugin-tab";
 import { mark } from "@mdit/plugin-mark";
 import { ins } from "@mdit/plugin-ins";
@@ -103,6 +104,7 @@ export const markdown: MarkdownOptions = {
         md.use(card);
         md.use(vueCharts);
         md.use(vuetifyTimeline);
+        md.use(chartGrid);
         
         if (isFeatureEnabled('markmap')) {
             withMarkmap(md);

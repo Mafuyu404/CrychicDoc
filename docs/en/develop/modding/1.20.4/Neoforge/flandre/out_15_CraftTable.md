@@ -1,12 +1,17 @@
 ---
 title: 15 合成表
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 15 合成表 相关教程
 image: ./covers/6c533fcb8a32acb5574e0733cf9e436177ec55db.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
-
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 合成表配方
 

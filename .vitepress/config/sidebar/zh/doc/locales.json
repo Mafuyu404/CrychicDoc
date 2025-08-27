@@ -1,13 +1,9 @@
 {
   "_self_": "文档相关",
-  "sidebarTutorial.md": "侧边栏配置",
-  "rules.md": "合作规范",
-  "dev.md": "环境配置与预览",
-  "styleList.md": "文档样式一览",
-  "cooperation.md": "项目合作教程",
-  "litetree-guide.md": "LiteTree 组件使用指南",
-  "vscode-snippets-guide.md": "VSCode 代码片段使用指南",
-  "scripts.md": "脚本工具使用指南",
   "guide/": "guide",
-  "plugins.md": "文档插件示例"
+  "sidebarGuide.md": "侧边栏配置",
+  "pluginsGuide.md": "样式与插件",
+  "litetreeGuide.md": "LiteTree组件",
+  "vscodeSnippetsGuide.md": "VSCode代码片段",
+  "rules.md": "文档编写规范"
 }

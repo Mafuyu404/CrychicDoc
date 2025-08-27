@@ -1,12 +1,8 @@
 {
-  "sidebarTutorial.md": 0,
-  "rules.md": 0,
-  "dev.md": 0,
-  "styleList.md": 0,
-  "cooperation.md": 0,
-  "litetree-guide.md": 0,
-  "vscode-snippets-guide.md": 0,
-  "scripts.md": 10000000,
   "guide/": 9007199254740991,
-  "plugins.md": 0
+  "sidebarGuide.md": 20,
+  "pluginsGuide.md": 30,
+  "litetreeGuide.md": 40,
+  "vscodeSnippetsGuide.md": 50,
+  "rules.md": -10
 }
