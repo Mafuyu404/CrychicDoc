@@ -47,7 +47,7 @@ export const footerConfig: FooterConfig = {
                     }
                 ),
                 createLinkConfig(
-                    'Template Repository',
+                    'Temp repo',
                     'https://m1hono.github.io/M1honoVitepressTemplate/',
                     '/svg/logo.svg',
                     {
