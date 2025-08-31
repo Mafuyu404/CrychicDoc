@@ -44,6 +44,7 @@
     "dependencies": {
         "@dhlx/vitepress-plugin-drawio": "^0.0.9",
         "@fancyapps/ui": "^5.0.36",
+        "@iconify/vue": "^5.0.0",
         "@lite-tree/vue": "^1.1.6",
         "@mdit-vue/shared": "^2.1.4",
         "@mdit/plugin-alert": "^0.20.0",
@@ -59,6 +60,7 @@
         "@mdit/plugin-sub": "^0.20.0",
         "@mdit/plugin-sup": "^0.20.0",
         "@mdit/plugin-tab": "^0.20.0",
+        "@nolebase/vitepress-plugin-highlight-targeted-heading": "^2.18.2",
         "@shikijs/markdown-it": "^3.4.2",
         "@types/js-yaml": "^4.0.9",
         "add": "^2.0.6",

@@ -411,9 +411,13 @@ export function createLinkConfig(
     link: string,
     icon?: string,
     options?: {
+        /** @description HTML rel attribute for the link (security and SEO) */
         rel?: string;
+        /** @description HTML target attribute for link behavior */
         target?: string;
+        /** @description Whether to hide the external link icon for external URLs */
         noIcon?: boolean;
+        /** @description Theme-specific icon colors for light/dark themes */
         iconColors?: { light: string; dark: string };
     }
 ): LinkConfig {

@@ -1,19 +1,5 @@
 {
   "tags": {
-    "sample": {
-      "name": "sample",
-      "count": 1,
-      "pages": [
-        {
-          "title": "文档插件示例",
-          "path": "/zh/doc/samples",
-          "tags": [
-            "sample"
-          ],
-          "language": "zh-CN"
-        }
-      ]
-    },
     "Minecraft1_20_4": {
       "name": "Minecraft1_20_4",
       "count": 53,
@@ -1798,7 +1784,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "Brain 系统指南",
+          "title": "Brain",
           "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -1811,7 +1797,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "实体系统目录",
+          "title": "目录",
           "description": "KubeJS 实体系统相关文档导航与索引",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
           "tags": [
@@ -1834,7 +1820,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "LivingEntity（有生命实体）",
+          "title": "生物实体",
           "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
           "tags": [
@@ -1846,7 +1832,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "实体常用方法",
+          "title": "实体方法",
           "description": "KubeJS 实体 API 常用方法分类与用法参考",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
@@ -1858,7 +1844,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "Mob（生物）",
+          "title": "Mob",
           "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
           "tags": [
@@ -1870,7 +1856,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "Player（玩家）",
+          "title": "玩家实体",
           "description": "Player 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
           "tags": [
@@ -1914,7 +1900,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "集合接口",
+          "title": "集合",
           "description": "Java Collection 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
           "tags": [
@@ -1927,7 +1913,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "列表接口",
+          "title": "列表",
           "description": "Java List 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
           "tags": [
@@ -1940,7 +1926,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "映射接口",
+          "title": "Map映射",
           "description": "Java Map 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
           "tags": [
@@ -1966,7 +1952,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "JSDoc 在 KubeJS/ProbeJS 生态下的权威指南",
+          "title": "JSDoc文档",
           "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
           "tags": [
@@ -2026,7 +2012,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "LivingEntity（有生命实体）",
+          "title": "生物实体",
           "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
           "tags": [
@@ -2056,7 +2042,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "Brain 系统指南",
+          "title": "Brain",
           "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -2075,7 +2061,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "Brain 系统指南",
+          "title": "Brain",
           "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -2094,7 +2080,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "Brain 系统指南",
+          "title": "Brain",
           "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -2113,7 +2099,7 @@
       "count": 7,
       "pages": [
         {
-          "title": "实体系统目录",
+          "title": "目录",
           "description": "KubeJS 实体系统相关文档导航与索引",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
           "tags": [
@@ -2136,7 +2122,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "LivingEntity（有生命实体）",
+          "title": "生物实体",
           "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
           "tags": [
@@ -2148,7 +2134,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "实体常用方法",
+          "title": "实体方法",
           "description": "KubeJS 实体 API 常用方法分类与用法参考",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
@@ -2160,7 +2146,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "Mob（生物）",
+          "title": "Mob",
           "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
           "tags": [
@@ -2172,7 +2158,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "Player（玩家）",
+          "title": "玩家实体",
           "description": "Player 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
           "tags": [
@@ -2217,7 +2203,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "实体常用方法",
+          "title": "实体方法",
           "description": "KubeJS 实体 API 常用方法分类与用法参考",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
@@ -2235,7 +2221,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "Mob（生物）",
+          "title": "Mob",
           "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
           "tags": [
@@ -2253,7 +2239,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "Player（玩家）",
+          "title": "玩家实体",
           "description": "Player 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
           "tags": [
@@ -2306,7 +2292,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "集合接口",
+          "title": "集合",
           "description": "Java Collection 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
           "tags": [
@@ -2325,7 +2311,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "集合接口",
+          "title": "集合",
           "description": "Java Collection 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
           "tags": [
@@ -2344,7 +2330,7 @@
       "count": 2,
       "pages": [
         {
-          "title": "集合接口",
+          "title": "集合",
           "description": "Java Collection 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
           "tags": [
@@ -2357,7 +2343,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "列表接口",
+          "title": "列表",
           "description": "Java List 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
           "tags": [
@@ -2376,7 +2362,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "列表接口",
+          "title": "列表",
           "description": "Java List 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
           "tags": [
@@ -2395,7 +2381,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "列表接口",
+          "title": "列表",
           "description": "Java List 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
           "tags": [
@@ -2414,7 +2400,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "映射接口",
+          "title": "Map映射",
           "description": "Java Map 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
           "tags": [
@@ -2433,7 +2419,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "映射接口",
+          "title": "Map映射",
           "description": "Java Map 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
           "tags": [
@@ -2452,7 +2438,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "映射接口",
+          "title": "Map映射",
           "description": "Java Map 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
           "tags": [
@@ -2528,7 +2514,7 @@
       "count": 4,
       "pages": [
         {
-          "title": "JSDoc 在 KubeJS/ProbeJS 生态下的权威指南",
+          "title": "JSDoc文档",
           "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
           "tags": [
@@ -2580,7 +2566,7 @@
       "count": 3,
       "pages": [
         {
-          "title": "JSDoc 在 KubeJS/ProbeJS 生态下的权威指南",
+          "title": "JSDoc文档",
           "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
           "tags": [
@@ -4436,7 +4422,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "Brain 系统指南",
+          "title": "Brain",
           "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -4449,7 +4435,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "实体系统目录",
+          "title": "目录",
           "description": "KubeJS 实体系统相关文档导航与索引",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
           "tags": [
@@ -4472,7 +4458,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "LivingEntity（有生命实体）",
+          "title": "生物实体",
           "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
           "tags": [
@@ -4484,7 +4470,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "实体常用方法",
+          "title": "实体方法",
           "description": "KubeJS 实体 API 常用方法分类与用法参考",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
@@ -4496,7 +4482,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "Mob（生物）",
+          "title": "Mob",
           "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
           "tags": [
@@ -4508,7 +4494,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "Player（玩家）",
+          "title": "玩家实体",
           "description": "Player 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
           "tags": [
@@ -4552,7 +4538,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "集合接口",
+          "title": "集合",
           "description": "Java Collection 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
           "tags": [
@@ -4565,7 +4551,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "列表接口",
+          "title": "列表",
           "description": "Java List 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
           "tags": [
@@ -4578,7 +4564,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "映射接口",
+          "title": "Map映射",
           "description": "Java Map 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
           "tags": [
@@ -4604,7 +4590,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "JSDoc 在 KubeJS/ProbeJS 生态下的权威指南",
+          "title": "JSDoc文档",
           "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
           "tags": [
@@ -4634,7 +4620,7 @@
       "count": 7,
       "pages": [
         {
-          "title": "实体系统目录",
+          "title": "目录",
           "description": "KubeJS 实体系统相关文档导航与索引",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
           "tags": [
@@ -4657,7 +4643,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "LivingEntity（有生命实体）",
+          "title": "生物实体",
           "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
           "tags": [
@@ -4669,7 +4655,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "实体常用方法",
+          "title": "实体方法",
           "description": "KubeJS 实体 API 常用方法分类与用法参考",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
@@ -4681,7 +4667,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "Mob（生物）",
+          "title": "Mob",
           "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
           "tags": [
@@ -4693,7 +4679,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "Player（玩家）",
+          "title": "玩家实体",
           "description": "Player 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
           "tags": [
@@ -4720,7 +4706,7 @@
       "count": 4,
       "pages": [
         {
-          "title": "JSDoc 在 KubeJS/ProbeJS 生态下的权威指南",
+          "title": "JSDoc文档",
           "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
           "tags": [
@@ -4784,7 +4770,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "LivingEntity（有生命实体）",
+          "title": "生物实体",
           "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
           "tags": [
@@ -4814,7 +4800,7 @@
       "count": 3,
       "pages": [
         {
-          "title": "JSDoc 在 KubeJS/ProbeJS 生态下的权威指南",
+          "title": "JSDoc文档",
           "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
           "tags": [
@@ -4855,7 +4841,7 @@
       "count": 2,
       "pages": [
         {
-          "title": "集合接口",
+          "title": "集合",
           "description": "Java Collection 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
           "tags": [
@@ -4868,7 +4854,7 @@
           "language": "zh-CN"
         },
         {
-          "title": "列表接口",
+          "title": "列表",
           "description": "Java List 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
           "tags": [
@@ -4878,20 +4864,6 @@
             "数据结构"
           ],
           "progress": 95,
-          "language": "zh-CN"
-        }
-      ]
-    },
-    {
-      "name": "sample",
-      "count": 1,
-      "pages": [
-        {
-          "title": "文档插件示例",
-          "path": "/zh/doc/samples",
-          "tags": [
-            "sample"
-          ],
           "language": "zh-CN"
         }
       ]
@@ -4919,7 +4891,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "Brain 系统指南",
+          "title": "Brain",
           "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -4938,7 +4910,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "Brain 系统指南",
+          "title": "Brain",
           "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -4957,7 +4929,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "Brain 系统指南",
+          "title": "Brain",
           "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
           "tags": [
@@ -4994,7 +4966,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "实体常用方法",
+          "title": "实体方法",
           "description": "KubeJS 实体 API 常用方法分类与用法参考",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
           "tags": [
@@ -5012,7 +4984,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "Mob（生物）",
+          "title": "Mob",
           "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
           "tags": [
@@ -5030,7 +5002,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "Player（玩家）",
+          "title": "玩家实体",
           "description": "Player 类的属性、方法、事件与 KubeJS 用法",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
           "tags": [
@@ -5083,7 +5055,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "集合接口",
+          "title": "集合",
           "description": "Java Collection 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
           "tags": [
@@ -5102,7 +5074,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "集合接口",
+          "title": "集合",
           "description": "Java Collection 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
           "tags": [
@@ -5121,7 +5093,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "列表接口",
+          "title": "列表",
           "description": "Java List 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
           "tags": [
@@ -5140,7 +5112,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "列表接口",
+          "title": "列表",
           "description": "Java List 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
           "tags": [
@@ -5159,7 +5131,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "映射接口",
+          "title": "Map映射",
           "description": "Java Map 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
           "tags": [
@@ -5178,7 +5150,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "映射接口",
+          "title": "Map映射",
           "description": "Java Map 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
           "tags": [
@@ -5197,7 +5169,7 @@
       "count": 1,
       "pages": [
         {
-          "title": "映射接口",
+          "title": "Map映射",
           "description": "Java Map 接口在 KubeJS 中的使用指南",
           "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
           "tags": [
@@ -5303,8 +5275,8 @@
       ]
     }
   ],
-  "totalTags": 32,
-  "totalPages": 218,
+  "totalTags": 31,
+  "totalPages": 217,
   "language": "zh-CN",
-  "generatedAt": "2025-08-25T06:15:06.538Z"
+  "generatedAt": "2025-08-31T12:48:59.695Z"
 }

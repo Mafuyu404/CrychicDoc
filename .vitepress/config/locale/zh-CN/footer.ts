@@ -10,7 +10,7 @@ export const footerConfig: FooterConfig = {
                 'rgba(20, 150, 255, 1)',
                 'rgba(100, 200, 255, 1)'
             ),
-            number: 'ICP备案号 12345678',
+            number: '晋ICP备2025065291号',
             rel: 'noopener noreferrer',
         },
         police: {
@@ -36,7 +36,7 @@ export const footerConfig: FooterConfig = {
             [
                 createLinkConfig(
                     'GitHub',
-                    'https://github.com/M1hono/M1honoVitepressTemplate',
+                    'https://github.com/PickAID/CrychicDoc',
                     'mdi:github',
                     {
                         rel: 'noopener noreferrer',
@@ -47,9 +47,9 @@ export const footerConfig: FooterConfig = {
                     }
                 ),
                 createLinkConfig(
-                    '文档',
-                    'https://vitepress.dev',
-                    'mdi:book-open-page-variant',
+                    '模版仓库',
+                    'https://m1hono.github.io/M1honoVitepressTemplate/',
+                    '/svg/logo.svg',
                     {
                         rel: 'noopener noreferrer',
                         iconColors: { 
@@ -66,12 +66,12 @@ export const footerConfig: FooterConfig = {
             }
         ),
         createGroupConfig(
-            '资源',
+            'KubeJS',
             [
                 createLinkConfig(
-                    '下载',
-                    '/downloads',
-                    'mdi:download',
+                    '1.20.1',
+                    '/zh/modpack/kubejs/1.20.1/',
+                    '/svg/kubejs.svg',
                     {
                         iconColors: { 
                             light: 'rgba(100, 200, 150, 1)',
@@ -80,21 +80,21 @@ export const footerConfig: FooterConfig = {
                     }
                 ),
                 createLinkConfig(
-                    '常见问题',
-                    '/faq',
-                    'mdi:help-circle',
+                    '1.21.1',
+                    '/zh/modpack/kubejs/1.21/',
+                    '/svg/kubejs.svg',
                     {
                         iconColors: { 
-                            light: 'rgba(200, 100, 150, 1)',
-                            dark: 'rgba(255, 150, 200, 1)'
+                            light: 'rgba(100, 200, 150, 1)',
+                            dark: 'rgba(150, 255, 200, 1)'
                         },
                     }
                 ),
             ],
-            'mdi:tools',
+            'mdi:database-search',
             { 
-                light: 'rgba(150, 200, 100, 1)',
-                dark: 'rgba(200, 255, 150, 1)'
+                light: 'rgb(109, 37, 109)',
+                dark: 'rgb(129, 48, 184)'
             }
         ),
     ],

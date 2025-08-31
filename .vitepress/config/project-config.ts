@@ -216,7 +216,7 @@ export const projectConfig: ProjectConfig = {
      * Footer options configuration
      */
     footerOptions: {
-        showIcp: false,
+        showIcp: true,
         showPolice: false,
         showLicense: true,
         licenseText: "CC BY-SA 4.0",

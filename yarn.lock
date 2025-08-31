@@ -654,6 +654,13 @@
     local-pkg "^1.0.0"
     mlly "^1.7.4"
 
+"@iconify/vue@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@iconify/vue/-/vue-5.0.0.tgz#c47e4b3a225a64bbf28dce924934f23e54b061a4"
+  integrity sha512-C+KuEWIF5nSBrobFJhT//JS87OZ++QDORB6f2q2Wm6fl2mueSTpFBeBsveK0KW9hWiZ4mNiPjsh6Zs4jjdROSg==
+  dependencies:
+    "@iconify/types" "^2.0.0"
+
 "@img/sharp-darwin-arm64@0.34.3":
   version "0.34.3"
   resolved "https://registry.yarnpkg.com/@img/sharp-darwin-arm64/-/sharp-darwin-arm64-0.34.3.tgz#4850c8ace3c1dc13607fa07d43377b1f9aa774da"
@@ -1054,6 +1061,13 @@
     gray-matter "^4.0.3"
     less "^4.4.0"
     uncrypto "^0.1.3"
+
+"@nolebase/vitepress-plugin-highlight-targeted-heading@^2.18.2":
+  version "2.18.2"
+  resolved "https://registry.yarnpkg.com/@nolebase/vitepress-plugin-highlight-targeted-heading/-/vitepress-plugin-highlight-targeted-heading-2.18.2.tgz#50b494ee1daceacdc758f84adb747a3691362034"
+  integrity sha512-RVrT7FgyjxrnFFR9twc1OJI/5B09+biVbSiO36Yiu2YC+kRMz1Mb553l2DyioLtWJgVNTJ7sj66ZJi40JpDh7g==
+  dependencies:
+    less "^4.4.0"
 
 "@nolebase/vitepress-plugin-inline-link-preview@^2.17.1":
   version "2.18.1"
@@ -2627,7 +2641,7 @@ date-fns@^4.1.0:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-4.1.0.tgz#64b3d83fff5aa80438f5b1a633c2e83b8a1c2d14"
   integrity sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==
 
-dayjs@^1.11.13, dayjs@^1.11.7:
+dayjs@^1.11.13:
   version "1.11.13"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.13.tgz#92430b0139055c3ebb60150aa13e860a4b5a366c"
   integrity sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==
@@ -5100,13 +5114,6 @@ vite@^5.4.14:
     rollup "^4.20.0"
   optionalDependencies:
     fsevents "~2.3.3"
-
-vitepress-markdown-timeline@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/vitepress-markdown-timeline/-/vitepress-markdown-timeline-1.2.2.tgz#5fd79331779e6b781c1a0bb5467f90f3c31fc2cf"
-  integrity sha512-eDFcvudmTW33pI7XdT+ZeUPvpc4CPXI0LZbsZZ54j36G56AN6qYEBiwZpDHl77E4QvqAIJMc8phXXvm7P/Lc+Q==
-  dependencies:
-    dayjs "^1.11.7"
 
 vitepress-md-var@^0.2.3:
   version "0.2.3"

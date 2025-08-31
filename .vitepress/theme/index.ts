@@ -26,6 +26,8 @@ import { Animation, Preview, NotFound, Buttons } from "./components/ui";
 import { comment, PageTags } from "./components/content";
 import { ResponsibleEditor } from "./components/content";
 import Footer from "./components/navigation/Footer.vue";
+import { NolebaseHighlightTargetedHeading } from "@nolebase/vitepress-plugin-highlight-targeted-heading/client";
+import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css";
 
 import { setupLanguageControl } from "@utils/i18n/languageControl";
 import { initMermaidConfig } from "@utils/charts/mermaid";
