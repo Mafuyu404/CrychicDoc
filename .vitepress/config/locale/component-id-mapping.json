@@ -14,6 +14,7 @@
         "responsible-editor": "content/ResponsibleEditor",
         "tags-page": "content/TagsPage",
         "XyebbsInfo": "content/XyebbsInfo",
+        "footer": "navigation/Footer",
         "buttons-component": "ui/Buttons",
         "magic-move-container": "ui/MagicMoveContainer",
         "not-found": "ui/NotFound",
