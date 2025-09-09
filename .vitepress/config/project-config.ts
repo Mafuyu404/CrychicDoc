@@ -399,7 +399,10 @@ export interface FooterOptionsConfig {
     licenseLink: string;
     /** Whether to show site statistics (visits, page views) */
     showSiteStats: boolean;
-    /** Site statistics provider ('busuanzi' | 'vercount' | 'custom') */
+    /** 
+     * @description Site statistics provider ('busuanzi' | 'vercount' | 'custom')
+     * Currently, only 'busuanzi' is supported
+     */
     siteStatsProvider: 'busuanzi' | 'vercount' | 'custom';
 }
 
