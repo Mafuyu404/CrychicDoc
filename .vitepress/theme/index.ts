@@ -17,6 +17,8 @@ import {
 } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
 import { NolebaseInlineLinkPreviewPlugin } from "@nolebase/vitepress-plugin-inline-link-preview/client";
 import { NolebaseGitChangelogPlugin } from "@nolebase/vitepress-plugin-git-changelog/client";
+import { NolebaseHighlightTargetedHeading } from "@nolebase/vitepress-plugin-highlight-targeted-heading/client";
+import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css";
 import mdVar from "vitepress-md-var";
 
 import Layout from "./Layout.vue";
@@ -26,14 +28,13 @@ import { Animation, Preview, NotFound, Buttons } from "./components/ui";
 import { comment, PageTags } from "./components/content";
 import { ResponsibleEditor } from "./components/content";
 import Footer from "./components/navigation/Footer.vue";
-import { NolebaseHighlightTargetedHeading } from "@nolebase/vitepress-plugin-highlight-targeted-heading/client";
-import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css";
 
 import { setupLanguageControl } from "@utils/i18n/languageControl";
 import { initMermaidConfig } from "@utils/charts/mermaid";
 import { registerComponents } from "@utils/vitepress/components";
 import { getProjectInfo, isFeatureEnabled } from "../config/project-config";
 import { setupMultipleChoice } from "markdown-it-multiple-choice";
+import utils from "../utils";
 
 export default {
     extends: DefaultTheme,
@@ -106,7 +107,13 @@ export default {
                 
                 mdVar(route, mdVarConfig);
                 
-                watch(() => route.path, setupLanguageControl);
+                if (projectInfo.footerOptions.showSiteStats && projectInfo.footerOptions.siteStatsProvider === 'busuanzi') {
+                    utils.vitepress.initBusuanzi();
+                }
+                
+                watch(() => route.path, () => {
+                    setupLanguageControl();
+                });
             }
         });
         
