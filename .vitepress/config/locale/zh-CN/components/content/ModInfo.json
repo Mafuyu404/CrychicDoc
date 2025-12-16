@@ -1,0 +1,13 @@
+{
+    "checkCurseForge": "查看CurseForge页面",
+    "dateCreated": "创建日期:",
+    "downloads": "次下载",
+    "failedToFetch": "获取模组数据失败:",
+    "failedToFetchModrinth": "获取Modrinth模组数据失败:",
+    "lastUpdated": "最后更新:",
+    "loading": "加载中...",
+    "modAuthors": "模组作者",
+    "supportedVersions": "支持的Minecraft版本",
+    "unknown": "未知",
+    "usingCachedData": "使用缓存数据显示 (API请求失败)"
+}

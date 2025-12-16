@@ -1,5 +1,7 @@
 ---
 title: '@Interface'
+hidden: false
+priority: 0
 ---
 
 # @Interface

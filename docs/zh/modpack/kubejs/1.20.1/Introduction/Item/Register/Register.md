@@ -1,3 +1,8 @@
+---
+title: 注册
+hidden: false
+priority: 100
+---
 # 注册物品
 
 - 在`startup_script`类型脚本中监听事件: StartupEvents.registry('minecraft:item', event=>{})

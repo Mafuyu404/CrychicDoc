@@ -1,5 +1,7 @@
 ---
-title: '可选 Mixin (Pseudo-Mixins)'
+title: 可选 Mixin (Pseudo-Mixins)
+hidden: false
+priority: 0
 ---
 
 # 可选 Mixin (Pseudo-Mixins)

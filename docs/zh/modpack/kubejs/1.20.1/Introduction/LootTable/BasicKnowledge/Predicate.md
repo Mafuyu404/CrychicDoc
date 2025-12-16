@@ -1,3 +1,8 @@
+---
+title: 谓词
+hidden: false
+priority: 0
+---
 # 谓词
 
 ## 概述

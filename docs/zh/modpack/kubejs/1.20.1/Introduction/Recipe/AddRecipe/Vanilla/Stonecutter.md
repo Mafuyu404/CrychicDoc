@@ -1,3 +1,8 @@
+---
+title: 切石机
+hidden: false
+priority: 0
+---
 # 切石机
 
 ## 前言

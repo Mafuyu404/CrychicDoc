@@ -1,6 +1,9 @@
 ---
 progress: 50
 state: unfinished
+title: 音效事件
+hidden: false
+priority: 0
 ---
 # SoundEvent
 

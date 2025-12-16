@@ -1,12 +1,17 @@
 ---
 title: 49 配置信息设置
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 49 配置信息设置 相关教程
 image: ./covers/768fdd470a4054e60fec74b522f586fe29c0a701.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
-
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 参考
 https://boson.v2mcdev.com/configure/configure.html

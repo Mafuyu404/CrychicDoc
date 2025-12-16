@@ -1,3 +1,8 @@
+---
+title: 箱子
+hidden: false
+priority: 200
+---
 # 箱子类型战利品表
 
 ## 操作战利品表

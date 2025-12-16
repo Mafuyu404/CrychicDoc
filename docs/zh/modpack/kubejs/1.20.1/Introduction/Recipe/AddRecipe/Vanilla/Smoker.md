@@ -1,3 +1,8 @@
+---
+title: 烟熏炉
+hidden: false
+priority: 0
+---
 # 烟熏炉
 
 ## 前言

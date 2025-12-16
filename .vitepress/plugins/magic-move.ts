@@ -8,7 +8,6 @@ const reMagicMoveBlock =
 const reCodeBlock =
     /^```([\w'-]+?)(?:\s*\[([^\]]*)\])?(?:\s*{([\d\w*,\|-]+)}\s*?({.*?})?(.*?))?\n([\s\S]+?)^```$/mg;
 
-// Global collection to store all Magic Move filenames for group-icons plugin
 const magicMoveFilenames = new Set<string>();
 
 export function normalizeRangeStr(rangeStr = "") {
@@ -20,9 +19,6 @@ export function normalizeRangeStr(rangeStr = "") {
                 .map((i) => i.trim());
 }
 
-/**
- * Get all filenames used in Magic Move blocks for group-icons plugin integration
- */
 export function getMagicMoveFilenames(): string[] {
     return Array.from(magicMoveFilenames);
 }
@@ -49,7 +45,6 @@ async function MagicMovePlugin(md: MarkdownIt, shiki: Highlighter) {
                 const steps = matches.map((i) => {
                     const fileName = i[2] || i[1];
                     
-                    // Collect filename for group-icons plugin
                     if (fileName) {
                         magicMoveFilenames.add(fileName);
                     }
@@ -69,7 +64,6 @@ async function MagicMovePlugin(md: MarkdownIt, shiki: Highlighter) {
                 const token = state.push("magic-move_open", "div", 1);
                 token.meta = {
                     stepsLz: encodeURIComponent(JSON.stringify(steps)),
-                    stepRanges: JSON.stringify(ranges),
                 };
                 state.push("magic-move_close", "div", -1);
 
@@ -82,10 +76,8 @@ async function MagicMovePlugin(md: MarkdownIt, shiki: Highlighter) {
 
     function renderDefault(tokens: any[], idx: number) {
         if (tokens[idx].nesting === 1) {
-            const { stepsLz, stepRanges } = tokens[idx].meta;
+            const { stepsLz } = tokens[idx].meta;
             
-            // Extract filenames from steps and inject them as hidden data-title elements
-            // This ensures the group-icons plugin can detect them during build
             const steps = JSON.parse(decodeURIComponent(stepsLz));
             const filenameElements = steps
                 .map((step: any) => step.fileName)
@@ -93,7 +85,7 @@ async function MagicMovePlugin(md: MarkdownIt, shiki: Highlighter) {
                 .map((filename: string) => `<span data-title="${filename}" style="display:none;"></span>`)
                 .join('');
             
-            return `${filenameElements}<MagicMoveContainer steps-lz="${stepsLz}" :step-ranges="${stepRanges}" />`;
+            return `${filenameElements}<MagicMoveContainer steps-lz="${stepsLz}" />`;
         }
         return "";
     }

@@ -1,6 +1,9 @@
 ---
 progress: 80
 state: preliminary
+title: 随机
+hidden: false
+priority: 0
 ---
 # Random
 

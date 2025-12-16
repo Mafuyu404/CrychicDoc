@@ -2,7 +2,9 @@
 layout: doc
 title: 物品类(Item)
 authors:
-    - Eikidona
+  - Eikidona
+hidden: false
+priority: 0
 ---
 
 # Item类

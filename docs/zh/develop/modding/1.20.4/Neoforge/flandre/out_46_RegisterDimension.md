@@ -1,12 +1,17 @@
 ---
 title: 46 添加维度
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 46 添加维度 相关教程
 image: ./covers/dcdf7f7ee8c35900ba6ffaf9bfcb8bf7d0c2f339.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
-
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 参考
 https://github.com/Tutorials-By-Kaupenjoe/Forge-Tutorial-1.20.X/commit/c9c8ce9ea968bf834f9553fa6361b510bdc7e0fb#diff-90c4e40141b4edaaf4f71a499fa5124e38d76b36619bb8ad198f2e61e7d4fa39

@@ -1,3 +1,8 @@
+---
+title: Description
+hidden: false
+priority: 0
+---
 # 序言
 
 - **`版本声明`** 教程基于Minecraft-1.20.1、KubeJS6、Probejs-6.0.1，参考前请关注自身使用的版本。

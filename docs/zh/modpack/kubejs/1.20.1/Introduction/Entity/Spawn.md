@@ -3,6 +3,8 @@ title: 生成实体
 tags:
   - KubeJS
   - Entity
+hidden: false
+priority: 50
 ---
 
 # 实体生成

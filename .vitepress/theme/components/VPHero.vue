@@ -6,12 +6,22 @@
         onUnmounted,
         ref,
         nextTick,
+        computed,
+        watch,
     } from "vue";
     import type { DefaultTheme } from "vitepress/theme";
     import VPButton from "vitepress/dist/client/theme-default/components/VPButton.vue";
     import VPImage from "vitepress/dist/client/theme-default/components/VPImage.vue";
     import { motion } from "motion-v";
+    import { useData } from "vitepress";
 
+    /**
+     * @property theme - The theme of the button.
+     * @property text - The text to display on the button.
+     * @property link - The link to navigate to when the button is clicked.
+     * @property target - The target attribute for the link.
+     * @property rel - The rel attribute for the link.
+     */
     export interface HeroAction {
         theme?: "brand" | "alt";
         text: string;
@@ -20,69 +30,280 @@
         rel?: string;
     }
 
-    defineProps<{
+    /**
+     * @property name - The name of the category.
+     * @property snippets - An array of code snippets.
+     * @property color - The color for the snippets in light mode.
+     * @property darkColor - The color for the snippets in dark mode.
+     */
+    export interface CodeSnippetCategory {
+        name: string;
+        snippets: string[];
+        color?: string;
+        darkColor?: string;
+    }
+
+    /**
+     * @property enabled - Whether the snippets are enabled.
+     */
+    export interface SnippetControl {
+        enabled: boolean;
+    }
+
+    export type SnippetConfig = CodeSnippetCategory | SnippetControl;
+
+    const props = defineProps<{
+        /** The main name/title for the hero section. */
         name?: string;
+        /** The main text/subtitle for the hero section. */
         text?: string;
+        /** The tagline for the hero section. */
         tagline?: string;
+        /** The image to display in the hero section. */
         image?: DefaultTheme.ThemeableImage;
+        /** An array of actions (buttons) to display. */
         actions?: HeroAction[];
     }>();
 
     const heroImageSlotExists = inject(
-        "hero-image-slot-exists"
+        "hero-image-slot-exists",
     ) as Ref<boolean>;
 
-    /**
-     * Get code snippet by category and index
-     * @param category - The category of code snippet
-     * @param index - The index within the category
-     */
-    const getCodeSnippet = (category: string, index: number): string => {
-        const snippets: Record<string, string[]> = {
-            "kubejs-events": [
-                "ServerEvents.recipes(event => {})",
-                "PlayerEvents.tick(event => {})",
-                "ItemEvents.rightClicked(event => {})",
-                "BlockEvents.broken(event => {})",
-                'StartupEvents.registry("item", event => {})',
-                "ServerEvents.loaded(event => {})",
-            ],
-            "kubejs-recipes": [
-                'event.shaped("item", ["ABC", "DEF"])',
-                'event.shapeless("output", ["input1", "input2"])',
-                'event.smelting("output", "input")',
-                'event.remove({id: "minecraft:stick"})',
-                'event.replaceInput({}, "old", "new")',
-                'event.stonecutting("output", "input")',
-            ],
-            "minecraft-api": [
-                "Level level = player.level()",
-                "BlockPos pos = new BlockPos(x, y, z)",
-                "ItemStack stack = new ItemStack(Items.DIAMOND)",
-                "BlockState state = level.getBlockState(pos)",
-            ],
-            "forge-modding": [
-                '@Mod("modid")',
-                '@EventBusSubscriber(modid = "modid")',
-                "@SubscribeEvent",
-                'ForgeRegistries.ITEMS.register("item", item)',
-            ],
-            "minecraft-commands": [
-                "/give @p minecraft:diamond 64",
-                "/tp @a 0 100 0",
-                "/gamemode creative @s",
-                "/effect give @p minecraft:speed 60 2",
-            ],
-        };
+    const { site, lang, frontmatter } = useData();
 
-        const categorySnippets =
-            snippets[category] || snippets["kubejs-events"];
-        return categorySnippets[index % categorySnippets.length];
+    const allSnippets = ref<SnippetConfig[]>([]);
+
+    const isMobile = ref(false);
+    const scrollProgress = ref(0);
+    const showSecondaryContent = ref(false);
+    const heroContainer = ref<HTMLElement | null>(null);
+
+    watch(
+        () => [lang.value, frontmatter.value.hero] as const,
+        async ([currentLang, heroConfig]) => {
+            if (
+                heroConfig?.snippets &&
+                Array.isArray(heroConfig.snippets) &&
+                heroConfig.snippets.length > 0
+            ) {
+                allSnippets.value = heroConfig.snippets as SnippetConfig[];
+                return;
+            }
+
+            const customSnippetSetting = heroConfig?.customSnippet;
+            if (customSnippetSetting) {
+                const customNameToLoad =
+                    typeof customSnippetSetting === "string"
+                        ? customSnippetSetting
+                        : "custom";
+                try {
+                    const customData = (
+                        await import(
+                            `../../config/locale/${currentLang}/snippets/${customNameToLoad}.json`
+                        )
+                    ).default;
+                    allSnippets.value = customData;
+                    return;
+                } catch (e) {
+                }
+            }
+
+            try {
+                const defaultData = (
+                    await import(
+                        `../../config/locale/${currentLang}/snippets/default.json`
+                    )
+                ).default;
+                allSnippets.value = defaultData;
+            } catch (e) {
+                allSnippets.value = [];
+            }
+        },
+        { immediate: true, deep: true },
+    );
+
+    const snippetIndices = ref<Record<string, number[]>>({});
+
+    /**
+     * Initializes the indices for each snippet category.
+     */
+    const initializeSnippetIndices = () => {
+        const indices: Record<string, number[]> = {};
+        snippetCategories.value.forEach((category) => {
+            indices[category.name] = [0, 1];
+        });
+        snippetIndices.value = indices;
     };
 
+    /**
+     * Retrieves a code snippet for a given category and slot.
+     * @param category - The snippet category.
+     * @param slot - The slot index (0 or 1).
+     * @returns The code snippet string.
+     */
+    const getCodeSnippet = (
+        category: CodeSnippetCategory,
+        slot: number,
+    ): string => {
+        if (!category.snippets || category.snippets.length === 0) {
+            return "";
+        }
 
+        const indices = snippetIndices.value[category.name];
+        if (!indices || indices.length <= slot) {
+            return category.snippets[slot % category.snippets.length];
+        }
 
-    // Slice-by-slice reveal animations
+        const index = indices[slot];
+        return category.snippets[index % category.snippets.length];
+    };
+
+    const snippetCategories = computed<CodeSnippetCategory[]>(() => {
+        const config = allSnippets.value;
+        if (!config || config.length === 0) {
+            return [];
+        }
+
+        let isEnabled = true;
+        const firstItem = config[0];
+        if (
+            firstItem &&
+            typeof firstItem === "object" &&
+            "enabled" in firstItem
+        ) {
+            isEnabled = (firstItem as SnippetControl).enabled;
+        }
+
+        if (!isEnabled) {
+            return [];
+        }
+
+        return config.filter(
+            (item): item is CodeSnippetCategory =>
+                "name" in item && "snippets" in item,
+        );
+    });
+
+    const shouldShowFloatingWords = computed(() => {
+        return snippetCategories.value.length > 0;
+    });
+
+    /**
+     * Animates text content with a morphing effect.
+     * @param element - The HTML element to animate.
+     * @param fromText - The starting text.
+     * @param toText - The ending text.
+     * @param duration - The animation duration in ms.
+     */
+    const morphText = (
+        element: HTMLElement,
+        fromText: string,
+        toText: string,
+        duration: number = 1200,
+    ) => {
+        const steps = 60;
+        const stepTime = duration / steps;
+        let currentStep = 0;
+
+        const maxLength = Math.max(fromText.length, toText.length);
+        const charStartTimes = Array.from({ length: maxLength }, (_, i) => 0.2 + (i / maxLength) * 0.6);
+
+        const interval = setInterval(() => {
+            currentStep++;
+            const globalProgress = currentStep / steps;
+
+            if (globalProgress >= 1) {
+                element.textContent = toText;
+                clearInterval(interval);
+                return;
+            }
+
+            let result = "";
+
+            for (let i = 0; i < maxLength; i++) {
+                const fromChar = fromText[i] || "";
+                const toChar = toText[i] || "";
+                const charStartTime = charStartTimes[i];
+                const charProgress = Math.max(
+                    0,
+                    Math.min(1, (globalProgress - charStartTime) / 0.3),
+                );
+
+                if (fromChar === toChar) {
+                    result += fromChar;
+                } else if (charProgress >= 1) {
+                    result += toChar;
+                } else if (charProgress > 0) {
+                    if (charProgress < 0.7) {
+                        const flickerChars = "!@#$%^&*()[]{}|;:,.<>?";
+                        const randomChar =
+                            flickerChars[
+                                Math.floor(Math.random() * flickerChars.length)
+                            ];
+                        result += Math.random() < 0.5 ? randomChar : fromChar;
+                    } else {
+                        result += Math.random() < 0.8 ? toChar : fromChar;
+                    }
+                } else {
+                    result += fromChar;
+                }
+            }
+
+            element.textContent = result;
+        }, stepTime);
+    };
+
+    /**
+     * Rotates to the next set of snippets for the floating words animation.
+     */
+    const rotateSnippets = () => {
+        const newIndices: Record<string, number[]> = {};
+
+        snippetCategories.value.forEach((category) => {
+            const currentIndices = snippetIndices.value[category.name] || [0, 1];
+            const snippetCount = category.snippets.length;
+
+            if (snippetCount > 2) {
+                newIndices[category.name] = [
+                    (currentIndices[0] + 2) % snippetCount,
+                    (currentIndices[1] + 2) % snippetCount,
+                ];
+            } else {
+                newIndices[category.name] = [
+                    (currentIndices[0] + 1) % Math.max(snippetCount, 1),
+                    (currentIndices[1] + 1) % Math.max(snippetCount, 1),
+                ];
+            }
+        });
+
+        const floatingWords = document.querySelectorAll(".floating-word");
+        floatingWords.forEach((wordElement, index) => {
+            const element = wordElement as HTMLElement;
+            const currentText = element.textContent || "";
+
+            setTimeout(() => {
+                const categoryIndex = Math.floor(index / 2);
+                const slotIndex = index % 2;
+                const category = snippetCategories.value[categoryIndex];
+
+                if (category) {
+                    const newIndices_cat = newIndices[category.name];
+                    const newIndex = newIndices_cat[slotIndex];
+                    const newText =
+                        category.snippets[newIndex % category.snippets.length];
+
+                    if (currentText !== newText) {
+                        morphText(element, currentText, newText, 1000);
+                    }
+                }
+            }, index * 100);
+        });
+
+        setTimeout(() => {
+            snippetIndices.value = newIndices;
+        }, 1000);
+    };
+
     const heroContainerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -95,7 +316,6 @@
         },
     };
 
-    // Slice reveal effect for letters - like cutting through
     const letterVariants = {
         hidden: {
             opacity: 0,
@@ -118,7 +338,6 @@
         }),
     };
 
-    // Word slice animation - reveals like unfolding
     const wordVariants = {
         hidden: {
             opacity: 0,
@@ -177,27 +396,13 @@
         },
     };
 
-    const actionsVariants = {
-        hidden: { opacity: 0, y: 40 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.8,
-                ease: "easeOut",
-                delay: 1.0,
-                staggerChildren: 0.1,
-            },
-        },
-    };
-
     const buttonVariants = {
         hidden: {
             opacity: 0,
-            scale: 0.8,
+            scale: 0.9,
             y: 20,
         },
-        visible: {
+        visible: (i: unknown) => ({
             opacity: 1,
             scale: 1,
             y: 0,
@@ -205,33 +410,12 @@
                 type: "spring",
                 stiffness: 150,
                 damping: 15,
-                duration: 0.6,
+                duration: 0.5,
+                delay: (i as number) * 0.1 + 1.2,
             },
-        },
+        }),
     };
 
-    const buttonHover = {
-        scale: 1.05,
-        y: -2,
-        transition: {
-            type: "spring",
-            stiffness: 300,
-            damping: 20,
-            duration: 0.2,
-        },
-    };
-
-    const buttonTap = {
-        scale: 0.95,
-        transition: {
-            type: "spring",
-            stiffness: 400,
-            damping: 25,
-            duration: 0.1,
-        },
-    };
-
-    // Image slice reveal - appears in slices from top to bottom
     const imageVariants = {
         hidden: {
             opacity: 0,
@@ -260,11 +444,32 @@
         },
     };
 
-    // Simple parallax for floating words
     const parallaxContainer = ref<HTMLElement | null>(null);
     const floatingWords = ref<HTMLElement[]>([]);
-    const isMobile = ref(false);
+    const rotationTimer = ref<NodeJS.Timeout | null>(null);
 
+    watch(shouldShowFloatingWords, (isShown) => {
+        if (isShown) {
+            nextTick(() => {
+                initializeSnippetIndices();
+                floatingWords.value = Array.from(
+                    document.querySelectorAll(".floating-word"),
+                );
+                if (rotationTimer.value) clearInterval(rotationTimer.value);
+                rotationTimer.value = setInterval(rotateSnippets, 4000);
+            });
+        } else {
+            if (rotationTimer.value) {
+                clearInterval(rotationTimer.value);
+                rotationTimer.value = null;
+            }
+        }
+    });
+
+    /**
+     * Handles the mouse move event for parallax effect on floating words.
+     * @param event - The mouse event.
+     */
     const handleMouseMove = (event: MouseEvent) => {
         if (!parallaxContainer.value || window.innerWidth < 768) return;
 
@@ -283,17 +488,61 @@
         });
     };
 
+    /**
+     * 处理滚动事件，控制移动端内容显示
+     */
+    const handleScroll = () => {
+        if (!isMobile.value || !heroContainer.value) return;
+
+        const scrollY = window.scrollY;
+        const heroHeight = heroContainer.value.offsetHeight;
+        const threshold = heroHeight * 0.3;
+
+        scrollProgress.value = Math.min(scrollY / threshold, 1);
+        showSecondaryContent.value = scrollY > threshold;
+    };
+
+    /**
+     * Checks if the device is mobile and updates the reactive reference.
+     */
     const checkMobile = () => {
-        isMobile.value = window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        isMobile.value =
+            window.innerWidth < 768 ||
+            /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                navigator.userAgent,
+            );
+    };
+
+    /**
+     * Checks if a link is an external URL.
+     * @param link - The URL to check.
+     * @returns True if the link is external, false otherwise.
+     */
+    const isExternalLink = (link: string) => {
+        return /^https?:\/\//.test(link);
+    };
+
+    /**
+     * Normalizes a link to include the correct base path for internal links.
+     * @param link - The link to normalize.
+     * @returns The normalized link with base path if needed.
+     */
+    const normalizeActionLink = (link: string) => {
+        if (isExternalLink(link)) {
+            return link;
+        }
+        
+        if (link.startsWith('/')) {
+            return link;
+        }
+        
+        const base = site.value.base || '/';
+        return base + link;
     };
 
     onMounted(() => {
         nextTick(() => {
             parallaxContainer.value = document.querySelector(".hero-bg");
-            floatingWords.value = Array.from(
-                document.querySelectorAll(".floating-word")
-            );
-
             if (typeof window !== "undefined") {
                 checkMobile();
                 window.addEventListener("mousemove", handleMouseMove, {
@@ -302,53 +551,57 @@
                 window.addEventListener("resize", checkMobile, {
                     passive: true,
                 });
+                window.addEventListener("scroll", handleScroll, {
+                    passive: true,
+                });
             }
         });
     });
 
     onUnmounted(() => {
+        if (rotationTimer.value) {
+            clearInterval(rotationTimer.value);
+            rotationTimer.value = null;
+        }
+
         if (typeof window !== "undefined") {
             window.removeEventListener("mousemove", handleMouseMove);
             window.removeEventListener("resize", checkMobile);
+            window.removeEventListener("scroll", handleScroll);
         }
     });
 </script>
 
 <template>
     <div
+        ref="heroContainer"
         class="VPHero hero-enhanced"
-        :class="{ 'has-image': image || heroImageSlotExists }"
+        :class="{ 'has-image': image || heroImageSlotExists, 'mobile-scrolled': isMobile && showSecondaryContent }"
     >
-        <!-- Fantasy background with floating code snippets -->
         <div class="hero-bg" ref="parallaxContainer">
             <div class="bg-gradient"></div>
 
-            <!-- Fantasy floating code snippets -->
-            <div class="floating-words">
+            <div v-if="shouldShowFloatingWords && (!isMobile || showSecondaryContent)" class="floating-words">
                 <div
-                    v-for="(category, catIndex) in [
-                        'kubejs-events',
-                        'kubejs-recipes',
-                        'minecraft-api',
-                        'forge-modding',
-                        'minecraft-commands',
-                    ]"
-                    :key="category"
+                    v-for="(category, catIndex) in snippetCategories"
+                    :key="category.name"
                     class="word-group"
-                    :class="category"
+                    :class="category.name"
                 >
                     <span
-                        v-for="i in 2"
-                        :key="`${category}-${i}`"
+                        v-for="slot in 2"
+                        :key="`${category.name}-${slot}`"
                         class="floating-word"
-                        :data-intensity="3 + (i % 2)"
+                        :data-intensity="3 + (slot % 2)"
                         :style="{
-                            animationDelay: `${catIndex * 3 + i * 1.5}s`,
-                            '--float-duration': `${20 + i * 6}s`,
+                            animationDelay: `${catIndex * 3 + slot * 1.5}s`,
+                            '--float-duration': `${20 + slot * 6}s`,
                             '--hue-offset': `${catIndex * 72}deg`,
+                            '--custom-color': category.color,
+                            '--custom-dark-color': category.darkColor,
                         }"
                     >
-                        {{ getCodeSnippet(category, i - 1) }}
+                        {{ getCodeSnippet(category, slot - 1) }}
                     </span>
                 </div>
             </div>
@@ -357,98 +610,113 @@
         <div class="container">
             <motion.div
                 class="main"
-                :variants="heroContainerVariants"
+                :class="{ 'mobile-layout': isMobile }"
+                :variants="heroContainerVariants as any"
                 initial="hidden"
                 :whileInView="'visible'"
-                :viewport="{ once: true, margin: '-50px' }"
+                :viewport="{ once: false, margin: '-50px' }"
             >
                 <slot name="home-hero-info-before" />
                 <slot name="home-hero-info">
-                    <div class="heading">
-                        <!-- Slice reveal title -->
-                        <h1 v-if="name" class="name">
-                            <motion.span
-                                v-for="(word, wordIndex) in name.split(' ')"
-                                :key="`word-${wordIndex}`"
-                                class="word-wrapper"
-                                :variants="wordVariants"
-                                :custom="wordIndex"
-                                initial="hidden"
-                                :whileInView="'visible'"
-                                :viewport="{ once: true, margin: '-100px' }"
-                            >
+                    <!-- 主要内容：标题和tagline（移动端始终显示） -->
+                    <div class="primary-content">
+                        <div class="heading">
+                            <h1 v-if="props.name" class="name">
                                 <motion.span
-                                    v-for="(letter, letterIndex) in word.split(
-                                        ''
-                                    )"
-                                    :key="`letter-${wordIndex}-${letterIndex}`"
-                                    class="letter"
-                                    :variants="letterVariants"
-                                    :custom="wordIndex * 5 + letterIndex"
+                                    v-for="(word, wordIndex) in props.name.split(' ')"
+                                    :key="`word-${wordIndex}`"
+                                    class="word-wrapper"
+                                    :variants="wordVariants as any"
+                                    :custom="wordIndex"
                                     initial="hidden"
                                     :whileInView="'visible'"
-                                    :viewport="{ once: true, margin: '-100px' }"
+                                    :viewport="{ once: false, margin: '-100px' }"
                                 >
-                                    {{ letter }}
+                                    <motion.span
+                                        v-for="(letter, letterIndex) in word.split('')"
+                                        :key="`letter-${wordIndex}-${letterIndex}`"
+                                        class="letter"
+                                        :variants="letterVariants as any"
+                                        :custom="wordIndex * 5 + letterIndex"
+                                        initial="hidden"
+                                        :whileInView="'visible'"
+                                        :viewport="{ once: false, margin: '-100px' }"
+                                    >
+                                        {{ letter }}
+                                    </motion.span>
+                                    <span class="word-space">&nbsp;</span>
                                 </motion.span>
-                                <span class="word-space">&nbsp;</span>
-                            </motion.span>
-                        </h1>
+                            </h1>
+                        </div>
 
-                        <motion.h2
-                            v-if="text"
-                            class="text"
-                            :variants="subtitleVariants"
+                        <motion.p
+                            v-if="props.tagline"
+                            class="tagline"
+                            :variants="taglineVariants as any"
                             initial="hidden"
                             :whileInView="'visible'"
-                            :viewport="{ once: true, margin: '-100px' }"
-                            v-html="text"
-                        />
+                            :viewport="{ once: false, margin: '-100px' }"
+                        >
+                            {{ props.tagline }}
+                        </motion.p>
                     </div>
 
-                    <motion.p
-                        v-if="tagline"
-                        class="tagline"
-                        :variants="taglineVariants"
-                        initial="hidden"
-                        :whileInView="'visible'"
-                        :viewport="{ once: true, margin: '-100px' }"
-                        v-html="tagline"
-                    />
+                    <!-- 次要内容：描述文字（移动端滚动后显示） -->
+                    <div 
+                        class="secondary-content"
+                        :class="{ 
+                            'mobile-hidden': isMobile && !showSecondaryContent,
+                            'mobile-visible': isMobile && showSecondaryContent 
+                        }"
+                    >
+                        <motion.h2
+                            v-if="props.text"
+                            class="text"
+                            :variants="subtitleVariants as any"
+                            initial="hidden"
+                            :whileInView="'visible'"
+                            :viewport="{ once: false, margin: '-100px' }"
+                        >
+                            {{ props.text }}
+                        </motion.h2>
+                    </div>
                 </slot>
                 <slot name="home-hero-info-after" />
 
-                <motion.div
-                    v-if="actions"
+                <!-- 按钮组（移动端滚动后显示） -->
+                <div
+                    v-if="actions && actions.length > 0"
                     class="actions"
-                    :variants="actionsVariants"
-                    initial="hidden"
-                    :whileInView="'visible'"
-                    :viewport="{ once: true, margin: '-100px' }"
+                    :class="{ 
+                        'mobile-hidden': isMobile && !showSecondaryContent,
+                        'mobile-visible': isMobile && showSecondaryContent 
+                    }"
                 >
                     <motion.div
-                        v-for="action in actions"
-                        :key="action.link"
+                        v-for="(action, index) in actions"
+                        :key="`btn-${index}`"
                         class="action"
-                        :variants="buttonVariants"
-                        :whileHover="buttonHover"
-                        :whileTap="buttonTap"
+                        :variants="buttonVariants as any"
+                        initial="hidden"
+                        :whileInView="'visible'"
+                        :viewport="{ once: true }"
+                        :custom="index"
                     >
                         <VPButton
-                            tag="a"
-                            size="medium"
-                            :theme="action.theme"
+                            :theme="action.theme || 'brand'"
                             :text="action.text"
-                            :href="action.link"
-                            :target="action.target"
-                            :rel="action.rel"
+                            :href="normalizeActionLink(action.link)"
+                            :target="action.target || (isExternalLink(action.link) ? '_blank' : undefined)"
+                            :rel="action.rel || (isExternalLink(action.link) ? 'noopener noreferrer' : undefined)"
+                            size="medium"
+                            class="hero-button"
                         />
                     </motion.div>
-                </motion.div>
+                </div>
                 <slot name="home-hero-actions-after" />
             </motion.div>
 
-            <!-- Mobile image without motion animations -->
+            <!-- 图片在移动端始终显示 -->
             <div
                 v-if="(image || heroImageSlotExists) && isMobile"
                 class="image image-mobile"
@@ -459,16 +727,14 @@
                     </slot>
                 </div>
             </div>
-
-            <!-- Desktop image with motion animations -->
             <motion.div
                 v-else-if="image || heroImageSlotExists"
                 class="image"
-                :variants="imageVariants"
-                :whileHover="imageHover"
+                :variants="imageVariants as any"
+                :whileHover="imageHover as any"
                 initial="hidden"
                 :whileInView="'visible'"
-                :viewport="{ once: true, margin: '-50px' }"
+                :viewport="{ once: false, margin: '-50px' }"
             >
                 <div class="image-container">
                     <slot name="home-hero-image">
@@ -478,7 +744,6 @@
             </motion.div>
         </div>
 
-        <!-- Multi-layered bottom wave -->
         <div class="hero-wave">
             <svg
                 viewBox="0 0 1200 120"
@@ -500,6 +765,16 @@
                     class="shape-fill"
                 ></path>
             </svg>
+        </div>
+
+        <!-- 移动端滚动提示 -->
+        <div v-if="isMobile && !showSecondaryContent" class="scroll-indicator">
+            <div class="scroll-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span class="scroll-text">向下滑动查看更多</span>
         </div>
     </div>
 </template>
@@ -546,6 +821,65 @@
         flex-shrink: 0;
     }
 
+    .main.mobile-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .primary-content {
+        order: 1;
+    }
+
+    .secondary-content {
+        order: 2;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .secondary-content.mobile-hidden {
+        opacity: 0;
+        transform: translateY(30px);
+        max-height: 0;
+        overflow: hidden;
+        margin: 0;
+        pointer-events: none;
+    }
+
+    .secondary-content.mobile-visible {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 500px;
+        margin: 1rem 0;
+    }
+
+    .actions {
+        order: 3;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        position: relative;
+        z-index: 10;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .actions.mobile-hidden {
+        opacity: 0;
+        transform: translateY(30px);
+        max-height: 0;
+        overflow: hidden;
+        margin: 0;
+        pointer-events: none;
+    }
+
+    .actions.mobile-visible {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: none;
+        margin: 1.5rem 0;
+    }
+
+
+
     .VPHero.has-image .container {
         text-align: center;
     }
@@ -564,6 +898,16 @@
         .VPHero.has-image .main {
             max-width: none;
         }
+
+        .secondary-content.mobile-hidden,
+        .actions.mobile-hidden {
+            opacity: 1;
+            transform: none;
+            max-height: none;
+            overflow: visible;
+            margin: revert;
+            pointer-events: auto;
+        }
     }
 
     .heading {
@@ -580,6 +924,17 @@
         letter-spacing: -0.02em;
         font-family: "Inter", "SF Pro Display", -apple-system,
             BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        position: relative;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        color: var(--vp-c-brand-1);
+    }
+
+    .name::before {
+        content: "";
+        position: absolute;
+        inset: 0;
         background: linear-gradient(
             135deg,
             var(--vp-c-brand-1) 0%,
@@ -592,10 +947,33 @@
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
+        color: transparent;
+        pointer-events: none;
+    }
+
+    .name .letter {
         position: relative;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        display: inline-block;
+        color: inherit;
+    }
+    @supports not (-webkit-background-clip: text) {
+        .name::before {
+            display: none;
+        }
+        .name {
+            background: linear-gradient(
+                135deg,
+                var(--vp-c-brand-1) 0%,
+                var(--vp-c-brand-2) 30%,
+                var(--vp-c-brand-3) 60%,
+                var(--vp-c-brand-1) 100%
+            );
+            background-size: 300% 300%;
+            animation: gradient-flow 6s ease-in-out infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
 
     @keyframes gradient-flow {
@@ -651,8 +1029,6 @@
         filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
     }
 
-    
-
     .VPHero.has-image .tagline {
         margin-left: auto;
         margin-right: auto;
@@ -669,189 +1045,63 @@
         display: flex;
         flex-wrap: wrap;
         gap: 16px;
-        margin-top: 8px;
+        padding-top: 32px;
+        position: relative;
+        z-index: 10;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        justify-content: center;
+        align-items: center;
     }
 
     .VPHero.has-image .actions {
         justify-content: center;
     }
 
+    @media (min-width: 640px) {
+        .actions {
+            padding-top: 40px;
+            gap: 20px;
+        }
+    }
+
     @media (min-width: 960px) {
         .VPHero.has-image .actions {
             justify-content: flex-start;
+        }
+        
+        .actions {
+            gap: 24px;
         }
     }
 
     .action {
         flex-shrink: 0;
+        position: relative;
+        z-index: 1;
     }
 
-    :deep(.VPButton) {
-        padding: 14px 32px !important;
-        font-size: 16px !important;
+    .hero-button {
         font-weight: 600 !important;
+        font-size: 16px !important;
+        padding: 14px 28px !important;
         border-radius: 12px !important;
-        min-width: 140px !important;
-        color: var(--vp-c-text-1) !important;
-        background: linear-gradient(
-            135deg,
-            rgba(var(--vp-c-bg-soft-rgb), 0.9),
-            rgba(var(--vp-c-bg-alt-rgb), 0.95)
-        ) !important;
-        border: 2px solid rgba(var(--vp-c-divider-rgb), 0.8) !important;
-        backdrop-filter: blur(12px) !important;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        position: relative !important;
-        overflow: hidden !important;
-        box-shadow: 
-            0 2px 8px rgba(0, 0, 0, 0.12),
-            0 1px 3px rgba(0, 0, 0, 0.08),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+        backdrop-filter: blur(10px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        min-width: 140px !important;
+        text-align: center !important;
     }
 
-    :deep(.VPButton::after) {
-        content: "";
-        position: absolute;
-        top: 1px;
-        left: 1px;
-        right: 1px;
-        bottom: 1px;
-        border-radius: 10px;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        pointer-events: none;
-        transition: all 0.3s ease;
+    .hero-button:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18) !important;
     }
 
-    :deep(.VPButton::before) {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.2),
-            transparent
-        );
-        transition: left 0.5s ease;
-    }
-
-    :deep(.VPButton:hover::before) {
-        left: 100%;
-    }
-
-    :deep(.VPButton:hover) {
-        background: linear-gradient(
-            135deg,
-            rgba(var(--vp-c-bg-alt-rgb), 0.95),
-            rgba(var(--vp-c-brand-rgb), 0.15)
-        ) !important;
-        border-color: var(--vp-c-brand-1) !important;
-        color: var(--vp-c-brand-1) !important;
-        box-shadow: 
-            0 4px 16px rgba(var(--vp-c-brand-rgb), 0.15),
-            0 2px 8px rgba(0, 0, 0, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    .hero-button:active {
         transform: translateY(-1px) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
     }
-
-    :deep(.VPButton:hover::after) {
-        border-color: rgba(var(--vp-c-brand-rgb), 0.5);
-    }
-
-    :deep(.VPButton.brand) {
-        background: linear-gradient(
-            135deg,
-            var(--vp-c-brand-1),
-            var(--vp-c-brand-2)
-        ) !important;
-        border-color: var(--vp-c-brand-1) !important;
-        color: var(--vp-c-white) !important;
-        box-shadow: 
-            0 4px 12px rgba(var(--vp-c-brand-rgb), 0.4),
-            0 2px 6px rgba(0, 0, 0, 0.15),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
-    }
-
-    :deep(.VPButton.brand::after) {
-        border-color: rgba(255, 255, 255, 0.4);
-    }
-
-    :deep(.VPButton.brand:hover) {
-        background: linear-gradient(
-            135deg,
-            var(--vp-c-brand-2),
-            var(--vp-c-brand-3)
-        ) !important;
-        border-color: var(--vp-c-brand-2) !important;
-        color: var(--vp-c-white) !important;
-    }
-
-    :deep(.VPButton.brand:hover::after) {
-        border-color: rgba(255, 255, 255, 0.5);
-    }
-
-    :deep(.VPButton.alt) {
-        background: linear-gradient(
-            135deg,
-            rgba(var(--vp-c-bg-soft-rgb), 0.7),
-            rgba(var(--vp-c-bg-alt-rgb), 0.8)
-        ) !important;
-        border-color: rgba(var(--vp-c-divider-rgb), 0.5) !important;
-        color: var(--vp-c-text-1) !important;
-    }
-
-    .dark :deep(.VPButton) {
-        background: rgba(255, 255, 255, 0.08) !important;
-        border: 2px solid rgba(255, 255, 255, 0.4) !important;
-        color: rgba(255, 255, 255, 0.9) !important;
-        backdrop-filter: blur(8px) !important;
-        box-shadow: 
-            0 2px 8px rgba(0, 0, 0, 0.4),
-            0 1px 3px rgba(0, 0, 0, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
-    }
-
-    .dark :deep(.VPButton::after) {
-        border-color: rgba(255, 255, 255, 0.5);
-    }
-
-    .dark :deep(.VPButton:hover) {
-        background: rgba(var(--vp-c-brand-rgb), 0.15) !important;
-        border-color: var(--vp-c-brand-1) !important;
-        color: var(--vp-c-brand-1) !important;
-    }
-
-    .dark :deep(.VPButton:hover::after) {
-        border-color: rgba(var(--vp-c-brand-rgb), 0.6);
-    }
-
-    .dark :deep(.VPButton.alt) {
-        background: rgba(255, 255, 255, 0.06) !important;
-        border-color: rgba(255, 255, 255, 0.35) !important;
-        color: rgba(255, 255, 255, 0.85) !important;
-    }
-
-    .dark :deep(.VPButton.alt::after) {
-        border-color: rgba(255, 255, 255, 0.45);
-    }
-
-    .dark :deep(.VPButton.alt:hover) {
-        background: rgba(255, 255, 255, 0.12) !important;
-        border-color: rgba(255, 255, 255, 0.3) !important;
-        color: var(--vp-c-white) !important;
-    }
-
-    .dark :deep(.VPButton.alt:hover::after) {
-        border-color: rgba(255, 255, 255, 0.7);
-    }
-
-
 
     .image {
         order: 1;
@@ -864,6 +1114,8 @@
         transform: none !important;
         visibility: visible !important;
         animation: mobile-fade-in 0.6s ease-out;
+        order: 0;
+        margin-bottom: 2rem;
     }
 
     @keyframes mobile-fade-in {
@@ -932,6 +1184,48 @@
         -webkit-transform: none !important;
     }
 
+    .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--vp-c-text-2);
+        z-index: 15;
+        animation: scroll-bounce 2s ease-in-out infinite;
+    }
+
+    .scroll-arrow {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(var(--vp-c-brand-rgb), 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(var(--vp-c-brand-rgb), 0.2);
+    }
+
+    .scroll-text {
+        font-size: 12px;
+        font-weight: 500;
+        text-align: center;
+        opacity: 0.8;
+    }
+
+    @keyframes scroll-bounce {
+        0%, 100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        50% {
+            transform: translateX(-50%) translateY(-8px);
+        }
+    }
+
     .hero-bg {
         position: absolute;
         inset: 0;
@@ -966,7 +1260,6 @@
         animation: bg-shift 15s ease-in-out infinite;
     }
 
-    /* Sunshine light ray effects */
     .bg-gradient::before {
         content: "";
         position: absolute;
@@ -1046,8 +1339,6 @@
         }
     }
 
-
-
     .floating-words {
         position: absolute;
         inset: 0;
@@ -1063,98 +1354,38 @@
 
     .floating-word {
         position: absolute;
-        font-family: "Fira Code", "JetBrains Mono", "SF Mono", "Consolas",
-            monospace;
+        font-family: "Consolas", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
         font-weight: 500;
         font-size: 14px;
         opacity: 0;
-        color: var(--vp-c-text-3);
+        color: var(--custom-color, var(--vp-c-text-3));
         pointer-events: none;
         user-select: none;
         white-space: nowrap;
         transform-origin: center;
         animation: float-curve var(--float-duration, 20s) ease-in-out infinite;
-        transition: all 0.3s ease;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-        backdrop-filter: blur(1px);
+        animation-fill-mode: both;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
 
     .dark .floating-word {
         opacity: 0;
-        color: var(--vp-c-text-2);
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+        color: var(--custom-dark-color, var(--custom-color, var(--vp-c-text-2)));
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
 
-    /* Light theme colors - proper visibility */
-    .word-group.kubejs-events .floating-word {
-        color: #7c3aed;
-    }
-    .word-group.kubejs-recipes .floating-word {
-        color: #059669;
-    }
-    .word-group.minecraft-api .floating-word {
-        color: #d97706;
-    }
-    .word-group.forge-modding .floating-word {
-        color: #dc2626;
-    }
-    .word-group.minecraft-commands .floating-word {
-        color: #2563eb;
-    }
-
-    /* Different colors for different categories in dark theme */
-    .dark .word-group.kubejs-events .floating-word {
-        color: #a78bfa;
-    }
-    .dark .word-group.kubejs-recipes .floating-word {
-        color: #34d399;
-    }
-    .dark .word-group.minecraft-api .floating-word {
-        color: #fbbf24;
-    }
-    .dark .word-group.forge-modding .floating-word {
-        color: #f87171;
-    }
-    .dark .word-group.minecraft-commands .floating-word {
-        color: #60a5fa;
-    }
-
-    /* Alternate curved paths for visual variety */
-    .word-group.kubejs-events .floating-word:nth-child(odd) {
+    .word-group:nth-child(odd) .floating-word:nth-child(odd) {
         animation-name: float-curve;
     }
-    .word-group.kubejs-events .floating-word:nth-child(even) {
+    .word-group:nth-child(odd) .floating-word:nth-child(even) {
         animation-name: float-curve-bottom;
     }
 
-    .word-group.kubejs-recipes .floating-word:nth-child(odd) {
+    .word-group:nth-child(even) .floating-word:nth-child(odd) {
         animation-name: float-curve-bottom;
     }
-    .word-group.kubejs-recipes .floating-word:nth-child(even) {
+    .word-group:nth-child(even) .floating-word:nth-child(even) {
         animation-name: float-curve;
-    }
-
-    .word-group.minecraft-api .floating-word:nth-child(odd) {
-        animation-name: float-curve;
-    }
-    .word-group.minecraft-api .floating-word:nth-child(even) {
-        animation-name: float-curve-bottom;
-    }
-
-    .word-group.forge-modding .floating-word:nth-child(odd) {
-        animation-name: float-curve-bottom;
-    }
-    .word-group.forge-modding .floating-word:nth-child(even) {
-        animation-name: float-curve;
-    }
-
-    .word-group.minecraft-commands .floating-word:nth-child(odd) {
-        animation-name: float-curve;
-    }
-    .word-group.minecraft-commands .floating-word:nth-child(even) {
-        animation-name: float-curve-bottom;
     }
 
     @keyframes float-curve {
@@ -1194,9 +1425,6 @@
         }
     }
 
-
-
-    /* Bottom curved path animation for variety */
     @keyframes float-curve-bottom {
         0% {
             transform: translateX(-150px) translateY(-20px) rotate(5deg)
@@ -1234,50 +1462,49 @@
         }
     }
 
-    /* Clear positioning for different code categories */
-    .word-group.kubejs-events .floating-word:nth-child(1) {
-        top: 15%;
-        left: 8%;
+    .word-group:nth-child(1) .floating-word:nth-child(1) {
+        top: 20%;
+        left: 15%;
     }
-    .word-group.kubejs-events .floating-word:nth-child(2) {
-        top: 60%;
-        left: 85%;
-    }
-
-    .word-group.kubejs-recipes .floating-word:nth-child(1) {
-        top: 25%;
-        left: 75%;
-    }
-    .word-group.kubejs-recipes .floating-word:nth-child(2) {
-        top: 70%;
-        left: 12%;
-    }
-
-    .word-group.minecraft-api .floating-word:nth-child(1) {
-        top: 35%;
-        left: 50%;
-    }
-    .word-group.minecraft-api .floating-word:nth-child(2) {
-        top: 80%;
-        left: 40%;
-    }
-
-    .word-group.forge-modding .floating-word:nth-child(1) {
-        top: 10%;
-        left: 30%;
-    }
-    .word-group.forge-modding .floating-word:nth-child(2) {
+    .word-group:nth-child(1) .floating-word:nth-child(2) {
         top: 75%;
+        left: 80%;
+    }
+
+    .word-group:nth-child(2) .floating-word:nth-child(1) {
+        top: 30%;
         left: 70%;
     }
+    .word-group:nth-child(2) .floating-word:nth-child(2) {
+        top: 85%;
+        left: 25%;
+    }
 
-    .word-group.minecraft-commands .floating-word:nth-child(1) {
+    .word-group:nth-child(3) .floating-word:nth-child(1) {
         top: 45%;
         left: 85%;
     }
-    .word-group.minecraft-commands .floating-word:nth-child(2) {
-        top: 85%;
-        left: 15%;
+    .word-group:nth-child(3) .floating-word:nth-child(2) {
+        top: 65%;
+        left: 10%;
+    }
+
+    .word-group:nth-child(4) .floating-word:nth-child(1) {
+        top: 15%;
+        left: 45%;
+    }
+    .word-group:nth-child(4) .floating-word:nth-child(2) {
+        top: 55%;
+        left: 50%;
+    }
+
+    .word-group:nth-child(5) .floating-word:nth-child(1) {
+        top: 35%;
+        left: 20%;
+    }
+    .word-group:nth-child(5) .floating-word:nth-child(2) {
+        top: 90%;
+        left: 60%;
     }
 
     .hero-wave {
@@ -1310,6 +1537,23 @@
 
     .dark .name {
         filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
+        color: var(--vp-c-brand-1);
+    }
+
+    .dark .name::before {
+        background: linear-gradient(
+            135deg,
+            var(--vp-c-brand-1) 0%,
+            var(--vp-c-brand-2) 30%,
+            var(--vp-c-brand-3) 60%,
+            var(--vp-c-brand-1) 100%
+        );
+        background-size: 300% 300%;
+        animation: gradient-flow 6s ease-in-out infinite;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
     }
 
     .dark .text {
@@ -1322,10 +1566,9 @@
         filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
     }
 
-    /* Responsive design */
     @media (max-width: 768px) {
         .VPHero.hero-enhanced {
-            min-height: 90vh;
+            min-height: 100vh;
             padding: calc(
                     var(--vp-nav-height) + var(--vp-layout-top-height, 0px) +
                         40px
@@ -1335,11 +1578,6 @@
 
         .floating-word {
             font-size: 11px !important;
-            opacity: 0.1 !important;
-        }
-
-        .dark .floating-word {
-            opacity: 0.2 !important;
         }
 
         .main {
@@ -1360,29 +1598,32 @@
         }
 
         .actions {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px 10px;
-            max-width: 320px;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
             margin: 0 auto;
-            justify-items: center;
+            padding-top: 24px;
+            gap: 12px;
         }
 
         .action {
-            width: 100%;
-            display: flex;
-            justify-content: center;
+            flex: 1 1 auto;
+            max-width: 280px;
+            min-width: 140px;
         }
 
-        :deep(.VPButton) {
+        .hero-button {
             width: 100% !important;
-            min-width: unset !important;
-            max-width: 140px !important;
-            padding: 8px 14px !important;
-            font-size: 14px !important;
-            font-weight: 600 !important;
-            min-height: 36px !important;
-            border-radius: 14px !important;
+            justify-content: center !important;
+            min-height: 48px !important;
+            font-size: 15px !important;
+            padding: 14px 20px !important;
+        }
+
+        .mobile-scrolled .scroll-indicator {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
         }
     }
 
@@ -1403,21 +1644,25 @@
         }
 
         .actions {
-            grid-template-columns: 1fr 1fr !important;
-            max-width: 280px !important;
-            gap: 10px 8px !important;
+            gap: 16px !important;
+            flex-direction: column;
+            align-items: stretch;
+            padding-top: 24px;
         }
 
-        :deep(.VPButton) {
-            max-width: 125px !important;
-            padding: 6px 10px !important;
-            font-size: 13px !important;
-            min-height: 32px !important;
-            border-radius: 12px !important;
+        .action {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .hero-button {
+            width: 100% !important;
+            min-height: 50px !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
         }
     }
 
-    /* Accessibility */
     @media (prefers-reduced-motion: reduce) {
         * {
             animation-duration: 0.01ms !important;
@@ -1426,6 +1671,10 @@
         }
 
         .floating-word {
+            animation: none !important;
+        }
+
+        .scroll-indicator {
             animation: none !important;
         }
     }

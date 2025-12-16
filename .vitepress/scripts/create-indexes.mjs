@@ -2,10 +2,14 @@
 
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, basename, relative, resolve } from 'path';
+import { fileURLToPath } from 'url';
 import glob from 'fast-glob';
+import { getLanguageCodes } from "../config/project-config.js";
+import { getSrcPath } from "../utils/config/path-resolver.js";
 
 /**
  * Index.md Generator - Create index.md files for directories that don't have them
+ * Uses the project configuration manager for consistent path handling
  * 
  * @author Assistant
  */
@@ -14,6 +18,10 @@ class IndexGenerator {
         this.processedDirs = 0;
         this.skippedDirs = 0;
         this.errorDirs = 0;
+        
+        // 使用配置管理器获取路径和语言
+        this.srcPath = getSrcPath();
+        this.languages = getLanguageCodes();
     }
 
     /**
@@ -73,10 +81,10 @@ class IndexGenerator {
 📁 Index.md Generator - Create index.md files for directories
 
 USAGE:
-  npm run create-indexes -- [options]
+  npm run index -- [options]
 
 REQUIRED:
-  -p, --path <path>          Target directory path
+  -p, --path <path>          Target directory path (relative to src/)
 
 OPTIONS:
   -t, --template <type>      Template type (default/advanced) [default: default]
@@ -90,18 +98,23 @@ TEMPLATES:
   default      Basic index.md with title and root configuration
   advanced     Advanced index.md with progress, state, and sections
 
+SUPPORTED LANGUAGES:
+  ${this.languages.join(', ')}
+
 EXAMPLES:
-  # Create index.md files in docs/zh directory
-  npm run create-indexes -- -p docs/zh
+  # Create index.md files in Chinese docs directory
+  npm run index -- -p zh
   
   # Use advanced template with preview
-  npm run create-indexes -- -p docs/zh --template advanced --dry-run
+  npm run index -- -p en --template advanced --dry-run
   
-  # Force overwrite existing files
-  npm run create-indexes -- -p docs/zh --force --verbose
+  # Force overwrite existing files with verbose output
+  npm run index -- -p zh/guides --force --verbose
   
   # Exclude specific directories
-  npm run create-indexes -- -p docs --exclude "**/temp" --exclude "**/draft"
+  npm run index -- -p zh --exclude "temp" --exclude "draft"
+
+SOURCE DIRECTORY: ${this.srcPath}
         `);
     }
 
@@ -111,12 +124,14 @@ EXAMPLES:
     validateConfig(config) {
         if (!config.path) {
             console.error('❌ Error: --path is required');
+            console.log(`Available languages: ${this.languages.join(', ')}`);
             return false;
         }
 
-        const fullPath = resolve(config.path);
+        const fullPath = resolve(this.srcPath, config.path);
         if (!existsSync(fullPath)) {
-            console.error(`❌ Error: Path "${config.path}" does not exist`);
+            console.error(`❌ Error: Path "${config.path}" does not exist in ${this.srcPath}`);
+            console.log(`Available languages: ${this.languages.join(', ')}`);
             return false;
         }
 
@@ -192,8 +207,10 @@ root: true
      */
     async findDirectoriesNeedingIndex(config) {
         try {
+            const basePath = resolve(this.srcPath, config.path);
+            
             // Find all directories
-            const patterns = [`${config.path}/**/`];
+            const patterns = [`${basePath}/**/`];
             const excludePatterns = config.exclude.map(pattern => 
                 pattern.startsWith('**/') ? pattern : `**/${pattern}/**`
             );
@@ -204,20 +221,33 @@ root: true
                 absolute: true
             });
 
-            // Filter directories that don't have index.md or need force update
+            // Filter directories that need index.md files
             const dirsNeedingIndex = [];
-            
+
             for (const dir of allDirs) {
                 const indexPath = join(dir, 'index.md');
-                const hasIndex = existsSync(indexPath);
                 
-                if (!hasIndex || config.force) {
-                    dirsNeedingIndex.push({
-                        path: dir,
-                        indexPath,
-                        hasExisting: hasIndex,
-                        name: basename(dir)
-                    });
+                // Check if directory has markdown files (excluding index.md)
+                const markdownFiles = await glob('*.md', {
+                    cwd: dir,
+                    ignore: ['index.md']
+                });
+
+                // Check if directory has subdirectories with content
+                const subdirs = await glob('*/', {
+                    cwd: dir
+                });
+
+                if (markdownFiles.length > 0 || subdirs.length > 0) {
+                    if (!existsSync(indexPath) || config.force) {
+                        dirsNeedingIndex.push({
+                            path: dir,
+                            indexPath,
+                            dirName: basename(dir),
+                            hasExistingIndex: existsSync(indexPath),
+                            relativePath: relative(basePath, dir)
+                        });
+                    }
                 }
             }
 
@@ -231,41 +261,23 @@ root: true
     /**
      * Create index.md file for a directory
      */
-    createIndexFile(dirInfo, config) {
+    createIndexFile(dirInfo, template, dryRun = false) {
+        const content = this.getTemplate(dirInfo.dirName, template);
+        
+        if (dryRun) {
+            console.log(`📝 Would create: ${dirInfo.relativePath}/index.md`);
+            if (dirInfo.hasExistingIndex) {
+                console.log('   ⚠️  Would overwrite existing index.md');
+            }
+            console.log(`   📋 Title: ${this.formatTitle(dirInfo.dirName)}`);
+            return true;
+        }
+
         try {
-            const { path: dirPath, indexPath, hasExisting, name } = dirInfo;
-            const relativePath = relative(process.cwd(), indexPath);
-
-            if (hasExisting && !config.force) {
-                if (config.verbose) {
-                    console.log(`⏭️  Skipped ${relativePath} (already exists)`);
-                }
-                this.skippedDirs++;
-                return true;
-            }
-
-            const template = this.getTemplate(name, config.template);
-            
-            if (config.verbose || config.dryRun) {
-                const action = hasExisting ? 'Overwriting' : 'Creating';
-                console.log(`📝 ${action} ${relativePath}`);
-                
-                if (config.verbose) {
-                    console.log(`   Directory: ${name}`);
-                    console.log(`   Template: ${config.template}`);
-                    console.log(`   Title: ${this.formatTitle(name)}`);
-                }
-            }
-
-            if (!config.dryRun) {
-                writeFileSync(indexPath, template, 'utf8');
-                this.processedDirs++;
-            }
-
+            writeFileSync(dirInfo.indexPath, content, 'utf8');
             return true;
         } catch (error) {
-            console.error(`❌ Error creating index for ${dirInfo.name}: ${error.message}`);
-            this.errorDirs++;
+            console.error(`❌ Error creating ${dirInfo.relativePath}/index.md:`, error.message);
             return false;
         }
     }
@@ -274,92 +286,71 @@ root: true
      * Process all directories
      */
     async processDirectories(config) {
-        console.log('🔍 Finding directories...');
-        const dirs = await this.findDirectoriesNeedingIndex(config);
+        console.log('🔍 Finding directories that need index.md files...');
+        console.log(`📂 Source directory: ${this.srcPath}`);
+        console.log(`🎯 Target path: ${config.path}`);
+        
+        const directories = await this.findDirectoriesNeedingIndex(config);
 
-        if (dirs.length === 0) {
-            console.log('📭 No directories need index.md files');
+        if (directories.length === 0) {
+            console.log('✅ No directories need index.md files (all directories already have them)');
             return;
         }
 
-        console.log(`📁 Found ${dirs.length} director${dirs.length === 1 ? 'y' : 'ies'} needing index.md`);
-
-        if (config.dryRun) {
-            console.log('🧪 DRY RUN MODE - No files will be created\n');
-        } else {
-            console.log('✏️  Creating index.md files...\n');
-        }
-
-        // Process each directory
-        for (const dir of dirs) {
-            this.createIndexFile(dir, config);
+        console.log(`\n📋 Found ${directories.length} directories that need index.md files:`);
+        
+        for (const dirInfo of directories) {
+            const success = this.createIndexFile(dirInfo, config.template, config.dryRun);
+            
+            if (success) {
+                if (config.dryRun) {
+                    this.skippedDirs++;
+                } else {
+                    this.processedDirs++;
+                    console.log(`✅ Created: ${dirInfo.relativePath}/index.md`);
+                    if (dirInfo.hasExistingIndex) {
+                        console.log('   📝 Overwrote existing file');
+                    }
+                }
+            } else {
+                this.errorDirs++;
+            }
         }
 
         // Show summary
-        this.showSummary(config);
-    }
-
-    /**
-     * Show processing summary
-     */
-    showSummary(config) {
         console.log('\n📊 Summary:');
-        
         if (config.dryRun) {
-            console.log(`   Would create: ${this.processedDirs} index.md files`);
+            console.log(`   📋 Would create: ${this.skippedDirs} files`);
         } else {
-            console.log(`   Created: ${this.processedDirs} index.md files`);
-        }
-        
-        console.log(`   Skipped: ${this.skippedDirs} directories`);
-        
-        if (this.errorDirs > 0) {
-            console.log(`   Errors: ${this.errorDirs} directories`);
-        }
-
-        if (config.dryRun && this.processedDirs > 0) {
-            console.log('\n💡 Run without --dry-run to create files');
-        }
-
-        if (this.processedDirs > 0 && !config.dryRun) {
-            console.log(`\n✅ Successfully created ${this.processedDirs} index.md file${this.processedDirs === 1 ? '' : 's'}`);
+            console.log(`   ✅ Created: ${this.processedDirs} files`);
+            console.log(`   ❌ Errors: ${this.errorDirs} files`);
         }
     }
 
     /**
      * Main execution function
      */
-    async run(args = process.argv.slice(2)) {
-        console.log('🚀 Index.md Generator\n');
-
+    async run() {
+        const args = process.argv.slice(2);
         const config = this.parseArgs(args);
 
         if (!this.validateConfig(config)) {
             process.exit(1);
         }
 
-        // Show configuration
-        console.log('⚙️  Configuration:');
-        console.log(`   Path: ${config.path}`);
-        console.log(`   Template: ${config.template}`);
-        console.log(`   Dry run: ${config.dryRun ? 'Yes' : 'No'}`);
-        console.log(`   Force: ${config.force ? 'Yes' : 'No'}`);
-        if (config.exclude.length > 0) {
-            console.log(`   Exclude: ${config.exclude.join(', ')}`);
+        try {
+            await this.processDirectories(config);
+        } catch (error) {
+            console.error('❌ Unexpected error:', error.message);
+            process.exit(1);
         }
-        console.log('');
-
-        await this.processDirectories(config);
     }
 }
 
-// Run the script if called directly
-if (import.meta.url === `file://${process.argv[1]}`) {
+// Run the generator if this script is executed directly
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
     const generator = new IndexGenerator();
-    generator.run().catch(error => {
-        console.error('❌ Script failed:', error);
-        process.exit(1);
-    });
+    generator.run();
 }
 
 export default IndexGenerator; 

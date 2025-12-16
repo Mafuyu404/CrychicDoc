@@ -1,6 +1,9 @@
 ---
 progress: 95
 state: preliminary
+title: 序言
+hidden: false
+priority: 100
 ---
 # 战利品表
 

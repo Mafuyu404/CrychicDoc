@@ -1,12 +1,17 @@
 ---
 title: 22  实体方块tick
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 22  实体方块tick 相关教程
 image: ./covers/b66cf820118f07ab1cc387a075cd13b5f19e67d4.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
-
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 参考
 本文章大量参考了：

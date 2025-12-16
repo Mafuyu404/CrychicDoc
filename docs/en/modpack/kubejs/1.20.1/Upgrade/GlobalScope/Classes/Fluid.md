@@ -2,5 +2,8 @@
 layout: doc
 title: 流体类（Fluid）
 authors:
-    - Eikidona
+  - Eikidona
+hidden: false
+priority: 0
 ---
+

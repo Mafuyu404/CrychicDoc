@@ -1,12 +1,17 @@
 ---
 title: 53 更新到Minecraft 1.20.6版本
-published: 2024-05-18
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-05-18T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 53 Minecraft Neoforge 版本更新
-image: https://cdn.jsdelivr.net/gh/Flandre923/CDN@latest/img/wallhaven-jxjv3w.png
+image: 'https://cdn.jsdelivr.net/gh/Flandre923/CDN@latest/img/wallhaven-jxjv3w.png'
 category: Minecraft1_20_4_NeoForge_Tutorial
-
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 更新gradle
 

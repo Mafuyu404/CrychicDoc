@@ -1,3 +1,8 @@
+---
+title: ResourceLocation
+hidden: false
+priority: 0
+---
 # ResourceLocation
 
 >[!TIP] 提示

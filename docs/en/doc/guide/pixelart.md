@@ -3,7 +3,6 @@ layout: doc
 title: Pixel Art
 layoutClass: m-nav-layout
 sidebar: false
-
 prev: false
 next: false
 editLink: false
@@ -11,7 +10,11 @@ editor: false
 gitChangelog: false
 showComment: false
 metadata: false
-outline: [2,2]
+outline:
+  - 2
+  - 2
+hidden: false
+priority: 0
 ---
 
 <script setup>

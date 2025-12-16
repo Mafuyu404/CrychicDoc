@@ -1,6 +1,9 @@
 ---
 prev: false
 next: false
+title: modpack
+hidden: false
+priority: 0
 ---
 
 # 整合包

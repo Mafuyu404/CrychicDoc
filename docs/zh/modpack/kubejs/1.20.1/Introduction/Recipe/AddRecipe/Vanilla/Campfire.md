@@ -1,3 +1,8 @@
+---
+title: 篝火
+hidden: false
+priority: 0
+---
 # 营火
 
 ## 前言

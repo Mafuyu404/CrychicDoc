@@ -5,6 +5,8 @@ tags:
   - JSDoc
   - Basic
 progress: 90
+hidden: false
+priority: 200
 ---
 
 # JSDoc 基础语法与通用用法

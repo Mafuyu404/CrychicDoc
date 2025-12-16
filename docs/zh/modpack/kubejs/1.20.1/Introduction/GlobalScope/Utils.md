@@ -1,6 +1,9 @@
 ---
 progress: 100
 state: preliminary
+title: 工具
+hidden: false
+priority: 300
 ---
 
 # 实用工具

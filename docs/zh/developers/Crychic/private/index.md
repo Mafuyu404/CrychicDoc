@@ -1,9 +1,8 @@
 ---
 layout: home
-
 hero:
-  name: "Crychic"
-  text: "以我的世界开发为主要活动的共创团队"
+  name: Crychic
+  text: 以我的世界开发为主要活动的共创团队
   tagline: 致力于输出玩家需要与喜爱的内容。
   actions:
     - theme: alt
@@ -21,4 +20,9 @@ hero:
     - theme: alt
       text: 对内成员列表
       link: ./members
+title: private
+hidden: false
+priority: 9007199254740991
+collapsed: true
 ---
+

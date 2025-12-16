@@ -37,125 +37,114 @@
 </template>
 
 <script setup>
-    import { ref, computed } from "vue";
-    import { useData } from "vitepress";
+// @i18n
+import { ref, computed } from "vue";
+import { useSafeI18n } from "@utils/i18n/locale";
 
-    const { lang } = useData();
+const { t } = useSafeI18n("md-dialog", {
+    defaultText: "Click to open",
+    closeButton: "Close",
+});
 
-    const props = defineProps({
-        title: String,
-        text: {
-            type: String,
-        },
-        // Vuetify VDialog props
-        fullscreen: {
-            type: Boolean,
-            default: false,
-        },
-        maxWidth: {
-            type: [String, Number],
-            default: 800,
-        },
-        maxHeight: {
-            type: [String, Number],
-            default: undefined,
-        },
-        width: {
-            type: [String, Number],
-            default: undefined,
-        },
-        height: {
-            type: [String, Number],
-            default: undefined,
-        },
-        persistent: {
-            type: Boolean,
-            default: false,
-        },
-        scrollable: {
-            type: Boolean,
-            default: true,
-        },
-        transition: {
-            type: String,
-            default: "dialog-transition",
-        },
-        activator: {
-            type: String,
-            default: undefined,
-        },
-        closeOnBack: {
-            type: Boolean,
-            default: true,
-        },
-        contained: {
-            type: Boolean,
-            default: false,
-        },
-        noClickAnimation: {
-            type: Boolean,
-            default: false,
-        },
-        scrim: {
-            type: [Boolean, String],
-            default: true,
-        },
-        zIndex: {
-            type: [Number, String],
-            default: 2400,
-        },
-    });
+const props = defineProps({
+    title: String,
+    text: {
+        type: String,
+    },
+    // Vuetify VDialog props
+    fullscreen: {
+        type: Boolean,
+        default: false,
+    },
+    maxWidth: {
+        type: [String, Number],
+        default: "90vw",
+    },
+    maxHeight: {
+        type: [String, Number],
+        default: undefined,
+    },
+    width: {
+        type: [String, Number],
+        default: undefined,
+    },
+    height: {
+        type: [String, Number],
+        default: undefined,
+    },
+    persistent: {
+        type: Boolean,
+        default: false,
+    },
+    scrollable: {
+        type: Boolean,
+        default: true,
+    },
+    transition: {
+        type: String,
+        default: "dialog-transition",
+    },
+    activator: {
+        type: String,
+        default: undefined,
+    },
+    closeOnBack: {
+        type: Boolean,
+        default: true,
+    },
+    contained: {
+        type: Boolean,
+        default: false,
+    },
+    noClickAnimation: {
+        type: Boolean,
+        default: false,
+    },
+    scrim: {
+        type: [Boolean, String],
+        default: true,
+    },
+    zIndex: {
+        type: [Number, String],
+        default: 2400,
+    },
+});
 
-    const isOpen = ref(false);
+const isOpen = ref(false);
 
-    const translations = {
-        "zh-CN": {
-            defaultText: "点击打开",
-            closeButton: "关闭",
-        },
-        "en-US": {
-            defaultText: "Click to open",
-            closeButton: "Close",
-        },
+// Build props to pass to v-dialog
+const dialogProps = computed(() => {
+    return {
+        maxWidth: props.maxWidth,
+        maxHeight: props.maxHeight,
+        width: props.width,
+        height: props.height,
+        persistent: props.persistent,
+        scrollable: props.scrollable,
+        transition: props.transition,
+        activator: props.activator,
+        closeOnBack: props.closeOnBack,
+        contained: props.contained,
+        noClickAnimation: props.noClickAnimation,
+        scrim: props.scrim,
+        zIndex: props.zIndex,
+        fullscreen: props.fullscreen,
     };
+});
 
-    const t = computed(() => {
-        return translations[lang.value] || translations["en-US"];
-    });
+// Content wrapper classes
+const contentWrapperClasses = computed(() => ({
+    "md-content--fullscreen": props.fullscreen,
+    "md-content--scrollable": props.scrollable,
+}));
 
-    // Build props to pass to v-dialog
-    const dialogProps = computed(() => {
-        return {
-            maxWidth: props.maxWidth,
-            maxHeight: props.maxHeight,
-            width: props.width,
-            height: props.height,
-            persistent: props.persistent,
-            scrollable: props.scrollable,
-            transition: props.transition,
-            activator: props.activator,
-            closeOnBack: props.closeOnBack,
-            contained: props.contained,
-            noClickAnimation: props.noClickAnimation,
-            scrim: props.scrim,
-            zIndex: props.zIndex,
-            fullscreen: props.fullscreen,
-        };
-    });
+const open = () => {
+    isOpen.value = true;
+};
 
-    // Content wrapper classes
-    const contentWrapperClasses = computed(() => ({
-        "md-content--fullscreen": props.fullscreen,
-        "md-content--scrollable": props.scrollable,
-    }));
-
-    const open = () => {
-        isOpen.value = true;
-    };
-
-    const close = () => {
-        isOpen.value = false;
-    };
+const close = () => {
+    isOpen.value = false;
+};
 </script>
 
 <style scoped>
@@ -216,6 +205,8 @@
         min-height: 200px;
         max-height: 70vh;
         overflow-y: auto;
+        box-sizing: border-box;
+        width: 100%;
     }
 
     .md-content--fullscreen {
@@ -319,6 +310,136 @@
     .vp-doc :deep(td) {
         border: 1px solid var(--vp-c-divider);
         padding: 8px 16px;
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+        .md-dialog-card {
+            margin: 1rem !important;
+            max-width: calc(100vw - 2rem) !important;
+            max-height: calc(100vh - 2rem) !important;
+            border-radius: 8px !important;
+        }
+
+        .md-card-title {
+            padding: 16px 20px !important;
+            font-size: 1.1rem !important;
+        }
+
+        .md-card-content {
+            padding: 16px 20px !important;
+            max-height: calc(100vh - 200px) !important;
+        }
+
+        .md-card-actions {
+            padding: 12px 20px !important;
+        }
+
+        .md-content--scrollable {
+            max-height: calc(100vh - 200px) !important;
+        }
+
+        .vp-doc {
+            font-size: 15px;
+        }
+
+        .vp-doc :deep(h1) {
+            font-size: 24px;
+        }
+
+        .vp-doc :deep(h2) {
+            font-size: 20px;
+        }
+
+        .vp-doc :deep(h3) {
+            font-size: 18px;
+        }
+
+        .vp-doc :deep(h4) {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .md-dialog-card {
+            margin: 0.5rem !important;
+            max-width: calc(100vw - 1rem) !important;
+            max-height: calc(100vh - 1rem) !important;
+            border-radius: 6px !important;
+        }
+
+        .md-card-title {
+            padding: 12px 16px !important;
+            font-size: 1rem !important;
+        }
+
+        .md-card-content {
+            padding: 12px 16px !important;
+            max-height: calc(100vh - 150px) !important;
+            min-height: 150px;
+        }
+
+        .md-card-actions {
+            padding: 10px 16px !important;
+        }
+
+        .md-content--scrollable {
+            max-height: calc(100vh - 150px) !important;
+        }
+
+        .vp-doc {
+            font-size: 14px;
+        }
+
+        .vp-doc :deep(h1) {
+            font-size: 22px;
+        }
+
+        .vp-doc :deep(h2) {
+            font-size: 18px;
+        }
+
+        .vp-doc :deep(h3) {
+            font-size: 16px;
+        }
+
+        .vp-doc :deep(h4) {
+            font-size: 15px;
+        }
+
+        .vp-doc :deep(pre code) {
+            padding: 16px 20px;
+        }
+
+        .vp-doc :deep(th),
+        .vp-doc :deep(td) {
+            padding: 6px 12px;
+        }
+    }
+
+    /* Very small screens - auto fullscreen */
+    @media (max-width: 360px) {
+        .md-dialog-card:not(.md-dialog-card--fullscreen) {
+            margin: 0 !important;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            border-radius: 0 !important;
+            height: 100vh !important;
+        }
+
+        .md-card-content {
+            max-height: calc(100vh - 120px) !important;
+            padding: 10px 12px !important;
+        }
+
+        .md-card-title {
+            padding: 10px 12px !important;
+            font-size: 0.9rem !important;
+        }
+
+        .md-card-actions {
+            padding: 8px 12px !important;
+        }
     }
 </style>
  

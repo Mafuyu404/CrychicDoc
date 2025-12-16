@@ -1,12 +1,17 @@
 ---
 title: 37 menu
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 37 menu 相关教程
 image: ./covers/f20a4ca39c07b2976273ef86714d297256424048.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
-
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 参考
 https://boson.v2mcdev.com/gui/container.html

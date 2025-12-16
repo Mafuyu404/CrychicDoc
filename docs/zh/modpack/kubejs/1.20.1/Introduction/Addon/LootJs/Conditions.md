@@ -1,3 +1,8 @@
+---
+title: 条件
+hidden: false
+priority: 100
+---
 # LootJs
 
 LootJs 是一个`KubeJS`附属模组，它为`KubeJS`对于原版战利品列表修改进行了更方便的操作

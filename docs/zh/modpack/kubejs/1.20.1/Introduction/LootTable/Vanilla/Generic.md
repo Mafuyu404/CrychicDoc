@@ -1,3 +1,8 @@
+---
+title: 通用
+hidden: false
+priority: 50
+---
 # 通用类型战利品表
 
 ::: tip 提示

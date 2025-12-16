@@ -1,6 +1,8 @@
 ---
 layout: doc
 title: 全局类
+hidden: false
+priority: 0
 ---
 
 # 全局类

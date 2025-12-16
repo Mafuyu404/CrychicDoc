@@ -1,8 +1,13 @@
+---
+title: LootJS
+hidden: false
+priority: -1000000
+---
 # LootJs
 
 此教程为 `LootJs` Minecraft 1.21 NeoForge 版本教程
 
-若想访问 `1.19.2/1.20.1` 的教程，请移步[LootJs](https://docs.mihono.cn/zh/modpack/kubejs/1.20.1/Introduction/Addon/LootJs/LootJs)此篇文档进行查看
+若想访问 `1.19.2/1.20.1` 的教程，请移步[LootJs](https://docs.variedmc.cc/zh/modpack/kubejs/1.20.1/Introduction/Addon/LootJs/LootJs)此篇文档进行查看
 
 :::v-info
 

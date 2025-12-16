@@ -8,6 +8,8 @@ next:
   text: 基础
   link: /zh/modpack/kubejs/JavaScript/basic
   authors:
-  - Eikidona
+    - Eikidona
+hidden: false
+priority: 0
 ---
 

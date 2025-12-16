@@ -1,6 +1,9 @@
 ---
 progress: 100
 state: preliminary
+title: 提供器
+hidden: false
+priority: 0
 ---
 
 # Supplier

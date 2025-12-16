@@ -1,0 +1,13 @@
+{
+    "checkCurseForge": "View CurseForge page",
+    "dateCreated": "Created:",
+    "downloads": "downloads",
+    "failedToFetch": "Failed to fetch mod data:",
+    "failedToFetchModrinth": "Failed to fetch Modrinth mod data:",
+    "lastUpdated": "Last Updated:",
+    "loading": "Loading...",
+    "modAuthors": "Mod Authors",
+    "supportedVersions": "Supported Minecraft Versions",
+    "unknown": "Unknown",
+    "usingCachedData": "Using cached data (API request failed)"
+}

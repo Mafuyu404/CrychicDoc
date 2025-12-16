@@ -2,5 +2,8 @@
 layout: doc
 title: NBT类（NBT）
 authors:
-    - Eikidona
+  - Eikidona
+hidden: false
+priority: 0
 ---
+

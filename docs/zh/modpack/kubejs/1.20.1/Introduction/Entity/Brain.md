@@ -1,12 +1,14 @@
 ---
-title: Brain 系统指南
+title: Brain
 description: Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法
 tags:
-    - KubeJS
-    - EntityJS
-    - Brain
-    - AI
+  - KubeJS
+  - EntityJS
+  - Brain
+  - AI
 progress: 85
+hidden: false
+priority: 800
 ---
 
 # Brain 系统指南

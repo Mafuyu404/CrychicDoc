@@ -1,12 +1,17 @@
 ---
 title: 33 原版提供的能力ItemHander物品处理能力
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 33 原版提供的能力ItemHander物品处理能力 相关教程
 image: ./covers/48d60f5288b3399f306b7392b030aa3e7f3b2767.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
-
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 参考
 

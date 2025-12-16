@@ -1,3 +1,8 @@
+---
+title: Ingredient
+hidden: false
+priority: 0
+---
 # 原料
 
 ## 前言

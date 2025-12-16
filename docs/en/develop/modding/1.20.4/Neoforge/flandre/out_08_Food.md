@@ -1,12 +1,18 @@
 ---
 title: 08 食物
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 08 食物 相关教程
 image: ./covers/007e7658995cde57ba10c1cec4f27441fb30b0cd.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
 draft: false
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 食物
 

@@ -3,13 +3,15 @@ Layout: doc
 title: 配置
 backPath: ../
 prev:
-    text: Wiki
-    link: /zh/mods/adventure/Champions-Unofficial/wiki
+  text: Wiki
+  link: /zh/mods/adventure/Champions-Unofficial/wiki
 next:
-    text: 介绍
-    link: /zh/mods/adventure/Champions-Unofficial/index
+  text: 介绍
+  link: /zh/mods/adventure/Champions-Unofficial/index
 authors:
-    - M1hono
+  - M1hono
+hidden: false
+priority: 0
 ---
 
 # Champions 模组配置指南

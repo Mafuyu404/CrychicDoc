@@ -2,5 +2,8 @@
 layout: doc
 title: 集合（Set）
 authors:
-    - Eikidona
+  - Eikidona
+hidden: false
+priority: 0
 ---
+

@@ -1,33 +1,33 @@
 <template>
-    <div v-if="showComment" class="giscus-wrapper" ref="giscusContainer"></div>
+    <div
+        v-if="showComment"
+        class="giscus-wrapper"
+        ref="giscusContainer"
+        :data-loading-text="isLoading ? t.loading : undefined"
+    ></div>
 </template>
 
 <script lang="ts" setup>
-    import { ref, watch, onMounted, computed, nextTick } from "vue";
-    import { useData, useRoute } from "vitepress";
+// @i18n
+import { ref, watch, onMounted, computed, nextTick } from "vue";
+import { useData, useRoute } from "vitepress";
+import { useSafeI18n } from "../../../utils/i18n/locale";
+import { getLanguageByCode, getDefaultLanguage } from "../../../config/project-config";
 
-    const { isDark, lang, frontmatter } = useData();
-    const route = useRoute();
+const { isDark, lang, frontmatter } = useData();
+const route = useRoute();
 
-    const showComment = computed(() => frontmatter.value.showComment !== false);
+const { t } = useSafeI18n("comment-component", {
+    loading: "Loading comments...",
+});
 
-    const translations = {
-        "en-US": {
-            langCode: "en",
-        },
-        "zh-CN": {
-            langCode: "zh-CN",
-        },
-    } as const;
+const showComment = computed(() => frontmatter.value.showComment !== false);
 
-    const currentLangConfig = computed(() => {
-        return (
-            translations[lang.value as keyof typeof translations] ||
-            translations["en-US"]
-        );
-    });
+const currentLanguage = computed(() => {
+    return getLanguageByCode(lang.value) || getDefaultLanguage();
+});
 
-    const extractTerm = (path: string) => {
+const extractTerm = (path: string) => {
         const cleanedPath = path.replace(/^\/[a-z]{2}\//, "");
         return cleanedPath.length > 0 ? cleanedPath : "none";
     };
@@ -65,7 +65,7 @@
             script.dataset.reactionsEnabled = "1";
             script.dataset.emitMetadata = "0";
             script.dataset.inputPosition = "top";
-            script.dataset.lang = currentLangConfig.value.langCode;
+            script.dataset.lang = currentLanguage.value.giscusLang;
             script.dataset.theme = isDark.value
                 ? "noborder_dark"
                 : "noborder_light";
@@ -76,7 +76,17 @@
             };
 
             script.onload = () => {
-                isLoading.value = false;
+                // Script loaded, but we need to wait for the iframe to be ready
+                // Check for iframe periodically
+                const checkIframe = () => {
+                    const iframe = giscusContainer.value?.querySelector('iframe.giscus-frame');
+                    if (iframe) {
+                        isLoading.value = false;
+                    } else {
+                        setTimeout(checkIframe, 100);
+                    }
+                };
+                setTimeout(checkIframe, 100);
             };
 
             giscusContainer.value.appendChild(script);
@@ -131,18 +141,11 @@
         }
     });
 
-    watch(currentLangConfig, (newConfig) => {
+    watch(() => currentLanguage.value.giscusLang, (newLang) => {
         if (showComment.value) {
-            const iframe = document.querySelector(
-                "iframe.giscus-frame"
-            ) as HTMLIFrameElement;
-            if (iframe?.contentWindow) {
-                updateGiscusConfig({
-                    lang: newConfig.langCode,
-                });
-            } else {
-                loadGiscus();
-            }
+            updateGiscusConfig({
+                lang: newLang,
+            });
         }
     });
 
@@ -169,8 +172,8 @@
         border: none;
     }
 
-    .giscus-wrapper[data-loading="true"]::after {
-        content: "Loading comments...";
+    .giscus-wrapper[data-loading-text]:not([data-loading-text=""])::after {
+        content: attr(data-loading-text);
         display: block;
         text-align: center;
         color: var(--vp-c-text-2);

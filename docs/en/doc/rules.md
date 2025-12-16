@@ -1,21 +1,86 @@
 ---
-title: Cooperation Guide
+title: Documentation Writing Standards
+description: Official standards, workflows, and style guidelines required for participating in CrychicDoc documentation writing.
 progress: 100
-description: This article provides documentation writing standards for this site!
+state: preliminary
+priority: -10
+hidden: false
 ---
 
-# Documentation Writing Standards
+# Documentation Writing Standards {#main}
 
-This document explains the standards for sidebar, file structure, and collaboration in this documentation project, helping you understand how to efficiently collaborate on writing documentation and minimize conflicts caused by non-standard cooperation.
+::: alert {"type": "success", "title": "Notice", "border": "start"}
+This document is the **first** standard you need to understand when participating in the CrychicDoc project. It details the collaboration process, content writing standards, sidebar configuration methods, and all available styles and components.
+:::
 
-First, you need to understand how to start collaborating through [this article](./cooperation.md).
+## Contribution {#contribution}
 
-## Project Structure {#FileStructure}
+### Specific Steps {#workflow-steps}
 
-The documentation currently maintains `Chinese/English` bilingual content, with Chinese as the primary language.
+<LiteTree>
+#workflow=color:white;background:#1976d2;padding:2px 6px;border-radius:3px;font-size:12px;
+---
+{#workflow}1. Fork & Clone
+    Fork the main repository to your account, then clone it locally.
+{#workflow}2. Sync and Create Branch
+    Before making changes, sync with the main repository, then create a new branch for your modifications.
+{#workflow}3. Modify and Commit
+    Make changes on your new branch and commit with clear commit messages.
+{#workflow}4. Create Pull Request
+    Push your branch to your forked repository and create a Pull Request to the main repository.
+</LiteTree>
 
-:::alert {"type": "info", "title": "Project Structure Overview"}
-Here's the complete project structure with file purposes and status indicators.
+::: alert {"type": "warning", "title": "Important Reminder"}
+Please be sure to follow the **Conventional Commits** specification when writing commit messages, which helps automatically generate changelogs and version management.
+:::
+
+:::: stepper
+@tab Initial Setup
+```bash
+# Clone your fork
+git clone https://github.com/-%YourName/CrychicDoc.git
+cd CrychicDoc
+
+# Add upstream (main repository)
+git remote add upstream https://github.com/PickAID/CrychicDoc.git
+```
+
+::: v-info
+Necessary configuration steps when first participating in the project.
+:::
+
+@tab Start New Contribution
+```bash
+# Sync latest changes from main repository
+git fetch upstream
+git checkout main
+git merge upstream/main
+
+# Create a branch for your new feature or fix
+git checkout -b -%branch
+```
+
+@tab Submit Your Changes
+```bash
+# Add your changes
+git add .
+
+# Commit changes (following Conventional Commits specification)
+git commit -m "feat: add KubeJS event handling documentation"
+
+# Push to your forked repository
+git push origin -%branch
+```
+
+::: v-success
+Commit message format: `type: brief description`
+:::
+::::
+
+## Project Structure {#structure}
+
+::: alert {"type": "info", "title": "Project Structure Overview"}
+Below is the complete project structure of CrychicDoc, including explanations of key files and directories. Understanding the project structure helps you quickly locate files and understand code organization.
 :::
 
 <LiteTree>
@@ -30,224 +95,116 @@ Here's the complete project structure with file purposes and status indicators.
 folder=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTEwIDRIOGEyIDIgMCAwIDAtMiAydjEyYTIgMiAwIDAgMCAyIDJoOGEyIDIgMCAwIDAgMi0yVjhhMiAyIDAgMCAwLTItMmgtM2wtMi0yWiIvPjwvc3ZnPg==
 ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTUgMTUiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMxNzhDNiIgZD0iTTEyLjUgOHYtLjE2N2MwLS43MzYtLjU5Ny0xLjMzMy0xLjMzMy0xLjMzM0gxMGExLjUgMS41IDAgMSAwIDAgM2gxYTEuNSAxLjUgMCAwIDEgMCAzaC0xQTEuNSAxLjUgMCAwIDEgOC41IDExTTggNi41SDNtMi41IDBWMTNNMS41LjVoMTN2MTRIOS41eiIvPjwvc3ZnPg==
 js=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNmN2RmMWUiIGQ9Ik0zIDNoMTh2MThIM1ptMTYuNTI1IDE0LjVjLS4zLS4zNTQtLjc5NS0uNjI5LTEuNzE3LS42MjljLS44ODEgMC0xLjQzOS4zMTgtMS40MzkuNzE4YzAgLjM5Ni4zNzMuNjM3IDEuMTU2Ljk2N2MxLjMzMi41ODYgMi4yODEgMS4wOTMgMi4yODEgMi4zOGMwIDEuMzItMS4yMDMgMi4xNDMtMi45NzQgMi4xNDNjLTEuMjEzIDAtMi4yNzEtLjQ2Mi0yLjk1LTEuMDc0bC44NzUtMS4yNzNjLjQzMy4zODkgMS4wNjQuNzI0IDEuNjY0LjcyNGMuNzA2IDAgMS4wNjQtLjMzMSAxLjA2NC0uNzMzYzAtLjQ0OS0uMzc2LS43MjQtMS4yNDUtMS4wMzNjLTEuMzI1LS40ODgtMi4xMzItMS4yNS0yLjEzMi0yLjM2M2MwLTEuMzk0IDEuMDI5LTIuMTQzIDIuODU2LTIuMTQzYzEuMDY0IDAgMS43NDUuMzI4IDIuMzc3Ljg1OWwtLjgzIDEuMjQxWm0tNS44NDUtLjMzNWMuMzY2LjgxNS4zNjYgMS41NzcuMzY2IDIuNDd2My45MDZoLTEuODc2VjE5LjZjMC0xLjUyNy0uMDYtMi4xOC0uNTUtMi40OGMtLjQxLS4yODgtMS4wNzYtLjI3NC0xLjYxOC0uMTA3Yy0uMzc4LjExNy0uNzEzLjMzNS0uNzEzIDEuMDc0djUuMDU2SDYuNDI3VjEyLjgyaDEuODc2djIuMTEzYy43NDctLjM5OSAxLjU3Ny0uNzM4IDIuNjQ1LS43MzhjLjc2NCAwIDEuNTc3LjI1MyAyLjA2OS43ODdjLjQ5OC41NTIuNjI2IDEuMTU3LjcyMyAxLjk5MVoiLz48L3N2Zz4=
-md=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTIyLjI3IDEzLjU2VjE2YTIgMiAwIDAgMS0yIDJIOGExIDEgMCAwIDEtMSAxSDNhMSAxIDAgMCAxLTEtMXYtNmExIDEgMCAwIDEgMS0xaDR2LTFhMiAyIDAgMCAxIDItMmgxMi4yN2ExIDEgMCAwIDEgMSAxdi41NnptLTMuNzMtOC41NkgyYTIgMiAwIDAgMC0yIDJ2MTBhMiAyIDAgMCAwIDIgMmgxNi41NGEyIDIgMCAwIDAgMi0yVjdhMiAyIDAgMCAwLTItMlptLTcuNzQgOC4zOUwxMiAxNi4yNWwyLjI2LTEuOTFhLjc1Ljc1IDAgMCAxIC45NyAxLjE0bC0zIDIuNTNhLjc1Ljc1IDAgMCAxLS45NiAwbC0zLTIuNTNhLjc1Ljc1IDAgMCAxIC45Ny0xLjE0WiIvPjwvc3ZnPg==
+md=data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0Ij48IS0tIEljb24gZnJvbSBNYXRlcmlhbCBTeW1ib2xzIGJ5IEdvb2dsZSAtIGh0dHBzOi8vZ2l0aHViLmNvbS9nb29nbGUvbWF0ZXJpYWwtZGVzaWduLWljb25zL2Jsb2IvbWFzdGVyL0xJQ0VOU0UgLS0+PHBhdGggZmlsbD0iIzg4ODg4OCIgZD0iTTkgMThxLS44MjUgMC0xLjQxMi0uNTg3VDcgMTZWNHEwLS44MjUuNTg4LTEuNDEyVDkgMmg5cS44MjUgMCAxLjQxMy41ODhUMjAgNHYxMnEwIC44MjUtLjU4NyAxLjQxM1QxOCAxOHptLTQgNHEtLjgyNSAwLTEuNDEyLS41ODdUMyAyMFY2aDJ2MTRoMTF2MnptNS4yNS05aDEuNVY4LjVoMXYzaDEuNXYtM2gxVjEzaDEuNVY4cTAtLjQyNS0uMjg4LS43MTJUMTUuNzUgN2gtNC41cS0uNDI1IDAtLjcxMi4yODhUMTAuMjUgOHoiLz48L3N2Zz4=
+json=data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0Ij48IS0tIEljb24gZnJvbSBNYXRlcmlhbCBTeW1ib2xzIGJ5IEdvb2dsZSAtIGh0dHBzOi8vZ2l0aHViLmNvbS9nb29nbGUvbWF0ZXJpYWwtZGVzaWduLWljb25zL2Jsb2IvbWFzdGVyL0xJQ0VOU0UgLS0+PHBhdGggZmlsbD0iIzg4ODg4OCIgZD0iTTQuNzUgMTVINi41cS40MjUgMCAuNzEzLS4yODhUNy41IDE0VjlINnY0Ljc1SDVWMTIuNUgzLjc1VjE0cTAgLjQyNS4yODguNzEzVDQuNzUgMTVtNC40MjUgMGgxLjVxLjQyNSAwIC43MTMtLjI4OHQuMjg3LS43MTJ2LTEuNXEwLS40MjUtLjI4OC0uNzEydC0uNzEyLS4yODhoLTEuMjV2LTEuMjVoMXYuNWgxLjI1VjEwcTAtLjQyNS0uMjg4LS43MTJUMTAuNjc2IDloLTEuNXEtLjQyNSAwLS43MTIuMjg4VDguMTc1IDEwdjEuNXEwIC40MjUuMjg4LjcxM3QuNzEyLjI4N2gxLjI1djEuMjVoLTF2LS41aC0xLjI1VjE0cTAgLjQyNS4yODguNzEzdC43MTIuMjg3bTQuNC0xLjV2LTNoMXYzem0tLjI1IDEuNWgxLjVxLjQyNSAwIC43MTMtLjI4OHQuMjg3LS43MTJ2LTRxMC0uNDI1LS4yODctLjcxMlQxNC44MjUgOWgtMS41cS0uNDI1IDAtLjcxMi4yODh0LS4yODguNzEydjRxMCAuNDI1LjI4OC43MTN0LjcxMi4yODdtMy4xNzUgMGgxLjI1di0yLjYyNWwxIDIuNjI1SDIwVjloLTEuMjV2Mi42MjVMMTcuNzUgOUgxNi41ek0zIDIwcS0uODI1IDAtMS40MTItLjU4N1QxIDE4VjZxMC0uODI1LjU4OC0xLjQxMlQzIDRoMThxLjgyNSAwIDEuNDEzLjU4OFQyMyA2djEycTAgLjgyNS0uNTg3IDEuNDEzVDIxIDIweiIvPjwvc3ZnPg==
 ---
-{.important}CrychicDoc                         // {.important}Main Project
-    [folder] .github                            // {#script}CI/CD Scripts  
-        workflows                               // Automated build scripts //+
-    [folder] .vitepress                         // {#config}VitePress Configuration
-        [folder] config                         // {.important}Localization configs
-            [ts] index.ts                       // Main config file //v
+{.important}CrychicDoc                         // {.important}Main project
+    [folder] .github                            // {#script}CI/CD scripts
+        workflows                               // Automated build scripts
+    [folder] .vitepress                         // {#config}VitePress configuration
+        [folder] config                         // {.important}All project configurations
+            [folder] lang                         // {.important}Multi-language configuration
+            [folder] locale                         // {.important}Localization configuration
+                [folder] langcode                // {.important}Language-specific configurations
+                    [folder] componennts            // Component translation keys
+                    [folder] snippets               // Homepage floating text translation keys
+                    [ts] footer.ts                  //! Footer configuration
+            [folder] sidebar                         // {.important}Sidebar configuration
+            [ts] common-config.ts                      // VitePress configuration
+            [json] contributors.json                      //! Contributors configuration
+            [ts] markdown-plugins.ts                      // Markdown plugin configuration
+            [ts] project-config.ts                       //! Main project configuration
         [folder] plugins                        // {.important}Custom plugins
-            [ts] custom-alert.ts                // Alert plugin //+
-            [ts] dialog.ts                      // Dialog plugin //+
         [folder] theme                          // {.important}Custom theme
-            [folder] components                 // Vue components //v
-            [folder] styles                     // CSS styles //v
-        [ts] config.mts                         // {.important}VitePress config
-        [ts] index.ts                           // {.important}Sidebar config
+            [folder] components                 // Vue components
+            [folder] styles                     // CSS styles
+        [ts] config.mts                         // {.important}VitePress configuration
+        [ts] index.ts                           // {.important}Sidebar configuration
     [folder] .vscode                            // {#config}VS Code settings
-        [md] snippets                           // Markdown snippets //v
-    [folder] docs                               // {#content}Content Directory
-        [folder] public                         // Static assets //v
+        [md] snippets                           // Markdown code snippets
+    [folder] docs                               // {#content}Content directory
+        [folder] public                         // Static resources
         [folder] zh                             // {#content}Chinese content
-            [md] various files                  // Documentation files //+
-        [folder] en                             // {#content}English content  
-            [md] various files                  // Documentation files //+
+            [md] Various files                        // Documentation files
+        [folder] en                             // {#content}English content
+            [md] Various files                        // Documentation files
     [md] README.md                              // {.important}Project description
-    [js] ExtractClassScript.js                  // {#ignore}Legacy script
-    [md] extracted_classes.md                   // {#ignore}Legacy file
     LICENSE                                     // {#config}CC BY-SA 4.0
     .gitignore                                  // {#config}Git ignore rules
 </LiteTree>
 
-## Sidebar {#Sidebar}
+## Writing Standards {#content}
 
-:::alert {"type": "warning", "title": "Sidebar Importance"}
-The **`sidebar`** is one of the most important guides in this documentation and has a dedicated [setup tutorial](./sidebarTutorial). This section focuses on explaining its practical usage and what sidebar settings you need to configure when writing documentation.
+**Core Guide Documents:**
+- **[Styles and Plugins Guide](./pluginsGuide.md)** - Markdown extensions and custom components.
+- **[Sidebar Configuration Practical Guide](./sidebarGuide.md)** - Configure and manage the sidebar.
+
+**Auxiliary Tool Guides:**
+- [LiteTree Component Usage Guide](./litetreeGuide.md) - Create elegant tree structures
+- [VSCode Code Snippets Usage Guide](./vscodeSnippetsGuide.md) - Improve documentation writing efficiency.
+
+
+### Frontmatter Configuration {#frontmatter}
+
+Each Markdown file should include a `frontmatter` block to configure page metadata:
+
+:::: chart-grid {"columns": 2, "gap": "24px"}
+
+::: v-info Required Fields
+- **`title`** (`string`) - Page title, displayed in sidebar
+- **`priority`** (`number`) - Sidebar sorting, smaller numbers appear first
 :::
 
-The sidebar operates with two different logics:
-
-### Sidebar Operation Modes
-
-<LiteTree>
-// Define workflow styles
-#method1=color:white;background:#2196f3;padding:2px 6px;border-radius:3px;font-size:12px;
-#method2=color:white;background:#9c27b0;padding:2px 6px;border-radius:3px;font-size:12px;
-.pros=color:green;font-weight:500;
-.step=color:#1976d2;
----
-Sidebar Configuration Methods
-    {#method1}Method 1: Index.md Based Control          //v    {.pros}Full Control
-        {.step}Configure children in Index.md          // Complete sidebar customization
-        {.step}No individual frontmatter needed        // Maintenance-friendly  
-        {.pros}Perfect for complex projects             // Like KubeJS series
-        {.pros}Predictable structure generation         // Full control over sub-categories
-    {#method2}Method 2: Frontmatter Based              //+    {.pros}Simple Setup
-        {.step}Basic root config in Index.md           // Minimal setup required
-        {.step}Set noguide: true in articles           // Individual article control
-        {.step}Configure title in frontmatter          // Article-specific titles
-        {.pros}Simple maintenance                       // Easy for individual articles
-        {.pros}Flexible article management              // Per-document control
-</LiteTree>
-
-:::alert {"type": "info", "title": "Navigation Guidance"}
-Since document content mainly relies on sidebar and navigation bar for guidance, please ensure sidebar synchronization when writing documentation content. If you have questions, try consulting responsible members.
+::: v-success Optional Fields
+- **`description`** (`string`) - Page description, used for SEO
+- **`authors`** (`string[]`) - List of page authors
+- **`progress`** (`number`) - Document completion progress (0-100)
+- **`state`** (`string`) - Document status
+- **`hidden`** (`boolean`) - Hide page
 :::
 
-:::alert {"type": "tip", "title": "Important Note"}
-To ensure automatic generation of Prev and Next, please do not write content in index.md but only use it as a sidebar generator.
-:::
+::::
 
-## Article Writing Standards {#Article}
-
-This section explains necessary standards. Although the standards will generally clarify the details to pay attention to, please still focus on `Pull Request` feedback.
-
-:::alert {"type": "success", "title": "Standards Purpose"}
-The purpose of standards is to ensure consistency in documentation style and guidance, helping readers better digest content. Part of the standards reference [MCMOD Writing Standards](https://bbs.mcmod.cn/thread-646-1-1.html). Standards do not constrain third-party documentation but do not allow **excessive deviation from article intent expression**.
-:::
-
-### Headings {#Title}
-
-:::alert {"type": "error", "title": "Critical Requirement"}
-You **must** follow heading usage standards, <font color=red>**otherwise your submission will never pass**</font>.
-:::
-
-Heading hierarchy should be progressive, and `H1` level headings should appear at the top and only once.
-
-**Example Structure:**
-
-<LiteTree>
-// Define heading styles
-#h1=color:white;background:#d32f2f;padding:3px 8px;border-radius:4px;font-weight:bold;
-#h2=color:white;background:#1976d2;padding:2px 6px;border-radius:3px;
-#h3=color:white;background:#388e3c;padding:2px 6px;border-radius:3px;
-#h4=color:white;background:#f57c00;padding:2px 6px;border-radius:3px;
----
-Document Structure
-    {#h1}# Primary Heading                      // Only one per document //!
-        {#h2}## Secondary Heading              // Multiple allowed //v
-            {#h3}### Tertiary Heading          // Nested under H2 //v
-                {#h4}#### Quaternary Heading   // Nested under H3 //v
-        {#h2}## Another Secondary Heading      // Same level as above //v
-            {#h3}### Another Tertiary Heading  // Nested structure //v
-                {#h4}#### Another Quaternary   // Proper nesting //v
-</LiteTree>
-
-### Custom Anchors {#anchor}
-
-Anchors `{#custom-anchor}` are a `VitePress` supported `Markdown` extension. Using them prevents links from becoming lengthy characters due to Chinese titles when copied. For example, [this link](#Article) is a link without custom anchors, while [this one](#Title) is optimized with anchors.
-
-We generally encourage using anchors for easier sharing.
-
-## Styles and Plugins {#Style&Plugin}
-
-:::alert {"type": "info", "title": "Optional Content"}
-This section content is **non-mandatory**.
-:::
-
-This documentation has built-in `beautification styles` and similar `plugins` that help writers design more vivid documentation content, avoid plain text wearing down reader patience, and help authors guide readers to truly important sections.
-
-<font size = 1>The guidance mentioned here emphasizes the primary and secondary relationship of content. Generally, all written content is useful information, but typography and styles are needed to ensure readers get the most useful parts.</font>
-
-### Styles {#Style}
-
-The documentation has organized current supported styles in a separate [article](./styleList.md). If you have needs in this area, you can check this content before writing.
-
-:::alert {"type": "tip", "title": "Basic Requirements"}
-Even if you won't use complex styles, please understand basic [Markdown formatting](https://markdown.com.cn/basic-syntax/) and VitePress [Markdown extensions](https://vitepress.dev/zh/guide/markdown) before writing documentation.
-:::
-
-### Plugins {#Plugin}
-
-The documentation has some built-in `plugins/components`, generally added to serve specific scenarios. You can view them [here](./samples.md).
-
-### Documentation Configuration {#doc-config}
-
-All documentation files have the following [frontmatter](#frontmatter) configuration fields:
-
-:::alert {"type": "info", "title": "VitePress Compatibility"}
-This site also supports VitePress native frontmatter styles. For details, see [here](https://vitepress.dev/zh/reference/frontmatter-config).
-:::
-
-| Configuration Field | Purpose | Type | Default Value |
-|-----------|--------------------------------|---------|---------|
-| `title` | Set title displayed in sidebar (uses filename if not set) | string | `N/A` |
-| `noguide` | Whether this article appears in sidebar (false = show, true = hide) | boolean | `false` |
-| `backPath` | Set destination when clicking BackButton | string | `N/A` |
-| `authors` | Set additional authors for this article, displayed in contributors section | string[] | `N/A` |
-| `showComment` | Whether to show comment section | boolean | `true` |
-| `gitChangelog` | Whether to show contributors and page history | boolean | `true` |
-| `progress` | Set article writing progress | int | `N/A` |
-| `description` | Set article preview content | string | `N/A` |
-
-:::details Configuration Example
-
+::: alert {"type": "info", "title": "Frontmatter Example"}
 ```yaml
 ---
-title: Example
-backPath: ../
-authors: ['M1hono', 'skyraah'] # You must submit at least one contribution to properly display your avatar and link
-showComment: false
-gitChangelog: false
-progress: 100
-description: This article provides documentation writing standards for this site!
+title: KubeJS Event System
+description: Deep dive into KubeJS event handling mechanisms
+priority: 10
+authors: ["Zhang San", "Li Si"]
+progress: 85
+state: preliminary
 ---
 ```
-
 :::
 
-#### frontmatter Declaration {#frontmatter}
+### Titles and Anchors {#headings-anchors}
 
-At the beginning of each Markdown file, use `---` to create frontmatter configuration:
+::: stepper
+@tab Title Hierarchy
+- Each document **must** have exactly one `H1` level title (`#`)
+- Title hierarchy should increment progressively, no skipping levels
+- Recommend using up to `H4` level maximum
 
-```yaml
----
-# Add your frontmatter here
----
+@tab Anchor Settings
+To generate clear URLs, please add custom anchors to all titles:
+```markdown
+### This is a Title {#a-clear-anchor}
 ```
-
-**Alternative Solutions:**
-- Use standard code block syntax highlighting
-- Add type explanations in comments manually
-- Utilize JSDoc-style type annotations
-
-## Content {#Content}
-
-<LiteTree>
-// Define priority styles
-#critical=color:white;background:#d32f2f;padding:2px 6px;border-radius:3px;font-size:12px;
-#important=color:white;background:#ff9800;padding:2px 6px;border-radius:3px;font-size:12px;
-#guideline=color:white;background:#4caf50;padding:2px 6px;border-radius:3px;font-size:12px;
----
-Content Guidelines
-    {#critical}Content Accuracy                         //!    Primary standard
-        Ensure correct content                          // Verify information accuracy
-        Discuss with community and QQ groups           // Collaborate for verification
-    {#guideline}Content Creation Process               //+    Collaborative approach  
-        Create imperfect initial content               // Don't worry about perfection
-        Collaborate for refinement and improvement      // Work together for quality
-    {#important}Community Communication                //v    Essential practice
-        Communicate frequently with community           // Stay connected
-        Never arbitrarily delete/modify others' work   // Respect others' contributions
-</LiteTree>
-
-:::alert {"type": "error", "title": "Critical Warning"}
-Please **DO NOT** arbitrarily **delete or modify** others' creations!!!
 :::
 
-## About Collaboration {#Cooperation}
+::::: chart-grid {"columns": 3, "gap": "20px"}
 
-This documentation has no complicated collaboration standards, only one: **ask the original author's opinion first** before making modifications!! For the third time!!
-
-### Third-party Documentation Collaboration
-
-If you are the owner of third-party documentation and want your name to appear in the author column, you need to submit at least one content modification to be properly recognized by the program, otherwise links and avatars cannot be generated normally.
-
-:::alert {"type": "success", "title": "Collaboration Summary"}
-- **Respect**: Always ask before modifying others' work
-- **Communicate**: Stay in touch with the community
-- **Contribute**: Submit at least one change for proper recognition
-- **Quality**: Focus on content accuracy and consistency
+::: v-warning Respect Originality
+Please do not arbitrarily modify or delete others' work on a large scale without communicating with the original author.
 :::
+
+::: v-info Active Communication
+If you have any questions or suggestions, please communicate through GitHub Issues or the community.
+:::
+
+::: v-success Contributor Attribution
+Third-party document authors need to submit at least one content modification for the system to correctly identify GitHub accounts.
+:::
+
+:::::

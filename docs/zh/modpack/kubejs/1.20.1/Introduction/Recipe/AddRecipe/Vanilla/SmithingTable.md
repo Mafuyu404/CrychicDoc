@@ -1,3 +1,8 @@
+---
+title: 锻造台
+hidden: false
+priority: 0
+---
 # 锻造台
 
 ## 前言

@@ -1,0 +1,5282 @@
+{
+  "tags": {
+    "Minecraft1_20_4": {
+      "name": "Minecraft1_20_4",
+      "count": 53,
+      "pages": [
+        {
+          "title": "01 环境配置",
+          "description": "01 环境配置 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_01_Environment",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "02 第一个物品",
+          "description": "02 第一个物品 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_02_FirstItemRegistry",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "03 创造模式物品栏",
+          "description": "03 创造模式物品栏 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_03_CreativeModTabs",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "04 添加一个方块",
+          "description": "04 添加一个方块 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_04_Register_Block",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "05 方块状态",
+          "description": "05 方块状态 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_05_BlockState",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "06 物品属性覆盖",
+          "description": "06 物品属性覆盖 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_06_ItemAttributeOveride",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "07 数据生成",
+          "description": "07 数据生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_07_Datagen",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "08 食物",
+          "description": "08 食物 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_08_Food",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "09 武器",
+          "description": "09 武器 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_09_Weapon",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "10 工具",
+          "description": "10 工具 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_10_Tool",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "11 装备",
+          "description": "11 装备 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_11_Armor",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "12 自定义方块模型和非实体方块",
+          "description": "12 自定义方块模型和非实体方块 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_12_CustomBlockModel_Non_BlockEntityBlock",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "13 方块渲染类型",
+          "description": "13 方块渲染类型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_13_BlockRenderType",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "14 自定义物品模型",
+          "description": "14 自定义物品模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_14_CustomItemModel",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "15 合成表",
+          "description": "15 合成表 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_15_CraftTable",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "16 战利品表",
+          "description": "16 战利品表 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_16_LootTable",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "17 Tag",
+          "description": "17 Tag 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_17 Tag",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "18 OBJ模型",
+          "description": "18 OBJ模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_18 OBJ_Model",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "19 添加画",
+          "description": "19 添加画 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_19_Register_Paint",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "20 添加新的村民",
+          "description": "20 添加新的村民 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_20_Register_Villager_Type",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "21 第一方块实体和数据保存",
+          "description": "21 第一方块实体和数据保存 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_21_FirstBlockEntity_DataStorage",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "22  实体方块tick",
+          "description": "22  实体方块tick 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_22 _BlockEntityTick",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "23 方块实体内置的数据同步",
+          "description": "23 方块实体内置的数据同步 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_23_BlockEntityDataSync",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "24 烘焙模型",
+          "description": "24 烘焙模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_24 BakedModel",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "25 方块实体渲染",
+          "description": "25 方块实体渲染 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_25_BlockEntityRender",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "26 物品特殊渲染",
+          "description": "26 物品特殊渲染 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_26_SpecialItemRender",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "27 网络",
+          "description": "27 网络 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_27_Networking",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "28 便利添加创造模式物品栏【可选】",
+          "description": "28 便利添加创造模式物品栏【可选】 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_28_EasyToModifyTabs_Optional",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "29 第一个实体",
+          "description": "29 第一个实体 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_29_FirstEntity",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "30 第一个生物",
+          "description": "30 第一个生物 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_30_FirstMob",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "31 附魔",
+          "description": "31 附魔 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_31_Enchantment",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "32 构建能力",
+          "description": "32 构建能力 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_32_BuildCapability",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "33 原版提供的能力ItemHander物品处理能力",
+          "description": "33 原版提供的能力ItemHander物品处理能力 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_33_ItemHander",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "34 能力提供附加",
+          "description": "34 能力提供附加 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_34_Capability_Extra",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "35 LevelSaveData",
+          "description": "35 LevelSaveData 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_35_LevelSaveData",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "36 第一个GUI",
+          "description": "36 第一个GUI 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_36_FirstGUI",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "37 menu",
+          "description": "37 menu 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_37_Menu",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "38 HUD",
+          "description": "38 HUD 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_38_HUD",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "39 注册热键",
+          "description": "39 注册热键 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_39_RegisterKey",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "40 流体",
+          "description": "40 流体 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_40_Fluid",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "41 饥渴值例子",
+          "description": "41 饥渴值例子 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_41_NutritionSample",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "42 矿物生成",
+          "description": "42 矿物生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_42_OreGeneration",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "43 结构生成",
+          "description": "43 结构生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_43_StructureGeneration",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "44 如何添加模组和lib",
+          "description": "44 如何添加模组和lib 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_44_Dependencies_LIb",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "45 添加生物群系",
+          "description": "45 添加生物群系 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_45_RegisterBiome",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "46 添加维度",
+          "description": "46 添加维度 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_46_RegisterDimension",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "47 命令",
+          "description": "47 命令 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_47_Command",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "48 成就",
+          "description": "48 成就 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_48_Advancement",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "49 配置信息设置",
+          "description": "49 配置信息设置 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_49_Config",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "50 药水效果和药水",
+          "description": "50 药水效果和药水 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_50_MobEffect_Potion",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "51  粒子",
+          "description": "51  粒子 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_51_Particle",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "52 声音",
+          "description": "52 声音 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_52_Sound",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "53 更新到Minecraft 1.20.6版本",
+          "description": "53 Minecraft Neoforge 版本更新",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_53_Update_1.20.6",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "NeoForge20_3": {
+      "name": "NeoForge20_3",
+      "count": 53,
+      "pages": [
+        {
+          "title": "01 环境配置",
+          "description": "01 环境配置 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_01_Environment",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "02 第一个物品",
+          "description": "02 第一个物品 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_02_FirstItemRegistry",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "03 创造模式物品栏",
+          "description": "03 创造模式物品栏 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_03_CreativeModTabs",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "04 添加一个方块",
+          "description": "04 添加一个方块 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_04_Register_Block",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "05 方块状态",
+          "description": "05 方块状态 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_05_BlockState",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "06 物品属性覆盖",
+          "description": "06 物品属性覆盖 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_06_ItemAttributeOveride",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "07 数据生成",
+          "description": "07 数据生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_07_Datagen",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "08 食物",
+          "description": "08 食物 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_08_Food",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "09 武器",
+          "description": "09 武器 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_09_Weapon",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "10 工具",
+          "description": "10 工具 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_10_Tool",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "11 装备",
+          "description": "11 装备 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_11_Armor",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "12 自定义方块模型和非实体方块",
+          "description": "12 自定义方块模型和非实体方块 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_12_CustomBlockModel_Non_BlockEntityBlock",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "13 方块渲染类型",
+          "description": "13 方块渲染类型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_13_BlockRenderType",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "14 自定义物品模型",
+          "description": "14 自定义物品模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_14_CustomItemModel",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "15 合成表",
+          "description": "15 合成表 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_15_CraftTable",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "16 战利品表",
+          "description": "16 战利品表 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_16_LootTable",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "17 Tag",
+          "description": "17 Tag 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_17 Tag",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "18 OBJ模型",
+          "description": "18 OBJ模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_18 OBJ_Model",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "19 添加画",
+          "description": "19 添加画 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_19_Register_Paint",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "20 添加新的村民",
+          "description": "20 添加新的村民 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_20_Register_Villager_Type",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "21 第一方块实体和数据保存",
+          "description": "21 第一方块实体和数据保存 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_21_FirstBlockEntity_DataStorage",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "22  实体方块tick",
+          "description": "22  实体方块tick 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_22 _BlockEntityTick",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "23 方块实体内置的数据同步",
+          "description": "23 方块实体内置的数据同步 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_23_BlockEntityDataSync",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "24 烘焙模型",
+          "description": "24 烘焙模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_24 BakedModel",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "25 方块实体渲染",
+          "description": "25 方块实体渲染 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_25_BlockEntityRender",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "26 物品特殊渲染",
+          "description": "26 物品特殊渲染 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_26_SpecialItemRender",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "27 网络",
+          "description": "27 网络 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_27_Networking",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "28 便利添加创造模式物品栏【可选】",
+          "description": "28 便利添加创造模式物品栏【可选】 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_28_EasyToModifyTabs_Optional",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "29 第一个实体",
+          "description": "29 第一个实体 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_29_FirstEntity",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "30 第一个生物",
+          "description": "30 第一个生物 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_30_FirstMob",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "31 附魔",
+          "description": "31 附魔 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_31_Enchantment",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "32 构建能力",
+          "description": "32 构建能力 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_32_BuildCapability",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "33 原版提供的能力ItemHander物品处理能力",
+          "description": "33 原版提供的能力ItemHander物品处理能力 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_33_ItemHander",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "34 能力提供附加",
+          "description": "34 能力提供附加 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_34_Capability_Extra",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "35 LevelSaveData",
+          "description": "35 LevelSaveData 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_35_LevelSaveData",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "36 第一个GUI",
+          "description": "36 第一个GUI 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_36_FirstGUI",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "37 menu",
+          "description": "37 menu 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_37_Menu",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "38 HUD",
+          "description": "38 HUD 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_38_HUD",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "39 注册热键",
+          "description": "39 注册热键 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_39_RegisterKey",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "40 流体",
+          "description": "40 流体 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_40_Fluid",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "41 饥渴值例子",
+          "description": "41 饥渴值例子 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_41_NutritionSample",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "42 矿物生成",
+          "description": "42 矿物生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_42_OreGeneration",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "43 结构生成",
+          "description": "43 结构生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_43_StructureGeneration",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "44 如何添加模组和lib",
+          "description": "44 如何添加模组和lib 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_44_Dependencies_LIb",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "45 添加生物群系",
+          "description": "45 添加生物群系 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_45_RegisterBiome",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "46 添加维度",
+          "description": "46 添加维度 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_46_RegisterDimension",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "47 命令",
+          "description": "47 命令 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_47_Command",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "48 成就",
+          "description": "48 成就 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_48_Advancement",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "49 配置信息设置",
+          "description": "49 配置信息设置 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_49_Config",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "50 药水效果和药水",
+          "description": "50 药水效果和药水 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_50_MobEffect_Potion",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "51  粒子",
+          "description": "51  粒子 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_51_Particle",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "52 声音",
+          "description": "52 声音 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_52_Sound",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "53 更新到Minecraft 1.20.6版本",
+          "description": "53 Minecraft Neoforge 版本更新",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_53_Update_1.20.6",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Tutorial": {
+      "name": "Tutorial",
+      "count": 53,
+      "pages": [
+        {
+          "title": "01 环境配置",
+          "description": "01 环境配置 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_01_Environment",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "02 第一个物品",
+          "description": "02 第一个物品 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_02_FirstItemRegistry",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "03 创造模式物品栏",
+          "description": "03 创造模式物品栏 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_03_CreativeModTabs",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "04 添加一个方块",
+          "description": "04 添加一个方块 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_04_Register_Block",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "05 方块状态",
+          "description": "05 方块状态 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_05_BlockState",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "06 物品属性覆盖",
+          "description": "06 物品属性覆盖 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_06_ItemAttributeOveride",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "07 数据生成",
+          "description": "07 数据生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_07_Datagen",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "08 食物",
+          "description": "08 食物 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_08_Food",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "09 武器",
+          "description": "09 武器 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_09_Weapon",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "10 工具",
+          "description": "10 工具 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_10_Tool",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "11 装备",
+          "description": "11 装备 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_11_Armor",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "12 自定义方块模型和非实体方块",
+          "description": "12 自定义方块模型和非实体方块 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_12_CustomBlockModel_Non_BlockEntityBlock",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "13 方块渲染类型",
+          "description": "13 方块渲染类型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_13_BlockRenderType",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "14 自定义物品模型",
+          "description": "14 自定义物品模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_14_CustomItemModel",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "15 合成表",
+          "description": "15 合成表 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_15_CraftTable",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "16 战利品表",
+          "description": "16 战利品表 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_16_LootTable",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "17 Tag",
+          "description": "17 Tag 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_17 Tag",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "18 OBJ模型",
+          "description": "18 OBJ模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_18 OBJ_Model",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "19 添加画",
+          "description": "19 添加画 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_19_Register_Paint",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "20 添加新的村民",
+          "description": "20 添加新的村民 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_20_Register_Villager_Type",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "21 第一方块实体和数据保存",
+          "description": "21 第一方块实体和数据保存 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_21_FirstBlockEntity_DataStorage",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "22  实体方块tick",
+          "description": "22  实体方块tick 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_22 _BlockEntityTick",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "23 方块实体内置的数据同步",
+          "description": "23 方块实体内置的数据同步 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_23_BlockEntityDataSync",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "24 烘焙模型",
+          "description": "24 烘焙模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_24 BakedModel",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "25 方块实体渲染",
+          "description": "25 方块实体渲染 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_25_BlockEntityRender",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "26 物品特殊渲染",
+          "description": "26 物品特殊渲染 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_26_SpecialItemRender",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "27 网络",
+          "description": "27 网络 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_27_Networking",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "28 便利添加创造模式物品栏【可选】",
+          "description": "28 便利添加创造模式物品栏【可选】 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_28_EasyToModifyTabs_Optional",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "29 第一个实体",
+          "description": "29 第一个实体 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_29_FirstEntity",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "30 第一个生物",
+          "description": "30 第一个生物 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_30_FirstMob",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "31 附魔",
+          "description": "31 附魔 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_31_Enchantment",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "32 构建能力",
+          "description": "32 构建能力 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_32_BuildCapability",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "33 原版提供的能力ItemHander物品处理能力",
+          "description": "33 原版提供的能力ItemHander物品处理能力 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_33_ItemHander",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "34 能力提供附加",
+          "description": "34 能力提供附加 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_34_Capability_Extra",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "35 LevelSaveData",
+          "description": "35 LevelSaveData 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_35_LevelSaveData",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "36 第一个GUI",
+          "description": "36 第一个GUI 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_36_FirstGUI",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "37 menu",
+          "description": "37 menu 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_37_Menu",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "38 HUD",
+          "description": "38 HUD 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_38_HUD",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "39 注册热键",
+          "description": "39 注册热键 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_39_RegisterKey",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "40 流体",
+          "description": "40 流体 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_40_Fluid",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "41 饥渴值例子",
+          "description": "41 饥渴值例子 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_41_NutritionSample",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "42 矿物生成",
+          "description": "42 矿物生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_42_OreGeneration",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "43 结构生成",
+          "description": "43 结构生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_43_StructureGeneration",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "44 如何添加模组和lib",
+          "description": "44 如何添加模组和lib 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_44_Dependencies_LIb",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "45 添加生物群系",
+          "description": "45 添加生物群系 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_45_RegisterBiome",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "46 添加维度",
+          "description": "46 添加维度 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_46_RegisterDimension",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "47 命令",
+          "description": "47 命令 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_47_Command",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "48 成就",
+          "description": "48 成就 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_48_Advancement",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "49 配置信息设置",
+          "description": "49 配置信息设置 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_49_Config",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "50 药水效果和药水",
+          "description": "50 药水效果和药水 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_50_MobEffect_Potion",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "51  粒子",
+          "description": "51  粒子 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_51_Particle",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "52 声音",
+          "description": "52 声音 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_52_Sound",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "53 更新到Minecraft 1.20.6版本",
+          "description": "53 Minecraft Neoforge 版本更新",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_53_Update_1.20.6",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "KubeJS": {
+      "name": "KubeJS",
+      "count": 17,
+      "pages": [
+        {
+          "title": "实体属性",
+          "description": "Attribute 在 KubeJS 中的完整操作指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Attribute",
+          "tags": [
+            "KubeJS",
+            "Attribute",
+            "LivingEntity"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "Brain",
+          "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "EntityJS",
+            "Brain",
+            "AI"
+          ],
+          "progress": 85,
+          "language": "zh-CN"
+        },
+        {
+          "title": "目录",
+          "description": "KubeJS 实体系统相关文档导航与索引",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
+          "tags": [
+            "KubeJS",
+            "Entity"
+          ],
+          "progress": 70,
+          "language": "zh-CN"
+        },
+        {
+          "title": "Goal",
+          "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Goal"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "生物实体",
+          "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "实体方法",
+          "description": "KubeJS 实体 API 常用方法分类与用法参考",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Methods"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "Mob",
+          "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "玩家实体",
+          "description": "Player 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "药水效果",
+          "description": "LivingEntity 药水效果系统完整操作指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/PotionEffects",
+          "tags": [
+            "KubeJS",
+            "LivingEntity",
+            "PotionEffects"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "生成实体",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Spawn",
+          "tags": [
+            "KubeJS",
+            "Entity"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "向量",
+          "description": "向量与坐标",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Vector",
+          "tags": [
+            "KubeJS",
+            "Vector"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "集合",
+          "description": "Java Collection 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
+          "tags": [
+            "KubeJS",
+            "Collection",
+            "Java",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "列表",
+          "description": "Java List 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
+          "tags": [
+            "KubeJS",
+            "List",
+            "Array",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "Map映射",
+          "description": "Java Map 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
+          "tags": [
+            "KubeJS",
+            "Map",
+            "HashMap",
+            "键值对"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "持久化数据",
+          "description": "persistentData 在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/persistentData",
+          "tags": [
+            "KubeJS",
+            "persistentData",
+            "Data",
+            "Storage"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "JSDoc文档",
+          "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 100,
+          "language": "zh-CN"
+        },
+        {
+          "title": "JSDoc的实例",
+          "description": "介绍如何在 KubeJS 脚本中用 JSDoc 提升类型补全，涵盖多种 JSDoc 标签在实际脚本中的独特应用。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocKubeJSUsage",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Attribute": {
+      "name": "Attribute",
+      "count": 1,
+      "pages": [
+        {
+          "title": "实体属性",
+          "description": "Attribute 在 KubeJS 中的完整操作指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Attribute",
+          "tags": [
+            "KubeJS",
+            "Attribute",
+            "LivingEntity"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "LivingEntity": {
+      "name": "LivingEntity",
+      "count": 3,
+      "pages": [
+        {
+          "title": "实体属性",
+          "description": "Attribute 在 KubeJS 中的完整操作指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Attribute",
+          "tags": [
+            "KubeJS",
+            "Attribute",
+            "LivingEntity"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "生物实体",
+          "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "药水效果",
+          "description": "LivingEntity 药水效果系统完整操作指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/PotionEffects",
+          "tags": [
+            "KubeJS",
+            "LivingEntity",
+            "PotionEffects"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "EntityJS": {
+      "name": "EntityJS",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Brain",
+          "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "EntityJS",
+            "Brain",
+            "AI"
+          ],
+          "progress": 85,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Brain": {
+      "name": "Brain",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Brain",
+          "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "EntityJS",
+            "Brain",
+            "AI"
+          ],
+          "progress": 85,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "AI": {
+      "name": "AI",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Brain",
+          "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "EntityJS",
+            "Brain",
+            "AI"
+          ],
+          "progress": 85,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Entity": {
+      "name": "Entity",
+      "count": 7,
+      "pages": [
+        {
+          "title": "目录",
+          "description": "KubeJS 实体系统相关文档导航与索引",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
+          "tags": [
+            "KubeJS",
+            "Entity"
+          ],
+          "progress": 70,
+          "language": "zh-CN"
+        },
+        {
+          "title": "Goal",
+          "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Goal"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "生物实体",
+          "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "实体方法",
+          "description": "KubeJS 实体 API 常用方法分类与用法参考",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Methods"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "Mob",
+          "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "玩家实体",
+          "description": "Player 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "生成实体",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Spawn",
+          "tags": [
+            "KubeJS",
+            "Entity"
+          ],
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Goal": {
+      "name": "Goal",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Goal",
+          "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Goal"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Methods": {
+      "name": "Methods",
+      "count": 1,
+      "pages": [
+        {
+          "title": "实体方法",
+          "description": "KubeJS 实体 API 常用方法分类与用法参考",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Methods"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Mob": {
+      "name": "Mob",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Mob",
+          "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Player": {
+      "name": "Player",
+      "count": 1,
+      "pages": [
+        {
+          "title": "玩家实体",
+          "description": "Player 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "PotionEffects": {
+      "name": "PotionEffects",
+      "count": 1,
+      "pages": [
+        {
+          "title": "药水效果",
+          "description": "LivingEntity 药水效果系统完整操作指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/PotionEffects",
+          "tags": [
+            "KubeJS",
+            "LivingEntity",
+            "PotionEffects"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Vector": {
+      "name": "Vector",
+      "count": 1,
+      "pages": [
+        {
+          "title": "向量",
+          "description": "向量与坐标",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Vector",
+          "tags": [
+            "KubeJS",
+            "Vector"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Collection": {
+      "name": "Collection",
+      "count": 1,
+      "pages": [
+        {
+          "title": "集合",
+          "description": "Java Collection 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
+          "tags": [
+            "KubeJS",
+            "Collection",
+            "Java",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Java": {
+      "name": "Java",
+      "count": 1,
+      "pages": [
+        {
+          "title": "集合",
+          "description": "Java Collection 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
+          "tags": [
+            "KubeJS",
+            "Collection",
+            "Java",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "数据结构": {
+      "name": "数据结构",
+      "count": 2,
+      "pages": [
+        {
+          "title": "集合",
+          "description": "Java Collection 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
+          "tags": [
+            "KubeJS",
+            "Collection",
+            "Java",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "列表",
+          "description": "Java List 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
+          "tags": [
+            "KubeJS",
+            "List",
+            "Array",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "List": {
+      "name": "List",
+      "count": 1,
+      "pages": [
+        {
+          "title": "列表",
+          "description": "Java List 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
+          "tags": [
+            "KubeJS",
+            "List",
+            "Array",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Array": {
+      "name": "Array",
+      "count": 1,
+      "pages": [
+        {
+          "title": "列表",
+          "description": "Java List 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
+          "tags": [
+            "KubeJS",
+            "List",
+            "Array",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Map": {
+      "name": "Map",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Map映射",
+          "description": "Java Map 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
+          "tags": [
+            "KubeJS",
+            "Map",
+            "HashMap",
+            "键值对"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "HashMap": {
+      "name": "HashMap",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Map映射",
+          "description": "Java Map 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
+          "tags": [
+            "KubeJS",
+            "Map",
+            "HashMap",
+            "键值对"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "键值对": {
+      "name": "键值对",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Map映射",
+          "description": "Java Map 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
+          "tags": [
+            "KubeJS",
+            "Map",
+            "HashMap",
+            "键值对"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "persistentData": {
+      "name": "persistentData",
+      "count": 1,
+      "pages": [
+        {
+          "title": "持久化数据",
+          "description": "persistentData 在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/persistentData",
+          "tags": [
+            "KubeJS",
+            "persistentData",
+            "Data",
+            "Storage"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Data": {
+      "name": "Data",
+      "count": 1,
+      "pages": [
+        {
+          "title": "持久化数据",
+          "description": "persistentData 在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/persistentData",
+          "tags": [
+            "KubeJS",
+            "persistentData",
+            "Data",
+            "Storage"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Storage": {
+      "name": "Storage",
+      "count": 1,
+      "pages": [
+        {
+          "title": "持久化数据",
+          "description": "persistentData 在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/persistentData",
+          "tags": [
+            "KubeJS",
+            "persistentData",
+            "Data",
+            "Storage"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "JSDoc": {
+      "name": "JSDoc",
+      "count": 4,
+      "pages": [
+        {
+          "title": "JSDoc文档",
+          "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 100,
+          "language": "zh-CN"
+        },
+        {
+          "title": "JSDoc基础",
+          "description": "介绍 JSDoc 的基本语法、常用标签和在 JavaScript/KubeJS/ProbeJS 中的通用注释方法，适合新手入门。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocBasics",
+          "tags": [
+            "JSDoc",
+            "Basic"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "JSDoc的实例",
+          "description": "介绍如何在 KubeJS 脚本中用 JSDoc 提升类型补全，涵盖多种 JSDoc 标签在实际脚本中的独特应用。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocKubeJSUsage",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "ProbeJS事件",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "ProbeJS": {
+      "name": "ProbeJS",
+      "count": 3,
+      "pages": [
+        {
+          "title": "JSDoc文档",
+          "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 100,
+          "language": "zh-CN"
+        },
+        {
+          "title": "JSDoc的实例",
+          "description": "介绍如何在 KubeJS 脚本中用 JSDoc 提升类型补全，涵盖多种 JSDoc 标签在实际脚本中的独特应用。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocKubeJSUsage",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "ProbeJS事件",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Basic": {
+      "name": "Basic",
+      "count": 1,
+      "pages": [
+        {
+          "title": "JSDoc基础",
+          "description": "介绍 JSDoc 的基本语法、常用标签和在 JavaScript/KubeJS/ProbeJS 中的通用注释方法，适合新手入门。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocBasics",
+          "tags": [
+            "JSDoc",
+            "Basic"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    "Events": {
+      "name": "Events",
+      "count": 1,
+      "pages": [
+        {
+          "title": "ProbeJS事件",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "zh-CN"
+        }
+      ]
+    }
+  },
+  "sortedTags": [
+    {
+      "name": "Minecraft1_20_4",
+      "count": 53,
+      "pages": [
+        {
+          "title": "01 环境配置",
+          "description": "01 环境配置 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_01_Environment",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "02 第一个物品",
+          "description": "02 第一个物品 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_02_FirstItemRegistry",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "03 创造模式物品栏",
+          "description": "03 创造模式物品栏 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_03_CreativeModTabs",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "04 添加一个方块",
+          "description": "04 添加一个方块 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_04_Register_Block",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "05 方块状态",
+          "description": "05 方块状态 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_05_BlockState",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "06 物品属性覆盖",
+          "description": "06 物品属性覆盖 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_06_ItemAttributeOveride",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "07 数据生成",
+          "description": "07 数据生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_07_Datagen",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "08 食物",
+          "description": "08 食物 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_08_Food",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "09 武器",
+          "description": "09 武器 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_09_Weapon",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "10 工具",
+          "description": "10 工具 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_10_Tool",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "11 装备",
+          "description": "11 装备 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_11_Armor",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "12 自定义方块模型和非实体方块",
+          "description": "12 自定义方块模型和非实体方块 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_12_CustomBlockModel_Non_BlockEntityBlock",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "13 方块渲染类型",
+          "description": "13 方块渲染类型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_13_BlockRenderType",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "14 自定义物品模型",
+          "description": "14 自定义物品模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_14_CustomItemModel",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "15 合成表",
+          "description": "15 合成表 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_15_CraftTable",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "16 战利品表",
+          "description": "16 战利品表 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_16_LootTable",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "17 Tag",
+          "description": "17 Tag 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_17 Tag",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "18 OBJ模型",
+          "description": "18 OBJ模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_18 OBJ_Model",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "19 添加画",
+          "description": "19 添加画 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_19_Register_Paint",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "20 添加新的村民",
+          "description": "20 添加新的村民 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_20_Register_Villager_Type",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "21 第一方块实体和数据保存",
+          "description": "21 第一方块实体和数据保存 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_21_FirstBlockEntity_DataStorage",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "22  实体方块tick",
+          "description": "22  实体方块tick 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_22 _BlockEntityTick",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "23 方块实体内置的数据同步",
+          "description": "23 方块实体内置的数据同步 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_23_BlockEntityDataSync",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "24 烘焙模型",
+          "description": "24 烘焙模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_24 BakedModel",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "25 方块实体渲染",
+          "description": "25 方块实体渲染 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_25_BlockEntityRender",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "26 物品特殊渲染",
+          "description": "26 物品特殊渲染 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_26_SpecialItemRender",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "27 网络",
+          "description": "27 网络 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_27_Networking",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "28 便利添加创造模式物品栏【可选】",
+          "description": "28 便利添加创造模式物品栏【可选】 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_28_EasyToModifyTabs_Optional",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "29 第一个实体",
+          "description": "29 第一个实体 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_29_FirstEntity",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "30 第一个生物",
+          "description": "30 第一个生物 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_30_FirstMob",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "31 附魔",
+          "description": "31 附魔 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_31_Enchantment",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "32 构建能力",
+          "description": "32 构建能力 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_32_BuildCapability",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "33 原版提供的能力ItemHander物品处理能力",
+          "description": "33 原版提供的能力ItemHander物品处理能力 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_33_ItemHander",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "34 能力提供附加",
+          "description": "34 能力提供附加 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_34_Capability_Extra",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "35 LevelSaveData",
+          "description": "35 LevelSaveData 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_35_LevelSaveData",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "36 第一个GUI",
+          "description": "36 第一个GUI 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_36_FirstGUI",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "37 menu",
+          "description": "37 menu 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_37_Menu",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "38 HUD",
+          "description": "38 HUD 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_38_HUD",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "39 注册热键",
+          "description": "39 注册热键 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_39_RegisterKey",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "40 流体",
+          "description": "40 流体 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_40_Fluid",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "41 饥渴值例子",
+          "description": "41 饥渴值例子 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_41_NutritionSample",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "42 矿物生成",
+          "description": "42 矿物生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_42_OreGeneration",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "43 结构生成",
+          "description": "43 结构生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_43_StructureGeneration",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "44 如何添加模组和lib",
+          "description": "44 如何添加模组和lib 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_44_Dependencies_LIb",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "45 添加生物群系",
+          "description": "45 添加生物群系 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_45_RegisterBiome",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "46 添加维度",
+          "description": "46 添加维度 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_46_RegisterDimension",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "47 命令",
+          "description": "47 命令 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_47_Command",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "48 成就",
+          "description": "48 成就 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_48_Advancement",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "49 配置信息设置",
+          "description": "49 配置信息设置 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_49_Config",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "50 药水效果和药水",
+          "description": "50 药水效果和药水 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_50_MobEffect_Potion",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "51  粒子",
+          "description": "51  粒子 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_51_Particle",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "52 声音",
+          "description": "52 声音 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_52_Sound",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "53 更新到Minecraft 1.20.6版本",
+          "description": "53 Minecraft Neoforge 版本更新",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_53_Update_1.20.6",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "NeoForge20_3",
+      "count": 53,
+      "pages": [
+        {
+          "title": "01 环境配置",
+          "description": "01 环境配置 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_01_Environment",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "02 第一个物品",
+          "description": "02 第一个物品 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_02_FirstItemRegistry",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "03 创造模式物品栏",
+          "description": "03 创造模式物品栏 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_03_CreativeModTabs",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "04 添加一个方块",
+          "description": "04 添加一个方块 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_04_Register_Block",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "05 方块状态",
+          "description": "05 方块状态 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_05_BlockState",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "06 物品属性覆盖",
+          "description": "06 物品属性覆盖 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_06_ItemAttributeOveride",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "07 数据生成",
+          "description": "07 数据生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_07_Datagen",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "08 食物",
+          "description": "08 食物 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_08_Food",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "09 武器",
+          "description": "09 武器 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_09_Weapon",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "10 工具",
+          "description": "10 工具 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_10_Tool",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "11 装备",
+          "description": "11 装备 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_11_Armor",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "12 自定义方块模型和非实体方块",
+          "description": "12 自定义方块模型和非实体方块 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_12_CustomBlockModel_Non_BlockEntityBlock",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "13 方块渲染类型",
+          "description": "13 方块渲染类型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_13_BlockRenderType",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "14 自定义物品模型",
+          "description": "14 自定义物品模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_14_CustomItemModel",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "15 合成表",
+          "description": "15 合成表 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_15_CraftTable",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "16 战利品表",
+          "description": "16 战利品表 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_16_LootTable",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "17 Tag",
+          "description": "17 Tag 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_17 Tag",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "18 OBJ模型",
+          "description": "18 OBJ模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_18 OBJ_Model",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "19 添加画",
+          "description": "19 添加画 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_19_Register_Paint",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "20 添加新的村民",
+          "description": "20 添加新的村民 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_20_Register_Villager_Type",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "21 第一方块实体和数据保存",
+          "description": "21 第一方块实体和数据保存 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_21_FirstBlockEntity_DataStorage",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "22  实体方块tick",
+          "description": "22  实体方块tick 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_22 _BlockEntityTick",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "23 方块实体内置的数据同步",
+          "description": "23 方块实体内置的数据同步 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_23_BlockEntityDataSync",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "24 烘焙模型",
+          "description": "24 烘焙模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_24 BakedModel",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "25 方块实体渲染",
+          "description": "25 方块实体渲染 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_25_BlockEntityRender",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "26 物品特殊渲染",
+          "description": "26 物品特殊渲染 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_26_SpecialItemRender",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "27 网络",
+          "description": "27 网络 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_27_Networking",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "28 便利添加创造模式物品栏【可选】",
+          "description": "28 便利添加创造模式物品栏【可选】 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_28_EasyToModifyTabs_Optional",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "29 第一个实体",
+          "description": "29 第一个实体 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_29_FirstEntity",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "30 第一个生物",
+          "description": "30 第一个生物 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_30_FirstMob",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "31 附魔",
+          "description": "31 附魔 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_31_Enchantment",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "32 构建能力",
+          "description": "32 构建能力 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_32_BuildCapability",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "33 原版提供的能力ItemHander物品处理能力",
+          "description": "33 原版提供的能力ItemHander物品处理能力 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_33_ItemHander",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "34 能力提供附加",
+          "description": "34 能力提供附加 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_34_Capability_Extra",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "35 LevelSaveData",
+          "description": "35 LevelSaveData 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_35_LevelSaveData",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "36 第一个GUI",
+          "description": "36 第一个GUI 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_36_FirstGUI",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "37 menu",
+          "description": "37 menu 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_37_Menu",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "38 HUD",
+          "description": "38 HUD 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_38_HUD",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "39 注册热键",
+          "description": "39 注册热键 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_39_RegisterKey",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "40 流体",
+          "description": "40 流体 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_40_Fluid",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "41 饥渴值例子",
+          "description": "41 饥渴值例子 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_41_NutritionSample",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "42 矿物生成",
+          "description": "42 矿物生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_42_OreGeneration",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "43 结构生成",
+          "description": "43 结构生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_43_StructureGeneration",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "44 如何添加模组和lib",
+          "description": "44 如何添加模组和lib 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_44_Dependencies_LIb",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "45 添加生物群系",
+          "description": "45 添加生物群系 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_45_RegisterBiome",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "46 添加维度",
+          "description": "46 添加维度 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_46_RegisterDimension",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "47 命令",
+          "description": "47 命令 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_47_Command",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "48 成就",
+          "description": "48 成就 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_48_Advancement",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "49 配置信息设置",
+          "description": "49 配置信息设置 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_49_Config",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "50 药水效果和药水",
+          "description": "50 药水效果和药水 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_50_MobEffect_Potion",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "51  粒子",
+          "description": "51  粒子 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_51_Particle",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "52 声音",
+          "description": "52 声音 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_52_Sound",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "53 更新到Minecraft 1.20.6版本",
+          "description": "53 Minecraft Neoforge 版本更新",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_53_Update_1.20.6",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Tutorial",
+      "count": 53,
+      "pages": [
+        {
+          "title": "01 环境配置",
+          "description": "01 环境配置 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_01_Environment",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "02 第一个物品",
+          "description": "02 第一个物品 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_02_FirstItemRegistry",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "03 创造模式物品栏",
+          "description": "03 创造模式物品栏 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_03_CreativeModTabs",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "04 添加一个方块",
+          "description": "04 添加一个方块 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_04_Register_Block",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "05 方块状态",
+          "description": "05 方块状态 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_05_BlockState",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "06 物品属性覆盖",
+          "description": "06 物品属性覆盖 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_06_ItemAttributeOveride",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "07 数据生成",
+          "description": "07 数据生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_07_Datagen",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "08 食物",
+          "description": "08 食物 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_08_Food",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "09 武器",
+          "description": "09 武器 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_09_Weapon",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "10 工具",
+          "description": "10 工具 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_10_Tool",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "11 装备",
+          "description": "11 装备 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_11_Armor",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "12 自定义方块模型和非实体方块",
+          "description": "12 自定义方块模型和非实体方块 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_12_CustomBlockModel_Non_BlockEntityBlock",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "13 方块渲染类型",
+          "description": "13 方块渲染类型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_13_BlockRenderType",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "14 自定义物品模型",
+          "description": "14 自定义物品模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_14_CustomItemModel",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "15 合成表",
+          "description": "15 合成表 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_15_CraftTable",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "16 战利品表",
+          "description": "16 战利品表 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_16_LootTable",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "17 Tag",
+          "description": "17 Tag 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_17 Tag",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "18 OBJ模型",
+          "description": "18 OBJ模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_18 OBJ_Model",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "19 添加画",
+          "description": "19 添加画 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_19_Register_Paint",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "20 添加新的村民",
+          "description": "20 添加新的村民 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_20_Register_Villager_Type",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "21 第一方块实体和数据保存",
+          "description": "21 第一方块实体和数据保存 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_21_FirstBlockEntity_DataStorage",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "22  实体方块tick",
+          "description": "22  实体方块tick 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_22 _BlockEntityTick",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "23 方块实体内置的数据同步",
+          "description": "23 方块实体内置的数据同步 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_23_BlockEntityDataSync",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "24 烘焙模型",
+          "description": "24 烘焙模型 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_24 BakedModel",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "25 方块实体渲染",
+          "description": "25 方块实体渲染 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_25_BlockEntityRender",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "26 物品特殊渲染",
+          "description": "26 物品特殊渲染 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_26_SpecialItemRender",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "27 网络",
+          "description": "27 网络 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_27_Networking",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "28 便利添加创造模式物品栏【可选】",
+          "description": "28 便利添加创造模式物品栏【可选】 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_28_EasyToModifyTabs_Optional",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "29 第一个实体",
+          "description": "29 第一个实体 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_29_FirstEntity",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "30 第一个生物",
+          "description": "30 第一个生物 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_30_FirstMob",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "31 附魔",
+          "description": "31 附魔 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_31_Enchantment",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "32 构建能力",
+          "description": "32 构建能力 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_32_BuildCapability",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "33 原版提供的能力ItemHander物品处理能力",
+          "description": "33 原版提供的能力ItemHander物品处理能力 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_33_ItemHander",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "34 能力提供附加",
+          "description": "34 能力提供附加 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_34_Capability_Extra",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "35 LevelSaveData",
+          "description": "35 LevelSaveData 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_35_LevelSaveData",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "36 第一个GUI",
+          "description": "36 第一个GUI 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_36_FirstGUI",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "37 menu",
+          "description": "37 menu 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_37_Menu",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "38 HUD",
+          "description": "38 HUD 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_38_HUD",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "39 注册热键",
+          "description": "39 注册热键 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_39_RegisterKey",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "40 流体",
+          "description": "40 流体 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_40_Fluid",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "41 饥渴值例子",
+          "description": "41 饥渴值例子 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_41_NutritionSample",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "42 矿物生成",
+          "description": "42 矿物生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_42_OreGeneration",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "43 结构生成",
+          "description": "43 结构生成 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_43_StructureGeneration",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "44 如何添加模组和lib",
+          "description": "44 如何添加模组和lib 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_44_Dependencies_LIb",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "45 添加生物群系",
+          "description": "45 添加生物群系 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_45_RegisterBiome",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "46 添加维度",
+          "description": "46 添加维度 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_46_RegisterDimension",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "47 命令",
+          "description": "47 命令 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_47_Command",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "48 成就",
+          "description": "48 成就 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_48_Advancement",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "49 配置信息设置",
+          "description": "49 配置信息设置 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_49_Config",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "50 药水效果和药水",
+          "description": "50 药水效果和药水 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_50_MobEffect_Potion",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "51  粒子",
+          "description": "51  粒子 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_51_Particle",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "52 声音",
+          "description": "52 声音 相关教程",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_52_Sound",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "53 更新到Minecraft 1.20.6版本",
+          "description": "53 Minecraft Neoforge 版本更新",
+          "path": "/zh/develop/modding/1.20.4/Neoforge/flandre/out_53_Update_1.20.6",
+          "tags": [
+            "Minecraft1_20_4",
+            "NeoForge20_3",
+            "Tutorial"
+          ],
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "KubeJS",
+      "count": 17,
+      "pages": [
+        {
+          "title": "实体属性",
+          "description": "Attribute 在 KubeJS 中的完整操作指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Attribute",
+          "tags": [
+            "KubeJS",
+            "Attribute",
+            "LivingEntity"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "Brain",
+          "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "EntityJS",
+            "Brain",
+            "AI"
+          ],
+          "progress": 85,
+          "language": "zh-CN"
+        },
+        {
+          "title": "目录",
+          "description": "KubeJS 实体系统相关文档导航与索引",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
+          "tags": [
+            "KubeJS",
+            "Entity"
+          ],
+          "progress": 70,
+          "language": "zh-CN"
+        },
+        {
+          "title": "Goal",
+          "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Goal"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "生物实体",
+          "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "实体方法",
+          "description": "KubeJS 实体 API 常用方法分类与用法参考",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Methods"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "Mob",
+          "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "玩家实体",
+          "description": "Player 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "药水效果",
+          "description": "LivingEntity 药水效果系统完整操作指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/PotionEffects",
+          "tags": [
+            "KubeJS",
+            "LivingEntity",
+            "PotionEffects"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "生成实体",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Spawn",
+          "tags": [
+            "KubeJS",
+            "Entity"
+          ],
+          "language": "zh-CN"
+        },
+        {
+          "title": "向量",
+          "description": "向量与坐标",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Vector",
+          "tags": [
+            "KubeJS",
+            "Vector"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "集合",
+          "description": "Java Collection 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
+          "tags": [
+            "KubeJS",
+            "Collection",
+            "Java",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "列表",
+          "description": "Java List 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
+          "tags": [
+            "KubeJS",
+            "List",
+            "Array",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "Map映射",
+          "description": "Java Map 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
+          "tags": [
+            "KubeJS",
+            "Map",
+            "HashMap",
+            "键值对"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "持久化数据",
+          "description": "persistentData 在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/persistentData",
+          "tags": [
+            "KubeJS",
+            "persistentData",
+            "Data",
+            "Storage"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "JSDoc文档",
+          "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 100,
+          "language": "zh-CN"
+        },
+        {
+          "title": "JSDoc的实例",
+          "description": "介绍如何在 KubeJS 脚本中用 JSDoc 提升类型补全，涵盖多种 JSDoc 标签在实际脚本中的独特应用。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocKubeJSUsage",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Entity",
+      "count": 7,
+      "pages": [
+        {
+          "title": "目录",
+          "description": "KubeJS 实体系统相关文档导航与索引",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
+          "tags": [
+            "KubeJS",
+            "Entity"
+          ],
+          "progress": 70,
+          "language": "zh-CN"
+        },
+        {
+          "title": "Goal",
+          "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Goal"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "生物实体",
+          "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "实体方法",
+          "description": "KubeJS 实体 API 常用方法分类与用法参考",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Methods"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "Mob",
+          "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "玩家实体",
+          "description": "Player 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "生成实体",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Spawn",
+          "tags": [
+            "KubeJS",
+            "Entity"
+          ],
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "JSDoc",
+      "count": 4,
+      "pages": [
+        {
+          "title": "JSDoc文档",
+          "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 100,
+          "language": "zh-CN"
+        },
+        {
+          "title": "JSDoc基础",
+          "description": "介绍 JSDoc 的基本语法、常用标签和在 JavaScript/KubeJS/ProbeJS 中的通用注释方法，适合新手入门。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocBasics",
+          "tags": [
+            "JSDoc",
+            "Basic"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "JSDoc的实例",
+          "description": "介绍如何在 KubeJS 脚本中用 JSDoc 提升类型补全，涵盖多种 JSDoc 标签在实际脚本中的独特应用。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocKubeJSUsage",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "ProbeJS事件",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "LivingEntity",
+      "count": 3,
+      "pages": [
+        {
+          "title": "实体属性",
+          "description": "Attribute 在 KubeJS 中的完整操作指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Attribute",
+          "tags": [
+            "KubeJS",
+            "Attribute",
+            "LivingEntity"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        },
+        {
+          "title": "生物实体",
+          "description": "LivingEntity 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        },
+        {
+          "title": "药水效果",
+          "description": "LivingEntity 药水效果系统完整操作指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/PotionEffects",
+          "tags": [
+            "KubeJS",
+            "LivingEntity",
+            "PotionEffects"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "ProbeJS",
+      "count": 3,
+      "pages": [
+        {
+          "title": "JSDoc文档",
+          "description": "全面介绍 JSDoc 在 KubeJS/ProbeJS 脚本开发中的类型补全、最佳实践、与类型文件协同、ProbeJS 高级特性与常见问题。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDoc",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 100,
+          "language": "zh-CN"
+        },
+        {
+          "title": "JSDoc的实例",
+          "description": "介绍如何在 KubeJS 脚本中用 JSDoc 提升类型补全，涵盖多种 JSDoc 标签在实际脚本中的独特应用。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocKubeJSUsage",
+          "tags": [
+            "JSDoc",
+            "KubeJS",
+            "ProbeJS"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "ProbeJS事件",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "数据结构",
+      "count": 2,
+      "pages": [
+        {
+          "title": "集合",
+          "description": "Java Collection 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
+          "tags": [
+            "KubeJS",
+            "Collection",
+            "Java",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        },
+        {
+          "title": "列表",
+          "description": "Java List 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
+          "tags": [
+            "KubeJS",
+            "List",
+            "Array",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Attribute",
+      "count": 1,
+      "pages": [
+        {
+          "title": "实体属性",
+          "description": "Attribute 在 KubeJS 中的完整操作指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Attribute",
+          "tags": [
+            "KubeJS",
+            "Attribute",
+            "LivingEntity"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "EntityJS",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Brain",
+          "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "EntityJS",
+            "Brain",
+            "AI"
+          ],
+          "progress": 85,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Brain",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Brain",
+          "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "EntityJS",
+            "Brain",
+            "AI"
+          ],
+          "progress": 85,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "AI",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Brain",
+          "description": "Minecraft 1.16+ Brain AI 系统机制与 EntityJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "EntityJS",
+            "Brain",
+            "AI"
+          ],
+          "progress": 85,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Goal",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Goal",
+          "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Goal"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Methods",
+      "count": 1,
+      "pages": [
+        {
+          "title": "实体方法",
+          "description": "KubeJS 实体 API 常用方法分类与用法参考",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Methods"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Mob",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Mob",
+          "description": "Mob 类的属性、AI、目标选择与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Player",
+      "count": 1,
+      "pages": [
+        {
+          "title": "玩家实体",
+          "description": "Player 类的属性、方法、事件与 KubeJS 用法",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "PotionEffects",
+      "count": 1,
+      "pages": [
+        {
+          "title": "药水效果",
+          "description": "LivingEntity 药水效果系统完整操作指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/PotionEffects",
+          "tags": [
+            "KubeJS",
+            "LivingEntity",
+            "PotionEffects"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Vector",
+      "count": 1,
+      "pages": [
+        {
+          "title": "向量",
+          "description": "向量与坐标",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Vector",
+          "tags": [
+            "KubeJS",
+            "Vector"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Collection",
+      "count": 1,
+      "pages": [
+        {
+          "title": "集合",
+          "description": "Java Collection 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
+          "tags": [
+            "KubeJS",
+            "Collection",
+            "Java",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Java",
+      "count": 1,
+      "pages": [
+        {
+          "title": "集合",
+          "description": "Java Collection 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Collection",
+          "tags": [
+            "KubeJS",
+            "Collection",
+            "Java",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "List",
+      "count": 1,
+      "pages": [
+        {
+          "title": "列表",
+          "description": "Java List 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
+          "tags": [
+            "KubeJS",
+            "List",
+            "Array",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Array",
+      "count": 1,
+      "pages": [
+        {
+          "title": "列表",
+          "description": "Java List 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/List",
+          "tags": [
+            "KubeJS",
+            "List",
+            "Array",
+            "数据结构"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Map",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Map映射",
+          "description": "Java Map 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
+          "tags": [
+            "KubeJS",
+            "Map",
+            "HashMap",
+            "键值对"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "HashMap",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Map映射",
+          "description": "Java Map 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
+          "tags": [
+            "KubeJS",
+            "Map",
+            "HashMap",
+            "键值对"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "键值对",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Map映射",
+          "description": "Java Map 接口在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/Map",
+          "tags": [
+            "KubeJS",
+            "Map",
+            "HashMap",
+            "键值对"
+          ],
+          "progress": 95,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "persistentData",
+      "count": 1,
+      "pages": [
+        {
+          "title": "持久化数据",
+          "description": "persistentData 在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/persistentData",
+          "tags": [
+            "KubeJS",
+            "persistentData",
+            "Data",
+            "Storage"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Data",
+      "count": 1,
+      "pages": [
+        {
+          "title": "持久化数据",
+          "description": "persistentData 在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/persistentData",
+          "tags": [
+            "KubeJS",
+            "persistentData",
+            "Data",
+            "Storage"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "count": 1,
+      "pages": [
+        {
+          "title": "持久化数据",
+          "description": "persistentData 在 KubeJS 中的使用指南",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/persistentData",
+          "tags": [
+            "KubeJS",
+            "persistentData",
+            "Data",
+            "Storage"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Basic",
+      "count": 1,
+      "pages": [
+        {
+          "title": "JSDoc基础",
+          "description": "介绍 JSDoc 的基本语法、常用标签和在 JavaScript/KubeJS/ProbeJS 中的通用注释方法，适合新手入门。",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocBasics",
+          "tags": [
+            "JSDoc",
+            "Basic"
+          ],
+          "progress": 90,
+          "language": "zh-CN"
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "count": 1,
+      "pages": [
+        {
+          "title": "ProbeJS事件",
+          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "zh-CN"
+        }
+      ]
+    }
+  ],
+  "totalTags": 31,
+  "totalPages": 217,
+  "language": "zh-CN",
+  "generatedAt": "2025-08-31T12:48:59.695Z"
+}

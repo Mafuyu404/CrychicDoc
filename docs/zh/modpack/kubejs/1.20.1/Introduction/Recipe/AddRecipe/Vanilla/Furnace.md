@@ -1,3 +1,8 @@
+---
+title: 熔炉
+hidden: false
+priority: 0
+---
 # 熔炉
 
 ## 前言

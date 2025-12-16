@@ -1,10 +1,7 @@
 {
   "rules.md": 0,
-  "styleList.md": 0,
-  "litetree-guide.md": 0,
-  "cooperation.md": 0,
-  "samples.md": 0,
-  "sidebarTutorial.md": 0,
-  "vscode-snippets-guide.md": 0,
-  "guide/": 9007199254740991
+  "sidebarGuide.md": 20,
+  "pluginsGuide.md": 30,
+  "litetreeGuide.md": 40,
+  "vscodeSnippetsGuide.md": 50
 }

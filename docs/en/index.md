@@ -9,6 +9,7 @@ hero:
     light: /logo.png
     dark: /logodark.png
     alt: PickAID
+  customSnippet: custom
   actions:
     - theme: alt
       text: Collaboration

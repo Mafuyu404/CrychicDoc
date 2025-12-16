@@ -1,3 +1,8 @@
+---
+title: PotionEffects
+hidden: false
+priority: 0
+---
 # 药水效果
 
 ## 前言

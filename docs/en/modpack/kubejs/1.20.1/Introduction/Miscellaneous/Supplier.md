@@ -1,6 +1,9 @@
 ---
 progress: 100
 state: preliminary
+title: Supplier
+hidden: false
+priority: 0
 ---
 
 # Supplier

@@ -2,6 +2,9 @@
 root: true
 title: Champions-Unofficial
 layout: doc
+hidden: false
+priority: 9007199254740991
+collapsed: true
 ---
 
 ## Champions-Unofficial
@@ -12,7 +15,7 @@ This mod is an unofficial port of the Champions mod for Minecraft the version ab
 
 ::: carousels#{"cycle": true, "interval": 2800, "undelimiters": true}
 @tab
-![1](https://docs.mihono.cn/mods/adventure/champions-unofficial/1.png)
+![1](https://docs.variedmc.cc/mods/adventure/champions-unofficial/1.png)
 @tab
-![2](https://docs.mihono.cn/mods/adventure/champions-unofficial/2.png)
+![2](https://docs.variedmc.cc/mods/adventure/champions-unofficial/2.png)
 :::

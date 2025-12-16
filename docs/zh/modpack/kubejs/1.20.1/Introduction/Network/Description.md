@@ -1,3 +1,8 @@
+---
+title: 序言
+hidden: false
+priority: 0
+---
 # NetworkEvent
 
 NetworkEvent 用于在服务器与客户端之间发送和接收数据。这在需要同步信息或触发跨端操作时非常有用。

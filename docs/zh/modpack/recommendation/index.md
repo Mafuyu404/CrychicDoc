@@ -7,5 +7,8 @@ prev:
 next:
   text: 推荐
   link: /zh/modpack/recommendation/index
+hidden: false
+priority: 9007199254740991
+collapsed: true
 ---
 

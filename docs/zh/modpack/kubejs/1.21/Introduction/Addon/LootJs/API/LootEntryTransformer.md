@@ -1,3 +1,8 @@
+---
+title: LootEntryTransformer
+hidden: false
+priority: 0
+---
 # LootEntryTransformer
 
 `LootEntryTransformer` 允许您修改、替换或删除战利品表中的战利品抽取项。它添加了多个功能以满足不同用例的需求。

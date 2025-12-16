@@ -1,3 +1,8 @@
+---
+title: Painter
+hidden: false
+priority: 0
+---
 # Painter API 实现攻击显示血条动画
 
 ::: v-info

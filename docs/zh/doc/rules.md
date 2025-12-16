@@ -1,22 +1,86 @@
 ---
+title: 文档编写规范
+description: 参与 CrychicDoc 文档编写所需遵循的官方规范、工作流与样式指南。
 progress: 100
-title: 合作规范
-description: 该文章提供了本站文档编写规范！
 state: preliminary
+priority: -10
+hidden: false
 ---
 
-# 文档编写规范
+# 文档编写规范 {#main}
 
-本文将对该文档项目的侧边栏、文件结构与合作的规范进行一定的说明，帮助您理解该如何高效地进行合作编写文档，并尽可能减少不规范合作引发的冲突。
+::: alert {"type": "success", "title": "须知", "border": "start"}
+本文档是您参与 CrychicDoc 项目所需了解的**第一**规范。它详细说明了协作流程、内容编写标准、侧边栏配置方法以及所有可用的样式与组件。
+:::
 
-首先您需要通过[该文章](./cooperation.md)知晓如何开始合作。
+## 合作 {#contribution}
 
-## 项目结构 {#FileStructure}
+### 具体步骤 {#workflow-steps}
 
-文章当前维护`中/英`两种语言，主要语言为中文。
+<LiteTree>
+#workflow=color:white;background:#1976d2;padding:2px 6px;border-radius:3px;font-size:12px;
+---
+{#workflow}1. Fork & Clone
+    将主仓库 Fork 到您的账户，然后 Clone 到本地。
+{#workflow}2. 同步与创建分支
+    在开始修改前，与主仓库同步，然后为您的修改创建一个新分支。
+{#workflow}3. 修改与提交
+    在您的新分支上进行修改，并使用清晰的提交信息进行 Commit。
+{#workflow}4. 发起 Pull Request
+    将您的分支推送到您 Fork 的仓库，并创建一个 Pull Request 到主仓库。
+</LiteTree>
 
-:::alert {"type": "info", "title": "项目结构概览"}
-这里是完整的项目结构，包含文件用途和状态指示器。
+::: alert {"type": "warning", "title": "重要提醒"}
+请务必遵循 **Conventional Commits** 规范来编写提交信息，这有助于自动生成更新日志和版本管理。
+:::
+
+:::: stepper
+@tab 初始配置
+```bash
+# Clone 您的 Fork
+git clone https://github.com/-%YourName/CrychicDoc.git
+cd CrychicDoc
+
+# 添加上游（主仓库）
+git remote add upstream https://github.com/PickAID/CrychicDoc.git
+```
+
+::: v-info
+第一次参与项目时的必要配置步骤。
+:::
+
+@tab 开始新的贡献
+```bash
+# 从主仓库同步最新更改
+git fetch upstream
+git checkout main
+git merge upstream/main
+
+# 为您的新功能或修复创建一个分支
+git checkout -b -%branch
+```
+
+@tab 提交您的修改
+```bash
+# 添加您的修改
+git add .
+
+# 提交更改（遵循 Conventional Commits 规范）
+git commit -m "feat: 添加 KubeJS 事件处理文档"
+
+# 推送到您 Fork 的仓库
+git push origin -%branch
+```
+
+::: v-success
+提交信息格式：`type: 简短描述`
+:::
+::::
+
+## 项目结构 {#structure}
+
+::: alert {"type": "info", "title": "项目结构概览"}
+下方是 CrychicDoc 的完整项目结构，包含了关键文件和目录的用途说明。理解项目结构有助于您快速定位文件和理解代码组织方式。
 :::
 
 <LiteTree>
@@ -31,222 +95,116 @@ state: preliminary
 folder=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTEwIDRIOGEyIDIgMCAwIDAtMiAydjEyYTIgMiAwIDAgMCAyIDJoOGEyIDIgMCAwIDAgMi0yVjhhMiAyIDAgMCAwLTItMmgtM2wtMi0yWiIvPjwvc3ZnPg==
 ts=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTUgMTUiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMxNzhDNiIgZD0iTTEyLjUgOHYtLjE2N2MwLS43MzYtLjU5Ny0xLjMzMy0xLjMzMy0xLjMzM0gxMGExLjUgMS41IDAgMSAwIDAgM2gxYTEuNSAxLjUgMCAwIDEgMCAzaC0xQTEuNSAxLjUgMCAwIDEgOC41IDExTTggNi41SDNtMi41IDBWMTNNMS41LjVoMTN2MTRIOS41eiIvPjwvc3ZnPg==
 js=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNmN2RmMWUiIGQ9Ik0zIDNoMTh2MThIM1ptMTYuNTI1IDE0LjVjLS4zLS4zNTQtLjc5NS0uNjI5LTEuNzE3LS42MjljLS44ODEgMC0xLjQzOS4zMTgtMS40MzkuNzE4YzAgLjM5Ni4zNzMuNjM3IDEuMTU2Ljk2N2MxLjMzMi41ODYgMi4yODEgMS4wOTMgMi4yODEgMi4zOGMwIDEuMzItMS4yMDMgMi4xNDMtMi45NzQgMi4xNDNjLTEuMjEzIDAtMi4yNzEtLjQ2Mi0yLjk1LTEuMDc0bC44NzUtMS4yNzNjLjQzMy4zODkgMS4wNjQuNzI0IDEuNjY0LjcyNGMuNzA2IDAgMS4wNjQtLjMzMSAxLjA2NC0uNzMzYzAtLjQ0OS0uMzc2LS43MjQtMS4yNDUtMS4wMzNjLTEuMzI1LS40ODgtMi4xMzItMS4yNS0yLjEzMi0yLjM2M2MwLTEuMzk0IDEuMDI5LTIuMTQzIDIuODU2LTIuMTQzYzEuMDY0IDAgMS43NDUuMzI4IDIuMzc3Ljg1OWwtLjgzIDEuMjQxWm0tNS44NDUtLjMzNWMuMzY2LjgxNS4zNjYgMS41NzcuMzY2IDIuNDd2My45MDZoLTEuODc2VjE5LjZjMC0xLjUyNy0uMDYtMi4xOC0uNTUtMi40OGMtLjQxLS4yODgtMS4wNzYtLjI3NC0xLjYxOC0uMTA3Yy0uMzc4LjExNy0uNzEzLjMzNS0uNzEzIDEuMDc0djUuMDU2SDYuNDI3VjEyLjgyaDEuODc2djIuMTEzYy43NDctLjM5OSAxLjU3Ny0uNzM4IDIuNjQ1LS43MzhjLjc2NCAwIDEuNTc3LjI1MyAyLjA2OS43ODdjLjQ5OC41NTIuNjI2IDEuMTU3LjcyMyAxLjk5MVoiLz48L3N2Zz4=
-md=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTIyLjI3IDEzLjU2VjE2YTIgMiAwIDAgMS0yIDJIOGExIDEgMCAwIDEtMSAxSDNhMSAxIDAgMCAxLTEtMXYtNmExIDEgMCAwIDEgMS0xaDR2LTFhMiAyIDAgMCAxIDItMmgxMi4yN2ExIDEgMCAwIDEgMSAxdi41NnptLTMuNzMtOC41NkgyYTIgMiAwIDAgMC0yIDJ2MTBhMiAyIDAgMCAwIDIgMmgxNi41NGEyIDIgMCAwIDAgMi0yVjdhMiAyIDAgMCAwLTItMlptLTcuNzQgOC4zOUwxMiAxNi4yNWwyLjI2LTEuOTFhLjc1Ljc1IDAgMCAxIC45NyAxLjE0bC0zIDIuNTNhLjc1Ljc1IDAgMCAxLS45NiAwbC0zLTIuNTNhLjc1Ljc1IDAgMCAxIC45Ny0xLjE0WiIvPjwvc3ZnPg==
+md=data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0Ij48IS0tIEljb24gZnJvbSBNYXRlcmlhbCBTeW1ib2xzIGJ5IEdvb2dsZSAtIGh0dHBzOi8vZ2l0aHViLmNvbS9nb29nbGUvbWF0ZXJpYWwtZGVzaWduLWljb25zL2Jsb2IvbWFzdGVyL0xJQ0VOU0UgLS0+PHBhdGggZmlsbD0iIzg4ODg4OCIgZD0iTTkgMThxLS44MjUgMC0xLjQxMi0uNTg3VDcgMTZWNHEwLS44MjUuNTg4LTEuNDEyVDkgMmg5cS44MjUgMCAxLjQxMy41ODhUMjAgNHYxMnEwIC44MjUtLjU4NyAxLjQxM1QxOCAxOHptLTQgNHEtLjgyNSAwLTEuNDEyLS41ODdUMyAyMFY2aDJ2MTRoMTF2MnptNS4yNS05aDEuNVY4LjVoMXYzaDEuNXYtM2gxVjEzaDEuNVY4cTAtLjQyNS0uMjg4LS43MTJUMTUuNzUgN2gtNC41cS0uNDI1IDAtLjcxMi4yODhUMTAuMjUgOHoiLz48L3N2Zz4=
+json=data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0Ij48IS0tIEljb24gZnJvbSBNYXRlcmlhbCBTeW1ib2xzIGJ5IEdvb2dsZSAtIGh0dHBzOi8vZ2l0aHViLmNvbS9nb29nbGUvbWF0ZXJpYWwtZGVzaWduLWljb25zL2Jsb2IvbWFzdGVyL0xJQ0VOU0UgLS0+PHBhdGggZmlsbD0iIzg4ODg4OCIgZD0iTTQuNzUgMTVINi41cS40MjUgMCAuNzEzLS4yODhUNy41IDE0VjlINnY0Ljc1SDVWMTIuNUgzLjc1VjE0cTAgLjQyNS4yODguNzEzVDQuNzUgMTVtNC40MjUgMGgxLjVxLjQyNSAwIC43MTMtLjI4OHQuMjg3LS43MTJ2LTEuNXEwLS40MjUtLjI4OC0uNzEydC0uNzEyLS4yODhoLTEuMjV2LTEuMjVoMXYuNWgxLjI1VjEwcTAtLjQyNS0uMjg4LS43MTJUMTAuNjc2IDloLTEuNXEtLjQyNSAwLS43MTIuMjg4VDguMTc1IDEwdjEuNXEwIC40MjUuMjg4LjcxM3QuNzEyLjI4N2gxLjI1djEuMjVoLTF2LS41aC0xLjI1VjE0cTAgLjQyNS4yODguNzEzdC43MTIuMjg3bTQuNC0xLjV2LTNoMXYzem0tLjI1IDEuNWgxLjVxLjQyNSAwIC43MTMtLjI4OHQuMjg3LS43MTJ2LTRxMC0uNDI1LS4yODctLjcxMlQxNC44MjUgOWgtMS41cS0uNDI1IDAtLjcxMi4yODh0LS4yODguNzEydjRxMCAuNDI1LjI4OC43MTN0LjcxMi4yODdtMy4xNzUgMGgxLjI1di0yLjYyNWwxIDIuNjI1SDIwVjloLTEuMjV2Mi42MjVMMTcuNzUgOUgxNi41ek0zIDIwcS0uODI1IDAtMS40MTItLjU4N1QxIDE4VjZxMC0uODI1LjU4OC0xLjQxMlQzIDRoMThxLjgyNSAwIDEuNDEzLjU4OFQyMyA2djEycTAgLjgyNS0uNTg3IDEuNDEzVDIxIDIweiIvPjwvc3ZnPg==
 ---
 {.important}CrychicDoc                         // {.important}主项目
     [folder] .github                            // {#script}CI/CD脚本
-        workflows                               // 自动构建脚本 //+
+        workflows                               // 自动构建脚本
     [folder] .vitepress                         // {#config}VitePress配置
-        [folder] config                         // {.important}本地化配置
-            [ts] index.ts                       // 主配置文件 //v
+        [folder] config                         // {.important}项目所有配置
+            [folder] lang                         // {.important}多语言配置
+            [folder] locale                         // {.important}本地化配置
+                [folder] langcode                // {.important}语言对应的配置
+                    [folder] componennts            // 组件翻译键
+                    [folder] snippets               // 主页漂浮文字翻译键
+                    [ts] footer.ts                  //! footer配置
+            [folder] sidebar                         // {.important}侧边栏配置
+            [ts] common-config.ts                      // VitePress配置
+            [json] contributors.json                      //! 贡献者配置
+            [ts] markdown-plugins.ts                      // md插件配置
+            [ts] project-config.ts                       //! 项目主配置
         [folder] plugins                        // {.important}自定义插件
-            [ts] custom-alert.ts                // 警告插件 //+
-            [ts] dialog.ts                      // 对话框插件 //+
         [folder] theme                          // {.important}自定义主题
-            [folder] components                 // Vue组件 //v
-            [folder] styles                     // CSS样式 //v
+            [folder] components                 // Vue组件
+            [folder] styles                     // CSS样式
         [ts] config.mts                         // {.important}VitePress配置
         [ts] index.ts                           // {.important}侧边栏配置
     [folder] .vscode                            // {#config}VS Code设置
-        [md] snippets                           // Markdown代码片段 //v
+        [md] snippets                           // Markdown代码片段
     [folder] docs                               // {#content}内容目录
-        [folder] public                         // 静态资源 //v
+        [folder] public                         // 静态资源
         [folder] zh                             // {#content}中文内容
-            [md] 各种文件                        // 文档文件 //+
+            [md] 各种文件                        // 文档文件
         [folder] en                             // {#content}英文内容
-            [md] 各种文件                        // 文档文件 //+
+            [md] 各种文件                        // 文档文件
     [md] README.md                              // {.important}项目说明
-    [js] ExtractClassScript.js                  // {#ignore}旧版脚本
-    [md] extracted_classes.md                   // {#ignore}旧版文件
     LICENSE                                     // {#config}CC BY-SA 4.0
     .gitignore                                  // {#config}Git忽略规则
 </LiteTree>
 
+## 编写规范 {#content}
 
-## 侧边栏 {#Sidebar}
+**核心指南文档：**
+- **[样式与插件指南](./pluginsGuide.md)** - Markdown扩展与自定义组件。
+- **[侧边栏配置实用指南](./sidebarGuide.md)** - 配置和管理侧边栏。
 
-:::alert {"type": "warning", "title": "侧边栏重要性"}
-**`侧边栏`是该文档最重要的引导之一**，并写有专门的[设置教程](./sidebarTutorial)，在本篇中将着重解释其在实际使用中的用法并让您知道编写文档时在侧边栏上需要进行的设置。
+**辅助工具指南：**
+- [LiteTree 组件使用指南](./litetreeGuide.md) - 创建优雅的树形结构
+- [VSCode 代码片段使用指南](./vscodeSnippetsGuide.md) - 提高文档编写效率。
+
+
+### Frontmatter配置 {#frontmatter}
+
+每个 Markdown 文件都应包含一个 `frontmatter` 块，用于配置页面的元数据：
+
+:::: chart-grid {"columns": 2, "gap": "24px"}
+
+::: v-info 必需字段
+- **`title`** (`string`) - 页面标题，显示在侧边栏
+- **`priority`** (`number`) - 侧边栏排序，数字越小越靠前
 :::
 
-侧边栏有着两种不同的运作逻辑：
-
-### 侧边栏操作模式
-
-<LiteTree>
-// 定义工作流样式
-#method1=color:white;background:#2196f3;padding:2px 6px;border-radius:3px;font-size:12px;
-#method2=color:white;background:#9c27b0;padding:2px 6px;border-radius:3px;font-size:12px;
-.pros=color:green;font-weight:500;
-.step=color:#1976d2;
----
-侧边栏配置方法
-    {#method1}方法一：基于Index.md控制                //v    {.pros}完全控制
-        {.step}在Index.md中配置children             // 完全自定义侧边栏
-        {.step}无需单独的frontmatter设置           // 维护友好
-        {.pros}适合复杂项目                       // 如KubeJS系列
-        {.pros}可预测的结构生成                   // 完全控制子类别
-    {#method2}方法二：基于Frontmatter              //+    {.pros}简单设置
-        {.step}Index.md中基本root配置             // 最小化设置要求
-        {.step}文章中设置noguide: true            // 单独文章控制
-        {.step}在frontmatter中配置title           // 文章特定标题
-        {.pros}简单维护                          // 单个文章易管理
-        {.pros}灵活的文章管理                    // 每个文档控制
-</LiteTree>
-
-:::alert {"type": "info", "title": "导航引导"}
-由于文档的内容基本依靠侧边栏与导航栏来进行引导，因此当您编写文档内容时请务必保证侧边栏的同步，如有疑问请尝试询问负责成员。
+::: v-success 可选字段
+- **`description`** (`string`) - 页面描述，用于 SEO
+- **`authors`** (`string[]`) - 页面作者列表
+- **`progress`** (`number`) - 文档完成进度 (0-100)
+- **`state`** (`string`) - 文档状态
+- **`hidden`** (`boolean`) - 隐藏页面
 :::
 
-:::alert {"type": "tip", "title": "重要提示"}
-为了保证Prev与Next的自动生成，请不要在index.md中书写内容而只把它当做侧边栏的生成器。
-:::
+::::
 
-## 文章编撰规范{#Article}
-
-该部分将将要讲述必要规范，即便规范会大致讲清需要注意的细则但还是请以`Pull Request`的反馈为主。
-
-:::alert {"type": "success", "title": "规范目的"}
-规范的目的是保证文档风格和引导的一致性，来保证读者能够更好地消化内容。规范的一部分内容有参考[MCMOD编写规范](https://bbs.mcmod.cn/thread-646-1-1.html)，规范并不约束第三方文档，但不允许**过度偏离文章意图的表达**。
-:::
-
-### 标题 {#Title}
-
-:::alert {"type": "error", "title": "关键要求"}
-你**必须**遵守标题使用的规范，<font color=red>**否则你的提交将永远不会通过**</font>。
-:::
-
-标题的层级应当采用渐进式，且`H1`级别的标题应当在最上方出现且只出现一次。
-
-**结构示例：**
-
-<LiteTree>
-// 定义标题样式
-#h1=color:white;background:#d32f2f;padding:3px 8px;border-radius:4px;font-weight:bold;
-#h2=color:white;background:#1976d2;padding:2px 6px;border-radius:3px;
-#h3=color:white;background:#388e3c;padding:2px 6px;border-radius:3px;
-#h4=color:white;background:#f57c00;padding:2px 6px;border-radius:3px;
----
-文档结构
-    {#h1}# 一级标题                          // 每个文档只有一个 //!
-        {#h2}## 二级标题                    // 允许多个 //v
-            {#h3}### 三级标题               // 嵌套在H2下 //v
-                {#h4}#### 四级标题          // 嵌套在H3下 //v
-        {#h2}## 另一个二级标题              // 与上面同级 //v
-            {#h3}### 另一个三级标题         // 嵌套结构 //v
-                {#h4}#### 另一个四级标题    // 正确嵌套 //v
-</LiteTree>
-
-### 自定义锚点 {#anchor}
-
-锚点`{#custom-anchor}`是`Vitepress`默认支持的`Markdown`扩展，使用它能够让链接不因为中文的标题而在复制后变为冗长的字符，例如[这个链接](#文章编撰规范)就是没有自定义锚点的链接，而[这个](#Title)则是被锚点优化过后的。
-
-一般我们鼓励使用锚点来便于分享。
-
-## 样式与插件 {#Style&Plugin}
-
-:::alert {"type": "info", "title": "可选内容"}
-该部分内容是**非强制性**的。
-:::
-
-该文档内置了不少`美化样式`与类似功能的`插件`，它们有利于帮助撰写者设计更加生动的文档内容，避免平淡的文字消磨读者的耐性，也有利于作者引导读者阅读真正重要的部分。
-
-<font size = 1>这里所说的引导更多强调的是内容的主次关系，一般来说撰写的内容都是有用的信息，但需要借助排版和样式来确保读者获取到最有用的部分。</font>
-
-### 样式 {#Style}
-
-文档对当前支持的样式有整理一个单独的[文章](./styleList.md)，如果你有这方面的需求，可以在撰写前先查看该部分内容。
-
-:::alert {"type": "tip", "title": "基础要求"}
-即便你不会使用复杂的样式，也请了解基本的[Markdown格式](https://markdown.com.cn/basic-syntax/)与Vitepress的[Markdown扩展](https://vitepress.dev/zh/guide/markdown)再进行文档的编写。
-:::
-
-### 插件 {#Plugin}
-
-文档有一些内置的`插件/组件`，一般是为服务某种特殊场景而添加，可在[此处](./samples.md)查看。
-
-### 文档配置 {#doc-config}
-
-该文档文件都有以下[frontmatter](#frontmatter)配置字段：
-
-:::alert {"type": "info", "title": "VitePress兼容性"}
-本站同时支持Vitepress的原生frontmatter样式，详情请见[此处](https://vitepress.dev/zh/reference/frontmatter-config)。
-:::
-
-| 配置字段      | 用途                             | 类型      | 省缺值     |
-|-----------|--------------------------------|---------|---------|
-| `title`   | 设置侧边栏中显示的标题（如未设置则使用文件名）        | string  | `N/A`   |
-| `noguide`| 该文章是否显示在侧边栏 (false=显示, true=隐藏)|boolean |`false`|
-|`backPath`|设置该界面点击BackButton后前往的位置|string|`N/A`|
-| `authors`  | 设置该文章额外的作者，显示在贡献者栏| string[]  | `N/A`   |
-| `showComment`  | 是否显示评论区 | boolean  | `true`   |
-| `gitChangelog`  | 是否显示贡献者和页面历史 | boolean  | `true`   |
-| `progress`  | 设置该文章的编撰进度 | int  | `N/A`   |
-| `description`  | 设置该文章的预览内容 | string  | `N/A` |
-| `state`  | 设置该文章的编写状态 | string | `N/A` |
-
-::: details 示例
-
+::: alert {"type": "info", "title": "Frontmatter 示例"}
 ```yaml
 ---
-title: 示例
-backPath: ../
-authors: ['M1hono', 'skyraah'] # 你必须提交过一次贡献才能正常地显示自己的头像与链接。
-showComment: false
-gitChangelog: false
-progress: 100
-description: 该文章提供了本站文档编写规范！
-state: preliminary #仅允许preliminary unfinished outdated renovating四种输入
+title: KubeJS 事件系统
+description: 深入了解 KubeJS 的事件处理机制
+priority: 10
+authors: ["张三", "李四"]
+progress: 85
+state: preliminary
 ---
 ```
-
 :::
 
-#### frontmatter声明 {#frontmatter}
+### 标题与锚点 {#headings-anchors}
 
-在每个 Markdown 文件的开头，使用 `---` 来创建frontmatter配置
+::: stepper
+@tab 标题层级
+- 每个文档**必须**有且只有一个 `H1` 级别的标题 (`#`)
+- 标题层级应逐级递增，不能跳级
+- 建议最多使用到 `H4` 级别
 
-```yaml
----
-# 在这里添加您的frontmatter
----
+@tab 锚点设置
+为了生成清晰的 URL，请为所有标题添加自定义锚点：
+```markdown
+### 这是一个标题 {#a-clear-anchor}
 ```
-
-## 内容 {#Content}
-
-<LiteTree>
-// 定义优先级样式
-#critical=color:white;background:#d32f2f;padding:2px 6px;border-radius:3px;font-size:12px;
-#important=color:white;background:#ff9800;padding:2px 6px;border-radius:3px;font-size:12px;
-#guideline=color:white;background:#4caf50;padding:2px 6px;border-radius:3px;font-size:12px;
----
-内容指导原则
-    {#critical}内容准确性                           //!    首要标准
-        确保编写正确的内容                         // 验证信息准确性
-        与社区和QQ群众人交流探讨                  // 协作验证
-    {#guideline}内容创作流程                       //+    协作方式
-        进行不完美的初始创作                       // 不要担心完美
-        与合作者一起精改进与精进                   // 团队合作提升质量
-    {#important}社区沟通                          //v    重要实践
-        多与社群沟通                             // 保持连接
-        绝不擅自删改他人的创作                     // 尊重他人贡献
-</LiteTree>
-
-:::alert {"type": "error", "title": "严重警告"}
-请不要擅自**删改**他人的创作！！！
 :::
 
-## 关于合作 {#Cooperation}
+::::: chart-grid {"columns": 3, "gap": "20px"}
 
-该文档在合作上并没有繁琐的规范，有且仅有一个：在进行修改前请**先询问原作者的意见**！！第三遍了！！
-
-### 第三方文档合作
-
-如果你是第三方文档的拥有者，要在作者一栏显示你的名字，你需要至少提交一次内容修改，才能被程序正确地识别，否则无法正常生成链接与头像。
-
-:::alert {"type": "success", "title": "合作总结"}
-- **尊重**：修改他人作品前务必先询问
-- **沟通**：与社区保持联系
-- **贡献**：至少提交一次修改以获得正确识别
-- **质量**：专注于内容准确性和一致性
+::: v-warning 尊重原创
+请勿在未与原作者沟通的情况下，擅自大规模修改或删除他人的创作。
 :::
+
+::: v-info 积极沟通
+如果您有任何疑问或建议，请通过 GitHub Issues 或社区进行沟通。
+:::
+
+::: v-success 贡献者署名
+第三方文档作者需至少提交一次内容修改，以便系统正确识别 GitHub 账户。
+:::
+
+:::::

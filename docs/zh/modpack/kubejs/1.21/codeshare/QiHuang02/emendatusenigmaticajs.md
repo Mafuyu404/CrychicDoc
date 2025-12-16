@@ -1,3 +1,8 @@
+---
+title: 矿物生成轮子
+hidden: false
+priority: 0
+---
 ::: carousels#{"cycle": false, "interval": 2800, "undelimiters": true}
 @tab
 ![EmendatusEnigmaticaJS](/imgs/EmendatusEnigmaticaJS/eejs_1.png)

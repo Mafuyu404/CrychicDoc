@@ -5,5 +5,7 @@ maxDepth: 0
 Layout: doc
 prev: false
 next: false
+hidden: false
+collapsed: true
 ---
 

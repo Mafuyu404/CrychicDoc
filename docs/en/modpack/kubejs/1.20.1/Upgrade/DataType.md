@@ -1,6 +1,8 @@
 ---
 layout: doc
 title: 数据类型
+hidden: false
+priority: 0
 ---
 
 # 数据类型

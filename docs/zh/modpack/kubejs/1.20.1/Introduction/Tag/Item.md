@@ -1,3 +1,8 @@
+---
+title: 物品
+hidden: false
+priority: 0
+---
 # 物品标签
 
 ## 概述

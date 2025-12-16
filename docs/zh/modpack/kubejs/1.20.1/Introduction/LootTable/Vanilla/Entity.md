@@ -1,3 +1,8 @@
+---
+title: 实体
+hidden: false
+priority: 300
+---
 # 实体类型战利品表
 
 ## 操作战利品表

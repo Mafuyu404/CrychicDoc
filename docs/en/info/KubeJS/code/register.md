@@ -1,6 +1,9 @@
 ---
 prev: false
 next: false
+title: register
+hidden: false
+priority: 0
 ---
 
 # 注册

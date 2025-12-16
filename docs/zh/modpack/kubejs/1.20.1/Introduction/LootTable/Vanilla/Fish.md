@@ -1,3 +1,8 @@
+---
+title: 鱼
+hidden: false
+priority: 400
+---
 # 钓鱼类型战利品表
 
 ## 操作战利品表

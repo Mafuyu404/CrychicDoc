@@ -1,3 +1,8 @@
+---
+title: ItemStack
+hidden: false
+priority: 0
+---
 # 物品堆 (ItemStack)
 
 ## 前言

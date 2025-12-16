@@ -1,5 +1,7 @@
 ---
-title: 'Mixin 优先级'
+title: Mixin 优先级
+hidden: false
+priority: 0
 ---
 
 # Mixin 优先级

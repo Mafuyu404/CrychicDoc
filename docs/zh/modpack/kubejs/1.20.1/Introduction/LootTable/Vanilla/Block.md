@@ -1,3 +1,8 @@
+---
+title: 方块
+hidden: false
+priority: 100
+---
 # 方块类型战利品表
 
 ## 操作战利品表

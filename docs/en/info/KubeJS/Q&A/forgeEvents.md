@@ -1,6 +1,9 @@
 ---
 prev: false
 next: false
+title: forgeEvents
+hidden: false
+priority: 0
 ---
 
 # Forge Events

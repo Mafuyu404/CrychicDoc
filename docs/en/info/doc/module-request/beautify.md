@@ -1,6 +1,9 @@
 ---
 prev: false
 next: false
+title: beautify
+hidden: false
+priority: 0
 ---
 # 美化
 

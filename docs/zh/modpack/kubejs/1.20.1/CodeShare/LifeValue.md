@@ -1,3 +1,8 @@
+---
+title: 死亡扣除最大生命值
+hidden: false
+priority: 9007199254740991
+---
 # 死亡扣除生命上限
 
 ::: v-info

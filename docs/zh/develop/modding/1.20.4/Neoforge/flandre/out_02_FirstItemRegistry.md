@@ -1,12 +1,18 @@
 ---
 title: 02 第一个物品
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 02 第一个物品 相关教程
 image: ./covers/908b0f9eb44b349604fc2f5b3ff855374bc23664.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
 draft: false
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 第一个物品 
 我们需要继承原版得物品类，实例化这个物品类，之后把这个物品类添加到游戏中去。

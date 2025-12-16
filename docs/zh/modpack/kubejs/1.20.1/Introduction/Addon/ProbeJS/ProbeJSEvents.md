@@ -5,6 +5,8 @@ tags:
   - Events
   - JSDoc
 progress: 10
+hidden: false
+priority: 400
 ---
 
 # ProbeJS Events Reference

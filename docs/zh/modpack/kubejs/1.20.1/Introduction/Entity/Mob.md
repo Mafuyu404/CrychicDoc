@@ -1,11 +1,13 @@
 ---
-title: Mob（生物）
+title: Mob
 description: Mob 类的属性、AI、目标选择与 KubeJS 用法
 progress: 90
 tags:
-    - KubeJS
-    - Entity
-    - Mob
+  - KubeJS
+  - Entity
+  - Mob
+hidden: false
+priority: 400
 ---
 
 # Mob

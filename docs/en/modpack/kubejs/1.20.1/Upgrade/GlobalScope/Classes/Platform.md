@@ -2,5 +2,8 @@
 layout: doc
 title: 平台类（Platform）
 authors:
-    - Eikidona
+  - Eikidona
+hidden: false
+priority: 0
 ---
+

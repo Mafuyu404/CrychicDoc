@@ -1,6 +1,6 @@
 <div align="center"><img height="200" src="docs/public/logo.png" width="200"/></div>
 
-![GitHub Release Date](https://img.shields.io/github/created-at/PickAID/CrychicDoc) [![crychicdoc](https://img.shields.io/badge/CrychicDoc-Maintaining-green)](https://docs.mihono.cn)
+![GitHub Release Date](https://img.shields.io/github/created-at/PickAID/CrychicDoc) [![crychicdoc](https://img.shields.io/badge/CrychicDoc-Maintaining-green)](https://docs.variedmc.cc)
 
 ![GitHub issue custom search in repo](https://img.shields.io/github/issues/PickAID/CrychicDoc.svg) ![GitHub last commit](https://img.shields.io/github/last-commit/PickAID/CrychicDoc) ![Total Commits](https://img.shields.io/github/commit-activity/t/PickAID/CrychicDoc) ![GitHub branch status](https://img.shields.io/github/check-runs/PickAID/CrychicDoc/main) ![cc-by-sa-shield](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/PickAID/CrychicDoc)
@@ -10,7 +10,7 @@
 本项目遵循[知识共享署名-相同方式共享 4.0 国际许可协议
 ](LICENSE)进行许可。
 
-转载请附上本作品链接： https://docs.mihono.cn
+转载请附上本作品链接： https://docs.variedmc.cc
 
 > **本项目/团队 Logo 为商业约稿，请勿取走来用作任何商业行为。**
 
@@ -59,10 +59,10 @@ You may find English version of readme on [here](/.github/docs/README_EN.md).
 
 ### Git 配置
 
-Git 大小写敏感配置会在克隆仓库时**自动完成**。如果自动配置失败，请运行：
+Git 忽略大小写敏感必须为false，代码如下：
 
 ```bash
-./setup-git.sh
+git config core.ignorecase false
 ```
 
 这将配置 Git 以正确处理文件名大小写，防止不同操作系统间的冲突。

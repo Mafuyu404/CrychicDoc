@@ -1,11 +1,13 @@
 ---
-title: 实体常用方法
+title: 实体方法
 description: KubeJS 实体 API 常用方法分类与用法参考
 progress: 80
 tags:
   - KubeJS
   - Entity
   - Methods
+hidden: false
+priority: 20
 ---
 
 # 实体常用方法

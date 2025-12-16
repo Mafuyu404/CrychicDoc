@@ -1,6 +1,9 @@
 ---
 progress: 100
 state: preliminary
+title: Java类
+hidden: false
+priority: 0
 ---
 # Java
 

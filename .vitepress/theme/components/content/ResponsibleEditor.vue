@@ -1,27 +1,19 @@
 <script setup lang="ts">
+    // @ts-nocheck
     import { useData } from "vitepress";
     import { computed } from "vue";
+    import { useSafeI18n } from "@utils/i18n/locale";
+    import { getProjectInfo } from "../../../config/project-config";
 
-    const { isDark, lang, frontmatter } = useData();
-    
-    const translations = {
-        "en-US": {
-            editorLabel: "Responsible Editor:",
-        },
-        "zh-CN": {
-            editorLabel: "本文责任编辑:",
-        },
-    };
-    
-    const editorLabel = computed(() => {
-        return (
-            translations[lang.value as keyof typeof translations]
-                ?.editorLabel || translations["en-US"].editorLabel
-        );
+    const { t } = useSafeI18n("responsible-editor", {
+        editorLabel: "Responsible Editor:",
     });
 
+    const { isDark, lang, frontmatter } = useData();
+    const projectInfo = getProjectInfo();
+
     const editor = computed(() => {
-        return frontmatter.value?.editor ?? "PickAID";
+        return frontmatter.value?.editor ?? projectInfo.author;
     });
 
     function getAvatarUrl(name: string) {
@@ -37,7 +29,7 @@
     <v-card v-if="editor" variant="plain">
         <v-row align="center" class="align-center gap-4 con" no-gutters>
             <v-col cols="auto">
-                <p class="vp-main-color">{{ editorLabel }}</p>
+                <p class="vp-main-color">{{ t.editorLabel }}</p>
             </v-col>
             <v-col cols="auto">
                 <a

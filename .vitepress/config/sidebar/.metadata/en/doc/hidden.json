@@ -8,12 +8,12 @@
   "cooperation.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "guide/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "rules.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
@@ -23,31 +23,51 @@
   "samples.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "sidebarTutorial.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "styleList.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "vscode-snippets-guide.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "litetree-guide.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "doc/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
     "isActiveInStructure": false
+  },
+  "sidebarGuide.md": {
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "pluginsGuide.md": {
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "litetreeGuide.md": {
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "vscodeSnippetsGuide.md": {
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

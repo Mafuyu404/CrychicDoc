@@ -1,3 +1,8 @@
+---
+title: Chest copy
+hidden: false
+priority: 0
+---
 # 箱子类型战利品表
 
 ## 操作战利品表

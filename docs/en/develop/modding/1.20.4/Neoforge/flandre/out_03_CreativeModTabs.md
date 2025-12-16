@@ -1,12 +1,18 @@
 ---
 title: 03 创造模式物品栏
-published: 2024-04-14
-tags: [Minecraft1_20_4, NeoForge20_3, Tutorial]
+published: 2024-04-14T00:00:00.000Z
+tags:
+  - Minecraft1_20_4
+  - NeoForge20_3
+  - Tutorial
 description: 03 创造模式物品栏 相关教程
 image: ./covers/018535be9026ee118030fe659322cc3091f29ddc.jpg
 category: Minecraft1_20_4_NeoForge_Tutorial
 draft: false
-authors: ['Flandre923']
+authors:
+  - Flandre923
+hidden: false
+priority: 0
 ---
 # 自定义创造模式物品栏
 现在添加一个创造物品栏和添加一个物品类似，同样你需要创建一个CreativeModeTab注册器，以使用注册器注册一个CreativeModeTab。然后添加的IEventBus总线中。

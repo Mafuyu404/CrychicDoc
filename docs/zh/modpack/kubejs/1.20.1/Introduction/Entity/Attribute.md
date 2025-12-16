@@ -6,6 +6,8 @@ tags:
   - Attribute
   - LivingEntity
 progress: 90
+hidden: false
+priority: 100
 ---
 
 # 实体属性 {#EntityAttribute}

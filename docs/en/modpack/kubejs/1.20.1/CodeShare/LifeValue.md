@@ -1,3 +1,8 @@
+---
+title: LifeValue
+hidden: false
+priority: 0
+---
 # 死亡扣除生命上限
 
 ::: v-info

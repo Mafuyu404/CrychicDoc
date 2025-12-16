@@ -1,5 +1,8 @@
 ---
 root: true
+title: Info
+hidden: false
+collapsed: true
 ---
 
 ---

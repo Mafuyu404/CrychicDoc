@@ -1,3 +1,8 @@
+---
+title: 序言
+hidden: false
+priority: 0
+---
 # 杂项知识
 
 - 对于kubejs涉及到的知识会进行浅薄的解释。

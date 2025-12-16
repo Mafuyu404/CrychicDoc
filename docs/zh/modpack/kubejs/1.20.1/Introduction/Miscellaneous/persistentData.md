@@ -7,6 +7,8 @@ tags:
   - Data
   - Storage
 progress: 90
+hidden: false
+priority: 0
 ---
 
 # {{ $frontmatter.title }}

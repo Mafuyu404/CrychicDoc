@@ -1,5 +1,7 @@
 ---
 title: '@Slice'
+hidden: false
+priority: 0
 ---
 
 # @Slice

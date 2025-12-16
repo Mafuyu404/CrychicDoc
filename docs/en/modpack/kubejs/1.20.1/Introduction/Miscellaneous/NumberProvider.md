@@ -1,3 +1,8 @@
+---
+title: NumberProvider
+hidden: false
+priority: 0
+---
 # 数字提供器
 
 - 类型别名：Internal.NumberProvider_

@@ -1,3 +1,8 @@
+---
+title: 合成台
+hidden: false
+priority: 0
+---
 # 工作台
 
 ## 前言
