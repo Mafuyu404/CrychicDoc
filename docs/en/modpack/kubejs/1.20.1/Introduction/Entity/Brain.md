@@ -45,7 +45,6 @@ if (brain.hasMemory("minecraft:visible_targets")) {
 - For 1.18 and earlier, use Goal system instead
 - Memory types vary by mob type
 
-<!--
 <llm-only>
 Brain is the AI controller for mobs in Minecraft 1.19+, replacing older Goal system. Key points:
 1. Manages Memory (information storage), Sensors (environment collection), Tasks (behaviors)
@@ -53,4 +52,3 @@ Brain is the AI controller for mobs in Minecraft 1.19+, replacing older Goal sys
 3. Available in 1.19+, use Goal system for earlier versions
 4. Memory types vary by mob type - check Minecraft source for specific memories
 </llm-only>
--->

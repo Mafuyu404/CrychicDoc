@@ -5,7 +5,6 @@ priority: 2000
 collapsed: true
 ---
 
-<!--
 <llm-only>
 ## KubeJS GlobalScope 全局作用域
 
@@ -107,5 +106,4 @@ player.tell(Text.of('§lBold §nUnderline§r Normal'));
 - 物品系统：Item/index.md
 - 方块系统：Block/index.md
 </llm-only>
--->
 

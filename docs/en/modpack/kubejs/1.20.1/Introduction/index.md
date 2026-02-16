@@ -5,7 +5,6 @@ priority: 9007199254740991
 collapsed: true
 ---
 
-<!--
 <llm-only>
 This section is the Introduction to KubeJS API documentation, covering core concepts:
 - Event types (StartupScript, ServerScript, ClientScript)
@@ -15,4 +14,3 @@ This section is the Introduction to KubeJS API documentation, covering core conc
 - Tag system, LootTable, Network, and other subsystems
 Use this section to understand KubeJS fundamentals before diving into specific topics.
 </llm-only>
--->

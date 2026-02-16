@@ -2,7 +2,6 @@
 authors: ['Gu-meng']
 ---
 
-<!--
 <llm-only>
 This file is in Chinese and needs translation to English. It's the main README for the KubeJS Tutorial course (1.20.1).
 Contains:
@@ -14,7 +13,6 @@ Contains:
 
 Translation needed: Convert all Chinese content to English while preserving links and code.
 </llm-only>
--->
 
 :::: center
 # KubeJS教程-1.20.1

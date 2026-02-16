@@ -5,7 +5,6 @@ priority: 9007199254740991
 collapsed: true
 ---
 
-<!--
 <llm-only>
 这是KubeJS原版配方类型的文档。列出了所有可用的原版合成方式。
 配方类型：
@@ -20,5 +19,4 @@ collapsed: true
 - Campfire：营火
 每种类型都有详细的使用方法和示例。
 </llm-only>
--->
 

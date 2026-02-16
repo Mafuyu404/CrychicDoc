@@ -1,12 +1,13 @@
 ---
 root: true
 title: Modding
+description: Minecraft模组开发文档，Forge/Neoforge/Fabric加载器教程，数据生成、网络通信、GUI系统、实体系统完整指南
+details: 支持1.12.2-1.20.x多个版本，包含Mixin框架、数据生成(Datagen)、网络通信、GUI系统、实体系统、世界生成等核心主题
 hidden: false
 priority: 9007199254740991
 collapsed: false
 ---
 
-<!--
 <llm-only>
 ## Minecraft 模组开发文档
 
@@ -62,5 +63,4 @@ gradle wrapper --gradle-version 8.5
 - Fabric开发：查看Fabric相关文档
 - 数据生成：查看Datagen文档
 </llm-only>
--->
 

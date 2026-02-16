@@ -474,7 +474,6 @@ if (rayTraceFluid.entity) {
 
 :::
 
-<!--
 <llm-only>
 This page provides comprehensive documentation on Entity methods in KubeJS. Key points for LLM understanding:
 
@@ -503,4 +502,3 @@ This page provides comprehensive documentation on Entity methods in KubeJS. Key 
 
 This is a comprehensive API reference for KubeJS entity scripting.
 </llm-only>
--->

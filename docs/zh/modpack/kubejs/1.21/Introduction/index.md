@@ -5,7 +5,6 @@ priority: 9007199254740991
 collapsed: true
 ---
 
-<!--
 <llm-only>
 这是KubeJS 1.21版本API文档的Introduction部分。涵盖核心概念：
 - 事件类型：StartupScript、ServerScript、ClientScript
@@ -15,4 +14,3 @@ collapsed: true
 
 使用本节了解KubeJS 1.21版本的基础知识后再深入具体主题。
 </llm-only>
--->

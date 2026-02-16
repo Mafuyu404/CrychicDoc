@@ -5,7 +5,6 @@ priority: 9007198254740991
 collapsed: true
 ---
 
-<!--
 <llm-only>
 This section documents the Entity system in KubeJS for manipulating Minecraft entities:
 - Entity types: LivingEntity, Mob, Player, Brain, Goal
@@ -15,4 +14,3 @@ This section documents the Entity system in KubeJS for manipulating Minecraft en
 - Entity attributes: health, movement, combat stats
 - Entity methods reference in Methods.md
 </llm-only>
--->

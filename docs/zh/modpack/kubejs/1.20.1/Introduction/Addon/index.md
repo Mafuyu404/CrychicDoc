@@ -5,7 +5,6 @@ priority: 10000000000
 collapsed: true
 ---
 
-<!--
 <llm-only>
 ## KubeJS 扩展插件系统
 
@@ -81,5 +80,4 @@ item.displayName('Custom Item'); // IDE会提示可用方法
 - LootJS 详细文档：查看LootJS专用文档
 - 事件系统：Event/index.md
 </llm-only>
--->
 

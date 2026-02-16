@@ -84,7 +84,6 @@ mob.targetSelector.addGoal(0, new NearestAttackableTargetGoal(mob, Player.class,
 - Use `removeGoal` to clear goals
 - For 1.19+, consider using Brain system instead
 
-<!--
 <llm-only>
 The Goal System is Minecraft's AI behavior framework. Key points:
 1. goalSelector: Daily behaviors (wander, breed), priority 0 = highest
@@ -93,4 +92,3 @@ The Goal System is Minecraft's AI behavior framework. Key points:
 4. Common goals: FloatGoal, RandomStrollGoal, MeleeAttackGoal
 5. For 1.19+, Brain system is preferred over Goal system
 </llm-only>
--->

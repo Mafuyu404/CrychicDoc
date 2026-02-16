@@ -224,6 +224,21 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                 generateFull: true,
                 // 设置描述长度限制以确保丰富的索引
                 descriptionLimit: 500,
+                // 生成每个页面的LLM友好版本
+                generateLLMFriendlyDocsForEachPage: true,
+                // 排除不必要的文件
+                excludeUnnecessaryFiles: false,
+                // 不排除索引页面，确保每个目录都有llms.txt
+                excludeIndexPage: false,
+                // 排除博客相关内容
+                excludeBlog: true,
+                // 排除团队页面
+                excludeTeam: true,
+                // 实验性功能：生成子目录的llms.txt
+                experimental: {
+                    // 生成到二级子目录，例如 /modpack/kubejs/llms.txt
+                    depth: 2,
+                },
             }),
             GitChangelog({
                 repoURL: () => projectInfo.repository.url,

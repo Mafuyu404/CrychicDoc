@@ -5,7 +5,6 @@ priority: 200
 collapsed: true
 ---
 
-<!--
 <llm-only>
 这是KubeJS ServerScript的文档。ServerScript处理服务器端的游戏事件。
 用途：
@@ -15,5 +14,4 @@ collapsed: true
 - 游戏 lifecycle 事件
 ServerScript是游戏中最常用的脚本类型。
 </llm-only>
--->
 

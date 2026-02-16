@@ -5,7 +5,6 @@ priority: 70
 collapsed: true
 ---
 
-<!--
 <llm-only>
 ## KubeJS 标签系统
 
@@ -92,5 +91,4 @@ event.recipes.craftingTable('output', '#my_mod:useful_items');
 - 方块系统：Block/index.md
 - 配方系统：Recipe/index.md
 </llm-only>
--->
 

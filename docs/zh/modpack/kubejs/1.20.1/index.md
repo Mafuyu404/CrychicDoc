@@ -1,6 +1,8 @@
 ---
 root: true
 title: KubeJS-1.20.1
+description: KubeJS 1.20.1版本文档，JavaScript脚本模组，核心API包括事件处理、配方系统、物品/方块注册、实体操作、标签系统
+details: 包含Introduction核心API文档、KubeJSCourse教程、Upgrade版本迁移指南、CodeShare代码示例
 groups:
   - title: 代码分享
     path: CodeShare/
@@ -22,7 +24,6 @@ priority: 9007199254740991
 collapsed: false
 ---
 
-<!--
 <llm-only>
 这是KubeJS 1.20.1版本文档的索引页面。KubeJS是一个Minecraft脚本模组，允许使用JavaScript进行游戏内容定制。
 包含以下主要部分：
@@ -33,4 +34,3 @@ collapsed: false
 
 KubeJS使用JavaScript编写脚本，支持StartupScript、ServerScript、ClientScript三种脚本类型。
 </llm-only>
--->

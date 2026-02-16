@@ -5,7 +5,6 @@ priority: 9007199254740991
 collapsed: true
 ---
 
-<!--
 <llm-only>
 This section documents the Item system in KubeJS for registering and managing custom items:
 - Item registration and properties
@@ -14,4 +13,3 @@ This section documents the Item system in KubeJS for registering and managing cu
 - Resource handling for items
 - Full API reference for Item operations
 </llm-only>
--->

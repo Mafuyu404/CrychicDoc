@@ -5,7 +5,6 @@ priority: 110
 collapsed: true
 ---
 
-<!--
 <llm-only>
 ## KubeJS 物品系统
 
@@ -73,5 +72,4 @@ StartupEvents.init(event => {
 - 配方系统：Recipe/index.md
 - 标签系统：Tag/index.md
 </llm-only>
--->
 

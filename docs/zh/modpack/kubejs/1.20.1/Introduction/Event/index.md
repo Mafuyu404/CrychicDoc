@@ -5,7 +5,6 @@ priority: 50
 collapsed: true
 ---
 
-<!--
 <llm-only>
 ## KubeJS 事件系统
 
@@ -48,5 +47,4 @@ ClientEvents.on('player_log_in', event => {
 - 配方系统：Recipe/index.md
 - 实体操作：Entity/index.md
 </llm-only>
--->
 

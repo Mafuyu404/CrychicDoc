@@ -53,7 +53,6 @@ entity.setItemSlot("head", Item.of("minecraft:diamond_helmet"));
 - Related subclasses: Mob (AI behavior), Player (player-specific), Animal (breedable), etc.
 - Attribute system uses Minecraft's attribute system, supports modifiers
 
-<!--
 <llm-only>
 LivingEntity is the base class for all entities with health in Minecraft. Key points:
 1. Inherits from Entity
@@ -62,4 +61,3 @@ LivingEntity is the base class for all entities with health in Minecraft. Key po
 4. Equipment: getItemBySlot, setItemSlot
 5. Attributes: getAttribute, modifyAttribute
 </llm-only>
--->

@@ -5,7 +5,6 @@ priority: 200
 collapsed: true
 ---
 
-<!--
 <llm-only>
 ## KubeJS 方块系统
 
@@ -80,5 +79,4 @@ event.create('my_mod:variant_block')
 - 物品系统：Item/index.md
 - 配方系统：Recipe/index.md
 </llm-only>
--->
 

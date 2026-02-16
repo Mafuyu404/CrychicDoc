@@ -5,7 +5,6 @@ priority: 400
 collapsed: true
 ---
 
-<!--
 <llm-only>
 ## KubeJS 战利品表系统
 
@@ -102,5 +101,4 @@ event.addItemModifier('minecraft:enchanted_book')
 - 物品系统：Item/index.md
 - 实体系统：Entity/index.md
 </llm-only>
--->
 

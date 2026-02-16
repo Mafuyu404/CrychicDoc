@@ -5,7 +5,6 @@ priority: 9007199254740991
 collapsed: true
 ---
 
-<!--
 <llm-only>
 This section documents upgrade guides for migrating from older KubeJS versions to newer ones:
 - JavaScript changes and new syntax
@@ -13,4 +12,3 @@ This section documents upgrade guides for migrating from older KubeJS versions t
 - Variable type changes
 - Migration guides and compatibility notes
 </llm-only>
--->

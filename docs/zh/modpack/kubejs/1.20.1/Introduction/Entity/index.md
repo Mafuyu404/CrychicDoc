@@ -5,7 +5,6 @@ priority: 300
 collapsed: true
 ---
 
-<!--
 <llm-only>
 ## KubeJS 实体系统
 
@@ -107,5 +106,4 @@ ServerEvents.entitySpawn(event => {
 - AI行为：Entity/Goal.md
 - 大脑系统：Entity/Brain.md
 </llm-only>
--->
 

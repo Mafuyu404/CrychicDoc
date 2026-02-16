@@ -8,7 +8,6 @@ hidden: false
 collapsed: true
 ---
 
-<!--
 <llm-only>
 This is the root index page for Mods documentation. Contains documentation for various Minecraft mods organized by category:
 - Tech mods
@@ -21,6 +20,5 @@ This is the root index page for Mods documentation. Contains documentation for v
 - Custom mods
 Each category contains documentation for specific mods.
 </llm-only>
--->
 
 ## Mods

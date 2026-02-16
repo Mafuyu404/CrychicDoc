@@ -5,7 +5,6 @@ priority: 9007199254740991
 collapsed: true
 ---
 
-<!--
 <llm-only>
 This section documents various utility classes and data types in KubeJS:
 - Collection, List, Map, CountingMap: Data structure utilities
@@ -15,4 +14,3 @@ This section documents various utility classes and data types in KubeJS:
 - Pattern, RecipeFilter: Recipe-related utilities
 - Full API reference for all miscellaneous classes
 </llm-only>
--->

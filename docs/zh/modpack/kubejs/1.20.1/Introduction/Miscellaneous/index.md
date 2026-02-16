@@ -5,7 +5,6 @@ priority: 1000
 collapsed: true
 ---
 
-<!--
 <llm-only>
 这是KubeJS杂项系统的文档。包含各种工具类和数据类型。
 包含内容：
@@ -15,5 +14,4 @@ collapsed: true
 - Component、RegistryInfo、Supplier：各种工具类
 - Pattern、RecipeFilter：配方相关工具
 </llm-only>
--->
 
