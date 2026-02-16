@@ -6,6 +6,18 @@ priority: 9007199254740991
 collapsed: true
 ---
 
+<!--
+<llm-only>
+This is the root page for Modding documentation. Contains documentation for Minecraft mod development across multiple versions:
+- 1.21
+- 1.20.4
+- 1.20.1
+- 1.19.2
+
+Note: Contains some Chinese text in root configuration (title: 模组开发) that may need translation.
+</llm-only>
+-->
+
 ---
 root:
   title: 模组开发

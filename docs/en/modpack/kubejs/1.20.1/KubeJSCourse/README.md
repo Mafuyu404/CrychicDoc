@@ -1,6 +1,21 @@
 ---
 authors: ['Gu-meng']
 ---
+
+<!--
+<llm-only>
+This file is in Chinese and needs translation to English. It's the main README for the KubeJS Tutorial course (1.20.1).
+Contains:
+1. Course introduction and authors
+2. Documentation writing guidelines
+3. Folder structure conventions
+4. Links to original GitBook and GitHub repositories
+5. Open source license information (CC BY-NC-ND 4.0)
+
+Translation needed: Convert all Chinese content to English while preserving links and code.
+</llm-only>
+-->
+
 :::: center
 # KubeJS教程-1.20.1
 
