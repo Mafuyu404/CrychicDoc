@@ -14,6 +14,7 @@ import {
     localIconLoader,
 } from "vitepress-plugin-group-icons";
 import { GitChangelog, GitChangelogMarkdownSection } from '@nolebase/vitepress-plugin-git-changelog/vite';
+import llmstxt from 'vitepress-plugin-llms'
 
 const projectInfo = getProjectInfo();
 const projectPaths = getPaths();
@@ -211,6 +212,7 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
             __VUE_PROD_DEVTOOLS__: false
         },
         plugins: [
+            llmstxt(),
             GitChangelog({
                 repoURL: () => projectInfo.repository.url,
                 mapAuthors: (contributors as Contributor[]).map((author) => ({
