@@ -212,7 +212,19 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
             __VUE_PROD_DEVTOOLS__: false
         },
         plugins: [
-            llmstxt(),
+            llmstxt({
+                // 只生成 develop 和 modpack 文件夹的内容
+                filter: (pageData) => {
+                    // 获取页面路径
+                    const path = pageData.frontmatter?.filePath || '';
+                    // 只包含 develop 和 modpack 文件夹
+                    return path.includes('/develop/') || path.includes('/modpack/');
+                },
+                // 启用完整文本生成
+                generateFull: true,
+                // 设置描述长度限制以确保丰富的索引
+                descriptionLimit: 500,
+            }),
             GitChangelog({
                 repoURL: () => projectInfo.repository.url,
                 mapAuthors: (contributors as Contributor[]).map((author) => ({
