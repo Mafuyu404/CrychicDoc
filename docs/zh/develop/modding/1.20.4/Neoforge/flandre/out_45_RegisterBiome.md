@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_45_RegisterBiome.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 添加生物群系
 
 这次我们使用上次添加的terrablender lib来给主世界添加生物群系，为什么不直接添加呢，因为我没找到方法，而且添加也比较麻烦，可能需要mixin，所以我们直接使用这个lib来给主世界添加生物群系，不过如果你是给自己的维度添加生物群系倒不是怎么麻烦了。好了然我们开始把。

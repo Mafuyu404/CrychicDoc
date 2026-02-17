@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/FileStructure.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 认识KubeJS的文件夹
 
 kjs在第一次运行后，会在版本文件夹下创建一个自己的魔改文件夹 **`kubejs`** ，在该目录里有如下文件夹，下面会介绍这些文件夹所存放的类型。

@@ -1,6 +1,10 @@
 ---
 authors: ['Wudji']
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.18.2/XPlusKubeJSTutorial/events2/worldjs-serverjs.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # 15.4 WorldJS 和 ServerJS
 

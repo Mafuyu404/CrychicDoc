@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/LootTables/BlockLootTable.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 方块掉落
 在mc中方块掉落也属于战利品，我们可以想到并不是在有的时候方块挖掘后并不是掉落它本身，甚至有的可以受到时运影响而掉落更多，因为它本质上就是战利品，方块掉落什么取决于战利品池里抽到什么
 ## 覆盖方块掉落

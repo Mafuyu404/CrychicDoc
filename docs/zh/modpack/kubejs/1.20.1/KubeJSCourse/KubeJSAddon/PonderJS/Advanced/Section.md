@@ -4,6 +4,10 @@ authors:
   - Qi-Month
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSAddon/PonderJS/Advanced/Section.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 ## Section进阶用法(建议先把基础学好了再回来看这个)
 
 > ### showIndependentSection

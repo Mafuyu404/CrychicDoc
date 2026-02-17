@@ -8,4 +8,7 @@ hidden: false
 priority: 500
 collapsed: true
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/index.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
 

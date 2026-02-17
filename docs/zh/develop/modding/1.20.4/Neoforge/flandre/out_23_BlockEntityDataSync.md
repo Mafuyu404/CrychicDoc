@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_23_BlockEntityDataSync.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 参考
 本文章参考了：
 https://boson.v2mcdev.com/tileentity/datasync.html
@@ -192,5 +196,4 @@ onDataPacket方法是客户端处理数据包的方法。他处理的内容就�
 对方块和方块实体的注册及其相关的内容就不过度赘述了， 可以直接看源码。
 
 源码在Kook
-
 

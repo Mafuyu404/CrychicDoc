@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSAddon/MoreJS/AllEvent.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # MoreJS提供的事件
 在这一章中将会简单分享介绍morejs所提供的所有事件和对应的使用方法示例链接
 

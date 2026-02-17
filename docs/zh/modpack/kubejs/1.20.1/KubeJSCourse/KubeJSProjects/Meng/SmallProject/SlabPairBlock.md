@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSProjects/Meng/SmallProject/SlabPairBlock.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 台阶合成木板
 本章主要涉及内容：配方事件里的findRecipes，本章所有代码部分都在`server_scripts`里
 

@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_16_LootTable.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 战利品表
 
 战利品表是指你破坏了方块或者打死了实体的时候掉落的东西，也包含了奖励箱的内容。

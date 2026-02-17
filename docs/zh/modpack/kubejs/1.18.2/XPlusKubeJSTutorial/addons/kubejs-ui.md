@@ -1,6 +1,10 @@
 ---
 authors: ['Wudji']
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.18.2/XPlusKubeJSTutorial/addons/kubejs-ui.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # 12.4 KubeJS UI
 

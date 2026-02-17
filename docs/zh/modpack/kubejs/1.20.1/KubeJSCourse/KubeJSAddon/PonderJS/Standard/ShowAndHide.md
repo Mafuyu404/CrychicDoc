@@ -4,6 +4,10 @@ authors:
   - Qi-Month
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSAddon/PonderJS/Standard/ShowAndHide.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 关于显示与隐藏
 此处介绍其他关于显示与隐藏方块的函数
  

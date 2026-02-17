@@ -10,6 +10,15 @@ hidden: false
 priority: 20
 ---
 
+<llm-only>
+本页总结了 KubeJS 实体 API 的常用方法（属性、AI、生命值、装备、药水、数据存储等）。要点：
+1. 方法分类依次覆盖属性、AI、状态、装备与数据；
+2. 继承树：Entity → LivingEntity → Mob → Player，每层拓展更多方法；
+3. `persistentData` 是 KubeJS 自定义数据存储，区别于原生 NBT；
+4. 某些 API 仅在服务端或特定事件中可用，建议查阅 Forge JavaDocs；
+5. 典型用法：`entity.getAttribute(...).setBaseValue(...)`、`entity.goalSelector.addGoal(...)`、`entity.setItemSlot(...)`、`entity.persistentData.putString(...)`。
+</llm-only>
+
 # 实体常用方法
 
 ## 概述 {#overview}

@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/BasicSyntax-DeleteAndModify.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 基础写法-删除和修改
 在本章中，将介绍**配方过滤器**和使用**配方过滤器**删除和修改配方
 ## 配方过滤器

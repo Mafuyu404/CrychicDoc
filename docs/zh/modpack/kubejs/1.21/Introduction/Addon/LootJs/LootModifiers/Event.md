@@ -3,6 +3,10 @@ title: Event
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.21/Introduction/Addon/LootJs/LootModifiers/Event.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # Loot Modification Event
 
 该事件用于创建战利品修饰器，这些修饰器用于修改滚动战利品表后直接生成的物品。也就是说他不直接修改战利品表，而是修改战利品表最后生成的物品。

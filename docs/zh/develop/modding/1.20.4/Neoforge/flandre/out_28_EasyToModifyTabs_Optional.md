@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_28_EasyToModifyTabs_Optional.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 便捷的方式将物品添加到创造模式物品栏[可选]
 
 想必大家已经添加物品然后在手动添加到物品栏已经很烦了，这里给出一种简单的解决方法，当你注册物品的时候，直接添加到物品栏中去。

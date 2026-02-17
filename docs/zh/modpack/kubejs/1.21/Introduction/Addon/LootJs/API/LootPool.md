@@ -3,6 +3,10 @@ title: LootPool
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.21/Introduction/Addon/LootJs/API/LootPool.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # LootPool
 
 随机池用于决定在何种情况下生成何种物品。主要定义了若干待选的抽取项。它通过使用多个不同的池来帮助在战利品表中分组物品。

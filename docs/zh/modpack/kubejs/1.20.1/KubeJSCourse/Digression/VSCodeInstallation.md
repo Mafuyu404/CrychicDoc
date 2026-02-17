@@ -3,6 +3,10 @@ authors:
   - Qi-Month
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/Digression/VSCodeInstallation.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # VS Code安装
 这篇文档很短, 主要是讲一下VS Code在安装时的一些注意事项, 例如最重要的把VS Code打入注册表
 

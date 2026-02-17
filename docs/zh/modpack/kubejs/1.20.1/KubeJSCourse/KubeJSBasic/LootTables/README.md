@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/LootTables/README.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 战利品
 在这章中会采用原生的KubeJs实现战利品的修改和添加，并不会使用LootJs进行修改战利品，LootJs的修改在模组篇章中
 

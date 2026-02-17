@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_13_BlockRenderType.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 参考了该文章
 
 https://boson.v2mcdev.com/block/rendertype.html
@@ -106,6 +110,5 @@ blockstate和物品model生成
 ```
 
 添加到创造模式物品栏，略和之前一样操作。
-
 
 

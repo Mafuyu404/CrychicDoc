@@ -1,6 +1,10 @@
 ---
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSProjects/Meng/Backpack.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 注册背包
 本章涉及内容：物品注册、nbt操作，饰品处理，按键注册
 涉及模组及版本:

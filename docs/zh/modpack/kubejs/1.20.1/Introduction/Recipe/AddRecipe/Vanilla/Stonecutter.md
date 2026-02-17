@@ -3,6 +3,10 @@ title: 切石机
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Recipe/AddRecipe/Vanilla/Stonecutter.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 切石机
 
 ## 前言

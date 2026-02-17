@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/Digression/Rarity.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 物品稀有度(Rarity)
 **稀有度主要作用是用来影响物品名称在游戏内显示的颜色效果(如果物品单独设置了颜色则不受影响)**
 ## 稀有度的等级

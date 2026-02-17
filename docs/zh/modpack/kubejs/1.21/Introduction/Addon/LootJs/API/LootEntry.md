@@ -3,6 +3,10 @@ title: LootEntry
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.21/Introduction/Addon/LootJs/API/LootEntry.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # LootEntry
 
 战利品抽取项用于在战利品表中创建结果物品。它们被分为不同类型的抽取项。

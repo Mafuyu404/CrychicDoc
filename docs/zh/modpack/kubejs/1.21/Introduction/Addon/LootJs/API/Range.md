@@ -3,6 +3,10 @@ title: Range
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.21/Introduction/Addon/LootJs/API/Range.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # Range
 
 在使用 LootJS 时，我们经常需要指定两个值之间的范围。对于这些情况，我们有 `Range` 。当函数需要 `Range` 时，我们可以通过直接向函数传递 `number` 或 `number[]` 来轻松使用类型包装器。

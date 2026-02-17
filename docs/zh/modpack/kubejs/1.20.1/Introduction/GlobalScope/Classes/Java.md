@@ -5,6 +5,16 @@ title: Java类
 hidden: false
 priority: 0
 ---
+
+<llm-only>
+本页面介绍 KubeJS 提供的 Java 全局对象（用于通过反射访问 Minecraft/Java 类）。要点：
+1. `Java.loadClass('全限定名')`：按名称加载类，找不到会抛出错误；
+2. `Java.tryLoadClass('全限定名')`：尝试加载类，找不到返回 null；
+3. 可访问诸如 `net.minecraft.world.entity.Entity`、`ItemStack` 等 Minecraft 类；
+4. KubeJS 不能继承 Java 类或实现接口（extends/implements 不受支持）；
+5. 加载后可将 Java 类当作普通 JS 对象使用（例如 `const Entity = Java.loadClass('...')`）。
+</llm-only>
+
 # Java
 
 ::: tip 提示

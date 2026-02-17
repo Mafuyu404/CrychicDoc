@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/LootTables/GlobalLootTable.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 全局战利品
 kubejs并没有提供所有战利品的修改，比如猫、猪灵交易、嗅探兽的战利品等都没有提供，这时就可以使用全局战利品直接去修改,只要能在游戏内获取到的id可以直接使用全局战利品去修改
 ## 覆盖

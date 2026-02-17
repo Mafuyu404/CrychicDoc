@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSAdvanced/WorldGen.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 世界生成(WorldGen)(非常不建议在1.20使用!1.20建议使用数据包)
 
 > 孤梦注：该文档从wudji的世界生成篇借鉴而来，后续孤梦有空可能会重写

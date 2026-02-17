@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/Resources/Model.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 模型介绍
 
 首先模型不仅仅适用于方块, 同样可以适用于物品, 在这篇文档不会教你怎么制作模型, 若想学习模型制作请前往[**另一个文档**](../Digression/BlockbenchBasic)

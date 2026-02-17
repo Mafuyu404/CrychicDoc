@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSAdvanced/ItemRecipeReturnItem.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 物品配方合成返回物品
 这一章理论来说应该在物品属性里，但是可修改的物品属性太多了，所以把这一个单独拿出来
 

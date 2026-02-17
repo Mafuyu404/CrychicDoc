@@ -1,6 +1,10 @@
 ---
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSProjects/Meng/SmallProject/Message+1.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 聊天消息+1
 本章主要涉及内容：Component，聊天事件，本章所有代码部分都在`server_scripts`里
 

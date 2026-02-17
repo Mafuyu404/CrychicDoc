@@ -3,6 +3,10 @@ title: 材质
 hidden: false
 priority: 400
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Item/Register/Resource.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 资源文件
 
 ## 物品纹理

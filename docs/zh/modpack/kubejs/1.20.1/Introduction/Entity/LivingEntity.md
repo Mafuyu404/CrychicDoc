@@ -10,6 +10,16 @@ hidden: false
 priority: 300
 ---
 
+<llm-only>
+LivingEntity 是所有带生命值实体的基类，KubeJS 中要点包括：
+1. 继承自 Entity；
+2. 生命值管理：`getHealth`、`setHealth`、`heal`、`hurt`；
+3. 药水效果：`addEffect`、`removeEffect`、`hasEffect`；
+4. 装备：`getItemBySlot`、`setItemSlot`；
+5. 属性：`getAttribute`、`modifyAttribute`；
+6. 许多方法仅在服务端有效，建议查阅 Forge JavaDocs。
+</llm-only>
+
 # LivingEntity
 
 ## 概述 {#overview}

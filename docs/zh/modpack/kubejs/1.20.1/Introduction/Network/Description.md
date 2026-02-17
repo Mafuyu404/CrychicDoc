@@ -3,6 +3,10 @@ title: 序言
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Network/Description.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # NetworkEvent
 
 NetworkEvent 用于在服务器与客户端之间发送和接收数据。这在需要同步信息或触发跨端操作时非常有用。

@@ -3,6 +3,10 @@ title: 死亡扣除最大生命值
 hidden: false
 priority: 9007199254740991
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/CodeShare/LifeValue.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 死亡扣除生命上限
 
 ::: v-info

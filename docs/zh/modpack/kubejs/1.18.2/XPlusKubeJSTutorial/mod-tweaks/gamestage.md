@@ -1,6 +1,10 @@
 ---
 authors: ['Wudji']
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.18.2/XPlusKubeJSTutorial/mod-tweaks/gamestage.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # 11.4 KubeJs内置游戏阶段 (类似于GameStage)
 

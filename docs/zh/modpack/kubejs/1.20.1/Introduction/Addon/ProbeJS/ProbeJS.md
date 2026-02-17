@@ -3,6 +3,10 @@ title: ProbeJS
 hidden: false
 priority: -100
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJS.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # ProbeJS使用教程 {#Summary}
 
 ProbeJS是一个`KubeJS`附属模组，它为`KubeJS`脚本的编写带来了`语法补全`，并提供了各种便利的功能。

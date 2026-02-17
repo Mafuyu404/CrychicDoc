@@ -14,6 +14,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_02_FirstItemRegistry.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 第一个物品 
 我们需要继承原版得物品类，实例化这个物品类，之后把这个物品类添加到游戏中去。
 

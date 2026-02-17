@@ -213,32 +213,24 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
         },
         plugins: [
             llmstxt({
-                // 只生成 develop 和 modpack 文件夹的内容
-                filter: (pageData) => {
-                    // 获取页面路径
-                    const path = pageData.frontmatter?.filePath || '';
-                    // 只包含 develop 和 modpack 文件夹
-                    return path.includes('/develop/') || path.includes('/modpack/');
-                },
-                // 启用完整文本生成
-                generateFull: true,
-                // 设置描述长度限制以确保丰富的索引
-                descriptionLimit: 500,
-                // 生成每个页面的LLM友好版本
+                domain: projectInfo.homepage,
+                description:
+                    "Minecraft mod development documentation covering KubeJS scripting, modding tooling, and multilingual resources.",
+                details: `\
+- KubeJS 1.20.1 / 1.21 reference for events, recipes, entities, tags, and GlobalScope helpers
+- Modding guides covering Mixin, Datagen, networking, GUI, loot tables, and upgrade paths
+- Tutorials, KubeJSCourse content, and code shares kept in sync across English and Chinese locales
+`,
+                ignoreFiles: ["blog/*", "blog.md", "team.md"],
+                generateLLMsTxt: true,
+                generateLLMsFullTxt: true,
                 generateLLMFriendlyDocsForEachPage: true,
-                // 排除不必要的文件
+                stripHTML: true,
+                injectLLMHint: true,
                 excludeUnnecessaryFiles: false,
-                // 不排除索引页面，确保每个目录都有llms.txt
-                excludeIndexPage: false,
-                // 排除博客相关内容
-                excludeBlog: true,
-                // 排除团队页面
-                excludeTeam: true,
-                // 实验性功能：生成子目录的llms.txt
-                experimental: {
-                    // 生成到二级子目录，例如 /modpack/kubejs/llms.txt
-                    depth: 2,
-                },
+                // experimental: {
+                //     depth: 2,
+                // },
             }),
             GitChangelog({
                 repoURL: () => projectInfo.repository.url,

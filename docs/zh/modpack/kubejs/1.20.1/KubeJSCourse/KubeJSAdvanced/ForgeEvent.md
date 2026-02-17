@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSAdvanced/ForgeEvent.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # ForgeEvent的使用
 > 孤梦注：可千万不要玩forge事件啊，玩了你就要长脑子了！！！
 

@@ -10,6 +10,15 @@ hidden: false
 priority: 700
 ---
 
+<llm-only>
+目标系统是 Minecraft 的 AI 行为框架，面对 KubeJS 通常需掌握：
+1. `goalSelector` 管理漫游、繁殖等日常行为，优先级数字越低执行越早；
+2. `targetSelector` 处理敌对目标的选择与追击；
+3. 生命周期方法：`canUse` → `start` → `tick` → `canContinueToUse` → `stop`；
+4. 典型目标类：`FloatGoal`、`RandomStrollGoal`、`MeleeAttackGoal` 等；
+5. Minecraft 1.19+ 推荐使用 Brain 系统，早期版本继续用 Goal 系统。
+</llm-only>
+
 # 实体目标（Goal）系统 {#KubeJsGoalSystem}
 
 ## 基础说明 {#KubeJsOverview}

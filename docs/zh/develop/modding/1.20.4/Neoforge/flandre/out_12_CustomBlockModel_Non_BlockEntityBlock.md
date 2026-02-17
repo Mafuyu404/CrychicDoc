@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_12_CustomBlockModel_Non_BlockEntityBlock.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 本文参考了改内容
 
 https://boson.v2mcdev.com/block/nonesoildblock.html

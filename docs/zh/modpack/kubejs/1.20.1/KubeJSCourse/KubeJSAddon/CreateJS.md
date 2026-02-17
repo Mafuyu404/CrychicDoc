@@ -1,6 +1,10 @@
 ---
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSAddon/CreateJS.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 机械动力和KubeJs 
 在本章中将介绍如何使用KubeJs去修改机械动力模组的配方
 

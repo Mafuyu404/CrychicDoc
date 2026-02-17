@@ -1,6 +1,10 @@
 ---
 authors: ['Wudji']
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.18.2/XPlusKubeJSTutorial/others/can.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # 18.2 罐头示例(包含物品注册, 配方添加, 玩家交互和persistentData的使用)
 

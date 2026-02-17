@@ -4,6 +4,10 @@ authors:
   - Qi-Month
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSAddon/PonderJS/Internal/Facing.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 以下代码节录自 globals.d.ts
 
 ```ts

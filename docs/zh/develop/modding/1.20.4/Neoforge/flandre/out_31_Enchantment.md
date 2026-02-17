@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_31_Enchantment.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 #
 
 直接看：https://flandre923.github.io/2024/01/30/%E3%80%90Minecraft-1-20-4-NeoForge-%E6%A8%A1%E7%BB%84%E6%95%99%E7%A8%8B%E3%80%9115%E9%99%84%E9%AD%94/?highlight=%E9%99%84%E9%AD%94

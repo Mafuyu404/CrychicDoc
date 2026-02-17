@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/Customs/ItemType/Food.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 添加食物
 在本章中将会介绍如何使用物品添加事件去添加食物，本章所有js代码都是在文件夹`startup_scripts`下
 

@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_22 _BlockEntityTick.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 参考
 本文章大量参考了：
 https://boson.v2mcdev.com/tileentity/itickabletileentity.html
@@ -159,4 +163,3 @@ tick方法就是获得timer然后检查是否到达了计时，如果达到了�
 别忘记了注册你的方块实体和方块，以及添加到创造模式物品栏，材质，模型和翻译，相信大家已经会了怎么进行这些操作就不过度介绍了。
 
 不了解了可以看源码和之前的教程。进入到游戏中你可以就可以看到给你打招呼了。
-

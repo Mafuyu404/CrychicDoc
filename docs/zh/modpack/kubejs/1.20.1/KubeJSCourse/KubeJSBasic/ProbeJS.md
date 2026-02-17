@@ -1,6 +1,10 @@
 ---
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/ProbeJS.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # ProbeJS的基础使用
 > 孤梦注：本篇不包含vscode的使用教程，如不会使用vscode请自行百度
 

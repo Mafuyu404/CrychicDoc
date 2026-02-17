@@ -11,6 +11,14 @@ hidden: false
 priority: 800
 ---
 
+<llm-only>
+Brain 是 Minecraft 1.19+ 的 AI 控制器，替代早期的 Goal 系统。要点：
+1. 管理记忆（Memory）、感知（Sensors）与行为任务（Tasks）；
+2. 记忆操作：`setMemory`、`getMemory`、`hasMemory` 等；
+3. 仅在 1.19+ 可用，1.18 及更早版本仍须使用 Goal 系统；
+4. 不同生物拥有不同的记忆类型，需参考 Minecraft 源码以了解具体键。
+</llm-only>
+
 # Brain 系统指南
 
 ## 概述 {#overview}

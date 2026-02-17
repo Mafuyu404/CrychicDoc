@@ -10,6 +10,16 @@ hidden: false
 priority: 500
 ---
 
+<llm-only>
+本页记录 KubeJS 中的 Player 类及常用方法。要点：
+1. 继承自 LivingEntity，增加玩家特有能力（背包、经验、游戏模式等）；
+2. 常用方法：`getName`、`getUuid`、`sendMessage`、`isCreative`、`isSpectator`；
+3. `getInventory()` 可访问背包，`addExperience()` 用于经验管理；
+4. `isCreative()` / `isSpectator()` 可检查游戏模式；
+5. 相关类：`ServerPlayer`、`AbstractClientPlayer`；
+6. `player.username` 返回纯文本文本名，`player.getName()` 返回组件结构。
+</llm-only>
+
 # Player
 
 ## 概述 {#overview}

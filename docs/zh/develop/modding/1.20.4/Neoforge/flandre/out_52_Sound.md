@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_52_Sound.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 参考
 
 https://boson.v2mcdev.com/sounds/intro.html
@@ -116,4 +120,3 @@ public class ExampleSoundTestItem extends Item {
 关于ogg格式，你可以直接搜索MP3转ogg，会有网页工具的。
 
 好了打开游戏试试吧。
-

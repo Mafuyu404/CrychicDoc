@@ -3,6 +3,10 @@ authors:
   - Qi Month
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSProjects/Qi/CMMI.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # 自定义金属材料集成(Custom Metal Materials Integration)
 

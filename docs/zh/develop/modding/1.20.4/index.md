@@ -7,4 +7,7 @@ details: 涵盖Minecraft 1.20.4版本的模组开发，包括Forge、Neoforge、
 hidden: false
 collapsed: true
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/index.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
 

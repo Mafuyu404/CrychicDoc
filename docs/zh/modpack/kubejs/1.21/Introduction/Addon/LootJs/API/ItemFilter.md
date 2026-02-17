@@ -3,6 +3,10 @@ title: ItemFilter
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.21/Introduction/Addon/LootJs/API/ItemFilter.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # ItemFilter
 
 物品过滤器是 LootJS 中的一个重要使用工具。主要用于根据给定的条件过滤物品。

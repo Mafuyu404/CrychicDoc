@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_24 BakedModel.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 参考
 
 https://boson.v2mcdev.com/specialrender/ibakedmodel.html
@@ -246,4 +250,3 @@ ModBlocks.HIDDEN_BLOCK.get().getStateDefinition().getPossibleStates()，迭代�
 好了对于方块的模型，材质，注册，以及创造模式物品栏的添就留给观众了，你也可以直接查看源码。
 
 你进入游戏将当前方块放置在另一个方块上时候就会模仿他的模型了，不过要注意的是这只是一个演示讲解的例子，可能会有一些bug。
-

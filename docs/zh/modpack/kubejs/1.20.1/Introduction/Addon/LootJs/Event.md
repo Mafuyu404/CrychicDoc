@@ -3,6 +3,10 @@ title: 事件
 hidden: false
 priority: 200
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Addon/LootJs/Event.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # LootJs
 
 LootJs 是一个`KubeJS`附属模组，它为`KubeJS`对于原版战利品列表修改进行了更方便的操作

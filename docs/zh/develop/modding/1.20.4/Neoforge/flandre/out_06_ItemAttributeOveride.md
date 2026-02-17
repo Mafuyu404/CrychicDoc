@@ -14,6 +14,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_06_ItemAttributeOveride.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 物品属性覆盖
 
 在Minecraft中，物品模型和属性可以通过JSON文件进行自定义。物品属性覆盖是一种机制，允许开发者根据物品的不同状态或条件来改变其模型或属性。例如，原版的弓在不同的拉动状态下会显示不同的模型。

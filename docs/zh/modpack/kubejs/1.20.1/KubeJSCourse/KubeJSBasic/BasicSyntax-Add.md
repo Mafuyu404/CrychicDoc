@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/BasicSyntax-Add.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 基础写法
 在这一章会教会大家如何去魔改基础配方，比如工作台、熔炉等,如需请点=>[配方合成进阶](../KubeJSAdvanced/AdvancedRecipe)
 ## 工作台

@@ -9,6 +9,10 @@ state: preliminary
 hidden: false
 priority: -1000000
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # {{ $frontmatter.title }}
 

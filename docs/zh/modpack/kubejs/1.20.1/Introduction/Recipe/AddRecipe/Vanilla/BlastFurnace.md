@@ -3,6 +3,10 @@ title: 熔炼
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Recipe/AddRecipe/Vanilla/BlastFurnace.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 高炉
 
 ## 前言

@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSProjects/Meng/RegComponent&Storage.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 注册AE存储元件和对应的组件
 本章涉及内容：`Java.loadClass`的使用、`StartupEvents.registry`里的`createCustom`使用
 

@@ -8,6 +8,10 @@ progress: 95
 hidden: false
 priority: 150
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Entity/Vector.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # 向量与坐标
 

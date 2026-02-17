@@ -1766,6 +1766,321 @@
           "language": "en-US"
         }
       ]
+    },
+    "KubeJS": {
+      "name": "KubeJS",
+      "count": 6,
+      "pages": [
+        {
+          "title": "Entity Brain",
+          "description": "Brain system, memory, sensory locations and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Brain"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "Entity Goal",
+          "description": "Goal system, goalSelector, targetSelector and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Goal"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "LivingEntity",
+          "description": "LivingEntity class properties, health, effects and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "Entity Methods",
+          "description": "KubeJS Entity API common methods classification and usage reference",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Methods"
+          ],
+          "progress": 80,
+          "language": "en-US"
+        },
+        {
+          "title": "Mob",
+          "description": "Mob class properties, AI, goal selection and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "Player",
+          "description": "Player class properties, methods, events and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "en-US"
+        }
+      ]
+    },
+    "Entity": {
+      "name": "Entity",
+      "count": 6,
+      "pages": [
+        {
+          "title": "Entity Brain",
+          "description": "Brain system, memory, sensory locations and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Brain"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "Entity Goal",
+          "description": "Goal system, goalSelector, targetSelector and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Goal"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "LivingEntity",
+          "description": "LivingEntity class properties, health, effects and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "Entity Methods",
+          "description": "KubeJS Entity API common methods classification and usage reference",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Methods"
+          ],
+          "progress": 80,
+          "language": "en-US"
+        },
+        {
+          "title": "Mob",
+          "description": "Mob class properties, AI, goal selection and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "Player",
+          "description": "Player class properties, methods, events and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "en-US"
+        }
+      ]
+    },
+    "Brain": {
+      "name": "Brain",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Entity Brain",
+          "description": "Brain system, memory, sensory locations and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Brain"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        }
+      ]
+    },
+    "Goal": {
+      "name": "Goal",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Entity Goal",
+          "description": "Goal system, goalSelector, targetSelector and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Goal"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        }
+      ]
+    },
+    "LivingEntity": {
+      "name": "LivingEntity",
+      "count": 1,
+      "pages": [
+        {
+          "title": "LivingEntity",
+          "description": "LivingEntity class properties, health, effects and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        }
+      ]
+    },
+    "Methods": {
+      "name": "Methods",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Entity Methods",
+          "description": "KubeJS Entity API common methods classification and usage reference",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Methods"
+          ],
+          "progress": 80,
+          "language": "en-US"
+        }
+      ]
+    },
+    "Mob": {
+      "name": "Mob",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Mob",
+          "description": "Mob class properties, AI, goal selection and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        }
+      ]
+    },
+    "Player": {
+      "name": "Player",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Player",
+          "description": "Player class properties, methods, events and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "en-US"
+        }
+      ]
+    },
+    "ProbeJS": {
+      "name": "ProbeJS",
+      "count": 1,
+      "pages": [
+        {
+          "title": "ProbeJS Events",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "en-US"
+        }
+      ]
+    },
+    "Events": {
+      "name": "Events",
+      "count": 1,
+      "pages": [
+        {
+          "title": "ProbeJS Events",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "en-US"
+        }
+      ]
+    },
+    "JSDoc": {
+      "name": "JSDoc",
+      "count": 1,
+      "pages": [
+        {
+          "title": "ProbeJS Events",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "en-US"
+        }
+      ]
     }
   },
   "sortedTags": [
@@ -3535,10 +3850,325 @@
           "language": "en-US"
         }
       ]
+    },
+    {
+      "name": "KubeJS",
+      "count": 6,
+      "pages": [
+        {
+          "title": "Entity Brain",
+          "description": "Brain system, memory, sensory locations and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Brain"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "Entity Goal",
+          "description": "Goal system, goalSelector, targetSelector and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Goal"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "LivingEntity",
+          "description": "LivingEntity class properties, health, effects and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "Entity Methods",
+          "description": "KubeJS Entity API common methods classification and usage reference",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Methods"
+          ],
+          "progress": 80,
+          "language": "en-US"
+        },
+        {
+          "title": "Mob",
+          "description": "Mob class properties, AI, goal selection and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "Player",
+          "description": "Player class properties, methods, events and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "en-US"
+        }
+      ]
+    },
+    {
+      "name": "Entity",
+      "count": 6,
+      "pages": [
+        {
+          "title": "Entity Brain",
+          "description": "Brain system, memory, sensory locations and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Brain"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "Entity Goal",
+          "description": "Goal system, goalSelector, targetSelector and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Goal"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "LivingEntity",
+          "description": "LivingEntity class properties, health, effects and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "Entity Methods",
+          "description": "KubeJS Entity API common methods classification and usage reference",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Methods"
+          ],
+          "progress": 80,
+          "language": "en-US"
+        },
+        {
+          "title": "Mob",
+          "description": "Mob class properties, AI, goal selection and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        },
+        {
+          "title": "Player",
+          "description": "Player class properties, methods, events and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "en-US"
+        }
+      ]
+    },
+    {
+      "name": "Brain",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Entity Brain",
+          "description": "Brain system, memory, sensory locations and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Brain",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Brain"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        }
+      ]
+    },
+    {
+      "name": "Goal",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Entity Goal",
+          "description": "Goal system, goalSelector, targetSelector and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Goal",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Goal"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        }
+      ]
+    },
+    {
+      "name": "LivingEntity",
+      "count": 1,
+      "pages": [
+        {
+          "title": "LivingEntity",
+          "description": "LivingEntity class properties, health, effects and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/LivingEntity",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "LivingEntity"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        }
+      ]
+    },
+    {
+      "name": "Methods",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Entity Methods",
+          "description": "KubeJS Entity API common methods classification and usage reference",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Methods",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Methods"
+          ],
+          "progress": 80,
+          "language": "en-US"
+        }
+      ]
+    },
+    {
+      "name": "Mob",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Mob",
+          "description": "Mob class properties, AI, goal selection and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Mob",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Mob"
+          ],
+          "progress": 90,
+          "language": "en-US"
+        }
+      ]
+    },
+    {
+      "name": "Player",
+      "count": 1,
+      "pages": [
+        {
+          "title": "Player",
+          "description": "Player class properties, methods, events and KubeJS usage",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Entity/Player",
+          "tags": [
+            "KubeJS",
+            "Entity",
+            "Player"
+          ],
+          "progress": 80,
+          "language": "en-US"
+        }
+      ]
+    },
+    {
+      "name": "ProbeJS",
+      "count": 1,
+      "pages": [
+        {
+          "title": "ProbeJS Events",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "en-US"
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "count": 1,
+      "pages": [
+        {
+          "title": "ProbeJS Events",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "en-US"
+        }
+      ]
+    },
+    {
+      "name": "JSDoc",
+      "count": 1,
+      "pages": [
+        {
+          "title": "ProbeJS Events",
+          "path": "/en/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSEvents",
+          "tags": [
+            "ProbeJS",
+            "Events",
+            "JSDoc"
+          ],
+          "progress": 10,
+          "language": "en-US"
+        }
+      ]
     }
   ],
-  "totalTags": 3,
-  "totalPages": 159,
+  "totalTags": 14,
+  "totalPages": 180,
   "language": "en-US",
-  "generatedAt": "2025-08-25T06:15:06.596Z"
+  "generatedAt": "2026-02-16T15:22:10.448Z"
 }

@@ -1,6 +1,10 @@
 ---
 authors: ['Wudji']
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.19.2/XPlusKubeJSTutorial/game-contents/special-blocks-and-items/food.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # 6.2 食物注册
 

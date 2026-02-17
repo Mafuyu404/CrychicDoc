@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSAddon/KubeJSAdditions/Events.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # KubeJS Additions事件介绍
 在KubeJS Additions(下面简称kubejs拓展)中额外提供了许多事件，下面为大家列举出来
 ## 事件列表

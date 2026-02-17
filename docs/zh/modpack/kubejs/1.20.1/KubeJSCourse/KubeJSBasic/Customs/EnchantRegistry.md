@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/Customs/EnchantRegistry.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 添加附魔
 在kubejs中可以非常轻松的添加附魔，一定要注意，写在startup_scripts文件夹里
 ```js

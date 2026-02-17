@@ -3,6 +3,10 @@ title: LootTable
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.21/Introduction/Addon/LootJs/API/LootTable.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # LootTable
 
 战利品表用于决定在何种情况下生成何种物品。

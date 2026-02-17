@@ -3,6 +3,10 @@ title: 实体
 hidden: false
 priority: 300
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/LootTable/Vanilla/Entity.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 实体类型战利品表
 
 ## 操作战利品表

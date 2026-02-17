@@ -2,6 +2,15 @@
 authors: ['Gu-meng']
 editor: Gu-meng
 ---
+<llm-only>
+KubeJS 教程课程（1.20.1）主页面，包含：
+- 课程介绍与作者信息
+- 文档编写指南与约定
+- 文件夹结构（KubeJS-Basics、KubeJSAdvanced、KubeJSAddon 等）
+- 原始 GitBook、Gitee 与 GitHub 项目链接
+- 开源许可证（CC BY-NC-ND 4.0）说明
+</llm-only>
+
 :::: center
 # KubeJS教程-1.20.1
 

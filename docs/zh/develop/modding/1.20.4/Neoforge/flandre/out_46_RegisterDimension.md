@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_46_RegisterDimension.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 参考
 https://github.com/Tutorials-By-Kaupenjoe/Forge-Tutorial-1.20.X/commit/c9c8ce9ea968bf834f9553fa6361b510bdc7e0fb#diff-90c4e40141b4edaaf4f71a499fa5124e38d76b36619bb8ad198f2e61e7d4fa39
 ## 维度生成相关json的wiki
@@ -305,4 +309,3 @@ net.minecraft.world.level.dimension.LevelStem
 
 dimensiontype
 net.minecraft.data.worldgen.DimensionTypes
-

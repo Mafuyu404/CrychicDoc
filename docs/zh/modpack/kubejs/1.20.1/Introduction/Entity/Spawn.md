@@ -6,6 +6,10 @@ tags:
 hidden: false
 priority: 50
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Entity/Spawn.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # 实体生成
 

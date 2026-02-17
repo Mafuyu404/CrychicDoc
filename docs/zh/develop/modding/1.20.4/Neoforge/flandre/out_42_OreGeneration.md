@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_42_OreGeneration.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 矿物生成
 
 这次我们来说矿物生成，现在的世界生成基本上已经使用json来驱动了，所以你甚至不需要编写代码，仅仅通过json就可以实现了，不过编写这样的json是一件很恐怖的事情，我们还是通过数据生成的方式来生成json的内容，这次的内容比较多。我们还是先来介绍涉及到的类，以及原版的怎么操作的。然后再来讲我们应该怎么做。

@@ -4,6 +4,10 @@ authors:
   - Qi-Month
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/Foreword.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 前言
 ## kubejs的基本概念
 首先该脚本是由js语言(`JavaScript`)进行编写的，所以在使用kjs(kubejs后续都会直接称之为kjs)时需要知道简单的js语言如何去写，包括但不限于:数据类型、运算符、判断、循环、函数,如果你是单纯的修改配方可以不学习`JavaScript`

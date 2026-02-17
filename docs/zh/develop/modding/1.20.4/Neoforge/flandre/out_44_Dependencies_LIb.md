@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_44_Dependencies_LIb.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 添加使用模组和附属
 
 这次我们怎么给你的工程项目添加一些模组，用于辅助我们的开发，例如添加一个jei，来查看配置文件，或者给jei添加一些支持，让jei显示自己的合成表。
@@ -140,4 +144,3 @@ terrablender_version=3.3.0.12
 最后点击reload gradle或者load gradle change，下载对应的依赖。
 
 好了之后的教程我们使用TerraBlender给主世界添加生物群系biome
-

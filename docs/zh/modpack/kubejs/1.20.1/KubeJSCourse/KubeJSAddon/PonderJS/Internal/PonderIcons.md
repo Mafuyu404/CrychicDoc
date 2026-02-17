@@ -4,6 +4,10 @@ authors:
   - Qi-Month
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSAddon/PonderJS/Internal/PonderIcons.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 > 调用 picon 使用 `PonderIcons.你要的PonderIcons` 即可
 >
 > 例如 : PonderIcons.I_WHITELIST_AND

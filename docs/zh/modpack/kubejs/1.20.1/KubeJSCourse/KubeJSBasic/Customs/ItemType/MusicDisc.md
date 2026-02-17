@@ -4,6 +4,10 @@ authors:
   - QiHuang02
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/Customs/ItemType/MusicDisc.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 添加唱片
 
 在本章中会举例如何创建一个可以播放音乐的唱片，本章所有js代码将会存放于在文件夹`startup_scripts`和`server_scripts`下

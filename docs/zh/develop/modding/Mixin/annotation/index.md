@@ -6,6 +6,10 @@ progress: 15
 hidden: false
 collapsed: true
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/Mixin/annotation/index.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # 注解 {#annotation}
 
@@ -47,4 +51,3 @@ Mixin 使用一系列注解来实现其强大的代码修改功能。下面是�
 ::: info 注意
 本文档内容很大程度上参考了 [Mixin Cheatsheet](https://github.com/2xsaiko/mixin-cheatsheet) 项目，并结合了 SpongePowered Mixin Wiki 的信息进行了补充和说明。
 :::
-

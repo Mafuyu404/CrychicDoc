@@ -8,6 +8,10 @@ progress: 90
 hidden: false
 priority: 200
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocBasics.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # JSDoc 基础语法与通用用法
 

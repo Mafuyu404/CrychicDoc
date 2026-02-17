@@ -11,6 +11,10 @@ category: Minecraft1_20_4_NeoForge_Tutorial
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_17 Tag.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # tag表
 
 当你现在使用稿子挖掘我们添加的方块时候，你会发现无论你设置的硬度是多少挖掘速度都是一样的。会有掉落的物品，这个物品是你在上一节的战利品表中设置的。
@@ -116,7 +120,6 @@ https://minecraft.fandom.com/zh/wiki/%E6%A0%87%E7%AD%BE
 
 neoforge document:
 https://docs.neoforged.net/docs/datagen/server/tags
-
 
 
 

@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSProjects/Meng/SmallProject/CreatePipeCollision.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 机械动力修改流体管道流体和流体产生块
 本章主要涉及内容：ForgeEvents、机械动力事件里的`PipeCollisionEvent.Spill`，本章所有代码部分都在`startup_scripts`里
 

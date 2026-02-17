@@ -3,6 +3,10 @@ title: 通用
 hidden: false
 priority: 50
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/LootTable/Vanilla/Generic.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 通用类型战利品表
 
 ::: tip 提示

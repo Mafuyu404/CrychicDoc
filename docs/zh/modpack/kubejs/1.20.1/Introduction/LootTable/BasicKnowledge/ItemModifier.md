@@ -3,6 +3,10 @@ title: 物品修饰器
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/LootTable/BasicKnowledge/ItemModifier.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 物品修饰器
 
 ## 概述

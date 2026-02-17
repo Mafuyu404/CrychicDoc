@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/Custom.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 通用配方修改
 在本章中将会介绍如何去修改基本上所有的配方，无论该模组是否和kjs联动，我们都可以进行修改，当然前提是他是一个标准配方
 

@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_43_StructureGeneration.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 结构生成
 
 好了这次我们来说结构化生成，这次涉及到的东西比较多，且内容比较杂乱，所以大家自己多看看。

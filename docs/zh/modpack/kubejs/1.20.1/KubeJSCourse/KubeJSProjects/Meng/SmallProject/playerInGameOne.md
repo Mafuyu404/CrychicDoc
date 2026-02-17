@@ -1,6 +1,10 @@
 ---
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSProjects/Meng/SmallProject/playerInGameOne.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 检测玩家第一次进游戏
 本章主要涉及内容：玩家进入游戏事件，游戏阶段，本章所有代码部分都在`server_scripts`里
 

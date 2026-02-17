@@ -9,6 +9,10 @@ progress: 95
 hidden: false
 priority: 300
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/JSDocKubeJSUsage.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # KubeJS/ProbeJS 场景下的 JSDoc 实践
 

@@ -3,6 +3,10 @@ title: 战利品表池
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/LootTable/BasicKnowledge/LootPool.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 随机池
 
 - 存在于每个战利品表的随机池列表中，内含抽取项（战利品），每个随机池都有自己的抽取次数设置，触发战利品表时每个随机池进行有放回的独立抽取。

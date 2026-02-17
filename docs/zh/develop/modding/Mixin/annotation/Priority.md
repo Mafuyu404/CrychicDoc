@@ -3,6 +3,10 @@ title: Mixin 优先级
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/Mixin/annotation/Priority.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # Mixin 优先级
 

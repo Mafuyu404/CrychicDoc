@@ -3,6 +3,10 @@ title: Painter实例
 hidden: false
 priority: 9007199254740991
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/CodeShare/Painter.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # Painter API 实现攻击显示血条动画
 
 ::: v-info

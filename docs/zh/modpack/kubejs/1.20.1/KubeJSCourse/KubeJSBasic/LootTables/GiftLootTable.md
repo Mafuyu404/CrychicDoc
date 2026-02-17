@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/LootTables/GiftLootTable.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 村民礼物战利品
 这里的村民礼物是在玩家获得村庄英雄时，[不同村民](../../Digression/LootTableId.md/#村民礼物战利品)会赠送礼物给玩家
 ## 覆盖村民的礼物赠送

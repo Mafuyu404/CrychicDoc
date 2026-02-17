@@ -5,6 +5,10 @@ title: ProbeJS类文件
 hidden: false
 priority: 10000000000000
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Addon/ProbeJS/ProbeJSClassFlie.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # ProbeJS类型文件
 
 ## LootBuilder

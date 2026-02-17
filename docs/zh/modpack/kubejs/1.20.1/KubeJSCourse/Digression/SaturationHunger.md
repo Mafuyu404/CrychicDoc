@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/Digression/SaturationHunger.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 饱食度和饱和度
 来自[mcwiki](https://zh.minecraft.wiki/w/%E9%A3%9F%E7%89%A9?variant=zh-cn#%E9%A5%A5%E9%A5%BF%E4%B8%8E%E9%A5%B1%E5%92%8C%E7%9A%84%E5%8C%BA%E5%88%AB)的外链
 

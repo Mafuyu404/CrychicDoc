@@ -1,6 +1,10 @@
 ---
 authors: ['Wudji']
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.19.2/XPlusKubeJSTutorial/readme/probejs-and-commands.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 
 # 1.1 常用游戏内指令与ProbeJS使用
 

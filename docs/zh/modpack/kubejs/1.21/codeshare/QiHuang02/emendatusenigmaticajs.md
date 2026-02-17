@@ -3,6 +3,10 @@ title: 矿物生成轮子
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.21/codeshare/QiHuang02/emendatusenigmaticajs.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 ::: carousels#{"cycle": false, "interval": 2800, "undelimiters": true}
 @tab
 ![EmendatusEnigmaticaJS](/imgs/EmendatusEnigmaticaJS/eejs_1.png)

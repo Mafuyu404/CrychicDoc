@@ -12,6 +12,10 @@ draft: false
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_07_Datagen.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # Data Generators
 
 数据生成器是一种以编程方式生成模组资源和数据的方法。它允许在代码中定义这些文件的内容并自动生成它们，而无需担心细节。

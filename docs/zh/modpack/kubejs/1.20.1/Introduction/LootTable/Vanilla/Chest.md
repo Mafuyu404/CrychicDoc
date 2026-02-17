@@ -3,6 +3,10 @@ title: 箱子
 hidden: false
 priority: 200
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/LootTable/Vanilla/Chest.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 箱子类型战利品表
 
 ## 操作战利品表

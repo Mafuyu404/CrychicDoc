@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSProjects/Meng/SmallProject/RecipesJsonInFile.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 获取所有配方json并保存为文件
 本章主要涉及内容：获取所有配方、JsonIO，本章所有代码部分都在`server_scripts`里
 

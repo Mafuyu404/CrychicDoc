@@ -1,3 +1,7 @@
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSAdvanced/StaticClsss.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 全局静态类
 kubejs提供了以下的全局静态类和对应的方法
 

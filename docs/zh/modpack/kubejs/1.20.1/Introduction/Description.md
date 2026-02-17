@@ -3,6 +3,10 @@ title: 序言
 hidden: false
 priority: -1000000000
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Description.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 序言
 
 - **`版本声明`** 教程基于Minecraft-1.20.1、KubeJS6、Probejs-6.0.1，参考前请关注自身使用的版本。

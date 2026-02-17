@@ -13,6 +13,10 @@ authors:
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_15_CraftTable.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 合成表配方
 
 你可以在wiki中查找有关数据包制作的内容，也就是json的内容。我们这里简单的介绍几种，你可以查找原版的json学习和通过wiki学习。

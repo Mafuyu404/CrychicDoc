@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSBasic/Tooltip.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 物品提示
 在游戏内可以看到锻造模板又或者附魔书下面会有一行文本用于提示，这个是什么什么附魔书或者什么什么模板，本章将会教大家如何去实现该效果
 ## 实现操作

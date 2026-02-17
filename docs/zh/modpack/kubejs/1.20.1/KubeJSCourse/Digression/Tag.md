@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/Digression/Tag.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # tag介绍
 
 在[mcwiki](https://zh.minecraft.wiki/w/%E6%A0%87%E7%AD%BE?variant=zh-cn)中已经做出了相对官方的解释，所以本文就简要介绍一下tag在魔改过程中的作用

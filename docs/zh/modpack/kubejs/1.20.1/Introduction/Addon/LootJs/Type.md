@@ -3,6 +3,10 @@ title: 类型
 hidden: false
 priority: 500
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Addon/LootJs/Type.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # LootJs
 
 LootJs 是一个`KubeJS`附属模组，它为`KubeJS`对于原版战利品列表修改进行了更方便的操作 `KubeJS`本身自带的修改 Loot 的方法过于繁琐，若要修改关于:

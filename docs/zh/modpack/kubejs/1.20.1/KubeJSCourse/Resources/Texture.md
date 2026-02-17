@@ -3,6 +3,10 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/Resources/Texture.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 纹理
 
 这篇文档的作用主要就是简单讲解一下纹理(贴图)相关的内容, 包括纹理文件的存放, 代码注册时和纹理有关的方法说明

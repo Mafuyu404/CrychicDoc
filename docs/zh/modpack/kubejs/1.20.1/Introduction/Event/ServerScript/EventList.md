@@ -3,6 +3,10 @@ title: 事件列表
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Event/ServerScript/EventList.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 服务端脚本事件列表
 
 ## 前言

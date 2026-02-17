@@ -3,6 +3,10 @@ title: 战利品表类型
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/LootTable/BasicKnowledge/LootType.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 战利品表类型
 
 - **`战利品表类型`** 指的是战利品表触发过程中传递的参数集的类型，因此成为战利品表上下文类型，简称战利品表类型。

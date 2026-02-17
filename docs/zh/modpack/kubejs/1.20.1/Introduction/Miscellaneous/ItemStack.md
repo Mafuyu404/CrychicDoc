@@ -3,6 +3,10 @@ title: 物品堆
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Miscellaneous/ItemStack.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 物品堆 (ItemStack)
 
 ## 前言

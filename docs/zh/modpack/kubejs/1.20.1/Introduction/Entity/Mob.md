@@ -10,6 +10,15 @@ hidden: false
 priority: 400
 ---
 
+<llm-only>
+Mob 是 Minecraft 中有 AI 的实体基类，KubeJS 中需了解的要点：
+1. 继承自 LivingEntity；
+2. 支持 AI 目标与目标选择器（`goalSelector`、`targetSelector`）；
+3. 常见子类：`PathfinderMob`、`Animal`、`TamableMob`、`Monster`、`WaterAnimal`、`AmbientCreature`；
+4. 常用方法：`addGoal`、`setTarget`、`getTarget`、`isAggressive`；
+5. 用途：为实体脚本添加行为、目标与属性控制。
+</llm-only>
+
 # Mob
 
 ## 概述 {#overview}

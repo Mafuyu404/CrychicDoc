@@ -3,6 +3,10 @@ title: 自定义方块打开工作台界面
 hidden: false
 priority: 9007199254740991
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/CodeShare/CraftingTableGUI.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 自定义方块打开工作台界面
 ::: v-info
 通过加载原版Java类来进行方块右键打开工作台GUI的功能

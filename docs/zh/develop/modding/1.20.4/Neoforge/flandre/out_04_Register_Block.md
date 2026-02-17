@@ -12,6 +12,10 @@ draft: false
 hidden: false
 priority: 0
 ---
+<llm-only>
+This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_04_Register_Block.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 第一个方块
 在Minecraft中，如果你想添加一个新的方块，你需要创建一个新的Java类来代表这个方块。这个类需要继承自Block类，并使用Properties类来设置方块的一些属性，如硬度、爆炸抗性等。在下面的代码中，我们创建了一个名为RubyBlock的类，这个类代表了一个新的方块，它的属性与石头相似，但硬度更高。
 

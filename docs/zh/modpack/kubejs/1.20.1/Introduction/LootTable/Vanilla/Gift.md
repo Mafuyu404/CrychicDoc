@@ -3,6 +3,10 @@ title: 礼物
 hidden: false
 priority: 600
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/LootTable/Vanilla/Gift.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 礼物类型战利品表
 
 ## 战利品表

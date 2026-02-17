@@ -32,7 +32,7 @@
     },
     "scripts": {
         "docs:dev": "vitepress dev",
-        "docs:build": "tsx .vitepress/scripts/locale-key-sync.mjs && tsx .vitepress/scripts/build-sidebar.mjs && tsx .vitepress/scripts/generate-tag-data.mjs && vitepress build",
+        "docs:build": "tsx .vitepress/scripts/locale-key-sync.mjs && tsx .vitepress/scripts/build-sidebar.mjs && tsx .vitepress/scripts/generate-tag-data.mjs && vitepress build && node .vitepress/scripts/reorganize-llms.mjs",
         "docs:sidebar": "tsx .vitepress/scripts/build-sidebar.mjs",
         "docs:tags": "tsx .vitepress/scripts/generate-tag-data.mjs",
         "docs:preview": "vitepress preview",

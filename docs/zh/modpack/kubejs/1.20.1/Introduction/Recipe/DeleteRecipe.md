@@ -3,6 +3,10 @@ title: 删除配方
 hidden: false
 priority: 100
 ---
+<llm-only>
+This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Recipe/DeleteRecipe.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
+</llm-only>
+
 # 删除配方
 
 - **`配方过滤器`** 删除配方需根据条件判断是否删除，这些专门用于判断配方的条件统称配方过滤器，为表示配方过滤器需要了解[配方过滤器](../MiscellaneousKnowledge/RecipeFilter.md)。
