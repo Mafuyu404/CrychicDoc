@@ -53,17 +53,3 @@ Classes cannot be inherited (extends) in KubeJS, and interfaces cannot be implem
 In this example, Entity is an abstract class and we cannot inherit from it to create subclasses.
 :::
 
-<llm-only>
-This page documents the Java global object in KubeJS for accessing Minecraft/Java classes through reflection.
-
-Key points for LLM understanding:
-1. Java.loadClass('fully.qualified.ClassName') - loads class by name, throws if not found
-2. Java.tryLoadClass('fully.qualified.ClassName') - loads class, returns null if not found
-3. Used to access Minecraft classes like net.minecraft.world.entity.Entity
-4. Cannot extend (inherit) Java classes in KubeJS - this is a key limitation
-5. Once loaded, classes can be used like regular JavaScript objects
-
-Common usage:
-- const Entity = Java.loadClass('net.minecraft.world.entity.Entity');
-- const ItemStack = Java.loadClass('net.minecraft.world.item.ItemStack');
-</llm-only>

@@ -5,9 +5,6 @@ title: 物品和原料
 hidden: false
 priority: 400
 ---
-<llm-only>
-This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Recipe/ItemAndIngredient.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # 物品与原料表示
 

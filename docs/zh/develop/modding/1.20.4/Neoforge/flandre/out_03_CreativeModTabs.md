@@ -14,9 +14,6 @@ authors:
 hidden: false
 priority: 0
 ---
-<llm-only>
-This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_03_CreativeModTabs.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # 自定义创造模式物品栏
 现在添加一个创造物品栏和添加一个物品类似，同样你需要创建一个CreativeModeTab注册器，以使用注册器注册一个CreativeModeTab。然后添加的IEventBus总线中。

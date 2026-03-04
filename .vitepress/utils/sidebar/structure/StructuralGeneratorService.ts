@@ -586,13 +586,11 @@ export class StructuralGeneratorService {
             }
         }
 
-        // 2. External Links Processing (only for root level, not for group directories)
-        const externalLinkItems = baseRelativePathKeyForChildrenInThisScope === "" 
-            ? this.processExternalLinks(
-                effectiveConfigForThisView.externalLinks || [],
-                baseRelativePathKeyForChildrenInThisScope
-            )
-            : [];
+        // 2. External Links Processing
+        const externalLinkItems = this.processExternalLinks(
+            effectiveConfigForThisView.externalLinks || [],
+            baseRelativePathKeyForChildrenInThisScope
+        );
         
         // Combine file/directory items with external links
         const allItems = [...generatedItems, ...externalLinkItems];

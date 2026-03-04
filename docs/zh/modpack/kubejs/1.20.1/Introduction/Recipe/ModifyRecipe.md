@@ -3,9 +3,6 @@ title: 修改配方
 hidden: false
 priority: 200
 ---
-<llm-only>
-This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Recipe/ModifyRecipe.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # 修改配方
 

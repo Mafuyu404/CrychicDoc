@@ -5,9 +5,6 @@ title: 序言
 hidden: false
 priority: 100
 ---
-<llm-only>
-This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/LootTable/Description.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # 战利品表
 

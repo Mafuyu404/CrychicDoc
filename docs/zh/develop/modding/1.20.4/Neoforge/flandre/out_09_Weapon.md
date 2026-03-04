@@ -14,9 +14,6 @@ authors:
 hidden: false
 priority: 0
 ---
-<llm-only>
-This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_09_Weapon.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # 武器
 

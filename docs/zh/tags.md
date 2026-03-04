@@ -13,4 +13,4 @@ showComment: false
 metadata: false
 ---
 
-<TagsPage /> 
+<TagsPage />

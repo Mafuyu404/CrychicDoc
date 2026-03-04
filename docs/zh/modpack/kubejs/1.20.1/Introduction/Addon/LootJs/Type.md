@@ -3,9 +3,6 @@ title: 类型
 hidden: false
 priority: 500
 ---
-<llm-only>
-This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Addon/LootJs/Type.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # LootJs
 

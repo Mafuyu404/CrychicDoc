@@ -3,9 +3,6 @@ title: 物品属性
 hidden: false
 priority: 300
 ---
-<llm-only>
-This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Item/Register/ItemProperty.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # 物品属性
 

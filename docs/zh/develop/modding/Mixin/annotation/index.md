@@ -6,9 +6,6 @@ progress: 15
 hidden: false
 collapsed: true
 ---
-<llm-only>
-This Chinese page (zh/develop/modding/Mixin/annotation/index.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 
 # 注解 {#annotation}

@@ -1,8 +1,8 @@
 {
   "_self_": "文档相关",
-  "rules.md": "Cooperation Guide",
+  "rules.md": "Documentation Writing Standards",
   "sidebarGuide.md": "Sidebar Configuration",
-  "pluginsGuide.md": "Style and Plugins",
+  "pluginsGuide.md": "Styles & Plugins",
   "litetreeGuide.md": "LiteTree Component",
-  "vscodeSnippetsGuide.md": "VSCode Snippets"
+  "vscodeSnippetsGuide.md": "VSCode Code Snippets"
 }

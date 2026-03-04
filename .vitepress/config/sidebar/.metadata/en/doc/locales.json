@@ -16,7 +16,7 @@
     "isActiveInStructure": false
   },
   "rules.md": {
-    "valueHash": "87ba0cba7ef594d7d4698807e5c88371",
+    "valueHash": "072e4b5e09cd0d9cb6607a1af029f7e8",
     "isUserSet": false,
     "isActiveInStructure": true
   },
@@ -56,7 +56,7 @@
     "isActiveInStructure": true
   },
   "pluginsGuide.md": {
-    "valueHash": "b053d10c023380b8f5e5e664a93366be",
+    "valueHash": "9d095825f3b832ab34daafc099969ba6",
     "isUserSet": false,
     "isActiveInStructure": true
   },
@@ -66,7 +66,7 @@
     "isActiveInStructure": true
   },
   "vscodeSnippetsGuide.md": {
-    "valueHash": "6a736b2ea37980449bba87a4387e3680",
+    "valueHash": "bd3c0f08af15dc2f2e594d31e143872c",
     "isUserSet": false,
     "isActiveInStructure": true
   }

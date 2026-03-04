@@ -6,15 +6,6 @@ hidden: false
 priority: 0
 ---
 
-<llm-only>
-This file is in Chinese and needs translation to English. It covers:
-1. Tags: Used to group game content and assign functionality (e.g., fox food items in minecraft:fox_food tag)
-2. Ore Dictionary: Historical context comparing modern tag system to Forge's Ore Dictionary
-3. Vanilla Tag Applications: Links to Minecraft Wiki for vanilla tag functionality
-4. Common Issues: Tag loading issues when non-existent items are added to tags
-
-Translation needed: Convert all Chinese content to English while preserving technical terms and links.
-</llm-only>
 
 # 标签
 

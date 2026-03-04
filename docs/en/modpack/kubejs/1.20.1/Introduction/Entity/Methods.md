@@ -474,31 +474,3 @@ if (rayTraceFluid.entity) {
 
 :::
 
-<llm-only>
-This page provides comprehensive documentation on Entity methods in KubeJS. Key points for LLM understanding:
-
-1. Entity Methods Overview:
-   - Attribute operations: getAttribute, modifyAttribute, removeAttributeModifier
-   - AI operations: addGoal, setTarget, getTarget
-   - Health operations: getHealth, setHealth, heal, hurt
-   - Equipment: getItemBySlot, setItemSlot, getMainHandItem
-   - Potion effects: addEffect, removeEffect, hasEffect
-   - Data storage: persistentData (KubeJS custom), NBT (vanilla)
-
-2. Method Inheritance:
-   - Entity → LivingEntity → Mob → Player
-   - Each class adds more methods
-
-3. Key Differences:
-   - persistentData is KubeJS-specific, NOT NBT
-   - Some methods only available on server side
-   - Reference Forge JavaDocs for detailed parameters
-
-4. Common Usage Patterns:
-   - entity.getAttribute('generic.max_health').setBaseValue(40)
-   - entity.goalSelector.addGoal(0, new FloatGoal(entity))
-   - entity.setItemSlot('head', Item.of('minecraft:diamond_helmet'))
-   - entity.persistentData.putString('key', 'value')
-
-This is a comprehensive API reference for KubeJS entity scripting.
-</llm-only>

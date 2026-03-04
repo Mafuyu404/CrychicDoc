@@ -3,9 +3,6 @@ authors:
   - Gu-meng
 editor: Gu-meng
 ---
-<llm-only>
-This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSAdvanced/CreativeTab.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # 创造物品栏
 在创造模式下，玩家可以直接通过背包里的创造物品栏来选择拿去的物品类型或者一些模组会将物品放进自己的创造物品栏里，比如在原版内：活塞、按钮、拉杆等都是在红石的创造物品栏下方。

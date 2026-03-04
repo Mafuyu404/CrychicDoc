@@ -1,6 +1,4 @@
-<llm-only>
-This Chinese page (zh/modpack/kubejs/1.20.1/KubeJSCourse/KubeJSProjects/Meng/SmallProject/TicGetModifier.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
+
 
 # 匠魂3获取所有强化属性
 

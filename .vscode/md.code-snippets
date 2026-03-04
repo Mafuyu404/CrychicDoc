@@ -153,8 +153,15 @@
 
     "@fm: Hero Snippets": {
         "prefix": "@fm-hero-snippets",
-        "body": ["hero:", "  customSnippet: ${1|true,'custom'|}"],
-        "description": "Frontmatter: Configure custom floating word snippets for the VPHero component. Use 'true' for custom.json or provide a custom filename (without .json)."
+        "body": [
+            "hero:",
+            "  snippets:",
+            "    - name: ${1:capabilities}",
+            "      snippets:",
+            "        - ${2:Runtime Complete}",
+            "        - ${3:Layered Backgrounds}"
+        ],
+        "description": "Frontmatter: Configure hero snippet words using canonical hero.snippets structure."
     },
 
     // ---------- Sidebar Tags Frontmatter ----------
@@ -917,6 +924,13 @@
         "description": "Contributors component for GitHub repositories."
     },
 
+    // ---------- Responsible Editor Component ----------
+    "@Responsible Editor": {
+        "prefix": "@responsible-editor",
+        "body": ["editor: ${1:PickAID}"],
+        "description": "Responsible editor component (uses frontmatter editor field)."
+    },
+
     // ---------- Comment Component ----------
     "@Comment Section": {
         "prefix": "@comment",
@@ -986,11 +1000,15 @@
             "  image:",
             "    src: \"${4:/logo.png}\"",
             "    alt: \"${5:Project Logo}\"",
-            "  customSnippet: ${6|true,'custom'|}",
+            "  snippets:",
+            "    - name: ${6:capabilities}",
+            "      snippets:",
+            "        - ${7:Runtime Complete}",
+            "        - ${8:Layered Backgrounds}",
             "  actions:",
             "    - theme: brand",
-            "      text: \"${7:Get Started}\"",
-            "      link: \"${8:/guide/}\"",
+            "      text: \"${9:Get Started}\"",
+            "      link: \"${10:/guide/}\"",
             "---",
             "",
             "$0"
@@ -1018,11 +1036,15 @@
             "  image:",
             "    src: \"${4:/logo.png}\"",
             "    alt: \"${5:Project Logo}\"",
-            "  customSnippet: ${6|true,'custom'|}",
+            "  snippets:",
+            "    - name: ${6:capabilities}",
+            "      snippets:",
+            "        - ${7:Runtime Complete}",
+            "        - ${8:Layered Backgrounds}",
             "  actions:",
             "    - theme: brand",
-            "      text: \"${7:Get Started}\"",
-            "      link: \"${8:/guide/}\""
+            "      text: \"${9:Get Started}\"",
+            "      link: \"${10:/guide/}\""
         ],
         "description": "Hero configuration block for existing pages."
     },
@@ -1441,28 +1463,6 @@
     },
 
     // ===================================================================
-    // =================== CHART GRID & TABLE GRID PLUGIN ===============
-    // ===================================================================
-
-    // ---------- Chart Grid Plugin ----------
-
-    "@Chart Grid Custom": {
-        "prefix": "@chart-grid",
-        "body": [
-            ":::: chart-grid {\"columns\": ${1:2}, \"gap\": \"${2:24px}\", \"minHeight\": \"${3:300px}\", \"responsive\": ${4|true,false|}}",
-            "",
-            "::: chart ${5|pie,bar,line,area,radar,scatter,gauge,doughnut,funnel,heatmap,sankey,graph,candlestick,boxplot,parallel,themeRiver,pictorialBar|} {\"title\": \"${6:Chart Title}\", \"height\": \"${7:300px}\"}",
-            "${8:Chart data}",
-            ":::",
-            "",
-            "$0",
-            "",
-            "::::"
-        ],
-        "description": "自定义图表网格布局，支持完整配置选项。"
-    },
-
-    // ===================================================================
     // =================== VUETIFY TIMELINE PLUGIN ======================
     // ===================================================================
 
@@ -1616,7 +1616,7 @@
         "body": [
             "::::"
         ],
-        "description": "结束容器"
+        "description": "结束Timeline容器"
     },
 
     "@x3": {
@@ -1624,42 +1624,22 @@
         "body": [
             ":::"
         ],
-        "description": "结束容器"
+        "description": "结束Timeline容器"
     },
-
-    "@x5": {
-        "prefix": "@:x5",
+    "@Chart Grid Custom": {
+        "prefix": "@chart-grid",
         "body": [
-            ":::::"
+            ":::: chart-grid {\"columns\": ${1:2}, \"gap\": \"${2:24px}\", \"minHeight\": \"${3:300px}\", \"responsive\": ${4|true,false|}}",
+            "",
+            "::: chart ${5|pie,bar,line,area,radar,scatter,gauge,doughnut,funnel,heatmap,sankey,graph,candlestick,boxplot,parallel,themeRiver,pictorialBar|} {\"title\": \"${6:Chart Title}\", \"height\": \"${7:300px}\"}",
+            "${8:Chart data}",
+            ":::",
+            "",
+            "$0",
+            "",
+            "::::"
         ],
-        "description": "结束容器"
-    },
-
-    // ===================================================================
-    // ===================== MOD INFO COMPONENTS =========================
-    // ===================================================================
-
-    // ---------- ModInfo Component ----------
-    "@ModInfo": {
-        "prefix": "@modinfo",
-        "body": [
-            "<ModInfo",
-            "  modName=\"${1:Mod Name}\"",
-            "  modrinthSlug=\"${2:mod-slug}\"",
-            "  iconUrl=\"${3:/path/to/icon.png}\"",
-            "/>"
-        ],
-        "description": "推荐使用 Modrinth 的 ModInfo 组件（API 稳定可用）"
-    },
-
-
-    // ---------- XyebbsInfo Component ----------
-    "@XyebbsInfo": {
-        "prefix": "@xyebbsinfo",
-        "body": [
-            "<XyebbsInfo xyebbsId=\"${1:resource-id}\" />"
-        ],
-        "description": "Basic XyebbsInfo component for XyeBBS resources."
+        "description": "自定义图表网格布局，支持完整配置选项。"
     },
 
     // ===================================================================

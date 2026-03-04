@@ -3,9 +3,6 @@ title: 函数
 hidden: false
 priority: 300
 ---
-<llm-only>
-This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Addon/LootJs/Functions.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # LootJs
 

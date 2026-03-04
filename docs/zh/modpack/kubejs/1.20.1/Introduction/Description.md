@@ -3,9 +3,7 @@ title: 序言
 hidden: false
 priority: -1000000000
 ---
-<llm-only>
-This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Description.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
+
 
 # 序言
 

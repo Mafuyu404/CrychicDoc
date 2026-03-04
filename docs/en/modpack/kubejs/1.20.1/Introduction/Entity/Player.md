@@ -56,15 +56,3 @@ const inventory = player.getInventory();
 - Player is the core of KubeJS player scripting development. It is recommended to combine vanilla source code with Forge documentation for in-depth study.
 - Related subclasses: ServerPlayer, AbstractClientPlayer, etc.
 
-<llm-only>
-This page documents the Player class in KubeJS for entity scripting. Key points for LLM understanding:
-
-1. Player inherits from LivingEntity, adding player-specific systems
-2. Common operations: getName, getUuid, sendMessage, isCreative, isSpectator
-3. Inventory access via getInventory()
-4. Experience management via addExperience()
-5. Game mode checking: isCreative(), isSpectator()
-6. Related classes: ServerPlayer, AbstractClientPlayer
-
-For scripting, use player.username for direct name access, player.getName() for name component.
-</llm-only>

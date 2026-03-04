@@ -8,9 +8,6 @@ description: Index of Doc section
 index: true
 ---
 
-<llm-only>
-This is an auto-generated index file for the Doc section. Contains general documentation guides.
-</llm-only>
 
 # Index
 

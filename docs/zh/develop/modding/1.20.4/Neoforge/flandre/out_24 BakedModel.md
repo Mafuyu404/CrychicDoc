@@ -13,9 +13,6 @@ authors:
 hidden: false
 priority: 0
 ---
-<llm-only>
-This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_24 BakedModel.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # 参考
 

@@ -13,3 +13,10 @@ output.html
 .vitepress/config/sidebar.json
 .vitepress/config.mts.timestamp*
 docs/.vitepress/
+.claude/
+.playwright-mcp/
+claude_conversations.md
+codex_conversations.md
+gemini_conversations.md
+division_labour.md
+CLAUDE.md

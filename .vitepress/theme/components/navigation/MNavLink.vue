@@ -17,8 +17,17 @@
     }>();
 
     const themeIcon = (icon: NavIcon | NavThemeIcon): NavIcon => {
-        if (typeof icon === "object" && "dark" in icon && "light" in icon) {
-            return isDark.value ? icon.dark : icon.light;
+        if (typeof icon === "object" && !Array.isArray(icon)) {
+            const record = icon as {
+                dark?: NavIcon;
+                light?: NavIcon;
+                value?: NavIcon;
+            };
+            if ("dark" in record || "light" in record || "value" in record) {
+                return isDark.value
+                    ? (record.dark ?? record.light ?? record.value ?? icon)
+                    : (record.light ?? record.dark ?? record.value ?? icon);
+            }
         }
         return icon;
     };

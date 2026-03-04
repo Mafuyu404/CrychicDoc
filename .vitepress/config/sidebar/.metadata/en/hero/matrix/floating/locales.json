@@ -1,0 +1,27 @@
+{
+  "_self_": {
+    "valueHash": "dffe12d958be36e569dbbfa697942f9f",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "level1Text.md": {
+    "valueHash": "7a8f7c4a6203c04bf48e13eaabbc3ee2",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "level2Cards.md": {
+    "valueHash": "fa36fda18246027c2580af57d51c3691",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "level3Mixed.md": {
+    "valueHash": "06299ba68980320ae17f73d92de21934",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "level4MotionDensityBlur.md": {
+    "valueHash": "ecd4c15c8e3809eab016231fe63b06c2",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  }
+}

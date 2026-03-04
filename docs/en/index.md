@@ -2,53 +2,172 @@
 layout: home
 
 hero:
-  name: "CrychicDoc"
-  text: "A doc maintained by PickAID team."
-  tagline: Contains documentation and resource indexes related to Minecraft.
-  image: 
-    light: /logo.png
-    dark: /logodark.png
-    alt: PickAID
-  customSnippet: custom
-  actions:
-    - theme: alt
-      text: Collaboration
-      link: /en/doc/rules
-    - theme: brand
-      text: KubeJS
-      link: /en/modpack/kubejs/
-    - theme: brand
-      text: Mods
-      link: /en/mods/
-    - theme: brand
-      text: Modpacks
-      link: /en/modpack/
-    - theme: brand
-      text: Develop
-      link: /en/develop/
+    name: "CrychicDoc"
+    text: "Minecraft Modpack & Development Knowledge Base"
+    tagline: "Maintained by PickAID for modpack docs, KubeJS scripting, and Minecraft development collaboration."
+    typography:
+        type: grouped-float
+        motion:
+            intensity: 0.84
+            title: { x: 10, y: -6, scale: 2.08 }
+            text: { x: 12, y: -4, scale: 0.9 }
+            tagline: { x: 10, y: 1, scale: 0.85 }
+            image: { x: 14, y: -7, scale: 1.08 }
+            transitionDuration: 700
+            transitionDelayStep: 60
+            transitionEasing: "cubic-bezier(0.16, 1, 0.3, 1)"
+    background:
+        type: "shader"
+        shader:
+            type: "silk"
+            speed: 0.72
+            uniforms:
+                uColor1:
+                    type: vec3
+                    value:
+                        light: [0.96, 0.97, 0.98]
+                        dark: [0.06, 0.08, 0.14]
+                uColor2:
+                    type: vec3
+                    value:
+                        light: [0.98, 0.99, 1.0]
+                        dark: [0.10, 0.13, 0.20]
+                uColor3:
+                    type: vec3
+                    value:
+                        light: [0.92, 0.94, 0.97]
+                        dark: [0.18, 0.24, 0.36]
+    colors:
+        title:
+            light: "rgba(17, 24, 39, 0.95)"
+            dark: "rgba(243, 244, 246, 0.95)"
+        text:
+            light: "rgba(31, 41, 55, 0.85)"
+            dark: "rgba(229, 231, 235, 0.85)"
+        tagline:
+            light: "rgba(75, 85, 99, 0.75)"
+            dark: "rgba(156, 163, 175, 0.75)"
+    waves:
+        enabled: true
+        animated: true
+        height: 140
+        speed: 1.5
+        layers:
+            - amplitude: 50
+              wavelength: 440
+              opacity: 0.22
+            - amplitude: 40
+              wavelength: 240
+              opacity: 0.22
+            - amplitude: 34
+              wavelength: 200
+              opacity: 0.5
+            - amplitude: 28
+              wavelength: 170
+              opacity: 0.92
+    floating:
+        enabled: true
+        opacity: 0.95
+        density: 8
+        motion:
+            enabled: true
+            style: drift
+            durationMin: 14
+            durationMax: 24
+            drift: 24
+        items:
+            - type: image
+              src:
+                  light: /imgs/screenshots/kubejs.png
+                  dark: /imgs/screenshots/kubejsDark.png
+              width: 720px
+              borderRadius: 16px
+              shadow: "0 20px 40px rgba(0,0,0,0.3)"
+              x: "5%"
+              y: "20%"
+            - type: image
+              src:
+                  light: /imgs/screenshots/develop.png
+                  dark: /imgs/screenshots/developDark.png
+              width: 480px
+              borderRadius: 16px
+              shadow: "0 20px 40px rgba(0,0,0,0.3)"
+              x: "75%"
+              y: "40%"
+            - type: image
+              src:
+                  light: /imgs/screenshots/rules.png
+                  dark: /imgs/screenshots/rulesDark.png
+              width: 360px
+              borderRadius: 12px
+              shadow: "0 10px 20px rgba(0,0,0,0.2)"
+              x: "82%"
+              y: "12%"
+            - type: card
+              title: "Docs + Mods + Dev"
+              description: "One portal for writing, scripting, and modpack maintenance."
+              x: "8%"
+              y: "62%"
+            - type: code
+              code: "npm run docs:build"
+              x: "35%"
+              y: "80%"
+    image:
+        light: /logo.png
+        dark: /logodark.png
+        alt: CrychicDoc
+        width: "min(900px, 100%)"
+    actions:
+        - theme: brand
+          text: "KubeJS Docs"
+          link: /en/modpack/kubejs/
+        - theme: brand
+          text: "Mods Index"
+          link: /en/mods/
+        - theme: alt
+          text: "Development"
+          link: /en/develop/
+        - theme: outline
+          text: "Plugins Guide"
+          link: /en/doc/pluginsGuide
+        - theme: ghost
+          text: "Collaboration Rules"
+          link: /en/doc/rules
 
 features:
-  - icon : 
-      light: /icon/mainindex/material-symbols--markdown-copy-sharp.png
-      dark: /icon/mainindex/material-symbols--markdown-copy-sharp-dark-v2.png
-    title: Easy to Get Started
-    details: Build documentation using Vitepress, simply edit Markdown files to write content.
-  
-  - icon : 
-      light: /icon/mainindex/mdi--professional-hexagon.png
-      dark: /icon/mainindex/mdi--professional-hexagon-dark-v2.png
-    title: Highly Extensible
-    details: Equipped with features like Mermaid, syntax highlighting, and type variable display. It also includes various components from Vuetify to enhance the readability and professionalism of shared content.
-  - icon : 
-      light: /icon/mainindex/dashicons--format-chat.png
-      dark: /icon/mainindex/dashicons--format-chat-dark-v2.png
-    title: Easy Collaboration
-    details: Collaborate using GitHub to simplify the co-creation process and ensure the security of source code.
-  - icon : 
-      light: /icon/mainindex/dashicons--privacy.png
-      dark: /icon/mainindex/dashicons--privacy-dark-v2.png
-    title: Easy Accessibility
-    details: Build using GitHub Flow, send it to a private repository, and then transfer it to a physical server. This optimizes the access speed for users in China while ensuring the stability of the website for all users by using Cloudflare CDN.
+    - icon: 🧪
+      title: "KubeJS Path"
+      details: "From introduction to advanced script patterns across versions."
+      link: /en/modpack/kubejs/
+    - icon: 🧩
+      title: "Mods Atlas"
+      details: "Category-based mod references for server, tech, performance, and more."
+      link: /en/mods/
+    - icon: 🛠️
+      title: "Dev Guides"
+      details: "Modding, plugins, datapacks, and resource pack workflows."
+      link: /en/develop/
+    - icon: 📖
+      title: "Plugins Guide"
+      details: "Markdown/container/component capability guide used by this site."
+      link: /en/doc/pluginsGuide
+    - icon: 📚
+      title: "Info Index"
+      details: "Community indexes, requests, and Q&A hubs."
+      link: /en/info/
+    - icon: 🤝
+      title: "Contribution Rules"
+      details: "Collaboration conventions and contribution checklist."
+      link: /en/doc/rules
+    - icon: 👥
+      title: "Team Spaces"
+      details: "Developer-specific areas and internal knowledge pages."
+      link: /en/developers/
+    - icon: 📦
+      title: "Modpack Docs"
+      details: "Operational and recommendation documents for modpack maintenance."
+      link: /en/modpack/
+
 gitChangelog: false
 ---
 

@@ -13,9 +13,6 @@ authors:
 hidden: false
 priority: 0
 ---
-<llm-only>
-This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_44_Dependencies_LIb.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # 添加使用模组和附属
 

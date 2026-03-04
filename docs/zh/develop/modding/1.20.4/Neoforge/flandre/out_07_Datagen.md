@@ -12,9 +12,6 @@ draft: false
 hidden: false
 priority: 0
 ---
-<llm-only>
-This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_07_Datagen.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # Data Generators
 

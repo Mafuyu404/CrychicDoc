@@ -10,9 +10,6 @@ progress: 15
 hidden: false
 ---
 
-<llm-only>
-此章节记录模组开发中的 index.md 相关内容和技术指南
-</llm-only>
 
 # 概要 {#Summary}
 

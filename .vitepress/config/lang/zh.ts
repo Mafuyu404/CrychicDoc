@@ -1,80 +1,24 @@
-import type { DefaultTheme } from 'vitepress';
-import { getProjectInfo, getLanguageByCode, getLangCodeFromLink, getSearchLocaleKey, isFeatureEnabled } from '../project-config';
-import { getSidebarSync } from '../../utils/sidebar';
+import type { DefaultTheme } from "vitepress";
+import type { SearchLocalesByProvider } from "../../utils/config/project-config";
+import {
+    getProjectInfo,
+    getLanguageByCode,
+    getLangCodeFromLink,
+    getSearchLocaleKey,
+    isFeatureEnabled,
+} from "../../utils/config/project-config";
+import { getSidebarSync } from "../../utils/sidebar";
 
 const projectInfo = getProjectInfo();
-const langConfig = getLanguageByCode('zh-CN')!;
+const langConfig = getLanguageByCode("zh-CN")!;
 
 export const zh_CN = <DefaultTheme.Config>{
     label: langConfig.displayName,
     lang: langConfig.giscusLang,
     link: langConfig.link,
-    title: 'CryChic文档',
-    description: '一个包含 Minecraft 开发文档的网站。',
+    title: "CryChic文档",
+    description: "一个包含 Minecraft 开发文档的网站。",
     themeConfig: {
-        nav: [
-            {
-                text: "KubeJS",
-                items: [
-                    {
-                        text: "主页",
-                        link: "/zh/modpack/kubejs/",
-                    },
-                    {
-                    text: "文档",
-                    items: [
-                        {
-                            text: "1.21",
-                            link: "/zh/modpack/kubejs/1.21/",
-                        },
-                        {
-                            text: "1.20.1",
-                            link: "/zh/modpack/kubejs/1.20.1/",
-                            activeMatch: "/zh/modpack/kubejs/1.20.1/",
-                        },
-                        {
-                            text: "1.19.2-计划中",
-                            link: "...",
-                        },
-                        {
-                            text: "1.18.2-计划中",
-                            link: "...",
-                        },
-                    ]
-                },
-                    {
-                        text: "第三方文档",
-                        items: [
-                            {
-                                text: "孤梦",
-                                link: "/zh/modpack/kubejs/1.20.1/KubeJSCourse/README",
-                                activeMatch: "/zh/modpack/kubejs/1.20.1/",
-                            },
-                            {
-                                text: "Wudji-1.19.2",
-                                link: "zh/modpack/kubejs/1.19.2/XPlusKubeJSTutorial/README",
-                            },
-                            {
-                                text: "Wudji-1.18.2",
-                                link: "zh/modpack/kubejs/1.18.2/XPlusKubeJSTutorial/README",
-                            },
-                        ]
-                    },
-                ]
-            },
-            {text: "合作须知", link: "/zh/doc/rules"},
-            {text: "导航", items: [
-                {text: "我的世界", link: "/zh/doc/guide/minecraft"},
-                {text: "KubeJS", link: "/zh/doc/guide/KubeJS"},
-                {text: "像素艺术", link: "/zh/doc/guide/pixelart"},
-                {text: "美术资源", link: "/zh/doc/guide/resource"},
-                {text: "社区交流", link: "/zh/doc/guide/community"},
-            ]},
-            {text: "讨论区", link: "/zh/info"},
-            {text: "标签", link: "/zh/tags"},
-            // {text: "关于我们", link: "/zh/about"},
-        ],
-        // sidebar: getSidebarSync(getLangCodeFromLink(langConfig.link!)),
         sidebar: getSidebarSync(getLangCodeFromLink(langConfig.link!)),
         outline: {
             level: "deep",
@@ -91,16 +35,42 @@ export const zh_CN = <DefaultTheme.Config>{
                 timeStyle: "medium",
             },
         },
-        editLink: isFeatureEnabled('editLink') && projectInfo.editLink ? {
-            pattern: projectInfo.editLink.pattern,
-            text: projectInfo.editLink.text || "在 GitHub 上编辑此页面"
-        } : undefined,
+        editLink:
+            isFeatureEnabled("editLink") && projectInfo.editLink
+                ? {
+                      pattern: projectInfo.editLink.pattern,
+                      text:
+                          projectInfo.editLink.text || "在 GitHub 上编辑此页面",
+                  }
+                : undefined,
         langMenuLabel: "切换语言",
         returnToTopLabel: "回到顶部",
         sidebarMenuLabel: "菜单",
         darkModeSwitchLabel: "主题",
         lightModeSwitchTitle: "切换到浅色模式",
         darkModeSwitchTitle: "切换到深色模式",
+    },
+};
+
+export const localSearch: DefaultTheme.LocalSearchOptions["locales"] = {
+    [getSearchLocaleKey(langConfig.code)]: {
+        translations: {
+            button: {
+                buttonText: "搜索文档",
+                buttonAriaLabel: "搜索文档",
+            },
+            modal: {
+                displayDetails: "显示详细结果",
+                resetButtonTitle: "清除查询条件",
+                backButtonTitle: "关闭搜索",
+                noResultsText: "未找到与 $q 相关的结果",
+                footer: {
+                    selectText: "选择",
+                    navigateText: "切换",
+                    closeText: "关闭",
+                },
+            },
+        },
     },
 };
 
@@ -146,4 +116,9 @@ export const search: DefaultTheme.AlgoliaSearchOptions["locales"] = {
             },
         },
     },
+};
+
+export const searchLocales: SearchLocalesByProvider = {
+    algolia: search,
+    local: localSearch,
 };

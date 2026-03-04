@@ -11,9 +11,6 @@ category: Minecraft1_20_4_NeoForge_Tutorial
 hidden: false
 priority: 0
 ---
-<llm-only>
-This Chinese page (zh/develop/modding/1.20.4/Neoforge/flandre/out_17 Tag.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # tag表
 

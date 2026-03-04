@@ -183,13 +183,3 @@ if (mob.mobType == 'WATER' && !mob.isInWaterOrBubble()) {
 - Some methods are only available for specific subclasses. It is recommended to use JSDoc type annotations before use to improve completion experience.
 - For further API confirmation, refer to type definitions in the typefiles/1.20.1 directory and Forge JavaDocs.
 
-<llm-only>
-Mob is the base class for all AI entities in Minecraft. Key points:
-
-1. Inherits from LivingEntity
-2. Supports AI goals (goalSelector), target selectors (targetSelector)
-3. Common subclasses: PathfinderMob, Animal, TamableMob, Monster, WaterAnimal, AmbientCreature
-4. Common methods: addGoal, setTarget, getTarget, isAggressive
-
-This page documents Mob class and its subclasses for KubeJS entity scripting.
-</llm-only>

@@ -1,5 +1,5 @@
 ---
-title: Styles and Plugins
+title: Styles & Plugins
 description: A comprehensive guide to all available Markdown extensions, containers, and custom components in CrychicDoc.
 progress: 95
 state: renovating
@@ -7,494 +7,333 @@ priority: 30
 hidden: false
 ---
 
-# Styles and Plugins Guide {#main}
+# Styles & Plugins Guide
 
-This document is a complete reference for all available Markdown features in CrychicDoc, including text formatting, container plugins, and custom Vue components.
+This document is a complete specification for all available Markdown features in CrychicDoc, including text formatting, container plugins, and custom Vue components.
 
-## Text Formatting Extensions {#text-formatting-extensions}
+## Text Formatting Extensions
 
-These plugins extend standard Markdown syntax to support richer text representation.
+These plugins extend standard Markdown syntax for richer text representation.
 
-### Abbreviations (`abbr`) {#ext-abbr}
+### Abbreviations (`abbr`)
 
-Used to create abbreviations for terms.
-
-::: demo Example
-*[HTML]: Hyper Text Markup Language
-*[W3C]:  World Wide Web Consortium
+```markdown
+_[HTML]: Hyper Text Markup Language
+_[W3C]: World Wide Web Consortium
 The HTML specification is maintained by the W3C.
-:::
+```
 
-### Superscript and Subscript (`sup` & `sub`) {#ext-sup-sub}
+**Preview:**
+_[HTML]: Hyper Text Markup Language
+_[W3C]: World Wide Web Consortium
+The HTML specification is maintained by the W3C.
 
-Used to create scripts.
+---
 
-::: demo Example
+### Superscript & Subscript (`sup` & `sub`)
+
+```markdown
 Subscript: H~2~O
 Superscript: 19^th^
-:::
+```
 
-### Mark and Insert (`mark` & `ins`) {#ext-mark-ins}
+**Preview:**
+Subscript: H~2~O
+Superscript: 19^th^
 
-Used to highlight and mark text.
+---
 
-::: demo Example
+### Mark & Insert (`mark` & `ins`)
+
+```markdown
 VuePress Theme Hope ==is very powerful==.
 VuePress Theme Hope ++is very++ powerful.
-:::
+```
 
-### Ruby Annotation (`ruby`) {#ext-ruby}
+**Preview:**
+VuePress Theme Hope ==is very powerful==.
+VuePress Theme Hope ++is very++ powerful.
 
-Used to add annotations to characters, commonly used in East Asian languages.
+---
 
-::: demo Example
-{China:zhōng|guó}
-:::
+### Ruby Annotation (`ruby`)
 
-### Spoiler (`spoiler`) {#ext-spoiler}
+```markdown
+{中国:zhōng|guó}
+```
 
-Creates hidden content that can be clicked to reveal.
+**Preview:**
+{中国:zhōng|guó}
 
-::: demo Example
+---
+
+### Spoiler
+
+```markdown
 VuePress Theme Hope !!is very powerful!!.
-:::
+```
 
-## Content Element Extensions {#content-element-extensions}
+**Preview:**
+VuePress Theme Hope !!is very powerful!!.
 
-These plugins are used to create specific content structures.
+---
 
-### Image Size (`img-size`) {#ext-img-size}
+## Content Element Extensions
 
-Allows specifying image width and height directly in Markdown image syntax. Add `=widthxheight` after the image alt text.
+### Todo List (`todo`)
 
-::: demo Example
-![Logo =200x200](/logo.png)
-![Logo =150x](/logo.png)
-![Logo =x100](/logo.png)
-:::
-
-### Todo List (`todo`) {#ext-todo}
-
-Creates GitHub-style checkable task lists.
-
-::: demo Example
-- [ ] Incomplete task
+```markdown
+- [ ] Uncompleted task
 - [x] Completed task
-:::
+```
 
-### Multiple Choice {#multiple-choice}
+**Preview:**
+
+- [ ] Uncompleted task
+- [x] Completed task
+
+---
+
+### Multiple Choice
 
 ```markdown
 [?] Your question goes here?
 [ ] Wrong answer option
-[x] Correct answer option (marked with 'x')
-[ ] Another wrong answer option
-[ ] Yet another wrong answer option
+[x] Correct answer option
 ```
 
+**Preview:**
 [?] Your question goes here?
 [ ] Wrong answer option
 [x] Correct answer option (marked with 'x')
 [ ] Another wrong answer option
-[ ] Yet another wrong answer option
 
-## Container Plugins {#container-plugins}
+---
+
+## Container Plugins
 
 Container plugins use `:::` syntax to create block-level content with special styles or functionality.
 
-### Alignment Container (`align`) {#container-align}
+### Alert (`alert`)
 
-Used to control horizontal alignment of content.
+The new alert provides rich configuration options via JSON.
 
-:::: demo Example
+| Property  | Type                | Description          | Values                                       |
+| :-------- | :------------------ | :------------------- | :------------------------------------------- |
+| `type`    | `string`            | Alert type/color     | `success`, `info`, `warning`, `error`        |
+| `title`   | `string`            | Alert title          | Any string                                   |
+| `variant` | `string`            | Visual style variant | `flat`, `tonal`, `outlined`, `text`, `plain` |
+| `density` | `string`            | Spacing density      | `default`, `comfortable`, `compact`          |
+| `border`  | `string`\|`boolean` | Border position      | `start`, `end`, `top`, `bottom`, `true`      |
+| `icon`    | `string`            | Custom icon          | e.g. `mdi-star`, `mdi-heart`                 |
+
+**Demo:**
+
+::::: demo Alert Examples
+::: alert {"type": "success", "title": "Success"}
+This is a success alert.
+:::
+
+::: alert {"type": "info", "title": "Info", "icon": "mdi-information"}
+This is an info alert with custom icon.
+:::
+
+::: alert {"type": "warning", "title": "Warning", "variant": "tonal"}
+This is a warning alert with tonal variant.
+:::
+
+::: alert {"type": "error", "title": "Error", "border": "start"}
+This is an error alert with left border.
+:::
+:::::
+
+---
+
+### Align Container (`align`)
+
+Control horizontal alignment of content.
+
+**Demo:**
+
+:::: demo Align Examples
 ::: left
-Left-aligned content
+This is left aligned content.
 :::
 
 ::: center
-Centered content
+This is centered content.
 :::
 
 ::: right
-Right-aligned content
-:::
-
-::: justify
-Justified content
+This is right aligned content.
 :::
 ::::
 
-### Tabs (`tabs`) {#container-tabs}
+---
 
-Creates tabs that can switch between multiple panels.
+### Tabs (`tabs`)
 
-:::: demo Tab Example
+Create switchable tab panels.
+
+**Demo:**
+
+:::: demo Tabs Example
 :::tabs key:ab
-== tab a
-a content
-== tab b
-b content
+== tab A
+This is content for tab A.
+== tab B
+This is content for tab B.
 :::
 ::::
 
-### Stepper (`stepper`) {#container-stepper}
+---
 
-Creates tabs that visually represent consecutive steps.
+### Stepper (`stepper`)
 
-:::: demo Example
+Visual step-by-step navigation.
+
+**Demo:**
+
+:::: demo Stepper Example
 ::: stepper
-@tab First Step
-This is the first step
-@tab Second Step
-This is the second step
+@tab Step 1
+This is step 1 - Set up your project.
+@tab Step 2
+This is step 2 - Configure dependencies.
+@tab Step 3
+This is step 3 - Run the project.
 :::
 ::::
 
-### Card (`card`) {#container-card}
+---
 
-Creates card containers with multiple styles, can include titles and subtitles.
+### Card Container (`card`)
 
-::::: demo Example
+Card containers with multiple styles.
+
+**Demo:**
+
+::::: demo Card Styles
 :::text Title#Subtitle
 This is text style
 :::
-:::flat Only Title
+:::flat Title Only
 This is flat style
 :::
-:::elevated #Only Subtitle
+:::elevated #Subtitle Only
 This is elevated style
 :::
 :::tonal Title#Subtitle
 This is tonal style
 :::
 :::outlined
-This is outlined style, no title or subtitle
+This is outlined style
 :::
-::::plain Title#Subtitle
-This is plain style  
-Only supports double space or `\` for line breaks
-:::tonal Nested
-Supports nesting, supports !!other plugins!!
+:::::
+
+---
+
+### Timeline (`timeline`)
+
+### Preset Types
+
+| Category | Available Types                                                          |
+| :------- | :----------------------------------------------------------------------- |
+| Basic    | `success`, `info`, `warning`, `error`, `tip`                             |
+| Project  | `start`, `finish`, `milestone`, `deadline`, `meeting`, `launch`          |
+| Status   | `review`, `approve`, `reject`, `pending`, `progress`, `complete`         |
+| Feature  | `feature`, `feature_designing`, `feature_developing`, `feature_released` |
+| Task     | `task_created`, `task_assigned`, `task_started`, `task_completed`        |
+
+**Demo:**
+
+:::: demo Timeline Example
+:::: timeline
+::: timeline-item type="start" opposite="2024-08"
+Project Start
+:::
+::: timeline-item type="milestone" card="true" card-title="v1.0 Released"
+We successfully released the first major version!
+:::
+::: timeline-item type="refactor" opposite="2025-06"
+Sidebar system refactored
+:::
+::: timeline-item type="finish" opposite="2025-07"
+Documentation maintained to date
 :::
 ::::
 :::::
 
-### Demo Container (`demo`) {#container-demo}
+---
 
-Container for showing Markdown examples and their rendered effects.
+## Chart Containers
 
-:::: demo Example
-::: demo This is an example
-**Markdown** is *awesome*!
-:::
-::::
+### Chart Grid (`chart-grid`)
 
-### Alert Boxes (`alert` & `v-alert`) {#container-alert}
+Grid layout container optimized for Vue Chart.
 
-#### New Alert Box (Recommended) {#alert-new}
+| Config        | Purpose           | Type      | Default   |
+| ------------- | ----------------- | --------- | --------- |
+| `columns`     | Grid columns      | `number`  | `2`       |
+| `gap`         | Chart gap         | `string`  | `"24px"`  |
+| `responsive`  | Enable responsive | `boolean` | `true`    |
+| `equalHeight` | Equal height      | `boolean` | `true`    |
+| `minHeight`   | Minimum height    | `string`  | `"300px"` |
 
-Next-generation alert box component with rich configuration options via JSON.
+**Demo:**
 
-| Property | Type | Description | Optional Values |
-|:---|:---|:---|:---|
-| `type` | `string` | Alert box type/color | `success`, `info`, `warning`, `error` |
-| `title` | `string` | Alert box title | Any string |
-| `variant` | `string` | Visual style variant | `flat`, `tonal`, `outlined`, `text`, `plain` |
-| `density` | `string` | Spacing density | `default`, `comfortable`, `compact` |
-| `border` | `string`\|`boolean` | Border position | `start`, `end`, `top`, `bottom`, `true` |
-| `icon` | `string` | Custom Material Design icon | e.g., `mdi-star`, `mdi-heart` |
-| `color` | `string` | Custom color | Any color value |
-| `lightColor`| `string` | Custom color for light theme | Any color value |
-| `darkColor` | `string` | Custom color for dark theme | Any color value |
-
-::::: demo New Alert Box Examples
-::: alert {"type": "success", "title": "Success"}
-This is a success type alert box.
-:::
-
-::: alert {"type": "info", "title": "Information", "icon": "mdi-information"}
-This is an info type alert box with custom icon.
-:::
-
-::: alert {"type": "warning", "title": "Warning", "variant": "tonal"}
-This is a warning type alert box using tonal variant.
-:::
-
-::: alert {"type": "error", "title": "Error", "border": "start"}
-This is an error type alert box with left border.
-:::
-:::::
-
-#### Legacy Alert Box (`v-alert`) {#alert-legacy}
-
-Old-style Vuetify-styled alert boxes.
-
-::::: demo Legacy Alert Box Examples
-::: v-success Success
-This is success style
-:::
-::: v-info Information
-This is info style
-:::
-::: v-warning Warning
-This is warning style
-:::
-::: v-error Error
-This is error style
-:::
-:::::
-
-### Dialog (`dialog`) {#container-dialog}
-
-Used to create complex dialogs that can be triggered from anywhere.
-
-| Configuration Field | Purpose | Type | Default Value |
-|:---|:---|:---|:---|
-| `title` | Dialog title | `string` | `N/A` |
-| `width` | Dialog maximum width | `string` \| `number` | `800` |
-| `fullscreen` | Whether to display in fullscreen mode | `boolean` | `false` |
-| `persistent` | Whether clicking outside closes dialog | `boolean` | `false` |
-
-::::: demo Example
-@@@ dialog-def#my-dialog {"title": "Dialog Example", "width": 500}
-This is a **Markdown** dialog.
-
-- It can contain lists
-- `Code blocks`
-- And any other Markdown content.
-@@@
-
-Click :::dialog#my-dialog here::: to trigger the dialog.
-:::::
-
-### Carousels (`carousels`) {#container-carousels}
-
-Creates an image carousel with custom content.
-
-:::: demo Example
-::: carousels#{"cycle": true, "interval": 2800, "undelimiters": true}
-@tab
-![1](https://docs.variedmc.cc/mods/adventure/champions-unofficial/1.png)
-@tab
-![2](https://docs.variedmc.cc/mods/adventure/champions-unofficial/2.png)
-:::
-::::
-
-### Embedded External Links (`iframe`) {#container-iframe}
-
-Used to embed external web pages in the page.
-
-| Configuration Field   | Purpose                   | Type           | Default Value    |
-| ---------- | ---------------------- | -------------- | --------- |
-| `src`      | Web page link, required       | `string`       | `N/A`     |
-| `height`   | Set element height.       | `length value` | `140px`   |
-
-:::: demo Example
-:::iframes#{"src": "https://misode.github.io/"}
-:::
-::::
-
-**Note:** Due to security policies, some websites may not allow being embedded and will display blank or error messages.
-
-### Chat Dialog (`chat`) {#container-chat}
-
-Creates simulated chat interface dialog containers, supporting multiple avatar types and message styles.
-
-#### `chat` Container Properties {#chat-container}
-
-| Property | Type | Description | Default Value |
-|:---|:---|:---|:---|
-| `title` | `string` | Chat panel title | `""` |
-| `max-height` | `string` | Maximum height | `"400px"` |
-
-#### `message` Container Properties {#message-container}
-
-| Property | Type | Description | Default Value |
-|:---|:---|:---|:---|
-| `nickname` | `string` | User nickname | `""` |
-| `avatar-type` | `string` | Avatar type | `"icon"` |
-| `location` | `string` | Message position | `"left"` |
-| `avatar-link` | `string` | Avatar click link | `""` |
-
-#### Avatar Types {#avatar-types}
-
-| Type | Description | Auto Link |
-|:---|:---|:---|
-| `icon` | Default icon avatar | None |
-| `ai` | AI assistant avatar | None |
-| `github` | GitHub avatar | Auto link to GitHub profile |
-
-#### Example {#chat-example}
-
-::::: demo AI Conversation Demo
-:::: chat title="AI Conversation Demo"
-::: message nickname="User" avatar-type="icon"
-Hello, can you help me explain what Vue Composition API is?
-:::
-
-::: message nickname="AI Assistant" avatar-type="ai" location="right"
-Of course! Vue Composition API is a new feature introduced in Vue 3:
-
-- **Reactive data**: Using `ref()` and `reactive()`
-- **Lifecycle hooks**: Using `onMounted()` etc.
-
-```javascript
-import { ref, onMounted } from 'vue'
-
-export default {
-  setup() {
-    const count = ref(0)
-    
-    onMounted(() => {
-      console.log('Component mounted')
-    })
-    
-    return { count }
-  }
-}
-```
-:::
-
-::: message nickname="octocat" avatar-type="github"
-GitHub avatars automatically add links to GitHub profiles
-:::
-::::
-:::::
-
-### Chart Grid (`chart-grid`) {#container-chart-grid}
-
-**Grid layout container specifically optimized for Vue Charts**, providing better side-by-side chart display effects.
-
-| Configuration Field | Purpose | Type | Default Value |
-| -------- | ---- | ---- | ------ |
-| `columns` | Number of grid columns | `number` | `2` |
-| `gap` | Chart spacing | `string` | `"24px"` |
-| `responsive` | Whether to enable responsive design | `boolean` | `true` |
-| `equalHeight` | Whether to display with equal height | `boolean` | `true` |
-| `minHeight` | Minimum height | `string` | `"300px"` |
-
-#### Two Charts Side by Side {#chart-grid-two}
-
-::::: demo Two-column Charts (columns=2)
+::::: demo Two Column Chart
 :::: chart-grid {"columns": 2, "gap": "24px"}
 
-::: chart pie {"title": "Project Progress Distribution", "height": "300px"}
+::: chart pie {"title": "Project Progress", "height": "300px"}
 Completed: 65
 In Progress: 25
-To Start: 10
+Pending: 10
 :::
 
-::: chart line {"title": "Monthly Completion Trend", "height": "300px", "smooth": true}
-Monthly Completion | Jan: 20, Feb: 35, Mar: 45, Apr: 65
+::: chart line {"title": "Monthly Trend", "height": "300px", "smooth": true}
+Series A | Jan: 20, Feb: 35, Mar: 45, Apr: 65
 :::
 
 ::::
 :::::
 
-::::: demo Single Column Charts (columns=1)
+**Single Column:**
+
+::::: demo Single Column Chart
 :::: chart-grid {"columns": 1, "gap": "24px"}
 
-::: chart bar {"title": "Team Workload Distribution", "height": "300px"}
-Work Distribution | Development: 150, Testing: 80, Documentation: 60, Meetings: 40
-:::
-::: chart bar {"title": "Team Workload Distribution", "height": "300px"}
-Work Distribution | Development: 150, Testing: 80, Documentation: 60, Meetings: 40
-:::
-::: chart bar {"title": "Team Workload Distribution", "height": "300px"}
-Work Distribution | Development: 150, Testing: 80, Documentation: 60, Meetings: 40
+::: chart bar {"title": "Team Workload", "height": "300px"}
+Development: 150, Testing: 80, Documentation: 60, Meetings: 40
 :::
 
-::::
+:::
 :::::
 
-#### Multi-Chart Grid {#chart-grid-multi}
+---
 
-::::: demo Multi-Chart Grid (3 columns)
-:::: chart-grid {"columns": 3, "gap": "20px"}
+### Chart (`chart`)
 
-::: chart radar {"title": "Team Skill Assessment", "height": "280px"}
-SomeOne | Frontend: 85, Backend: 90, Testing: 75, Documentation: 80, Project Management: 70
+Use `chart` container to render ECharts charts.
+
+**Supported chart types:**
+
+| Chart Type | Syntax  | Data Format       |
+| :--------- | :------ | :---------------- | ------------------------------------- |
+| Line       | `line`  | `Series           | Category1: Value1, Category2: Value2` |
+| Bar        | `bar`   | `Series           | Category1: Value1, Category2: Value2` |
+| Pie        | `pie`   | `Category: Value` |
+| Radar      | `radar` | `Series           | Metric1: Value1, Metric2: Value2`     |
+| Gauge      | `gauge` | `Value`           |
+
+**Line Chart Demo:**
+
+::: chart line {"title": "Line Chart Example", "height": "300px", "smooth": true}
+Series A | Jan: 120, Feb: 200, Mar: 150, Apr: 80
+Series B | Jan: 100, Feb: 180, Mar: 130, Apr: 120
 :::
 
-::: chart bar {"title": "Monthly Workload Statistics", "height": "280px"}
-Workload Statistics | Development: 120, Testing: 80, Documentation: 40, Meetings: 30
-:::
-
-::: chart pie {"title": "Project Time Allocation", "height": "280px"}
-Frontend Development: 40
-Backend Development: 35
-Testing Verification: 15
-Documentation: 10
-:::
-
-::::
-:::::
-
-#### Charts and Tables Mixed {#chart-grid-mixed}
-
-::::: demo Charts and Tables Mixed
-:::: table-grid {"columns": 2, "gap": "24px"}
-
-::: chart radar {"title": "Skill Assessment", "height": "300px"}
-Developer A | Frontend: 85, Backend: 75, Testing: 60, Documentation: 90
-Developer B | Frontend: 70, Backend: 95, Testing: 80, Documentation: 65
-:::
-
-| Team Member | Main Skills | Years of Experience |
-|:---|:---|:---|
-| Developer A | Frontend Development | 3 years |
-| Developer B | Backend Development | 5 years |
-| Test Engineer | Quality Assurance | 4 years |
-
-::::
-:::::
-
-### Charts (`chart`) {#charts}
-
-Use `chart` container to render ECharts charts, supporting multiple chart types and rich configuration options.
-
-#### Configuration Options {#chart-config}
-
-| Property | Type | Description | Default Value |
-|:---|:---|:---|:---|
-| `title` | `string` | Chart main title | `""` |
-| `subtitle` | `string` | Chart subtitle | `""` |
-| `width` | `string` | Container width | `100%` |
-| `height` | `string` | Container height | `400px` |
-| `theme` | `string` | Theme | `auto` |
-| `legend` | `boolean` | Whether to show legend | `false` |
-| `smooth` | `boolean` | Whether to smooth curves (line charts only) | `false` |
-
-#### Supported Chart Types {#chart-types}
-
-| Chart Type | Syntax | Data Format |
-|:---|:---|:---|
-| **Line Chart** | `line` | `Series Name \| Category1: Value1, Category2: Value2` |
-| **Bar Chart** | `bar` | `Series Name \| Category1: Value1, Category2: Value2` |
-| **Area Chart** | `area` | `Series Name \| Category1: Value1, Category2: Value2` |
-| **Pie Chart** | `pie` | `Category: Value` |
-| **Doughnut Chart** | `doughnut` | `Category: Value` |
-| **Scatter Plot** | `scatter` | `x-value, y-value` |
-| **Radar Chart** | `radar` | `Series Name \| Metric1: Value1, Metric2: Value2` |
-| **Gauge** | `gauge` | `Numerical value` |
-| **Funnel Chart** | `funnel` | `Category: Value` |
-| **Heatmap** | `heatmap` | `x, y, value` |
-| **Sankey Diagram** | `sankey` | `Source->Target: Value` |
-| **Graph** | `graph` | `Node1->Node2: Value` |
-| **Candlestick Chart** | `candlestick`/`k` | `Date: Open,Close,Low,High` |
-| **Box Plot** | `boxplot` | `Min,Q1,Median,Q3,Max` |
-| **Parallel Coordinates** | `parallel` | `Value1, Value2, Value3, ...` |
-| **Theme River** | `themeRiver` | `Date,Category: Value` |
-| **Pictorial Bar** | `pictorialBar` | `Category: Value` |
-
-#### Example: Line Chart {#chart-example-line}
-
-::: chart line {"title": "Line Chart", "height": "300px", "smooth": true, "legend": true}
-Series A | January: 120, February: 200, March: 150, April: 80
-Series B | January: 100, February: 180, March: 130, April: 120
-:::
-
-#### Example: Pie Chart {#chart-example-pie}
+**Pie Chart Demo:**
 
 ::: chart pie {"title": "Market Share", "height": "300px"}
 Chrome: 65
@@ -503,84 +342,20 @@ Safari: 12
 Edge: 8
 :::
 
-#### Example: Radar Chart {#chart-example-radar}
+**Radar Chart Demo:**
 
-::: chart radar {"title": "Radar Chart", "height": "300px"}
-Zhang San | Technology: 90, Communication: 85, Innovation: 88, Management: 75
-Li Si | Technology: 80, Communication: 95, Innovation: 70, Management: 90
+::: chart radar {"title": "Skills Assessment"}
+Developer A | Frontend: 90, Backend: 85, Testing: 75, Docs: 80
+Developer B | Frontend: 70, Backend: 95, Testing: 80, Docs: 65
 :::
 
-### Timeline (`timeline`) {#timeline}
+---
 
-Use `timeline` and `timeline-item` containers to create vertical timelines, supporting rich preset types and custom styles.
+## Code & Chart Plugins
 
-#### `timeline` Container Properties {#timeline-container}
+### Markmap Mind Map
 
-| Property | Type | Description | Default Value |
-|:---|:---|:---|:---|
-| `density` | `string` | Timeline density | `default` |
-| `direction` | `string` | Direction | `vertical` |
-
-Optional values:
-- `density`: `default`, `comfortable`, `compact`
-- `direction`: `vertical`, `horizontal`
-
-#### `timeline-item` Container Properties {#timeline-item}
-
-| Property | Type | Description | Default Value |
-|:---|:---|:---|:---|
-| `type` | `string` | Preset type | `""` |
-| `dot-color` | `string` | Dot color | `""` |
-| `icon` | `string` | Icon in dot | `""` |
-| `opposite` | `string` | Content displayed on opposite side of timeline | `""` |
-| `card` | `boolean` | Whether to use card style | `false` |
-| `card-title` | `string` | Card title | `""` |
-
-#### Preset Types {#timeline-presets}
-
-| Category | Available Types |
-|:---|:---|
-| **Basic** | `success`, `info`, `warning`, `error`, `tip` |
-| **Project** | `start`, `finish`, `milestone`, `deadline`, `meeting`, `launch`, `pause`, `stop` |
-| **Status** | `review`, `approve`, `reject`, `pending`, `progress`, `complete`, `todo`, `doing`, `done` |
-| **Bug** | `bug`, `bug_investigating`, `bug_fixed` |
-| **Feature** | `feature`, `feature_designing`, `feature_developing`, `feature_testing`, `feature_released` |
-| **Task** | `task_created`, `task_assigned`, `task_started`, `task_paused`, `task_resumed`, `task_completed`, `task_cancelled` |
-| **Build** | `build_started`, `build_success`, `build_failed` |
-| **Deploy** | `deploy`, `deploy_staging`, `deploy_production`, `rollback` |
-| **Security** | `security`, `security_issue`, `security_fixed` |
-| **Performance** | `performance`, `performance_issue`, `performance_optimized` |
-| **Other** | `documentation`, `documentation_updated`, `release`, `hotfix`, `maintenance`, `optimization`, `testing`, `refactor`, `meeting_completed`, `decision_made`, `backup_created`, `user_feedback`, `issue_escalated`, `database_migration`, `api_deprecated`, `dependency_updated` |
-
-#### Example: Project Timeline {#timeline-example}
-
-::::: demo Example
-:::: timeline
-::: timeline-item type="start" opposite="2024-08"
-Project Started
-:::
-::: timeline-item type="milestone" card="true" card-title="v1.0 Release"
-We successfully released the first major version!
-:::
-::: timeline-item type="refactor" opposite="2025-06"
-Sidebar system refactoring completed, started organizing 2.0
-:::
-::: timeline-item type="task_completed" opposite="2025-07"
-Version 2.0 completed
-:::
-::: timeline-item type="launch" opposite="2025-07"
-Documentation still maintained to this day.
-:::
-::::
-:::::
-
-## Code and Chart Plugins {#code-and-chart-plugins}
-
-### Markmap Mind Maps {#markmap}
-
-Use the Markmap plugin to render Markdown content as interactive mind maps.
-
-#### Basic Syntax
+Renders Markdown content as interactive mind maps.
 
 ````markdown
 ```markmap
@@ -590,11 +365,10 @@ Use the Markmap plugin to render Markdown content as interactive mind maps.
 ### Sub-branch 1.2
 ## Branch 2
 ### Sub-branch 2.1
-### Sub-branch 2.2
 ```
 ````
 
-#### Rendered Result
+**Demo:**
 
 ```markmap
 # Topic
@@ -606,84 +380,493 @@ Use the Markmap plugin to render Markdown content as interactive mind maps.
 ### Sub-branch 2.2
 ```
 
-#### Features
+---
 
-- **Auto-fit**: Mind map automatically adjusts size to fit container
-- **Dark mode support**: Automatically adapts to current theme's dark/light mode
-- **Interactive**: Support clicking nodes to expand/collapse
-- **Colored branches**: Different levels use different colors for distinction
+### Magic Move Code Animation
 
-### Magic Move Code Animation {#magic-move}
+Shows code evolution with smooth transitions.
 
-Used to showcase the gradual evolution of code with highlighted changes.
+**Demo:**
 
-#### Basic Syntax
-
-````markdown
 :::magic-move
 
-```js [js]
-const hello = 'world'
+```js
+const hello = "hello";
 ```
 
-```ts [ts]
-const hello = 'world' as String
+```ts
+let world = "world" as String;
 ```
 
+:::
+
+---
+
+### Shader Syntax Highlighting
+
+Lightweight highlighting for shader code blocks and inline snippets without full parser overhead. Supports `glsl`, `shader`, `hlsl`, and `wgsl` language labels.
+
+````markdown
+```glsl
+void main() {
+    gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+}
+```
+
+Inline syntax: `shader: vec2 uv = vUv;`
+````
+
+**Demo:**
+
+```glsl
+void main() {
+    gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+}
+```
+
+Inline syntax: `shader: vec2 uv = vUv;`
+
+### Shader Effect Container (`shader-effect`)
+
+Use a dedicated container when you want the code to drive a live shader canvas directly from Markdown.
+
+````markdown
+::: shader-effect{"speed":1}
+```glsl
+varying vec2 vUv;
+
+void main() {
+  vUv = uv;
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+}
+```
+
+```glsl
+uniform float uTime;
+uniform vec3 uBgColor;
+uniform float uThemeIsDark;
+uniform vec3 uColor1;
+uniform vec3 uColor2;
+varying vec2 vUv;
+
+void main() {
+  vec2 uv = vUv * 2.0 - 1.0;
+  uv.x *= 1.78;
+  float r = length(uv);
+  float angle = atan(uv.y, uv.x);
+  float swirl = angle + uTime * 0.5 + r * 5.0;
+  float ring = smoothstep(0.95, 0.15, r);
+  float core = smoothstep(0.02, 0.12, r);
+  float accretion = sin(swirl * 3.0) * 0.5 + 0.5;
+  float glow = exp(-r * 3.0) * 0.6;
+  vec3 diskColor = mix(uColor1, uColor2, accretion);
+  float effectMask = ring * core;
+  vec3 effectColor = diskColor * effectMask + glow * vec3(0.3, 0.4, 0.8);
+  vec3 finalColor = mix(uBgColor, effectColor, effectMask + glow * 0.3);
+  gl_FragColor = vec4(finalColor, 1.0);
+}
+```
 :::
 ````
 
-#### Rendered Result
+| Field    | Type      | Description                                   | Default |
+| -------- | --------- | --------------------------------------------- | ------- |
+| `speed`  | `number`  | Animation speed multiplier                    | `1`     |
+| `preset` | `string`  | Optional preset fallback (`wave/sunset/...`) | `wave`  |
+| `paused` | `boolean` | Pause animation                               | `false` |
 
-:::magic-move
+**Demo:**
 
-```js [js]
-const hello = 'world'
+::: shader-effect{"speed":1}
+```glsl
+varying vec2 vUv;
+
+void main() {
+  vUv = uv;
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+}
 ```
 
-```ts [ts]
-const hello = 'world' as String
-```
+```glsl
+uniform float uTime;
+uniform vec3 uBgColor;
+uniform float uThemeIsDark;
+uniform vec3 uColor1;
+uniform vec3 uColor2;
+varying vec2 vUv;
 
+void main() {
+  vec2 uv = vUv * 2.0 - 1.0;
+  uv.x *= 1.78;
+  float r = length(uv);
+  float angle = atan(uv.y, uv.x);
+  float swirl = angle + uTime * 0.5 + r * 5.0;
+  float ring = smoothstep(0.95, 0.15, r);
+  float core = smoothstep(0.02, 0.12, r);
+  float accretion = sin(swirl * 3.0) * 0.5 + 0.5;
+  float glow = exp(-r * 3.0) * 0.6;
+  vec3 diskColor = mix(uColor1, uColor2, accretion);
+  float effectMask = ring * core;
+  vec3 effectColor = diskColor * effectMask + glow * vec3(0.3, 0.4, 0.8);
+  vec3 finalColor = mix(uBgColor, effectColor, effectMask + glow * 0.3);
+  gl_FragColor = vec4(finalColor, 1.0);
+}
+```
 :::
 
-#### Syntax Explanation
+---
 
-- **Container syntax**: Use `:::magic-move` and `:::` to wrap multiple code blocks
-- **Filename**: Use `[filename]` in code block info to specify filename
-- **Highlight lines**: Use `{1,3-5}` syntax to highlight specific lines
-- **Step switching**: Click top tabs to switch between different steps
+## Visual & Utility Plugins
 
-#### Features
+Interactive plugins and embed components that can be used directly in Markdown.
 
-- **Smooth transitions**: Smooth animation effects when code changes
-- **Syntax highlighting**: Support syntax highlighting for multiple programming languages
-- **File icons**: Automatically display corresponding icons based on file extensions
-- **Dark mode**: Automatically adapts to theme mode
+### Mermaid Charts
 
-## Custom Vue Components {#custom-vue-components}
-
-Vue components that can be used directly in Markdown.
-
-### Mermaid Diagrams {#component-mermaid}
-
-:::demo
+````markdown
 ```mermaid
 graph TD
     A[Start] --> B{Is it working?};
     B -- Yes --> C[Great!];
     B -- No --> D[Check console];
 ```
-:::
+````
 
-### Bilibili Video {#component-bilibili}
+**Demo:**
 
-:::demo
+```mermaid
+graph TD
+    A[Start] --> B{Is it working?};
+    B -- Yes --> C[Great!];
+    B -- No --> D[Check console];
+```
+
+---
+
+### Bilibili Video
+
+```markdown
 <BilibiliVideo bvid="BV1rC4y1C7z2" />
-:::
+```
 
-### PDF Viewer {#component-pdf-viewer}
+---
 
-:::demo
+### PDF Viewer
+
+```markdown
 <PdfViewer pdfSource="/pdf/modding/java/test.pdf"/>
+```
+
+---
+
+### Image Size (`img-size`)
+
+Specify image width and height directly in Markdown image syntax using `=WxH` after the alt text.
+
+```markdown
+![Logo =200x200](/logo.png)
+![Logo =150x](/logo.png)
+![Logo =x100](/logo.png)
+```
+
+**Demo:**
+
+::: demo Image Size Example
+![Logo =80x80](/svg/logo.svg)
 :::
+
+---
+
+### Demo Container (`demo`)
+
+Wraps content in a collapsible demo block that shows the rendered output alongside the source.
+
+```markdown
+:::: demo Title
+::: demo Inner example
+**Markdown** is _awesome_!
+:::
+::::
+```
+
+**Demo:**
+
+:::: demo Demo Container Example
+::: demo This is a demo
+**Bold**, _italic_, and `inline code` all work here.
+:::
+::::
+
+---
+
+### Legacy Alert (`v-alert`)
+
+Vuetify-style alerts using the `v-success | v-info | v-warning | v-error` container names.
+
+```markdown
+::: v-success Success
+This is a success message.
+:::
+
+::: v-info Info
+This is an info message.
+:::
+
+::: v-warning Warning
+This is a warning message.
+:::
+
+::: v-error Error
+This is an error message.
+:::
+```
+
+**Demo:**
+
+::::: demo Legacy v-alert Examples
+::: v-success Success
+This is a success message.
+:::
+::: v-info Info
+This is an info message.
+:::
+::: v-warning Warning
+This is a warning message.
+:::
+::: v-error Error
+This is an error message.
+:::
+:::::
+
+---
+
+### Dialog (`dialog`)
+
+Creates a modal dialog that can be triggered from anywhere on the page.
+
+| Field        | Purpose              | Type             | Default |
+| ------------ | -------------------- | ---------------- | ------- |
+| `title`      | Dialog title         | `string`         | —       |
+| `width`      | Max width            | `string\|number` | `800`   |
+| `fullscreen` | Full-screen mode     | `boolean`        | `false` |
+| `persistent` | Click-outside closes | `boolean`        | `false` |
+
+```markdown
+@@@ dialog-def#my-dialog {"title": "Example Dialog", "width": 500}
+This is **Markdown** inside a dialog.
+@@@
+
+Click :::dialog#my-dialog here::: to open it.
+```
+
+**Demo:**
+
+::::: demo Dialog Example
+@@@ dialog-def#demo-dialog {"title": "Hello Dialog", "width": 500}
+This is a **Markdown** dialog.
+
+- It can contain lists
+- `code blocks`
+- And other Markdown content.
+  @@@
+
+Click :::dialog#demo-dialog here::: to open the dialog.
+:::::
+
+---
+
+### Carousels (`carousels`)
+
+Creates an image or content carousel/slideshow.
+
+```markdown
+::: carousels#{"cycle": true, "interval": 2800, "hideDelimiters": false}
+@tab
+![Image 1](https://example.com/1.png)
+@tab
+![Image 2](https://example.com/2.png)
+:::
+```
+
+**Demo:**
+
+:::: demo Carousel Example
+::: carousels#{"cycle": true, "interval": 3000, "hideDelimiters": false}
+@tab
+**Slide 1** — You can put any Markdown content here.
+@tab
+**Slide 2** — Including code, images, and formatted text.
+:::
+::::
+
+---
+
+### Iframe (`iframe`)
+
+Embeds an external web page in the document.
+
+| Field    | Purpose                 | Type     | Default |
+| -------- | ----------------------- | -------- | ------- |
+| `src`    | URL to embed (required) | `string` | —       |
+| `height` | Frame height            | `length` | `140px` |
+
+```markdown
+:::iframes#{"src": "https://misode.github.io/"}
+:::
+```
+
+> **Note:** Some sites block embedding via security policies and will display blank or an error.
+
+**Demo:**
+
+:::: demo Iframe Example
+:::iframes#{"src": "https://misode.github.io/", "height": "300px"}
+:::
+::::
+
+---
+
+### Chat (`chat`)
+
+Creates a simulated chat interface supporting multiple avatar types.
+
+#### `chat` Container Props
+
+| Prop         | Type     | Description      | Default   |
+| ------------ | -------- | ---------------- | --------- |
+| `title`      | `string` | Chat panel title | `""`      |
+| `max-height` | `string` | Max panel height | `"400px"` |
+
+#### `message` Container Props
+
+| Prop          | Type     | Description                         | Default  |
+| ------------- | -------- | ----------------------------------- | -------- |
+| `nickname`    | `string` | Username                            | `""`     |
+| `avatar-type` | `string` | Avatar type: `icon`, `ai`, `github` | `"icon"` |
+| `location`    | `string` | Message side: `left`, `right`       | `"left"` |
+| `avatar-link` | `string` | Click link on avatar                | `""`     |
+
+**Demo:**
+
+::::: demo Chat Example
+:::: chat title="AI Chat Demo"
+::: message nickname="User" avatar-type="icon"
+Hello! Can you explain what the Vue Composition API is?
+:::
+
+::: message nickname="AI Assistant" avatar-type="ai" location="right"
+Sure! The Vue Composition API is a new way to organize component logic in Vue 3:
+
+- **Reactive data**: use `ref()` and `reactive()`
+- **Lifecycle hooks**: use `onMounted()` etc.
+
+It allows better code reuse compared to the Options API.
+:::
+
+::: message nickname="octocat" avatar-type="github"
+GitHub avatars auto-link to the user's GitHub profile.
+:::
+::::
+:::::
+
+---
+
+### Steps (`steps`)
+
+Vertical numbered timeline — great for tutorials and how-to guides.
+
+```markdown
+::: steps
+@tab Step 1 Title
+Content for step 1
+
+@tab Step 2 Title
+Content for step 2
+:::
+```
+
+**Demo:**
+
+::: steps
+@tab Install Dependencies
+Run `npm install` or `yarn install` in the project root.
+
+@tab Start the Dev Server
+Run `yarn dev` and open `http://localhost:5173`.
+
+@tab Edit a Page
+Edit any `.md` file under `docs/src/` and watch it hot-reload instantly.
+:::
+
+---
+
+## Custom Vue Components
+
+### Contributors (`Contributors`)
+
+Fetches and displays GitHub contributors for any repo, grouped by contribution count.
+
+| Prop                | Type            | Description                                         | Default          |
+| ------------------- | --------------- | --------------------------------------------------- | ---------------- |
+| `owner`             | `string`        | GitHub org/user (auto-detected from project config) | from config      |
+| `repo`              | `string`        | Repository name (auto-detected)                     | from config      |
+| `maxCount`          | `number`        | Max contributors to show                            | `200`            |
+| `showContributions` | `boolean`       | Show contribution counts                            | `true`           |
+| `enableCache`       | `boolean`       | Use cached avatars from `/public/contributors/`     | `true`           |
+| `title`             | `string`        | Section heading                                     | `"Contributors"` |
+| `layout`            | `"doc"\|"hero"` | Force layout mode (auto-detected by default)        | auto             |
+
+```markdown
+<Contributors
+  owner="PickAID"
+  repo="CrychicDoc"
+  :max-count="100"
+  :show-contributions="true"
+  title="Contributors"
+/>
+```
+
+**Demo:**
+
+<Contributors
+  owner="PickAID"
+  repo="CrychicDoc"
+  :max-count="10"
+  :show-contributions="true"
+  title="Contributors"
+/>
+
+---
+
+### Git Commits Counter (`commitsCounter`)
+
+Displays a sparkline chart of recent commits for a GitHub repository.
+
+| Prop          | Type     | Description                  | Default |
+| ------------- | -------- | ---------------------------- | ------- |
+| `username`    | `string` | GitHub org/user              | —       |
+| `repoName`    | `string` | Repository name              | —       |
+| `daysToFetch` | `number` | Number of past days to chart | `30`    |
+
+```markdown
+<commitsCounter
+  username="PickAID"
+  repoName="CrychicDoc"
+  :daysToFetch="14"
+/>
+```
+
+**Demo:**
+
+<commitsCounter
+  username="PickAID"
+  repoName="CrychicDoc"
+  :daysToFetch="14"
+/>
+
+---
+
+## Related Links
+
+- [Markdown Extensions Documentation](https://theme-hope.vuejs.org/guide/markdown/overview)
+- [Vue Chart Documentation](https://vuechart.wtmcdn.com/)
+- [Mermaid Documentation](https://mermaid.js.org/)

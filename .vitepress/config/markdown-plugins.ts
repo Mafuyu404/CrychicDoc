@@ -20,8 +20,8 @@ import { ruby } from "@mdit/plugin-ruby";
 import { demo } from "@mdit/plugin-demo";
 import { dl } from "@mdit/plugin-dl";
 import { stepper } from "../plugins/stepper";
+import { steps } from "../plugins/steps";
 import { vuetifyTimeline } from "../plugins/vuetify-timeline";
-import { chartGrid } from "../plugins/table-grid";
 import { tab } from "@mdit/plugin-tab";
 import { mark } from "@mdit/plugin-mark";
 import { ins } from "@mdit/plugin-ins";
@@ -31,13 +31,15 @@ import { mdDemo } from "../plugins/demo";
 import { carousels } from "../plugins/carousels";
 import { iframes } from "../plugins/iframe";
 import { card } from "../plugins/card";
+import { chartGrid } from "../plugins/table-grid";
 import { groupIconMdPlugin } from "vitepress-plugin-group-icons";
 import MagicMovePlugin from "../plugins/magic-move";
 import { dialogPlugin } from "../plugins/dialog";
 import { chatPlugin } from "../plugins/chat-message";
 import { withMarkmap } from "../plugins/markmap";
 import { vueCharts } from "../plugins/vue-charts";
-import { isFeatureEnabled } from "./project-config";
+import { shaderEffect } from "../plugins/shader-effect";
+import { isFeatureEnabled } from "../utils/config/project-config";
 import ts from "typescript";
 
 import fs from "fs";
@@ -96,15 +98,17 @@ export const markdown: MarkdownOptions = {
         md.use(v_alert);
         md.use(mark);
         md.use(ins);
+        md.use(chartGrid);
 
         md.use(tab, stepper);
+        md.use(tab, steps);
         md.use(tab, carousels);
         md.use(tab, iframes);
 
         md.use(card);
         md.use(vueCharts);
         md.use(vuetifyTimeline);
-        md.use(chartGrid);
+        md.use(shaderEffect);
         
         if (isFeatureEnabled('markmap')) {
             withMarkmap(md);

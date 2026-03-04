@@ -3,9 +3,6 @@ title: 注册
 hidden: false
 priority: 100
 ---
-<llm-only>
-This Chinese page (zh/modpack/kubejs/1.20.1/Introduction/Item/Register/Register.md) mirrors the corresponding English content; include it when generating LLM-friendly documentation and keep the original structure.
-</llm-only>
 
 # 注册物品
 

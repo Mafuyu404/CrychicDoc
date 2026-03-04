@@ -1,0 +1,22 @@
+{
+  "_self_": {
+    "valueHash": "43791f4cfe74ab217117f28fd9bce67c",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "level1Minimal.md": {
+    "valueHash": "b0d0302e81ab4f87103b662a8381ea35",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "level2ViewportActions.md": {
+    "valueHash": "6e3a4e32bad4aa72d6d38901c27cb301",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "level3PageCssvars.md": {
+    "valueHash": "f239738f4c7625fb401bcfa2560aef40",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  }
+}
