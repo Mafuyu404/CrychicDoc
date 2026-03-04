@@ -4,6 +4,8 @@ typefiles
 .vitepress/dist
 .vscode/settings.json
 node_modules
+*.tmp
+fix_conflicts.py
 route.bash
 .vitepress/dev.json
 *.DS_Store

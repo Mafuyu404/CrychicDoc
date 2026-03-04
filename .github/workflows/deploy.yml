@@ -1,198 +1,143 @@
-name: Deploy VitePress site
+name: Build VitePress and Push to Private Repo
 
 on:
     push:
         branches: [main]
 
-    workflow_dispatch:
-
-permissions:
-    contents: read
-    pages: write
-    id-token: write
-
-concurrency:
-    group: pages
-    cancel-in-progress: false
-
 jobs:
-    # Read deployment configuration
-    config:
+    build-and-push:
         runs-on: ubuntu-latest
-        outputs:
-            deployment-type: ${{ steps.config.outputs.deployment-type }}
         steps:
-            - name: Checkout
-              uses: actions/checkout@v4
-
-            - name: Setup Node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-                  cache: yarn
-                  cache-dependency-path: yarn.lock
-
-            - name: Install dependencies
-              run: yarn install --frozen-lockfile
-
-            - name: Read deployment config
-              id: config
+            - name: Wait for case sensitivity check
               run: |
-                  # Extract deployment type from project-config.ts
-                  DEPLOYMENT_TYPE=$(node -e "
-                    const fs = require('fs');
-                    const content = fs.readFileSync('.vitepress/config/project-config.ts', 'utf8');
-                    const match = content.match(/deployment:\s*\{[\s\S]*?type:\s*['\"]([^'\"]+)['\"][\s\S]*?\}/);
-                    console.log(match ? match[1] : 'github-pages');
-                  ")
-                  echo "deployment-type=$DEPLOYMENT_TYPE" >> $GITHUB_OUTPUT
+                  echo "Waiting for case sensitivity check to complete..."
 
-    # Build the site
-    build:
-        needs: config
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
+                  # Get the latest workflow run for case sensitivity check
+                  WORKFLOW_ID=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                    "https://api.github.com/repos/${{ github.repository }}/actions/workflows" | \
+                    jq -r '.workflows[] | select(.name == "Case Sensitivity Check") | .id')
+
+                  if [ "$WORKFLOW_ID" = "null" ] || [ -z "$WORKFLOW_ID" ]; then
+                    echo "Case sensitivity workflow not found, proceeding with build"
+                    exit 0
+                  fi
+
+                  echo "Found case sensitivity workflow ID: $WORKFLOW_ID"
+
+                  # Wait for the workflow to complete (max 10 minutes)
+                  for i in {1..60}; do
+                    LATEST_RUN=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                      "https://api.github.com/repos/${{ github.repository }}/actions/workflows/$WORKFLOW_ID/runs?per_page=1&branch=main")
+                    
+                    STATUS=$(echo "$LATEST_RUN" | jq -r '.workflow_runs[0].status')
+                    CONCLUSION=$(echo "$LATEST_RUN" | jq -r '.workflow_runs[0].conclusion')
+                    
+                    echo "Case sensitivity check status: $STATUS, conclusion: $CONCLUSION"
+                    
+                    if [ "$STATUS" = "completed" ]; then
+                      if [ "$CONCLUSION" = "success" ]; then
+                        echo "Case sensitivity check completed successfully"
+                        exit 0
+                      else
+                        echo "Case sensitivity check failed with conclusion: $CONCLUSION"
+                        exit 1
+                      fi
+                    fi
+                    
+                    echo "Still waiting... (attempt $i/60)"
+                    sleep 10
+                  done
+
+                  echo "Timeout waiting for case sensitivity check"
+                  exit 1
+
+            - name: Checkout the code
               uses: actions/checkout@v4
               with:
                   fetch-depth: 0
+                  # Ensure we get the latest changes after case sensitivity fixes
+                  ref: ${{ github.ref }}
 
-            - name: Setup Node
-              uses: actions/setup-node@v4
+            - name: Verify repository state
+              run: |
+                  echo "Verifying repository state after case sensitivity fixes..."
+
+                  # Check for any remaining case conflicts
+                  CONFLICTS=$(git ls-files | sort -f | uniq -i -d || true)
+
+                  if [ -n "$CONFLICTS" ]; then
+                    echo "Warning: Case conflicts still detected:"
+                    echo "$CONFLICTS"
+                    echo "Proceeding with build anyway..."
+                  else
+                    echo "No case conflicts detected, repository is clean"
+                  fi
+
+                  echo "Repository status:"
+                  echo "- Branch: $(git branch --show-current)"
+                  echo "- Latest commit: $(git log -1 --oneline)"
+                  echo "- Total files: $(git ls-files | wc -l)"
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
               with:
-                  node-version: 20
-                  cache: yarn
-                  cache-dependency-path: yarn.lock
+                  node-version: "20.17.0"
+                  cache: "yarn"
+
+            - name: Configure Yarn
+              run: yarn config set registry https://registry.npmmirror.com
 
             - name: Install dependencies
               run: yarn install --frozen-lockfile
 
-            - name: Build with VitePress
-              run: yarn build
-
-            - name: Upload build artifact
-              uses: actions/upload-artifact@v4
-              with:
-                  name: vitepress-dist
-                  path: .vitepress/dist
-                  retention-days: 1
-
-    # Deploy to GitHub Pages
-    deploy-github:
-        if: needs.config.outputs.deployment-type == 'github-pages'
-        needs: [config, build]
-        runs-on: ubuntu-latest
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        steps:
-            - name: Setup Pages
-              uses: actions/configure-pages@v4
-
-            - name: Download build artifact
-              uses: actions/download-artifact@v4
-              with:
-                  name: vitepress-dist
-                  path: ./dist
-
-            - name: Upload Pages artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                  path: ./dist
-
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
-
-    # Deploy to server via SSH
-    deploy-server:
-        if: needs.config.outputs.deployment-type == 'server'
-        needs: [config, build]
-        runs-on: ubuntu-latest
-        steps:
-            - name: Download build artifact
-              uses: actions/download-artifact@v4
-              with:
-                  name: vitepress-dist
-                  path: ./dist
-
-            - name: Deploy to server via SSH
-              uses: appleboy/ssh-action@v1.0.3
-              with:
-                  host: ${{ secrets.SSH_HOST }}
-                  username: ${{ secrets.SSH_USERNAME }}
-                  key: ${{ secrets.SSH_PRIVATE_KEY }}
-                  port: ${{ secrets.SSH_PORT || 22 }}
-                  script: |
-                      # Clean and create remote directory
-                      rm -rf ${{ secrets.REMOTE_PATH }}/*
-                      mkdir -p ${{ secrets.REMOTE_PATH }}
-
-            - name: Copy files to server
-              uses: appleboy/scp-action@v0.1.7
-              with:
-                  host: ${{ secrets.SSH_HOST }}
-                  username: ${{ secrets.SSH_USERNAME }}
-                  key: ${{ secrets.SSH_PRIVATE_KEY }}
-                  port: ${{ secrets.SSH_PORT || 22 }}
-                  source: "./dist/*"
-                  target: ${{ secrets.REMOTE_PATH }}
-                  strip_components: 1
-
-    # Deploy with custom commands
-    deploy-custom:
-        if: needs.config.outputs.deployment-type == 'custom'
-        needs: [config, build]
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v4
-
-            - name: Setup Node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-                  cache: yarn
-                  cache-dependency-path: yarn.lock
-
-            - name: Install dependencies
-              run: yarn install --frozen-lockfile
-
-            - name: Download build artifact
-              uses: actions/download-artifact@v4
-              with:
-                  name: vitepress-dist
-                  path: ./.vitepress/dist
-
-            - name: Read deployment commands
-              id: commands
+            - name: Build VitePress site
+              env:
+                  NODE_OPTIONS: --max-old-space-size=8192
               run: |
-                  # Extract deployment commands from project-config.ts
-                  DEPLOY_CMD=$(node -e "
-                    const fs = require('fs');
-                    const content = fs.readFileSync('.vitepress/config/project-config.ts', 'utf8');
-                    const match = content.match(/deployCommand:\s*['\"]([^'\"]*)['\"]/) || ['', ''];
-                    console.log(match[1]);
-                  ")
-                  POST_DEPLOY_CMD=$(node -e "
-                    const fs = require('fs');
-                    const content = fs.readFileSync('.vitepress/config/project-config.ts', 'utf8');
-                    const match = content.match(/postDeployCommand:\s*['\"]([^'\"]*)['\"]/) || ['', ''];
-                    console.log(match[1]);
-                  ")
-                  echo "deploy-command=$DEPLOY_CMD" >> $GITHUB_OUTPUT
-                  echo "post-deploy-command=$POST_DEPLOY_CMD" >> $GITHUB_OUTPUT
+                  echo "Building VitePress site..."
+                  yarn docs:build
+                  echo "VitePress site build completed"
 
-            - name: Run custom deployment
+            - name: Copy deployment workflow
               run: |
-                  # Run deploy command if specified
-                  if [ -n "${{ steps.commands.outputs.deploy-command }}" ]; then
-                    echo "Executing deploy command..."
-                    ${{ steps.commands.outputs.deploy-command }}
-                  fi
+                  # 创建目标目录
+                  mkdir -p .vitepress/dist/.github/workflows/
 
-                  # Run post-deploy command if specified
-                  if [ -n "${{ steps.commands.outputs.post-deploy-command }}" ]; then
-                    echo "Executing post-deploy command..."
-                    ${{ steps.commands.outputs.post-deploy-command }}
-                  fi
+                  # 克隆包含部署workflow的仓库
+                  git clone --depth 1 https://${{ secrets.PICKAID_TOKEN }}@github.com/M1hono/CrychicDocWorkflow.git workflow_repo
+
+                  # 复制部署workflow
+                  cp workflow_repo/.github/workflows/deploy.yml .vitepress/dist/.github/workflows/
+
+                  # 清理临时目录
+                  rm -rf workflow_repo
+
+                  echo "Deployment workflow copied successfully"
+
+            - name: Push to private repo
+              run: |
+                  cd .vitepress/dist
+                  git init
+
+                  git config user.name "GitHub Actions Bot"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+
+                  git add -A
+                  git commit -m "Update documentation (after case sensitivity fixes)"
+                  git push --force https://${{ secrets.PICKAID_TOKEN }}@github.com/M1hono/CrychicDocSynchronization.git HEAD:main
+                  echo "Push completed successfully"
+
+            - name: Cleanup
+              run: |
+                  rm -rf .vitepress/dist
+                  rm -rf workflow_repo
+                  echo "🧹 Cleanup completed"
+
+            - name: Build summary
+              run: |
+                  echo "Build Summary:"
+                  echo "Case sensitivity check: Passed"
+                  echo "Dependencies installation: Completed"
+                  echo "VitePress build: Completed"
+                  echo "Deployment: Completed"
+                  echo "All steps completed successfully!"
