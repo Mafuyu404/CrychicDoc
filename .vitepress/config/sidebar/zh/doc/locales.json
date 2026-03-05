@@ -1,3 +1,9 @@
 {
-  "_self_": "文档相关"
+  "_self_": "文档相关",
+  "rules.md": "文档编写规范",
+  "sidebarGuide.md": "侧边栏配置",
+  "pluginsGuide.md": "样式与插件",
+  "litetreeGuide.md": "LiteTree组件",
+  "vscodeSnippetsGuide.md": "VSCode代码片段",
+  "guide/": "guide"
 }

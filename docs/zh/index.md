@@ -78,27 +78,30 @@ hero:
         items:
             - type: image
               src:
-                  light: /imgs/screenshots/kubejs.png
-                  dark: /imgs/screenshots/kubejsDark.png
-              width: 720px
+                  light: "/imgs/screenshots/kubejs.png"
+                  dark: "/imgs/screenshots/kubejsDark.png"
+              alt: "KubeJS 文档预览"
+              width: "720px"
               borderRadius: 16px
               shadow: "0 20px 40px rgba(0,0,0,0.3)"
               x: "5%"
               y: "20%"
             - type: image
               src:
-                  light: /imgs/screenshots/develop.png
-                  dark: /imgs/screenshots/developDark.png
-              width: 480px
+                  light: "/imgs/screenshots/develop.png"
+                  dark: "/imgs/screenshots/developDark.png"
+              alt: "开发文档预览"
+              width: "480px"
               borderRadius: 16px
               shadow: "0 20px 40px rgba(0,0,0,0.3)"
               x: "75%"
               y: "40%"
             - type: image
               src:
-                  light: /imgs/screenshots/rules.png
-                  dark: /imgs/screenshots/rulesDark.png
-              width: 360px
+                  light: "/imgs/screenshots/rules.png"
+                  dark: "/imgs/screenshots/rulesDark.png"
+              alt: "协作规范预览"
+              width: "360px"
               borderRadius: 12px
               shadow: "0 10px 20px rgba(0,0,0,0.2)"
               x: "82%"
