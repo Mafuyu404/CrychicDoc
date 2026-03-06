@@ -1,4 +1,4 @@
-import type { NavItem } from "../../../utils/config/nav-types";
+import type { NavItem } from "../../../utils/config/navTypes";
 
 const kubePreview = (
     title: string,
@@ -379,6 +379,31 @@ const zhNav: NavItem[] = [
                                     text: "导航指南",
                                     link: "/doc/guide/",
                                     desc: "主题导航与使用说明",
+                                },
+                            ],
+                        },
+                        {
+                            label: "框架开发",
+                            items: [
+                                {
+                                    text: "框架可维护性",
+                                    link: "/doc/frameworkMaintainability",
+                                    desc: "高层工程规范与扩展标准",
+                                },
+                                {
+                                    text: "开发工作流",
+                                    link: "/doc/developmentWorkflow",
+                                    desc: "改动顺序、校验与同步规则",
+                                },
+                                {
+                                    text: "扩展架构说明",
+                                    link: "/doc/extensionArchitecture",
+                                    desc: "配置、运行时、组件与样式的职责边界",
+                                },
+                                {
+                                    text: "Hero 扩展手册",
+                                    link: "/doc/heroExtension",
+                                    desc: "排版、浮动元素、Shader 与背景扩展方案",
                                 },
                             ],
                         },

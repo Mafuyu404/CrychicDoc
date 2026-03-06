@@ -63,5 +63,10 @@
     "valueHash": "b54b235f7c7fbf50c44dc4b8f28b1f9d",
     "isUserSet": false,
     "isActiveInStructure": false
+  },
+  "Description.md": {
+    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

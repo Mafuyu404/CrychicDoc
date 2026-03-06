@@ -1,5 +1,6 @@
 {
   "_self_": "Info",
   "KubeJS/": "KubeJS",
-  "doc/": "doc"
+  "doc/": "doc",
+  "Description.md": "Info"
 }

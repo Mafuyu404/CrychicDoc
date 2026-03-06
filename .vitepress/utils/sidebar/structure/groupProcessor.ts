@@ -15,11 +15,12 @@
 
 import path from 'node:path';
 import { SidebarItem, GroupConfig, EffectiveDirConfig } from '../types';
-import { FileSystem } from '../shared/FileSystem';
+import { FileSystem } from "@utils/vitepress/system/FileSystem";
 import { ConfigReaderService } from '../config';
 import { generateLink } from './linkGenerator';
 import { sortItems } from './itemSorter';
 import { normalizePathSeparators } from '../shared/objectUtils';
+import { resolveSidebarConfigFilePath } from "../shared/sidebarFileConventions";
 
 /**
  * Type definition for item processing callback function.
@@ -123,7 +124,10 @@ export async function processGroup(
         return null;
     }
 
-    const groupIndexPath = path.join(groupContentAbsPath, 'index.md');
+    const groupIndexPath = await resolveSidebarConfigFilePath(
+        fs,
+        groupContentAbsPath,
+    );
     let groupEffectiveConfig: EffectiveDirConfig;
     
     try {
@@ -369,4 +373,3 @@ function isGitBookExcluded(absPath: string, exclusionList: string[]): boolean {
         normalizedAbsPath === excludedPath || normalizedAbsPath.startsWith(excludedPath + '/')
     );
 } 
-

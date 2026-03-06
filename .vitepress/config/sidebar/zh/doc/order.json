@@ -1,5 +1,10 @@
 {
   "rules.md": -10,
+  "heroExtension.md": 0,
+  "developmentWorkflow.md": 0,
+  "extensionArchitecture.md": 0,
+  "Description.md": 0,
+  "frameworkMaintainability.md": 0,
   "sidebarGuide.md": 20,
   "pluginsGuide.md": 30,
   "litetreeGuide.md": 40,

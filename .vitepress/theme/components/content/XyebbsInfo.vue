@@ -325,7 +325,7 @@
     import MarkdownIt from "markdown-it";
     import hljs from "highlight.js";
     import "highlight.js/styles/github.css";
-    import { useSafeI18n } from "../../../utils/i18n/locale";
+    import { useSafeI18n } from "@utils/i18n/locale";
 
     const VChart = defineAsyncComponent(async () => {
         const { default: VChart } = await import("vue-echarts");

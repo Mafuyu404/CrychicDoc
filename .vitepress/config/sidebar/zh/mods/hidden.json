@@ -7,5 +7,6 @@
   "performance/": false,
   "server/": false,
   "storages/": false,
-  "tech/": false
+  "tech/": false,
+  "Description.md": false
 }

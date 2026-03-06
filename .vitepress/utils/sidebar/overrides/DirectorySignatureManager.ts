@@ -15,7 +15,7 @@
 import path from 'node:path';
 import { SidebarItem } from '../types';
 import { normalizePathSeparators } from '../shared/objectUtils';
-import { FileSystem } from '../shared/FileSystem';
+import { FileSystem } from "@utils/vitepress/system/FileSystem";
 import { PathKeyProcessor } from './PathKeyProcessor';
 
 /**
@@ -379,4 +379,3 @@ export class DirectorySignatureManager {
         return normalizePathSeparators(path.join(this.docsPath, lang, dirSignature));
     }
 } 
-

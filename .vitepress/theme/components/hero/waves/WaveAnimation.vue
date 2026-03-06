@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { computed, onMounted, onBeforeUnmount, ref, watch } from "vue";
-    import { useData } from "vitepress";
+    import { useHeroTheme } from "@utils/vitepress/runtime/theme/";
 
     interface WaveLayerConfig {
         color?: string;
@@ -28,7 +28,7 @@
         config?: WavesConfig;
     }>();
 
-    const { isDark } = useData();
+    const { isDarkRef, effectiveDark } = useHeroTheme();
 
     const canvasRef = ref<HTMLCanvasElement | null>(null);
     const isClient = ref(false);
@@ -54,7 +54,8 @@
 
     const layerConfigs = computed<WaveLayerConfig[]>(() => {
         const layers = props.config?.layers;
-        if (Array.isArray(layers) && layers.length > 0) return layers.slice(0, 5);
+        if (Array.isArray(layers) && layers.length > 0)
+            return layers.slice(0, 5);
         return Array.from({ length: 3 }, () => ({}));
     });
 
@@ -77,7 +78,11 @@
     }
 
     // Create a lighter version of a color for back layers
-    function getLighterColor(baseColor: string, factor: number, dark: boolean): string {
+    function getLighterColor(
+        baseColor: string,
+        factor: number,
+        dark: boolean,
+    ): string {
         // Resolve CSS variable first
         const resolved = baseColor.startsWith("var(")
             ? resolveCssColor(baseColor)
@@ -112,13 +117,29 @@
         ctx: CanvasRenderingContext2D,
         width: number,
         height: number,
-        layer: { color: string; opacity: number; amplitude: number; frequency: number; direction: number; speed: number; phaseOffset: number },
+        layer: {
+            color: string;
+            opacity: number;
+            amplitude: number;
+            frequency: number;
+            direction: number;
+            speed: number;
+            phaseOffset: number;
+        },
         t: number,
         layerIndex: number,
         totalLayers: number,
         dark: boolean,
     ) {
-        const { color, opacity, amplitude, frequency, direction, speed, phaseOffset } = layer;
+        const {
+            color,
+            opacity,
+            amplitude,
+            frequency,
+            direction,
+            speed,
+            phaseOffset,
+        } = layer;
 
         // Resolve CSS variable to actual color
         const resolvedColor = resolveCssColor(color);
@@ -153,7 +174,9 @@
                 const y =
                     height / 2 +
                     Math.sin(x * frequency + phase) * amplitude +
-                    Math.sin(x * frequency * 0.5 + phase * 1.3) * amplitude * 0.3;
+                    Math.sin(x * frequency * 0.5 + phase * 1.3) *
+                        amplitude *
+                        0.3;
                 if (x === 0) ctx.moveTo(x, y);
                 else ctx.lineTo(x, y);
             }
@@ -191,7 +214,7 @@
 
         ctx.clearRect(0, 0, rect.width, rect.height);
 
-        const dark = isDark.value;
+        const dark = isDarkRef.value;
         const defaultColor = props.config?.color || "var(--vp-c-bg)";
         const totalLayers = layerConfigs.value.length;
 
@@ -242,7 +265,10 @@
                 rect.height,
                 {
                     color: finalColor,
-                    opacity: Math.max(0, Math.min(1, layerOpacity * baseOpacity.value)),
+                    opacity: Math.max(
+                        0,
+                        Math.min(1, layerOpacity * baseOpacity.value),
+                    ),
                     amplitude: adjustedAmplitude,
                     frequency: adjustedFrequency,
                     direction,
@@ -297,12 +323,15 @@
         window.removeEventListener("resize", handleResize);
     });
 
-    // Re-render when theme changes - use reactive isDark from VitePress
-    watch(isDark, () => {
-        if (isClient.value) {
-            render();
-        }
-    });
+    // Re-render when theme changes - use effectiveDark from hero context
+    watch(
+        () => effectiveDark?.value,
+        () => {
+            if (isClient.value) {
+                render();
+            }
+        },
+    );
 
     watch(
         [() => props.config, animated],

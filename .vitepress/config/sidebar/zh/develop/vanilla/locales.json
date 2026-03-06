@@ -1,5 +1,6 @@
 {
   "_self_": "Vanilla",
   "datapack/": "Datapack",
-  "resourcepack/": "Resourcepack"
+  "resourcepack/": "Resourcepack",
+  "Description.md": "Vanilla"
 }

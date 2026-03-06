@@ -6,10 +6,13 @@
         navConfig,
         type NavItem,
         type NavLink,
-    } from "../../../../utils/config/nav-config";
-    import { projectConfig } from "../../../../utils/config/project-config";
-    import { getLangCodeFromVitepressLang } from "../../../../utils/config/project-api";
-    import { prefixNavLinks } from "@utils/vitepress/nav-link-access";
+    } from "@utils/config/navConfig";
+    import { projectConfig } from "@config/project-config";
+    import {
+        getLangCodeFromVitepressLang,
+        getDefaultLanguage,
+    } from "@config/project-api";
+    import { prefixNavLinks } from "@utils/vitepress/api/navigation/NavLinkAccessService";
     import VPNavScreenMenuGroup from "vitepress/dist/client/theme-default/components/VPNavScreenMenuGroup.vue";
     import VPNavScreenMenuLink from "vitepress/dist/client/theme-default/components/VPNavScreenMenuLink.vue";
     import VPNavScreenAppearance from "vitepress/dist/client/theme-default/components/VPNavScreenAppearance.vue";
@@ -30,10 +33,11 @@
 
     const currentNav = computed<NavItem[]>(() => {
         const normalizedLang = getLangCodeFromVitepressLang(lang.value);
+        const defaultCode = getDefaultLanguage().code;
         const rawNav =
             navConfig.locales[lang.value] ||
             navConfig.locales[normalizedLang] ||
-            navConfig.locales["en-US"] ||
+            navConfig.locales[defaultCode] ||
             [];
 
         const langInfo = projectConfig.languages.find(

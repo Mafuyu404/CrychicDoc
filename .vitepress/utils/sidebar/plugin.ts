@@ -17,7 +17,7 @@
 
 import { Plugin } from "vite";
 import { resolve } from "path";
-import { existsSync, statSync, readdirSync, utimesSync } from "fs";
+import { existsSync, statSync, readdirSync } from "fs";
 import {
     _internalConfigureSidebar,
     getSidebar,
@@ -25,6 +25,7 @@ import {
     getConfig,
     type SidebarLibConfig,
 } from "./lib";
+import { SIDEBAR_CONFIG_FILE_CANDIDATES } from "./shared/sidebarFileConventions";
 
 /**
  * Configuration options specific to the sidebar Vite plugin.
@@ -60,6 +61,16 @@ let isGenerating = false;
  * @private
  */
 let lastGenerationTime = 0;
+
+/**
+ * Debounced reload timer used to collapse rapid file events into a single restart.
+ */
+let reloadTimer: ReturnType<typeof setTimeout> | null = null;
+
+/**
+ * Prevents overlapping dev-server restarts, which can lead to port churn.
+ */
+let isRestarting = false;
 
 export function sidebarPlugin(config: SidebarPluginConfig): Plugin {
     if (!config.languages || config.languages.length === 0) {
@@ -109,11 +120,11 @@ export function sidebarPlugin(config: SidebarPluginConfig): Plugin {
         const sidebarStat = statSync(sidebarFile);
         const sidebarTime = sidebarStat.mtime.getTime();
 
-        const indexFiles = findIndexFiles(resolve(docsPath, lang));
-        for (const indexFile of indexFiles) {
-            if (existsSync(indexFile)) {
-                const indexStat = statSync(indexFile);
-                if (indexStat.mtime.getTime() > sidebarTime) {
+        const markdownFiles = findSidebarSourceFiles(resolve(docsPath, lang));
+        for (const markdownFile of markdownFiles) {
+            if (existsSync(markdownFile)) {
+                const sourceStat = statSync(markdownFile);
+                if (sourceStat.mtime.getTime() > sidebarTime) {
                     return true;
                 }
             }
@@ -145,7 +156,7 @@ export function sidebarPlugin(config: SidebarPluginConfig): Plugin {
      * @since 1.0.0
      * @private
      */
-    function findIndexFiles(dir: string): string[] {
+    function findSidebarSourceFiles(dir: string): string[] {
         const results: string[] = [];
 
         if (!existsSync(dir)) return results;
@@ -157,8 +168,8 @@ export function sidebarPlugin(config: SidebarPluginConfig): Plugin {
                 const stat = statSync(fullPath);
 
                 if (stat.isDirectory()) {
-                    results.push(...findIndexFiles(fullPath));
-                } else if (item === "index.md") {
+                    results.push(...findSidebarSourceFiles(fullPath));
+                } else if (item.toLowerCase().endsWith(".md")) {
                     results.push(fullPath);
                 }
             }
@@ -221,6 +232,9 @@ export function sidebarPlugin(config: SidebarPluginConfig): Plugin {
                     const fullPath = resolve(dir, item.name);
 
                     if (item.isDirectory()) {
+                        if (item.name === ".metadata" || item.name === ".archive") {
+                            continue;
+                        }
                         scanDirectory(fullPath);
                     } else if (item.name.endsWith(".json")) {
                         results.push(fullPath);
@@ -232,6 +246,16 @@ export function sidebarPlugin(config: SidebarPluginConfig): Plugin {
 
         scanDirectory(configPath);
         return results;
+    }
+
+    function isUserSidebarJson(filePath: string): boolean {
+        const normalizedPath = filePath.replace(/\\/g, "/");
+        return (
+            normalizedPath.includes("/.vitepress/config/sidebar/") &&
+            normalizedPath.endsWith(".json") &&
+            !normalizedPath.includes("/.vitepress/config/sidebar/.metadata/") &&
+            !normalizedPath.includes("/.vitepress/config/sidebar/.archive/")
+        );
     }
 
     async function generateSidebarsForAllLanguages() {
@@ -269,37 +293,52 @@ export function sidebarPlugin(config: SidebarPluginConfig): Plugin {
     }
 
     function shouldTriggerRegeneration(filePath: string): boolean {
+        const lowerFilePath = filePath.toLowerCase();
+        const isSidebarConfigCandidate = SIDEBAR_CONFIG_FILE_CANDIDATES.some(
+            (name) => lowerFilePath.endsWith(name.toLowerCase()),
+        );
         return (
-            filePath.endsWith("index.md") ||
-            (filePath.includes(".vitepress/config/sidebar") &&
-                filePath.endsWith(".json"))
+            filePath.toLowerCase().endsWith(".md") ||
+            isSidebarConfigCandidate ||
+            isUserSidebarJson(filePath)
         );
     }
 
-    function triggerVitePressReload(server: any) {
+    async function triggerVitePressReload(server: any) {
         if (!hotReload) return;
 
-        const configFile = resolve(
-            finalConfig.rootDir,
-            ".vitepress/config.mts"
-        );
-        if (existsSync(configFile)) {
-            const now = new Date();
-            utimesSync(configFile, now, now);
+        if (reloadTimer) {
+            clearTimeout(reloadTimer);
         }
 
-        setTimeout(() => {
-            server.ws.send({
-                type: "full-reload",
-            });
-        }, reloadDelay);
+        await new Promise<void>((resolveReload) => {
+            reloadTimer = setTimeout(async () => {
+                reloadTimer = null;
 
-        setTimeout(() => {
-            server.ws.send({
-                type: "update",
-                updates: [],
-            });
-        }, reloadDelay + 100);
+                if (isRestarting) {
+                    resolveReload();
+                    return;
+                }
+
+                try {
+                    isRestarting = true;
+                    if (typeof server.restart === "function") {
+                        await server.restart();
+                    } else {
+                        server.ws.send({ type: "full-reload" });
+                    }
+                } catch (error) {
+                    console.warn(
+                        "[SidebarPlugin] Failed to restart cleanly; falling back to full reload.",
+                        error,
+                    );
+                    server.ws.send({ type: "full-reload" });
+                } finally {
+                    isRestarting = false;
+                    resolveReload();
+                }
+            }, reloadDelay);
+        });
     }
 
     return {
@@ -342,7 +381,7 @@ export function sidebarPlugin(config: SidebarPluginConfig): Plugin {
                             }
 
                             await generateSidebarsForAllLanguages();
-                            triggerVitePressReload(server);
+                            await triggerVitePressReload(server);
                         }
                     }, reloadDelay);
                 }
@@ -356,7 +395,7 @@ export function sidebarPlugin(config: SidebarPluginConfig): Plugin {
                     }
 
                     await generateSidebarsForAllLanguages();
-                    triggerVitePressReload(server);
+                    await triggerVitePressReload(server);
                 }
             });
 
@@ -368,7 +407,7 @@ export function sidebarPlugin(config: SidebarPluginConfig): Plugin {
                     }
 
                     await generateSidebarsForAllLanguages();
-                    triggerVitePressReload(server);
+                    await triggerVitePressReload(server);
                 }
             });
 

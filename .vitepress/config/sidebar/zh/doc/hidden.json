@@ -1,6 +1,11 @@
 {
   "_self_": false,
   "rules.md": false,
+  "heroExtension.md": false,
+  "developmentWorkflow.md": false,
+  "extensionArchitecture.md": false,
+  "Description.md": false,
+  "frameworkMaintainability.md": false,
   "sidebarGuide.md": false,
   "pluginsGuide.md": false,
   "litetreeGuide.md": false,

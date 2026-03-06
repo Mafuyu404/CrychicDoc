@@ -2,13 +2,16 @@
   "_self_": {
     "valueHash": "304cb904a1f04e9ae0b7cc5c2c02f7a6",
     "isUserSet": false,
-    "isActiveInStructure": true,
-    "lastSeen": 1749247316163
+    "isActiveInStructure": true
   },
   "LootJs/": {
-    "valueHash": "9929d9a7142ef9fae2c524f764290fa2",
+    "valueHash": "3d3a7527c1734a9fff662cbe9dfc42dd",
     "isUserSet": false,
-    "isActiveInStructure": true,
-    "lastSeen": 1749254447490
+    "isActiveInStructure": true
+  },
+  "Description.md": {
+    "valueHash": "304cb904a1f04e9ae0b7cc5c2c02f7a6",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

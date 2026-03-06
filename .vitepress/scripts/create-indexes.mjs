@@ -1,71 +1,71 @@
 #!/usr/bin/env node
 
-import { readFileSync, writeFileSync, existsSync } from 'fs';
-import { join, basename, relative, resolve } from 'path';
-import { fileURLToPath } from 'url';
-import glob from 'fast-glob';
+import { existsSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
+import { basename, join, relative, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import glob from "fast-glob";
+import matter from "gray-matter";
 import { getLanguageCodes } from "../utils/config/project-config.ts";
 import { getSrcPath } from "../utils/config/path-resolver.js";
 
-/**
- * Index.md Generator - Create index.md files for directories that don't have them
- * Uses the project configuration manager for consistent path handling
- * 
- * @author Assistant
- */
+const SIDEBAR_CONFIG_FILE = "sidebarIndex.md";
+const DIRECTORY_DESCRIPTION_FILE = "Description.md";
+const LEGACY_INDEX_FILE = "index.md";
+
 class IndexGenerator {
     constructor() {
         this.processedDirs = 0;
         this.skippedDirs = 0;
         this.errorDirs = 0;
-        
-        // 使用配置管理器获取路径和语言
         this.srcPath = getSrcPath();
         this.languages = getLanguageCodes();
     }
 
-    /**
-     * Parse command line arguments
-     */
     parseArgs(args) {
         const config = {
             path: null,
-            template: 'default',
+            template: "default",
             dryRun: false,
             verbose: false,
             force: false,
-            exclude: ['node_modules', '.git', '.vitepress', 'public']
+            keepLegacyIndex: false,
+            exclude: ["node_modules", ".git", ".vitepress", "public"],
         };
 
         for (let i = 0; i < args.length; i++) {
             switch (args[i]) {
-                case '--path':
-                case '-p':
+                case "--path":
+                case "-p":
                     config.path = args[++i];
                     break;
-                case '--template':
-                case '-t':
+                case "--template":
+                case "-t":
                     config.template = args[++i];
                     break;
-                case '--dry-run':
-                case '-d':
+                case "--dry-run":
+                case "-d":
                     config.dryRun = true;
                     break;
-                case '--verbose':
-                case '-v':
+                case "--verbose":
+                case "-v":
                     config.verbose = true;
                     break;
-                case '--force':
-                case '-f':
+                case "--force":
+                case "-f":
                     config.force = true;
                     break;
-                case '--exclude':
+                case "--keep-legacy-index":
+                    config.keepLegacyIndex = true;
+                    break;
+                case "--exclude":
                     config.exclude.push(args[++i]);
                     break;
-                case '--help':
-                case '-h':
+                case "--help":
+                case "-h":
                     this.showHelp();
                     process.exit(0);
+                    break;
+                default:
                     break;
             }
         }
@@ -73,69 +73,60 @@ class IndexGenerator {
         return config;
     }
 
-    /**
-     * Show help information
-     */
     showHelp() {
         console.log(`
-📁 Index.md Generator - Create index.md files for directories
+📁 Sidebar Scaffolding Generator
 
 USAGE:
   npm run index -- [options]
 
 REQUIRED:
-  -p, --path <path>          Target directory path (relative to src/)
+  -p, --path <path>            Target directory path (relative to docs root)
 
 OPTIONS:
-  -t, --template <type>      Template type (default/advanced) [default: default]
-  -d, --dry-run              Preview changes without creating files
-  -v, --verbose              Show detailed information
-  -f, --force                Overwrite existing index.md files
-      --exclude <pattern>    Exclude directories matching pattern
-  -h, --help                 Show this help
+  -t, --template <type>        Template type (default/advanced) [default: default]
+  -d, --dry-run                Preview changes without writing files
+  -v, --verbose                Show detailed information
+  -f, --force                  Overwrite existing sidebarIndex.md and Description.md
+      --keep-legacy-index      Keep legacy index.md files after migration
+      --exclude <pattern>      Exclude directories matching pattern
+  -h, --help                   Show this help
 
-TEMPLATES:
-  default      Basic index.md with title and root configuration
-  advanced     Advanced index.md with progress, state, and sections
+GENERATED FILES:
+  - sidebarIndex.md            Sidebar/frontmatter configuration file
+  - Description.md             Directory landing content page (non-empty)
 
 SUPPORTED LANGUAGES:
-  ${this.languages.join(', ')}
+  ${this.languages.join(", ")}
 
 EXAMPLES:
-  # Create index.md files in Chinese docs directory
   npm run index -- -p zh
-  
-  # Use advanced template with preview
   npm run index -- -p en --template advanced --dry-run
-  
-  # Force overwrite existing files with verbose output
   npm run index -- -p zh/guides --force --verbose
-  
-  # Exclude specific directories
   npm run index -- -p zh --exclude "temp" --exclude "draft"
+  npm run index -- -p en --keep-legacy-index
 
 SOURCE DIRECTORY: ${this.srcPath}
         `);
     }
 
-    /**
-     * Validate configuration
-     */
     validateConfig(config) {
         if (!config.path) {
-            console.error('❌ Error: --path is required');
-            console.log(`Available languages: ${this.languages.join(', ')}`);
+            console.error("❌ Error: --path is required");
+            console.log(`Available languages: ${this.languages.join(", ")}`);
             return false;
         }
 
         const fullPath = resolve(this.srcPath, config.path);
         if (!existsSync(fullPath)) {
-            console.error(`❌ Error: Path "${config.path}" does not exist in ${this.srcPath}`);
-            console.log(`Available languages: ${this.languages.join(', ')}`);
+            console.error(
+                `❌ Error: Path "${config.path}" does not exist in ${this.srcPath}`,
+            );
+            console.log(`Available languages: ${this.languages.join(", ")}`);
             return false;
         }
 
-        if (!['default', 'advanced'].includes(config.template)) {
+        if (!["default", "advanced"].includes(config.template)) {
             console.error('❌ Error: Template must be "default" or "advanced"');
             return false;
         }
@@ -143,173 +134,228 @@ SOURCE DIRECTORY: ${this.srcPath}
         return true;
     }
 
-    /**
-     * Get template content for index.md
-     */
-    getTemplate(dirName, templateType) {
-        const title = this.formatTitle(dirName);
-        
-        if (templateType === 'advanced') {
-            return `---
-title: ${title}
-description: ${title}相关文档
-progress: 0
-state: draft
-root: true
-outline: [2, 3]
-showComment: true
-gitChangelog: true
----
-
-# \$\{ $frontmatter.title \}
-
-## 简述 {#intro}
-
-这是 \`${title}\` 的索引页面。
-
-## 内容概览 {#overview}
-
-请在此添加该部分的介绍内容和导航信息。
-
-## 相关链接 {#links}
-
-- [相关文档](./related.md)
-- [更多资源](./resources.md)
-`;
-        } else {
-            return `---
-title: ${title}
-root: true
----
-
-# \$\{ $frontmatter.title \}
-
-这是 \`${title}\` 的索引页面。
-
-请在此添加该部分的介绍内容。
-`;
-        }
-    }
-
-    /**
-     * Format directory name to readable title
-     */
     formatTitle(dirName) {
-        // Convert kebab-case and snake_case to readable format
         return dirName
-            .replace(/[-_]/g, ' ')
-            .replace(/\b\w/g, l => l.toUpperCase())
+            .replace(/[-_]/g, " ")
+            .replace(/\b\w/g, (value) => value.toUpperCase())
             .trim();
     }
 
-    /**
-     * Find all directories that need index.md files
-     */
-    async findDirectoriesNeedingIndex(config) {
+    createSidebarTemplate(title, templateType) {
+        const frontmatter =
+            templateType === "advanced"
+                ? {
+                      title,
+                      collapsed: true,
+                      hidden: false,
+                      priority: Number.MAX_SAFE_INTEGER,
+                  }
+                : { title };
+
+        return matter.stringify(
+            [
+                `This file stores sidebar metadata for the \`${title}\` directory.`,
+                "Edit frontmatter keys here to control sidebar behavior.",
+            ].join("\n\n"),
+            frontmatter,
+        );
+    }
+
+    createDescriptionTemplate(title, templateType) {
+        const lines = [
+            `# ${title}`,
+            "",
+            `This page provides an overview for the **${title}** directory.`,
+            "",
+            "Use this page to introduce structure, scope, and recommended reading order.",
+        ];
+
+        if (templateType === "advanced") {
+            lines.push(
+                "",
+                "## Scope",
+                "",
+                "Describe the boundaries and intended audience for this section.",
+                "",
+                "## Reading Guide",
+                "",
+                "- Start with foundational concepts.",
+                "- Continue with implementation examples.",
+                "- Finish with operational references.",
+            );
+        }
+
+        return matter.stringify(`${lines.join("\n")}\n`, { title });
+    }
+
+    extractLegacyContents(legacyIndexPath, title, templateType) {
+        if (!existsSync(legacyIndexPath)) {
+            return {
+                sidebar: this.createSidebarTemplate(title, templateType),
+                description: this.createDescriptionTemplate(title, templateType),
+            };
+        }
+
+        const legacyRaw = readFileSync(legacyIndexPath, "utf8");
+        const parsed = matter(legacyRaw);
+        const descriptionTitle = parsed.data?.title || title;
+        const descriptionBody = parsed.content?.trim();
+
+        const sidebar = matter.stringify(
+            "This file stores sidebar metadata migrated from legacy index.md.",
+            parsed.data || { title },
+        );
+
+        const description = matter.stringify(
+            `${descriptionBody || this.createDescriptionTemplate(descriptionTitle, templateType).replace(/^---[\s\S]*?---\n?/, "")}\n`,
+            { title: descriptionTitle },
+        );
+
+        return { sidebar, description };
+    }
+
+    async findDirectoriesNeedingScaffolding(config) {
         try {
             const basePath = resolve(this.srcPath, config.path);
-            
-            // Find all directories
             const patterns = [`${basePath}/**/`];
-            const excludePatterns = config.exclude.map(pattern => 
-                pattern.startsWith('**/') ? pattern : `**/${pattern}/**`
+            const excludePatterns = config.exclude.map((pattern) =>
+                pattern.startsWith("**/") ? pattern : `**/${pattern}/**`,
             );
 
             const allDirs = await glob(patterns, {
                 ignore: excludePatterns,
                 onlyDirectories: true,
-                absolute: true
+                absolute: true,
             });
 
-            // Filter directories that need index.md files
-            const dirsNeedingIndex = [];
-
+            const dirsNeedingScaffolding = [];
             for (const dir of allDirs) {
-                const indexPath = join(dir, 'index.md');
-                
-                // Check if directory has markdown files (excluding index.md)
-                const markdownFiles = await glob('*.md', {
+                const sidebarPath = join(dir, SIDEBAR_CONFIG_FILE);
+                const descriptionPath = join(dir, DIRECTORY_DESCRIPTION_FILE);
+                const legacyIndexPath = join(dir, LEGACY_INDEX_FILE);
+
+                const markdownFiles = await glob("*.md", {
                     cwd: dir,
-                    ignore: ['index.md']
+                    ignore: [SIDEBAR_CONFIG_FILE, DIRECTORY_DESCRIPTION_FILE],
                 });
+                const subdirs = await glob("*/", { cwd: dir });
 
-                // Check if directory has subdirectories with content
-                const subdirs = await glob('*/', {
-                    cwd: dir
-                });
+                if (markdownFiles.length === 0 && subdirs.length === 0) {
+                    continue;
+                }
 
-                if (markdownFiles.length > 0 || subdirs.length > 0) {
-                    if (!existsSync(indexPath) || config.force) {
-                        dirsNeedingIndex.push({
-                            path: dir,
-                            indexPath,
-                            dirName: basename(dir),
-                            hasExistingIndex: existsSync(indexPath),
-                            relativePath: relative(basePath, dir)
-                        });
-                    }
+                const needsSidebar = !existsSync(sidebarPath) || config.force;
+                const needsDescription = !existsSync(descriptionPath) || config.force;
+                const hasLegacyIndex = existsSync(legacyIndexPath);
+                const needsLegacyMigration =
+                    hasLegacyIndex && (!config.keepLegacyIndex || config.force);
+
+                if (needsSidebar || needsDescription || needsLegacyMigration) {
+                    dirsNeedingScaffolding.push({
+                        path: dir,
+                        sidebarPath,
+                        descriptionPath,
+                        legacyIndexPath,
+                        hasLegacyIndex,
+                        needsSidebar,
+                        needsDescription,
+                        relativePath: relative(basePath, dir) || ".",
+                        dirName: basename(dir),
+                    });
                 }
             }
 
-            return dirsNeedingIndex;
+            return dirsNeedingScaffolding;
         } catch (error) {
-            console.error('❌ Error finding directories:', error.message);
+            console.error("❌ Error finding directories:", error.message);
             return [];
         }
     }
 
-    /**
-     * Create index.md file for a directory
-     */
-    createIndexFile(dirInfo, template, dryRun = false) {
-        const content = this.getTemplate(dirInfo.dirName, template);
-        
+    createScaffoldingFiles(dirInfo, template, dryRun = false, keepLegacyIndex = false) {
+        const title = this.formatTitle(dirInfo.dirName);
+        const { sidebar, description } = this.extractLegacyContents(
+            dirInfo.legacyIndexPath,
+            title,
+            template,
+        );
+
         if (dryRun) {
-            console.log(`📝 Would create: ${dirInfo.relativePath}/index.md`);
-            if (dirInfo.hasExistingIndex) {
-                console.log('   ⚠️  Would overwrite existing index.md');
+            if (dirInfo.needsSidebar) {
+                console.log(`📝 Would write: ${dirInfo.relativePath}/${SIDEBAR_CONFIG_FILE}`);
             }
-            console.log(`   📋 Title: ${this.formatTitle(dirInfo.dirName)}`);
+            if (dirInfo.needsDescription) {
+                console.log(
+                    `📝 Would write: ${dirInfo.relativePath}/${DIRECTORY_DESCRIPTION_FILE}`,
+                );
+            }
+            if (dirInfo.hasLegacyIndex && !keepLegacyIndex) {
+                console.log(`🧹 Would remove: ${dirInfo.relativePath}/${LEGACY_INDEX_FILE}`);
+            }
             return true;
         }
 
         try {
-            writeFileSync(dirInfo.indexPath, content, 'utf8');
+            if (dirInfo.needsSidebar) {
+                writeFileSync(dirInfo.sidebarPath, sidebar, "utf8");
+            }
+
+            if (dirInfo.needsDescription) {
+                writeFileSync(dirInfo.descriptionPath, description, "utf8");
+            }
+
+            if (dirInfo.hasLegacyIndex && !keepLegacyIndex) {
+                const maybeRootIndex =
+                    dirInfo.legacyIndexPath === resolve(this.srcPath, LEGACY_INDEX_FILE) ||
+                    dirInfo.legacyIndexPath === resolve(this.srcPath, "en", LEGACY_INDEX_FILE) ||
+                    dirInfo.legacyIndexPath === resolve(this.srcPath, "zh", LEGACY_INDEX_FILE);
+                if (!maybeRootIndex) {
+                    unlinkSync(dirInfo.legacyIndexPath);
+                }
+            }
+
             return true;
         } catch (error) {
-            console.error(`❌ Error creating ${dirInfo.relativePath}/index.md:`, error.message);
+            console.error(
+                `❌ Error writing scaffolding for ${dirInfo.relativePath}:`,
+                error.message,
+            );
             return false;
         }
     }
 
-    /**
-     * Process all directories
-     */
     async processDirectories(config) {
-        console.log('🔍 Finding directories that need index.md files...');
+        console.log("🔍 Finding directories that need sidebar scaffolding...");
         console.log(`📂 Source directory: ${this.srcPath}`);
         console.log(`🎯 Target path: ${config.path}`);
-        
-        const directories = await this.findDirectoriesNeedingIndex(config);
 
+        const directories = await this.findDirectoriesNeedingScaffolding(config);
         if (directories.length === 0) {
-            console.log('✅ No directories need index.md files (all directories already have them)');
+            console.log(
+                "✅ No directories require updates. sidebarIndex.md and Description.md are already in place.",
+            );
             return;
         }
 
-        console.log(`\n📋 Found ${directories.length} directories that need index.md files:`);
-        
+        console.log(
+            `\n📋 Found ${directories.length} directories requiring scaffolding updates:`,
+        );
+
         for (const dirInfo of directories) {
-            const success = this.createIndexFile(dirInfo, config.template, config.dryRun);
-            
+            const success = this.createScaffoldingFiles(
+                dirInfo,
+                config.template,
+                config.dryRun,
+                config.keepLegacyIndex,
+            );
+
             if (success) {
                 if (config.dryRun) {
                     this.skippedDirs++;
                 } else {
                     this.processedDirs++;
-                    console.log(`✅ Created: ${dirInfo.relativePath}/index.md`);
-                    if (dirInfo.hasExistingIndex) {
-                        console.log('   📝 Overwrote existing file');
+                    if (config.verbose) {
+                        console.log(`✅ Updated: ${dirInfo.relativePath}`);
                     }
                 }
             } else {
@@ -317,19 +363,15 @@ root: true
             }
         }
 
-        // Show summary
-        console.log('\n📊 Summary:');
+        console.log("\n📊 Summary:");
         if (config.dryRun) {
-            console.log(`   📋 Would create: ${this.skippedDirs} files`);
+            console.log(`   📋 Would update: ${this.skippedDirs} directories`);
         } else {
-            console.log(`   ✅ Created: ${this.processedDirs} files`);
-            console.log(`   ❌ Errors: ${this.errorDirs} files`);
+            console.log(`   ✅ Updated: ${this.processedDirs} directories`);
+            console.log(`   ❌ Errors: ${this.errorDirs} directories`);
         }
     }
 
-    /**
-     * Main execution function
-     */
     async run() {
         const args = process.argv.slice(2);
         const config = this.parseArgs(args);
@@ -341,16 +383,15 @@ root: true
         try {
             await this.processDirectories(config);
         } catch (error) {
-            console.error('❌ Unexpected error:', error.message);
+            console.error("❌ Unexpected error:", error.message);
             process.exit(1);
         }
     }
 }
 
-// Run the generator if this script is executed directly
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
     const generator = new IndexGenerator();
     generator.run();
 }
 
-export default IndexGenerator; 
+export default IndexGenerator;

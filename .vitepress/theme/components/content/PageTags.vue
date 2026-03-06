@@ -14,6 +14,7 @@
     import { computed } from "vue";
     import { useRouter, useData } from "vitepress";
     import TagBadge from "../ui/TagBadge.vue";
+    import { resolveLanguagePathSegment } from "@config/project-api";
 
     interface Props {
         tags?: string[];
@@ -23,23 +24,12 @@
     const router = useRouter();
     const { frontmatter, lang } = useData();
 
-    // Language mapping from full locale to short form
-    const langMapping: Record<string, string> = {
-        "zh-CN": "zh",
-        zh: "zh",
-        "en-US": "en",
-        en: "en",
-        jp: "jp",
-        ja: "jp",
-    };
-
     // Use tags from props or frontmatter
     const tags = computed(() => props.tags || frontmatter.value.tags || []);
 
     function navigateToTag(tag: string) {
-        // Map full locale to short form for routing
-        const shortLang = langMapping[lang.value] || "zh";
-        router.go(`/${shortLang}/tags?tags=${encodeURIComponent(tag)}`);
+        const segment = resolveLanguagePathSegment(lang.value);
+        router.go(`/${segment}/tags?tags=${encodeURIComponent(tag)}`);
     }
 </script>
 

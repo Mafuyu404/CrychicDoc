@@ -1,6 +1,6 @@
 <script setup>
     import { ref, computed, onMounted } from "vue";
-    import { useSafeI18n } from "../../../utils/i18n/locale";
+    import { useSafeI18n } from "@utils/i18n/locale";
 
     const { t } = useSafeI18n("ModInfo", {
         downloads: "downloads",

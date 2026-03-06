@@ -10,5 +10,6 @@
   "LootPool.md": "LootPool",
   "LootTable.md": "LootTable",
   "NumberProvider.md": "NumberProvider",
-  "Range.md": "Range"
+  "Range.md": "Range",
+  "Description.md": "API"
 }

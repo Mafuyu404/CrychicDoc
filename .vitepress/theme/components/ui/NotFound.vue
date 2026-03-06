@@ -70,7 +70,39 @@
         }
     };
 
+    const buildDescriptionCandidate = () => {
+        if (typeof window === "undefined") return null;
+        const { pathname } = window.location;
+        const decodedPath = decodeURI(pathname);
+        if (
+            decodedPath.endsWith("/Description") ||
+            decodedPath.endsWith("/Description.html")
+        ) {
+            return null;
+        }
+        const normalizedPath = decodedPath.endsWith("/")
+            ? decodedPath
+            : `${decodedPath}/`;
+        return `${normalizedPath}Description`;
+    };
+
+    const tryRedirectToDescription = async () => {
+        if (typeof window === "undefined") return;
+        const candidate = buildDescriptionCandidate();
+        if (!candidate) return;
+        const candidateHtml = `${candidate}.html`;
+        try {
+            const response = await fetch(candidateHtml, { method: "HEAD" });
+            if (!response.ok) return;
+            const { search, hash } = window.location;
+            window.location.replace(`${candidate}${search}${hash}`);
+        } catch {
+            // Keep default not-found screen when no mapped Description page exists.
+        }
+    };
+
     onMounted(() => {
+        void tryRedirectToDescription();
         if (typeof document !== 'undefined') {
             const circles = document.querySelectorAll(".circle");
             circles.forEach((circle, index) => {

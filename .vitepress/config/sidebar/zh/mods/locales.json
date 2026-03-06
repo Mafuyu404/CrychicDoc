@@ -7,5 +7,6 @@
   "performance/": "优化模组",
   "server/": "server",
   "storages/": "storages",
-  "tech/": "tech"
+  "tech/": "tech",
+  "Description.md": "模组"
 }

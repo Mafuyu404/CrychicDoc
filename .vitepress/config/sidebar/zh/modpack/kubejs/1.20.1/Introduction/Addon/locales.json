@@ -1,5 +1,6 @@
 {
   "_self_": "Addon",
   "LootJs/": "LootJS",
-  "ProbeJS/": "ProbeJS"
+  "ProbeJS/": "ProbeJS",
+  "Description.md": "Addon"
 }

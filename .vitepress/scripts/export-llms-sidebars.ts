@@ -1,5 +1,5 @@
 import { _internalConfigureSidebar, getSidebar } from "../utils/sidebar/lib";
-import { getLanguageLinks } from "../config/project-config.js";
+import { getLanguageLinks } from "../utils/config/project-api/index.js";
 import { getSrcPath, getVitepressPath } from "../utils/config/path-resolver.js";
 
 /**

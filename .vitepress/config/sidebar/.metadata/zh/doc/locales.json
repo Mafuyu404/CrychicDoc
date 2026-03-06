@@ -121,5 +121,30 @@
     "valueHash": "582d763f94c0987cdb0df443e7dcd1ca",
     "isUserSet": false,
     "isActiveInStructure": true
+  },
+  "frameworkMaintainability.md": {
+    "valueHash": "e1642afbc858725ee3789207af94be8d",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "Description.md": {
+    "valueHash": "085aa609fb4028855c0ea7fd54e4f18b",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "heroExtension.md": {
+    "valueHash": "eadc2005a0e35a17ccbb539c59bd9876",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "developmentWorkflow.md": {
+    "valueHash": "0d0cf573cc38966896914acae45616ae",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "extensionArchitecture.md": {
+    "valueHash": "f2d559cc9edaba16e659e34d73be00ed",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

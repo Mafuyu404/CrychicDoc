@@ -1,5 +1,6 @@
 {
   "_self_": "整合包",
   "kubejs/": "KubeJS",
-  "recommendation/": "推荐"
+  "recommendation/": "推荐",
+  "Description.md": "整合包"
 }

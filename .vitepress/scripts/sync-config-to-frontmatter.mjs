@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { resolve, dirname, join, relative } from "path";
+import { resolve, dirname, join, relative, basename } from "path";
 import {
     readFileSync,
     writeFileSync,
@@ -124,6 +124,8 @@ const configPath = resolve(
     PROJECT_CONFIG.paths.config.replace("./", "")
 );
 const sidebarConfigPath = join(configPath, "sidebar");
+const SIDEBAR_CONFIG_FILENAME = "sidebarIndex.md";
+const DIRECTORY_DESCRIPTION_FILENAME = "Description.md";
 
 /**
  * Sidebar Configuration to Frontmatter Sync Script
@@ -135,7 +137,7 @@ const sidebarConfigPath = join(configPath, "sidebar");
  * - Reuses existing sidebar system components
  * - Handles _self_ configurations for directories
  * - Processes all four config types: locales, hidden, order, collapsed
- * - Auto-generates missing index.md files
+ * - Auto-generates missing sidebarIndex.md/Description.md files
  * - Preserves existing frontmatter while updating sidebar configs
  */
 class ConfigToFrontmatterSync {
@@ -143,7 +145,7 @@ class ConfigToFrontmatterSync {
         this.docsPath = docsPath;
         this.sidebarConfigPath = sidebarConfigPath;
         this.processedFiles = 0;
-        this.createdIndexFiles = 0;
+        this.createdFiles = 0;
         this.dryRun = false;
         this.verbose = false;
 
@@ -204,6 +206,10 @@ class ConfigToFrontmatterSync {
     - order.json    → priority field
     - collapsed.json → collapsed field (directories only)
 
+    Target file convention:
+    - Directory metadata: sidebarIndex.md
+    - Directory landing page: Description.md
+
     EXAMPLES:
     # Sync all languages
     npm run sync-config-to-frontmatter
@@ -214,6 +220,40 @@ class ConfigToFrontmatterSync {
     # Preview changes without applying
     npm run sync-config-to-frontmatter -- --dry-run -v
         `);
+    }
+
+    resolveDirectoryConfigPath(directoryPath) {
+        return join(directoryPath, SIDEBAR_CONFIG_FILENAME);
+    }
+
+    resolveTargetPath(actualPath, key) {
+        if (key.endsWith("/")) {
+            return join(actualPath, key, SIDEBAR_CONFIG_FILENAME);
+        }
+
+        if (key.endsWith(".md")) {
+            return join(
+                actualPath,
+                key.replace(/(^|\/)index\.md$/i, `$1${SIDEBAR_CONFIG_FILENAME}`)
+            );
+        }
+
+        return join(actualPath, `${key}.md`);
+    }
+
+    createDefaultBody(filePath, title) {
+        const fileName = basename(filePath).toLowerCase();
+        const fallbackTitle = title || "Description";
+
+        if (fileName === SIDEBAR_CONFIG_FILENAME.toLowerCase()) {
+            return "This file stores sidebar metadata for this directory.";
+        }
+
+        if (fileName === DIRECTORY_DESCRIPTION_FILENAME.toLowerCase()) {
+            return `# ${fallbackTitle}\n\nThis page provides an overview of this directory.`;
+        }
+
+        return `# ${fallbackTitle}\n\nContent is maintained in this page.`;
     }
 
     /**
@@ -369,10 +409,13 @@ class ConfigToFrontmatterSync {
         try {
             let content = "";
             let parsed = { data: {}, content: "" };
+            const hasExistingFile = existsSync(filePath);
 
-            if (existsSync(filePath)) {
+            if (hasExistingFile) {
                 content = readFileSync(filePath, "utf-8");
                 parsed = matter(content);
+            } else {
+                parsed.content = this.createDefaultBody(filePath, configs.title);
             }
 
             // Ensure data object exists
@@ -430,13 +473,13 @@ class ConfigToFrontmatterSync {
             if (hasChanges || this.verbose) {
                 const relativePath = relative(process.cwd(), filePath);
                 console.log(
-                    `📄 ${relativePath}${existsSync(filePath) ? "" : " (new)"}`
+                    `📄 ${relativePath}${hasExistingFile ? "" : " (new)"}`
                 );
                 changes.forEach((change) => console.log(`   ${change}`));
             }
 
             // Only write if there are actual changes or file doesn't exist
-            if ((hasChanges || !existsSync(filePath)) && !this.dryRun) {
+            if ((hasChanges || !hasExistingFile) && !this.dryRun) {
                 // Ensure directory exists
                 const dir = dirname(filePath);
                 if (!existsSync(dir)) {
@@ -450,8 +493,8 @@ class ConfigToFrontmatterSync {
                 );
 
                 // Only write if content actually differs or file doesn't exist
-                let shouldWrite = !existsSync(filePath);
-                if (!shouldWrite && existsSync(filePath)) {
+                let shouldWrite = !hasExistingFile;
+                if (!shouldWrite && hasExistingFile) {
                     const currentContent = readFileSync(filePath, "utf-8");
                     shouldWrite = currentContent !== newContent;
                 }
@@ -460,8 +503,8 @@ class ConfigToFrontmatterSync {
                     writeFileSync(filePath, newContent);
                     this.processedFiles++;
 
-                    if (!existsSync(filePath)) {
-                        this.createdIndexFiles++;
+                    if (!hasExistingFile) {
+                        this.createdFiles++;
                     }
                 }
             }
@@ -498,14 +541,14 @@ class ConfigToFrontmatterSync {
         const orderConfig = this.readJsonFile("order", lang, signature);
         const collapsedConfig = this.readJsonFile("collapsed", lang, signature);
 
-        // Process _self_ configuration (for directory's own index.md)
+        // Process _self_ configuration (for directory's own sidebarIndex.md)
         if (
             localesConfig._self_ !== undefined ||
             hiddenConfig._self_ !== undefined ||
             orderConfig._self_ !== undefined ||
             collapsedConfig._self_ !== undefined
         ) {
-            const indexPath = join(actualPath, "index.md");
+            const indexPath = this.resolveDirectoryConfigPath(actualPath);
             const selfConfigs = {};
 
             if (localesConfig._self_ !== undefined) {
@@ -550,18 +593,7 @@ class ConfigToFrontmatterSync {
                 configs.collapsed = collapsedConfig[key];
             }
 
-            // Determine target file path
-            let targetPath;
-            if (key.endsWith("/")) {
-                // Directory - sync to its index.md
-                targetPath = join(actualPath, key, "index.md");
-            } else if (key.endsWith(".md")) {
-                // Markdown file
-                targetPath = join(actualPath, key);
-            } else {
-                // Assume it's a file without extension, add .md
-                targetPath = join(actualPath, `${key}.md`);
-            }
+            const targetPath = this.resolveTargetPath(actualPath, key);
 
             this.syncConfigToFrontmatter(targetPath, configs);
         }
@@ -595,7 +627,7 @@ class ConfigToFrontmatterSync {
     showSummary() {
         console.log("\n📊 Summary:");
         console.log(`   Processed files: ${this.processedFiles}`);
-        console.log(`   Created index.md files: ${this.createdIndexFiles}`);
+        console.log(`   Created markdown files: ${this.createdFiles}`);
 
         if (this.dryRun && this.processedFiles > 0) {
             console.log("\n💡 Run without --dry-run to apply changes");

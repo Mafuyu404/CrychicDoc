@@ -6,153 +6,91 @@ export const silkShader = buildTemplate({
     fragment: `
 uniform float uTime;
 uniform vec2 uResolution;
-uniform vec3 uBgColor;
 uniform vec3 uColor1;
 uniform vec3 uColor2;
 uniform vec3 uColor3;
 uniform float uThemeIsDark;
 varying vec2 vUv;
 
-// ── noise ──
-float hash21(vec2 p) {
-  p = fract(p * vec2(123.34, 456.21));
-  p += dot(p, p + 31.79);
-  return fract(p.x * p.y);
-}
-
+// High frequency noise for fabric structure
 float noise(vec2 p) {
-  vec2 i = floor(p);
-  vec2 f = fract(p);
-  float a = hash21(i);
-  float b = hash21(i + vec2(1.0, 0.0));
-  float c = hash21(i + vec2(0.0, 1.0));
-  float d = hash21(i + vec2(1.0, 1.0));
-  vec2 u = f * f * (3.0 - 2.0 * f);
-  return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
+    return smoothstep(-0.5, 0.9, sin((p.x - p.y) * 555.0) * sin(p.y * 1444.0)) - 0.4;
 }
 
-float fbm(vec2 p) {
-  float sum = 0.0;
-  float amp = 0.5;
-  mat2 m = mat2(1.6, 1.2, -1.2, 1.6);
-  for (int i = 0; i < 4; i++) {
-    sum += amp * noise(p);
-    p = m * p + vec2(0.07, -0.06);
-    amp *= 0.5;
-  }
-  return sum;
+// Layered noise for fiber details
+float fabric(vec2 p) {
+    mat2 m = mat2(1.6, 1.2, -1.2, 1.6);
+    float f = 0.4 * noise(p);
+    p = m * p; f += 0.3 * noise(p);
+    p = m * p; f += 0.2 * noise(p);
+    return f + 0.1 * noise(m * p);
 }
 
-// Map screen UV to ratio-corrected UV to prevent stretching on mobile
-vec2 getRatioUV() {
-  vec2 uv = vUv;
-  float aspect = uResolution.x / uResolution.y;
-  // Center keeping 0.5 at the middle, expanding the shorter axis
-  if (aspect > 1.0) {
-    uv.x = (uv.x - 0.5) * aspect + 0.5;
-  } else {
-    uv.y = (uv.y - 0.5) / aspect + 0.5;
-  }
-  return uv;
+// Macro fold structure with micro texture integration
+float silk(vec2 uv, float t) {
+    float s = sin(5.0 * (uv.x + uv.y + cos(2.0 * uv.x + 5.0 * uv.y)) + sin(12.0 * (uv.x + uv.y)) - t);
+    s = 0.7 + 0.3 * (s * s * 0.5 + s);
+    // Use screen resolution to scale the fabric noise so it remains crisp and clear
+    s *= 0.9 + 0.6 * fabric(uv * min(uResolution.x, uResolution.y) * 0.0006);
+    return s * 0.9 + 0.1;
 }
 
-// Flowing field for silk
-// Produces smoother, larger folds by using lower frequency multipliers
-float silkHeight(vec2 uv, float t) {
-  // Gentle base displacement
-  float flow = fbm(uv * vec2(1.5, 1.2) + vec2(t * 0.4, -t * 0.2));
-
-  // Much softer, lower-frequency sine waves
-  float w1 = sin((uv.y * 5.0 + flow * 2.5) - t * 0.8) * 1.0;
-  float w2 = sin((uv.x * 4.0 - flow * 2.0) + t * 0.6) * 0.8;
-  float w3 = sin(((uv.x + uv.y * 1.2) * 3.5 + flow * 1.8) - t * 0.4) * 0.6;
-  
-  return (w1 + w2 + w3) * 0.18; // Flatter overall geometry for smooth satin
+// Derivative approximation for lighting and highlights
+float silkd(vec2 uv, float t) {
+    float xy = uv.x + uv.y;
+    float d = (5.0 * (1.0 - 2.0 * sin(2.0 * uv.x + 5.0 * uv.y)) + 12.0 * cos(12.0 * xy)) * cos(5.0 * (cos(2.0 * uv.x + 5.0 * uv.y) + xy) + sin(12.0 * xy) - t);
+    return 0.005 * d * (sign(d) + 3.0);
 }
 
-// Calculate normal from height field
-vec3 silkNormal(vec2 uv, float t) {
-  float eps = 0.01; // slightly larger epsilon for softer normals
-  float h  = silkHeight(uv, t);
-  float hx = silkHeight(uv + vec2(eps, 0.0), t);
-  float hy = silkHeight(uv + vec2(0.0, eps), t);
-  vec3 n = normalize(vec3(-(hx - h) / eps, -(hy - h) / eps, 1.0));
-  return n;
-}
-
-// ── LIGHT: bright white satin, softer shadows ──
-vec3 renderLight(vec2 uv, float t) {
-  vec3 normal = silkNormal(uv, t);
-
-  vec3 lightDir = normalize(vec3(-0.3, -0.5, 1.0));
-  vec3 viewDir = vec3(0.0, 0.0, 1.0);
-  vec3 halfDir = normalize(lightDir + viewDir);
-
-  // Very gentle diffuse shading (less shadow contrast)
-  float diff = max(dot(normal, lightDir), 0.0);
-  diff = mix(0.85, 1.0, diff); 
-
-  // Softer specular highlight for a broader, less sharp sheen
-  float spec = pow(max(dot(normal, halfDir), 0.0), 16.0); // lower shininess
-
-  vec3 base = mix(uColor1, uColor2, vUv.y * 0.3); // use vUv for gradient to keep it screen-space
-  vec3 col = base * diff;
-  col += vec3(1.0) * spec * 0.18; // less intense specular
-
-  // Softest touch of shadow
-  col = mix(col, uColor3, (1.0 - diff) * 0.04);
-
-  // Soft vignette
-  float vig = 1.0 - smoothstep(0.4, 1.2, length(vUv - 0.5) * 1.2);
-  col = mix(col * 0.98, col, vig);
-
-  return clamp(col, 0.0, 1.0);
-}
-
-// ── DARK: smooth deep wave, minimal harsh gleam ──
-vec3 renderDark(vec2 uv, float t) {
-  vec3 normal = silkNormal(uv, t);
-
-  vec3 lightDir = normalize(vec3(0.3, -0.4, 1.0));
-  vec3 viewDir = vec3(0.0, 0.0, 1.0);
-  vec3 halfDir = normalize(lightDir + viewDir);
-
-  // Diffuse
-  float diff = max(dot(normal, lightDir), 0.0);
-  diff = mix(0.75, 1.0, diff);
-
-  // Specular — much softer than before
-  float spec = pow(max(dot(normal, halfDir), 0.0), 24.0);
-
-  // Subtle secondary light
-  vec3 lightDir2 = normalize(vec3(-0.4, 0.2, 1.0));
-  vec3 halfDir2 = normalize(lightDir2 + viewDir);
-  float spec2 = pow(max(dot(normal, halfDir2), 0.0), 32.0);
-
-  vec3 base = mix(uColor1, uColor2, vUv.y * 0.4);
-  vec3 col = base * diff;
-  
-  col += uColor3 * spec * 0.25; 
-  col += uColor3 * spec2 * 0.12; 
-
-  // Dark vignette
-  float vig = 1.0 - smoothstep(0.4, 1.1, length(vUv - 0.5) * 1.1);
-  col = mix(col * 0.85, col, vig);
-
-  return clamp(col, 0.0, 1.0);
+// ACES Tone mapping for cinematic grading
+vec3 acesFilm(const vec3 x) {
+    const float a = 2.51;
+    const float b = 0.03;
+    const float c = 2.43;
+    const float d = 0.59;
+    const float e = 0.14;
+    return clamp((x * (a * x + b)) / (x * (c * x + d) + e), 0.0, 1.0);
 }
 
 void main() {
-  vec2 uv = getRatioUV(); // Scale coordinates by screen aspect ratio
-  float t = uTime * 0.03; // Slower, more elegant movement
-  float dark = clamp(uThemeIsDark, 0.0, 1.0);
+    float mr = min(uResolution.x, uResolution.y);
+    vec2 fragCoord = vUv * uResolution;
+    vec2 uv = fragCoord / mr;
+    
+    // Time scaling for smooth movement
+    float t = uTime * 0.3;
+    uv.y += 0.03 * sin(8.0 * uv.x - t);
+    
+    float s = sqrt(max(0.0, silk(uv, t)));
+    float d = silkd(uv, t);
+	
+    // Interpolate base colors
+    vec3 baseCol = mix(uColor1, uColor2, s);
+    
+    // Dynamic shadowing based on theme
+    float shadowMask = mix(mix(0.85, 1.0, s), s, uThemeIsDark);
+    vec3 c = baseCol * shadowMask;
+    
+    // Specular highlights and shadowing from geometric derivative
+    c += mix(0.4, 0.7, uThemeIsDark) * uColor3 * d;
+    c *= 1.0 - max(0.0, 0.8 * d);
+    
+    // Grading operations
+    vec2 centeredUv = (fragCoord - 0.5 * uResolution.xy) / uResolution.y;
+    
+    // Apply contrast logic based on dot(uv, uv)
+    c = pow(c, vec3(1.05, 1.0, 0.9 + dot(centeredUv, centeredUv) * 0.05));
+    
+    // Tone mapping
+    c = mix(acesFilm(c * 1.15), c, 0.15);
+    
+    // Vignette
+    c = mix(c, c * c * 0.5, dot(centeredUv, centeredUv) * 0.5);
+    
+    // Final polish contrast and brightness
+    c = mix(c, smoothstep(0.0, 1.0, c), mix(0.15, 0.35, uThemeIsDark));
 
-  vec3 lightResult = renderLight(uv, t);
-  vec3 darkResult  = renderDark(uv, t);
-
-  vec3 col = mix(lightResult, darkResult, dark);
-
-  gl_FragColor = vec4(col, 1.0);
+    gl_FragColor = vec4(clamp(c, 0.0, 1.0), 1.0);
 }
 `,
     defaultUniforms: {

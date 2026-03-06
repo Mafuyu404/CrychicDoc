@@ -2,7 +2,6 @@
     import {
         computed,
         markRaw,
-        onBeforeUnmount,
         onMounted,
         ref,
         shallowRef,
@@ -12,8 +11,10 @@
     import { Box3, type Object3D, Sphere, Vector3 } from "three";
     import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
     import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-    import { withBase, useData } from "vitepress";
-    import { useSafeI18n } from "../../../../utils/i18n/locale";
+    import { withBase } from "vitepress";
+    import { useHeroTheme } from "@utils/vitepress/runtime/theme/heroThemeContext";
+    import { useSafeI18n } from "@utils/i18n/locale";
+    import { createElementResizeState } from "@utils/vitepress/runtime/viewport";
 
     type Vec3Tuple = [number, number, number];
 
@@ -74,7 +75,7 @@
         config?: Model3DConfig;
     }>();
 
-    const { isDark } = useData();
+    const { isDarkRef } = useHeroTheme();
     const { t } = useSafeI18n("hero-model3d", {
         loading: "Loading 3D model...",
         loadFailed: "Failed to load 3D model",
@@ -95,7 +96,14 @@
     const autoCameraPosition = ref<Vec3Tuple>([0, 0, 4.2]);
     const autoCameraFar = ref(100);
     const modelRadius = ref(1);
-    let resizeObserver: ResizeObserver | null = null;
+
+    const { reobserve: reobserveContainer } = createElementResizeState(
+        containerRef,
+        () => {
+            syncViewport();
+        },
+        { debounceMs: 80 },
+    );
 
     const modelPath = computed(() => props.config?.src || "");
     const resolvedModelCandidates = computed(() => {
@@ -186,7 +194,7 @@
         if (typeof value !== "object") return value as T;
 
         const objectValue = value as ThemeValue<T>;
-        const dark = isDark.value;
+        const dark = isDarkRef.value;
         if (dark)
             return objectValue.dark ?? objectValue.light ?? objectValue.value;
         return objectValue.light ?? objectValue.dark ?? objectValue.value;
@@ -500,20 +508,13 @@
         isClient.value = true;
         syncViewport();
 
-        if (typeof ResizeObserver !== "undefined" && containerRef.value) {
-            resizeObserver = new ResizeObserver(() => {
-                syncViewport();
-            });
-            resizeObserver.observe(containerRef.value);
+        if (containerRef.value) {
+            reobserveContainer(containerRef.value);
         }
 
         await loadModel();
     });
 
-    onBeforeUnmount(() => {
-        resizeObserver?.disconnect();
-        resizeObserver = null;
-    });
 </script>
 
 <template>

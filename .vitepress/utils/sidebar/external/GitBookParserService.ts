@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { FileSystem } from '../shared/FileSystem';
+import { FileSystem } from "@utils/vitepress/system/FileSystem";
 import { normalizePathSeparators } from '../shared/objectUtils';
 import { SidebarItem } from '../types';
 
@@ -211,8 +211,12 @@ export class GitBookParserService {
             cleanPath = cleanPath.substring(1);
         }
 
-        // Determine if this is a directory (ends with README.md or index.md)
-        const isDirectory = cleanPath.endsWith('README.md') || cleanPath.endsWith('index.md') || cleanPath.endsWith('/');
+        // Determine if this is a directory (ends with README.md, index.md, or sidebarIndex.md)
+        const isDirectory =
+            cleanPath.endsWith("README.md") ||
+            cleanPath.endsWith("index.md") ||
+            cleanPath.endsWith("sidebarIndex.md") ||
+            cleanPath.endsWith("/");
 
         // Generate the site-absolute URL
         const relativePathFromDocs = normalizePathSeparators(path.relative(this.docsAbsPath, gitbookDirAbsPath));
@@ -287,4 +291,3 @@ export class GitBookParserService {
         }
     }
 } 
-

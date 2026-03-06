@@ -267,7 +267,7 @@ function getNewestDocsMtime(lang: string): number {
     const config = getConfig();
     const docsPath = resolve(config.rootDir, config.docsDir, lang);
     return getNewestMatchingMtime(docsPath, (name) =>
-        name.toLowerCase() === "index.md"
+        name.toLowerCase().endsWith(".md")
     );
 }
 

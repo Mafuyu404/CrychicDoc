@@ -47,6 +47,48 @@ hero:
         tagline:
             light: "rgba(75, 85, 99, 0.75)"
             dark: "rgba(156, 163, 175, 0.75)"
+        searchBackground:
+            light: "rgba(255, 255, 255, 0.42)"
+            dark: "rgba(15, 23, 42, 0.24)"
+        searchBackgroundScrolled:
+            light: "rgba(255, 255, 255, 0.62)"
+            dark: "rgba(15, 23, 42, 0.38)"
+        searchHoverBackground:
+            light: "rgba(255, 255, 255, 0.56)"
+            dark: "rgba(15, 23, 42, 0.34)"
+        searchHoverBackgroundScrolled:
+            light: "rgba(255, 255, 255, 0.74)"
+            dark: "rgba(15, 23, 42, 0.46)"
+        searchText:
+            light: "rgba(15, 23, 42, 0.82)"
+            dark: "rgba(255, 255, 255, 0.94)"
+        searchTextScrolled:
+            light: "rgba(15, 23, 42, 0.88)"
+            dark: "rgba(255, 255, 255, 0.96)"
+        searchTextMuted:
+            light: "rgba(15, 23, 42, 0.56)"
+            dark: "rgba(255, 255, 255, 0.72)"
+        searchTextMutedScrolled:
+            light: "rgba(15, 23, 42, 0.62)"
+            dark: "rgba(255, 255, 255, 0.76)"
+        searchBorder:
+            light: "rgba(15, 23, 42, 0.10)"
+            dark: "rgba(255, 255, 255, 0.14)"
+        searchBorderScrolled:
+            light: "rgba(15, 23, 42, 0.12)"
+            dark: "rgba(255, 255, 255, 0.18)"
+        searchKeyBackground:
+            light: "rgba(15, 23, 42, 0.06)"
+            dark: "rgba(255, 255, 255, 0.12)"
+        searchKeyBackgroundScrolled:
+            light: "rgba(15, 23, 42, 0.08)"
+            dark: "rgba(255, 255, 255, 0.16)"
+        searchKeyText:
+            light: "rgba(15, 23, 42, 0.60)"
+            dark: "rgba(255, 255, 255, 0.76)"
+        searchKeyTextScrolled:
+            light: "rgba(15, 23, 42, 0.66)"
+            dark: "rgba(255, 255, 255, 0.82)"
     waves:
         enabled: true
         animated: true
@@ -116,10 +158,10 @@ hero:
               x: "35%"
               y: "80%"
     image:
-        light: /logo.png
-        dark: /logodark.png
+        light: /logodark.png
+        dark: /logo.png
         alt: CrychicDoc
-        width: "min(900px, 100%)"
+        width: "min(900px, 130%)"
     actions:
         - theme: brand
           text: "KubeJS 文档"
@@ -130,6 +172,9 @@ hero:
         - theme: alt
           text: "开发文档"
           link: /zh/develop/
+        - theme: alt
+          text: "开发手册"
+          link: /zh/doc/
         - theme: outline
           text: "插件指南"
           link: /zh/doc/pluginsGuide
@@ -154,6 +199,10 @@ features:
       title: "插件指南"
       details: "站点所用 Markdown 容器与组件能力总览。"
       link: /zh/doc/pluginsGuide
+    - icon: 🧭
+      title: "开发手册"
+      details: "框架工作流、扩展架构与 Hero 扩展文档入口。"
+      link: /zh/doc/
     - icon: 📚
       title: "信息索引"
       details: "问题反馈、建议与社区资料入口。"

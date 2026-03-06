@@ -6,5 +6,6 @@
   "kubejs.md": "kubejs",
   "mod.md": "mod",
   "modPlugin.md": "modPlugin",
-  "newSection.md": "newSection"
+  "newSection.md": "newSection",
+  "Description.md": "Module request"
 }

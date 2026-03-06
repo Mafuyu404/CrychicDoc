@@ -7,5 +7,6 @@
   "performance/": "Performance mod",
   "server/": "server",
   "storages/": "storages",
-  "tech/": "tech"
+  "tech/": "tech",
+  "Description.md": "Mod"
 }

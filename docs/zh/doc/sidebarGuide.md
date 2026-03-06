@@ -23,7 +23,7 @@ CrychicDoc 的侧边栏系统通过读取您在 Markdown 文件中设置的 `fro
 
 | 字段 | 类型 | 描述 |
 |:---|:---|:---|
-| `root` | `boolean` | 将一个目录的 `index.md` 标记为侧边栏的新根节点。 |
+| `root` | `boolean` | 将一个目录的 `sidebarIndex.md` 标记为侧边栏的新根节点。 |
 | `title` | `string` | **必需**。侧边栏中显示的标题。 |
 | `priority`| `number` | **必需**。排序权重，**数字越小，越靠前**。 |
 | `hidden` | `boolean` | 如果为 `true`，则此页面或目录不会显示在侧边栏中。 |
@@ -36,10 +36,12 @@ CrychicDoc 的侧边栏系统通过读取您在 Markdown 文件中设置的 `fro
 假设您要为一个新的 Mod `AwesomeMod` 创建文档区。
 
 #### 步骤 1: 创建目录结构
-在 `docs/zh/mods/` 下创建新目录 `AwesomeMod`，并在其中创建一个 `index.md` 文件。
+在 `docs/zh/mods/` 下创建新目录 `AwesomeMod`，并在其中创建：
+- `sidebarIndex.md`（目录侧边栏元数据）
+- `Description.md`（目录落地内容页）
 
-#### 步骤 2: 在 `index.md` 中声明为根
-编辑 `docs/zh/mods/AwesomeMod/index.md` 的 frontmatter:
+#### 步骤 2: 在 `sidebarIndex.md` 中声明为根
+编辑 `docs/zh/mods/AwesomeMod/sidebarIndex.md` 的 frontmatter:
 ```yaml
 ---
 root: true
@@ -67,11 +69,11 @@ priority: 10
 @tab 任务三：创建子分组
 将 `features.md` 组织到一个“功能”子分组中。
 
-#### 步骤 1: 创建子目录和 `index.md`
-在 `AwesomeMod` 目录下创建 `features/` 子目录，并将 `features.md` 移入其中。然后，在 `features/` 目录下创建一个 `index.md` 文件。
+#### 步骤 1: 创建子目录和侧边栏文件
+在 `AwesomeMod` 目录下创建 `features/` 子目录，并将 `features.md` 移入其中。然后，在 `features/` 目录下创建 `sidebarIndex.md` 和 `Description.md`。
 
-#### 步骤 2: 在子目录 `index.md` 中配置
-编辑 `AwesomeMod/features/index.md` 的 frontmatter，为其指定一个标题和优先级。
+#### 步骤 2: 在子目录 `sidebarIndex.md` 中配置
+编辑 `AwesomeMod/features/sidebarIndex.md` 的 frontmatter，为其指定一个标题和优先级。
 ```yaml
 ---
 title: "功能详解"
@@ -92,7 +94,7 @@ npm run docs:sidebar
 
 ### 添加外部链接 {#tip-external-links}
 
-在根目录 `AwesomeMod/index.md` 的 frontmatter 中添加 `externalLinks`。
+在根目录 `AwesomeMod/sidebarIndex.md` 的 frontmatter 中添加 `externalLinks`。
 
 ```yaml
 ---

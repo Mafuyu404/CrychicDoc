@@ -23,7 +23,7 @@ To effectively manage the sidebar, you need to understand the following key `fro
 
 | Field | Type | Description |
 |:---|:---|:---|
-| `root` | `boolean` | Mark a directory's `index.md` as a new root node in the sidebar. |
+| `root` | `boolean` | Mark a directory's `sidebarIndex.md` as a new root node in the sidebar. |
 | `title` | `string` | **Required**. Title displayed in the sidebar. |
 | `priority`| `number` | **Required**. Sort weight, **smaller numbers appear first**. |
 | `hidden` | `boolean` | If `true`, this page or directory will not appear in the sidebar. |
@@ -36,10 +36,12 @@ To effectively manage the sidebar, you need to understand the following key `fro
 Suppose you want to create a documentation area for a new Mod `AwesomeMod`.
 
 #### Step 1: Create Directory Structure
-Create a new directory `AwesomeMod` under `docs/zh/mods/` and create an `index.md` file in it.
+Create a new directory `AwesomeMod` under `docs/zh/mods/`, then create:
+- `sidebarIndex.md` for sidebar metadata.
+- `Description.md` for the directory landing content.
 
-#### Step 2: Declare as Root in `index.md`
-Edit the frontmatter of `docs/zh/mods/AwesomeMod/index.md`:
+#### Step 2: Declare as Root in `sidebarIndex.md`
+Edit the frontmatter of `docs/zh/mods/AwesomeMod/sidebarIndex.md`:
 ```yaml
 ---
 root: true
@@ -67,11 +69,11 @@ priority: 10
 @tab Task 3: Create Subgroups
 Organize `features.md` into a "Features" subgroup.
 
-#### Step 1: Create Subdirectory and `index.md`
-Create a `features/` subdirectory under the `AwesomeMod` directory and move `features.md` into it. Then create an `index.md` file in the `features/` directory.
+#### Step 1: Create Subdirectory and Sidebar Files
+Create a `features/` subdirectory under the `AwesomeMod` directory and move `features.md` into it. Then create `sidebarIndex.md` and `Description.md` inside `features/`.
 
-#### Step 2: Configure in Subdirectory `index.md`
-Edit the frontmatter of `AwesomeMod/features/index.md` to specify a title and priority for it.
+#### Step 2: Configure in Subdirectory `sidebarIndex.md`
+Edit the frontmatter of `AwesomeMod/features/sidebarIndex.md` to specify a title and priority for it.
 ```yaml
 ---
 title: "Feature Details"
@@ -92,7 +94,7 @@ This script will read all your `frontmatter` configurations and automatically re
 
 ### Adding External Links {#tip-external-links}
 
-Add `externalLinks` in the frontmatter of the root directory `AwesomeMod/index.md`.
+Add `externalLinks` in the frontmatter of the root directory `AwesomeMod/sidebarIndex.md`.
 
 ```yaml
 ---

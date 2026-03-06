@@ -1,4 +1,4 @@
-import type { NavItem } from "../../../utils/config/nav-types";
+import type { NavItem } from "../../../utils/config/navTypes";
 
 const kubePreview = (
     title: string,
@@ -112,7 +112,7 @@ Use this branch when your runtime target is 1.21.`,
                             items: [
                                 {
                                     text: "Overview",
-                                    link: "/modpack/kubejs/1.20.1/",
+                                    link: "/modpack/kubejs/1.20.1/Introduction/Description",
                                     desc: "Most complete branch with broad coverage.",
                                     preview: kubePreview(
                                         "KubeJS 1.20.1 Overview",
@@ -127,7 +127,7 @@ Use this branch when your runtime target is 1.21.`,
                                 },
                                 {
                                     text: "Introduction",
-                                    link: "/modpack/kubejs/1.20.1/Introduction/",
+                                    link: "/modpack/kubejs/1.20.1/Introduction/Description",
                                     desc: "Events, recipes, entities, tags, and systems.",
                                     preview: kubePreview(
                                         "1.20.1 Introduction",
@@ -354,6 +354,31 @@ Use this branch when your runtime target is 1.21.`,
                                     text: "Guide",
                                     link: "/doc/guide/",
                                     desc: "Onboarding and topic navigation",
+                                },
+                            ],
+                        },
+                        {
+                            label: "Framework",
+                            items: [
+                                {
+                                    text: "Framework Maintainability",
+                                    link: "/doc/frameworkMaintainability",
+                                    desc: "High-level engineering rules and extension standards",
+                                },
+                                {
+                                    text: "Development Workflow",
+                                    link: "/doc/developmentWorkflow",
+                                    desc: "Change order, verification, and sync expectations",
+                                },
+                                {
+                                    text: "Extension Architecture",
+                                    link: "/doc/extensionArchitecture",
+                                    desc: "Where config, runtime, components, and styles belong",
+                                },
+                                {
+                                    text: "Hero Extension",
+                                    link: "/doc/heroExtension",
+                                    desc: "Typography, floating, shader, and background extension playbook",
                                 },
                             ],
                         },

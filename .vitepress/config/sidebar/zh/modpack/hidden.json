@@ -1,5 +1,6 @@
 {
   "_self_": false,
   "kubejs/": false,
-  "recommendation/": false
+  "recommendation/": false,
+  "Description.md": false
 }

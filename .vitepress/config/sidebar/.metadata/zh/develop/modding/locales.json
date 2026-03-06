@@ -29,5 +29,10 @@
     "valueHash": "fa00e202a8924be29b0d5d0b6569e5e5",
     "isUserSet": false,
     "isActiveInStructure": false
+  },
+  "Description.md": {
+    "valueHash": "fa00e202a8924be29b0d5d0b6569e5e5",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

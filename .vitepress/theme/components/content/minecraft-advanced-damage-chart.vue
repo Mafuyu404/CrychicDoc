@@ -3,7 +3,7 @@
 import { ref, computed, watch, onMounted, nextTick } from "vue";
 import { useData } from "vitepress";
 import { defineAsyncComponent } from "vue";
-import { useSafeI18n } from "../../../utils/i18n/locale";
+import { useSafeI18n } from "@utils/i18n/locale";
 
 // Async import for vue-echarts to avoid SSR issues
 const VChart = defineAsyncComponent(async () => {

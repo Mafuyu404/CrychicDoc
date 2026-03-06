@@ -1,15 +1,4 @@
 {
-  "_self_": {
-    "valueHash": "68934a3e9455fa72420237eb05902327",
-    "isUserSet": false,
-    "isActiveInStructure": true,
-    "lastSeen": 1749247315825
-  },
-  "CodeShare/": {
-    "valueHash": "68934a3e9455fa72420237eb05902327",
-    "isUserSet": false,
-    "isActiveInStructure": true
-  },
   "Introduction/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
@@ -20,40 +9,15 @@
     "isUserSet": false,
     "isActiveInStructure": true
   },
-  "kubejs-1.20.1/": {
+  "CodeShare/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
-  "代码分享/": {
+  "Description.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false
-  },
-  "CraftingTableGUI.md": {
-    "valueHash": "68934a3e9455fa72420237eb05902327",
-    "isUserSet": false,
-    "isActiveInStructure": false
-  },
-  "Dining.md": {
-    "valueHash": "68934a3e9455fa72420237eb05902327",
-    "isUserSet": false,
-    "isActiveInStructure": false
-  },
-  "InvertedBonemeal.md": {
-    "valueHash": "68934a3e9455fa72420237eb05902327",
-    "isUserSet": false,
-    "isActiveInStructure": false
-  },
-  "LifeValue.md": {
-    "valueHash": "68934a3e9455fa72420237eb05902327",
-    "isUserSet": false,
-    "isActiveInStructure": false
-  },
-  "Painter.md": {
-    "valueHash": "68934a3e9455fa72420237eb05902327",
-    "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "external:GitHub 地址": {
     "valueHash": "68934a3e9455fa72420237eb05902327",

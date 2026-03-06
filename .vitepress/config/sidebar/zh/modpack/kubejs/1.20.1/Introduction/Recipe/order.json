@@ -4,6 +4,7 @@
   "DeleteRecipe.md": 100,
   "ItemAndIngredient.md": 400,
   "ModifyRecipe.md": 200,
-  "RecipeFilter.md":500,
-  "Vanilla.md": 300
+  "RecipeFilter.md": 500,
+  "Vanilla.md": 300,
+  "Description.md": -1000000000
 }
