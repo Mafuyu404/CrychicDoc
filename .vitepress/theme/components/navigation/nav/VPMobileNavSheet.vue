@@ -403,21 +403,26 @@
     }
 
     .menu :deep(.VPNavScreenMenuGroup .items) {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+        display: none;
+        overflow: visible;
+        max-height: none;
     }
 
     .menu :deep(.VPNavScreenMenuGroup.open .items) {
-        max-height: 600px;
+        display: block;
     }
 
     .menu :deep(.VPNavScreenMenuGroup .button) {
         min-height: auto;
         padding-right: 8px;
+        align-items: flex-start;
+        gap: 12px;
+        text-align: left;
     }
 
     .menu :deep(.VPNavScreenMenuGroup .button-icon) {
+        flex: 0 0 auto;
+        margin-top: 4px;
         font-size: 16px;
         transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
     }
@@ -472,8 +477,19 @@
     .menu :deep(.VPNavScreenMenuGroupLink),
     .menu :deep(.VPNavScreenMenuGroupSection .title) {
         white-space: normal;
-        overflow-wrap: normal;
+        overflow-wrap: anywhere;
         word-break: normal;
+    }
+
+    .menu :deep(.button-text) {
+        flex: 1 1 auto;
+        min-width: 0;
+        display: block;
+    }
+
+    .menu :deep(.VPNavScreenMenuLink),
+    .menu :deep(.VPNavScreenMenuGroupLink) {
+        white-space: normal;
     }
 
     /* ═══════════════════════════════════════════════════════
