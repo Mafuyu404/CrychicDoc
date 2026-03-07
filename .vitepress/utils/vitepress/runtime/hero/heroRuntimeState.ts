@@ -16,7 +16,7 @@ import {
 } from "@utils/vitepress/api/frontmatter/hero";
 import { createHeroTypographyState } from "@utils/vitepress/runtime/hero/typographyState";
 import { createHeroFloatingWaveState } from "@utils/vitepress/runtime/hero/floatingWaveState";
-import { useThemeRuntime } from "@utils/vitepress/runtime/theme";
+import { getThemeRuntime } from "@utils/vitepress/runtime/theme";
 
 export interface VPHeroProps {
     name?: string;
@@ -30,7 +30,7 @@ export function createHeroRuntimeState(props: VPHeroProps) {
     const heroImageSlotExists = inject("hero-image-slot-exists", ref(false)) as Ref<boolean>;
     const { frontmatter, page, isDark } = useData();
     const heroRoot = ref<HTMLElement | null>(null);
-    const { effectiveDark, themeReady } = useThemeRuntime(isDark);
+    const { effectiveDark, themeReady } = getThemeRuntime(isDark);
 
     const heroConfig = computed<HeroFrontmatterConfig>(() => {
         const frontmatterHero = frontmatter.value?.hero;

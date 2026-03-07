@@ -1,13 +1,13 @@
 {
   "_self_": "文档相关",
   "rules.md": "Documentation Writing Standards",
+  "developmentWorkflow.md": "Development Workflow",
+  "Description.md": "Documentation Hub",
+  "extensionArchitecture.md": "Extension Architecture",
   "frameworkMaintainability.md": "Framework Maintainability Guide",
+  "heroExtension.md": "Hero Extension Playbook",
   "sidebarGuide.md": "Sidebar Configuration",
   "pluginsGuide.md": "Styles & Plugins",
   "litetreeGuide.md": "LiteTree Component",
-  "vscodeSnippetsGuide.md": "VSCode Code Snippets",
-  "Description.md": "Doc",
-  "developmentWorkflow.md": "Development Workflow",
-  "extensionArchitecture.md": "Extension Architecture",
-  "heroExtension.md": "Hero Extension Playbook"
+  "vscodeSnippetsGuide.md": "VSCode Code Snippets"
 }

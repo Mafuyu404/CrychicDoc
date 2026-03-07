@@ -1,32 +1,21 @@
-import type { NavItem } from "../../../utils/config/navTypes";
+import type { NavItem, NavPanel } from "../../../utils/config/navTypes";
+import {
+    createDropdownNavItem,
+    createLinkedNavItem,
+    createNavDropdown,
+    createNavItems,
+    createNavPreviewPanel,
+    createShowcasePreview,
+    createScreenshotMedia,
+} from "../../../utils/config/navFactory";
 
-const kubePreview = (
-    title: string,
-    desc: string,
-    body: string,
-    background: string,
-) => ({
-    title,
-    desc,
-    body,
-    media: {
-        type: "screenshot" as const,
-        background,
-        aspect: "21 / 9",
-        alt: title,
-    },
-});
+const kubePreview = createShowcasePreview;
+const previewMedia = createScreenshotMedia;
+const kubejsCourseUrl = "https://gumeng.gitbook.io/kubejs-jiao-cheng-1.20.1";
 
-const zhNav: NavItem[] = [
-    {
-        text: "首页",
-        link: "/",
-    },
-    {
-        text: "KubeJS",
-        dropdown: {
-            layout: "columns",
-            panels: [
+const homeNav = createLinkedNavItem("首页", "/");
+
+const kubePanels: NavPanel[] = [
                 {
                     weight: 1.15,
                     groups: [
@@ -52,7 +41,11 @@ const zhNav: NavItem[] = [
 - 推荐阅读顺序：Introduction -> Addon -> LootJS
 
 当运行目标为 1.21 时，请优先使用本分支。`,
-                                        "linear-gradient(135deg, #0d3b66 0%, #2a9d8f 100%)",
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-kubejs-121-home.png",
+                                            background:
+                                                "linear-gradient(135deg, #0d3b66 0%, #2a9d8f 100%)",
+                                        },
                                     ),
                                 },
                                 {
@@ -67,7 +60,11 @@ const zhNav: NavItem[] = [
 - Startup / Server / Client 脚本边界
 - 工作流与命名规范
 - Addon 与 LootJS 前置上下文`,
-                                        "linear-gradient(140deg, #264653 0%, #3a86ff 100%)",
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-kubejs-121-home.png",
+                                            background:
+                                                "linear-gradient(140deg, #264653 0%, #3a86ff 100%)",
+                                        },
                                     ),
                                 },
                                 {
@@ -82,7 +79,11 @@ const zhNav: NavItem[] = [
 - 模组能力接入
 - 扩展功能组合
 - 跨模块兼容约束`,
-                                        "linear-gradient(135deg, #3d405b 0%, #81b29a 100%)",
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-kubejs-121-home.png",
+                                            background:
+                                                "linear-gradient(135deg, #3d405b 0%, #81b29a 100%)",
+                                        },
                                     ),
                                 },
                                 {
@@ -97,7 +98,11 @@ const zhNav: NavItem[] = [
 - 构建可验证的确定性掉落逻辑
 - 使用清晰脚本步骤修改既有战利品表
 - 与事件系统联动实现动态进度控制`,
-                                        "linear-gradient(130deg, #4a4e69 0%, #f2a65a 100%)",
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-kubejs-121-home.png",
+                                            background:
+                                                "linear-gradient(130deg, #4a4e69 0%, #f2a65a 100%)",
+                                        },
                                     ),
                                 },
                             ],
@@ -129,7 +134,11 @@ const zhNav: NavItem[] = [
 - Upgrade
 - CodeShare
 - KubeJS 课程文档`,
-                                        "linear-gradient(135deg, #1d3557 0%, #457b9d 100%)",
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-kubejs-1201-intro.png",
+                                            background:
+                                                "linear-gradient(135deg, #1d3557 0%, #457b9d 100%)",
+                                        },
                                     ),
                                 },
                                 {
@@ -144,7 +153,11 @@ const zhNav: NavItem[] = [
 - 事件生命周期与脚本分区
 - 配方与物品/方块注册
 - 实体、标签、战利品表与网络参考`,
-                                        "linear-gradient(140deg, #003049 0%, #2a9d8f 100%)",
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-kubejs-1201-intro.png",
+                                            background:
+                                                "linear-gradient(140deg, #003049 0%, #2a9d8f 100%)",
+                                        },
                                     ),
                                 },
                                 {
@@ -159,7 +172,11 @@ const zhNav: NavItem[] = [
 - StartupScript：用于注册阶段
 - ServerScript：用于服务端逻辑
 - ClientScript：用于客户端专属行为`,
-                                        "linear-gradient(125deg, #1b4332 0%, #2d6a4f 100%)",
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-kubejs-1201-intro.png",
+                                            background:
+                                                "linear-gradient(125deg, #1b4332 0%, #2d6a4f 100%)",
+                                        },
                                     ),
                                 },
                                 {
@@ -174,7 +191,11 @@ const zhNav: NavItem[] = [
 - 新增自定义配方
 - 移除或修补上游配方
 - 使用过滤器执行安全批处理`,
-                                        "linear-gradient(135deg, #6a040f 0%, #f48c06 100%)",
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-kubejs-1201-intro.png",
+                                            background:
+                                                "linear-gradient(135deg, #6a040f 0%, #f48c06 100%)",
+                                        },
                                     ),
                                 },
                                 {
@@ -189,7 +210,11 @@ const zhNav: NavItem[] = [
 - JavaScript 行为差异
 - GlobalScope 更新与重命名助手
 - 变量与数据类型兼容性`,
-                                        "linear-gradient(135deg, #6c584c 0%, #dda15e 100%)",
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-kubejs-1201-intro.png",
+                                            background:
+                                                "linear-gradient(135deg, #6c584c 0%, #dda15e 100%)",
+                                        },
                                     ),
                                 },
                                 {
@@ -204,22 +229,34 @@ const zhNav: NavItem[] = [
 - 常见机制的紧凑示例
 - 可直接重构到当前整合包的实践片段
 - 可作为风格与结构规范参考`,
-                                        "linear-gradient(135deg, #3a0ca3 0%, #7209b7 100%)",
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-kubejs-1201-intro.png",
+                                            background:
+                                                "linear-gradient(135deg, #3a0ca3 0%, #7209b7 100%)",
+                                        },
                                     ),
                                 },
                                 {
                                     text: "KubeJS 课程文档",
-                                    link: "/modpack/kubejs/1.20.1/KubeJSCourse/README",
-                                    desc: "从基础到项目实践的结构化课程体系。",
+                                    href: kubejsCourseUrl,
+                                    desc: "第三方维护的 GitBook 课程体系，覆盖基础到项目实践。",
+                                    badge: {
+                                        text: "第三方",
+                                        type: "info",
+                                    },
                                     preview: kubePreview(
                                         "KubeJS 课程文档",
-                                        "从基础到进阶的系统化训练内容。",
+                                        "由第三方作者团队维护的外部 GitBook 课程。",
                                         `课程内容包括：
 
 - KubeJS 基础与进阶模块
 - Addon 生态联动路径
 - 项目化案例与资源管线`,
-                                        "linear-gradient(140deg, #1f2937 0%, #3b82f6 100%)",
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-kubejs-course.png",
+                                            background:
+                                                "linear-gradient(140deg, #1f2937 0%, #3b82f6 100%)",
+                                        },
                                     ),
                                 },
                             ],
@@ -347,14 +384,36 @@ const zhNav: NavItem[] = [
                         },
                     ],
                 },
-            ],
-        },
-    },
+];
+
+const kubeNav = createDropdownNavItem(
+    "KubeJS",
+    createNavDropdown(kubePanels, {
+        layout: "columns",
+    }),
+);
+
+const docsPreview = createNavPreviewPanel(
+    "文档中心",
+    "工程规范、写作工具与扩展手册的统一入口。",
+    `| 轨道 | 可解决的问题 |
+| --- | --- |
+| 框架 | 结构边界、扩展归属、Hero 规则 |
+| 写作 | 侧边栏、片段、内容工作流 |
+| 插件 | Markdown 容器与组件式增强 |
+
+> 在修改主题、运行时或共享结构前，请先以文档中心为准。`,
+    previewMedia(
+        "文档中心",
+        "/imgs/screenshots/nav/zh-doc-home.png",
+        "linear-gradient(140deg, #162034 0%, #243b63 100%)",
+    ),
     {
-        text: "文档",
-        dropdown: {
-            layout: "columns",
-            panels: [
+        link: "/doc/",
+    },
+);
+
+const docsPanels: NavPanel[] = [
                 {
                     groups: [
                         {
@@ -364,21 +423,81 @@ const zhNav: NavItem[] = [
                                     text: "文档主页",
                                     link: "/doc/",
                                     desc: "文档目录与入口",
+                                    preview: kubePreview(
+                                        "文档主页",
+                                        "站点文档系统的总入口。",
+                                        `可从这里快速按意图分流：
+
+- 框架规则与扩展契约
+- 插件与组件写作指南
+- 工作流与侧边栏维护说明`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-doc-home.png",
+                                            background:
+                                                "linear-gradient(140deg, #162034 0%, #243b63 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                                 {
                                     text: "合作须知",
                                     link: "/doc/rules",
                                     desc: "贡献协作规范与流程",
+                                    preview: kubePreview(
+                                        "合作须知",
+                                        "面向文档与工程协作的统一规范。",
+                                        `在做共享结构改动前，请先核对这份规则。
+
+| 关注点 | 作用 |
+| --- | --- |
+| 命名 | 保持可搜索性 |
+| 评审流 | 避免跨仓漂移 |
+| 贡献方式 | 统一输出风格 |`,
+                                        {
+                                            src: "/imgs/screenshots/rulesDark.png",
+                                            background:
+                                                "linear-gradient(135deg, #2a2238 0%, #3f2f56 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                                 {
                                     text: "插件指南",
                                     link: "/doc/pluginsGuide",
                                     desc: "Markdown 插件与组件能力",
+                                    preview: kubePreview(
+                                        "插件指南",
+                                        "用于富文本容器和组件式渲染的参考页。",
+                                        `这里聚焦站点的富格式能力：
+
+- markdown-it 容器
+- 组件驱动的内容块
+- 可安全扩展的插件使用方式`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-doc-plugins.png",
+                                            background:
+                                                "linear-gradient(135deg, #1c2438 0%, #33507b 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                                 {
                                     text: "导航指南",
                                     link: "/doc/guide/",
                                     desc: "主题导航与使用说明",
+                                    preview: kubePreview(
+                                        "导航指南",
+                                        "用于快速理解站点结构和入口关系的说明页。",
+                                        `当你需要的是“怎么找到内容”，而不是“怎么扩展系统”时，应先看这里。
+
+> 它适合在正式改动前快速定位主题路径。`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-doc-home.png",
+                                            background:
+                                                "linear-gradient(135deg, #1a2430 0%, #30475a 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                             ],
                         },
@@ -389,21 +508,84 @@ const zhNav: NavItem[] = [
                                     text: "框架可维护性",
                                     link: "/doc/frameworkMaintainability",
                                     desc: "高层工程规范与扩展标准",
+                                    preview: kubePreview(
+                                        "框架可维护性",
+                                        "用于保持站点结构稳定的工程规则总览。",
+                                        `修改运行时、主题或共享契约前，应先阅读本页。
+
+- 职责边界
+- 同步要求
+- 安全扩展规则`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-doc-framework.png",
+                                            background:
+                                                "linear-gradient(135deg, #1e2233 0%, #314a77 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                                 {
                                     text: "开发工作流",
                                     link: "/doc/developmentWorkflow",
                                     desc: "改动顺序、校验与同步规则",
+                                    preview: kubePreview(
+                                        "开发工作流",
+                                        "面向项目族改动的标准顺序与验证方法。",
+                                        `建议按以下顺序执行结构性改动：
+
+1. 先改共享契约
+2. 再改组件与运行时
+3. 校验构建与 locale 输出
+4. 最后同步模板系仓库`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-doc-framework.png",
+                                            background:
+                                                "linear-gradient(135deg, #16253b 0%, #234d68 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                                 {
                                     text: "扩展架构说明",
                                     link: "/doc/extensionArchitecture",
                                     desc: "配置、运行时、组件与样式的职责边界",
+                                    preview: kubePreview(
+                                        "扩展架构说明",
+                                        "用于判断配置、运行时、组件与样式归属的责任图。",
+                                        `当你不确定“这段逻辑该放哪”时，就应该看这页。
+
+| 内容 | 归属 |
+| --- | --- |
+| locale / 配置 | config |
+| 运行时状态 | runtime |
+| UI 渲染 | theme components |`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-doc-framework.png",
+                                            background:
+                                                "linear-gradient(135deg, #192035 0%, #234860 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                                 {
                                     text: "Hero 扩展手册",
                                     link: "/doc/heroExtension",
                                     desc: "排版、浮动元素、Shader 与背景扩展方案",
+                                    preview: kubePreview(
+                                        "Hero 扩展手册",
+                                        "Hero 页面在排版、浮动元素、Shader 与背景层上的扩展说明。",
+                                        `这是 Hero 领域的专用扩展手册：
+
+- TypographyStyle 注册
+- Floating 元素扩展策略
+- Shader / Background 职责边界`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-doc-framework.png",
+                                            background:
+                                                "linear-gradient(135deg, #111d34 0%, #2b355d 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                             ],
                         },
@@ -418,29 +600,94 @@ const zhNav: NavItem[] = [
                                     text: "侧边栏指南",
                                     link: "/doc/sidebarGuide",
                                     desc: "侧边栏配置与结构管理",
+                                    preview: kubePreview(
+                                        "侧边栏指南",
+                                        "用于目录结构、落地页与自动生成侧边栏行为的参考。",
+                                        `当你要改目录入口、索引页或 landing route 时，请优先看这里。
+
+- 侧边栏源配置
+- 自动 landing 规则
+- 缓存与重建预期`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-doc-sidebar.png",
+                                            background:
+                                                "linear-gradient(135deg, #1a2337 0%, #3a547c 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                                 {
                                     text: "VSCode 片段指南",
                                     link: "/doc/vscodeSnippetsGuide",
                                     desc: "基于代码片段的写作工作流",
+                                    preview: kubePreview(
+                                        "VSCode 片段指南",
+                                        "用于 frontmatter 与内容模板快速写作的说明页。",
+                                        `这个页面更关注提效：
+
+- frontmatter 补全
+- 常用文档片段骨架
+- 大型文档集的安全写作`,
+                                        {
+                                            src: "/imgs/VSCode/1.png",
+                                            background:
+                                                "linear-gradient(135deg, #111827 0%, #1d4ed8 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                                 {
                                     text: "LiteTree 指南",
                                     link: "/doc/litetreeGuide",
                                     desc: "树形展示组件使用方式",
+                                    preview: kubePreview(
+                                        "LiteTree 指南",
+                                        "用于树形结构展示组件的说明和使用约束。",
+                                        `当内容适合层级展开而不是长段落时，LiteTree 会更合适。
+
+> 它特别适合 API、流程和依赖关系说明。`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-doc-sidebar.png",
+                                            background:
+                                                "linear-gradient(135deg, #1b263b 0%, #415a77 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                             ],
                         },
                     ],
                 },
-            ],
-        },
-    },
+];
+
+const docsNav = createDropdownNavItem(
+    "文档",
+    createNavDropdown(docsPanels, {
+        layout: "columns",
+        preview: docsPreview,
+    }),
+);
+
+const contentPreview = createNavPreviewPanel(
+    "内容地图",
+    "按内容类型而不是版本路径浏览站点。",
+    `| 分区 | 适合查什么 |
+| --- | --- |
+| 模组 | 模组资料与参考页 |
+| 整合包 | 面向包或版本分支的知识 |
+| 开发 | 作者工作流与实现指南 |
+| 信息 | Q&A、建议与支持入口 |`,
+    previewMedia(
+        "内容地图",
+        "/imgs/screenshots/nav/zh-modpack-home.png",
+        "linear-gradient(135deg, #18253d 0%, #324e7c 100%)",
+    ),
     {
-        text: "内容",
-        dropdown: {
-            layout: "columns",
-            panels: [
+        link: "/modpack/",
+    },
+);
+
+const contentPanels: NavPanel[] = [
                 {
                     groups: [
                         {
@@ -450,21 +697,65 @@ const zhNav: NavItem[] = [
                                     text: "模组",
                                     link: "/mods/",
                                     desc: "按分类整理的模组资料",
+                                    preview: kubePreview(
+                                        "模组",
+                                        "按主题归类的模组资料与参考入口。",
+                                        `当你需要的是专题查找，而不是整合包分支路径时，应先看模组区。`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-mods-home.png",
+                                            background:
+                                                "linear-gradient(135deg, #18223b 0%, #334e68 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                                 {
                                     text: "整合包",
                                     link: "/modpack/",
                                     desc: "整合包文档与推荐",
+                                    preview: kubePreview(
+                                        "整合包",
+                                        "面向包、版本分支与 KubeJS 路线的内容入口。",
+                                        `当文档与运行目标或包版本强相关时，应从这里进入。`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-modpack-home.png",
+                                            background:
+                                                "linear-gradient(135deg, #1a2a45 0%, #31517d 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                                 {
                                     text: "开发",
                                     link: "/develop/",
                                     desc: "开发与模组制作指南",
+                                    preview: kubePreview(
+                                        "开发",
+                                        "面向工具链、数据包与作者工作流的实现指南。",
+                                        `当你更关心“怎么做”，而不是“内容分区在哪”时，优先走开发区。`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-develop-home.png",
+                                            background:
+                                                "linear-gradient(135deg, #1a2238 0%, #35506f 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                                 {
                                     text: "信息",
                                     link: "/info/",
                                     desc: "Q&A、建议与讨论入口",
+                                    preview: kubePreview(
+                                        "信息",
+                                        "用于问题、建议与社区式说明的内容入口。",
+                                        `当你在找的是补充说明、请求背景或问答型内容时，请从这里进入。`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-info-home.png",
+                                            background:
+                                                "linear-gradient(135deg, #2d1f3f 0%, #54406f 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                             ],
                         },
@@ -476,22 +767,35 @@ const zhNav: NavItem[] = [
                             label: "社区",
                             items: [
                                 {
-                                    text: "开发者",
-                                    link: "/developers/",
-                                    desc: "团队与贡献者空间",
-                                },
-                                {
                                     text: "标签",
                                     link: "/tags",
                                     desc: "按主题聚合页面内容",
+                                    preview: kubePreview(
+                                        "标签",
+                                        "用于跨分区查找相关内容的主题索引。",
+                                        `当你只记得主题，不记得路径时，标签页会比直接翻目录更高效。`,
+                                        {
+                                            src: "/imgs/screenshots/nav/zh-tags-home.png",
+                                            background:
+                                                "linear-gradient(135deg, #172234 0%, #3b5872 100%)",
+                                            aspect: "16 / 10",
+                                        },
+                                    ),
                                 },
                             ],
                         },
                     ],
                 },
-            ],
-        },
-    },
 ];
+
+const contentNav = createDropdownNavItem(
+    "内容",
+    createNavDropdown(contentPanels, {
+        layout: "columns",
+        preview: contentPreview,
+    }),
+);
+
+const zhNav: NavItem[] = createNavItems(homeNav, kubeNav, docsNav, contentNav);
 
 export default zhNav;

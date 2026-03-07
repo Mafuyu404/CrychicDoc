@@ -2,7 +2,7 @@
     import { computed, onBeforeUnmount, ref } from "vue";
     import { onClickOutside } from "@vueuse/core";
     import VPLink from "vitepress/dist/client/theme-default/components/VPLink.vue";
-    import type { NavItem, NavLink } from "@utils/config/nav-types";
+    import type { NavItem, NavLink } from "@utils/config/navTypes";
     import { resolveAccessibleNavHref } from "@utils/vitepress/api/navigation/NavLinkAccessService";
     import NavHoverPreviewSheet from "./NavHoverPreviewSheet.vue";
     import {
@@ -33,6 +33,7 @@
         return links;
     });
     const hasPreviewColumn = computed(() => previewLinks.value.length > 0);
+    const defaultPreview = computed(() => props.item.dropdown?.preview || null);
 
     const menuId = computed(() => {
         const slug = props.item.text
@@ -233,9 +234,10 @@
                 >
                     <Transition name="item-preview-sheet" mode="out-in">
                         <NavHoverPreviewSheet
-                            v-if="activePreviewLink"
-                            :key="activePreviewLink.text"
+                            v-if="activePreviewLink || defaultPreview"
+                            :key="activePreviewLink?.text || `${menuId}-default`"
                             :link="activePreviewLink"
+                            :preview="defaultPreview"
                         />
                         <div
                             v-else

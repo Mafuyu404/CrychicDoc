@@ -12,21 +12,21 @@
 import {
     ComputedRef,
     InjectionKey,
-    Ref,
     computed,
     inject,
 } from "vue";
 import { useData } from "vitepress";
 import { resolveThemeColorByMode, resolveThemeValueByMode } from "./themeValueResolver";
-import { useThemeRuntime } from "./useThemeRuntime";
+import { getThemeRuntime } from "./themeRuntime";
+import type { RefLike } from "@utils/vitepress/runtime/refLike";
 
 /**
  * Injection key for the first-paint-safe dark mode ref.
  * Provided by `VPHero.vue`, consumed by all hero child components.
  */
-export const heroEffectiveDarkKey: InjectionKey<
-    Ref<boolean> | ComputedRef<boolean>
-> = Symbol("hero-effective-dark");
+export const heroEffectiveDarkKey: InjectionKey<RefLike<boolean>> = Symbol(
+    "hero-effective-dark",
+);
 
 /**
  * Returns the hero-scoped dark mode ref and a `resolveThemeValue` helper.
@@ -38,7 +38,7 @@ export const heroEffectiveDarkKey: InjectionKey<
 export function useHeroTheme() {
     const scopedEffectiveDark = inject(heroEffectiveDarkKey, undefined);
     const { isDark } = useData();
-    const themeRuntime = useThemeRuntime(isDark);
+    const themeRuntime = getThemeRuntime(isDark);
 
     /**
      * Reactive boolean ref: `true` when the current theme is dark.

@@ -1,7 +1,13 @@
 {
     "description": "Maps component IDs used in useSafeI18n() to their corresponding translation file paths",
-    "generatedAt": "2026-03-06T13:55:00.342Z",
+    "generatedAt": "2026-03-07T14:18:15.883Z",
     "mappings": {
+        "footer": "navigation/Footer",
+        "buttons-component": "ui/Buttons",
+        "magic-move-container": "ui/MagicMoveContainer",
+        "not-found": "ui/NotFound",
+        "progress-linear": "ui/ProgressLinear",
+        "state-component": "ui/State",
         "article-metadata": "content/ArticleMetadata",
         "bills-component": "content/Bills",
         "commits-counter": "content/CommitsCounter",
@@ -13,13 +19,7 @@
         "tags-page": "content/TagsPage",
         "XyebbsInfo": "content/XyebbsInfo",
         "comment-component": "content/comment",
-        "minecraft-damage-chart": "content/minecraft-advanced-damage-chart",
-        "footer": "navigation/Footer",
-        "buttons-component": "ui/Buttons",
-        "magic-move-container": "ui/MagicMoveContainer",
-        "not-found": "ui/NotFound",
-        "progress-linear": "ui/ProgressLinear",
-        "state-component": "ui/State",
+        "minecraft-damage-chart": "content/minecraftAdvancedDamageChart",
         "hero-model3d": "hero/image/Model3D"
     }
 }

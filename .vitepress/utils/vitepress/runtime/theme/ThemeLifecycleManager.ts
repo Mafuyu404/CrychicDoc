@@ -1,7 +1,7 @@
 import { watch } from "vue";
-import { Ref } from "vue";
 import { ThemeRuntimeController } from "./ThemeRuntimeController";
 import { ThemeStateStore } from "./ThemeStateStore";
+import type { RefLike } from "@utils/vitepress/runtime/refLike";
 
 export class ThemeLifecycleManager {
     private store: ThemeStateStore | null = null;
@@ -9,7 +9,7 @@ export class ThemeLifecycleManager {
     private stopReactiveWatch: (() => void) | null = null;
     private mountedUsers = 0;
 
-    private ensureController(isDark: Ref<boolean>) {
+    private ensureController(isDark: RefLike<boolean>) {
         if (!this.store || !this.controller) {
             this.store = new ThemeStateStore(isDark);
             this.controller = new ThemeRuntimeController(this.store);
@@ -27,11 +27,11 @@ export class ThemeLifecycleManager {
         return this.controller;
     }
 
-    getState(isDark: Ref<boolean>) {
+    getState(isDark: RefLike<boolean>) {
         return this.ensureController(isDark).getState();
     }
 
-    mount(isDark: Ref<boolean>) {
+    mount(isDark: RefLike<boolean>) {
         const controller = this.ensureController(isDark);
         this.mountedUsers += 1;
 

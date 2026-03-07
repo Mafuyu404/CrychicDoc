@@ -1,7 +1,7 @@
 import { computed, onMounted, onUnmounted, ref, watch } from "vue";
-import { Ref } from "vue";
 import { HeroBackgroundConfig, hasMediaBackground as hasMediaBackgroundInConfig } from "@utils/vitepress/api/frontmatter/hero";
 import { createHeroColorToolkit } from "@utils/vitepress/runtime/hero/colorToolkit";
+import type { RefLike } from "@utils/vitepress/runtime/refLike";
 
 type ThemeColorValue = string | { light?: string; dark?: string; value?: string };
 
@@ -32,10 +32,10 @@ export interface HeroColorsConfig {
 }
 
 export interface HeroNavAdaptiveStateOptions {
-    heroRoot: Ref<HTMLElement | null>;
-    backgroundConfig: Ref<HeroBackgroundConfig | undefined>;
-    isDark: Ref<boolean>;
-    heroColors: Ref<HeroColorsConfig | undefined>;
+    heroRoot: RefLike<HTMLElement | null>;
+    backgroundConfig: RefLike<HeroBackgroundConfig | undefined>;
+    isDark: RefLike<boolean>;
+    heroColors: RefLike<HeroColorsConfig | undefined>;
 }
 
 const NAV_ADAPTIVE_CLASS = "hero-nav-adaptive";

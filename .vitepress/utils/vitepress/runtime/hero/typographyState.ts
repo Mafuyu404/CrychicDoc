@@ -1,5 +1,5 @@
 import { computed } from "vue";
-import { ComputedRef, Ref } from "vue";
+import { ComputedRef } from "vue";
 import {
     HeroBackgroundConfig,
     HeroFrontmatterConfig,
@@ -12,6 +12,7 @@ import {
     HeroColorsConfig,
 } from "@utils/vitepress/runtime/hero/navAdaptiveState";
 import { createHeroColorToolkit } from "@utils/vitepress/runtime/hero/colorToolkit";
+import type { RefLike } from "@utils/vitepress/runtime/refLike";
 
 interface ResolvedTypographyMotionNode {
     x: number;
@@ -33,8 +34,8 @@ interface ResolvedTypographyMotionStyle {
 export interface HeroTypographyStateOptions {
     heroConfig: ComputedRef<HeroFrontmatterConfig>;
     backgroundConfig: ComputedRef<HeroBackgroundConfig | undefined>;
-    heroRoot: Ref<HTMLElement | null>;
-    isDark: Ref<boolean>;
+    heroRoot: RefLike<HTMLElement | null>;
+    isDark: RefLike<boolean>;
 }
 
 class NumberRangeResolver {

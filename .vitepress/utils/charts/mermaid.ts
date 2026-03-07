@@ -1,8 +1,8 @@
 import mermaid from "mermaid";
 
-export const initMermaidConfig = () => {
+export function initMermaidConfig(): void {
     if (typeof window === 'undefined') return;
-    
+
     mermaid.initialize({
         startOnLoad: true,
         theme: "default",
@@ -36,4 +36,4 @@ export const initMermaidConfig = () => {
             axisFormat: "%Y-%m-%d",
         },
     });
-}; 
+}

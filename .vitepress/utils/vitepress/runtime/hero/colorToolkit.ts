@@ -1,9 +1,9 @@
 import { computed } from "vue";
-import { Ref } from "vue";
 import {
     resolveThemeColorByMode,
     resolveThemeValueByMode,
 } from "@utils/vitepress/runtime/theme";
+import type { RefLike } from "@utils/vitepress/runtime/refLike";
 
 export interface RGBColor {
     r: number;
@@ -12,7 +12,7 @@ export interface RGBColor {
 }
 
 export interface HeroColorToolkitOptions {
-    isDark: Ref<boolean>;
+    isDark: RefLike<boolean>;
 }
 
 export function createHeroColorToolkit(options: HeroColorToolkitOptions) {

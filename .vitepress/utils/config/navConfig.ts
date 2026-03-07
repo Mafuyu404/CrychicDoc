@@ -25,6 +25,7 @@
 
 import { projectConfig } from "./project-config";
 import type { NavConfig, NavItem } from "./navTypes";
+import { assertNavItemsUseBuilders, normalizeNavItems } from "./navFactory";
 
 /**
  * Eagerly-loaded locale nav modules discovered at build time.
@@ -54,7 +55,11 @@ for (const lang of projectConfig.languages) {
         | undefined;
     if (mod) {
         // Prefer named default export; fall back to first value for CJS interop
-        locales[code] = mod.default ?? (Object.values(mod)[0] as NavItem[]);
+        const localeNav = normalizeNavItems(
+            mod.default ?? (Object.values(mod)[0] as NavItem[]),
+        );
+        assertNavItemsUseBuilders(localeNav, code);
+        locales[code] = localeNav;
     }
 }
 
