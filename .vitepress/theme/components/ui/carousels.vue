@@ -19,7 +19,9 @@
                     :value="index"
                 >
                     <div class="carousel-slide-panel">
-                        <slot :name="name" />
+                        <div class="carousel-slide-content">
+                            <slot :name="name" />
+                        </div>
                     </div>
                 </v-window-item>
             </v-window>
@@ -73,6 +75,7 @@
         useSlots,
         watch,
     } from "vue";
+    import { bindFancybox } from "@utils/vitepress/runtime/media/imageViewerRuntime";
     import { createElementResizeState } from "@utils/vitepress/runtime/viewport";
 
     const props = defineProps({
@@ -150,9 +153,9 @@
         if (!carouselContainer.value) return;
 
         carouselContainer.value
-            .querySelectorAll<HTMLImageElement | HTMLIFrameElement | HTMLVideoElement>(
-                "img, iframe, video",
-            )
+            .querySelectorAll<
+                HTMLImageElement | HTMLIFrameElement | HTMLVideoElement
+            >("img, iframe, video")
             .forEach((media) => {
                 if (media.dataset.carouselObserved === "true") return;
                 media.dataset.carouselObserved = "true";
@@ -226,12 +229,15 @@
         });
     };
 
+    const refreshImageViewer = () => {
+        if (!carouselContainer.value) return;
+        bindFancybox(carouselContainer.value);
+    };
+
     const { reobserve } = createElementResizeState(carouselContainer, () => {
         scheduleHeightUpdate();
     });
 
-    // ===== Resize observation via shared viewport API =====
-    // ===== Mouse wheel navigation =====
     const handleWheel = (e: WheelEvent) => {
         if (slideCount.value <= 1) return;
         if (e.deltaY > 0) goNext();
@@ -278,7 +284,10 @@
             reobserve(carouselContainer.value);
         }
 
-        if (typeof MutationObserver !== "undefined" && carouselContainer.value) {
+        if (
+            typeof MutationObserver !== "undefined" &&
+            carouselContainer.value
+        ) {
             mutationObserver = new MutationObserver(() => {
                 scheduleHeightUpdate();
             });
@@ -289,11 +298,13 @@
         }
 
         scheduleHeightUpdate();
+        refreshImageViewer();
         restartCycle();
     });
 
     onUpdated(() => {
         scheduleHeightUpdate();
+        refreshImageViewer();
     });
 
     watch(
@@ -303,6 +314,10 @@
         },
         { immediate: true },
     );
+
+    watch(currentIndex, () => {
+        refreshImageViewer();
+    });
 
     onBeforeUnmount(() => {
         mutationObserver?.disconnect();
@@ -328,22 +343,23 @@
     }
 
     .carousel-slide-panel {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         min-height: 200px;
         padding: 1.25rem 4rem;
         width: 100%;
         box-sizing: border-box;
     }
 
-    :deep(.carousel-slide-panel > *),
-    :deep(.carousel-slide-panel .vp-doc),
-    :deep(.carousel-slide-panel .vp-doc > *) {
+    .carousel-slide-content {
         width: 100%;
     }
 
-    :deep(.carousel-slide-panel img) {
+    :deep(.carousel-slide-content > *),
+    :deep(.carousel-slide-content .vp-doc),
+    :deep(.carousel-slide-content .vp-doc > *) {
+        width: 100%;
+    }
+
+    :deep(.carousel-slide-content img) {
         max-width: 100%;
         max-height: 100%;
         object-fit: contain;
