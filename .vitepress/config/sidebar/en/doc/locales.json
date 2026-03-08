@@ -1,8 +1,8 @@
 {
   "_self_": "文档相关",
   "rules.md": "Documentation Writing Standards",
-  "developmentWorkflow.md": "Development Workflow",
   "Description.md": "Documentation Hub",
+  "developmentWorkflow.md": "Development Workflow",
   "extensionArchitecture.md": "Extension Architecture",
   "frameworkMaintainability.md": "Framework Maintainability Guide",
   "heroExtension.md": "Hero Extension Playbook",

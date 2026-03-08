@@ -130,8 +130,45 @@ Follow the import layering in `.vitepress/theme/styles/index.css`.
 
 ## Create a New Markdown Plugin
 
-1. Implement plugins in `.vitepress/plugins/**`.
-2. Register them in `.vitepress/config/markdown-plugins.ts`.
+### Quick Start with Plugin Factories
+
+The project provides two reusable factories that handle boilerplate for you:
+
+- **`tab-plugin-factory.ts`** — For tab-based plugins (stepper, carousel, comparison, etc.). Produces plugins with `@tab` syntax.
+- **`container-plugin-factory.ts`** — For block-container plugins that wrap content without tabs.
+
+A complete template with four working example plugins lives at:
+
+```
+.vitepress/plugins/example-new-plugin.ts
+```
+
+Minimal factory-based plugin:
+
+```ts
+import { createTabPlugin, configMappers } from "./tab-plugin-factory";
+
+export const gallery = createTabPlugin({
+  name: "gallery",
+  containerComponent: "div",
+  tabComponent: "img",
+  configMapping: {
+    columns: configMappers.attr("data-columns"),
+  },
+  defaultConfig: { columns: 2 },
+  containerRenderer: (info, config, parsedConfig) =>
+    `<div class="md-gallery"${parsedConfig}>`,
+  tabRenderer: (data) =>
+    `<img src="${data.title}" alt="Gallery image ${data.index + 1}">`,
+});
+```
+
+### Manual Implementation
+
+For plugins that do not fit the tab or container pattern:
+
+1. Implement the plugin in `.vitepress/plugins/**`.
+2. Register it in `.vitepress/config/markdown-plugins.ts`.
 3. Register any required rendering component in `.vitepress/utils/vitepress/components.ts`.
 4. Add usage pages under both locale trees.
 
@@ -142,11 +179,111 @@ If the plugin is meant to become a reusable authoring surface, also document:
 - frontmatter dependencies
 - copy-paste-safe examples in both locales
 
+## Services and System Layer
+
+Beyond `api` and `runtime`, two additional utility layers exist:
+
+### Services
+
+Location: `.vitepress/utils/vitepress/services/**`
+
+Services provide cross-cutting helpers consumed by both runtime and components:
+
+- `homeLinkService.ts` — Resolves locale-aware home page links.
+- `metadataService.ts` — Aggregates page metadata from frontmatter and config.
+
+Services are stateless and should not hold reactive state. If state is needed, promote the logic to `runtime`.
+
+### System Abstractions
+
+Location: `.vitepress/utils/vitepress/system/**`
+
+Platform-specific abstractions for file I/O and environment detection:
+
+- `FileSystem.ts` — Portable file system interface.
+- `NodeFileSystem.ts` — Node.js implementation of the file system interface.
+
+These are used by build-time scripts and should not be imported in client-side components.
+
+## Navigation Runtime
+
+Location: `.vitepress/utils/vitepress/runtime/navigation/**`
+
+Shared state for navigation behavior that is not hero-specific:
+
+- `breadcrumbState.ts` — Computes breadcrumb segments from the current route.
+- `navHoverPreviewState.ts` — Controls link hover-preview behavior.
+
+Follow the same rules as other runtime modules: keep rendering logic in components, keep state logic here.
+
+## Viewport Runtime
+
+Location: `.vitepress/utils/vitepress/runtime/viewport/**`
+
+Shared viewport and layout utilities:
+
+- `elementResizeState.ts` — Debounced element resize observer (use `createElementResizeState`).
+- `viewportState.ts` — Reactive viewport dimensions (use `createViewportState`).
+- `breakpoints.ts` — Responsive breakpoint resolver (`resolveBreakpoint`).
+- `rafQueue.ts` — `requestAnimationFrame` batching queue.
+- `debounce.ts` — Generic debounce utility.
+
+Prefer these shared utilities over ad-hoc `ResizeObserver` or `window.addEventListener('resize', ...)` in components.
+
+## Component Registry Barrels
+
+Location: `.vitepress/utils/vitepress/componentRegistry/**`
+
+Each barrel exports components for a specific domain. Use the correct barrel when exporting new components:
+
+- `contentRegistry.ts` — Markdown-facing content components (alerts, dialogs, charts, etc.).
+- `navigationRegistry.ts` — Navigation components (breadcrumb, nav layouts, etc.).
+- `mediaRegistry.ts` — Media rendering components (image viewers, video players, etc.).
+- `uiRegistry.ts` — Generic UI primitives (buttons, cards, etc.).
+
+The chain is: `component file` → `registry barrel` → `components.ts` (global registration).
+
+## Import Alias Reference
+
+The project defines TypeScript path aliases in `tsconfig.json` and Vite aliases in `.vitepress/config/common-config.ts`. Use these consistently in all internal imports:
+
+| Alias | Resolves To | Use For |
+|:------|:------------|:--------|
+| `@utils` | `.vitepress/utils/` | Runtime, API, i18n, helpers |
+| `@config` | `.vitepress/utils/config/` | Config utilities (NOT `.vitepress/config/`!) |
+| `@components` | `.vitepress/theme/components/` | Component imports from other components or runtime |
+| `@/locale` | `.vitepress/config/locale/` | Locale resource imports |
+
+::: warning Common Gotcha: `@config` ≠ `.vitepress/config/`
+The `@config` alias points to `.vitepress/utils/config/`, which holds config utility code. It does **not** point to `.vitepress/config/`, which holds project-level configuration files (shaders, lang, markdown-plugins, etc.).
+
+For files under `.vitepress/config/` (e.g., shader templates), use **relative imports** adjusted to your file's location:
+
+```ts
+// Correct — relative path for .vitepress/config/shaders/
+import { registerShaderTemplate } from "../../config/shaders";
+
+// Wrong — @config points to .vitepress/utils/config/, not .vitepress/config/
+import { registerShaderTemplate } from "@config/shaders"; // ❌ Will not resolve
+```
+:::
+
 ## File Ownership Table
 
 - New hero field or nested frontmatter key: `.vitepress/utils/vitepress/api/frontmatter/**`
 - Theme-ready lifecycle or observer logic: `.vitepress/utils/vitepress/runtime/**`
+- Navigation state or breadcrumb logic: `.vitepress/utils/vitepress/runtime/navigation/**`
+- Viewport or resize behavior: `.vitepress/utils/vitepress/runtime/viewport/**`
+- Cross-cutting stateless helper: `.vitepress/utils/vitepress/services/**`
+- Build-time platform abstraction: `.vitepress/utils/vitepress/system/**`
 - New Vue block or visual surface: `.vitepress/theme/components/**`
 - New markdown syntax: `.vitepress/plugins/**` plus `.vitepress/config/markdown-plugins.ts`
 - New global token or shared skin: `.vitepress/theme/styles/**`
 - New developer handbook page: `docs/en/doc/**` and `docs/zh/doc/**`
+
+## Related Pages
+
+- [Framework Maintainability Guide](./frameworkMaintainability) — Theme sync standard, resize standard, and full extension API reference.
+- [Development Workflow](./developmentWorkflow) — Change ordering, verification commands, and upstream sync rules.
+- [Hero Extension Playbook](./heroExtension) — Typography, floating elements, shaders, backgrounds, and nav/search visuals.
+- [Styles & Plugins Guide](./pluginsGuide) — All available Markdown plugins and custom Vue components.

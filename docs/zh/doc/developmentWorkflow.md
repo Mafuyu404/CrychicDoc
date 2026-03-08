@@ -76,3 +76,9 @@ yarn frontmatter
 3. 英中两套文档是否已同步？
 4. 示例是否真实可运行？
 5. 上下游同步路径是否清晰？
+
+## 相关页面
+
+- [框架可维护性指南](./frameworkMaintainability) — 完整扩展 API 参考与工程规范。
+- [扩展架构说明](./extensionArchitecture) — 文件职责规则、导入别名参考与分层放置指南。
+- [Hero 扩展手册](./heroExtension) — 排版、浮动元素、Shader、背景渲染器与导航搜索视觉。

@@ -1,8 +1,8 @@
 {
   "_self_": false,
   "rules.md": false,
-  "developmentWorkflow.md": false,
   "Description.md": false,
+  "developmentWorkflow.md": false,
   "extensionArchitecture.md": false,
   "frameworkMaintainability.md": false,
   "heroExtension.md": false,

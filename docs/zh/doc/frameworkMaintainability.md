@@ -167,14 +167,14 @@ const { t } = useSafeI18n("my-component", {
 
 1. 不要在业务组件中直接读取 DOM 主题类名作为唯一来源。
 2. 不要只依赖原始 `useData().isDark` 处理首屏视觉切换。
-3. 使用 `useThemeRuntime(isDark)`，并基于 `effectiveDark`、`themeReady`、`version` 做主题分支，保证首次进入、刷新与运行时切换都一致。
-4. Hero 子组件中统一使用 `useHeroTheme()`，优先读取 `isDarkRef.value` 与 `resolveThemeValue(...)`。
+3. 使用 `getThemeRuntime(isDark)`，并基于 `effectiveDark`、`themeReady`、`version` 做主题分支，保证首次进入、刷新与运行时切换都一致。
+4. Hero 子组件中统一使用 `useHeroTheme()`，优先读取 `isDarkRef.value` 与 `resolveThemeValueByMode(...)`（或其兄弟方法 `resolveThemeColorByMode` / `resolveThemeSourceByMode`）。
 5. 对首屏敏感的 Hero 视觉层，必须通过 `themeReady` 控制渲染，避免 light/dark 闪烁。
-6. 禁止自动从 dark 回退到 light，或从 light 回退到 dark。共享解析器必须遵循 `dark ?? value` 与 `light ?? value`。
+6. 禁止自动从 dark 回退到 light，或从 light 回退到 dark。共享解析器（`resolveThemeValueByMode`、`resolveThemeColorByMode`、`resolveThemeSourceByMode`）遵循 `dark ?? value` 与 `light ?? value` 契约。
 7. 组件目录只保留视图渲染。若主题同步需要 observer、调度或共享生命周期，必须移动到 `.vitepress/utils/vitepress/runtime/theme/**`。
 
 相关 API：
-- `@utils/vitepress/runtime/theme/useThemeRuntime`
+- `@utils/vitepress/runtime/theme/themeRuntime`（`getThemeRuntime`）
 - `@utils/vitepress/runtime/theme/heroThemeContext`
 - `@utils/vitepress/runtime/theme/themeValueResolver`
 
@@ -182,10 +182,10 @@ const { t } = useSafeI18n("my-component", {
 
 ```ts
 import { useData } from "vitepress";
-import { useThemeRuntime } from "@utils/vitepress/runtime/theme";
+import { getThemeRuntime } from "@utils/vitepress/runtime/theme";
 
 const { isDark } = useData();
-const { effectiveDark, themeReady, version } = useThemeRuntime(isDark);
+const { effectiveDark, themeReady, version } = getThemeRuntime(isDark);
 ```
 
 ## 尺寸监听规范（Resize）
@@ -343,90 +343,9 @@ yarn frontmatter
 
 ## Hero 扩展手册
 
-Hero 扩展必须从契约层开始，不要直接从视图组件硬改。
+完整的 Hero 扩展指南 — 包括排版样式、浮动元素、Shader 模板、背景渲染器、导航搜索视觉 — 请参考专门页面：
 
-### 1. 新增 Typography 样式
-
-通过排版注册表挂载新样式：
-
-```ts
-import { heroTypographyRegistry } from "@utils/vitepress/api/frontmatter/hero";
-
-heroTypographyRegistry.registerStyle({
-  type: "editorial-soft",
-  aliases: ["soft-editorial"],
-  motion: {
-    intensity: 0.9,
-    title: { x: 6, y: -4, scale: 1.03 },
-    text: { x: 8, y: 3, scale: 1.02 },
-    tagline: { x: 4, y: 6, scale: 1.01 },
-    image: { x: 5, y: -2, scale: 1.015 },
-    transitionDuration: 520,
-    transitionDelayStep: 36,
-    transitionEasing: "cubic-bezier(0.2, 0.9, 0.2, 1)",
-  },
-});
-```
-
-前端通过 `hero.typography.type` 使用该样式。
-
-### 2. 新增 Floating Element 类型
-
-通过浮动元素注册表扩展：
-
-```ts
-import { floatingElementRegistry } from "@utils/vitepress/api/frontmatter/hero";
-
-floatingElementRegistry.registerType({
-  type: "keyword-chip",
-  renderAs: "badge",
-  className: "floating-keyword-chip",
-});
-```
-
-若需要完全自定义渲染，应绑定组件，并明确文档里的 `componentProps` 契约。
-
-### 3. 新增 Shader 模板
-
-Shader 模板在 `.vitepress/config/shaders/index.ts` 注册，模板结构定义在 `.vitepress/config/shaders/templates/base-shader.ts`。
-
-最小写法：
-
-```ts
-import { registerShaderTemplate } from "@config/shaders";
-import { baseVertexShader, buildTemplate } from "@config/shaders/templates/base-shader";
-
-registerShaderTemplate("aurora", buildTemplate({
-  key: "aurora",
-  vertex: baseVertexShader,
-  fragment: `...`,
-  defaultUniforms: {
-    uIntensity: 0.8,
-  },
-}));
-```
-
-如果要作为内置预设发布，除了动态注册，还应新增独立文件并加入默认 shader registry。
-
-### 4. 新增 Background Renderer 类型
-
-如果不是新增 shader 预设，而是新增真正的背景类型：
-
-1. 在 `HeroFrontmatterApi.ts` 中扩展 `HeroBackgroundType` 与相关契约。
-2. 在同一 API 层完成规范化。
-3. 在 `.vitepress/theme/components/hero/background/` 新建渲染组件。
-4. 在 `.vitepress/theme/components/hero/background/BackgroundLayer.vue` 中接入类型到组件映射。
-5. 补充对应中英文示例页面。
-
-### 5. 扩展 Hero Nav/Search 视觉
-
-首页顶部导航与搜索框视觉由 `hero.colors.*` 契约驱动，并在 `.vitepress/utils/vitepress/runtime/hero/navAdaptiveState.ts` 中解析。
-
-若需要新增 Hero 驱动的 nav/search 样式能力：
-
-1. 先在 `HeroFrontmatterApi.ts` 增加 typed color key。
-2. 再在 `navAdaptiveState.ts` 中消费并映射为 CSS 变量。
-3. 避免在组件内直接写主题分支，优先复用变量契约。
+**→ [Hero 扩展手册](./heroExtension)**
 
 ## 文档与校验清单
 
@@ -452,4 +371,4 @@ registerShaderTemplate("aurora", buildTemplate({
 - 内部代码统一使用 `@` 别名导入。
 - 所有扩展入口必须通过注册机制暴露。
 - 至少执行以下校验：
-  - `pnpm -s tsc --noEmit`
+  - `npx tsc --noEmit`

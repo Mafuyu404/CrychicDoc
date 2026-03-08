@@ -7,6 +7,9 @@ priority: 30
 hidden: false
 ---
 
+*[HTML]: Hyper Text Markup Language
+*[W3C]: World Wide Web Consortium
+
 # 样式与插件指南
 
 本文档是 CrychicDoc 中所有可用的 Markdown 功能的完整参考，包括文本格式化、容器插件和自定义 Vue 组件。
@@ -18,15 +21,15 @@ hidden: false
 ### 缩写词 (`abbr`)
 
 ```markdown
-_[HTML]: Hyper Text Markup Language
-_[W3C]: World Wide Web Consortium
-The HTML specification is maintained by the W3C.
+*[HTML]: Hyper Text Markup Language
+*[W3C]: World Wide Web Consortium
+
+The [HTML] specification is maintained by the [W3C].
 ```
 
 **预览：**
-_[HTML]: Hyper Text Markup Language
-_[W3C]: World Wide Web Consortium
-The HTML specification is maintained by the W3C.
+
+The [HTML] specification is maintained by the [W3C].
 
 ---
 
@@ -345,23 +348,85 @@ Vuetify 风格的旧版警告框，使用 `v-success | v-info | v-warning | v-er
 
 创建图片或自定义内容的轮播组件。
 
+#### 支持配置
+
+| 字段             | 用途                 | 类型                  | 说明                       |
+| ---------------- | -------------------- | --------------------- | -------------------------- |
+| `cycle`          | 自动轮播             | `boolean`             | 默认为 `false`             |
+| `interval`       | 自动轮播间隔         | `number`              | 单位为毫秒                 |
+| `hideDelimiters` | 隐藏底部分页点       | `boolean`             | 推荐使用的字段名           |
+| `undelimiters`   | 隐藏底部分页点       | `boolean`             | 兼容旧字段，仍然支持       |
+| `showArrows`     | 显示箭头或悬停箭头   | `boolean\|\"hover\"`  | 推荐使用的字段名           |
+| `arrows`         | 显示箭头或悬停箭头   | `boolean\|\"hover\"`  | 兼容旧字段，仍然支持       |
+| `continuous`     | 到末尾后继续循环     | `boolean`             | 默认为 `true`              |
+| `height`         | 强制指定固定高度     | `string\|number`      | 不填时将自动测量内容高度   |
+
+#### 基本语法
+
 ```markdown
-::: carousels#{"cycle": true, "interval": 2800, "hideDelimiters": false}
+::: carousels#{"cycle": true, "interval": 3000, "hideDelimiters": false}
 @tab
-![图片1](https://example.com/1.png)
+![图片1](/imgs/screenshots/nav/zh-kubejs-course.png)
 @tab
-![图片2](https://example.com/2.png)
+![图片2](/imgs/screenshots/nav/zh-kubejs-1201-intro.png)
+@tab
+![图片3](/imgs/screenshots/nav/zh-tags-home.png)
 :::
 ```
 
 **演示：**
 
-:::: demo 轮播示例
+#### 图片轮播演示
+
+:::: demo 图片轮播示例
 ::: carousels#{"cycle": true, "interval": 3000, "hideDelimiters": false}
+@tab
+![图片1](/imgs/screenshots/nav/zh-kubejs-course.png)
+@tab
+![图片2](/imgs/screenshots/nav/zh-kubejs-1201-intro.png)
+@tab
+![图片3](/imgs/screenshots/nav/zh-tags-home.png)
+:::
+::::
+
+---
+
+### 内容轮播 (`carousels`)
+
+轮播组件也可以放置任意 Markdown 内容。
+
+#### 内容轮播语法
+
+```markdown
+::: carousels#{"cycle": false}
 @tab
 **第一张幻灯片** — 可以放任意 Markdown 内容。
 @tab
 **第二张幻灯片** — 包括代码、图片和格式化文本。
+@tab
+## 第三张幻灯片
+
+- 列表项 1
+- 列表项 2
+:::
+```
+
+**演示：**
+
+#### 内容轮播演示
+
+:::: demo 内容轮播示例
+::: carousels#{"cycle": false}
+@tab
+**第一张幻灯片** — 可以放任意 Markdown 内容。
+@tab
+**第二张幻灯片** — 包括代码、图片和格式化文本。
+@tab
+
+## 第三张幻灯片
+
+- 列表项 1
+- 列表项 2
 :::
 ::::
 
@@ -376,6 +441,10 @@ Vuetify 风格的旧版警告框，使用 `v-success | v-info | v-warning | v-er
 | `src`    | 要嵌入的网址（必填） | `string` | —       |
 | `height` | 框架高度             | `length` | `140px` |
 
+`src` 同时支持普通 URL 和 Markdown 自动链接形式，例如 `<https://misode.github.io/>`。
+
+#### 基本语法
+
 ```markdown
 :::iframes#{"src": "https://misode.github.io/"}
 :::
@@ -386,9 +455,27 @@ Vuetify 风格的旧版警告框，使用 `v-success | v-info | v-warning | v-er
 **演示：**
 
 :::: demo 内嵌外链示例
-:::iframes#{"src": "https://misode.github.io/", "height": "300px"}
+:::iframes#{"src": "<https://misode.github.io/>", "height": "300px"}
 :::
 ::::
+
+---
+
+### 主题图片切换
+
+可以通过 `.light-only` 和 `.dark-only` 类名，根据当前 VitePress 主题切换截图或插图。
+
+既支持 Markdown 属性语法，也支持原生 HTML 图片标签：
+
+```markdown
+![浅色面板](/images/demo/dashboard-light.webp){.light-only}
+![深色面板](/images/demo/dashboard-dark.webp){.dark-only}
+```
+
+```html
+<img class="light-only" src="/images/demo/dashboard-light.webp" alt="浅色面板" />
+<img class="dark-only" src="/images/demo/dashboard-dark.webp" alt="深色面板" />
+```
 
 ---
 
@@ -411,6 +498,20 @@ Vuetify 风格的旧版警告框，使用 `v-success | v-info | v-warning | v-er
 | `avatar-type` | `string` | 头像类型：`icon`、`ai`、`github` | `"icon"` |
 | `location`    | `string` | 消息位置：`left`、`right`        | `"left"` |
 | `avatar-link` | `string` | 头像点击链接                     | `""`     |
+
+#### 基本语法
+
+```markdown
+:::: chat title="AI 对话演示"
+::: message nickname="用户" avatar-type="icon"
+你好，能帮我解释一下什么是 Vue 组合式 API 吗？
+:::
+
+::: message nickname="AI 助手" avatar-type="ai" location="right"
+当然可以！Vue 组合式 API 是 Vue 3 中整理组件逻辑的新方式。
+:::
+::::
+```
 
 **演示：**
 
@@ -451,7 +552,7 @@ GitHub 头像会自动添加链接跳转到用户的 GitHub 主页。
 
 **演示：**
 
-:::: demo 时间线示例
+::::: demo 时间线示例
 :::: timeline
 ::: timeline-item type="start" opposite="2024-08"
 项目启动
@@ -670,6 +771,7 @@ void main() {
 **演示：**
 
 ::: shader-effect{"speed":1}
+
 ```glsl
 varying vec2 vUv;
 
@@ -704,6 +806,7 @@ void main() {
   gl_FragColor = vec4(finalColor, 1.0);
 }
 ```
+
 :::
 
 ---
@@ -848,3 +951,9 @@ graph TD
 - [Markdown 扩展文档](https://theme-hope.vuejs.org/zh/guide/markdown/overview)
 - [Vue Chart 文档](https://vuechart.wtmcdn.com/)
 - [Mermaid 文档](https://mermaid.js.org/)
+
+## 相关开发者页面
+
+- [扩展架构说明](./extensionArchitecture) — 如何使用插件工厂创建新的 Markdown 插件。
+- [框架可维护性指南](./frameworkMaintainability) — 完整扩展 API 参考与工程规范。
+- [Hero 扩展手册](./heroExtension) — Shader 预设、背景渲染器与 Hero 视觉扩展。

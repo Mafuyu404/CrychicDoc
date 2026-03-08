@@ -168,14 +168,14 @@ Use this standard for every component that has theme-sensitive visuals (hero bac
 
 1. Do not read DOM theme classes directly in feature components.
 2. Do not use raw `useData().isDark` as the sole source for first-paint visuals.
-3. Use `useThemeRuntime(isDark)` and consume `effectiveDark`, `themeReady`, and `version` for visual decisions that must be stable on first enter, reload, and runtime toggle.
-4. Inside hero descendants, use `useHeroTheme()` and prefer `isDarkRef.value` plus `resolveThemeValue(...)`.
+3. Use `getThemeRuntime(isDark)` and consume `effectiveDark`, `themeReady`, and `version` for visual decisions that must be stable on first enter, reload, and runtime toggle.
+4. Inside hero descendants, use `useHeroTheme()` and prefer `isDarkRef.value` plus `resolveThemeValueByMode(...)` (or the sibling helpers `resolveThemeColorByMode` / `resolveThemeSourceByMode`).
 5. For first-paint-sensitive hero parts, gate rendering with `themeReady` in `VPHero` to avoid light/dark flash.
-6. Never fallback from dark to light or light to dark automatically. Shared resolvers must follow `dark ?? value` and `light ?? value`.
+6. Never fall back from dark to light or light to dark automatically. Shared resolvers (`resolveThemeValueByMode`, `resolveThemeColorByMode`, `resolveThemeSourceByMode`) follow the `dark ?? value` and `light ?? value` contract.
 7. Component folders stay view-only. If theme sync needs observers, scheduling, or shared lifecycle, move that logic into `.vitepress/utils/vitepress/runtime/theme/**`.
 
 Reference APIs:
-- `@utils/vitepress/runtime/theme/useThemeRuntime`
+- `@utils/vitepress/runtime/theme/themeRuntime` (`getThemeRuntime`)
 - `@utils/vitepress/runtime/theme/heroThemeContext`
 - `@utils/vitepress/runtime/theme/themeValueResolver`
 
@@ -183,10 +183,10 @@ Minimal pattern:
 
 ```ts
 import { useData } from "vitepress";
-import { useThemeRuntime } from "@utils/vitepress/runtime/theme";
+import { getThemeRuntime } from "@utils/vitepress/runtime/theme";
 
 const { isDark } = useData();
-const { effectiveDark, themeReady, version } = useThemeRuntime(isDark);
+const { effectiveDark, themeReady, version } = getThemeRuntime(isDark);
 ```
 
 ## Resize Sync Standard
@@ -344,90 +344,9 @@ Do not introduce ad-hoc global selectors when a CSS variable contract or scoped 
 
 ## Hero Extension Playbook
 
-Hero extension work should start from the contract layer, not the view layer.
+For the full hero extension guide — including typography styles, floating elements, shader templates, background renderers, and nav/search visuals — see the dedicated page:
 
-### 1. Add a Typography Style
-
-Register new styles with the typography registry:
-
-```ts
-import { heroTypographyRegistry } from "@utils/vitepress/api/frontmatter/hero";
-
-heroTypographyRegistry.registerStyle({
-  type: "editorial-soft",
-  aliases: ["soft-editorial"],
-  motion: {
-    intensity: 0.9,
-    title: { x: 6, y: -4, scale: 1.03 },
-    text: { x: 8, y: 3, scale: 1.02 },
-    tagline: { x: 4, y: 6, scale: 1.01 },
-    image: { x: 5, y: -2, scale: 1.015 },
-    transitionDuration: 520,
-    transitionDelayStep: 36,
-    transitionEasing: "cubic-bezier(0.2, 0.9, 0.2, 1)",
-  },
-});
-```
-
-Use the registered type in frontmatter as `hero.typography.type`.
-
-### 2. Add a Floating Element Type
-
-Register custom floating item types in the floating registry:
-
-```ts
-import { floatingElementRegistry } from "@utils/vitepress/api/frontmatter/hero";
-
-floatingElementRegistry.registerType({
-  type: "keyword-chip",
-  renderAs: "badge",
-  className: "floating-keyword-chip",
-});
-```
-
-If the type requires custom rendering, bind it to a component and document the required `componentProps`.
-
-### 3. Add a Shader Template
-
-Shader templates are registered in `.vitepress/config/shaders/index.ts` and shaped by `.vitepress/config/shaders/templates/base-shader.ts`.
-
-Minimal pattern:
-
-```ts
-import { registerShaderTemplate } from "@config/shaders";
-import { baseVertexShader, buildTemplate } from "@config/shaders/templates/base-shader";
-
-registerShaderTemplate("aurora", buildTemplate({
-  key: "aurora",
-  vertex: baseVertexShader,
-  fragment: `...`,
-  defaultUniforms: {
-    uIntensity: 0.8,
-  },
-}));
-```
-
-If it should ship as a built-in preset, also add a dedicated file under `.vitepress/config/shaders/` and include it in the default registry map.
-
-### 4. Add a New Background Renderer Type
-
-If the new feature is not just a new shader preset but a new background type:
-
-1. Extend `HeroBackgroundType` and related contracts in `HeroFrontmatterApi.ts`.
-2. Normalize the new config shape in the same API layer.
-3. Create the renderer component under `.vitepress/theme/components/hero/background/`.
-4. Wire the type-to-component mapping in `.vitepress/theme/components/hero/background/BackgroundLayer.vue`.
-5. Add a localized example page proving the new type works.
-
-### 5. Extend Hero Nav/Search Visuals
-
-Top-of-page nav and search visuals are driven by the `hero.colors.*` contract and resolved in `.vitepress/utils/vitepress/runtime/hero/navAdaptiveState.ts`.
-
-If you need new hero-driven nav/search behavior:
-
-1. Add the typed color key to `HeroFrontmatterApi.ts`.
-2. Resolve it in `navAdaptiveState.ts`.
-3. Consume it through CSS variables rather than direct component branching.
+**→ [Hero Extension Playbook](./heroExtension)**
 
 ## Documentation and Verification Checklist
 
@@ -453,4 +372,4 @@ Minimum verification for framework work:
 - Use alias imports only (`@...`) for internal code.
 - Keep extension points registration-driven.
 - Validate with:
-  - `pnpm -s tsc --noEmit`
+  - `npx tsc --noEmit`

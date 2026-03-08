@@ -79,3 +79,9 @@ When a change modifies the shared framework instead of just CrychicDoc content:
 3. Is the extension documented in both English and Chinese?
 4. Are examples compile-safe and based on real keys/components?
 5. Is the upstream/downstream sync plan clear?
+
+## Related Pages
+
+- [Framework Maintainability Guide](./frameworkMaintainability) — Full extension API reference and engineering standards.
+- [Extension Architecture](./extensionArchitecture) — File ownership rules, import alias reference, and layer placement guide.
+- [Hero Extension Playbook](./heroExtension) — Typography, floating elements, shaders, backgrounds, and nav/search visuals.

@@ -7,6 +7,9 @@ priority: 30
 hidden: false
 ---
 
+*[HTML]: Hyper Text Markup Language
+*[W3C]: World Wide Web Consortium
+
 # Styles & Plugins Guide
 
 This document is a complete specification for all available Markdown features in CrychicDoc, including text formatting, container plugins, and custom Vue components.
@@ -18,14 +21,14 @@ These plugins extend standard Markdown syntax for richer text representation.
 ### Abbreviations (`abbr`)
 
 ```markdown
-_[HTML]: Hyper Text Markup Language
-_[W3C]: World Wide Web Consortium
+*[HTML]: Hyper Text Markup Language
+*[W3C]: World Wide Web Consortium
+
 The HTML specification is maintained by the W3C.
 ```
 
 **Preview:**
-_[HTML]: Hyper Text Markup Language
-_[W3C]: World Wide Web Consortium
+
 The HTML specification is maintained by the W3C.
 
 ---
@@ -262,8 +265,6 @@ Sidebar system refactored
 Documentation maintained to date
 :::
 ::::
-:::::
-
 ---
 
 ## Chart Containers
@@ -307,7 +308,7 @@ Series A | Jan: 20, Feb: 35, Mar: 45, Apr: 65
 Development: 150, Testing: 80, Documentation: 60, Meetings: 40
 :::
 
-:::
+::::
 :::::
 
 ---
@@ -432,6 +433,7 @@ Use a dedicated container when you want the code to drive a live shader canvas d
 
 ````markdown
 ::: shader-effect{"speed":1}
+
 ```glsl
 varying vec2 vUv;
 
@@ -466,18 +468,20 @@ void main() {
   gl_FragColor = vec4(finalColor, 1.0);
 }
 ```
+
 :::
 ````
 
-| Field    | Type      | Description                                   | Default |
-| -------- | --------- | --------------------------------------------- | ------- |
-| `speed`  | `number`  | Animation speed multiplier                    | `1`     |
+| Field    | Type      | Description                                  | Default |
+| -------- | --------- | -------------------------------------------- | ------- |
+| `speed`  | `number`  | Animation speed multiplier                   | `1`     |
 | `preset` | `string`  | Optional preset fallback (`wave/sunset/...`) | `wave`  |
-| `paused` | `boolean` | Pause animation                               | `false` |
+| `paused` | `boolean` | Pause animation                              | `false` |
 
 **Demo:**
 
 ::: shader-effect{"speed":1}
+
 ```glsl
 varying vec2 vUv;
 
@@ -512,6 +516,7 @@ void main() {
   gl_FragColor = vec4(finalColor, 1.0);
 }
 ```
+
 :::
 
 ---
@@ -678,6 +683,21 @@ Click :::dialog#demo-dialog here::: to open the dialog.
 
 Creates an image or content carousel/slideshow.
 
+#### Accepted Config
+
+| Field            | Purpose                     | Type                | Notes                                 |
+| ---------------- | --------------------------- | ------------------- | ------------------------------------- |
+| `cycle`          | Auto-play slides            | `boolean`           | Defaults to `false`                   |
+| `interval`       | Auto-play interval          | `number`            | Milliseconds                          |
+| `hideDelimiters` | Hide bottom dots            | `boolean`           | Preferred key                         |
+| `undelimiters`   | Hide bottom dots            | `boolean`           | Legacy alias, still supported         |
+| `showArrows`     | Show arrows or hover arrows | `boolean\|\"hover\"` | Preferred key                         |
+| `arrows`         | Show arrows or hover arrows | `boolean\|\"hover\"` | Legacy alias, still supported         |
+| `continuous`     | Loop when reaching the end  | `boolean`           | Defaults to `true`                    |
+| `height`         | Force a fixed carousel size | `string\|number`    | Optional, otherwise height is measured |
+
+#### Syntax
+
 ```markdown
 ::: carousels#{"cycle": true, "interval": 2800, "hideDelimiters": false}
 @tab
@@ -689,12 +709,25 @@ Creates an image or content carousel/slideshow.
 
 **Demo:**
 
-:::: demo Carousel Example
+#### Content Carousel Demo
+
+:::: demo Content Carousel Example
 ::: carousels#{"cycle": true, "interval": 3000, "hideDelimiters": false}
 @tab
 **Slide 1** — You can put any Markdown content here.
 @tab
 **Slide 2** — Including code, images, and formatted text.
+:::
+::::
+
+#### Image Carousel Demo
+
+:::: demo Image Carousel Example
+::: carousels#{"cycle": true, "interval": 2800, "hideDelimiters": false}
+@tab
+![Image 1](https://example.com/1.png)
+@tab
+![Image 2](https://example.com/2.png)
 :::
 ::::
 
@@ -709,6 +742,10 @@ Embeds an external web page in the document.
 | `src`    | URL to embed (required) | `string` | —       |
 | `height` | Frame height            | `length` | `140px` |
 
+`src` accepts both standard URLs and Markdown auto-link style values such as `<https://misode.github.io/>`.
+
+#### Syntax
+
 ```markdown
 :::iframes#{"src": "https://misode.github.io/"}
 :::
@@ -719,9 +756,27 @@ Embeds an external web page in the document.
 **Demo:**
 
 :::: demo Iframe Example
-:::iframes#{"src": "https://misode.github.io/", "height": "300px"}
+:::iframes#{"src": "<https://misode.github.io/>", "height": "300px"}
 :::
 ::::
+
+---
+
+### Theme-Aware Images
+
+Use `.light-only` and `.dark-only` classes to swap screenshots based on the current VitePress theme.
+
+This works with Markdown attribute syntax as well as raw HTML images:
+
+```markdown
+![Light dashboard](/images/demo/dashboard-light.webp){.light-only}
+![Dark dashboard](/images/demo/dashboard-dark.webp){.dark-only}
+```
+
+```html
+<img class="light-only" src="/images/demo/dashboard-light.webp" alt="Light dashboard" />
+<img class="dark-only" src="/images/demo/dashboard-dark.webp" alt="Dark dashboard" />
+```
 
 ---
 
@@ -744,6 +799,20 @@ Creates a simulated chat interface supporting multiple avatar types.
 | `avatar-type` | `string` | Avatar type: `icon`, `ai`, `github` | `"icon"` |
 | `location`    | `string` | Message side: `left`, `right`       | `"left"` |
 | `avatar-link` | `string` | Click link on avatar                | `""`     |
+
+#### Syntax
+
+```markdown
+:::: chat title="AI Chat Demo"
+::: message nickname="User" avatar-type="icon"
+Hello! Can you explain what the Vue Composition API is?
+:::
+
+::: message nickname="AI Assistant" avatar-type="ai" location="right"
+Sure! The Vue Composition API is a new way to organize component logic in Vue 3.
+:::
+::::
+```
 
 **Demo:**
 

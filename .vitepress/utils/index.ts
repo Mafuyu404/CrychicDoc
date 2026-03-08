@@ -6,6 +6,7 @@ import { contentUtils } from "./content";
 import { vitepressUtils } from "./vitepress";
 import { chartsUtils } from "./charts";
 import { countWord } from "./content/functions";
+import "vuetify/styles";
 
 export const utils = {
     content: contentUtils,
