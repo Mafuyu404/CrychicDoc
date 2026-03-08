@@ -418,6 +418,13 @@ Vuetify 风格的旧版警告框，使用 `v-success | v-info | v-warning | v-er
 ::: carousels#{"cycle": false}
 @tab
 **第一张幻灯片** — 可以放任意 Markdown 内容。
+
+dasdads
+
+dasdads
+asdasd
+
+asd
 @tab
 **第二张幻灯片** — 包括代码、图片和格式化文本。
 

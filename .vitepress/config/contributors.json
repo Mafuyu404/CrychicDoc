@@ -7,7 +7,8 @@
             "M1hono",
             "m1hono",
             "Guda chen",
-            "Customer service is currently offline."
+            "Customer service is currently offline.",
+            "Cursor"
         ],
         "avatar": "M1hono"
     },
@@ -37,7 +38,7 @@
     {
         "name": "Gu-meng",
         "username": "Gu-meng",
-        "mapByNameAliases": ["Gu-meng", "GuMeng"],
+        "mapByNameAliases": ["Gu-meng", "GuMeng", "gu-meng"],
         "avatar": "Gu-meng"
     },
     {
