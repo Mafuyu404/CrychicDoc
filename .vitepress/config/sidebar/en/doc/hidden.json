@@ -9,5 +9,6 @@
   "sidebarGuide.md": false,
   "pluginsGuide.md": false,
   "litetreeGuide.md": false,
-  "vscodeSnippetsGuide.md": false
+  "vscodeSnippetsGuide.md": false,
+  "guide/": false
 }

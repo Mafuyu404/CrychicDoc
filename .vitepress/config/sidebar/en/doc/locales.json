@@ -9,5 +9,6 @@
   "sidebarGuide.md": "Sidebar Configuration",
   "pluginsGuide.md": "Styles & Plugins",
   "litetreeGuide.md": "LiteTree Component",
-  "vscodeSnippetsGuide.md": "VSCode Code Snippets"
+  "vscodeSnippetsGuide.md": "VSCode Code Snippets",
+  "guide/": "guide"
 }

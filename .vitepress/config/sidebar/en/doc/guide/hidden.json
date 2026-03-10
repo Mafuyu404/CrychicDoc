@@ -1,8 +1,8 @@
 {
-  "_self_": false,
-  "KubeJS.md": false,
-  "community.md": false,
-  "minecraft.md": false,
-  "pixelart.md": false,
-  "resource.md": false
+    "_self_": true,
+    "KubeJS.md": false,
+    "community.md": false,
+    "minecraft.md": false,
+    "pixelart.md": false,
+    "resource.md": false
 }

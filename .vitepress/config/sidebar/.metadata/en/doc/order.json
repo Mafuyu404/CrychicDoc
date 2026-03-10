@@ -7,7 +7,7 @@
   "guide/": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "rules.md": {
     "valueHash": "1b0fd9efa5279c4203b7c70233f86dbf",
