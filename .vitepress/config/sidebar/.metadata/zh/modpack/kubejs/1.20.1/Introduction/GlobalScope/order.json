@@ -1,19 +1,19 @@
 {
   "Classes/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "f899139df5e1059396431415e770c6dd",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447348
   },
   "Description.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "cb5526c351bcf61537fc6d0e09e2d661",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447348
   },
   "Utils.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "94f6d7e04a4d452035300f18b984988c",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447348
   }

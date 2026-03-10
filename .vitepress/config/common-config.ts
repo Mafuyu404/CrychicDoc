@@ -272,18 +272,25 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                 process.env.NODE_ENV === "development",
             __VUE_OPTIONS_API__: true,
             __VUE_PROD_DEVTOOLS__: false,
+            __GIT_CHANGELOG_ENABLED__: isFeatureEnabled("gitChangelog"),
         },
         plugins: [
-            // @ts-ignore
-            GitChangelog({
-                repoURL: () => projectInfo.repository.url,
-                mapAuthors: (contributors as Contributor[]).map((author) => ({
-                    ...author,
-                    avatar: generateAvatarUrl(author.avatar),
-                })),
-            }),
-            // @ts-ignore
-            GitChangelogMarkdownSection(),
+            ...(isFeatureEnabled("gitChangelog")
+                ? [
+                      // @ts-ignore
+                      GitChangelog({
+                          repoURL: () => projectInfo.repository.url,
+                          mapAuthors: (contributors as Contributor[]).map(
+                              (author) => ({
+                                  ...author,
+                                  avatar: generateAvatarUrl(author.avatar),
+                              }),
+                          ),
+                      }),
+                      // @ts-ignore
+                      GitChangelogMarkdownSection(),
+                  ]
+                : []),
             // Conditionally load sidebar plugin based on autoSidebar feature flag
             ...(isFeatureEnabled("autoSidebar")
                 ? [

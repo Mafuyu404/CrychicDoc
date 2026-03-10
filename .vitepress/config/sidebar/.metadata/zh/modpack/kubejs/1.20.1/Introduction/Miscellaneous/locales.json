@@ -6,50 +6,50 @@
     "lastSeen": 1749247315936
   },
   "Collection.md": {
-    "valueHash": "d15b505cce09406de9f918cb1f8c641c",
-    "isUserSet": false,
+    "valueHash": "508b37f195b91f7d901273d4cd2d87f0",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "CompletableFuture.md": {
-    "valueHash": "64aa2a5f909a022cd0525173328a9c6e",
-    "isUserSet": false,
+    "valueHash": "d61b1cb4cdac1f63422faa22f46d061f",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "Components.md": {
-    "valueHash": "05bbb43b3d923283e0b6ffafd088f41f",
-    "isUserSet": false,
+    "valueHash": "bb79667f37035e9562ec6bcffd6cf8ef",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "CountingMap.md": {
-    "valueHash": "99930f59074c77105b9357ea91b3d51f",
-    "isUserSet": false,
+    "valueHash": "7458eb35e3280646e1d900c697f2a50e",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "Description.md": {
-    "valueHash": "b5a7adde1af5c87d7fd797b6245c2a39",
-    "isUserSet": false,
+    "valueHash": "ba9f120851e42a669ea92480dbc1a408",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "Ingredient.md": {
-    "valueHash": "59198347aa8a409ad9e4f0ccd56950eb",
-    "isUserSet": false,
+    "valueHash": "d72acd8bf11bdf9460b3a815dac92db5",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "IngredientActionFilter.md": {
-    "valueHash": "d54b2e135b967d70abc849e1dc5515a9",
-    "isUserSet": false,
+    "valueHash": "1c98eb80a6402127ad9a2101e8530af9",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "ItemStack.md": {
-    "valueHash": "81f76f1b1d9595a3673d7a34a1177414",
-    "isUserSet": false,
+    "valueHash": "ba62de7eddb041c670fadeac8910a565",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
@@ -60,86 +60,86 @@
     "lastSeen": 1749254447368
   },
   "List.md": {
-    "valueHash": "4ee29ca12c7d126654bd0e5275de6135",
-    "isUserSet": false,
+    "valueHash": "3712972d84adf48acbd6ad24b4d75ad0",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "Map.md": {
-    "valueHash": "46f3ea056caa3126b91f3f70beea068c",
-    "isUserSet": false,
+    "valueHash": "6ae70967094bd3c6e47d3f6c79485a4e",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "NumberProvider.md": {
-    "valueHash": "1ecd48b18c98e342014ac37b96064af0",
-    "isUserSet": false,
+    "valueHash": "57c16bc62e15e4dfa6f74797d33fc97b",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "ParticleOptions.md": {
-    "valueHash": "97d9485c593652225cfba6d73a698fbd",
-    "isUserSet": false,
+    "valueHash": "7bdd90ece29e01a3469537e8b7ab44be",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "Pattern.md": {
-    "valueHash": "57391192dfa1f247ad015a0fe2eca48e",
-    "isUserSet": false,
+    "valueHash": "f0789e79d48f135e5d870753f7a85d05",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "Providers.md": {
-    "valueHash": "ebb4c7315a13fbb6d59f702992052318",
-    "isUserSet": false,
+    "valueHash": "0b7b7ef2861b2e599b37ee508f7060d2",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "Random.md": {
-    "valueHash": "64663f4646781c9c0110838b905daa23",
-    "isUserSet": false,
+    "valueHash": "3bde446e92cb25e61c6c6bfaa19d8ec6",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "RandomGenerator.md": {
-    "valueHash": "1d0e61fd9bf1809eecfa8259d2cef896",
-    "isUserSet": false,
+    "valueHash": "935ab85340d1406ebbdf823517ba0891",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "RecipeFilter.md": {
-    "valueHash": "80149cba920280d5119f862ca45634af",
-    "isUserSet": false,
+    "valueHash": "17424abe34fb7800ee105d4455d6fa63",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "RegistryInfo.md": {
-    "valueHash": "fc0f6848bf3176bafe39b2ebac9b6beb",
-    "isUserSet": false,
+    "valueHash": "c35cb6eb4095a11ee3bc3a77cb809136",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "Runnable.md": {
-    "valueHash": "ea52882b4555d68253c21906fed1a7f9",
-    "isUserSet": false,
+    "valueHash": "7e3dcad39f4651322270eef25c8eec67",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "SoundEvent.md": {
-    "valueHash": "0d67ee51ade0489c136d9d4ac9d13ab0",
-    "isUserSet": false,
+    "valueHash": "1edcc31706c4e34bd3786a5ddcfc1711",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "Stat.md": {
-    "valueHash": "2fdf18bfff0b453fa66b1995c7d7aeed",
-    "isUserSet": false,
+    "valueHash": "d7656a65244e1fa48671f8f71422550e",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },
   "Supplier.md": {
-    "valueHash": "ec136b444eede3bc85639fac0dd06229",
-    "isUserSet": false,
+    "valueHash": "0b7b7ef2861b2e599b37ee508f7060d2",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447368
   },

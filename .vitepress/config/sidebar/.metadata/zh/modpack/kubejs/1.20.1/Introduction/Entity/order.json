@@ -1,31 +1,31 @@
 {
   "Attribute.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "f899139df5e1059396431415e770c6dd",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447334
   },
   "Catalogue.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "115e589db5ec8ec6f2f9fd5bb9096a9d",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447334
   },
   "PotionEffects.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "3644a684f98ea8fe223c713b77189a77",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447334
   },
   "Spawn.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "c0c7c76d30bd3dcaefc96f40275bdc0a",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447334
   },
   "Brain.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "7a53928fa4dd31e82c6ef826f341daec",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Events.md": {
@@ -34,33 +34,33 @@
     "isActiveInStructure": false
   },
   "Goal.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "e5841df2166dd424a57127423d276bbe",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "LivingEntity.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "94f6d7e04a4d452035300f18b984988c",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Methods.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "98f13708210194c475687be6106a3b84",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Mob.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "18d8042386b79e2c279fd162df0205c8",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Player.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "cee631121c2ec9232f3a2f028ad5c89b",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Vector.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "7ef605fc8dba5425d6965fbd4c8fbe1f",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Description.md": {

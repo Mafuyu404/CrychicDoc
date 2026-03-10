@@ -1,67 +1,67 @@
 {
   "Addon/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "81f7d977c49aaa00fb2cd0d35fed6a9a",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Block/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "3644a684f98ea8fe223c713b77189a77",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Description.md": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "86e58a8f53fcc5a51743fe145aeae1f1",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Entity/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "94f6d7e04a4d452035300f18b984988c",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Event/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "c0c7c76d30bd3dcaefc96f40275bdc0a",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "GlobalScope/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "08f90c1a417155361a5c4b8d297e0d78",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Item/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "5f93f983524def3dca464469d2cf9f3e",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "LootTable/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "18d8042386b79e2c279fd162df0205c8",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Miscellaneous/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "a9b7ba70783b617e9998dc4dd82eb3c5",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Network/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "cee631121c2ec9232f3a2f028ad5c89b",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "PotionEffect/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "9de6d14fff9806d4bcd1ef555be766cd",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Recipe/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "072b030ba126b2f4b2374f342be9ed44",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Tag/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "7cbbc409ec990f19c78c75bd1e06f215",
+    "isUserSet": true,
     "isActiveInStructure": true
   }
 }

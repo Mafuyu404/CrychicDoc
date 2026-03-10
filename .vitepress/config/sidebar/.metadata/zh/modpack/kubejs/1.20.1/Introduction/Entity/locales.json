@@ -6,26 +6,26 @@
     "lastSeen": 1749247315873
   },
   "Attribute.md": {
-    "valueHash": "f2bbdf9f72c085adc4d0404e370f0f4c",
-    "isUserSet": false,
+    "valueHash": "7b1ba5afdd0af121a6594a530693bcaa",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447333
   },
   "Catalogue.md": {
-    "valueHash": "a8567ec8887eb41c7870b3a624524a46",
-    "isUserSet": false,
+    "valueHash": "767fa455bb6826f4b550c21a6bca7182",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447333
   },
   "PotionEffects.md": {
-    "valueHash": "f3585d5ce0046854eedc2e76c4e9ca29",
-    "isUserSet": false,
+    "valueHash": "4a01019084ebafcd915005449b79a710",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447333
   },
   "Spawn.md": {
-    "valueHash": "4fd1dddbd78f7f7cdcd62e926266611e",
-    "isUserSet": false,
+    "valueHash": "1e5ed65cf1e3a3ffa4fae8c08f8ac624",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447333
   },
@@ -45,13 +45,13 @@
     "isActiveInStructure": true
   },
   "LivingEntity.md": {
-    "valueHash": "8c3327e81d025e0f01650fad0751d409",
-    "isUserSet": false,
+    "valueHash": "95712d2d321b36d30920a10919c949a7",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Methods.md": {
-    "valueHash": "20c51b5f4e9aeb5334c90ff072e6f928",
-    "isUserSet": false,
+    "valueHash": "69f8b441cd4c33dff4cdd4cac42411c5",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Mob.md": {
@@ -65,8 +65,8 @@
     "isActiveInStructure": true
   },
   "Vector.md": {
-    "valueHash": "65a050ce3fe604336f88a41cc9a23166",
-    "isUserSet": false,
+    "valueHash": "97005534e9997e2c2356b16b41a64631",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Description.md": {

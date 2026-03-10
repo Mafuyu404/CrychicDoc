@@ -6,20 +6,20 @@
     "lastSeen": 1749247315899
   },
   "Classes/": {
-    "valueHash": "e9878b4854d29907146149f695cb1cfb",
-    "isUserSet": false,
+    "valueHash": "fad060bd9a8bfac6c2e55c66dae11cf6",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447346
   },
   "Description.md": {
-    "valueHash": "b5a7adde1af5c87d7fd797b6245c2a39",
-    "isUserSet": false,
+    "valueHash": "ba9f120851e42a669ea92480dbc1a408",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447346
   },
   "Utils.md": {
-    "valueHash": "a470a23326b3831dd974dfc1116119c2",
-    "isUserSet": false,
+    "valueHash": "20dce2c6fa909a5cd62526615fe2788a",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447346
   }

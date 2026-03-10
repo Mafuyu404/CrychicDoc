@@ -1,31 +1,31 @@
 {
   "API/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "81f7d977c49aaa00fb2cd0d35fed6a9a",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447495
   },
   "Loot Modifiers/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "3644a684f98ea8fe223c713b77189a77",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447495
   },
   "LootJs.md": {
-    "valueHash": "cfcd208495d565ef66e7dff9f98764da",
-    "isUserSet": false,
+    "valueHash": "115e589db5ec8ec6f2f9fd5bb9096a9d",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447495
   },
   "LootModifiers/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "94f6d7e04a4d452035300f18b984988c",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447495
   },
   "LootTables/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "f899139df5e1059396431415e770c6dd",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447495
   },
