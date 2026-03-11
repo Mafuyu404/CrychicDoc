@@ -1,4 +1,7 @@
 import type { DefaultTheme, HeadConfig, UserConfig } from "vitepress";
+import type { Plugin } from "vite";
+import { execFileSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import { resolve } from "path";
 import { fileURLToPath } from "url";
 import {
@@ -7,8 +10,10 @@ import {
     getPaths,
     getLanguageLinks,
     autoDiscoverLanguageModules,
+    projectConfig,
 } from "../utils/config/project-config";
 import { templateCompilerOptions } from "@tresjs/core";
+import llmstxt from "vitepress-plugin-llms";
 
 import { DEFAULT_SIDEBAR_CACHE_DIR, sidebarPlugin } from "../utils/sidebar/";
 import { markdown } from "./markdown-plugins";
@@ -33,6 +38,52 @@ interface Contributor {
 function generateAvatarUrl(username: string) {
     return `https://github.com/${username}.png`;
 }
+
+function normalizeLlmsDomain(domain?: string) {
+    return domain?.replace(/\/+$/u, "") || undefined;
+}
+
+function createLlmsSettings() {
+    return {
+        ...projectConfig.llms,
+        domain: normalizeLlmsDomain(
+            projectConfig.llms?.domain || projectInfo.homepage,
+        ),
+        generateLLMsTxt: projectConfig.llms?.generateLLMsTxt ?? true,
+        generateLLMsFullTxt: projectConfig.llms?.generateLLMsFullTxt ?? true,
+        generateLLMFriendlyDocsForEachPage:
+            projectConfig.llms?.generateLLMFriendlyDocsForEachPage ?? true,
+        injectLLMHint: projectConfig.llms?.injectLLMHint ?? true,
+    };
+}
+
+function createLlmsReorganizePlugin(): Plugin | null {
+    if (!isFeatureEnabled("llms")) {
+        return null;
+    }
+    const llmsSettings = createLlmsSettings();
+    if (llmsSettings.generateLLMsTxt === false) {
+        return null;
+    }
+
+    const scriptPath = resolve(projectPaths.scripts, "reorganize-llms.mjs");
+    if (!existsSync(scriptPath)) {
+        return null;
+    }
+
+    return {
+        name: "crychicdoc-llms-reorganize",
+        apply: "build",
+        closeBundle() {
+            execFileSync(process.execPath, [scriptPath], {
+                cwd: resolve(process.cwd(), projectPaths.root),
+                stdio: "inherit",
+            });
+        },
+    };
+}
+
+const llmsReorganizePlugin = createLlmsReorganizePlugin();
 
 export const commonConfig: UserConfig<DefaultTheme.Config> = {
     title: projectInfo.name,
@@ -204,6 +255,20 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                     ),
                 },
                 {
+                    find: /^motion-dom$/,
+                    replacement: resolve(
+                        projectPaths.root,
+                        "node_modules/motion-dom/dist/es/index.mjs",
+                    ),
+                },
+                {
+                    find: /^motion-utils$/,
+                    replacement: resolve(
+                        projectPaths.root,
+                        "node_modules/motion-utils/dist/es/index.mjs",
+                    ),
+                },
+                {
                     find: "@utils",
                     replacement: resolve(projectPaths.vitepress, "utils"),
                 },
@@ -257,6 +322,10 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                 "vitepress-plugin-tabs",
                 "shiki-magic-move",
                 "markdown-it-multiple-choice",
+                "motion-v",
+                "framer-motion",
+                "motion-dom",
+                "motion-utils",
             ],
             external: ["path", "fs", "fast-glob", "gray-matter"],
         },
@@ -305,6 +374,8 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                       }),
                   ]
                 : []),
+            ...(isFeatureEnabled("llms") ? [llmstxt(createLlmsSettings())] : []),
+            ...(llmsReorganizePlugin ? [llmsReorganizePlugin] : []),
             // @ts-ignore
             groupIconVitePlugin({
                 customIcon: {

@@ -151,12 +151,21 @@ export const projectConfig: ProjectConfig = {
         // Global search toggle. Set false to force-disable search.
         search: true,
         gitChangelog: true,
+        llms: true,
         mermaid: true,
         drawio: true,
         markmap: true,
         multilingual: true,
         autoSidebar: true,
         editLink: false,
+    },
+
+    llms: {
+        domain: "https://docs.variedmc.cc",
+        generateLLMsTxt: true,
+        generateLLMsFullTxt: true,
+        generateLLMFriendlyDocsForEachPage: true,
+        injectLLMHint: true,
     },
 
     /**

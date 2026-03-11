@@ -246,6 +246,12 @@ function buildExternalCompatibleChain(routePath, area) {
 const llmsPath = new URL("../dist/llms.txt", import.meta.url);
 const projectRoot = path.resolve(new URL("../../", import.meta.url).pathname);
 const docsRoot = path.resolve(new URL("../../docs", import.meta.url).pathname);
+if (!existsSync(llmsPath)) {
+    console.warn(
+        "[llms] Skipping llms reorganization because dist/llms.txt was not generated.",
+    );
+    process.exit(0);
+}
 const raw = await fs.readFile(llmsPath, "utf8");
 const lines = raw.split(/\r?\n/);
 const firstEntryIndex = lines.findIndex((line) => line.trim().startsWith("- ["));
@@ -291,9 +297,10 @@ for (const entry of parsedEntries) {
     }
 
     const routeKey = sidebarMeta?.route || `/${lang}/${area}/external/`;
-    const parentChain = sidebarMeta?.chain && sidebarMeta.chain.length > 1
-        ? sidebarMeta.chain.slice(0, -1)
-        : buildExternalCompatibleChain(entry.routePath, area);
+    const parentChain =
+        sidebarMeta?.chain && sidebarMeta.chain.length > 1
+            ? sidebarMeta.chain.slice(0, -1)
+            : buildExternalCompatibleChain(entry.routePath, area);
     const chainKey = parentChain.join("||");
     const groupKey = `${lang}||${routeKey}||${chainKey}`;
 
