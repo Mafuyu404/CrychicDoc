@@ -34,7 +34,6 @@
 </template>
 
 <script setup lang="ts">
-    // @i18n
     import { ref, computed, onMounted } from "vue";
     import { ShikiMagicMove } from "shiki-magic-move/vue";
     import { useData } from "vitepress";
@@ -52,16 +51,12 @@
         stepsLz: string;
     }>();
 
-    /**
-     * Generate a random string for unique element IDs
-     */
     function generateRandomString(length: number) {
         const charset =
             "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         let result = "";
         for (let i = 0; i < length; i++) {
-            const randomIndex = Math.floor(Math.random() * charset.length);
-            result += charset[randomIndex];
+            result += charset[Math.floor(Math.random() * charset.length)];
         }
         return result;
     }
@@ -71,47 +66,18 @@
     const content = JSON.parse(decodeURIComponent(props.stepsLz));
     const step = ref(0);
 
-    // Initialize highlighter with comprehensive language support
     onMounted(async () => {
         try {
             highlighter.value = await createHighlighter({
                 themes: ["github-dark", "github-light"],
                 langs: [
-                    // Core web languages
-                    "javascript",
-                    "typescript",
-                    "jsx",
-                    "tsx",
-                    "html",
-                    "css",
-                    "scss",
-                    "sass",
-                    "vue",
-                    // Backend languages
-                    "java",
-                    "python",
-                    "cpp",
-                    "c",
-                    "csharp",
-                    "php",
-                    "ruby",
-                    "go",
-                    "rust",
-                    "swift",
-                    "kotlin",
-                    "scala",
-                    "r",
-                    // Data & Config
-                    "json",
-                    "yaml",
-                    "xml",
-                    "sql",
-                    // Documentation & Scripts
-                    "markdown",
-                    "bash",
-                    "powershell",
-                    "dockerfile",
-                    // Fallback
+                    "javascript", "typescript", "jsx", "tsx",
+                    "html", "css", "scss", "sass", "vue",
+                    "java", "python", "cpp", "c", "csharp",
+                    "php", "ruby", "go", "rust", "swift",
+                    "kotlin", "scala", "r",
+                    "json", "yaml", "xml", "sql",
+                    "markdown", "bash", "powershell", "dockerfile",
                     "text",
                 ],
             });
@@ -120,14 +86,10 @@
         }
     });
 
-    /**
-     * Current step data with extracted code from tokens
-     */
     const currentStep = computed(() => {
         const stepData = content[step.value];
         if (!stepData) return null;
 
-        // Extract code from precompiled tokens
         if (stepData.tokens && Array.isArray(stepData.tokens)) {
             return {
                 code: stepData.tokens
@@ -141,24 +103,44 @@
         return stepData;
     });
 
-    /**
-     * Switch to a different step
-     */
     const toggle = (i: number) => {
         step.value = i;
     };
 </script>
 
 <style scoped>
+    .magic-move.vp-code-group {
+        box-shadow: none !important;
+        border: 1px solid var(--vp-c-divider);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .magic-move.vp-code-group .tabs {
+        box-shadow: none !important;
+        border-bottom: 1px solid var(--vp-c-divider);
+    }
+
+    .magic-move :deep(*) {
+        box-shadow: none !important;
+    }
+
     @media screen and (min-width: 640px) {
         .language {
-            margin: 0 0 !important;
+            margin: 0 !important;
         }
+    }
+
+    .magic-move.vp-code-group {
+        box-shadow: none !important;
+        border: 1px solid var(--vp-c-divider) !important;
+        border-radius: 10px;
+        overflow: hidden;
     }
 
     .language {
         position: relative;
-        margin: 0 -24px;
+        margin: 0 !important;   /* was 0 -24px */
         background-color: var(--vp-code-block-bg);
         overflow-x: auto;
         transition: background-color 0.5s;
@@ -166,19 +148,15 @@
     }
 
     .magic-move :deep(pre) {
-        padding: 20px 0;
-        padding-left: 24px;
-        padding-right: 24px;
+        padding: 20px 24px;
         overflow-y: hidden !important;
         background: transparent !important;
     }
 
-    /* Theme-aware Magic Move styling */
     .magic-move :deep(.shiki) {
         background: transparent !important;
     }
 
-    /* Ensure proper dark mode background */
     .dark .language {
         background-color: var(--vp-code-block-bg) !important;
     }
@@ -187,7 +165,6 @@
         background: transparent !important;
     }
 
-    /* Magic Move tabs inherit the group icons plugin CSS */
     .tabs label[data-title]::before {
         display: inline-block;
         width: 1em;
@@ -198,7 +175,6 @@
         content: "";
     }
 
-    /* Loading state styling */
     .loading {
         display: flex;
         align-items: center;
