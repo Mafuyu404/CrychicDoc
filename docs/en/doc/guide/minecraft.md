@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: page
 title: Minecraft
 layoutClass: m-nav-layout
 sidebar: false

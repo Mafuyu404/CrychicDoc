@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: page
 title: Community Link
 layoutClass: m-nav-layout
 sidebar: false

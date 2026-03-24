@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: page
 title: 像素艺术
 layoutClass: m-nav-layout
 sidebar: false

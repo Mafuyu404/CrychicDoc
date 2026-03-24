@@ -1,6 +1,6 @@
 {
     "description": "Maps component IDs used in useSafeI18n() to their corresponding translation file paths",
-    "generatedAt": "2026-03-24T19:58:49.216Z",
+    "generatedAt": "2026-03-24T21:49:54.220Z",
     "mappings": {
         "article-metadata": "content/ArticleMetadata",
         "bills-component": "content/Bills",

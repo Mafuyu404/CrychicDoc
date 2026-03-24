@@ -155,137 +155,119 @@
             ? { "--nav-link-icon-bg": props.iconBackground }
             : undefined),
     }));
+
+    /** Shown in tooltip on hover. Uses `note` prop (opt-in hover-only info). */
+    const tooltipContent = computed(() => renderedNote.value || "");
 </script>
 
 <template>
-    <v-card
+    <v-tooltip
         v-if="link"
-        tag="a"
-        :href="resolvedHref"
-        :target="linkTarget"
-        :rel="linkRel"
-        class="m-nav-link"
-        variant="flat"
-        :ripple="false"
-        hover
-        :style="cardStyle"
-        :data-featured="featured ? 'true' : undefined"
-        :data-style="linkStyle"
+        :text="tooltipContent"
+        :disabled="!tooltipContent"
+        location="top"
+        :max-width="300"
+        transition="fade-transition"
+        content-class="m-nav-tooltip__content"
     >
-        <div class="m-nav-link-box">
-            <template v-if="!noIcon && (svg || url)">
-                <v-avatar
-                    v-if="svg"
-                    class="m-nav-link-icon"
-                    rounded="lg"
-                    size="44"
-                    color="surface-variant"
-                >
-                    <span v-html="svg"></span>
-                </v-avatar>
-                <v-avatar
-                    v-else-if="url"
-                    class="m-nav-link-icon"
-                    rounded="lg"
-                    size="44"
-                    color="surface-variant"
-                >
-                    <v-img :src="url" :alt="title" width="26" height="26" />
-                </v-avatar>
-            </template>
-            <div class="m-nav-link-content">
-                <div class="m-nav-link-header">
-                    <div v-if="badgeList.length" class="m-nav-link-badges">
-                        <v-chip
-                            v-for="(b, i) in badgeList"
-                            :key="i"
-                            size="x-small"
-                            :color="
-                                b.type === 'danger'
-                                    ? 'error'
-                                    : b.type === 'warning'
-                                      ? 'warning'
-                                      : b.type === 'tip'
-                                        ? 'success'
-                                        : 'primary'
-                            "
-                            variant="tonal"
-                            label
-                        >
-                            {{ b.text }}
-                        </v-chip>
+        <template #activator="{ props: tp }">
+            <a
+                class="m-nav-link"
+                :class="[
+                    linkStyle !== 'default' ? `m-nav-link--${linkStyle}` : '',
+                    { 'm-nav-link--featured': featured },
+                ]"
+                :href="resolvedHref"
+                :target="linkTarget"
+                :rel="linkRel"
+                :style="cardStyle"
+                v-bind="tp"
+            >
+                <div class="m-nav-link-box">
+                    <!-- Icon: plain div, no forced clipping -->
+                    <template v-if="!noIcon && (svg || url)">
+                        <div
+                            v-if="svg"
+                            class="m-nav-link-icon"
+                            v-html="svg"
+                        ></div>
+                        <div v-else-if="url" class="m-nav-link-icon">
+                            <img
+                                :src="url"
+                                :alt="title"
+                                onerror="this.parentElement.style.display='none'"
+                            />
+                        </div>
+                    </template>
+
+                    <!-- Content -->
+                    <div class="m-nav-link-content">
+                        <div class="m-nav-link-header">
+                            <span
+                                v-if="renderedEyebrow"
+                                class="m-nav-link-eyebrow"
+                                v-html="renderedEyebrow"
+                            ></span>
+                            <h5
+                                v-if="title"
+                                :id="formatTitle"
+                                class="m-nav-link-title"
+                            >
+                                <span
+                                    v-if="renderedTitle"
+                                    v-html="renderedTitle"
+                                ></span>
+                                <span v-else>{{ title }}</span>
+                            </h5>
+                            <!-- Multi-badge row -->
+                            <div v-if="badgeList.length" class="m-nav-link-badges">
+                                <span
+                                    v-for="(b, i) in badgeList"
+                                    :key="i"
+                                    class="m-nav-badge"
+                                    :data-type="b.type || 'info'"
+                                >{{ b.text }}</span>
+                            </div>
+                        </div>
+
+                        <p
+                            v-if="renderedDesc"
+                            class="m-nav-link-desc"
+                            v-html="renderedDesc"
+                        ></p>
+
+                        <!-- Tag footer (note goes to tooltip) -->
+                        <div v-if="renderedTag" class="m-nav-link-meta">
+                            <span class="m-nav-tag" v-html="renderedTag"></span>
+                        </div>
                     </div>
-                    <span
-                        v-if="renderedEyebrow"
-                        class="m-nav-link-eyebrow"
-                        v-html="renderedEyebrow"
-                    ></span>
-                    <h5 v-if="title" :id="formatTitle" class="m-nav-link-title">
-                        <span v-if="renderedTitle" v-html="renderedTitle"></span>
-                        <span v-else>{{ title }}</span>
-                    </h5>
                 </div>
-                <p
-                    v-if="renderedDesc"
-                    class="m-nav-link-desc"
-                    v-html="renderedDesc"
-                ></p>
-                <div
-                    v-if="renderedTag || renderedNote"
-                    class="m-nav-link-meta"
-                >
-                    <v-chip v-if="renderedTag" size="small" variant="outlined" label
-                        ><span v-html="renderedTag"></span
-                    ></v-chip>
-                    <span
-                        v-if="renderedNote"
-                        class="m-nav-link-note"
-                        v-html="renderedNote"
-                    ></span>
-                </div>
-            </div>
-        </div>
-    </v-card>
+            </a>
+        </template>
+    </v-tooltip>
 </template>
 
 <style scoped>
-    .m-nav-link {
-        text-decoration: none !important;
-        color: inherit !important;
-        border: 1px solid var(--vp-c-divider) !important;
-        background: var(--vp-c-bg-soft) !important;
-        border-radius: 14px !important;
-        transition:
-            border-color 0.2s ease,
-            box-shadow 0.2s ease,
-            transform 0.2s ease !important;
+    /* Tooltip surface */
+    :deep(.m-nav-tooltip__content) {
+        background: rgba(10, 16, 30, 0.93) !important;
+        color: rgba(255, 255, 255, 0.88) !important;
+        border-radius: 8px !important;
+        padding: 8px 13px !important;
+        font-size: 12.5px !important;
+        font-weight: 450 !important;
+        line-height: 1.65 !important;
+        letter-spacing: 0.1px !important;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.32) !important;
+        backdrop-filter: blur(12px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.07) !important;
     }
 
+    /* Accent border on hover (CSS var override) */
     .m-nav-link:hover {
-        border-color: color-mix(in srgb, var(--vp-c-brand-1) 32%, var(--vp-c-divider)) !important;
-        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06) !important;
-        transform: translateY(-1px);
-    }
-
-    .dark .m-nav-link {
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-    }
-
-    .dark .m-nav-link:hover {
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
-    }
-
-    .m-nav-link :deep(.v-card__overlay) {
-        display: none;
-    }
-
-    .m-nav-link-icon :deep(svg) {
-        width: 26px;
-        height: 26px;
-        fill: currentColor;
-    }
-
-    .m-nav-link-icon :deep(img) {
-        object-fit: contain;
+        border-color: var(
+            --nav-link-accent,
+            color-mix(in srgb, var(--vp-c-brand-1) 35%, var(--vp-c-divider))
+        ) !important;
     }
 </style>

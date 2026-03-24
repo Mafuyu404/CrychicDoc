@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: page
 title: 社区链接
 layoutClass: m-nav-layout
 sidebar: false

@@ -51,26 +51,15 @@
             </div>
 
             <div v-if="viewMode === 'cloud'" class="cloud">
-                <v-card
+                <TagBadge
                     v-for="tag in filteredTags"
                     :key="tag.name"
-                    variant="flat"
-                    :ripple="false"
-                    hover
-                    class="cloud__item"
-                    :class="{ 'is-active': selectedTags.includes(tag.name) }"
+                    :tag="tag.name"
+                    :count="tag.count"
+                    :clickable="true"
+                    :style="{ fontSize: tagSize(tag.count) }"
                     @click="toggleTag(tag.name)"
-                >
-                    <div class="cloud__item-inner">
-                        <div class="cloud__item-head">
-                            <span class="cloud__label">{{ tag.name }}</span>
-                            <v-chip size="x-small" variant="tonal" color="primary" label>{{ tag.count }}</v-chip>
-                        </div>
-                        <span class="cloud__preview muted small">
-                            {{ tag.pages.slice(0, 2).map((p) => p?.title || p?.path || 'Untitled').join(' · ') }}
-                        </span>
-                    </div>
-                </v-card>
+                />
             </div>
 
             <div v-else class="list">
@@ -243,6 +232,16 @@
         const q = searchQuery.value.toLowerCase();
         return sorted.filter((tag) => tag.name.toLowerCase().includes(q));
     });
+
+    function tagSize(count: number): string {
+        const tags = Object.values(tagData.value);
+        if (!tags.length) return "1rem";
+        const max = Math.max(...tags.map((t) => t.count));
+        const min = Math.min(...tags.map((t) => t.count));
+        const range = max - min || 1;
+        const t = (count - min) / range;
+        return `${0.82 + t * 0.72}rem`;
+    }
 
     const selectedTagPages = computed<PageInfo[]>(() => {
         if (selectedTags.value.length === 0) return [];
@@ -438,31 +437,14 @@
 .tags-page__search { flex: 1; min-width: 240px; max-width: 420px; }
 .toolbar > :last-child { margin-left: auto; }
 
-/* Cloud grid */
+/* Cloud: flex-wrap word cloud */
 .cloud {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 0.875rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
 }
-
-.cloud__item {
-    cursor: pointer;
-    border: 1px solid var(--vp-c-divider) !important;
-    background: var(--vp-c-bg-soft) !important;
-    border-radius: 14px !important;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
-}
-.cloud__item:hover,
-.cloud__item.is-active {
-    border-color: color-mix(in srgb, var(--vp-c-brand-1) 28%, var(--vp-c-divider)) !important;
-    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06) !important;
-}
-.cloud__item :deep(.v-card__overlay) { display: none; }
-
-.cloud__item-inner { padding: 1rem 1.05rem; display: grid; gap: 0.5rem; }
-.cloud__item-head { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
-.cloud__label { font-size: 1rem; font-weight: 700; color: var(--vp-c-text-1); overflow-wrap: anywhere; }
-.cloud__preview { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.55; }
 
 /* List grid */
 .list {
@@ -541,7 +523,6 @@
 }
 
 @media (max-width: 960px) {
-    .cloud { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
     .stats { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {

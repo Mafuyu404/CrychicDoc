@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: page
 title: Pixel Art
 layoutClass: m-nav-layout
 sidebar: false

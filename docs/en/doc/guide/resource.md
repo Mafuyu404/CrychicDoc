@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: page
 title: Art resources
 layoutClass: m-nav-layout
 sidebar: false

@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: page
 title: 我的世界
 layoutClass: m-nav-layout
 sidebar: false

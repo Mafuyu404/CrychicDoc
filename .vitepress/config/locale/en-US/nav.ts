@@ -549,6 +549,106 @@ const docsPanels: NavPanel[] = [
     {
         groups: [
             {
+                label: "Topic Guides",
+                items: [
+                    {
+                        text: "KubeJS",
+                        link: "/doc/guide/KubeJS",
+                        desc: "KubeJS resources, tools, and community links.",
+                        preview: kubePreview(
+                            "KubeJS Guide",
+                            "Resource navigation hub for KubeJS development.",
+                            `External links, tools, and community resources organized by category.
+
+- Official repos and wikis
+- Community Discord and GitBook
+- Addon ecosystem index`,
+                            {
+                                src: "/imgs/screenshots/nav/en-doc-home.png",
+                                background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
+                                aspect: "16 / 10",
+                            },
+                        ),
+                    },
+                    {
+                        text: "Community Link",
+                        link: "/doc/guide/community",
+                        desc: "Community platforms and resource index.",
+                        preview: kubePreview(
+                            "Community Link",
+                            "Curated links to community platforms and resources.",
+                            `Organized index covering:
+
+- Discord servers and forums
+- Streaming and tutorial channels
+- Tool and template repositories`,
+                            {
+                                src: "/imgs/screenshots/nav/en-doc-home.png",
+                                background: "linear-gradient(135deg, #0f2027 0%, #203a43 100%)",
+                                aspect: "16 / 10",
+                            },
+                        ),
+                    },
+                    {
+                        text: "Minecraft",
+                        link: "/doc/guide/minecraft",
+                        desc: "Minecraft-related navigation and external links.",
+                        preview: kubePreview(
+                            "Minecraft",
+                            "External links and navigation for Minecraft content.",
+                            `Covers tools, references, and communities for:
+
+- Vanilla gameplay and resource creation
+- Server and pack deployment
+- Official wiki and launcher resources`,
+                            {
+                                src: "/imgs/screenshots/nav/en-doc-home.png",
+                                background: "linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%)",
+                                aspect: "16 / 10",
+                            },
+                        ),
+                    },
+                    {
+                        text: "Pixel Art",
+                        link: "/doc/guide/pixelart",
+                        desc: "Pixel art tools, tutorials, and references.",
+                        preview: kubePreview(
+                            "Pixel Art",
+                            "Navigation hub for pixel art learning and tooling.",
+                            `Index for:
+
+- Drawing tools and color palette resources
+- Tutorial channels and example galleries
+- Texture creation for Minecraft packs`,
+                            {
+                                src: "/imgs/screenshots/nav/en-doc-home.png",
+                                background: "linear-gradient(135deg, #3c1642 0%, #6a0572 100%)",
+                                aspect: "16 / 10",
+                            },
+                        ),
+                    },
+                    {
+                        text: "Art Resources",
+                        link: "/doc/guide/resource",
+                        desc: "Art asset libraries and reference collections.",
+                        preview: kubePreview(
+                            "Art Resources",
+                            "Curated art asset libraries and visual references.",
+                            `Organized links to:
+
+- Asset packs and texture libraries
+- Reference image collections
+- License-friendly resource repositories`,
+                            {
+                                src: "/imgs/screenshots/nav/en-doc-home.png",
+                                background: "linear-gradient(135deg, #2c3e50 0%, #4a6fa5 100%)",
+                                aspect: "16 / 10",
+                            },
+                        ),
+                    },
+                ],
+            },
+            {
                 label: "Authoring Tools",
                 items: [
                     {

@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: page
 title: 美术资源
 layoutClass: m-nav-layout
 sidebar: false

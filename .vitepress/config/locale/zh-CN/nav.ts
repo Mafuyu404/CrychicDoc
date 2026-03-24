@@ -594,6 +594,106 @@ const docsPanels: NavPanel[] = [
     {
         groups: [
             {
+                label: "主题导航",
+                items: [
+                    {
+                        text: "KubeJS",
+                        link: "/doc/guide/KubeJS",
+                        desc: "KubeJS 相关资源、工具与社区链接。",
+                        preview: kubePreview(
+                            "KubeJS 导航",
+                            "KubeJS 开发的资源导航中心。",
+                            `按分类整理的外部链接、工具与社区资源。
+
+- 官方仓库与 Wiki
+- 社区 Discord 与 GitBook
+- Addon 生态索引`,
+                            {
+                                src: "/imgs/screenshots/nav/zh-doc-home.png",
+                                background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
+                                aspect: "16 / 10",
+                            },
+                        ),
+                    },
+                    {
+                        text: "社区链接",
+                        link: "/doc/guide/community",
+                        desc: "社区平台与资源索引。",
+                        preview: kubePreview(
+                            "社区链接",
+                            "精选社区平台与资源直达链接。",
+                            `收录以下分类：
+
+- Discord 服务器与社区论坛
+- 直播与教程频道
+- 工具与模板仓库`,
+                            {
+                                src: "/imgs/screenshots/nav/zh-doc-home.png",
+                                background: "linear-gradient(135deg, #0f2027 0%, #203a43 100%)",
+                                aspect: "16 / 10",
+                            },
+                        ),
+                    },
+                    {
+                        text: "我的世界",
+                        link: "/doc/guide/minecraft",
+                        desc: "Minecraft 相关导航与外部链接。",
+                        preview: kubePreview(
+                            "我的世界",
+                            "Minecraft 内容的外部链接与导航入口。",
+                            `涵盖以下方向的工具、参考与社区：
+
+- 原版玩法与资源创作
+- 服务器与整合包部署
+- 官方 Wiki 与启动器资源`,
+                            {
+                                src: "/imgs/screenshots/nav/zh-doc-home.png",
+                                background: "linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%)",
+                                aspect: "16 / 10",
+                            },
+                        ),
+                    },
+                    {
+                        text: "像素艺术",
+                        link: "/doc/guide/pixelart",
+                        desc: "像素绘画工具、教程与参考资料。",
+                        preview: kubePreview(
+                            "像素艺术",
+                            "像素艺术学习与工具导航中心。",
+                            `索引内容包括：
+
+- 绘图工具与调色板资源
+- 教程频道与示例展廊
+- Minecraft 材质创作参考`,
+                            {
+                                src: "/imgs/screenshots/nav/zh-doc-home.png",
+                                background: "linear-gradient(135deg, #3c1642 0%, #6a0572 100%)",
+                                aspect: "16 / 10",
+                            },
+                        ),
+                    },
+                    {
+                        text: "美术资源",
+                        link: "/doc/guide/resource",
+                        desc: "美术素材库与参考资料合集。",
+                        preview: kubePreview(
+                            "美术资源",
+                            "精选美术素材库与视觉参考资源。",
+                            `整理汇总以下方向的链接：
+
+- 素材包与纹理库
+- 参考图片集合
+- 可商用开源资源仓库`,
+                            {
+                                src: "/imgs/screenshots/nav/zh-doc-home.png",
+                                background: "linear-gradient(135deg, #2c3e50 0%, #4a6fa5 100%)",
+                                aspect: "16 / 10",
+                            },
+                        ),
+                    },
+                ],
+            },
+            {
                 label: "写作工具",
                 items: [
                     {
