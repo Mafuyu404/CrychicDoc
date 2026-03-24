@@ -31,6 +31,7 @@ import MagicMoveContainer from "@components/ui/MagicMoveContainer.vue";
 import { defineAsyncComponent } from "vue";
 import { LiteTree } from "@lite-tree/vue";
 import { TagsPage } from "@utils/vitepress/componentRegistry/contentRegistry";
+import MNavLinks from "@components/navigation/MNavLinks.vue";
 
 type ComponentRegistry = Record<string, Component>;
 type LocalRegistryModule = {
@@ -67,6 +68,7 @@ const baseComponents: ComponentRegistry = {
     MdMultiPageDialog,
     CustomAlert,
     TagsPage,
+    MNavLinks,
     ChatPanel,
     ChatMessage,
     Bills,

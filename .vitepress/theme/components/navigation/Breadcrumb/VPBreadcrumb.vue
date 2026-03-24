@@ -17,7 +17,8 @@
     const hasBreadcrumbs = computed(() => {
         return (
             breadcrumbs.value.length > 1 &&
-            frontmatter.value.breadcrumbs !== false
+            frontmatter.value.breadcrumb !== false
+            && frontmatter.value.breadcrumbs !== false
         );
     });
 </script>

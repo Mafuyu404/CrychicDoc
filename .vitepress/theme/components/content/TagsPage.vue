@@ -1,20 +1,22 @@
 <template>
     <div class="tags-page">
-        <h1 class="tags-page__title">
-            {{ frontmatter.value?.title || t.pageTitle }}
-        </h1>
+        <header class="tags-page__hero">
+            <h1 class="tags-page__title">
+                {{ frontmatter.value?.title || t.pageTitle }}
+            </h1>
+            <p class="tags-page__lead">
+                {{ t.searchPlaceholder }}
+            </p>
+        </header>
 
-        <!-- Loading / Error / Empty -->
         <div v-if="isLoading" class="tags-page__status">
-            <div class="spinner" />
+            <v-progress-circular indeterminate color="primary" size="28" />
             <p>{{ t.loadingTagData }}</p>
         </div>
 
         <div v-else-if="loadError" class="tags-page__status">
             <p>{{ t.loadingError }}</p>
-            <button class="btn btn--outline" @click="loadTagData">
-                {{ t.retry }}
-            </button>
+            <v-btn variant="outlined" rounded @click="loadTagData">{{ t.retry }}</v-btn>
         </div>
 
         <div v-else-if="totalTags === 0" class="tags-page__status">
@@ -22,184 +24,158 @@
         </div>
 
         <template v-else>
-            <!-- Toolbar -->
             <div class="toolbar">
-                <div class="toolbar__search">
-                    <svg
-                        class="toolbar__search-icon"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <circle cx="11" cy="11" r="8" />
-                        <path d="m21 21-4.35-4.35" />
-                    </svg>
-                    <input
-                        v-model="searchQuery"
-                        type="text"
-                        :placeholder="t.searchPlaceholder"
-                    />
-                </div>
-                <div class="toolbar__views">
-                    <button
-                        :class="[
-                            'toolbar__view-btn',
-                            { active: viewMode === 'cloud' },
-                        ]"
-                        @click="viewMode = 'cloud'"
-                    >
-                        {{ t.tagCloud }}
-                    </button>
-                    <button
-                        :class="[
-                            'toolbar__view-btn',
-                            { active: viewMode === 'list' },
-                        ]"
-                        @click="viewMode = 'list'"
-                    >
-                        {{ t.list }}
-                    </button>
-                </div>
-            </div>
-
-            <!-- Cloud view -->
-            <div v-if="viewMode === 'cloud'" class="cloud">
-                <TagBadge
-                    v-for="tag in filteredTags"
-                    :key="tag.name"
-                    :tag="tag.name"
-                    :count="tag.count"
-                    :clickable="true"
-                    :style="{ fontSize: tagSize(tag.count) }"
-                    @click="toggleTag"
+                <v-text-field
+                    v-model="searchQuery"
+                    :placeholder="t.searchPlaceholder"
+                    prepend-inner-icon="mdi-magnify"
+                    variant="outlined"
+                    density="comfortable"
+                    rounded
+                    hide-details
+                    class="tags-page__search"
                 />
+
+                <v-btn-toggle
+                    v-model="viewMode"
+                    mandatory
+                    density="comfortable"
+                    rounded
+                    variant="outlined"
+                    divided
+                    color="primary"
+                >
+                    <v-btn value="cloud" size="small">{{ t.tagCloud }}</v-btn>
+                    <v-btn value="list" size="small">{{ t.list }}</v-btn>
+                </v-btn-toggle>
             </div>
 
-            <!-- List view -->
-            <div v-else class="list">
-                <div
+            <div v-if="viewMode === 'cloud'" class="cloud">
+                <v-card
                     v-for="tag in filteredTags"
                     :key="tag.name"
+                    variant="flat"
+                    :ripple="false"
+                    hover
+                    class="cloud__item"
+                    :class="{ 'is-active': selectedTags.includes(tag.name) }"
+                    @click="toggleTag(tag.name)"
+                >
+                    <div class="cloud__item-inner">
+                        <div class="cloud__item-head">
+                            <span class="cloud__label">{{ tag.name }}</span>
+                            <v-chip size="x-small" variant="tonal" color="primary" label>{{ tag.count }}</v-chip>
+                        </div>
+                        <span class="cloud__preview muted small">
+                            {{ tag.pages.slice(0, 2).map((p) => p?.title || p?.path || 'Untitled').join(' · ') }}
+                        </span>
+                    </div>
+                </v-card>
+            </div>
+
+            <div v-else class="list">
+                <v-card
+                    v-for="tag in filteredTags"
+                    :key="tag.name"
+                    variant="flat"
+                    :ripple="false"
+                    hover
                     class="list__item"
                     @click="toggleTag(tag.name)"
                 >
-                    <div class="list__item-head">
-                        <TagBadge
-                            :tag="tag.name"
-                            :count="tag.count"
-                            :clickable="true"
-                        />
-                        <span class="muted small"
-                            >{{ tag.count }} {{ t.pages }}</span
-                        >
+                    <div class="list__item-inner">
+                        <div class="list__item-head">
+                            <v-chip
+                                :color="getTagColor(tag.name)"
+                                variant="tonal"
+                                size="small"
+                                label
+                            >{{ tag.name }}</v-chip>
+                            <span class="muted small">{{ tag.count }} {{ t.pages }}</span>
+                        </div>
+                        <p class="list__item-preview muted small">
+                            {{ tag.pages.slice(0, 3).map((p) => p?.title || p?.path || 'Untitled').join(', ') }}
+                            <span v-if="tag.pages.length > 3" class="dimmed">
+                                {{ t.morePages.replace('{count}', String(tag.pages.length - 3)) }}
+                            </span>
+                        </p>
                     </div>
-                    <p class="list__item-preview muted small">
-                        {{
-                            tag.pages
-                                .slice(0, 3)
-                                .map((p) => p?.title || p?.path || "Untitled")
-                                .join(", ")
-                        }}
-                        <span v-if="tag.pages.length > 3" class="dimmed">
-                            {{
-                                t.morePages.replace(
-                                    "{count}",
-                                    String(tag.pages.length - 3),
-                                )
-                            }}
-                        </span>
-                    </p>
-                </div>
+                </v-card>
             </div>
 
-            <!-- Selected tags results -->
             <section v-if="selectedTags.length > 0" class="results">
                 <div class="results__header">
                     <h2 class="results__heading">
                         {{ t.selectedTags }}
-                        <TagBadge
+                        <v-chip
                             v-for="tag in selectedTags"
                             :key="tag"
-                            :tag="tag"
-                            :clickable="true"
-                            @click="toggleTag"
-                        />
-                        <span class="muted small"
-                            >({{ selectedTagPages.length }} {{ t.pages }})</span
-                        >
+                            closable
+                            size="small"
+                            variant="tonal"
+                            color="primary"
+                            @click:close="toggleTag(tag)"
+                        >{{ tag }}</v-chip>
                     </h2>
-                    <button class="btn btn--ghost" @click="clearSelection">
-                        {{ t.clearSelection }}
-                    </button>
+                    <div class="results__meta muted small">
+                        {{ selectedTagPages.length }} {{ t.pages }}
+                    </div>
+                    <v-btn variant="text" size="small" @click="clearSelection">{{ t.clearSelection }}</v-btn>
                 </div>
 
                 <div v-if="selectedTagPages.length > 0" class="results__list">
-                    <a
+                    <v-card
                         v-for="pg in selectedTagPages"
                         :key="pg.path"
+                        tag="a"
                         :href="pg.path"
+                        variant="flat"
+                        :ripple="false"
+                        hover
                         class="result-row"
                     >
-                        <div class="result-row__head">
-                            <h3 class="result-row__title">
-                                {{ pg.title || pg.path || "Untitled" }}
-                            </h3>
-                            <div
-                                v-if="pg.progress != null"
-                                class="result-row__progress"
-                            >
-                                <div class="progress-track">
-                                    <div
-                                        class="progress-fill"
-                                        :style="{ width: `${pg.progress}%` }"
+                        <div class="result-row__inner">
+                            <div class="result-row__head">
+                                <h3 class="result-row__title">{{ pg.title || pg.path || 'Untitled' }}</h3>
+                                <div v-if="pg.progress != null" class="result-row__progress">
+                                    <v-progress-linear
+                                        :model-value="pg.progress"
+                                        color="primary"
+                                        rounded
+                                        height="4"
+                                        style="width: 56px;"
                                     />
+                                    <span class="dimmed small">{{ pg.progress }}%</span>
                                 </div>
-                                <span class="dimmed small"
-                                    >{{ pg.progress }}%</span
-                                >
+                            </div>
+                            <p v-if="pg.description" class="result-row__desc muted">{{ pg.description }}</p>
+                            <div class="result-row__tags">
+                                <v-chip
+                                    v-for="tg in (pg.tags || []).slice(0, 4)"
+                                    :key="tg"
+                                    size="x-small"
+                                    variant="tonal"
+                                    label
+                                >{{ tg }}</v-chip>
+                                <span v-if="(pg.tags || []).length > 4" class="dimmed small">+{{ (pg.tags || []).length - 4 }}</span>
                             </div>
                         </div>
-                        <p v-if="pg.description" class="result-row__desc muted">
-                            {{ pg.description }}
-                        </p>
-                        <div class="result-row__tags">
-                            <TagBadge
-                                v-for="tg in (pg.tags || []).slice(0, 3)"
-                                :key="tg"
-                                :tag="tg"
-                            />
-                            <span
-                                v-if="(pg.tags || []).length > 3"
-                                class="dimmed small"
-                                >+{{ (pg.tags || []).length - 3 }}</span
-                            >
-                        </div>
-                    </a>
+                    </v-card>
                 </div>
 
-                <div v-else class="tags-page__status" style="padding: 3rem 0">
+                <div v-else class="tags-page__status tags-page__status--compact">
                     <p>{{ t.noMatchingPages }}</p>
                     <p class="dimmed small">{{ t.noMatchingPagesHint }}</p>
                 </div>
             </section>
 
-            <!-- Stats -->
             <footer class="stats">
-                <div class="stats__item">
-                    <span class="stats__number">{{ totalTags }}</span>
-                    <span class="muted small">{{ t.totalTags }}</span>
-                </div>
-                <div class="stats__item">
-                    <span class="stats__number">{{ totalPages }}</span>
-                    <span class="muted small">{{ t.totalPages }}</span>
-                </div>
-                <div class="stats__item">
-                    <span class="stats__number">{{ filteredTags.length }}</span>
-                    <span class="muted small">{{ t.matchingTags }}</span>
-                </div>
+                <v-card v-for="stat in statsItems" :key="stat.label" variant="flat" class="stats__item">
+                    <div class="stats__item-inner">
+                        <span class="stats__number">{{ stat.value }}</span>
+                        <span class="muted small">{{ stat.label }}</span>
+                    </div>
+                </v-card>
             </footer>
         </template>
     </div>
@@ -251,7 +227,7 @@
         matchingTags: "Matching Tags",
     });
 
-    const { page, frontmatter, lang } = useData();
+    const { frontmatter, lang } = useData();
 
     const tagData = ref<TagData>({});
     const isLoading = ref(false);
@@ -259,8 +235,6 @@
     const searchQuery = ref("");
     const viewMode = ref<"cloud" | "list">("cloud");
     const selectedTags = ref<string[]>([]);
-
-    // ── Derived state ────────────────────────────────────────────────────
 
     const filteredTags = computed(() => {
         const tags = Object.values(tagData.value);
@@ -277,7 +251,7 @@
                 (pg): pg is PageInfo => Boolean(pg?.path),
             );
         }
-        // Intersection of pages across all selected tags
+
         const sets = selectedTags.value.map(
             (tag) =>
                 new Set(
@@ -297,16 +271,33 @@
         Object.values(tagData.value).reduce((sum, tag) => sum + tag.count, 0),
     );
 
-    const maxCount = computed(() =>
-        Math.max(1, ...Object.values(tagData.value).map((tag) => tag.count)),
-    );
+    const statsItems = computed(() => [
+        { value: totalTags.value, label: t.totalTags },
+        { value: totalPages.value, label: t.totalPages },
+        { value: filteredTags.value.length, label: t.matchingTags },
+    ]);
 
-    function tagSize(count: number): string {
-        const ratio = count / maxCount.value;
-        return `${0.75 + 0.75 * ratio}rem`;
+    function getTagColor(tagName: string): string {
+        const colorMap: Record<string, string> = {
+            minecraft: "#62c462",
+            neoforge: "#ff6b35",
+            forge: "#ff6b35",
+            fabric: "#dba213",
+            tutorial: "#3b82f6",
+            api: "#8b5cf6",
+            guide: "#10b981",
+            kubejs: "#5518fe",
+        };
+        const lower = tagName.toLowerCase();
+        for (const [key, color] of Object.entries(colorMap)) {
+            if (lower.includes(key)) return color;
+        }
+        // Hash-based fallback
+        const fallbacks = ["#22c55e", "#eab308", "#6b7280", "#dc2626", "#2563eb", "#059669", "#7c3aed", "#f43f5e", "#a855f7", "#14b8a6"];
+        let hash = 0;
+        for (let i = 0; i < tagName.length; i++) hash = tagName.charCodeAt(i) + ((hash << 5) - hash);
+        return fallbacks[Math.abs(hash) % fallbacks.length];
     }
-
-    // ── Tag selection with URL sync ──────────────────────────────────────
 
     function toggleTag(tagName: string) {
         const next = selectedTags.value.includes(tagName)
@@ -340,8 +331,6 @@
         selectedTags.value = readTagsFromUrl();
     }
 
-    // ── Data loading ─────────────────────────────────────────────────────
-
     async function loadTagData() {
         isLoading.value = true;
         loadError.value = null;
@@ -366,15 +355,13 @@
 
             tagData.value = loaded?.tags ?? {};
             if (!loaded) loadError.value = t.loadingError;
-        } catch (err) {
+        } catch {
             loadError.value = t.loadingError;
             tagData.value = {};
         } finally {
             isLoading.value = false;
         }
     }
-
-    // ── Lifecycle ────────────────────────────────────────────────────────
 
     watch(lang, (next, prev) => {
         if (next !== prev) loadTagData();
@@ -392,317 +379,177 @@
 </script>
 
 <style scoped>
-    /* ── Layout ─────────────────────────────────────────────────────── */
-    .tags-page {
-        max-width: 1024px;
-        margin: 0 auto;
-        padding: 4rem 2rem;
-    }
-    .tags-page__title {
-        margin: 0 0 3.5rem;
-        font-size: 2.75rem;
-        font-weight: 700;
-        letter-spacing: -0.015em;
-        color: var(--vp-c-text-1);
-        line-height: 1.1;
-    }
+.tags-page {
+    width: min(100%, 1560px);
+    margin: 0 auto;
+    padding: 3rem 0 4rem;
+    display: grid;
+    gap: 2.5rem;
+}
 
-    /* ── Shared helpers ─────────────────────────────────────────────── */
-    .muted {
-        color: var(--vp-c-text-2);
-    }
-    .dimmed {
-        color: var(--vp-c-text-3);
-    }
-    .small {
-        font-size: 0.85rem;
-    }
+.tags-page__hero {
+    display: grid;
+    gap: 0.85rem;
+    max-width: 68ch;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--vp-c-divider);
+}
 
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        padding: 0.45rem 0.85rem;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        cursor: pointer;
-        border: none;
-        transition:
-            background-color 0.2s,
-            color 0.2s;
-    }
-    .btn--outline {
-        background: transparent;
-        color: var(--vp-c-text-1);
-        border: 1px solid var(--vp-c-divider);
-    }
-    .btn--ghost {
-        background: transparent;
-        color: var(--vp-c-text-3);
-    }
+.tags-page__title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--vp-c-text-1);
+    line-height: 1.04;
+}
 
-    /* ── Status screens ─────────────────────────────────────────────── */
-    .tags-page__status {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 6rem 0;
-        text-align: center;
-        color: var(--vp-c-text-3);
-    }
-    .tags-page__status p {
-        font-size: 0.95rem;
-        color: var(--vp-c-text-2);
-        margin: 0.5rem 0;
-    }
+.tags-page__lead {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--vp-c-text-2);
+}
 
-    .spinner {
-        width: 1.5rem;
-        height: 1.5rem;
-        margin-bottom: 1rem;
-        border: 2px solid var(--vp-c-divider);
-        border-top-color: var(--vp-c-text-3);
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-        to {
-            transform: rotate(360deg);
-        }
-    }
+.muted { color: var(--vp-c-text-2); }
+.dimmed { color: var(--vp-c-text-3); }
+.small { font-size: 0.85rem; }
 
-    /* ── Toolbar ─────────────────────────────────────────────────────── */
-    .toolbar {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        margin-bottom: 2.5rem;
-        padding-bottom: 1.25rem;
-        border-bottom: 1px solid var(--vp-c-divider);
-    }
-    .toolbar__search {
-        position: relative;
-        flex: 1;
-        max-width: 320px;
-    }
-    .toolbar__search-icon {
-        position: absolute;
-        left: 0.85rem;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1rem;
-        height: 1rem;
-        color: var(--vp-c-text-3);
-        pointer-events: none;
-    }
-    .toolbar__search input {
-        width: 100%;
-        padding: 0.6rem 1rem 0.6rem 2.5rem;
-        border: 1px solid var(--vp-c-divider);
-        border-radius: 8px;
-        background: var(--vp-c-bg);
-        color: var(--vp-c-text-1);
-        font-size: 0.9rem;
-        transition: border-color 0.2s;
-    }
-    .toolbar__search input:focus {
-        outline: none;
-        border-color: var(--vp-c-text-3);
-    }
+.tags-page__status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
+    gap: 1rem;
+    text-align: center;
+    color: var(--vp-c-text-3);
+}
+.tags-page__status p { margin: 0; font-size: 0.95rem; color: var(--vp-c-text-2); }
+.tags-page__status--compact { padding: 2rem 0 1rem; }
 
-    .toolbar__views {
-        display: flex;
-        gap: 0.25rem;
-        margin-left: auto;
-        background: var(--vp-c-bg-soft);
-        padding: 0.25rem;
-        border-radius: 8px;
-    }
-    .toolbar__view-btn {
-        padding: 0.4rem 0.8rem;
-        border-radius: 6px;
-        border: none;
-        background: transparent;
-        color: var(--vp-c-text-2);
-        font-size: 0.85rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition:
-            background-color 0.2s,
-            color 0.2s;
-    }
-    .toolbar__view-btn.active {
-        background: var(--vp-c-bg);
-        color: var(--vp-c-text-1);
-    }
+/* Toolbar */
+.toolbar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.tags-page__search { flex: 1; min-width: 240px; max-width: 420px; }
+.toolbar > :last-child { margin-left: auto; }
 
-    /* ── Cloud ───────────────────────────────────────────────────────── */
-    .cloud {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-bottom: 3.5rem;
-        align-items: center;
-    }
+/* Cloud grid */
+.cloud {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.875rem;
+}
 
-    /* ── List ────────────────────────────────────────────────────────── */
-    .list {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1rem;
-        margin-bottom: 3.5rem;
-    }
-    .list__item {
-        padding: 1.25rem;
-        border: 1px solid var(--vp-c-divider);
-        border-radius: 12px;
-        cursor: pointer;
-    }
-    .list__item-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 0.5rem;
-    }
-    .list__item-preview {
-        margin: 0;
-        line-height: 1.5;
-    }
+.cloud__item {
+    cursor: pointer;
+    border: 1px solid var(--vp-c-divider) !important;
+    background: var(--vp-c-bg-soft) !important;
+    border-radius: 14px !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.cloud__item:hover,
+.cloud__item.is-active {
+    border-color: color-mix(in srgb, var(--vp-c-brand-1) 28%, var(--vp-c-divider)) !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06) !important;
+}
+.cloud__item :deep(.v-card__overlay) { display: none; }
 
-    /* ── Results ─────────────────────────────────────────────────────── */
-    .results {
-        margin: 3.5rem 0;
-    }
-    .results__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1.5rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid var(--vp-c-divider);
-    }
-    .results__heading {
-        margin: 0;
-        font-size: 1.4rem;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-        letter-spacing: -0.01em;
-    }
+.cloud__item-inner { padding: 1rem 1.05rem; display: grid; gap: 0.5rem; }
+.cloud__item-head { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.cloud__label { font-size: 1rem; font-weight: 700; color: var(--vp-c-text-1); overflow-wrap: anywhere; }
+.cloud__preview { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.55; }
 
-    .results__list {
-        border-top: 1px solid var(--vp-c-divider);
-    }
-    .result-row {
-        display: block;
-        padding: 1.25rem 0;
-        text-decoration: none;
-        color: inherit;
-        border-bottom: 1px solid var(--vp-c-divider);
-        transition: opacity 0.2s;
-    }
-    .result-row:hover {
-        opacity: 0.8;
-    }
-    .result-row__head {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 1rem;
-        margin-bottom: 0.35rem;
-    }
-    .result-row__title {
-        margin: 0;
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: var(--vp-c-text-1);
-        letter-spacing: -0.01em;
-    }
-    .result-row__progress {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        flex-shrink: 0;
-    }
-    .progress-track {
-        width: 48px;
-        height: 4px;
-        background: var(--vp-c-divider);
-        border-radius: 2px;
-        overflow: hidden;
-    }
-    .progress-fill {
-        height: 100%;
-        background: var(--vp-c-text-2);
-    }
-    .result-row__desc {
-        margin: 0 0 0.75rem;
-        font-size: 0.9rem;
-        line-height: 1.5;
-        max-width: 800px;
-    }
-    .result-row__tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        align-items: center;
-    }
+/* List grid */
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0.875rem;
+}
+.list__item {
+    cursor: pointer;
+    border: 1px solid var(--vp-c-divider) !important;
+    background: var(--vp-c-bg-soft) !important;
+    border-radius: 14px !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.list__item:hover {
+    border-color: color-mix(in srgb, var(--vp-c-brand-1) 22%, var(--vp-c-divider)) !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05) !important;
+}
+.list__item :deep(.v-card__overlay) { display: none; }
+.list__item-inner { padding: 1.1rem; text-align: left; }
+.list__item-head { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.7rem; }
+.list__item-preview { margin: 0; line-height: 1.6; }
 
-    /* ── Stats ───────────────────────────────────────────────────────── */
-    .stats {
-        display: flex;
-        gap: 4rem;
-        padding: 2.5rem 0;
-        margin-top: 3.5rem;
-        border-top: 1px solid var(--vp-c-divider);
-    }
-    .stats__number {
-        display: block;
-        font-size: 2rem;
-        font-weight: 600;
-        color: var(--vp-c-text-1);
-        line-height: 1;
-        margin-bottom: 0.4rem;
-        letter-spacing: -0.02em;
-    }
+/* Results */
+.results { display: grid; gap: 1.25rem; }
+.results__header {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap;
+    padding-bottom: 1rem; border-bottom: 1px solid var(--vp-c-divider);
+}
+.results__heading {
+    margin: 0; font-size: 1.2rem; font-weight: 700;
+    display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;
+}
+.results__meta { margin-left: auto; }
+.results__list { display: grid; gap: 0.75rem; }
 
-    /* ── Responsive ──────────────────────────────────────────────────── */
-    @media (max-width: 768px) {
-        .tags-page {
-            padding: 2rem 1.5rem;
-        }
-        .tags-page__title {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
-        .toolbar {
-            flex-direction: column;
-            align-items: stretch;
-            border-bottom: none;
-        }
-        .toolbar__search {
-            max-width: none;
-        }
-        .toolbar__views {
-            margin-left: 0;
-            justify-content: center;
-        }
-        .results__header {
-            flex-direction: column;
-            gap: 0.75rem;
-            align-items: flex-start;
-        }
-        .stats {
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        .result-row__head {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.25rem;
-        }
-    }
+.result-row {
+    text-decoration: none !important;
+    color: inherit !important;
+    border: 1px solid var(--vp-c-divider) !important;
+    background: var(--vp-c-bg-soft) !important;
+    border-radius: 14px !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.result-row:hover {
+    border-color: color-mix(in srgb, var(--vp-c-brand-1) 22%, var(--vp-c-divider)) !important;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06) !important;
+}
+.result-row :deep(.v-card__overlay) { display: none; }
+.result-row__inner { display: grid; gap: 0.65rem; padding: 1.15rem 1.25rem; }
+.result-row__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.result-row__title { margin: 0; font-size: 1.02rem; font-weight: 700; color: var(--vp-c-text-1); }
+.result-row__progress { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+.result-row__desc { margin: 0; font-size: 0.92rem; line-height: 1.65; max-width: 90ch; }
+.result-row__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+
+/* Stats */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.875rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--vp-c-divider);
+}
+.stats__item {
+    border: 1px solid var(--vp-c-divider-light) !important;
+    background: var(--vp-c-bg-soft) !important;
+    border-radius: 14px !important;
+}
+.stats__item :deep(.v-card__overlay) { display: none; }
+.stats__item-inner { padding: 1rem 1.1rem; }
+.stats__number {
+    display: block; font-size: 1.7rem; font-weight: 700;
+    color: var(--vp-c-text-1); line-height: 1; margin-bottom: 0.45rem; letter-spacing: -0.02em;
+}
+
+@media (max-width: 960px) {
+    .cloud { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .stats { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .tags-page { padding: 2rem 0 3rem; }
+    .toolbar { flex-direction: column; align-items: stretch; }
+    .tags-page__search { max-width: none; }
+    .toolbar > :last-child { margin-left: 0; }
+    .results__header { align-items: flex-start; }
+    .result-row__head { flex-direction: column; align-items: flex-start; }
+}
 </style>
