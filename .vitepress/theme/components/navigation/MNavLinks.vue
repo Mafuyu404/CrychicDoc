@@ -75,6 +75,9 @@
         }
         return [];
     });
+    const hasPageHeader = computed(
+        () => Array.isArray(props.groups) && props.groups.length > 0 && Boolean(props.title),
+    );
 
     const renderInline = (value?: string) =>
         value ? md.renderInline(value).trim() : "";
@@ -101,6 +104,24 @@
 
 <template>
     <div class="m-nav-links-page">
+        <header v-if="hasPageHeader" class="m-nav-page-heading">
+            <div class="m-nav-page-copy">
+                <span
+                    v-if="getRenderedEyebrow(eyebrow)"
+                    class="m-nav-page-eyebrow"
+                    v-html="getRenderedEyebrow(eyebrow)"
+                ></span>
+                <h1 v-if="title" class="m-nav-page-title">
+                    <span v-if="getRenderedTitle(title)" v-html="getRenderedTitle(title)"></span>
+                    <span v-else>{{ title }}</span>
+                </h1>
+                <p
+                    v-if="getRenderedDescription(description)"
+                    class="m-nav-page-desc"
+                    v-html="getRenderedDescription(description)"
+                ></p>
+            </div>
+        </header>
         <section v-for="(group, index) in normalizedGroups" :key="index" class="m-nav-group">
             <div class="m-nav-group-heading">
                 <span v-if="getGroupSvg(group) || getGroupUrl(group)" class="m-nav-group-icon">

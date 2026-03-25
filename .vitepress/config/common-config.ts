@@ -21,10 +21,6 @@ import {
     groupIconVitePlugin,
     localIconLoader,
 } from "vitepress-plugin-group-icons";
-import {
-    GitChangelog,
-    GitChangelogMarkdownSection,
-} from "@nolebase/vitepress-plugin-git-changelog/vite";
 
 const projectInfo = getProjectInfo();
 const projectPaths = getPaths();
@@ -294,11 +290,9 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
         },
         optimizeDeps: {
             exclude: [
-                "@nolebase/vitepress-plugin-git-changelog",
                 "@nolebase/vitepress-plugin-enhanced-readabilities",
                 "@nolebase/vitepress-plugin-inline-link-preview",
                 "shiki-magic-move",
-                "virtual:nolebase-git-changelog",
             ],
             include: [
                 "vue",
@@ -318,7 +312,10 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
         ssr: {
             noExternal: [
                 "vuetify",
-                "@nolebase/*",
+                "@nolebase/vitepress-plugin-enhanced-readabilities",
+                "@nolebase/vitepress-plugin-inline-link-preview",
+                "@nolebase/markdown-it-bi-directional-links",
+                "@nolebase/vitepress-plugin-highlight-targeted-heading",
                 "vitepress-plugin-tabs",
                 "shiki-magic-move",
                 "markdown-it-multiple-choice",
@@ -327,7 +324,13 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                 "motion-dom",
                 "motion-utils",
             ],
-            external: ["path", "fs", "fast-glob", "gray-matter"],
+            external: [
+                "path",
+                "fs",
+                "fast-glob",
+                "gray-matter",
+                "@nolebase/vitepress-plugin-git-changelog",
+            ],
         },
         css: {
             preprocessorOptions: {
@@ -346,18 +349,26 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
         plugins: [
             ...(isFeatureEnabled("gitChangelog")
                 ? [
-                      // @ts-ignore
-                      GitChangelog({
-                          repoURL: () => projectInfo.repository.url,
-                          mapAuthors: (contributors as Contributor[]).map(
-                              (author) => ({
-                                  ...author,
-                                  avatar: generateAvatarUrl(author.avatar),
+                      (async () => {
+                          const { GitChangelog, GitChangelogMarkdownSection } =
+                              await import(
+                                  "@nolebase/vitepress-plugin-git-changelog/vite"
+                              );
+                          return [
+                              // @ts-ignore
+                              GitChangelog({
+                                  repoURL: () => projectInfo.repository.url,
+                                  mapAuthors: (
+                                      contributors as Contributor[]
+                                  ).map((author) => ({
+                                      ...author,
+                                      avatar: generateAvatarUrl(author.avatar),
+                                  })),
                               }),
-                          ),
-                      }),
-                      // @ts-ignore
-                      GitChangelogMarkdownSection(),
+                              // @ts-ignore
+                              GitChangelogMarkdownSection(),
+                          ];
+                      })(),
                   ]
                 : []),
             // Conditionally load sidebar plugin based on autoSidebar feature flag
@@ -371,6 +382,7 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                           debug: process.env.NODE_ENV === "development",
                           docsDir: projectPaths.docs,
                           cacheDir: DEFAULT_SIDEBAR_CACHE_DIR,
+                          hotRestartOnIndexChange: false,
                       }),
                   ]
                 : []),

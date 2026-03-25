@@ -1,163 +1,193 @@
 <script setup lang="ts">
-    import { computed } from "vue";
-    import { withBase, useData } from "vitepress";
-    import { slugify } from "@mdit-vue/shared";
-    import MarkdownIt from "markdown-it";
-    import {
-        resolveThemeValueByMode,
-        getThemeRuntime,
-    } from "@utils/vitepress/runtime/theme";
+import { slugify } from "@mdit-vue/shared";
+import type {
+	NavBadge,
+	NavIcon,
+	NavLink,
+	NavThemeIcon,
+} from "@utils/content/navLinkType";
+import {
+	getThemeRuntime,
+	resolveThemeValueByMode,
+} from "@utils/vitepress/runtime/theme";
+import MarkdownIt from "markdown-it";
+import { useData, withBase } from "vitepress";
+import { computed, ref, watch } from "vue";
 
-    import type {
-        NavBadge,
-        NavIcon,
-        NavLink,
-        NavThemeIcon,
-    } from "@utils/content/navLinkType";
+const { isDark } = useData();
+const { effectiveDark } = getThemeRuntime(isDark);
+const md = new MarkdownIt({ html: true, linkify: true });
 
-    const { isDark } = useData();
-    const { effectiveDark } = getThemeRuntime(isDark);
-    const md = new MarkdownIt({ html: true, linkify: true });
+const props = defineProps<{
+	noIcon?: boolean;
+	icon?: NavLink["icon"];
+	logo?: NavLink["logo"];
+	badge?: NavLink["badge"];
+	badges?: NavLink["badges"];
+	title?: NavLink["title"];
+	desc?: NavLink["desc"];
+	link: NavLink["link"];
+	tag?: NavLink["tag"];
+	color?: NavLink["color"];
+	target?: NavLink["target"];
+	eyebrow?: NavLink["eyebrow"];
+	note?: NavLink["note"];
+	featured?: NavLink["featured"];
+	style?: NavLink["style"];
+	iconBackground?: NavLink["iconBackground"];
+}>();
 
-    const props = defineProps<{
-        noIcon?: boolean;
-        icon?: NavLink["icon"];
-        logo?: NavLink["logo"];
-        badge?: NavLink["badge"];
-        badges?: NavLink["badges"];
-        title?: NavLink["title"];
-        desc?: NavLink["desc"];
-        link: NavLink["link"];
-        tag?: NavLink["tag"];
-        color?: NavLink["color"];
-        target?: NavLink["target"];
-        eyebrow?: NavLink["eyebrow"];
-        note?: NavLink["note"];
-        featured?: NavLink["featured"];
-        style?: NavLink["style"];
-        iconBackground?: NavLink["iconBackground"];
-    }>();
+const themeIcon = (icon: NavIcon | NavThemeIcon): NavIcon => {
+	if (typeof icon === "object" && !Array.isArray(icon)) {
+		const record = icon as {
+			dark?: NavIcon;
+			light?: NavIcon;
+			value?: NavIcon;
+		};
+		if ("dark" in record || "light" in record || "value" in record) {
+			return resolveThemeValueByMode(record, effectiveDark.value) ?? icon;
+		}
+	}
+	return icon;
+};
 
-    const themeIcon = (icon: NavIcon | NavThemeIcon): NavIcon => {
-        if (typeof icon === "object" && !Array.isArray(icon)) {
-            const record = icon as {
-                dark?: NavIcon;
-                light?: NavIcon;
-                value?: NavIcon;
-            };
-            if ("dark" in record || "light" in record || "value" in record) {
-                return resolveThemeValueByMode(record, effectiveDark.value) ?? icon;
-            }
-        }
-        return icon;
-    };
+const isRawSvg = (value: string) => /^\s*<svg[\s>]/i.test(value);
+const isExternalUrl = (value: string) =>
+	/^(?:https?:)?\/\//.test(value) ||
+	value.startsWith("data:") ||
+	value.startsWith("blob:");
+const isClaudeFavicon = (value: string) =>
+	/^https:\/\/claude\.ai\/favicon\.ico(?:[?#].*)?$/i.test(value);
+const resolveAssetUrl = (value: string) =>
+	isExternalUrl(value) ? value : withBase(value);
+const claudeFallbackSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" role="img">
+  <g fill="#d97757">
+    <circle cx="32" cy="11.5" r="7.5"/>
+    <circle cx="45.25" cy="16.75" r="7.5"/>
+    <circle cx="52.5" cy="29.5" r="7.5"/>
+    <circle cx="49.5" cy="43.5" r="7.5"/>
+    <circle cx="38.5" cy="52.25" r="7.5"/>
+    <circle cx="24.5" cy="52.25" r="7.5"/>
+    <circle cx="13.5" cy="43.5" r="7.5"/>
+    <circle cx="10.5" cy="29.5" r="7.5"/>
+    <circle cx="17.75" cy="16.75" r="7.5"/>
+  </g>
+  <circle cx="32" cy="32" r="10.5" fill="var(--vp-c-bg, #fff)"/>
+</svg>`.trim();
 
-    const isRawSvg = (value: string) => /^\s*<svg[\s>]/i.test(value);
-    const isExternalUrl = (value: string) =>
-        /^(?:https?:)?\/\//.test(value) ||
-        value.startsWith("data:") ||
-        value.startsWith("blob:");
-    const resolveAssetUrl = (value: string) =>
-        isExternalUrl(value) ? value : withBase(value);
+const normalizeIconValue = (icon?: NavIcon | NavThemeIcon): string => {
+	if (!icon) return "";
+	const resolved = themeIcon(icon);
+	if (typeof resolved === "object" && "svg" in resolved) {
+		return resolved.svg || "";
+	}
+	if (typeof resolved === "string") {
+		return isClaudeFavicon(resolved) ? claudeFallbackSvg : resolved;
+	}
+	return "";
+};
 
-    const normalizeIconValue = (icon?: NavIcon | NavThemeIcon): string => {
-        if (!icon) return "";
-        const resolved = themeIcon(icon);
-        if (typeof resolved === "object" && "svg" in resolved) {
-            return resolved.svg || "";
-        }
-        return typeof resolved === "string" ? resolved : "";
-    };
+const iconSource = computed(() => props.logo ?? props.icon);
 
-    const iconSource = computed(() => props.logo ?? props.icon);
+const formatTitle = computed(() => {
+	if (!props.title) {
+		return "";
+	}
+	return slugify(props.title);
+});
 
-    const formatTitle = computed(() => {
-        if (!props.title) {
-            return "";
-        }
-        return slugify(props.title);
-    });
+const renderedEyebrow = computed(() =>
+	props.eyebrow ? md.renderInline(props.eyebrow).trim() : "",
+);
+const renderedTitle = computed(() =>
+	props.title ? md.renderInline(props.title).trim() : "",
+);
+const renderedDesc = computed(() =>
+	props.desc ? md.renderInline(props.desc).trim() : "",
+);
+const renderedTag = computed(() =>
+	props.tag ? md.renderInline(props.tag).trim() : "",
+);
+const renderedNote = computed(() =>
+	props.note ? md.renderInline(props.note).trim() : "",
+);
 
-    const renderedEyebrow = computed(() =>
-        props.eyebrow ? md.renderInline(props.eyebrow).trim() : "",
-    );
-    const renderedTitle = computed(() =>
-        props.title ? md.renderInline(props.title).trim() : "",
-    );
-    const renderedDesc = computed(() =>
-        props.desc ? md.renderInline(props.desc).trim() : "",
-    );
-    const renderedTag = computed(() =>
-        props.tag ? md.renderInline(props.tag).trim() : "",
-    );
-    const renderedNote = computed(() =>
-        props.note ? md.renderInline(props.note).trim() : "",
-    );
+const rawIcon = computed(() => normalizeIconValue(iconSource.value));
+const imageFailed = ref(false);
 
-    const rawIcon = computed(() => normalizeIconValue(iconSource.value));
-    const svg = computed(() =>
-        rawIcon.value && isRawSvg(rawIcon.value) ? rawIcon.value : "",
-    );
-    const url = computed(() =>
-        rawIcon.value && !isRawSvg(rawIcon.value)
-            ? resolveAssetUrl(rawIcon.value)
-            : "",
-    );
+watch(rawIcon, () => {
+	imageFailed.value = false;
+});
 
-    const badgeList = computed<NavBadge[]>(() => {
-        const list: NavBadge[] = [];
+const svg = computed(() =>
+	rawIcon.value && isRawSvg(rawIcon.value) ? rawIcon.value : "",
+);
+const url = computed(() =>
+	rawIcon.value && !isRawSvg(rawIcon.value)
+		? resolveAssetUrl(rawIcon.value)
+		: "",
+);
+const showImage = computed(() => Boolean(url.value) && !imageFailed.value);
+const fallbackLabel = computed(
+	() => props.title?.trim().charAt(0).toUpperCase() || "?",
+);
 
-        if (props.badge) {
-            const badge = props.badge;
-            list.push(
-                typeof badge === "string"
-                    ? { text: badge, type: "info" }
-                    : { text: badge.text ?? "", type: badge.type ?? "info" },
-            );
-        }
+const badgeList = computed<NavBadge[]>(() => {
+	const list: NavBadge[] = [];
 
-        if (props.badges) {
-            for (const badge of props.badges) {
-                list.push(
-                    typeof badge === "string"
-                        ? { text: badge, type: "info" }
-                        : {
-                              text: badge.text ?? "",
-                              type: badge.type ?? "info",
-                          },
-                );
-            }
-        }
+	if (props.badge) {
+		const badge = props.badge;
+		list.push(
+			typeof badge === "string"
+				? { text: badge, type: "info" }
+				: { text: badge.text ?? "", type: badge.type ?? "info" },
+		);
+	}
 
-        return list.filter((badge) => badge.text);
-    });
+	if (props.badges) {
+		for (const badge of props.badges) {
+			list.push(
+				typeof badge === "string"
+					? { text: badge, type: "info" }
+					: {
+							text: badge.text ?? "",
+							type: badge.type ?? "info",
+						},
+			);
+		}
+	}
 
-    const isExternalLink = computed(() =>
-        /^(?:https?:)?\/\//.test(props.link) ||
-        props.link.startsWith("mailto:") ||
-        props.link.startsWith("tel:"),
-    );
-    const resolvedHref = computed(() =>
-        isExternalLink.value ? props.link : withBase(props.link),
-    );
-    const linkTarget = computed(() =>
-        props.target ?? (isExternalLink.value ? "_blank" : "_self"),
-    );
-    const linkRel = computed(() =>
-        linkTarget.value === "_blank" ? "noreferrer" : undefined,
-    );
-    const linkStyle = computed(() => props.style ?? "default");
-    const cardStyle = computed(() => ({
-        ...(props.color
-            ? { "--nav-link-accent": props.color }
-            : undefined),
-        ...(props.iconBackground
-            ? { "--nav-link-icon-bg": props.iconBackground }
-            : undefined),
-    }));
+	return list.filter((badge) => badge.text);
+});
 
-    /** Shown in tooltip on hover. Uses `note` prop (opt-in hover-only info). */
-    const tooltipContent = computed(() => renderedNote.value || "");
+const isExternalLink = computed(
+	() =>
+		/^(?:https?:)?\/\//.test(props.link) ||
+		props.link.startsWith("mailto:") ||
+		props.link.startsWith("tel:"),
+);
+const resolvedHref = computed(() =>
+	isExternalLink.value ? props.link : withBase(props.link),
+);
+const linkTarget = computed(
+	() => props.target ?? (isExternalLink.value ? "_blank" : "_self"),
+);
+const linkRel = computed(() =>
+	linkTarget.value === "_blank" ? "noreferrer" : undefined,
+);
+const linkStyle = computed(() => props.style ?? "default");
+const cardStyle = computed(() => ({
+	...(props.color ? { "--nav-link-accent": props.color } : undefined),
+	...(props.iconBackground
+		? { "--nav-link-icon-bg": props.iconBackground }
+		: undefined),
+}));
+
+const tooltipContent = computed(() => renderedNote.value || "");
+function handleImageError() {
+	imageFailed.value = true;
+}
 </script>
 
 <template>
@@ -184,23 +214,24 @@
                 v-bind="tp"
             >
                 <div class="m-nav-link-box">
-                    <!-- Icon: plain div, no forced clipping -->
                     <template v-if="!noIcon && (svg || url)">
                         <div
                             v-if="svg"
                             class="m-nav-link-icon"
                             v-html="svg"
                         ></div>
-                        <div v-else-if="url" class="m-nav-link-icon">
+                        <div v-else-if="showImage" class="m-nav-link-icon">
                             <img
                                 :src="url"
                                 :alt="title"
-                                onerror="this.parentElement.style.display='none'"
+                                @error="handleImageError"
                             />
+                        </div>
+                        <div v-else class="m-nav-link-icon m-nav-link-icon--fallback">
+                            <span>{{ fallbackLabel }}</span>
                         </div>
                     </template>
 
-                    <!-- Content -->
                     <div class="m-nav-link-content">
                         <div class="m-nav-link-header">
                             <span
@@ -219,7 +250,6 @@
                                 ></span>
                                 <span v-else>{{ title }}</span>
                             </h5>
-                            <!-- Multi-badge row -->
                             <div v-if="badgeList.length" class="m-nav-link-badges">
                                 <span
                                     v-for="(b, i) in badgeList"
@@ -236,7 +266,6 @@
                             v-html="renderedDesc"
                         ></p>
 
-                        <!-- Tag footer (note goes to tooltip) -->
                         <div v-if="renderedTag" class="m-nav-link-meta">
                             <span class="m-nav-tag" v-html="renderedTag"></span>
                         </div>
@@ -248,26 +277,19 @@
 </template>
 
 <style scoped>
-    /* Tooltip surface */
     :deep(.m-nav-tooltip__content) {
-        background: rgba(10, 16, 30, 0.93) !important;
-        color: rgba(255, 255, 255, 0.88) !important;
-        border-radius: 8px !important;
-        padding: 8px 13px !important;
-        font-size: 12.5px !important;
-        font-weight: 450 !important;
-        line-height: 1.65 !important;
-        letter-spacing: 0.1px !important;
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.32) !important;
-        backdrop-filter: blur(12px) !important;
-        border: 1px solid rgba(255, 255, 255, 0.07) !important;
-    }
-
-    /* Accent border on hover (CSS var override) */
-    .m-nav-link:hover {
-        border-color: var(
-            --nav-link-accent,
-            color-mix(in srgb, var(--vp-c-brand-1) 35%, var(--vp-c-divider))
-        ) !important;
+        background: color-mix(in srgb, var(--vp-c-bg-elv) 92%, var(--vp-c-bg) 8%) !important;
+        color: var(--vp-c-text-1) !important;
+        border-radius: 14px !important;
+        padding: 0.72rem 0.86rem !important;
+        font-size: 0.78rem !important;
+        font-weight: 520 !important;
+        line-height: 1.68 !important;
+        letter-spacing: 0.01em !important;
+        box-shadow:
+            0 18px 36px color-mix(in srgb, var(--vp-c-text-1) 14%, transparent) !important;
+        backdrop-filter: blur(16px) !important;
+        border: 1px solid color-mix(in srgb, var(--vp-c-divider) 74%, transparent) !important;
+        max-width: 26rem;
     }
 </style>

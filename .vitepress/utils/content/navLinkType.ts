@@ -1,6 +1,6 @@
 export interface NavBadge {
     text: string
-    type?: 'info' | 'tip' | 'warning' | 'danger'
+    type?: 'info' | 'tip' | 'warning' | 'danger' | 'new' | 'beta' | 'deprecated'
 }
 
 export type NavLinkStyle = 'default' | 'soft' | 'outline' | 'solid'
