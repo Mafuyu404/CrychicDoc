@@ -19,6 +19,7 @@ import {
     BilibiliVideo,
     PdfViewer,
 } from "@utils/vitepress/componentRegistry/mediaRegistry";
+import { VPTeamMembers, VPTeamPage, VPTeamPageTitle, VPTeamPageSection } from 'vitepress/theme'
 import {
     Buttons,
     Carousels,
@@ -75,6 +76,10 @@ const baseComponents: ComponentRegistry = {
     MarkMapView,
     VChart,
     ShaderEffectBlock,
+    VPTeamMembers,
+    VPTeamPage,
+    VPTeamPageTitle,
+    VPTeamPageSection
 };
 
 const localRegistryModules = import.meta.glob(
