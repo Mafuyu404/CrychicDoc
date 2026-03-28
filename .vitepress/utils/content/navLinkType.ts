@@ -39,6 +39,6 @@ export interface NavSvg {
 }
 
 export interface NavThemeIcon {
-    dark: NavIcon
-    light: NavIcon
+    dark?: NavIcon
+    light?: NavIcon
 }

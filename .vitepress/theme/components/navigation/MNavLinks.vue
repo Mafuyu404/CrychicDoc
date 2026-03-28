@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { computed } from "vue";
+    import { computed, ref, watchEffect } from "vue";
     import { withBase, useData } from "vitepress";
     import { slugify } from "@mdit-vue/shared";
     import MarkdownIt from "markdown-it";
@@ -7,6 +7,10 @@
         resolveThemeValueByMode,
         getThemeRuntime,
     } from "@utils/vitepress/runtime/theme";
+    import {
+        decodeEscapedText,
+        resolveDynamicText,
+    } from "@utils/vitepress/runtime/text/dynamicText";
 
     import MNavLink from "./MNavLink.vue";
     import type { NavData, NavIcon, NavLink, NavThemeIcon } from "@utils/content/navLinkType";
@@ -80,12 +84,59 @@
     );
 
     const renderInline = (value?: string) =>
-        value ? md.renderInline(value).trim() : "";
+        value ? md.renderInline(decodeEscapedText(value).replace(/\n/g, "<br />")).trim() : "";
 
     const getHeadingId = (title: string) => slugify(title || "");
-    const getRenderedTitle = (title: string) => renderInline(title);
-    const getRenderedDescription = (description?: string) => renderInline(description);
-    const getRenderedEyebrow = (eyebrow?: string) => renderInline(eyebrow);
+    const resolvedPageHeader = ref({
+        title: renderInline(props.title),
+        description: renderInline(props.description),
+        eyebrow: renderInline(props.eyebrow),
+    });
+    const resolvedGroups = ref<Array<NavData & {
+        headingText?: string;
+        renderedTitle?: string;
+        renderedDescription?: string;
+        renderedEyebrow?: string;
+    }>>([]);
+
+    watchEffect((onCleanup) => {
+        let cancelled = false;
+        Promise.all([
+            resolveDynamicText(props.title),
+            resolveDynamicText(props.description),
+            resolveDynamicText(props.eyebrow),
+        ]).then(([title, description, eyebrow]) => {
+            if (cancelled) return;
+            resolvedPageHeader.value = {
+                title: renderInline(title),
+                description: renderInline(description),
+                eyebrow: renderInline(eyebrow),
+            };
+        });
+        onCleanup(() => {
+            cancelled = true;
+        });
+    });
+
+    watchEffect((onCleanup) => {
+        let cancelled = false;
+        const groups = normalizedGroups.value;
+        Promise.all(groups.map(async (group) => ({
+            ...group,
+            headingText: await resolveDynamicText(group.title),
+            renderedTitle: renderInline(await resolveDynamicText(group.title)),
+            renderedDescription: renderInline(await resolveDynamicText(group.description)),
+            renderedEyebrow: renderInline(await resolveDynamicText(group.eyebrow)),
+        }))).then((next) => {
+            if (!cancelled) {
+                resolvedGroups.value = next;
+            }
+        });
+        onCleanup(() => {
+            cancelled = true;
+        });
+    });
+
     const getGroupSvg = (group: NavData) => {
         const value = normalizeIconValue(group.icon);
         return value && isRawSvg(value) ? value : "";
@@ -107,22 +158,22 @@
         <header v-if="hasPageHeader" class="m-nav-page-heading">
             <div class="m-nav-page-copy">
                 <span
-                    v-if="getRenderedEyebrow(eyebrow)"
+                    v-if="resolvedPageHeader.eyebrow"
                     class="m-nav-page-eyebrow"
-                    v-html="getRenderedEyebrow(eyebrow)"
+                    v-html="resolvedPageHeader.eyebrow"
                 ></span>
                 <h1 v-if="title" class="m-nav-page-title">
-                    <span v-if="getRenderedTitle(title)" v-html="getRenderedTitle(title)"></span>
+                    <span v-if="resolvedPageHeader.title" v-html="resolvedPageHeader.title"></span>
                     <span v-else>{{ title }}</span>
                 </h1>
                 <p
-                    v-if="getRenderedDescription(description)"
+                    v-if="resolvedPageHeader.description"
                     class="m-nav-page-desc"
-                    v-html="getRenderedDescription(description)"
+                    v-html="resolvedPageHeader.description"
                 ></p>
             </div>
         </header>
-        <section v-for="(group, index) in normalizedGroups" :key="index" class="m-nav-group">
+        <section v-for="(group, index) in resolvedGroups" :key="index" class="m-nav-group">
             <div class="m-nav-group-heading">
                 <span v-if="getGroupSvg(group) || getGroupUrl(group)" class="m-nav-group-icon">
                     <span v-if="getGroupSvg(group)" v-html="getGroupSvg(group)"></span>
@@ -135,23 +186,23 @@
                 </span>
                 <div class="m-nav-group-copy">
                     <span
-                        v-if="getRenderedEyebrow(group.eyebrow)"
+                        v-if="group.renderedEyebrow"
                         class="m-nav-group-eyebrow"
-                        v-html="getRenderedEyebrow(group.eyebrow)"
+                        v-html="group.renderedEyebrow"
                     ></span>
-                    <h2 v-if="group.title" :id="getHeadingId(group.title)" tabindex="-1">
-                        <span v-if="getRenderedTitle(group.title)" v-html="getRenderedTitle(group.title)"></span>
+                    <h2 v-if="group.title" :id="getHeadingId(group.headingText || group.title)" tabindex="-1">
+                        <span v-if="group.renderedTitle" v-html="group.renderedTitle"></span>
                         <span v-else>{{ group.title }}</span>
                         <a
                             class="header-anchor"
-                            :href="`#${getHeadingId(group.title)}`"
+                            :href="`#${getHeadingId(group.headingText || group.title)}`"
                             aria-hidden="true"
                         ></a>
                     </h2>
                     <p
-                        v-if="getRenderedDescription(group.description)"
+                        v-if="group.renderedDescription"
                         class="m-nav-group-desc"
-                        v-html="getRenderedDescription(group.description)"
+                        v-html="group.renderedDescription"
                     ></p>
                 </div>
             </div>
