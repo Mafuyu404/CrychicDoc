@@ -1,6 +1,6 @@
 # Archived Directory: modpack
 
-**Archive Date**: 2026-03-31T22:27:31.792Z
+**Archive Date**: 2026-03-31T22:45:28.032Z
 **Original Location**: modpack/modpack
 **Reason**: Physical directory no longer exists in docs structure
 

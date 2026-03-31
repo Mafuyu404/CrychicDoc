@@ -1,6 +1,6 @@
 # Archived Directory: vanilla
 
-**Archive Date**: 2026-03-31T22:27:31.855Z
+**Archive Date**: 2026-03-31T22:45:28.101Z
 **Original Location**: develop/vanilla/vanilla
 **Reason**: Physical directory no longer exists in docs structure
 

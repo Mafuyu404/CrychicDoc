@@ -1,6 +1,6 @@
 # Archived Directory: adventure-mods
 
-**Archive Date**: 2026-03-31T22:27:31.918Z
+**Archive Date**: 2026-03-31T22:45:28.173Z
 **Original Location**: mods/adventure/adventure-mods
 **Reason**: Physical directory no longer exists in docs structure
 

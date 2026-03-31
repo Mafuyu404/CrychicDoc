@@ -1,6 +1,6 @@
 # Archived Directory: 目录
 
-**Archive Date**: 2026-03-31T22:27:30.517Z
+**Archive Date**: 2026-03-31T22:45:26.804Z
 **Original Location**: mods/adventure/目录
 **Reason**: Physical directory no longer exists in docs structure
 

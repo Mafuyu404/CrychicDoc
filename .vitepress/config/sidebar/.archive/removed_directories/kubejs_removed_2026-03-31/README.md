@@ -1,6 +1,6 @@
 # Archived Directory: kubejs
 
-**Archive Date**: 2026-03-31T22:27:31.894Z
+**Archive Date**: 2026-03-31T22:45:28.126Z
 **Original Location**: info/KubeJS/kubejs
 **Reason**: Physical directory no longer exists in docs structure
 

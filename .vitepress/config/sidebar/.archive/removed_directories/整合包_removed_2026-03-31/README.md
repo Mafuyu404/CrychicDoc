@@ -1,6 +1,6 @@
 # Archived Directory: 整合包
 
-**Archive Date**: 2026-03-31T22:27:30.233Z
+**Archive Date**: 2026-03-31T22:45:26.580Z
 **Original Location**: modpack/整合包
 **Reason**: Physical directory no longer exists in docs structure
 

@@ -1,6 +1,6 @@
 # Archived Directory: modding
 
-**Archive Date**: 2026-03-31T22:27:31.824Z
+**Archive Date**: 2026-03-31T22:45:28.078Z
 **Original Location**: develop/modding/modding
 **Reason**: Physical directory no longer exists in docs structure
 

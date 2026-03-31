@@ -1,7 +1,7 @@
 # Archived Directory: 模组
 
-**Archive Date**: 2026-03-31T22:27:30.561Z
-**Original Location**: mods/custom/模组
+**Archive Date**: 2026-03-31T22:45:26.623Z
+**Original Location**: mods/模组
 **Reason**: Physical directory no longer exists in docs structure
 
 ## Contents
@@ -14,13 +14,13 @@ This archive contains both the configuration files and metadata for a directory 
 To restore this directory:
 
 1. **Recreate the physical directory**: 
-   `mkdir -p docs/zh/mods/custom/模组/`
+   `mkdir -p docs/zh/mods/模组/`
 
 2. **Restore configuration files**:
-   `cp -r config/模组/ .vitepress/config/sidebar/zh/mods/custom/模组/`
+   `cp -r config/模组/ .vitepress/config/sidebar/zh/mods/模组/`
 
 3. **Restore metadata files**:
-   `cp -r metadata/模组/ .vitepress/config/sidebar/.metadata/zh/mods/custom/模组/`
+   `cp -r metadata/模组/ .vitepress/config/sidebar/.metadata/zh/mods/模组/`
 
 4. **Restart the development server**
 
