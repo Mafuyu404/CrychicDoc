@@ -38,7 +38,6 @@ Suppose you want to create a documentation area for a new Mod `AwesomeMod`.
 #### Step 1: Create Directory Structure
 Create a new directory `AwesomeMod` under `docs/zh/mods/`, then create:
 - `sidebarIndex.md` for sidebar metadata.
-- `Description.md` for the directory landing content.
 
 #### Step 2: Declare as Root in `sidebarIndex.md`
 Edit the frontmatter of `docs/zh/mods/AwesomeMod/sidebarIndex.md`:
@@ -70,7 +69,7 @@ priority: 10
 Organize `features.md` into a "Features" subgroup.
 
 #### Step 1: Create Subdirectory and Sidebar Files
-Create a `features/` subdirectory under the `AwesomeMod` directory and move `features.md` into it. Then create `sidebarIndex.md` and `Description.md` inside `features/`.
+Create a `features/` subdirectory under the `AwesomeMod` directory and move `features.md` into it. Then create `sidebarIndex.md` inside `features/`.
 
 #### Step 2: Configure in Subdirectory `sidebarIndex.md`
 Edit the frontmatter of `AwesomeMod/features/sidebarIndex.md` to specify a title and priority for it.

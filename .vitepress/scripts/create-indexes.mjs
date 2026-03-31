@@ -9,7 +9,6 @@ import { getLanguageCodes } from "../utils/config/project-config.ts";
 import { getSrcPath } from "../utils/config/path-resolver.js";
 
 const SIDEBAR_CONFIG_FILE = "sidebarIndex.md";
-const DIRECTORY_DESCRIPTION_FILE = "Description.md";
 const LEGACY_INDEX_FILE = "index.md";
 
 class IndexGenerator {
@@ -87,14 +86,13 @@ OPTIONS:
   -t, --template <type>        Template type (default/advanced) [default: default]
   -d, --dry-run                Preview changes without writing files
   -v, --verbose                Show detailed information
-  -f, --force                  Overwrite existing sidebarIndex.md and Description.md
+  -f, --force                  Overwrite existing sidebarIndex.md
       --keep-legacy-index      Keep legacy index.md files after migration
       --exclude <pattern>      Exclude directories matching pattern
   -h, --help                   Show this help
 
 GENERATED FILES:
   - sidebarIndex.md            Sidebar/frontmatter configuration file
-  - Description.md             Directory landing content page (non-empty)
 
 SUPPORTED LANGUAGES:
   ${this.languages.join(", ")}
@@ -192,7 +190,6 @@ SOURCE DIRECTORY: ${this.srcPath}
         if (!existsSync(legacyIndexPath)) {
             return {
                 sidebar: this.createSidebarTemplate(title, templateType),
-                description: this.createDescriptionTemplate(title, templateType),
             };
         }
 
@@ -231,12 +228,11 @@ SOURCE DIRECTORY: ${this.srcPath}
             const dirsNeedingScaffolding = [];
             for (const dir of allDirs) {
                 const sidebarPath = join(dir, SIDEBAR_CONFIG_FILE);
-                const descriptionPath = join(dir, DIRECTORY_DESCRIPTION_FILE);
                 const legacyIndexPath = join(dir, LEGACY_INDEX_FILE);
 
                 const markdownFiles = await glob("*.md", {
                     cwd: dir,
-                    ignore: [SIDEBAR_CONFIG_FILE, DIRECTORY_DESCRIPTION_FILE],
+                    ignore: [SIDEBAR_CONFIG_FILE],
                 });
                 const subdirs = await glob("*/", { cwd: dir });
 
@@ -245,16 +241,15 @@ SOURCE DIRECTORY: ${this.srcPath}
                 }
 
                 const needsSidebar = !existsSync(sidebarPath) || config.force;
-                const needsDescription = !existsSync(descriptionPath) || config.force;
+                const needsDescription = false;
                 const hasLegacyIndex = existsSync(legacyIndexPath);
                 const needsLegacyMigration =
                     hasLegacyIndex && (!config.keepLegacyIndex || config.force);
 
-                if (needsSidebar || needsDescription || needsLegacyMigration) {
+                if (needsSidebar || needsLegacyMigration) {
                     dirsNeedingScaffolding.push({
                         path: dir,
                         sidebarPath,
-                        descriptionPath,
                         legacyIndexPath,
                         hasLegacyIndex,
                         needsSidebar,
@@ -274,7 +269,7 @@ SOURCE DIRECTORY: ${this.srcPath}
 
     createScaffoldingFiles(dirInfo, template, dryRun = false, keepLegacyIndex = false) {
         const title = this.formatTitle(dirInfo.dirName);
-        const { sidebar, description } = this.extractLegacyContents(
+        const { sidebar } = this.extractLegacyContents(
             dirInfo.legacyIndexPath,
             title,
             template,
@@ -283,11 +278,6 @@ SOURCE DIRECTORY: ${this.srcPath}
         if (dryRun) {
             if (dirInfo.needsSidebar) {
                 console.log(`📝 Would write: ${dirInfo.relativePath}/${SIDEBAR_CONFIG_FILE}`);
-            }
-            if (dirInfo.needsDescription) {
-                console.log(
-                    `📝 Would write: ${dirInfo.relativePath}/${DIRECTORY_DESCRIPTION_FILE}`,
-                );
             }
             if (dirInfo.hasLegacyIndex && !keepLegacyIndex) {
                 console.log(`🧹 Would remove: ${dirInfo.relativePath}/${LEGACY_INDEX_FILE}`);
@@ -298,10 +288,6 @@ SOURCE DIRECTORY: ${this.srcPath}
         try {
             if (dirInfo.needsSidebar) {
                 writeFileSync(dirInfo.sidebarPath, sidebar, "utf8");
-            }
-
-            if (dirInfo.needsDescription) {
-                writeFileSync(dirInfo.descriptionPath, description, "utf8");
             }
 
             if (dirInfo.hasLegacyIndex && !keepLegacyIndex) {
@@ -332,7 +318,7 @@ SOURCE DIRECTORY: ${this.srcPath}
         const directories = await this.findDirectoriesNeedingScaffolding(config);
         if (directories.length === 0) {
             console.log(
-                "✅ No directories require updates. sidebarIndex.md and Description.md are already in place.",
+                "✅ No directories require updates. sidebarIndex.md files are already in place.",
             );
             return;
         }

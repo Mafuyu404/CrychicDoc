@@ -38,7 +38,6 @@ CrychicDoc 的侧边栏系统通过读取您在 Markdown 文件中设置的 `fro
 #### 步骤 1: 创建目录结构
 在 `docs/zh/mods/` 下创建新目录 `AwesomeMod`，并在其中创建：
 - `sidebarIndex.md`（目录侧边栏元数据）
-- `Description.md`（目录落地内容页）
 
 #### 步骤 2: 在 `sidebarIndex.md` 中声明为根
 编辑 `docs/zh/mods/AwesomeMod/sidebarIndex.md` 的 frontmatter:
@@ -70,7 +69,7 @@ priority: 10
 将 `features.md` 组织到一个“功能”子分组中。
 
 #### 步骤 1: 创建子目录和侧边栏文件
-在 `AwesomeMod` 目录下创建 `features/` 子目录，并将 `features.md` 移入其中。然后，在 `features/` 目录下创建 `sidebarIndex.md` 和 `Description.md`。
+在 `AwesomeMod` 目录下创建 `features/` 子目录，并将 `features.md` 移入其中。然后，在 `features/` 目录下创建 `sidebarIndex.md`。
 
 #### 步骤 2: 在子目录 `sidebarIndex.md` 中配置
 编辑 `AwesomeMod/features/sidebarIndex.md` 的 frontmatter，为其指定一个标题和优先级。

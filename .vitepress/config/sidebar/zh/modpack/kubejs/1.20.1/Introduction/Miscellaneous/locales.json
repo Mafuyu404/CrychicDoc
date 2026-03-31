@@ -4,7 +4,6 @@
   "CompletableFuture.md": "异步操作",
   "Components.md": "组件",
   "CountingMap.md": "计数Map",
-  "Description.md": "序言",
   "Ingredient.md": "原料",
   "IngredientActionFilter.md": "原料动作过滤器",
   "ItemStack.md": "物品堆",

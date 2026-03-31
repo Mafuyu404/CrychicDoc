@@ -24,7 +24,7 @@ const kubePanels: NavPanel[] = [
                 items: [
                     {
                         text: "版本 1.21 总览",
-                        link: "/modpack/kubejs/1.21/",
+                        link: "/modpack/kubejs/1.21/Introduction/Addon/LootJs/LootJs",
                         desc: "面向 Minecraft 1.21 现代整合包的最新分支。",
                         badge: {
                             text: "最新",
@@ -50,7 +50,7 @@ const kubePanels: NavPanel[] = [
                     },
                     {
                         text: "Introduction",
-                        link: "/modpack/kubejs/1.21/Introduction/",
+                        link: "/modpack/kubejs/1.21/Introduction/Addon/LootJs/LootJs",
                         desc: "脚本生命周期与结构模型的基础章节。",
                         preview: kubePreview(
                             "版本 1.21 Introduction",
@@ -69,7 +69,7 @@ const kubePanels: NavPanel[] = [
                     },
                     {
                         text: "Addon 扩展",
-                        link: "/modpack/kubejs/1.21/Introduction/Addon/",
+                        link: "/modpack/kubejs/1.21/Introduction/Addon/LootJs/LootJs",
                         desc: "生态联动与扩展能力构建的正式参考。",
                         preview: kubePreview(
                             "版本 1.21 Addon 扩展",
@@ -117,7 +117,7 @@ const kubePanels: NavPanel[] = [
                 items: [
                     {
                         text: "版本 1.20.1 总览",
-                        link: "/modpack/kubejs/1.20.1/",
+                        link: "/modpack/kubejs/1.20.1/Introduction/Event/StartupScript/EventList",
                         desc: "覆盖最完整的综合文档分支。",
                         badge: {
                             text: "完整",
@@ -143,7 +143,7 @@ const kubePanels: NavPanel[] = [
                     },
                     {
                         text: "Introduction",
-                        link: "/modpack/kubejs/1.20.1/Introduction/",
+                        link: "/modpack/kubejs/1.20.1/Introduction/Event/StartupScript/EventList",
                         desc: "事件、配方、实体、标签等核心 API 基线。",
                         preview: kubePreview(
                             "版本 1.20.1 Introduction",
@@ -162,7 +162,7 @@ const kubePanels: NavPanel[] = [
                     },
                     {
                         text: "事件系统",
-                        link: "/modpack/kubejs/1.20.1/Introduction/Event/",
+                        link: "/modpack/kubejs/1.20.1/Introduction/Event/StartupScript/EventList",
                         desc: "Startup、Server、Client 事件生命周期规范。",
                         preview: kubePreview(
                             "版本 1.20.1 事件系统",
@@ -181,7 +181,7 @@ const kubePanels: NavPanel[] = [
                     },
                     {
                         text: "配方系统",
-                        link: "/modpack/kubejs/1.20.1/Introduction/Recipe/",
+                        link: "/modpack/kubejs/1.20.1/Introduction/Recipe/Catalogue",
                         desc: "新增、修改与移除配方的治理流程。",
                         preview: kubePreview(
                             "版本 1.20.1 配方系统",
@@ -200,7 +200,7 @@ const kubePanels: NavPanel[] = [
                     },
                     {
                         text: "Upgrade",
-                        link: "/modpack/kubejs/1.20.1/Upgrade/",
+                        link: "/modpack/kubejs/1.20.1/Upgrade/DataType",
                         desc: "遗留脚本迁移与兼容性调整方法。",
                         preview: kubePreview(
                             "版本 1.20.1 Upgrade",
@@ -219,7 +219,7 @@ const kubePanels: NavPanel[] = [
                     },
                     {
                         text: "CodeShare",
-                        link: "/modpack/kubejs/1.20.1/CodeShare/",
+                        link: "/modpack/kubejs/1.20.1/CodeShare/CraftingTableGUI",
                         desc: "可直接改造的社区脚本片段集合。",
                         preview: kubePreview(
                             "版本 1.20.1 CodeShare",

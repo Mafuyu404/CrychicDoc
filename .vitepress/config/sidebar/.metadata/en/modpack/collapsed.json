@@ -8,13 +8,18 @@
   "kubejs/": {
     "valueHash": "b326b5062b2f0e69046810717534cb09",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749253126570
   },
   "recommendation/": {
     "valueHash": "b326b5062b2f0e69046810717534cb09",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749253126570
+  },
+  "modpack/": {
+    "valueHash": "b326b5062b2f0e69046810717534cb09",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

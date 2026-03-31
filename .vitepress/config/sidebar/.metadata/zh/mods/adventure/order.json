@@ -2,7 +2,7 @@
   "Champions-Unofficial/": {
     "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "adventure/": {
     "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
@@ -11,6 +11,11 @@
   },
   "Description.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "目录/": {
+    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
     "isUserSet": false,
     "isActiveInStructure": true
   }

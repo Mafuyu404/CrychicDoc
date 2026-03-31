@@ -12,7 +12,7 @@
   "Description.md": {
     "valueHash": "86e58a8f53fcc5a51743fe145aeae1f1",
     "isUserSet": true,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "Entity/": {
     "valueHash": "94f6d7e04a4d452035300f18b984988c",
@@ -47,7 +47,7 @@
   "Network/": {
     "valueHash": "cee631121c2ec9232f3a2f028ad5c89b",
     "isUserSet": true,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "PotionEffect/": {
     "valueHash": "9de6d14fff9806d4bcd1ef555be766cd",

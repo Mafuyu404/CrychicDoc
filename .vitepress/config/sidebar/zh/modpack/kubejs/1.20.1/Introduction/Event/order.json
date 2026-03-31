@@ -1,6 +1,5 @@
 {
   "ClientScript/": 300,
   "ServerScript/": 200,
-  "StartupScript/": 100,
-  "Description.md": -1000000000
+  "StartupScript/": 100
 }

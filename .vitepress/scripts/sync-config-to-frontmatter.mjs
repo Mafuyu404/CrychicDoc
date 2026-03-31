@@ -125,7 +125,6 @@ const configPath = resolve(
 );
 const sidebarConfigPath = join(configPath, "sidebar");
 const SIDEBAR_CONFIG_FILENAME = "sidebarIndex.md";
-const DIRECTORY_DESCRIPTION_FILENAME = "Description.md";
 
 /**
  * Sidebar Configuration to Frontmatter Sync Script
@@ -137,7 +136,7 @@ const DIRECTORY_DESCRIPTION_FILENAME = "Description.md";
  * - Reuses existing sidebar system components
  * - Handles _self_ configurations for directories
  * - Processes all four config types: locales, hidden, order, collapsed
- * - Auto-generates missing sidebarIndex.md/Description.md files
+ * - Auto-generates missing sidebarIndex.md files
  * - Preserves existing frontmatter while updating sidebar configs
  */
 class ConfigToFrontmatterSync {
@@ -208,7 +207,6 @@ class ConfigToFrontmatterSync {
 
     Target file convention:
     - Directory metadata: sidebarIndex.md
-    - Directory landing page: Description.md
 
     EXAMPLES:
     # Sync all languages
@@ -243,15 +241,12 @@ class ConfigToFrontmatterSync {
 
     createDefaultBody(filePath, title) {
         const fileName = basename(filePath).toLowerCase();
-        const fallbackTitle = title || "Description";
+        const fallbackTitle = title || "Untitled";
 
         if (fileName === SIDEBAR_CONFIG_FILENAME.toLowerCase()) {
             return "This file stores sidebar metadata for this directory.";
         }
 
-        if (fileName === DIRECTORY_DESCRIPTION_FILENAME.toLowerCase()) {
-            return `# ${fallbackTitle}\n\nThis page provides an overview of this directory.`;
-        }
 
         return `# ${fallbackTitle}\n\nContent is maintained in this page.`;
     }

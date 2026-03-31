@@ -1,11 +1,3 @@
 {
-  "_self_": true,
-  "adventure/": true,
-  "armor_tools/": true,
-  "cosmetic/": true,
-  "custom/": true,
-  "performance/": true,
-  "server/": true,
-  "storages/": true,
-  "tech/": true
+  "_self_": true
 }

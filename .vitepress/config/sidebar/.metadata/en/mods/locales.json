@@ -8,25 +8,25 @@
   "adventure/": {
     "valueHash": "3895b6254d65e627e76a0dec52aab404",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749253126602
   },
   "armor_tools/": {
     "valueHash": "68b8f3f33d56774b438e4a794ac3c4d9",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749253126602
   },
   "cosmetic/": {
     "valueHash": "e9827b74700e5eae6c124f2dd4e1a16d",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749253126602
   },
   "custom/": {
     "valueHash": "1671dcdc65411f7141187602e197c77a",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749253126602
   },
   "performance/": {
@@ -44,18 +44,18 @@
   "storages/": {
     "valueHash": "e532ddb3fc8bd39b23b2e034c87180b1",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749253126602
   },
   "tech/": {
     "valueHash": "d9f9133fb120cd6096870bc2b496805b",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749253126602
   },
   "Description.md": {
     "valueHash": "7aeb0277500c86e4aa6bd23f9a737942",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   }
 }

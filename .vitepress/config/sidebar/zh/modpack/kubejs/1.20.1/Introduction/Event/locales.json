@@ -2,6 +2,5 @@
   "_self_": "Event",
   "ClientScript/": "客户端脚本",
   "ServerScript/": "服务器脚本",
-  "StartupScript/": "启动脚本",
-  "Description.md": "Event"
+  "StartupScript/": "启动脚本"
 }

@@ -1,12 +1,3 @@
 {
-  "_self_": false,
-  "adventure/": false,
-  "armor_tools/": false,
-  "cosmetic/": false,
-  "custom/": false,
-  "performance/": false,
-  "server/": false,
-  "storages/": false,
-  "tech/": false,
-  "Description.md": false
+  "_self_": false
 }

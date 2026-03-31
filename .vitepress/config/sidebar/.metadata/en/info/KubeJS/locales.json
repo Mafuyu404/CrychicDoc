@@ -8,22 +8,27 @@
   "Q&A/": {
     "valueHash": "bcd92bcee57648f2bd4480c4a1193ac0",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749253126851
   },
   "borad/": {
     "valueHash": "9d45183821d6a8f8c93ab3ec2b280952",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749253126851
   },
   "code/": {
     "valueHash": "ca0dbad92a874b2f69b549293387925e",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749253126851
   },
   "Description.md": {
+    "valueHash": "a5b10124c73efb47be9e6410796d1e42",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "kubejs/": {
     "valueHash": "a5b10124c73efb47be9e6410796d1e42",
     "isUserSet": false,
     "isActiveInStructure": true

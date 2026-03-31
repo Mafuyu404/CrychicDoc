@@ -24,7 +24,7 @@ const kubePanels: NavPanel[] = [
                 items: [
                     {
                         text: "Overview",
-                        link: "/modpack/kubejs/1.21/",
+                        link: "/modpack/kubejs/1.21/Introduction/Addon/LootJs/LootJs",
                         desc: "Newest branch for modern 1.21 packs.",
                         badge: {
                             text: "latest",
@@ -50,7 +50,7 @@ Use this branch when your runtime target is 1.21.`,
                     },
                     {
                         text: "Introduction",
-                        link: "/modpack/kubejs/1.21/Introduction/",
+                        link: "/modpack/kubejs/1.21/Introduction/Addon/LootJs/LootJs",
                         desc: "Core concepts, script model, and entry flow.",
                         preview: kubePreview(
                             "1.21 Introduction",
@@ -69,7 +69,7 @@ Use this branch when your runtime target is 1.21.`,
                     },
                     {
                         text: "Addon",
-                        link: "/modpack/kubejs/1.21/Introduction/Addon/",
+                        link: "/modpack/kubejs/1.21/Introduction/Addon/LootJs/LootJs",
                         desc: "Extended ecosystem and module integration.",
                         preview: kubePreview(
                             "1.21 Addon",
@@ -117,14 +117,14 @@ Use this branch when your runtime target is 1.21.`,
                 items: [
                     {
                         text: "Overview",
-                        link: "/modpack/kubejs/1.20.1/Introduction/Description",
+                        link: "/modpack/kubejs/1.20.1/Introduction/Event/StartupScript/EventList",
                         desc: "Most complete branch with broad coverage.",
                         preview: kubePreview(
                             "KubeJS 1.20.1 Overview",
                             "Deepest and broadest branch in this doc set.",
                             `The 1.20.1 section is the main learning backbone:
 
-- Introduction, Upgrade, CodeShare, and course resources
+- Introduction, Upgrade, CodeShare, and API references
 - Rich examples for scripting patterns
 - Practical reference for production modpacks`,
                             {
@@ -136,7 +136,7 @@ Use this branch when your runtime target is 1.21.`,
                     },
                     {
                         text: "Introduction",
-                        link: "/modpack/kubejs/1.20.1/Introduction/Description",
+                        link: "/modpack/kubejs/1.20.1/Introduction/Event/StartupScript/EventList",
                         desc: "Events, recipes, entities, tags, and systems.",
                         preview: kubePreview(
                             "1.20.1 Introduction",
@@ -155,7 +155,7 @@ Use this branch when your runtime target is 1.21.`,
                     },
                     {
                         text: "Event API",
-                        link: "/modpack/kubejs/1.20.1/Introduction/Event/",
+                        link: "/modpack/kubejs/1.20.1/Introduction/Event/StartupScript/EventList",
                         desc: "Startup, server, and client event model.",
                         preview: kubePreview(
                             "1.20.1 Event API",
@@ -174,7 +174,7 @@ Use this branch when your runtime target is 1.21.`,
                     },
                     {
                         text: "Recipe API",
-                        link: "/modpack/kubejs/1.20.1/Introduction/Recipe/",
+                        link: "/modpack/kubejs/1.20.1/Introduction/Recipe/Catalogue",
                         desc: "Create, modify, and remove recipe flows.",
                         preview: kubePreview(
                             "1.20.1 Recipe API",
@@ -193,7 +193,7 @@ Use this branch when your runtime target is 1.21.`,
                     },
                     {
                         text: "Upgrade",
-                        link: "/modpack/kubejs/1.20.1/Upgrade/",
+                        link: "/modpack/kubejs/1.20.1/Upgrade/DataType",
                         desc: "Migration notes and compatibility adjustments.",
                         preview: kubePreview(
                             "1.20.1 Upgrade",
@@ -212,7 +212,7 @@ Use this branch when your runtime target is 1.21.`,
                     },
                     {
                         text: "CodeShare",
-                        link: "/modpack/kubejs/1.20.1/CodeShare/",
+                        link: "/modpack/kubejs/1.20.1/CodeShare/CraftingTableGUI",
                         desc: "Community snippets for direct adaptation.",
                         preview: kubePreview(
                             "1.20.1 CodeShare",

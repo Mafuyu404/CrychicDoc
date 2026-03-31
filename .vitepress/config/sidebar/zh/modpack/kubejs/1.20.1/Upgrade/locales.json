@@ -3,6 +3,5 @@
   "DataType.md": "数据类型",
   "GlobalScope/": "全局作用域",
   "JavaScript/": "JavaScript相关概念",
-  "VariableType.md": "基本类型",
-  "Description.md": "Upgrade"
+  "VariableType.md": "基本类型"
 }

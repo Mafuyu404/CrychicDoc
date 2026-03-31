@@ -19,6 +19,5 @@
   "Redirect.md": "@Redirect",
   "Shadow.md": "@Shadow",
   "Slice.md": "@Slice",
-  "Unique.md": "@Unique",
-  "Description.md": "注解"
+  "Unique.md": "@Unique"
 }

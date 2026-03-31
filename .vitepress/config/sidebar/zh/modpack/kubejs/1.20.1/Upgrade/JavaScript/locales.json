@@ -4,6 +4,5 @@
   "basic.md": "基础",
   "map.md": "映射（Map）",
   "object.md": "对象（Object）",
-  "set.md": "集合（Set）",
-  "Description.md": "JavaScript相关概念"
+  "set.md": "集合（Set）"
 }

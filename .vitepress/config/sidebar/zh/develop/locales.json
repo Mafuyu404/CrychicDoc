@@ -1,7 +1,3 @@
 {
-  "_self_": "Develop",
-  "modding/": "Modding",
-  "plugin/": "plugin",
-  "vanilla/": "Vanilla",
-  "Description.md": "Develop"
+  "_self_": "Develop"
 }

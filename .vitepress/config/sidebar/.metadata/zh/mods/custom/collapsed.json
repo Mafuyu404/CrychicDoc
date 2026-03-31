@@ -8,11 +8,16 @@
   "MBD2/": {
     "valueHash": "b326b5062b2f0e69046810717534cb09",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "custom/": {
     "valueHash": "b326b5062b2f0e69046810717534cb09",
     "isUserSet": false,
     "isActiveInStructure": false
+  },
+  "模组/": {
+    "valueHash": "b326b5062b2f0e69046810717534cb09",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }
