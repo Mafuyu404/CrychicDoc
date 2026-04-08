@@ -5,7 +5,7 @@ hidden: false
 priority: 10
 ---
 
-# 整合包
+# KubejS
 
 ## 子分区
 
