@@ -1,6 +1,6 @@
 {
-  "_self_": "Event",
+  "_self_": "事件",
   "ClientScript/": "客户端脚本",
-  "ServerScript/": "服务器脚本",
+  "ServerScript/": "服务端脚本",
   "StartupScript/": "启动脚本"
 }

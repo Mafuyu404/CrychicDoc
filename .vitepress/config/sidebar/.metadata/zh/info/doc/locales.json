@@ -1,7 +1,7 @@
 {
   "_self_": {
-    "valueHash": "9a09b4dfda82e3e665e31092d1c3ec8d",
-    "isUserSet": false,
+    "valueHash": "f041401431de860be72c6b1e55674b45",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749249338191
   },
@@ -12,14 +12,14 @@
     "lastSeen": 1749252347073
   },
   "module-request/": {
-    "valueHash": "17853ad42d918180485a103d90d167c5",
-    "isUserSet": false,
+    "valueHash": "e36ad06e87ed78351b4e09582fd8dd9e",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749252347073
   },
   "suggestion/": {
-    "valueHash": "619f3ae20e20d469ee2147e4036aeef1",
-    "isUserSet": false,
+    "valueHash": "9764a6f8a913e02cdcf26e662f67ab09",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749252347073
   }

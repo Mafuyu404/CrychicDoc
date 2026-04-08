@@ -7,12 +7,12 @@
   "guide/": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "rules.md": {
     "valueHash": "1b0fd9efa5279c4203b7c70233f86dbf",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "samples.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
@@ -42,32 +42,32 @@
   "doc/": {
     "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "sidebarGuide.md": {
     "valueHash": "98f13708210194c475687be6106a3b84",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "pluginsGuide.md": {
     "valueHash": "34173cb38f07f89ddbebc2ac9128303f",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "litetreeGuide.md": {
     "valueHash": "d645920e395fedad7bbbed0eca3fe2e0",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "vscodeSnippetsGuide.md": {
     "valueHash": "c0c7c76d30bd3dcaefc96f40275bdc0a",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "frameworkMaintainability.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "Description.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
@@ -77,16 +77,21 @@
   "developmentWorkflow.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "extensionArchitecture.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "heroExtension.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "115e589db5ec8ec6f2f9fd5bb9096a9d",
+    "isUserSet": false,
+    "isActiveInStructure": false
   }
 }

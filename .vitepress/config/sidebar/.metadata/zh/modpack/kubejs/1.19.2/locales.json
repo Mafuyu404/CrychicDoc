@@ -1,8 +1,18 @@
 {
   "_self_": {
-    "valueHash": "243d0cf5b92827a0d98bde20c2d907d7",
-    "isUserSet": false,
+    "valueHash": "d1351bc4f56a39e9321b9ebbb85981da",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749249338352
+  },
+  "Catalogue.md": {
+    "valueHash": "767fa455bb6826f4b550c21a6bca7182",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "XPlusKubeJSTutorial/": {
+    "valueHash": "155f50a0ac7bbf6c174dbe233310ea1a",
+    "isUserSet": true,
+    "isActiveInStructure": true
   }
 }

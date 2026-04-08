@@ -1,7 +1,7 @@
 {
   "_self_": {
-    "valueHash": "f683581d3e75f05f9d9215f9b4696cef",
-    "isUserSet": false,
+    "valueHash": "bdff74998729df2df34180108c8d4624",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247315988
   },
@@ -18,8 +18,8 @@
     "lastSeen": 1749254447397
   },
   "JavaScript/": {
-    "valueHash": "df8b489861e1f791b9ce4e8c5bd7e779",
-    "isUserSet": false,
+    "valueHash": "686155af75a60a0f6e9d80c1f7edd3e9",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447397
   },
@@ -30,6 +30,11 @@
     "lastSeen": 1749254447397
   },
   "Description.md": {
+    "valueHash": "f683581d3e75f05f9d9215f9b4696cef",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
     "valueHash": "f683581d3e75f05f9d9215f9b4696cef",
     "isUserSet": false,
     "isActiveInStructure": false

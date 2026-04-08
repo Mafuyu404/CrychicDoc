@@ -1,27 +1,24 @@
 {
   "_self_": {
-    "valueHash": "1bedc6fb14c15b2e99872ebdbc317bf2",
-    "isUserSet": false,
+    "valueHash": "3ff3c3e26a68112c11c3e80f2a26896e",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247315627
   },
   "modding/": {
-    "valueHash": "fa00e202a8924be29b0d5d0b6569e5e5",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446578
+    "valueHash": "8edf9fd34b93de4b5595e30a2135d7e8",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "plugin/": {
-    "valueHash": "a24bcf2198b1b13ad985304483f7f324",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446578
+    "valueHash": "0e607a698eff54e089fa2573a336e809",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "vanilla/": {
-    "valueHash": "7d3cf600bf044a1aaf9324807bd8d13e",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446578
+    "valueHash": "8d2f666365af3b1f935e1521256694b3",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "Description.md": {
     "valueHash": "1bedc6fb14c15b2e99872ebdbc317bf2",
@@ -31,6 +28,11 @@
   "develop/": {
     "valueHash": "1bedc6fb14c15b2e99872ebdbc317bf2",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "1bedc6fb14c15b2e99872ebdbc317bf2",
+    "isUserSet": false,
+    "isActiveInStructure": false
   }
 }

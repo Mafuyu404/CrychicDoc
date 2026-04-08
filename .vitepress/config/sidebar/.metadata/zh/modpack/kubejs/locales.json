@@ -1,29 +1,29 @@
 {
   "_self_": {
-    "valueHash": "df1e605e0816bd3a06728055b25d8f03",
-    "isUserSet": false,
+    "valueHash": "a5b10124c73efb47be9e6410796d1e42",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247315686
   },
   "1.18.2/": {
-    "valueHash": "4724f024b9aee4a28b8bf438357422ef",
-    "isUserSet": false,
+    "valueHash": "9a590eaf7b4a05ff2b9db10dbb52e2b0",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "1.19.2/": {
-    "valueHash": "243d0cf5b92827a0d98bde20c2d907d7",
-    "isUserSet": false,
+    "valueHash": "d1351bc4f56a39e9321b9ebbb85981da",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "1.20.1/": {
-    "valueHash": "a5b10124c73efb47be9e6410796d1e42",
-    "isUserSet": false,
-    "isActiveInStructure": false
+    "valueHash": "87180fd24367251e3efb506e90bb183c",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "1.21/": {
-    "valueHash": "a5b10124c73efb47be9e6410796d1e42",
-    "isUserSet": false,
-    "isActiveInStructure": false
+    "valueHash": "6df94c47b40b2038e6753c10b86b85c6",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "kubejs/": {
     "valueHash": "a5b10124c73efb47be9e6410796d1e42",
@@ -31,6 +31,11 @@
     "isActiveInStructure": false
   },
   "Description.md": {
+    "valueHash": "df1e605e0816bd3a06728055b25d8f03",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
     "valueHash": "df1e605e0816bd3a06728055b25d8f03",
     "isUserSet": false,
     "isActiveInStructure": false

@@ -1,14 +1,14 @@
-# 注册门
-本章主要涉及内容：createCustom，本章所有代码部分都在`startup_scripts`里
+# Register a Door
+Main topic in this chapter: `createCustom`. All code in this chapter belongs in `startup_scripts`.
 
-涉及模组及版本:
+Mods and versions used:
 1. jei-1.20.1-forge-15.3.0.4
 2. rhino-forge-2001.2.2-build.18
 3. architectury-9.2.14-forge
 4. kubejs-forge-2001.6.5-build.14
 5. probejs-6.0.1-forge
 
-## 完整代码
+## Full Code
 ```js
 
 const $DoorBlock = Java.loadClass("net.minecraft.world.level.block.DoorBlock")

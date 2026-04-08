@@ -4,5 +4,15 @@
     "isUserSet": false,
     "isActiveInStructure": true,
     "lastSeen": 1749252345320
+  },
+  "Classes/": {
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "Utils.md": {
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

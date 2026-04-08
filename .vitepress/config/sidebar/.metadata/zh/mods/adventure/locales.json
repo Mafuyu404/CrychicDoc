@@ -1,14 +1,14 @@
 {
   "_self_": {
-    "valueHash": "767fa455bb6826f4b550c21a6bca7182",
-    "isUserSet": false,
+    "valueHash": "cd28d826912a47941aeee567c061f28d",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247315699
   },
   "Champions-Unofficial/": {
     "valueHash": "1b6cffe9b974636f1d06bea49d14d3e3",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "adventure/": {
     "valueHash": "767fa455bb6826f4b550c21a6bca7182",
@@ -23,6 +23,11 @@
   "目录/": {
     "valueHash": "767fa455bb6826f4b550c21a6bca7182",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "767fa455bb6826f4b550c21a6bca7182",
+    "isUserSet": false,
+    "isActiveInStructure": false
   }
 }

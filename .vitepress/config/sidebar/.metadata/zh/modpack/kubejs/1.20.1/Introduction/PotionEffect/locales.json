@@ -1,14 +1,14 @@
 {
   "_self_": {
-    "valueHash": "08cf7c370d825d508f04ded292a21287",
-    "isUserSet": false,
+    "valueHash": "4a01019084ebafcd915005449b79a710",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247315954
   },
   "Catalogue.md": {
     "valueHash": "767fa455bb6826f4b550c21a6bca7182",
     "isUserSet": true,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749254447379
   },
   "PotionEffect.md": {

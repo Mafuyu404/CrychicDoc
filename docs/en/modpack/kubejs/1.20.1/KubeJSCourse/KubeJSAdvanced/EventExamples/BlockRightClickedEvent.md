@@ -1,29 +1,29 @@
 ---
 authors: ['Gu-meng']
 ---
-# 方块右键事件
-该代码在server脚本里
+# Block Right-Click Event
+This code belongs in server scripts.
 
-方块右键事件有两种调取方式
-1. `BlockEvents.rightClicked(blockId, event => {})` 第一种是指定方块右键捕捉获取事件
-2. `BlockEvents.rightClicked(event => {})` 第二种是捕捉所有被右键的方块
+There are two ways to use block right-click events:
+1. `BlockEvents.rightClicked(blockId, event => {})` captures right-click events for a specific block.
+2. `BlockEvents.rightClicked(event => {})` captures right-click events for all blocks.
 
-这边建议使用第一种指定一种方块，第二种看情况再选择
+In most cases, use the first form with a specific block. Use the second form only when needed.
 
-## 可被直接访问的方法
-|   方法名    |                 方法用处                 |     返回类型     | 直接调用值 |
+## Directly Accessible Methods
+|   Method    |                 Purpose                 |   Return Type    | Direct Value |
 | :---------: | :--------------------------------------: | :--------------: | :--------: |
-| getBlock()  |            获取被右键方块属性            | BlockContainerJS |   block    |
-| getEntity() |   获取右键方块的实体（在这里获取的是玩家）   |      Player      |   entity   |
-| getFacing() |           获取被右键方块的朝向           |    Direction     |   facing   |
-|  getHand()  |           获取哪个手右键的方块           | InteractionHand  |    hand    |
-|  getItem()  |            获取右键方块的物品            |    ItemStack     |    item    |
-| getLevel()  |           获取被右键方块的世界           |      Level       |   level    |
-| getPlayer() |            获取右键方块的玩家            |      Player      |   player   |
-| getServer() |          获取被右键方块的服务端          | MinecraftServer  |   server   |
+| getBlock()  | Get the clicked block info | BlockContainerJS |   block    |
+| getEntity() | Get the entity clicking the block (typically the player here) |      Player      |   entity   |
+| getFacing() | Get the face/direction that was clicked |    Direction     |   facing   |
+|  getHand()  | Get which hand performed the click | InteractionHand  |    hand    |
+|  getItem()  | Get the item used to right-click |    ItemStack     |    item    |
+| getLevel()  | Get the world of the clicked block |      Level       |   level    |
+| getPlayer() | Get the player who right-clicked |      Player      |   player   |
+| getServer() | Get the server instance | MinecraftServer  |   server   |
 
-## 示例
-下面示例使用方块右键事件，当玩家使用含有斧子tag的物品右键橡木木板时，会使木板掉落木棍8个
+## Example
+The example below uses a block right-click event. When a player right-clicks oak planks with an item tagged as an axe, the planks are destroyed and 8 sticks are dropped.
 ```js
 BlockEvents.rightClicked('minecraft:oak_planks', event => {
     if (event.hand == "OFF_HAND") return
@@ -40,12 +40,12 @@ BlockEvents.rightClicked('minecraft:oak_planks', event => {
     }
 })
 ```
-方块右键事件会获取玩家两次，第一次为主手第二次为副手
+The block right-click event can fire twice for a player: main hand first, then off hand.
 
-所以需要判断一下`if (event.hand == "OFF_HAND")`是为哪个手点击的物品
+So check `if (event.hand == "OFF_HAND")` to filter the hand.
 
-这里的`event.getItem()`获取的是`event.hand`的物品
+`event.getItem()` returns the item in `event.hand`.
 
-`event.getItem().hasTag("minecraft:axes")` 判断物品是否含有某一个tag标签
+`event.getItem().hasTag("minecraft:axes")` checks whether the item has that tag.
 
-`event.level.destroyBlock(event.block.pos,false)` 使用破坏方块方法传入方块坐标和false来代表方块被破坏并且不会进行掉落
+`event.level.destroyBlock(event.block.pos,false)` destroys the block at that position, and `false` means no default drops.

@@ -1,31 +1,28 @@
 {
   "_self_": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247315627
   },
   "modding/": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
+    "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446579
+    "isActiveInStructure": true
   },
   "plugin/": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446579
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "vanilla/": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446579
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "develop/": {
     "valueHash": "b326b5062b2f0e69046810717534cb09",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   }
 }

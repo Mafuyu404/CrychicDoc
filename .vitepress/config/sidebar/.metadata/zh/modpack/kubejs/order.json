@@ -12,12 +12,12 @@
   "1.20.1/": {
     "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "1.21/": {
     "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "kubejs/": {
     "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
@@ -26,6 +26,11 @@
   },
   "Description.md": {
     "valueHash": "cfcd208495d565ef66e7dff9f98764da",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "115e589db5ec8ec6f2f9fd5bb9096a9d",
     "isUserSet": false,
     "isActiveInStructure": false
   }

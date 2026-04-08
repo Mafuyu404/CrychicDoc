@@ -1,6 +1,5 @@
 ---
 title: index copy
-hidden: false
+hidden: true
 priority: 0
 ---
-

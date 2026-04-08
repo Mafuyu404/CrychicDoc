@@ -1,7 +1,7 @@
 {
   "_self_": "冠军再续",
-  "affix_setting.md": "affix_setting",
+  "wiki.md": "介绍",
   "config.md": "配置",
-  "modifier_setting.md": "modifier_setting",
-  "wiki.md": "Wiki"
+  "affix_setting.md": "词缀配置",
+  "modifier_setting.md": "属性修饰符配置"
 }

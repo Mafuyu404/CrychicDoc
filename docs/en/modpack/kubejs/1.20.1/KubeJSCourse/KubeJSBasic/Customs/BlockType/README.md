@@ -2,8 +2,7 @@
 authors: ['Gu-meng']
 ---
 ---
-description: 这里是添加方块的各个类型的一些示例
+description: Examples of adding different custom block types
 ---
 
-# 不同物品类型添加示例
-
+# Examples for Different Block Types

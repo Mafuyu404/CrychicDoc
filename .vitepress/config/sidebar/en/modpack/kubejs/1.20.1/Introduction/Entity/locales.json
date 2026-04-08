@@ -1,7 +1,12 @@
 {
-  "_self_": "Entity",
+  "_self_": "Entities",
   "Attribute.md": "Attribute",
-  "Catalogue.md": "Catalogue",
   "PotionEffects.md": "PotionEffects",
-  "Spawn.md": "Spawn"
+  "Spawn.md": "Spawn",
+  "Methods.md": "Entity Methods",
+  "Goal.md": "Entity Goal",
+  "Brain.md": "Entity Brain",
+  "Mob.md": "Mob",
+  "LivingEntity.md": "LivingEntity",
+  "Player.md": "Player"
 }

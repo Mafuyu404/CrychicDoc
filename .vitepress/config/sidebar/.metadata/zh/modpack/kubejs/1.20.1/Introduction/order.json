@@ -46,8 +46,8 @@
   },
   "Network/": {
     "valueHash": "cee631121c2ec9232f3a2f028ad5c89b",
-    "isUserSet": true,
-    "isActiveInStructure": false
+    "isUserSet": false,
+    "isActiveInStructure": true
   },
   "PotionEffect/": {
     "valueHash": "9de6d14fff9806d4bcd1ef555be766cd",
@@ -63,5 +63,10 @@
     "valueHash": "7cbbc409ec990f19c78c75bd1e06f215",
     "isUserSet": true,
     "isActiveInStructure": true
+  },
+  "Catalogue.md": {
+    "valueHash": "115e589db5ec8ec6f2f9fd5bb9096a9d",
+    "isUserSet": false,
+    "isActiveInStructure": false
   }
 }

@@ -1,9 +1,7 @@
 {
-  "_self_": "Tag",
+  "_self_": "Tags",
   "Biome.md": "Biome",
   "Block.md": "Block",
-  "Catalogue.md": "Catalogue",
-  "Description.md": "Description",
   "EntityType.md": "EntityType",
   "Fluid.md": "Fluid",
   "Item.md": "Item",

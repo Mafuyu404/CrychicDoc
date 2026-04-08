@@ -1,3 +1,5 @@
 {
-  "_self_": "Vanilla"
+  "_self_": "原版开发",
+  "datapack/": "数据包",
+  "resourcepack/": "资源包"
 }

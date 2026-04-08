@@ -1,6 +1,6 @@
 {
-  "_self_": "GlobalScope",
+  "_self_": "Global Scope",
   "Classes/": "Classes",
-  "ConstantsAndObjects/": "ConstantsAndObjects",
-  "WrappedClasses/": "WrappedClasses"
+  "ConstantsAndObjects/": "Constants & Objects",
+  "WrappedClasses/": "Wrapped Classes"
 }

@@ -1,10 +1,10 @@
 ---
 title: 文档编写规范
 description: 参与 CrychicDoc 文档编写所需遵循的官方规范、工作流与样式指南。
+hidden: false
+priority: -10
 progress: 100
 state: preliminary
-priority: -10
-hidden: false
 ---
 
 # 文档编写规范 {#main}

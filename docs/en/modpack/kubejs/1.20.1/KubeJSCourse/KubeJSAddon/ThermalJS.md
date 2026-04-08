@@ -1,37 +1,37 @@
 ---
 authors: ['Gu-meng']
 ---
-## 热力膨胀和KubeJs 
-在本章中将介绍如何使用KubeJS去修改热力膨胀模组的配方
+## Thermal Expansion and KubeJS
+This chapter introduces how to use KubeJS to modify Thermal Expansion recipes.
 
-### 配方类型表格(不代表全部,仅仅是常用的,带有`[]`说明可以写入多个输入或输出或是数组)
-**这个Mod的开发多多少少带点神经病**
-**那么多配方类型游戏里面是没几个能看到的**
-**有的还甚至没写完,有的类型有`ingredients`没`results`**
+### Recipe Type Table (not complete, only common ones; `[]` means multiple inputs/outputs or arrays)
+**Some recipe types are inconsistent in implementation.**
+**Not all listed types are visible in normal gameplay.**
+**Some types are incomplete (for example, `ingredients` without `results`).**
 
-大部分配方后带`.energy(int)`方法可以配置配方所需的能量消耗(默认`2000`)
-|                           配方格式                            |   配方类型   | 补充说明 |
+Most recipes support `.energy(int)` to set energy cost (default `2000`).
+|                           Recipe Format                           |      Machine Type      | Extra Notes |
 | :-----------------------------------------------------------: | :----------: | :------: |
-|               `thermal.press(output[], input)`                |  多驱冲压机  |    -     |
-|            `thermal.bottler(output, hive(block))`             |  流体罐装机  |    -     |
-|         `thermal.hive_extractor(output, hive(block))`         |   蜂箱漏斗   | 蜂箱漏斗 |
-| `thermal.tree_extractor(output, trunk(block), leaves(block))` |  树汁提取器  | 贴着树干 |
-|               `thermal.furnace(output, input)`                |    红石炉    |    -     |
-|          `thermal.smelter_recycle(output, input[])`           |    感应炉    |    -     |
-|        `thermal.pulverizer_catalyst(output[], input)`         |    磨粉机    |    -     |
-|            `thermal.crystallizer(output, input[])`            |    结晶器    |    -     |
-|               `thermal.crucible(output, input)`               |    熔岩炉    |    -     |
-|              `thermal.chiller(output, input[])`               |  极速冷冻机  |    -     |
-|            `thermal.insolator(output[], input[])`             |  有机灌注机  |    -     |
-|               `thermal.brewer(output, input[])`               |  药水酿造机  |    -     |
-|              `thermal.refinery(output, input[])`              |  流体精炼机  |    -     |
-|             `thermal.centrifuge(output[], input)`             |  离心分离机  |    -     |
-|              `thermal.sawmill(output[], input)`               |    锯木机    |    -     |
-|   `thermal.rock_gen(output, below(block), adjacent(block))`   |    造石机    |    -     |
-|           `thermal.numismatic_fuel(input, energy)`            |  通货能源炉  |  发电机  |
-|            `thermal.gourmand_fuel(input, energy)`             |  饕餮能源炉  |  发电机  |
-|            `thermal.magmatic_fuel(input, energy)`             |  热力能源炉  |  发电机  |
-|            `thermal.lapidary_fuel(input, energy)`             |  珠宝能源炉  |  发电机  |
-|            `thermal.stirling_fuel(input, energy)`             | 斯特林能源炉 |  发电机  |
-|         `thermal.disenchantment_fuel(input, energy)`          |  祛魔能源炉  |  发电机  |
-|           `thermal.compression_fuel(input, energy)`           |  压缩能源炉  |  发电机  |
+|               `thermal.press(output[], input)`                |      Multiservo Press      |     -      |
+|            `thermal.bottler(output, hive(block))`             |         Bottler          |     -      |
+|         `thermal.hive_extractor(output, hive(block))`         |      Hive Extractor      | Hive block |
+| `thermal.tree_extractor(output, trunk(block), leaves(block))` |      Tree Extractor      | next to trunk |
+|               `thermal.furnace(output, input)`                |       Redstone Furnace       |     -      |
+|          `thermal.smelter_recycle(output, input[])`           |      Induction Smelter      |     -      |
+|        `thermal.pulverizer_catalyst(output[], input)`         |        Pulverizer         |     -      |
+|            `thermal.crystallizer(output, input[])`            |       Crystallizer        |     -      |
+|               `thermal.crucible(output, input)`               |         Crucible          |     -      |
+|              `thermal.chiller(output, input[])`               |          Chiller          |     -      |
+|            `thermal.insolator(output[], input[])`             |         Insolator         |     -      |
+|               `thermal.brewer(output, input[])`               |          Brewer           |     -      |
+|              `thermal.refinery(output, input[])`              |         Refinery          |     -      |
+|             `thermal.centrifuge(output[], input)`             |        Centrifuge         |     -      |
+|              `thermal.sawmill(output[], input)`               |          Sawmill          |     -      |
+|   `thermal.rock_gen(output, below(block), adjacent(block))`   |     Igneous Extruder      |     -      |
+|           `thermal.numismatic_fuel(input, energy)`            |      Numismatic Dynamo      | Generator  |
+|            `thermal.gourmand_fuel(input, energy)`             |       Gourmand Dynamo       | Generator  |
+|            `thermal.magmatic_fuel(input, energy)`             |       Magmatic Dynamo       | Generator  |
+|            `thermal.lapidary_fuel(input, energy)`             |       Lapidary Dynamo       | Generator  |
+|            `thermal.stirling_fuel(input, energy)`             |       Stirling Dynamo       | Generator  |
+|         `thermal.disenchantment_fuel(input, energy)`          |     Disenchantment Dynamo    | Generator  |
+|           `thermal.compression_fuel(input, energy)`           |     Compression Dynamo     | Generator  |

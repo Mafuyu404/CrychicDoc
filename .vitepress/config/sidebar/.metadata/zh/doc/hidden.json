@@ -17,13 +17,13 @@
   },
   "guide/": {
     "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": true,
-    "isActiveInStructure": true
+    "isUserSet": false,
+    "isActiveInStructure": false
   },
   "rules.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "samples.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
@@ -48,7 +48,7 @@
   "doc/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "dev copy.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
@@ -95,7 +95,7 @@
   "sidebarGuide.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "contributionGuide.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
@@ -110,22 +110,22 @@
   "pluginsGuide.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "litetreeGuide.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "vscodeSnippetsGuide.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "frameworkMaintainability.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "Description.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
@@ -135,16 +135,21 @@
   "heroExtension.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "developmentWorkflow.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "extensionArchitecture.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": false,
+    "isActiveInStructure": false
   }
 }

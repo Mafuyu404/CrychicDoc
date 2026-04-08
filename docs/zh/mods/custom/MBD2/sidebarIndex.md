@@ -1,9 +1,13 @@
 ---
 root: true
-title: 模组
+title: MBD2
+description: MBD2 机器设计与配置流程文档。
 hidden: false
 priority: 9007199254740991
-collapsed: true
+collapsed: false
+maxDepth: 0
+viewControl:
+  mode: self
 ---
 
 This file stores sidebar metadata for this directory.

@@ -1,5 +1,5 @@
 ---
-title: tech
+title: 科技模组
 hidden: false
 priority: 9007199254740991
 collapsed: true

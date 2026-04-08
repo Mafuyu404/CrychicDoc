@@ -8,18 +8,18 @@
   "Catalogue.md": {
     "valueHash": "01420ec4ed225cd04a96957eee8db421",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749253127088
   },
   "SingleBlockBasic.md": {
-    "valueHash": "25e8e57d95e81d19d2dc3194a389ff70",
-    "isUserSet": false,
+    "valueHash": "493803b2aa7ec43301de26aef2a12389",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749253127088
   },
   "SingleBlockBasicSettings.md": {
-    "valueHash": "fd0d0a89814cacc95e90d684453f3239",
-    "isUserSet": false,
+    "valueHash": "abadd167ccbef2b82d5350a9a4de087f",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749253127088
   },

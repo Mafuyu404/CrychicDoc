@@ -4,5 +4,20 @@
     "isUserSet": false,
     "isActiveInStructure": true,
     "lastSeen": 1749252345318
+  },
+  "StartupScript/": {
+    "valueHash": "b326b5062b2f0e69046810717534cb09",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "ServerScript/": {
+    "valueHash": "b326b5062b2f0e69046810717534cb09",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "ClientScript/": {
+    "valueHash": "b326b5062b2f0e69046810717534cb09",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

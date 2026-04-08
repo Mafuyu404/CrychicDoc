@@ -2,7 +2,7 @@
 authors: ['Gu-meng']
 ---
 ---
-description: 本章将分享一些有趣的KubeJS项目
+description: This chapter shares some interesting KubeJS projects
 ---
 
-# KubeJS项目分享
+# KubeJS Project Showcase

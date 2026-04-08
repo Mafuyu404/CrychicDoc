@@ -1,7 +1,7 @@
 {
   "MBD2/": {
-    "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
-    "isUserSet": false,
+    "valueHash": "c4ca4238a0b923820dcc509a6f75849b",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "custom/": {
@@ -16,6 +16,11 @@
   },
   "模组/": {
     "valueHash": "8bfa9ad090fbbf87e518f1ce24a93eee",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "115e589db5ec8ec6f2f9fd5bb9096a9d",
     "isUserSet": false,
     "isActiveInStructure": false
   }

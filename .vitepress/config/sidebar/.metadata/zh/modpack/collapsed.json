@@ -1,25 +1,23 @@
 {
   "_self_": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247315636
   },
   "kubejs/": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446668
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "recommendation/": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446668
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "整合包/": {
     "valueHash": "b326b5062b2f0e69046810717534cb09",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   }
 }

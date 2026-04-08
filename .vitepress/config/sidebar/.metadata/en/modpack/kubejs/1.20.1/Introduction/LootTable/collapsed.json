@@ -4,5 +4,15 @@
     "isUserSet": false,
     "isActiveInStructure": true,
     "lastSeen": 1749252345322
+  },
+  "Vanilla/": {
+    "valueHash": "b326b5062b2f0e69046810717534cb09",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "BasicKnowledge/": {
+    "valueHash": "b326b5062b2f0e69046810717534cb09",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

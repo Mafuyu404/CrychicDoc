@@ -62,11 +62,11 @@ VuePress Theme Hope ++is very++ powerful.
 ### Ruby Annotation (`ruby`)
 
 ```markdown
-{中国:zhōng|guó}
+{documentation:doc|u|men|ta|tion}
 ```
 
 **Preview:**
-{中国:zhōng|guó}
+{documentation:doc|u|men|ta|tion}
 
 ---
 

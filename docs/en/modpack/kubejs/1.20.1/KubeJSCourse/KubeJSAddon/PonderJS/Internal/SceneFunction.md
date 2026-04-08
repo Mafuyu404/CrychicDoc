@@ -1,11 +1,11 @@
 ---
 authors: ['Gu-meng', 'Qi-Month']
 ---
-> 调用函数使用 `scene.你要的函数` 即可
+> Call functions as `scene.<functionName>`
 >
-> 例如 : scene.idle(3);
+> Example: `scene.idle(3);`
 
-# 以下代码节录自 internal_33.d.ts
+# The following code is excerpted from `internal_33.d.ts`
 
 ```ts
 class SceneBuilder implements Internal.SceneBuilderAccessor {
@@ -41,7 +41,7 @@ class SceneBuilder implements Internal.SceneBuilderAccessor {
 type SceneBuilder_ = SceneBuilder;
 ```
 
-# 以下代码节录自 internal_62.d.ts
+# The following code is excerpted from `internal_62.d.ts`
 
 ```ts
 class ExtendedSceneBuilder extends Internal.SceneBuilder {

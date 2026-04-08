@@ -26,8 +26,11 @@ To effectively manage the sidebar, you need to understand the following key `fro
 | `root` | `boolean` | Mark a directory's `sidebarIndex.md` as a new root node in the sidebar. |
 | `title` | `string` | **Required**. Title displayed in the sidebar. |
 | `priority`| `number` | **Required**. Sort weight, **smaller numbers appear first**. |
+| `maxDepth` | `number` | Controls how deep the current directory view expands downward. |
 | `hidden` | `boolean` | If `true`, this page or directory will not appear in the sidebar. |
 | `externalLinks` | `object[]`| Add links to external websites in `root` nodes. |
+| `collapseControl` | `object` | Controls whether child directories / child roots in the current sidebar view start collapsed or expanded. |
+| `viewControl` | `object` | Advanced only. Decides traversal ownership in rare nested-root cases. |
 
 ## Practical Tutorial: Configuring a New Documentation Area {#tutorial}
 
@@ -119,3 +122,97 @@ externalLinks:
 ::: v-warning Warning: `priority` Takes Precedence
 If a file is defined in `itemOrder` and also has a `priority` field in **its own** frontmatter, then **the file's own `priority` field will win**. Therefore, we recommend directly using `priority` in files for explicit sorting. !!When there are many files, using itemOrder becomes a bit messy!!
 :::
+
+### Using `collapseControl` for Root-Level Folding {#tip-view-control}
+
+If your real goal is just to decide which child directories or child roots start collapsed in the current sidebar view, prefer `collapseControl`. This is now the recommended day-to-day config.
+
+#### `collapseControl` Field Contract
+
+| Field path | Type | Default behavior | Effect |
+|:---|:---|:---|:---|
+| `collapseControl` | `object` | omitted means "keep each child item's own `collapsed` value" | Collapse control block for the current sidebar view. |
+| `collapseControl.default` | `boolean` | omitted | Default collapsed state for child directory items in the current view. |
+| `collapseControl.paths` | `Record<string, boolean>` | empty object | Per-path collapsed overrides relative to the current sidebar view root. |
+
+This only affects **how directory items appear in the current generated sidebar**:
+
+- it does not rewrite a child root's own `collapsed`;
+- it does not rewrite a child root's own `maxDepth`;
+- it does not rewrite child document frontmatter.
+
+Minimal example:
+
+```yaml
+---
+root: true
+title: "Modpack"
+collapsed: false
+collapseControl:
+  default: true
+---
+```
+
+This keeps the current root open, while child directory items inside that view start collapsed.
+
+If you need a few exceptions:
+
+```yaml
+---
+root: true
+title: "Modpack"
+collapseControl:
+  default: true
+  paths:
+    "kubejs/1.20.1": false
+    "kubejs/1.21": false
+---
+```
+
+Paths are always written **relative to the current sidebar view root**, not relative to the site root and not relative to the current markdown file.
+
+#### `viewControl` Is Now Advanced Only
+
+`viewControl` still exists, but it is now only about which root acts as the traversal controller during the current generation pass. It should not be your primary tool for everyday folding, and it should not be treated as a way to force one shared `maxDepth` onto every child root.
+
+Most roots only need:
+
+```yaml
+---
+root: true
+hidden: false
+collapsed: false
+maxDepth: 0
+---
+```
+
+### Directory Landing File Rules {#tip-directory-landing}
+
+When a directory needs a clickable landing page, the system looks for these files in order:
+
+- `index.md`
+- `Catalogue.md`
+- `Description.md`
+- `README.md`
+
+This keeps first-party sections free to use `Catalogue.md`, while mirrored third-party docs can rely on their existing `README.md` instead of carrying an extra `Catalogue.md`.
+
+#### Advanced Override: Force a Child to Stay With or Escape the Parent Controller
+
+Only if you are actively using nested-root ownership, use these advanced overrides:
+
+```yaml
+---
+title: "1.20.1"
+viewControl:
+  controlledByParent: false
+---
+```
+
+```yaml
+---
+title: "API"
+viewControl:
+  controlledByParent: true
+---
+```

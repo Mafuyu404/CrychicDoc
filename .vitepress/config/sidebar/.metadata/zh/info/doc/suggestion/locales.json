@@ -1,23 +1,28 @@
 {
   "_self_": {
-    "valueHash": "0f78b20318b5aef4dca6dbae5051960a",
-    "isUserSet": false,
+    "valueHash": "9764a6f8a913e02cdcf26e662f67ab09",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247316108
   },
   "doc.md": {
-    "valueHash": "9a09b4dfda82e3e665e31092d1c3ec8d",
-    "isUserSet": false,
+    "valueHash": "6d574c6d0956d5e9f5d3f2d467e72bd8",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447292
   },
   "writing.md": {
-    "valueHash": "1cea5345d284f36245a94301b114b27c",
-    "isUserSet": false,
+    "valueHash": "ab87c86ea684d3883270b4ddd35be5f6",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447292
   },
   "Description.md": {
+    "valueHash": "0f78b20318b5aef4dca6dbae5051960a",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
     "valueHash": "0f78b20318b5aef4dca6dbae5051960a",
     "isUserSet": false,
     "isActiveInStructure": false

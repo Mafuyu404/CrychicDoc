@@ -1,4 +1,5 @@
 {
-  "_self_": "Info",
-  "doc/": "doc"
+  "_self_": "信息与文档",
+  "doc/": "文档支持",
+  "KubeJS/": "KubeJS"
 }

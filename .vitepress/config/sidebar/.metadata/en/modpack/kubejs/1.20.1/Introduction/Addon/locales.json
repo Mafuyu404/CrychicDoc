@@ -1,8 +1,18 @@
 {
   "_self_": {
-    "valueHash": "304cb904a1f04e9ae0b7cc5c2c02f7a6",
-    "isUserSet": false,
+    "valueHash": "b3f252777a69b110667756babe83a98f",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749252345311
+  },
+  "ProbeJS/": {
+    "valueHash": "767fa455bb6826f4b550c21a6bca7182",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "LootJs/": {
+    "valueHash": "3d3a7527c1734a9fff662cbe9dfc42dd",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

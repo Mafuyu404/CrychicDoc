@@ -8,14 +8,12 @@
   "kubejs/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446669
+    "isActiveInStructure": true
   },
   "recommendation/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446669
+    "isActiveInStructure": true
   },
   "Description.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
@@ -25,6 +23,11 @@
   "整合包/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": false,
+    "isActiveInStructure": false
   }
 }

@@ -2,8 +2,7 @@
 authors: ['Gu-meng']
 ---
 ---
-description: 这一章中会简单的介绍kubejs中的材质(assets)使用
+description: This chapter briefly introduces how to use assets in KubeJS.
 ---
 
-# assets的使用
-
+# Using Assets

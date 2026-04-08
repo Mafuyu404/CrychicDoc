@@ -1,8 +1,13 @@
 {
   "_self_": {
-    "valueHash": "7d74f3b92b19da5e606d737d339a9679",
-    "isUserSet": false,
+    "valueHash": "9dea4016dbcc290b773ab2fae678aaa8",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749252345320
+  },
+  "Register/": {
+    "valueHash": "0ba7583639a274c434bbe6ef797115a4",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

@@ -1,45 +1,45 @@
 ---
 authors: ['Gu-meng']
 ---
-# 添加食物
-在本章中将会介绍如何使用物品添加事件去添加食物，本章所有js代码都是在文件夹`startup_scripts`下
+# Add Food
+This chapter introduces how to add food items using the item registry event. All JS code in this chapter is under the `startup_scripts` folder.
 
-## 基础写法
+## Basic Syntax
 ```js
 StartupEvents.registry("item", event => {
     event.create("meng:my_food")
         .food(foodBuilder=>{})
 })
 ```
-这是最基础的写法，将该物品设置为食物，我们可以为食物设置一些参数
+This is the most basic syntax. It marks the item as food, then you can configure food-related parameters.
 
-## 食物参数方法
-|                 方法名                 |         参数          |              作用              |           备注           |
+## Food Builder Methods
+|               Method Name              |       Parameter       |              Usage             |            Note          |
 | :------------------------------------: | :-------------------: | :----------------------------: | :----------------------: |
-|           saturation(float)            |        饱和度         |  设置食物给玩家带来的饱和倍率  |   数值*饱食度 = 饱和度   |
-|            hunger(integer)             |        饱食度         |   设置食物给玩家带来的饱食度   |   直接食用带来的"鸡腿"   |
-|                 meat()                 |           -           |            设置为肉            |       用于被狼食用       |
-|             alwaysEdible()             |           -           |        设置为随时可食用        | 不需要消耗饱食度就可食用 |
-|              fastToEat()               |           -           |         设置为快速食用         |          吃得快          |
-|        removeEffect(MobEffect)         |       药水效果        |    食用后清除某一种药水效果    |            -             |
-|    eaten(Consumer\<FoodEatenEvent\>)     |      食用后事件       |               -                |            -             |
-| effect(ResourceLocation,int,int,float) | [effect参数](#effect) |     设置食用后给予药水效果     |            -             |
-|                build()                 |           -           | 返回该食物的`FoodProperties`类 |            -             |
+|           saturation(float)            |      Saturation       | Set food saturation multiplier | `value * hunger = sat`   |
+|            hunger(integer)             |        Hunger         | Set hunger restored            | Hunger bar ("drumsticks")|
+|                 meat()                 |           -           | Mark as meat                   | Can be eaten by wolves   |
+|             alwaysEdible()             |           -           | Always edible                  | Eat even at full hunger  |
+|              fastToEat()               |           -           | Faster eating speed            | Eat quickly              |
+|        removeEffect(MobEffect)         |     Potion effect     | Remove one effect after eating | -                        |
+|      eaten(Consumer\<FoodEatenEvent\>)    |   After-eat event     | Trigger callback               | -                        |
+| effect(ResourceLocation,int,int,float) | [effect args](#effect)| Add effect when eaten          | -                        |
+|                build()                 |           -           | Return `FoodProperties`        | -                        |
 
-[关于饱和度和饱食度的区别](../../../Digression/SaturationHunger)
+[Difference between saturation and hunger](../../../Digression/SaturationHunger)
 
 ### effect
 ```
 effect(
-    ResourceLocation, 药水效果id
-    int, 持续tick
-    int, 药水等级(n+1为实际等级)
-    float 药水生效概率(1=100%)
+    ResourceLocation, potion effect id
+    int, duration in ticks
+    int, effect amplifier (actual level is n+1)
+    float, chance to apply effect (1 = 100%)
 )
 ```
 
-## 药水效果设置
-### 添加药水效果
+## Potion Effect Settings
+### Add a Potion Effect
 ```js
 StartupEvents.registry("item", event => {
     event.create("meng:my_food")
@@ -48,9 +48,9 @@ StartupEvents.registry("item", event => {
         })
 })
 ```
-当玩家食用该物品后会给玩家一个20秒的1级速度效果，生效概率为50%
+When the player eats this item, it gives Speed I for 20 seconds with a 50% chance.
 
-### 移除药水效果
+### Remove a Potion Effect
 ```js
 StartupEvents.registry("item", event => {
     event.create("meng:my_food2")
@@ -59,9 +59,9 @@ StartupEvents.registry("item", event => {
         })
 })
 ```
-虽然但是好像移除失败了（；´д｀）ゞ
+This seems to fail in practice (it may not work as expected).
 
-## 使用后事件
+## After-Eat Event
 ```js
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
 
@@ -80,10 +80,10 @@ StartupEvents.registry("item", event => {
         })
 })
 ```
-如果食用该食物的是玩家，则给玩家返回一个碗(这里判断了一下是怕食用者不是玩家)
+If the eater is a player, return a bowl to them (the check is to avoid non-player entities).
 
-### 事件里可调用的方法
-|   方法名    |    返回类型     |
+### Methods Available in the Event
+| Method Name |   Return Type   |
 | :---------: | :-------------: |
 |  getItem()  |    ItemStack    |
 | getEntity() |     Entity      |
@@ -91,14 +91,14 @@ StartupEvents.registry("item", event => {
 | getLevel()  |      Level      |
 |  getServer  | MinecraftServer |
 
-## 简单示例
+## Simple Example
 ```js
 event.create("meng:my_food4")
         .food(foodBuilder=>{
-            foodBuilder.hunger(10) //设置恢复5个“鸡腿”
-            foodBuilder.saturation(0.5) // 饱和度设置为10*0.5 = 5
-            foodBuilder.meat() // 设置食物属性为肉，可以被狗食用
-            foodBuilder.alwaysEdible() //设置为无需消耗饱食度即可使用
-            foodBuilder.fastToEat() //设置该食物为快速食用类
+            foodBuilder.hunger(10) // Restores 5 hunger icons ("drumsticks")
+            foodBuilder.saturation(0.5) // Saturation is 10 * 0.5 = 5
+            foodBuilder.meat() // Mark as meat, can be eaten by wolves
+            foodBuilder.alwaysEdible() // Can be eaten even when not hungry
+            foodBuilder.fastToEat() // Make it quick to eat
         })
 ```

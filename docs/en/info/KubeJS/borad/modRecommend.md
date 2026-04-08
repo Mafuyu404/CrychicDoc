@@ -1,11 +1,11 @@
 ---
 prev: false
 next: false
-title: modRecommend
+title: Mod Recommendations
 hidden: false
 priority: 0
 ---
 
-# 模组推荐
+# Mod Recommendations
 
-该页面用于推荐和讨论KubeJS相关的模组。
+Use this page to recommend and discuss mods related to KubeJS.

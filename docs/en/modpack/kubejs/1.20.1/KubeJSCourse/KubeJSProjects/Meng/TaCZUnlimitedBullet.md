@@ -1,14 +1,14 @@
-# TaCZ的无限子弹
-本章涉及内容：按键注册和使用、forgeevent、loadclass、paint、玩家数据
-涉及模组及版本:
+# TaCZ Unlimited Ammo
+Topics covered: key registration and usage, Forge events, `loadClass`, `paint`, and player data.
+Mods and versions used:
 1. rhino-forge-2001.2.3-build.6
 2. tacz-1.20.1-1.0.3-all
 3. architectury-9.2.14-forge
 4. kubejs-forge-2001.6.5-build.16
 5. probejs-6.0.1-forge
 
-## 完整代码 startup_scripts
-### 主要部分
+## Full Code (`startup_scripts`)
+### Core Logic
 ```js
 const $GunShootEvent = Java.loadClass("com.tacz.guns.api.event.common.GunShootEvent")
 const $Integer = Java.loadClass("java.lang.Integer")
@@ -18,10 +18,10 @@ const $AbstractGunItem = Java.loadClass("com.tacz.guns.api.item.gun.AbstractGunI
 ForgeEvents.onEvent($GunShootEvent,event=>{global.gse(event)})
 global.gse = event =>{
     try{
-        // 处理事件，如果为客户端则不处理
+        // Handle event only on server side
         if(event.logicalSide.isClient()) return;
         let item = event.getGunItemStack();
-        // 获取玩家数据，判断玩家是否处于无限子弹模式
+        // Check player data to determine whether unlimited-ammo mode is enabled
         if(event.getShooter().data.get("frenzyOpen"))
             item.nbt.merge({GunCurrentAmmoCount:$Integer.decode​(
                 item.nbt.getInt("GunCurrentAmmoCount")+1+""
@@ -31,9 +31,9 @@ global.gse = event =>{
     }
 }
 ```
-该代码获取枪械物品的nbt，然后将子弹改为不消耗
+This code reads gun item NBT and prevents ammo consumption.
 
-### 注册按键
+### Register Keybinding
 ```js
 const $KeyMappingRegistry = Java.loadClass("dev.architectury.registry.client.keymappings.KeyMappingRegistry");
 const $KeyMapping = Java.loadClass("net.minecraft.client.KeyMapping");
@@ -48,13 +48,13 @@ ClientEvents.init(event=>{
     $KeyMappingRegistry.register(global.regKeyFrenzy)
 })
 ```
-[关于注册按键](./RegKey.md)
+[About key registration](./RegKey.md)
 
-### 注册按键的汉化和处理 client_scripts
+### Key Translation and Handling (`client_scripts`)
 ```js
-ClientEvents.lang("zh_cn",e=>{
-    e.add("key.meng.frenzy","狂暴模式")
-    e.add("key.keybinding.meng.special_abilities","枪械技能")
+ClientEvents.lang("en_us",e=>{
+    e.add("key.meng.frenzy","Frenzy Mode")
+    e.add("key.keybinding.meng.special_abilities","Gun Skills")
 })
 
 ClientEvents.tick(event => {
@@ -72,20 +72,20 @@ ClientEvents.tick(event => {
 })
 ```
 
-## 完整代码 server_scripts
+## Full Code (`server_scripts`)
 ```js
-// 进度条的坐标
+// Progress bar coordinates
 const x = "$screenW/1.4";
 const textX = "$screenW/1.288"
 const y = "$screenH/1.05";
 const textY = "$screenH/1.083";
-// 进度条的宽度
+// Progress bar height
 const h = 10;
-// 技能cd
+// Skill cooldown
 const cd = 20*8;
-// 技能倍率
+// Skill multiplier
 const cdMultiples = 2;
-// 技能充能cd
+// Skill charge cooldown
 const chargeCd = cd * cdMultiples;
 
 PlayerEvents.tick(e=>{
@@ -108,22 +108,22 @@ PlayerEvents.tick(e=>{
     }
     
     e.player.paint({
-        // 背景色
+        // Background color
         back_show: {
             type: 'rectangle',
             x: x, y: y, w: 100, h: h,
             color: '#f20c00'
         },
-        // 背景上的颜色
+        // Foreground color
         top_show: {
             type: 'rectangle',
             x: x, y: y, w: cdn, h: h,
             color: '#7ef218'
         },
-        // 文本
+        // Text
         text_show: {
             type: 'text',
-            text: "狂暴模式",
+            text: "Frenzy Mode",
             x: textX, y: textY,
             
         }
@@ -132,7 +132,7 @@ PlayerEvents.tick(e=>{
     player.data.put("frenzyCount",n);
 })
 
-// 处理按键
+// Handle key input
 NetworkEvents.dataReceived("frenzy",event=>{
     let open = event.player.data.get("frenzyOpen")
     let n = event.player.data.get("frenzyCount");
@@ -147,18 +147,18 @@ NetworkEvents.dataReceived("frenzy",event=>{
     event.player.data.add("frenzyOpen",!open)
 })
 
-// 在退出时获取到玩家的cd时间记录到持久化数据
+// Save cooldown data to persistent player data on logout
 PlayerEvents.loggedOut(event=>{
     event.player.persistentData.putInt("frenzyCount",event.player.data.get("frenzyCount"));
 })
 
-//在进入游戏时读取玩家持久化数据的cd时间
+// Load cooldown data from persistent player data on login
 PlayerEvents.loggedIn(event=>{
     event.player.data.add("frenzyCount",event.player.persistentData.getInt("frenzyCount"));
 })
 ```
 
-## 一些注意事项
-1. 该项目只是作为示例，很多地方并不是最优解，可自行进行解决
-2. 如果对该项目代码部分不满可以将修改好的代码上传至[gitee项目仓库](https://gitee.com/gumengmengs/kubejs-course)
-3. 注册按键不要打包给服务器(具体看关于按键注册的注释)
+## Notes
+1. This project is only an example; many parts are not necessarily optimal and can be improved.
+2. If you improve this project, you can upload your revised code to the [Gitee repository](https://gitee.com/gumengmengs/kubejs-course).
+3. Do not include keybinding registration in server deployment (see the key registration notes).

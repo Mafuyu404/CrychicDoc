@@ -1,9 +1,9 @@
 ---
 authors: ['Gu-meng']
 ---
-# 生物掉落
-在下面将会使用kubejs的生物战利品最基础的写法格式、可调用参数
-## 基础写法
+# Entity Loot
+This section introduces basic KubeJS syntax and common parameters for entity loot.
+## Basic Syntax
 ```js
 ServerEvents.entityLootTables(event => {
     event.addEntity("minecraft:pig", loot => {
@@ -14,11 +14,11 @@ ServerEvents.entityLootTables(event => {
     })
 })
 ```
-在上面代码中，我们将猪的掉落物(战利品,盖章后面统称为掉落物),修改为掉落3~6个钻石或者掉落一个铁锭，其中铁锭的权重占比是2，钻石的权重占比是1([权重的概念](../../Digression/Weight))
+In the code above, pig drops are changed to either 3-6 diamonds or 1 iron ingot. Iron has weight 2 and diamonds have weight 1 ([weight concept](../../Digression/Weight)).
 
-这里`pool.addItem("diamond").weight(1).count([3, 6])`是将权重占比和出现数量单独进行添加的，我们也可以写在一起，像这样`pool.addItem("diamond",1,[3,6])`
+`pool.addItem("diamond").weight(1).count([3, 6])` sets weight and count separately. You can also combine them as `pool.addItem("diamond",1,[3,6])`.
 
-如果我们需要在原有的生物掉落中添加新的掉落我们可以这样写
+If you want to add extra drops to existing entity loot, you can do this:
 ```js
 ServerEvents.entityLootTables(event => {
     event.modifyEntity("minecraft:pig", loot => {
@@ -28,9 +28,9 @@ ServerEvents.entityLootTables(event => {
 })
 ```
 
-我们可以发现除了调用的方法不同以外，里面的调用参数都是一样的，下面简单的为大家列举了常用方法和例子
-## 常用方法和示例
-下面为大家举出常用的方法和对应的示例加上文本解释，所有代码的顶层代码都为
+Other than the event method (`addEntity` vs `modifyEntity`), the parameters inside are the same.
+## Common Methods and Examples
+The examples below all use this top-level structure:
 ```js
 ServerEvents.entityLootTables(event => {
     event.modifyEntity("minecraft:pig", loot => {
@@ -40,55 +40,55 @@ ServerEvents.entityLootTables(event => {
     }
 })
 ```
-code为代码内容
+`code` below means the content inside the pool callback.
 ### setUniformRolls
-随机从奖池抽取次数
+Random number of rolls from the pool.
 ```js
 pool.setUniformRolls(1,3)
 ```
-参数1:最小抽取次数
+Parameter 1: minimum roll count
 
-参数2:最大抽取次数
+Parameter 2: maximum roll count
 ### enchantRandomly
-使掉落物携带附魔属性，等级为随机的
+Apply random enchantments to dropped items.
 ```js
 pool.enchantRandomly("minecraft:smite")
 ```
-参数:附魔类型
+Parameter: enchantment id
 ### lootingEnchant
-使物品掉落受抢夺影响，并设置数值
+Make drop count affected by Looting and set values.
 ```js
 pool.lootingEnchant(2,10)
 ```
-参数1:抢夺每增加一级额外掉落增加几个 
+Parameter 1: extra drop amount per Looting level
 
-参数2:最大掉落个数
+Parameter 2: max drop count
 ### killedByPlayer
-该掉落物必须为玩家击杀才会掉落
+Require the entity to be killed by a player.
 ```js
 pool.killedByPlayer()
 ```
 ### addEmpty
-设置掉落物为空的权重占比
+Set the weight ratio for an empty result.
 ```js
 pool.addEmpty(2)
 ```
-参数: 权重占比
+Parameter: weight ratio
 ### furnaceSmelt
-被熔炼的物品(类似熔炉燃烧,圆石掉落成石头)
+Apply furnace-smelting behavior to drops (similar to furnace smelting).
 ```js
 pool.furnaceSmelt()
 ```
 ### randomChanceWithLooting
-随机掉落受抢夺影响 
+Random chance affected by Looting.
 ```js
 pool.randomChanceWithLooting(0.1,0.2)
 ```
-参数1:没有抢夺的概率
+Parameter 1: chance without Looting
 
-参数2:每一层抢夺增加多少概率
+Parameter 2: additional chance per Looting level
 ### entityProperties
-匹配实体属性，如果匹配则掉落奖池物品
+Match entity properties; if matched, pool items can drop.
 ```js
 pool.entityProperties("killer", {
     type:"minecraft:player",
@@ -106,21 +106,21 @@ pool.entityProperties("killer", {
     }
 })
 ```
-检测击杀猪的是否为玩家，获取击杀猪的武器是否为钻石剑且附魔为精准采集
+Checks whether the pig killer is a player using a diamond sword with Silk Touch.
 
-参数1: 实体类型(可选："[this](../../Digression/LootContext#this)","[killer_player](../../Digression/LootContext#killer_player)","[killer](../../Digression/LootContext#killer)","[direct_killer](../../Digression/LootContext#direct_killer)")
+Parameter 1: entity target (optional: `"[this](../../Digression/LootContext#this)"`, `"[killer_player](../../Digression/LootContext#killer_player)"`, `"[killer](../../Digression/LootContext#killer)"`, `"[direct_killer](../../Digression/LootContext#direct_killer)"`)
 
-参数2: json格式的战利品表谓词里的entity_properties下的predicate
+Parameter 2: JSON predicate under `entity_properties` in loot-table predicates
 ### addTag
-添加tag掉落物
+Add tag-based loot entries.
 ```js
 pool.addTag("minecraft:beds",true)
 ```
-参数1:tag标签名
+Parameter 1: tag id
 
-参数2:是否随机抽取一个物品
+Parameter 2: whether to randomly pick one item from the tag
 ### rolls
-奖池抽奖次数
+Number of rolls for this pool.
 ```js
 pool.rolls = 3
 ```

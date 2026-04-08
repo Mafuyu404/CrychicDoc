@@ -1,8 +1,18 @@
 {
   "_self_": {
-    "valueHash": "ae3328c7aacb68ab81fa83e18fbd48e3",
-    "isUserSet": false,
+    "valueHash": "c2e8c8db82bb121869379ba93b92cedf",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749252345319
+  },
+  "Classes/": {
+    "valueHash": "767fa455bb6826f4b550c21a6bca7182",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "Utils.md": {
+    "valueHash": "a470a23326b3831dd974dfc1116119c2",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

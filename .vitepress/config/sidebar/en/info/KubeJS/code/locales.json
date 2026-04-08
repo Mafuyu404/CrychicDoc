@@ -1,9 +1,9 @@
 {
   "_self_": "Code",
-  "error.md": "error",
-  "eventHandler.md": "eventHandler",
-  "loadClass.md": "loadClass",
-  "other.md": "other",
-  "register.md": "register",
-  "utils.md": "utils"
+  "error.md": "Corrections",
+  "eventHandler.md": "Event Handlers",
+  "loadClass.md": "Reflection",
+  "other.md": "Other",
+  "register.md": "Registration",
+  "utils.md": "Utils API"
 }

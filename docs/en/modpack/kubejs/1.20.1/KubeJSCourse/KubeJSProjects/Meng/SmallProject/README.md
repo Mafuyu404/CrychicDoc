@@ -2,7 +2,7 @@
 authors: ['Gu-meng']
 ---
 ---
-description: 这些是孤梦写的一些可以即拿即用的小项目
+description: These are some plug-and-play small projects written by Gu-meng
 ---
 
-# 孤梦的kubejs小项目分享
+# Gu-meng's KubeJS Small Project Showcase

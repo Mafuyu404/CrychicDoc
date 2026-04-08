@@ -1,4 +1,5 @@
 {
-  "_self_": true,
-  "doc/": true
+  "_self_": false,
+  "doc/": false,
+  "KubeJS/": false
 }

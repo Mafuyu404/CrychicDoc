@@ -1,70 +1,70 @@
 ---
 authors: ['Gu-meng']
 ---
-# 宝箱战利品id
-下面是1.20原版能够列举出来的宝箱战利品id和生成位置
+# Chest Loot Table IDs
+Below are vanilla 1.20 chest loot table IDs and where they generate.
 
-|              id               |        位置        |
+|              id               |      Location      |
 | :---------------------------: | :----------------: |
-|      abandoned_mineshaft      |      废弃矿井      |
-|         ancient_city          |      远古城市      |
-|     ancient_city_ice_box      |    远古城市冰窖    |
-|        bastion_bridge         |     堡垒遗迹桥     |
-|     bastion_hoglin_stable     |  堡垒遗迹疣猪兽棚  |
-|         bastion_other         |    堡垒遗迹塔尖    |
-|       bastion_treasure        |   堡垒遗迹藏宝室   |
-|        buried_treasure        |     埋藏的宝藏     |
-|        desert_pyramid         |      沙漠神殿      |
-|       end_city_treasure       |       末地城       |
-|          igloo_chest          |        雪屋        |
-|         jungle_temple         |      丛林神庙      |
-|    jungle_temple_dispenser    |   丛林神庙发射器   |
-|         nether_bridge         |      地狱要塞      |
-|       pillager_outpost        |    掠夺者前哨站    |
-|         ruined_portal         |     废弃传送门     |
-|         shipwreck_map         |     沉船地图箱     |
-|       shipwreck_supply        |     沉船补给箱     |
-|      shipwreck_treasure       |      沉船宝箱      |
-|        simple_dungeon         | 地牢(刷怪笼的位置) |
-|       spawn_bonus_chest       |     开局奖励箱     |
-|      stronghold_corridor      |    末地要塞走廊    |
-|      stronghold_crossing      |   末地要塞储藏室   |
-|      stronghold_library       |   末地要塞图书馆   |
-|      underwater_ruin_big      |    大型海底废墟    |
-|     underwater_ruin_small     |    小型海底废墟    |
-|    village/village_armorer    |   村庄盔甲匠小屋   |
-|    village/village_butcher    |    村庄屠夫小屋    |
-| village/village_cartographer  |   村庄制图师小屋   |
-| village/village_desert_house  |    沙漠村庄房屋    |
-|    village/village_fisher     |    村庄渔夫小屋    |
-|   village/village_fletcher    |   村庄制箭师小屋   |
-|     village/village_mason     |    村庄石匠小屋    |
-| village/village_plains_house  |    平原村庄房屋    |
-| village/village_savanna_house |  热带草原村庄房屋  |
-|   village/village_shepherd    |   村庄牧羊人小屋   |
-|  village/village_snowy_house  |    雪域村庄房屋    |
-|  village/village_taiga_house  |   针叶林村庄房屋   |
-|    village/village_tannery    |    村庄皮匠小屋    |
-|    village/village_temple     |      村庄教堂      |
-|   village/village_toolsmith   |   村庄工具匠小屋   |
-|  village/village_weaponsmith  |   村庄武器匠小屋   |
-|       woodland_mansion        |      林地府邸      |
+|      abandoned_mineshaft      | Abandoned Mineshaft |
+|         ancient_city          |    Ancient City     |
+|     ancient_city_ice_box      | Ancient City Ice Box |
+|        bastion_bridge         |   Bastion Bridge    |
+|     bastion_hoglin_stable     | Bastion Hoglin Stable |
+|         bastion_other         |    Bastion Other    |
+|       bastion_treasure        |  Bastion Treasure   |
+|        buried_treasure        |   Buried Treasure   |
+|        desert_pyramid         |   Desert Pyramid    |
+|       end_city_treasure       |      End City       |
+|          igloo_chest          |        Igloo        |
+|         jungle_temple         |   Jungle Temple     |
+|    jungle_temple_dispenser    | Jungle Temple Dispenser |
+|         nether_bridge         |  Nether Fortress    |
+|       pillager_outpost        |  Pillager Outpost   |
+|         ruined_portal         |   Ruined Portal     |
+|         shipwreck_map         | Shipwreck Map Chest |
+|       shipwreck_supply        | Shipwreck Supply Chest |
+|      shipwreck_treasure       | Shipwreck Treasure Chest |
+|        simple_dungeon         | Dungeon (Spawner Room) |
+|       spawn_bonus_chest       |   Bonus Chest       |
+|      stronghold_corridor      | Stronghold Corridor |
+|      stronghold_crossing      | Stronghold Crossing |
+|      stronghold_library       | Stronghold Library  |
+|      underwater_ruin_big      | Large Underwater Ruin |
+|     underwater_ruin_small     | Small Underwater Ruin |
+|    village/village_armorer    | Village Armorer House |
+|    village/village_butcher    | Village Butcher House |
+| village/village_cartographer  | Village Cartographer House |
+| village/village_desert_house  | Desert Village House |
+|    village/village_fisher     | Village Fisher House |
+|   village/village_fletcher    | Village Fletcher House |
+|     village/village_mason     | Village Mason House |
+| village/village_plains_house  | Plains Village House |
+| village/village_savanna_house | Savanna Village House |
+|   village/village_shepherd    | Village Shepherd House |
+|  village/village_snowy_house  | Snowy Village House |
+|  village/village_taiga_house  | Taiga Village House |
+|    village/village_tannery    | Village Tannery     |
+|    village/village_temple     | Village Temple      |
+|   village/village_toolsmith   | Village Toolsmith House |
+|  village/village_weaponsmith  | Village Weaponsmith House |
+|       woodland_mansion        | Woodland Mansion    |
 
-# 村民礼物战利品
-|      战利品id      |  村民职业  |
+# Villager Gift Loot Tables
+|      Loot Table ID      | Villager Profession |
 | :----------------: | :--------: |
-|    armorer_gift    |   盔甲匠   |
-|    butcher_gift    |    屠夫    |
-| cartographer_gift  |   制图师   |
-|    cleric_gift     |    牧师    |
-|    farmer_gift     |    农民    |
-|   fisherman_gift   |    渔夫    |
-|   fletcher_gift    |   制箭师   |
-| leatherworker_gift |    皮匠    |
-|   librarian_gift   | 图书管理员 |
-|     mason_gift     |    石匠    |
-|   shepherd_gift    |   牧羊人   |
-|   toolsmith_gift   |   工具匠   |
-|  weaponsmith_gift  |   武器匠   |
+|    armorer_gift    |      Armorer      |
+|    butcher_gift    |      Butcher      |
+| cartographer_gift  |    Cartographer   |
+|    cleric_gift     |      Cleric       |
+|    farmer_gift     |      Farmer       |
+|   fisherman_gift   |     Fisherman     |
+|   fletcher_gift    |     Fletcher      |
+| leatherworker_gift |   Leatherworker   |
+|   librarian_gift   |     Librarian     |
+|     mason_gift     |       Mason       |
+|   shepherd_gift    |      Shepherd     |
+|   toolsmith_gift   |     Toolsmith     |
+|  weaponsmith_gift  |    Weaponsmith    |
 
-# 全局战利品
+# Global Loot Tables

@@ -1,7 +1,7 @@
 {
   "Introduction/": {
-    "valueHash": "61a3ec6656837d917b6f69525a262eec",
-    "isUserSet": false,
+    "valueHash": "1fa42afe88e8205372202517cf1dd43b",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447479
   },
@@ -15,5 +15,15 @@
     "valueHash": "a5b10124c73efb47be9e6410796d1e42",
     "isUserSet": false,
     "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "a5b10124c73efb47be9e6410796d1e42",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "_self_": {
+    "valueHash": "6df94c47b40b2038e6753c10b86b85c6",
+    "isUserSet": true,
+    "isActiveInStructure": true
   }
 }

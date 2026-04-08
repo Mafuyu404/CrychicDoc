@@ -1,3 +1,5 @@
 {
-  "_self_": true
+  "_self_": false,
+  "borad/": false,
+  "Q&A/": false
 }

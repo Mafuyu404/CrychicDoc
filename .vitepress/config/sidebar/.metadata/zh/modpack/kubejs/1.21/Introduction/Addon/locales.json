@@ -1,7 +1,7 @@
 {
   "_self_": {
-    "valueHash": "304cb904a1f04e9ae0b7cc5c2c02f7a6",
-    "isUserSet": false,
+    "valueHash": "52f1b296f3749430e2ae52660de8f8df",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "LootJs/": {
@@ -10,6 +10,11 @@
     "isActiveInStructure": true
   },
   "Description.md": {
+    "valueHash": "304cb904a1f04e9ae0b7cc5c2c02f7a6",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
     "valueHash": "304cb904a1f04e9ae0b7cc5c2c02f7a6",
     "isUserSet": false,
     "isActiveInStructure": false

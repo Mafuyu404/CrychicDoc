@@ -1,3 +1,5 @@
 {
-  "_self_": "LootTable"
+  "_self_": "Loot Tables",
+  "Vanilla/": "Vanilla",
+  "BasicKnowledge/": "BasicKnowledge"
 }

@@ -9,5 +9,6 @@
   "Miscellaneous/": 1000,
   "PotionEffect/": 350,
   "Recipe/": 60,
-  "Tag/": 70
+  "Tag/": 70,
+  "Network/": 500
 }

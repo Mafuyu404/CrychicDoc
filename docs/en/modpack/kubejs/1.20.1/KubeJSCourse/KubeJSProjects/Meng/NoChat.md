@@ -1,19 +1,19 @@
 ---
 authors: ['Gu-meng']
 ---
-# 玩家禁言
-本章涉及内容：玩家聊天事件、指令注册、JsonIO，本章所有代码部分都在`server_scripts`里
+# Mute Players
+Topics covered: player chat events, command registration, and `JsonIO`. All code in this chapter belongs in `server_scripts`.
 
-本章使用模组:
+Mods and versions used:
 1. jei-1.20.1-forge-15.3.0.4
 2. rhino-forge-2001.2.2-build.18
 3. architectury-9.2.14-forge
 4. kubejs-forge-2001.6.5-build.14
 5. probejs-7.0.1-forge
 
-## 指令注册
+## Command Registration
 ```js
-// 注册给玩家禁言的指令
+// Register a command to mute a player
 ServerEvents.commandRegistry(event => {
     const { commands: Commands, arguments: Arguments } = event
     event.register(
@@ -27,8 +27,8 @@ ServerEvents.commandRegistry(event => {
                                 const minute = Arguments.INTEGER.getResult(value, "minute")
                                 console.log(player + minute);
                                 setPlayerNoChat(player.username,minute)
-                                player.tell("你被管理员禁言 " + minute + "分钟")
-                                value.source.player.tell(player.username + "被您禁言 " + minute + " 分钟" )
+                                player.tell("You have been muted by an admin for " + minute + " minute(s)")
+                                value.source.player.tell(player.username + " has been muted for " + minute + " minute(s)")
                                 return 1
                             })
                     )
@@ -37,11 +37,11 @@ ServerEvents.commandRegistry(event => {
 })
 ```
 
-## 禁言逻辑性代码
+## Mute Logic
 ```js
 const { $JsonArray } = require("packages/com/google/gson/$JsonArray")
 const { $JsonObject } = require("packages/com/google/gson/$JsonObject")
-//文件路径
+// File path
 const fileUrl = "./meng/jy.json"
 
 function setPlayerNoChat(player, time) {
@@ -81,10 +81,10 @@ function getPlayerChatState(player){
     return false
 }
 /**
- * 判断是否可以解除禁言
- * @param {*} currentTimestamp 时间戳
- * @param {*} minutes 分钟
- * @returns true为未来 false为过去
+ * Check whether the mute should still be active.
+ * @param {*} currentTimestamp timestamp
+ * @param {*} minutes minutes
+ * @returns true if in the future, false if in the past
  */
 function compareTimestamps(currentTimestamp, minutes) {
     const currentDate = new Date(Number(currentTimestamp));
@@ -95,7 +95,7 @@ function compareTimestamps(currentTimestamp, minutes) {
 }
 
 /**
- * 设置禁言
+ * Add a mute entry
  */
 function addNoChat(player, time, file, dateString) {
     let arr = file.get("data").getAsJsonArray()
@@ -112,7 +112,7 @@ function addNoChat(player, time, file, dateString) {
 }
 
 /**
- * 更新禁言
+ * Update mute status
  */
 function updateNoChat(file, player, time) {
     let arr = file.get("data").getAsJsonArray()
@@ -138,8 +138,8 @@ function updateNoChat(file, player, time) {
 }
 
 /**
- * 获取禁言表里玩家是否存在
- * @returns 返回禁言列表
+ * Check whether the player exists in the mute list
+ * @returns matching mute record
  */
 function getFilePlayer(arr,playerName) {
     for (let index = 0; index < arr.size(); index++) {
@@ -151,16 +151,16 @@ function getFilePlayer(arr,playerName) {
 }
 ```
 
-## 玩家聊天禁言
+## Block Muted Player Chat
 ```js
 PlayerEvents.chat(event=>{
     if (getPlayerChatState(event.getUsername())){
-        event.getPlayer().tell("你不许说话,你被禁言了")
+        event.getPlayer().tell("You cannot speak right now. You are muted.")
         event.cancel()
     }
 })
 ```
 
-## 注意事项
-1. 该项目只是作为示例，很多地方并不是最优解，可自行进行解决
-2. 如果对该项目代码部分不满可以将修改好的代码上传至[gitee项目仓库](https://gitee.com/gumengmengs/kubejs-course)
+## Notes
+1. This project is only an example; many parts are not necessarily optimal and can be improved.
+2. If you improve this project, you can upload your revised code to the [Gitee repository](https://gitee.com/gumengmengs/kubejs-course).

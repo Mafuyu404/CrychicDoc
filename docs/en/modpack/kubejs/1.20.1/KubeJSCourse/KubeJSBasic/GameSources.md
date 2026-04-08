@@ -1,33 +1,33 @@
 ---
 authors: ['Gu-meng']
 ---
-# 全局资源调用
+# Global Resource Access
 
-KubeJS中可以全局调用的游戏资源
+Game resources in KubeJS that can be used globally.
 
-| 关键字 | 名称 | 简介 | 相关链接 |
+| Keyword | Name | Summary | Related Link |
 |:-----:|:----:|:---:|:-------:|
-| Item | 物品 | 精准表达一个物品 | [✔](#物品item) |
-| Ingredient | 物品标签 | 表达一种标签内的所有物品 | [✔](#物品标签ingredient) |
-| Fluid | 流体 | 精准表达一个或一种流体 | - |
+| Item | Item | Precisely represent one item | [✔](#item) |
+| Ingredient | Item Tag | Represent all items in one tag | [✔](#ingredient) |
+| Fluid | Fluid | Precisely represent one fluid/type | - |
 
-## 物品（Item）
+## Item
 
-| 调用方法 | 返回值 |
+| Call | Return Value |
 |:-------:|:-----:|
-| Item.of(`物品类型(string)`) | 对应物品的ItemStack |
-| Item.of(`物品类型(string)`, `物品数量(integer)`) | 对应物品对应数量的ItemStack |
-| Item.of(`物品类型(string)`, `物品NBT(string)`) | 对应物品对应NBT的ItemStack |
-| Item.of(`物品类型(string)`, `物品数量(integer)`, `物品NBT(string)`) | 对应物品对应数量对应NBT的ItemStack |
-| Item.playerHead(`玩家正版游戏名(string)`) | 对应玩家名称的头颅ItemStack |
+| Item.of(`itemType(string)`) | `ItemStack` for that item |
+| Item.of(`itemType(string)`, `count(integer)`) | `ItemStack` with that count |
+| Item.of(`itemType(string)`, `itemNBT(string)`) | `ItemStack` with that NBT |
+| Item.of(`itemType(string)`, `count(integer)`, `itemNBT(string)`) | `ItemStack` with count + NBT |
+| Item.playerHead(`playerName(string)`) | Player head `ItemStack` for that name |
 
-## 物品标签（Ingredient）
+## Ingredient
 
-| 调用方法 | 返回值 |
+| Call | Return Value |
 |:-------:|:-----:|
-| Ingredient.of(`标签命名空间`) | 对应标签的Ingredient |
+| Ingredient.of(`tagNamespace`) | Matching `Ingredient` |
 
-**注** 标签命名空间用法:
-* `#` `标签名` 表示标签，包含了拥有该标签的所有物品
-* `@` `模组名` 表示模组，包含了该模组的所有物品
-* `%` `创造标签页` 表示创造标签页分类，包含了该分页下的所有物品(或者叫做创造物品栏?)
+**Note** tag namespace syntax:
+* `#` `tagName` means a tag, containing all items with that tag.
+* `@` `modName` means a mod, containing all items from that mod.
+* `%` `creativeTab` means a creative inventory tab category, containing items in that tab.

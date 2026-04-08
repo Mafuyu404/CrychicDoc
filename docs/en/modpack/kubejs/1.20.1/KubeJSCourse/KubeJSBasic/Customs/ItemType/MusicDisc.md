@@ -1,13 +1,13 @@
 ---
 authors: ['Gu-meng','QiHuang02']
 ---
-# 添加唱片
+# Add a Music Disc
 
-在本章中会举例如何创建一个可以播放音乐的唱片，本章所有js代码将会存放于在文件夹`startup_scripts`和`server_scripts`下
+This chapter shows how to create a music disc that can play audio. All JS code in this chapter is placed in `startup_scripts` and `server_scripts`.
 
-## 添加声音
+## Add a Sound Event
 
-在添加唱片之前，我们需要先添加声音，不然我们的唱片就是一个哑巴唱片，播放不了我们自己的音乐
+Before adding the disc item, you need to register the sound first. Otherwise, the disc has no playable audio.
 
 ```js
 StartupEvents.registry("sound_event", (event) => {
@@ -15,32 +15,32 @@ StartupEvents.registry("sound_event", (event) => {
 })
 ```
 
-只需要上面这一行就可以将音乐注册上去，参数为id
+That one line is enough to register the sound event. The argument is the sound id.
 
-### 注意：在 1.21.1+ 时
+### Note: In 1.21.1+
 
-在 1.21.1+ 时我们想要注册一个唱片，我们还得在 `server` 事件中使用以下语句，将刚才注册的音频注册为唱片音频
+In 1.21.1+, if you want to register a music disc, you also need this `server` registry step to register the audio as a jukebox song.
 
 ```js
 ServerEvents.registry('jukebox_song', (event) => {
     event.create('music_id')
          .song('sound_event_id', time)
 
-    // 例子
+    // Example
     event.create('meng:my_music')
          .song("meng:music.my_music", 103)
 })
 ```
 
-`music_id` 为这段音频名字，可以是任何你想填的，不过得保持和之后的一致性
+`music_id` is the id of this jukebox song entry. It can be any id, but keep it consistent with later usage.
 
-`sound_event_id` 就是你在启动事件中注册的音频的id
+`sound_event_id` is the sound id you registered in the startup event.
 
-`time` 很好理解就是指插片的时间。
+`time` is the playback duration.
 
-## 注册物品
+## Register the Item
 
-接下来我们就可以来注册唱片了
+Now you can register the music disc item.
 
 ```js
 StartupEvents.registry("item", (event) => {
@@ -50,61 +50,61 @@ StartupEvents.registry("item", (event) => {
 })
 ```
 
-`.song()`里的第一个参数为 注册声音的id,第二个参数为 音乐的时长，这里是用秒计算
+In `.song()`, the first parameter is the registered sound id, and the second is duration (in seconds).
 
-`.tag("music_discs")` 这个是**一定要写**的，告诉游戏这个物品属于唱片tag，这样唱片机才能正常的被使用
+`.tag("music_discs")` is **required**. It tells the game this item belongs to the disc tag so jukeboxes can use it correctly.
 
-### 注意：在 1.21.1+ 时
+### Note: In 1.21.1+
 
 ```js
 StartupEvents.registry('item', (event) => {
     event.create('item_id')
          .jukeboxPlayable('music_id', true)
 
-    // 例子
+    // Example
     event.create('meng:my_music')
          .jukeboxPlayable('meng:my_music', true)
 })
 ```
 
-`item_id` 是物品的id，请不要与之前的唱片音频id混淆，但是我建议都设置为一样，就不用在意使用混乱的问题了
+`item_id` is the item id. Do not confuse it with the jukebox song id above. You can keep them the same to avoid confusion.
 
-`music_id` 就是刚才注册唱片音频时的 `music_id`
+`music_id` is the same `music_id` used when registering the jukebox song.
 
-因为自 Minecraft 1.20.5 开始, 使用了[物品堆叠组件](https://minecraft.wiki/w/Data_component_format)的缘故，基本上所有物品都可以注册为唱片（大概）
+Since Minecraft 1.20.5 introduced [item stack components](https://minecraft.wiki/w/Data_component_format), almost any item can be made jukebox-playable.
 
-## 准备音乐
+## Prepare the Audio
 
-在注册完唱片和声音后，我们需要开始将音乐添加进来了
+After registering the sound and disc, add the actual audio file.
 
-首先我们需要进入这个网站 [mp3->ogg](https://audio.online-convert.com/convert-to-ogg)
+First, use this website: [mp3->ogg](https://audio.online-convert.com/convert-to-ogg)
 
-我的世界的声音文件都是`.ogg`格式的，所以需要将mp3转换为ogg格式
+Minecraft sound files use `.ogg`, so convert your mp3 to ogg.
 
-### 创建声音文件夹
+### Create the Sound Folder
 
-之后我们需要创建文件夹将音乐存入进来
+Then create folders and place your audio file there.
 
-将ogg文件存入路径为`kubejs/assets/meng/sounds`里，这里`meng`就是上面冒号前的字符，我这边是`meng`，所以实际路径为`kubejs/assets/meng/sounds`,如果没有写`meng`，那么路径则为`kubejs/assets/kubejs/sounds`
+Put the ogg file under `kubejs/assets/meng/sounds`. Here, `meng` is the namespace (the part before `:`). If you do not set a custom namespace, use `kubejs/assets/kubejs/sounds`.
 
-需要将文件重命名，这里最好是和音乐id的`music.`后面相同(当然这里可以自定义，但是不建议),所里这里我的文件名为`my_music.ogg`,完整路径为`kubejs/assets/meng/sounds/my_music.ogg`
+Rename the file. It is best to match the part after `music.` in your id (custom names work, but are not recommended). In this example the file is `my_music.ogg`, full path `kubejs/assets/meng/sounds/my_music.ogg`.
 
-### 编写寻找声音文件
+### Configure `sounds.json`
 
-返回到路径为`kubejs/assets/<namespace>`下，创建一个名为`sounds.json`的文件，打开进行编辑
+Go to `kubejs/assets/<namespace>`, create `sounds.json`, then edit it.
 
-[详细编写可以查看mcwiki](https://zh.minecraft.wiki/w/Sounds.json?variant=zh-cn)
+[For full details, see mcwiki](https://zh.minecraft.wiki/w/Sounds.json?variant=zh-cn)
 
 ```json
 {
-    // 注册声音id
+    // Registered sound id
     "music.my_music": {
-        // 固定格式
+        // Fixed format
         "sounds": [
             {
-                // 创建声音的文件夹 也就是我们上面的 kubejs/assets/<namespace>/sounds
+                // Sound path folder, i.e. kubejs/assets/<namespace>/sounds above
                 "name": "meng:my_music",
-                // 以声音流输出，建议填写true(唱片)
+                // Stream output, recommended true for music discs
                 "stream": true
             }
         ]
@@ -112,18 +112,18 @@ StartupEvents.registry('item', (event) => {
 }
 ```
 
-### 在 1.21.1+ 时
+### In 1.21.1+
 
 ```json
 {
-    // 这里的 'meng:my_music' 指的是刚才在注册唱片音频那里的 `music_id`
+    // 'meng:my_music' here refers to the `music_id` used when registering jukebox_song
     "music.my_music": {
-        // 固定格式
+        // Fixed format
         "sounds": [
             {
-                // 创建声音的文件夹 也就是我们上面的 kubejs/assets/meng/sounds
+                // Sound path folder, i.e. kubejs/assets/meng/sounds above
                 "name": "meng:my_music",
-                // 以声音流输出，建议填写true(唱片)
+                // Stream output, recommended true for music discs
                 "stream": true
             }
         ]
@@ -131,39 +131,39 @@ StartupEvents.registry('item', (event) => {
 }
 ```
 
-[关于sounds.json的文件结构](../../../Digression/SoundsJson)
+[About the `sounds.json` file structure](../../../Digression/SoundsJson)
 
-## 本地化和材质
+## Localization and Texture
 
-接下来就是最简单的对物品进行汉化，让物品显示中文文本
+Next, add localization text and item texture.
 
-进入路径`kubejs/assets/meng/lang` 创建文件`zh_ch.json` (如果有直接打开就行)
+Go to `kubejs/assets/meng/lang` and create `zh_ch.json` (or open it if it already exists).
 
-编写或添加文本
-
-```json
-{
-    "item.meng.my_music": "音乐唱片",
-    "item.meng.my_music.desc": "我的音乐 - 私人歌手"
-}
-```
-
-### 在 1.21.1+ 时
+Add translations:
 
 ```json
 {
-    "item.meng.mymusic": "音乐唱片",
-    "jukebox_song.meng.mymusic": "我的音乐 - 私人歌手",
-    "sound.meng.mymusic": "我的音乐"
+    "item.meng.my_music": "Music Disc",
+    "item.meng.my_music.desc": "My Music - Private Artist"
 }
 ```
 
-第一个为唱片本身的文本信息
+### In 1.21.1+
 
-第二个为唱片的音乐信息
+```json
+{
+    "item.meng.mymusic": "Music Disc",
+    "jukebox_song.meng.mymusic": "My Music - Private Artist",
+    "sound.meng.mymusic": "My Music"
+}
+```
 
-材质路径为`kubejs/assets/meng/textures/item` 将已经画好的唱片材质放在该路径下并命名为`my_music.png` 这里和物品id名称一样
+The first key is the text for the disc item itself.
 
-## 注意事项和音乐下载
+The second key is the song text shown for the disc.
 
-如果你上面做的都没问题，唱片也能成功放进唱片机，代码也没报错，但是就是没声音，建议先用孤梦[提供的音乐](https://gitee.com/gumengmengs/kubejs-course/blob/main/files/my_music.ogg) 如果链接打不开或者无法下载，在[哔哩哔哩私信孤梦](https://space.bilibili.com/16632546)
+For texture, put your disc image in `kubejs/assets/meng/textures/item` and name it `my_music.png` (matching the item id).
+
+## Notes and Audio Download
+
+If everything above is set correctly (disc inserts into jukebox, no script errors) but there is still no sound, try the sample audio provided by Gu Meng: [my_music.ogg](https://gitee.com/gumengmengs/kubejs-course/blob/main/files/my_music.ogg). If the link is unavailable, contact Gu Meng on [Bilibili](https://space.bilibili.com/16632546).

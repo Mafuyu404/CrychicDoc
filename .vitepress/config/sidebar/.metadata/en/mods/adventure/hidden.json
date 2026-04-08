@@ -8,8 +8,7 @@
   "Champions-Unofficial/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749253126784
+    "isActiveInStructure": true
   },
   "Description.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
@@ -19,6 +18,11 @@
   "adventure-mods/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": false,
+    "isActiveInStructure": false
   }
 }

@@ -1,3 +1,6 @@
 {
-  "_self_": false
+  "_self_": false,
+  "StartupScript/": false,
+  "ServerScript/": false,
+  "ClientScript/": false
 }

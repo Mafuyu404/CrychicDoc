@@ -18,18 +18,21 @@
     "lastSeen": 1749253126750
   },
   "1.20.1/": {
-    "valueHash": "a5b10124c73efb47be9e6410796d1e42",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749253126750
+    "valueHash": "87180fd24367251e3efb506e90bb183c",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "1.21/": {
-    "valueHash": "a5b10124c73efb47be9e6410796d1e42",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749253126750
+    "valueHash": "6df94c47b40b2038e6753c10b86b85c6",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "Description.md": {
+    "valueHash": "a5b10124c73efb47be9e6410796d1e42",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
     "valueHash": "a5b10124c73efb47be9e6410796d1e42",
     "isUserSet": false,
     "isActiveInStructure": false

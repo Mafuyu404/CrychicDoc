@@ -1,21 +1,21 @@
 ---
 authors: ['Gu-meng']
 ---
-# 权重占比
-权重和概率挂钩，权重给的越多出现的概率则越大
+# Weight Ratio
+Weight is tied to probability: the higher the weight, the higher the chance.
 
-权重占比的计算为:100 / 总权重 = 每个权重比例 
+Weight ratio formula: `100 / total weight = per-weight percentage`.
 
-假如在一个区域的权重占比如下
-1. A 占比 3
-2. B 占比 1
-3. C 占比 5
-4. D 占比 2
+Suppose the weights in one pool are:
+1. A weight 3
+2. B weight 1
+3. C weight 5
+4. D weight 2
 
-计算方法就是 100 / (3+1+5+2) = 9.09
+Calculation: `100 / (3+1+5+2) = 9.09`
 
-所以在该区域内
-1. A 的概率为 27.27
-2. B 的概率为 9.09
-3. C 的概率为 45.45
-4. D 的概率为 18.18
+So in this pool:
+1. A chance is 27.27
+2. B chance is 9.09
+3. C chance is 45.45
+4. D chance is 18.18

@@ -1,7 +1,7 @@
 {
   "_self_": {
-    "valueHash": "b1bae588280bf11b0c60282ce060ae1c",
-    "isUserSet": false,
+    "valueHash": "32536950c0eb5cb77d8024b690f5a038",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749253127402
   },
@@ -18,12 +18,12 @@
   "guide/": {
     "valueHash": "a0c391dc49c440fc9962168353cedde3",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "rules.md": {
     "valueHash": "5c4d4dbbc3bdf395cdaa0786ef99d309",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "samples.md": {
     "valueHash": "7243595b75f3eda293a000832dcfa5e5",
@@ -46,9 +46,9 @@
     "isActiveInStructure": false
   },
   "doc/": {
-    "valueHash": "9a09b4dfda82e3e665e31092d1c3ec8d",
+    "valueHash": "f30a07a9abb57ec89d8f46e4f0658ba8",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "dev copy.md": {
     "valueHash": "b532a256dbcd3266fa562e3cf0813ba0",
@@ -95,7 +95,7 @@
   "sidebarGuide.md": {
     "valueHash": "5fb10394a8d81d55adc5b8c16195ba2e",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "contributionGuide.md": {
     "valueHash": "4a9e69850d1a68563d2426ded2af32b6",
@@ -110,22 +110,22 @@
   "pluginsGuide.md": {
     "valueHash": "966e80c059e0154d4df1d3d5827aef5d",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "litetreeGuide.md": {
     "valueHash": "42c85127ba2c13f446ecf418fa553ca7",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "vscodeSnippetsGuide.md": {
     "valueHash": "582d763f94c0987cdb0df443e7dcd1ca",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "frameworkMaintainability.md": {
     "valueHash": "e1642afbc858725ee3789207af94be8d",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "Description.md": {
     "valueHash": "085aa609fb4028855c0ea7fd54e4f18b",
@@ -135,16 +135,21 @@
   "heroExtension.md": {
     "valueHash": "eadc2005a0e35a17ccbb539c59bd9876",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "developmentWorkflow.md": {
     "valueHash": "0d0cf573cc38966896914acae45616ae",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "extensionArchitecture.md": {
     "valueHash": "f2d559cc9edaba16e659e34d73be00ed",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "b1bae588280bf11b0c60282ce060ae1c",
+    "isUserSet": false,
+    "isActiveInStructure": false
   }
 }

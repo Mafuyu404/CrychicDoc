@@ -1,61 +1,53 @@
 {
   "_self_": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247315653
   },
   "adventure/": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446689
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "armor_tools/": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446689
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "cosmetic/": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446689
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "custom/": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446689
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "performance/": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446689
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "server/": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446689
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "storages/": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446689
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "tech/": {
-    "valueHash": "b326b5062b2f0e69046810717534cb09",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446689
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "模组/": {
     "valueHash": "b326b5062b2f0e69046810717534cb09",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   }
 }

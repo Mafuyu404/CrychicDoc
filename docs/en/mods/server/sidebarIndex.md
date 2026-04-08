@@ -1,5 +1,5 @@
 ---
-title: server
+title: Server Mods
 hidden: false
 priority: 9007199254740991
 collapsed: true

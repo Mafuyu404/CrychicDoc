@@ -1,5 +1,5 @@
 ---
-title: armor_tools
+title: Armor & Tools
 hidden: false
 priority: 9007199254740991
 collapsed: true

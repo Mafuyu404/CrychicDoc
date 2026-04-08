@@ -165,16 +165,16 @@ hero:
     actions:
         - theme: brand
           text: "KubeJS 文档"
-          link: /zh/modpack/kubejs/
+          link: /zh/modpack/kubejs/Catalogue
         - theme: brand
           text: "模组索引"
-          link: /zh/mods/
+          link: /zh/mods/Catalogue
         - theme: alt
           text: "开发文档"
-          link: /zh/develop/
+          link: /zh/develop/Catalogue
         - theme: alt
           text: "开发手册"
-          link: /zh/doc/
+          link: /zh/doc/Catalogue
         - theme: outline
           text: "插件指南"
           link: /zh/doc/pluginsGuide
@@ -186,15 +186,15 @@ features:
     - icon: 🧪
       title: "KubeJS 路线"
       details: "从入门到进阶，覆盖多个版本的脚本实践。"
-      link: /zh/modpack/kubejs/
+      link: /zh/modpack/kubejs/Catalogue
     - icon: 🧩
       title: "模组图谱"
       details: "按分类管理服务器、科技、性能与玩法相关模组。"
-      link: /zh/mods/
+      link: /zh/mods/Catalogue
     - icon: 🛠️
       title: "开发指南"
       details: "模组开发、插件、数据包与资源包工作流。"
-      link: /zh/develop/
+      link: /zh/develop/Catalogue
     - icon: 📖
       title: "插件指南"
       details: "站点所用 Markdown 容器与组件能力总览。"
@@ -202,23 +202,23 @@ features:
     - icon: 🧭
       title: "开发手册"
       details: "框架工作流、扩展架构与 Hero 扩展文档入口。"
-      link: /zh/doc/
+      link: /zh/doc/Catalogue
     - icon: 📚
       title: "信息索引"
       details: "问题反馈、建议与社区资料入口。"
-      link: /zh/info/
+      link: /zh/info/Catalogue
     - icon: 🤝
       title: "协作规范"
       details: "贡献流程、命名约定与文档协作规则。"
       link: /zh/doc/rules
     - icon: 👥
-      title: "开发者空间"
-      details: "团队与成员文档、内部记录与草稿区域。"
-      link: /zh/developers/
+      title: "总站目录"
+      details: "进入中文总站目录，按模块浏览模组、整合包、开发与信息索引。"
+      link: /zh/Catalogue
     - icon: 📦
       title: "整合包文档"
       details: "整合包说明、推荐与维护相关文档。"
-      link: /zh/modpack/
+      link: /zh/modpack/Catalogue
 
 gitChangelog: false
 ---

@@ -1,48 +1,48 @@
 ---
 authors: ['Gu-meng']
 ---
-# 战利品
-在这章中会采用原生的KubeJs实现战利品的修改和添加，并不会使用LootJs进行修改战利品，LootJs的修改在模组篇章中
+# Loot Tables
+In this chapter, loot table changes are implemented with native KubeJS APIs, not LootJS. LootJS usage is covered in the mod chapter.
 
-在原生kubeJs中，作者一共给我们提供了以下6种战利品修改或添加的方式
+Native KubeJS provides the following 6 ways to modify or add loot tables.
 
-虽然说是六种，但其实战利品的添加都是差不多的
+Although there are six event types, their loot editing patterns are very similar.
 
-建议在写之前看看[战利品表](https://zh.minecraft.wiki/w/%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8?variant=zh-cn)和[战利品谓词](https://zh.minecraft.wiki/w/%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8?variant=zh-cn),有空的话也可以再额外看一个[物品修饰词](https://zh.minecraft.wiki/w/%E7%89%A9%E5%93%81%E4%BF%AE%E9%A5%B0%E5%99%A8)
+Before writing loot scripts, it helps to review [Loot table](https://zh.minecraft.wiki/w/%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8?variant=zh-cn), [Loot predicate](https://zh.minecraft.wiki/w/%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8?variant=zh-cn), and optionally [Item modifier](https://zh.minecraft.wiki/w/%E7%89%A9%E5%93%81%E4%BF%AE%E9%A5%B0%E5%99%A8).
 
-|   战利品事件调用                |     用途   |   添加  |  覆盖 |  用法 |
+|         Loot Event Call         |    Purpose  |  Modify Method | Override Method |  Usage |
 | :----------------------------: | :-------: | :----------: | :--------: | :-----------------------------------: |
-| ServerEvents.genericLootTables | 全局战利品 | modify       | addGeneric | [全局战利品](./GlobalLootTable)   |
-| ServerEvents.blockLootTables   | 方块战利品 | modifyBlock  | addBlock   | [方块战利品](./BlockLootTable)    |
-| ServerEvents.entityLootTables  | 生物战利品 | modifyEntity | addEntity  | [生物战利品](./EntityLootTable)     |
-| ServerEvents.giftLootTables    | 礼物战利品 | modify       | addGift    | [礼物战利品](./GiftLootTable)     |
-| ServerEvents.fishingLootTables | 钓鱼战利品 | modify       | addFishing | [钓鱼战利品](./FishingLootTable)   |
-| ServerEvents.chestLootTables   | 宝箱战利品 | modify       | addChest   | [宝箱战利品](./ChestLootTable) |
+| ServerEvents.genericLootTables | Global loot    | modify       | addGeneric | [Global Loot](./GlobalLootTable)   |
+| ServerEvents.blockLootTables   | Block loot     | modifyBlock  | addBlock   | [Block Loot](./BlockLootTable)    |
+| ServerEvents.entityLootTables  | Entity loot    | modifyEntity | addEntity  | [Entity Loot](./EntityLootTable)     |
+| ServerEvents.giftLootTables    | Gift loot      | modify       | addGift    | [Gift Loot](./GiftLootTable)     |
+| ServerEvents.fishingLootTables | Fishing loot   | modify       | addFishing | [Fishing Loot](./FishingLootTable)   |
+| ServerEvents.chestLootTables   | Chest loot     | modify       | addChest   | [Chest Loot](./ChestLootTable) |
 
-## LootBuilderPool通用方法
-|                         方法名                          |                  参数                   |           用途           |      返回类型      |
+## Common `LootBuilderPool` Methods
+|                         Method                          |                Parameters               |           Usage          |    Return Type    |
 | :-----------------------------------------------------: | :-------------------------------------: | :----------------------: | :----------------: |
-|              `setUniformRolls(int1,int2)`               |  int1->最小抽取次数 int2->最大抽取次数  |    随机从奖池抽取次数    |        void        |
+|              `setUniformRolls(int1,int2)`               | int1 -> min rolls, int2 -> max rolls   | Random roll count        |        void        |
 |               `addCondition(JsonObject)`                |                    ~                    |            ~             | ConditionContainer |
 | `addConditionalFunction(Consumer<ConditionalFunction>)` |                    ~                    |            ~             | FunctionContainer  |
-|                     `addEmpty(int)`                     |            int->空值占比权重            |     设置抽到空的权重     |   LootTableEntry   |
+|                     `addEmpty(int)`                     | int -> empty entry weight               | Set empty result weight  |   LootTableEntry   |
 |                 `addEntry(JsonObject)`                  |                    ~                    |            ~             |   LootTableEntry   |
-|                  `addItem(ItemStack)`                   |                   ->                    |         添加物品         |   LootTableEntry   |
-|                `addItem(ItemStack,int)`                 |             int-> 权重占比              |         添加物品         |   LootTableEntry   |
-|         `addItem(ItemStack,int,NumberProvider)`         |        NumberProvider-> 数量范围        |         添加物品         |   LootTableEntry   |
-|            `addLootTable(ResourceLocation)`             |                   ->                    |  添加到其他的战利品表里  |   LootTableEntry   |
-|                  `addTag(string,bool)`                  | string->tagId bool-> 是否从其中抽取一个 |    添加tag作为战利品     |   LootTableEntry   |
+|                  `addItem(ItemStack)`                   |                   ->                    | Add an item              |   LootTableEntry   |
+|                `addItem(ItemStack,int)`                 |          int -> weight ratio            | Add an item              |   LootTableEntry   |
+|         `addItem(ItemStack,int,NumberProvider)`         | NumberProvider -> count range           | Add an item              |   LootTableEntry   |
+|            `addLootTable(ResourceLocation)`             |                   ->                    | Add another loot table   |   LootTableEntry   |
+|                  `addTag(string,bool)`                  | string -> tagId, bool -> pick one       | Add tag as loot entries  |   LootTableEntry   |
 |          `randomChanceWithLooting(int1,int2)`           |      int1->chance int2->multiplier      |            ~             | ConditionContainer |
-|                 `count(NumberProvider)`                 |                   ->                    |       设置数量范围       | FunctionContainer  |
-|                `damage(NumberProvider)`                 |                   ->                    |      设置损坏值范围      | FunctionContainer  |
-|          `enchantRandomly(ResourceLocation[])`          |                   ->                    |         随机附魔         | FunctionContainer  |
+|                 `count(NumberProvider)`                 |                   ->                    | Set count range          | FunctionContainer  |
+|                `damage(NumberProvider)`                 |                   ->                    | Set damage range         | FunctionContainer  |
+|          `enchantRandomly(ResourceLocation[])`          |                   ->                    | Apply random enchantment | FunctionContainer  |
 |        `enchantWithLevels(NumberProvider,bool)`         |                    ~                    |            ~             | FunctionContainer  |
 |       `entityProperties(EntityTarget,JsonObject)`       |                    ~                    |            ~             | ConditionContainer |
 |      `entityScores(EntityTarget,Map<string, any>)`      |                    ~                    |            ~             | ConditionContainer |
-|                       `entries()`                       |                    -                    |     获取entries列表      |     JsonArray      |
-|                   `killedByPlayer()`                    |                    -                    |     设置需要玩家击杀     | ConditionContainer |
+|                       `entries()`                       |                    -                    | Get entries list         |     JsonArray      |
+|                   `killedByPlayer()`                    |                    -                    | Require player kill      | ConditionContainer |
 |                   `randomChance(int)`                   |                   ->                    |            ~             | ConditionContainer |
 |          `randomChanceWithLooting(int1,int2)`           |     int1-> chance int2-> multiplier     |            ~             | ConditionContainer |
 |              `setBinomialRolls(int1,int2)`              |                    ~                    |            ~             |        void        |
 |                  `survivesExplosion()`                  |                    -                    |            ~             | ConditionContainer |
-|                    `furnaceSmelt()`                     |                    -                    | 掉落物品可被火焰附加熔炼 | FunctionContainer  |
+|                    `furnaceSmelt()`                     |                    -                    | Apply smelting behavior  | FunctionContainer  |

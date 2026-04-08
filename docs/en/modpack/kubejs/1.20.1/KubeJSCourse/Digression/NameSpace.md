@@ -1,43 +1,43 @@
 ---
 authors: ['Gu-meng']
 ---
-# 什么是命名空间
-来自[McWiki](https://zh.minecraft.wiki/w/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID?variant=zh-cn)的解释
+# What Is a Namespace
+Explanation adapted from [McWiki](https://zh.minecraft.wiki/w/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID?variant=zh-cn).
 
-命名空间ID(Namespaced identifier，或译为命名空间标识符)、资源路径(Resource location、资源标识符(Resource identifier)或命名空间字符串(Namespaced string)是用来指明和识别游戏中特定对象而又能避免潜在的歧义和冲突的一种方式。
-# 命名空间一般用来做什么
-命名空间ID在游戏内部为资源路径(Resource location)，主要由以下两部分组成：
+Namespaced identifier (also called resource location/resource identifier/namespaced string) is a way to identify specific objects in-game while avoiding ambiguity and conflicts.
+# What Namespaces Are Used For
+In-game, a namespaced ID is a resource location and has two main parts:
 
-命名空间Namespace)：一个字符串，用于标识资源的唯一性。游戏的默认命名空间为minecraft
+Namespace: a string used to identify resource ownership. The default namespace is `minecraft`.
 
-路径(Path)：一个字符串。在数据包中，一般也反应了该资源的文件路径。有时也仅仅作为一种标识名。
+Path: a string. In datapacks it usually reflects the file path of the resource, but it can also be just an identifier.
 
-在模组里命名空间又被常称为modid，所以modid也是指命名空间，也是用于指向对应的资源文件夹命名的(关于叫做命名空间还是modid取决于个人习惯)
+In modding, namespace is often called `modid`. So `modid` also refers to the namespace and is used to point to the matching resource folder name.
 
-## 在注册物品时有什么用
+## Why It Matters in Item Registration
 ```js
 StartupEvents.registry("item", (event) => {
     event.create("meng:my_item", "basic")
 })
 ```
-上面是一个最简单的物品注册，第一个参数传入的就是我们的物品id
+The example above is a basic item registration. The first argument is the item ID.
 
-物品id可以看到他被 `:` 进行分开了,`:` 前面是命名空间，用于游戏去寻找资源位置的，而后面才是物品id
+The item ID is split by `:`. The part before `:` is the namespace (used by the game to find resources), and the part after it is the item ID.
 
-命名空间决定了材质的存放位置,物品id决定了材质的命名
+The namespace determines where assets are stored, and the item ID determines the asset naming.
 
-# 命名空间和id的定义规则
-命名空间和id只能接受以下的字符
-- 数字`0123456789`
-- 小写字母`abcdefghijklmnopqrstuvwxyz`
-- 下划线`_`
-- 连字符号`-`
-- 点`.`
+# Namespace and ID Rules
+Namespaces and IDs can only use the following characters:
+- Numbers `0123456789`
+- Lowercase letters `abcdefghijklmnopqrstuvwxyz`
+- Underscore `_`
+- Hyphen `-`
+- Dot `.`
 
-如果游戏内报错信息为`Non [a-z0-9/._-] xxxxx `说明你的id或者命名空间里有着不包含上面的规则
+If you get an error like `Non [a-z0-9/._-] xxxxx`, your ID or namespace contains invalid characters.
 
-这里有一个特殊的的符号`/`，他无法在命名空间里进行使用，但是可以使用在id的位置，这个时候我们一般叫他为资源路径,用于划分目录
+There is one special character: `/`. It cannot be used in the namespace, but it can be used in the ID path. In that case it acts as a resource path separator for directories.
 
-# ModID查看
-`Fabric` 的 `Modid` 在 `ModFile.jar/fabric.mod.json`\
-`Forge` 或 `NeoForge` 的 `Modid` 在 `ModFile.jar/META-INF/mods.toml`
+# Where to Check ModID
+`Fabric` `modid` is in `ModFile.jar/fabric.mod.json`\
+`Forge` or `NeoForge` `modid` is in `ModFile.jar/META-INF/mods.toml`

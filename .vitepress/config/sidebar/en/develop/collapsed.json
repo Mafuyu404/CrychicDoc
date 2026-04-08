@@ -1,3 +1,6 @@
 {
-  "_self_": true
+  "_self_": false,
+  "modding/": false,
+  "plugin/": false,
+  "vanilla/": false
 }

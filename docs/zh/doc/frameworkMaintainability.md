@@ -1,6 +1,7 @@
 ---
 title: 框架可维护性指南
 description: 面向组件扩展、i18n、导航布局、浮动元素与 Markdown 插件的工程化维护规范。
+hidden: false
 ---
 
 # 框架可维护性指南

@@ -1,7 +1,7 @@
 {
   "_self_": {
     "valueHash": "6a8e2dc558da1b3972a4fcfba70dfc7b",
-    "isUserSet": false,
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "annotation/": {
@@ -15,6 +15,11 @@
     "isActiveInStructure": false
   },
   "Description.md": {
+    "valueHash": "767fa455bb6826f4b550c21a6bca7182",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
     "valueHash": "767fa455bb6826f4b550c21a6bca7182",
     "isUserSet": false,
     "isActiveInStructure": false

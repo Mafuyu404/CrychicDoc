@@ -1,9 +1,9 @@
 ---
 authors: ['Gu-meng']
 ---
-# 全局战利品
-kubejs并没有提供所有战利品的修改，比如猫、猪灵交易、嗅探兽的战利品等都没有提供，这时就可以使用全局战利品直接去修改,只要能在游戏内获取到的id可以直接使用全局战利品去修改
-## 覆盖
+# Global Loot
+KubeJS does not provide dedicated event hooks for every loot source (for example cat gifts, piglin bartering, sniffer loot, etc.). In those cases, use global loot tables directly. If you can find the in-game loot table id, you can modify it with global loot.
+## Override
 ```js
 ServerEvents.genericLootTables(e=>{
     e.addGeneric("minecraft:gameplay/cat_morning_gift",loot=>{
@@ -15,9 +15,9 @@ ServerEvents.genericLootTables(e=>{
     })
 })
 ```
-覆盖掉猫咪的礼物，让猫咪每天早上送的礼物可能是钻石可能是苹果也可能是铁锭 
+This overrides cat morning gifts so cats can bring diamonds, apples, or iron ingots.
 
-## 添加
+## Add Entries
 ```js
 ServerEvents.genericLootTables(e=>{
     e.modify("minecraft:gameplay/piglin_bartering",loot=>{
@@ -31,4 +31,4 @@ ServerEvents.genericLootTables(e=>{
     })
 })
 ```
-在猪灵交易的战利品里面添加猪灵有大概率交易出来钻石
+This adds a high-weight diamond entry to piglin bartering loot.

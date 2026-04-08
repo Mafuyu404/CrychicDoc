@@ -1,3 +1,9 @@
 {
-  "_self_": false
+  "_self_": false,
+  "AddRecipe/": false,
+  "DeleteRecipe.md": false,
+  "ItemAndIngredient.md": false,
+  "ModifyRecipe.md": false,
+  "RecipeFilter.md": false,
+  "Vanilla.md": false
 }

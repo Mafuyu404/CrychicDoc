@@ -1,7 +1,7 @@
 ---
 authors: ['Gu-meng', 'Qi-Month']
 ---
-# 以下代码节录自 globals.d.ts
+# The following code is excerpted from `globals.d.ts`
 
 ```ts
 declare interface Facing {
@@ -23,7 +23,7 @@ type Facing_ = Facing;
 declare const Facing: Facing;
 ```
 
-# 以下代码节录自 internal_1.d.ts
+# The following code is excerpted from `internal_1.d.ts`
 
 ```ts
     class Direction extends Internal.Enum<Internal.Direction> implements Internal.StringRepresentable {

@@ -1,3 +1,6 @@
 {
-  "_self_": "Develop"
+  "_self_": "Development",
+  "modding/": "Mod Development",
+  "plugin/": "Plugin Development",
+  "vanilla/": "Vanilla Content"
 }

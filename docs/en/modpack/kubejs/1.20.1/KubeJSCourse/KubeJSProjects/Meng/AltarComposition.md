@@ -1,17 +1,17 @@
 ---
 authors: ['Gu-meng']
 ---
-# 祭坛合成
-本章涉及内容：自定义结构、配方检测、配方注册、JEI自定义注册、物品实体
-涉及模组及版本:
+# Altar Crafting
+Topics covered: custom structures, recipe detection, recipe registration, JEI custom registration, and item entities.
+Mods and versions used:
 1. jei-1.20.1-forge-15.3.0.4
 2. rhino-forge-2001.2.2-build.18
 3. architectury-9.2.14-forge
 4. kubejsadditions-forge-4.3.2
 5. kubejs-forge-2001.6.5-build.14
 6. probejs-7.0.1-forge
-## 注册方块和结构检测
-**注：该代码应在`startup_scripts`里**
+## Register Block and Structure Detection
+**Note: this code should be in `startup_scripts`.**
 ```js
 const { $InteractionHand } = require("packages/net/minecraft/world/$InteractionHand")
 const { $EntityType } = require("packages/net/minecraft/world/entity/$EntityType")
@@ -59,7 +59,7 @@ StartupEvents.registry("block", event => {
 })
 
 /**
- * 删除悬浮的物品
+ * Remove floating item entity.
  * @param {$Level} world 
  * @param {String} itemId 
  * @param {$BlockPos} pos 
@@ -70,7 +70,7 @@ function removeFloatItem(world,itemId,pos){
         // value type is $ItemEntity
         if (value.item.getId() == itemId) {
             if (value.x == x + 0.5 && value.y == y + 1.42 && value.z == z + 0.5) {
-                // 删除物品的方式是丢弃(discarded)
+                // Remove entity using "discarded"
                 value.remove("discarded")
                 return true
             }
@@ -80,7 +80,7 @@ function removeFloatItem(world,itemId,pos){
 }
 
 /**
- * 使物品悬浮
+ * Make an item float.
  * @param {$Level} world 
  * @param {$ItemStack_} item 
  * @param {$BlockContainerJS} block 
@@ -101,7 +101,7 @@ function itemFloat(world,item,block){
     block.setEntityData({ data: { item: itemEntity.item.id } })
 }
 /**
- * 获取结构的方块
+ * Get structure blocks.
  * @param {$Level} world 
  * @param {$BlockPos} blockPos 
  * @returns 
@@ -126,7 +126,7 @@ function structureBlocksPos(world,blockPos){
 }
 
 /**
- * 检测结构完整性
+ * Check structure integrity.
  * @param {$Level} world
  * @param {$BlockPos} blockPos 
  */
@@ -137,7 +137,7 @@ function getBlockStructure(world, blockPos) {
 }
 
 /**
- * 获取结构内的物品
+ * Get items inside the structure.
  * @param {$Level} world
  * @param {$BlockPos} blockPos 
  */
@@ -153,7 +153,7 @@ function getStructureItems(world, blockPos) {
 }
 
 /**
- * 删除结构内的物品
+ * Remove items inside the structure.
  * @param {$Level} world
  * @param {$BlockPos} blockPos 
  */
@@ -167,8 +167,8 @@ function removeStructureItems(world,blockPos){
 }
 ```
 
-## 方块模型材质
-**注:该代码应在`blockstates`里**
+## Blockstate and Model Files
+**Note: this code should be in `blockstates`.**
 ```json
 {
     "variants":{
@@ -179,7 +179,7 @@ function removeStructureItems(world,blockPos){
 }
 ```
 
-**注:该代码应在`models\block`里**
+**Note: this code should be in `models\\block`.**
 ```json
 {
 	"credit": "Made with Blockbench",
@@ -268,11 +268,11 @@ function removeStructureItems(world,blockPos){
 }
 ```
 
-## 祭坛使用配方和注册配方
-**注:该代码应在`server_scripts`里**
+## Altar Recipe Use and Registration
+**Note: this code should be in `server_scripts`.**
 ```js
 /**
- * 模拟配方数组
+ * Simulated recipe list.
  */
 global.testRecipe = [
     {
@@ -284,22 +284,22 @@ global.testRecipe = [
     }
 ]
 /***
- * 判断两个字符串数组的元素是否相同
+ * Check whether two string arrays contain the same elements.
  */
 function arraysEqualIgnoreOrder(arr1, arr2) {
     if (arr1.length !== arr2.length) {
         return false;
     }
-    // 复制数组以避免修改原数组  
+    // Copy arrays to avoid modifying original arrays
     const sortedArr1 = arr1.sort((a, b) => a.localeCompare(b));
     const sortedArr2 = arr2.sort((a, b) => a.localeCompare(b));
     return JSON.stringify(sortedArr1) === JSON.stringify(sortedArr2);
 }
 /**
- * 配方检测
- * @param {String} principalItem 中间主要的物品id
- * @param {*} recipesItems 配方物品id数组
- * @returns 合成出来的物品
+ * Recipe check.
+ * @param {String} principalItem center item id
+ * @param {*} recipesItems recipe item id array
+ * @returns crafted output item id
  */
 global.recipeStructure = (principalItem, recipesItems) => {
     for (const key of global.testRecipe) {
@@ -312,10 +312,10 @@ global.recipeStructure = (principalItem, recipesItems) => {
     return null
 }
 /**
- * 注册配方
- * @param {String} output 输出物品
- * @param {String[]} input 祭坛周围的物品
- * @param {String} principal 祭坛中间的物品
+ * Register recipe.
+ * @param {String} output output item
+ * @param {String[]} input surrounding altar items
+ * @param {String} principal center altar item
  */
 function regRecipe(output,principal,input){
     global.testRecipe.push({
@@ -328,8 +328,8 @@ function regRecipe(output,principal,input){
 regRecipe("meng:hello_block","meng:slab_block",["meng:stairs_block","minecraft:yellow_wool","minecraft:white_stained_glass"])
 ```
 
-## 祭坛破坏掉落里面的物品
-**注:该代码应在`server_scripts`里**
+## Drop Stored Items When Altar Is Broken
+**Note: this code should be in `server_scripts`.**
 ```js
 BlockEvents.broken("meng:test_block", e => {
     let block = e.getBlock()
@@ -350,15 +350,15 @@ BlockEvents.broken("meng:test_block", e => {
 })
 ```
 
-## JEI配方注册显示
-**注:该代码应在`client_scripts`里,并且需要添加模组[KubeJS Additions](https://www.mcmod.cn/class/11814.html)**
+## JEI Recipe Display Registration
+**Note: this code should be in `client_scripts`, and requires [KubeJS Additions](https://www.mcmod.cn/class/11814.html).**
 ```js
 JEIAddedEvents.registerCategories((event) => {
     event.custom("meng:block_test", (category) => {
         const jeiHelpers = category.getJeiHelpers()
         const guiHelper = category.getJeiHelpers().getGuiHelper();
         category
-            .title("祭坛合成")
+            .title("Altar Crafting")
             .background(guiHelper.createDrawable(new ResourceLocation("meng", "jei/synthetic_orientation.png"), 0, 0, 150, 100))
             .icon(guiHelper.createDrawableItemStack(Item.of("meng:test_block")))
             .isRecipeHandled((recipe) => {
@@ -412,9 +412,9 @@ JEIAddedEvents.registerRecipeCatalysts(jei =>{
 })
 ```
 
-## 一些注意事项
-1. 该项目的配方检测全是字符串，并不是ItemStack所以无法检测nbt，如需请自行更改
-2. 该项目只是作为示例，很多地方并不是最优解，可自行进行解决
-3. 如果对该项目代码部分不满可以将修改好的代码上传至[gitee项目仓库](https://gitee.com/gumengmengs/kubejs-course)
-4. 项目完整代码[在这里](https://gitee.com/gumengmengs/kubejs-course/tree/main/Code/Projects/AltarComposition/kubejs)
-5. 因为物品渲染使用的物品掉落物实体，所以会被kill @e[type="item"] 给清理掉，所以得注意一下(可以考虑写一个方块tick事件去检测解决)
+## Notes
+1. Recipe detection in this project is string-based, not `ItemStack`-based, so it cannot check NBT directly. Modify if needed.
+2. This project is only an example; many parts are not necessarily optimal and can be improved.
+3. If you improve this project, you can upload your revised code to the [Gitee repository](https://gitee.com/gumengmengs/kubejs-course).
+4. Full project code is [here](https://gitee.com/gumengmengs/kubejs-course/tree/main/Code/Projects/AltarComposition/kubejs).
+5. Item rendering uses dropped item entities, so `kill @e[type=\"item\"]` will also clear them. Keep that in mind (you can consider fixing this with a block tick check).

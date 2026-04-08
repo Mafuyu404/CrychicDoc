@@ -1,9 +1,9 @@
 {
-  "_self_": "Code",
-  "error.md": "error",
-  "eventHandler.md": "eventHandler",
-  "loadClass.md": "loadClass",
-  "other.md": "other",
-  "register.md": "register",
-  "utils.md": "utils"
+  "_self_": "代码",
+  "error.md": "纠错",
+  "eventHandler.md": "事件处理",
+  "loadClass.md": "反射",
+  "other.md": "其他",
+  "register.md": "注册",
+  "utils.md": "函数库（Utils API）"
 }

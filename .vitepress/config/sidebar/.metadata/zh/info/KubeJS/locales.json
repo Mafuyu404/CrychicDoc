@@ -6,14 +6,14 @@
     "lastSeen": 1749247315720
   },
   "Q&A/": {
-    "valueHash": "bcd92bcee57648f2bd4480c4a1193ac0",
-    "isUserSet": false,
-    "isActiveInStructure": false
+    "valueHash": "de2b2d43b0810a89b7904fcfc926fc7c",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "borad/": {
-    "valueHash": "9d45183821d6a8f8c93ab3ec2b280952",
-    "isUserSet": false,
-    "isActiveInStructure": false
+    "valueHash": "a52b3ff2d273db89dbff46c1c20b23c3",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "code/": {
     "valueHash": "ca0dbad92a874b2f69b549293387925e",
@@ -33,6 +33,11 @@
   "kubejs/": {
     "valueHash": "a5b10124c73efb47be9e6410796d1e42",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "a5b10124c73efb47be9e6410796d1e42",
+    "isUserSet": false,
+    "isActiveInStructure": false
   }
 }

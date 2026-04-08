@@ -1,21 +1,19 @@
 {
   "_self_": {
-    "valueHash": "7d3cf600bf044a1aaf9324807bd8d13e",
-    "isUserSet": false,
+    "valueHash": "1440fb2f4cb81c12992922017a5c99ae",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247314845
   },
   "datapack/": {
-    "valueHash": "6a01c565da6473d8e2badeb5e9b3d029",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749253126679
+    "valueHash": "133318349ee2f19eb30b4977e382fe2a",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "resourcepack/": {
-    "valueHash": "380c02a0c5a779d07f0f9b65987fba01",
-    "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749253126679
+    "valueHash": "7af4025194244815e9f26f8b957b004b",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "Description.md": {
     "valueHash": "7d3cf600bf044a1aaf9324807bd8d13e",
@@ -25,6 +23,11 @@
   "vanilla/": {
     "valueHash": "7d3cf600bf044a1aaf9324807bd8d13e",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "7d3cf600bf044a1aaf9324807bd8d13e",
+    "isUserSet": false,
+    "isActiveInStructure": false
   }
 }

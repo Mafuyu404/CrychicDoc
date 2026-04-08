@@ -1,19 +1,19 @@
 ---
 authors: ['Gu-meng']
 ---
-# 文件优先级
-代码执行是从上至下，文件加载默认是从a到z
+# File Priority
+Code executes from top to bottom, and files are loaded from `a` to `z` by default.
 
-在kubejs当中我们是可以直接跨文件调用方法参数等内容的，但是大前提是这个文件是加载游戏级高的
+In KubeJS, you can call methods/variables across files, but only if the source file is loaded earlier (higher priority).
 
-这里注意一下，这里的跨文件但是不难跨端，比如你无法在`startup`里调用`server`里的方法，如果真的需要可以看[global全局变量](../KubeJSAdvanced/GlobalVariable.md)
+Note: cross-file does not mean cross-side. For example, you cannot call `server` methods from `startup`. If you really need cross-side data, see [Global variables](../KubeJSAdvanced/GlobalVariable.md).
 
-kubejs提供了一个注释来标注文件的优先级 `// priority: 10`
+KubeJS provides a comment to set file priority: `// priority: 10`
 
-在文件的开头也就是第一行写上这个注释并标注优先等级
+Put this comment at the top of the file (first line).
 
-优先等级为冒号后面的数字
+The number after the colon is the priority value.
 
-如果等级越高则越先加载，等级越低则在后面加载
+Higher number = loaded earlier. Lower number = loaded later.
 
-没有等级的将会按照文件名a~z加载
+Files without priority are loaded by filename (`a` to `z`).

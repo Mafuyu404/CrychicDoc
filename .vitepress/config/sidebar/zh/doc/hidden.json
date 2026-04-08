@@ -1,13 +1,3 @@
 {
-  "_self_": true,
-  "rules.md": false,
-  "heroExtension.md": false,
-  "developmentWorkflow.md": false,
-  "extensionArchitecture.md": false,
-  "frameworkMaintainability.md": false,
-  "sidebarGuide.md": false,
-  "pluginsGuide.md": false,
-  "litetreeGuide.md": false,
-  "vscodeSnippetsGuide.md": false,
-  "guide/": true
+  "_self_": false
 }

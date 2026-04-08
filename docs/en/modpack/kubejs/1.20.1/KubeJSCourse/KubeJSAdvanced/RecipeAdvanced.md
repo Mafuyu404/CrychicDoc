@@ -1,15 +1,16 @@
-# 配方合成进阶
-本章节所有内容都为KubeJS提供的shapeless和shaped，不适用于其他任何配方，哪怕你能够调用，但是并不会有用
+# Advanced Recipe Crafting
+Everything in this chapter applies to KubeJS `shapeless` and `shaped` recipes only. It does not apply to other recipe types, even if you can technically call similar methods.
 
-KubeJS只做了自己的适配，并没有适配其他任何合成方式，包括原版的`recipes.minecraft.xxx`
+KubeJS only adapts its own recipe APIs and does not adapt other crafting systems, including vanilla `recipes.minecraft.xxx`.
 
-所以这个地方得注意调用的是`shapeless`和`shaped`，或者`recipes.kubejs.shaped`和`recipes.kubejs.shapeless`
+So make sure you are using `shapeless` and `shaped`, or `recipes.kubejs.shaped` and `recipes.kubejs.shapeless`.
 
-关于为什么原版的水桶在合成表里为什么可以返回桶请看 --> [设置物品合成返回物品](./ItemRecipeReturnItem.md)
-## 合成附带nbt modifyResult
-下面代码是使用工作台里使用钻石剑+附魔书进行合成出带附魔效果的,如果有更高等级的附魔将直接覆盖低等级附魔
+For why vanilla water buckets return empty buckets in crafting, see --> [Set Item Crafting Return Item](./ItemRecipeReturnItem.md)
 
-这段代码只是示范modifyResult该如何去使用提供的一个示例，具体使用场景可更改
+## NBT on Crafting Result: `modifyResult`
+The code below demonstrates crafting with enchanted inputs and custom output logic.
+
+This is only an example of how to use `modifyResult`. Adjust the scenario to your own needs.
 ```js
 ServerEvents.recipes(event=>{
     event.recipes.kubejs.shaped('minecraft:soul_torch',[
@@ -33,16 +34,16 @@ ServerEvents.recipes(event=>{
     })
 })
 ```
-`modifyResult`里的第一个参数**inputItemGrid**为合成台里的物品,第二个参数**outputItem**为输出物品，最后需要返回一个物品为输出物品(return ·ItemStack·)
+In `modifyResult`, the first parameter `inputItemGrid` is the crafting-grid input, and the second parameter `outputItem` is the output item. You must return an item as the final output (`return ItemStack`).
 
-`inputItemGrid.find(物品id)`是寻找合成台里的物品，返回为 **·ItemStack·**
+`inputItemGrid.find(itemId)` searches for an item in the crafting grid and returns an **`ItemStack`**.
 
-`·ItemStack·.hasEnchantment(附魔id,等级)`获取物品的所有附魔，返回为 bool
+`ItemStack.hasEnchantment(enchantmentId, level)` checks enchantments on the item and returns `bool`.
 
-`·ItemStack·.enchant(附魔类型id,等级)`给物品附魔,这里并不会直接改变物品属性所以需要 ***使用变量接收返回参数***
+`ItemStack.enchant(enchantmentId, level)` enchants the item. Since it does not directly mutate the original item in this context, ***store the returned value in a variable***.
 
-## 消耗物品耐久合成 damageIngredient
-下面是使用所有斧子在工作台内和木头进行合成出8个模板的示例
+## Crafting with Durability Cost: `damageIngredient`
+Example: use any axe with logs in a crafting table to make 8 planks, consuming axe durability.
 ```js
 ServerEvents.recipes((event) => {
 	event.shapeless(Item.of('minecraft:oak_planks', 8), [
@@ -50,12 +51,12 @@ ServerEvents.recipes((event) => {
 	]).damageIngredient({ tag: "#minecraft:axes" }, 5)
 })
 ```
-`damageIngredient`里的第一个参数是匹配器，第二个参数为消耗耐久的个数
+In `damageIngredient`, the first parameter is a matcher, and the second is the durability amount consumed.
 
-如果匹配器里填写item代表匹配物品，如果填写tag则代表匹配标签
+In the matcher, `item` matches an item, and `tag` matches a tag.
 
-## 合成返回物品 replaceIngredient
-下面的示例是使用瞬间治疗2的药水和龙息进行工作台内进行合成出滞留型治疗药水2并且返回玻璃瓶
+## Crafting with Return Item: `replaceIngredient`
+Example: use Strong Healing potion + Dragon's Breath to craft a Lingering Strong Healing potion, and return a glass bottle.
 ```js
 ServerEvents.recipes(event => {
     event.shapeless(
@@ -65,12 +66,12 @@ ServerEvents.recipes(event => {
 })
 ```
 
-`replaceIngredient`里的第一个参数是匹配器用于匹配被替换的物品，第二个参数为被替换的物品
+In `replaceIngredient`, the first parameter is the matcher for the ingredient to replace, and the second is the replacement item.
 
-匹配器的规则同上
+Matcher rules are the same as above.
 
-## 合成保存物品 keepIngredient
-下面的示例中是使用木棍+蜂蜜合成烈焰棒不消耗蜂蜜
+## Crafting While Keeping Ingredient: `keepIngredient`
+In the example below, crafting with stick + honeycomb into blaze rod does not consume the honeycomb.
 ```js
 ServerEvents.recipes(event => {
     event.shapeless(
@@ -80,4 +81,4 @@ ServerEvents.recipes(event => {
 })
 ```
 
-`keepIngredient`里的参数是匹配器，规则同上
+`keepIngredient` takes a matcher parameter, with the same rules as above.

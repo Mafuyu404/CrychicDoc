@@ -1,42 +1,30 @@
 ---
-layout: doc
-title: 全局类
+title: 目录
+description: Classes 目录页，汇总当前目录的文档、子分区与外部参考。
 hidden: false
-priority: 0
+priority: -1000000
 ---
+# Classes
 
+## 本级文档
 
-# 全局类
-
-全局类是在任何作用域都可使用的类，是开发中实用的工具。
-
-## 约定
-
-为了缩短篇幅，便于书写与理解，文中使用了一些符号，单词等代表某些含义。\
-**`args`** 有参数的函数——假设现有函数demo(args); 这里的“args”既不代表参数名，也不代表参数类型，参数个数等，仅代表这是一个有参数的函数。
-
-## 常见的全局类
-
-例：当获取一个随机数时。
-
-```js
-// 它会返回一个[0, 1)区间的数
-let random = Math.random();
-```
-
-事实上就在调用Math这个全局类中的random函数。
-
-对于KubeJS，它提供了一些全局类帮助我们表示Minecraft中的一些对象，例如物品类（Item）
-
-```js
-// 这是一个草方块物品
-let grass_block = Item.of('minecraft:grass_block');
-```
-
-因此，了解KubeJS提供的全局类，对于使用kubejs大有裨益。
-
-::: warning 注意
-本文涉及类型信息均依据Probejs-6.0.1提供的自动补全。推荐安装Probejs以获取代码补全与类型提示功能。
-
-- [Probejs](https://www.mcmod.cn/class/6486.html)
-:::
+| 文档 | 说明 |
+| --- | --- |
+| [方块类（Block）](./Block) | 本目录下的文档页面 |
+| [方块状态谓词类（BlockStatePredicate）](./BlockStatePredicate) | 本目录下的文档页面 |
+| [方向类（Direction）](./Direction) | 本目录下的文档页面 |
+| [流体类（Fluid）](./Fluid) | 本目录下的文档页面 |
+| [面类（Facing）](./Facing) | 本目录下的文档页面 |
+| [平台类（Platform）](./Platform) | 本目录下的文档页面 |
+| [实用工具类（Utils）](./Utils) | 本目录下的文档页面 |
+| [通用唯一标识符类（UUID）](./Uuid) | 本目录下的文档页面 |
+| [文本类（Text）](./Text) | 本目录下的文档页面 |
+| [物品类(Item)](./Item) | 本目录下的文档页面 |
+| [颜色类（Color）](./Color) | 本目录下的文档页面 |
+| [原料类（Ingredient）](./Ingredient) | 本目录下的文档页面 |
+| [原料助手类（IngredientHelper）](./IngredientHelper) | 本目录下的文档页面 |
+| [资源位置类（ResourceLocation）](./ResourceLocation) | 本目录下的文档页面 |
+| [AABB](./AABB) | 本目录下的文档页面 |
+| [Json读写类（JsonIO）](./JsonIO) | 本目录下的文档页面 |
+| [NBT读写类（NBTIO）](./NBTIO) | 本目录下的文档页面 |
+| [NBT类（NBT）](./NBT) | 本目录下的文档页面 |

@@ -1,16 +1,16 @@
 ---
 authors: ['Gu-meng']
 ---
-# CreateHeatJS(CreateJS的附属Mod)
-### CreateHeatJS可以允许你通过使用CreateJS自定义部分加工配方所需的热源
+# CreateHeatJS (CreateJS Addon Mod)
+### CreateHeatJS lets you define custom heat sources for some CreateJS processing recipes.
 
-**例子**\
-![例子](/imgs/createheadjs/Example_1.png)![例子](/imgs/createheadjs/Example_2.png)
+**Examples**\
+![Example](/imgs/createheadjs/Example_1.png)![Example](/imgs/createheadjs/Example_2.png)
 
-在配方后使用`.heatLevel()`方法来自定义热源等级
-**JEI内显示默认的是本地化键名,需要自己写语言文件进行本地化**
+Use `.heatLevel()` after a recipe to set a custom heat tier.
+**JEI shows localization keys by default, so you need to add your own language file.**
 
-## 代码展示
+## Code Example
 `server_scripts`
 ```js
 ServerEvents.recipes((event) => {
@@ -29,31 +29,31 @@ ServerEvents.recipes((event) => {
 `starup_scripts`
 ```js
 CreateHeatJS.registerHeatEvent((event) => {
-	// 熔化
+	// Melt
     event.registerHeat('melt', 1, 0xFF8C00)
 		.addHeatSource('minecraft:fire')
 		.register()
 
-	// 冻结
+	// Frozen
 	event.registerHeat('frozen', -1, 0x87CEFA)
 		.addHeatSource('minecraft:blue_ice')
 		.register()
 })
 ```
 
-## 进阶
+## Advanced
 `starup_scripts`
 ```js
-// 读取熔炉类
+// Load the furnace class
 const $AbstractFurnaceBlock = Java.loadClass("net.minecraft.world.level.block.AbstractFurnaceBlock")
 /*
- * 下面这种写法也可以
- * 但是需要v7.0及以上的ProbeJS
+ * This style also works,
+ * but it requires ProbeJS v7.0 or newer.
 */
 const { $AbstractFurnaceBlock } = require("package/net/minecraft/world/level/block/AbstractFurnaceBlock")
 
 CreateHeatJS.registerHeatEvent((event) => {
-	// 点燃的熔炉
+	// Lit furnace
 	event.registerHeat("BLAZE", 3, 0xed9c33)
 		.addHeatSource("minecraft:furnace", "minecraft:furnace[lit=true]", (level, pos, blockStack) => {
 			if (blockStack.hasProperty($AbstractFurnaceBlock.LIT)) {
@@ -63,7 +63,7 @@ CreateHeatJS.registerHeatEvent((event) => {
 		})
 		.register()
 	
-	// 冻结(需要冰刺之地群系)
+	// Frozen (requires the Ice Spikes biome)
 	event.registerHeat("CRYOTHEUM", -1, 0x8BAAFF)
 		.addHeatSource("minecraft:blue_ice", (level, pos, blockStack) => {
 			return level.getBiome(pos)

@@ -1,7 +1,7 @@
 {
   "_self_": {
-    "valueHash": "c7e105f705cf855314ae28d017b30136",
-    "isUserSet": false,
+    "valueHash": "fee8b611f48310555b0b0b2ff0d07f88",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "QiHuang02/": {
@@ -10,6 +10,11 @@
     "isActiveInStructure": true
   },
   "Description.md": {
+    "valueHash": "c7e105f705cf855314ae28d017b30136",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
     "valueHash": "c7e105f705cf855314ae28d017b30136",
     "isUserSet": false,
     "isActiveInStructure": false

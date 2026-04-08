@@ -2,7 +2,7 @@
 authors: ['Gu-meng', 'Qi-Month']
 ---
 ---
-description: 该章节中提供了一些类的方法调用供参考
+description: This section provides method references for some classes.
 ---
 
-# Ponder for KubeJS 方法调用
+# Ponder for KubeJS Method Reference

@@ -1,35 +1,35 @@
 ---
 authors: ['Gu-meng']
 ---
-# 抽奖券
-本章涉及内容：AttachedData、物品注册、自定义战利品、自定义战利品生成、运用nbt，本章代码除了注册在`startup_scripts`其他都在`server_scripts`内
-涉及模组及版本:
+# Raffle Ticket
+Topics covered: `AttachedData`, item registration, custom loot, custom loot generation, and NBT usage. In this chapter, only registration code goes in `startup_scripts`; everything else belongs in `server_scripts`.
+Mods and versions used:
 1. rhino-forge-2001.2.2-build.18
 2. architectury-9.2.14-forge
 3. kubejs-forge-2001.6.5-build.14
 4. probejs-6.0.1-forge
 
-## 注册抽奖券
+## Register Raffle Ticket
 ```js
 StartupEvents.registry("item",event=>{
     event.create("meng:raffle_ticket");
 })
 ```
 
-## 抽奖券的公共文件
+## Shared Raffle Ticket File
 ```js
 // priority: 5
 
-// 抽奖券基础物品列表
+// Base raffle item list
 const basalItemList = [];
-// 抽奖券奖池列表(作为临时抽奖存储用)
+// Raffle pool list (temporary storage during draws)
 let poolItemList = [];
-// 抽奖券的类型对象
+// Ticket type mapping object
 let ticketTypeObject = {
     basal: basalItemList
 };
 ```
-如果需要添加其他的战利品，可以像下面这样添加
+If you want to add other loot pools, you can do it like this:
 ```js
 const testItemList = [];
 let ticketTypeObject = {
@@ -38,7 +38,7 @@ let ticketTypeObject = {
 };
 ```
 
-## 抽奖券战利品添加
+## Add Raffle Loot Entries
 ```js
 function addBasalItem(itemId, weight) {
     basalItemList.push({
@@ -56,7 +56,7 @@ addBasalItem('minecraft:iron_ingot', 20)
 addBasalItem('minecraft:netherite_ingot', 1)
 ```
 
-## 抽奖券战利品
+## Raffle Loot Table
 ```js
 ServerEvents.genericLootTables(event => {
     for (const key in ticketTypeObject) {
@@ -71,7 +71,7 @@ ServerEvents.genericLootTables(event => {
 })
 ```
 
-## 开始抽奖
+## Start Raffle Draw
 ```js
 ItemEvents.firstRightClicked("meng:raffle_ticket", event => {
     const player = event.getPlayer();
@@ -133,7 +133,7 @@ function addItemList(itemList) {
 }
 ```
 
-## 抽奖动画
+## Draw Animation
 ```js
 PlayerEvents.tick(event => {
     let player = event.getPlayer();
@@ -238,7 +238,7 @@ function paintShow(player, one_item, two_item, three_item) {
 }
 ```
 
-## 一些注意事项
-1. 战利品通过不同的物品携带的nbt里的`ticketType`不同来进行不同的奖池抽奖，做了简单的防止找不到nbt所以有一个默认的奖池为basalItemList，如果不需要添加其他奖池的可以直接修改`抽奖券战利品添加`里的代码
-2. 该项目只是作为示例，很多地方并不是最优解，可自行进行解决
-3. 如果对该项目代码部分不满可以将修改好的代码上传至[gitee项目仓库](https://gitee.com/gumengmengs/kubejs-course)
+## Notes
+1. Different loot pools are selected by the `ticketType` in each ticket item's NBT. A default pool (`basalItemList`) is included as a fallback when NBT is missing. If you do not need extra pools, you can modify only the code in **Add Raffle Loot Entries**.
+2. This project is only an example; many parts are not necessarily optimal and can be improved.
+3. If you improve this project, you can upload your revised code to the [Gitee repository](https://gitee.com/gumengmengs/kubejs-course).

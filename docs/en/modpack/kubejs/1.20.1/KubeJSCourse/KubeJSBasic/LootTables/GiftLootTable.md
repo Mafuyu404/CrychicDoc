@@ -1,9 +1,9 @@
 ---
 authors: ['Gu-meng']
 ---
-# 村民礼物战利品
-这里的村民礼物是在玩家获得村庄英雄时，[不同村民](../../Digression/LootTableId.md/#村民礼物战利品)会赠送礼物给玩家
-## 覆盖村民的礼物赠送
+# Villager Gift Loot
+Villager gift loot is used when the player has Hero of the Village. [Different villagers](../../Digression/LootTableId.md/#villager-gift-loot-tables) give different gifts.
+## Override Villager Gifts
 ```js
 ServerEvents.giftLootTables(e=>{
     e.addGift("armorer_gift",l=>{
@@ -13,8 +13,8 @@ ServerEvents.giftLootTables(e=>{
     })
 })
 ```
-将盔甲匠赠送的礼物该为钻石
-## 添加村民的礼物赠送
+This changes the armorer's gift to a diamond.
+## Add to Villager Gifts
 ```js
 ServerEvents.giftLootTables(e=>{
     e.modify("armorer_gift",l=>{
@@ -24,4 +24,4 @@ ServerEvents.giftLootTables(e=>{
     })
 })
 ```
-盔甲匠每次赠送礼物会额外赠送一颗钻石
+Now the armorer gives an extra diamond each time they give a gift.

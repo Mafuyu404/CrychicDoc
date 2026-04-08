@@ -1,9 +1,9 @@
 ---
 title: LiteTree组件
 description: 在 VitePress 中使用 LiteTree 创建优雅、信息丰富的树形结构的完整指南。
-layout: doc
-priority: 40
 hidden: false
+priority: 40
+layout: doc
 ---
 
 # LiteTree 组件使用指南 {#main}

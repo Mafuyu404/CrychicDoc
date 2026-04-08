@@ -1,10 +1,10 @@
 {
   "_self_": "Q&A",
-  "API.md": "API",
-  "error.md": "error",
-  "event_interaction.md": "event_interaction",
-  "forgeEvents.md": "forgeEvents",
-  "loadClass.md": "loadClass",
-  "other.md": "other",
-  "register.md": "register"
+  "API.md": "Classes & Methods",
+  "error.md": "Errors",
+  "event_interaction.md": "Events & Interaction",
+  "forgeEvents.md": "Forge Events",
+  "loadClass.md": "Reflection",
+  "other.md": "Other",
+  "register.md": "Registration"
 }

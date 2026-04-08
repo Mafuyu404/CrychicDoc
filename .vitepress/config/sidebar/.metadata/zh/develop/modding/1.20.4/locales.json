@@ -6,16 +6,21 @@
     "lastSeen": 1749249060564
   },
   "Neoforge/": {
-    "valueHash": "5dd4db8578cce81702ef7c554d34bad0",
-    "isUserSet": false,
-    "isActiveInStructure": false
+    "valueHash": "f4b30cc4d441c3c66839f92c0db5a013",
+    "isUserSet": true,
+    "isActiveInStructure": true
   },
   "1.20.4/": {
     "valueHash": "359c6316e3a7877cd6571b2ae509338c",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
   },
   "Description.md": {
+    "valueHash": "359c6316e3a7877cd6571b2ae509338c",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
     "valueHash": "359c6316e3a7877cd6571b2ae509338c",
     "isUserSet": false,
     "isActiveInStructure": false

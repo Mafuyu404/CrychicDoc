@@ -1,10 +1,10 @@
 ---
 authors: ['Gu-meng']
 ---
-# 禁止实体穿越到指定维度
-本章主要涉及内容：ForgeEvents、forge事件里的`EntityTravelToDimensionEvent`、kubejs的阶段(stage)，本章所有代码部分都在`startup_scripts`里
+# Prevent Entity Travel to a Specific Dimension
+Main topics in this chapter: `ForgeEvents`, Forge's `EntityTravelToDimensionEvent`, and KubeJS stages. All code in this chapter belongs in `startup_scripts`.
 
-## 完整代码
+## Full Code
 ```js
 const $EntityTravelToDimensionEvent = Java.loadClass("net.minecraftforge.event.entity.EntityTravelToDimensionEvent")
 
@@ -15,10 +15,10 @@ ForgeEvents.onEvent($EntityTravelToDimensionEvent, event => {
     }
 })
 ```
-以上代码判断了准备穿越维度的实体是否穿越过去的维度为地狱（下界），如果是就取消该事件，让实体无法穿越维度
+The code above checks whether the target dimension is the Nether. If so, it cancels the event and blocks dimension travel.
 
-## 阶段限制
-阶段限制主要是限制玩家，因为只有玩家才有阶段
+## Stage Restriction
+Stage restriction is mainly for players, because only players have stages.
 ```js
 const $EntityTravelToDimensionEvent = Java.loadClass("net.minecraftforge.event.entity.EntityTravelToDimensionEvent")
 const $ServerPlayer = Java.loadClass("net.minecraft.server.level.ServerPlayer")

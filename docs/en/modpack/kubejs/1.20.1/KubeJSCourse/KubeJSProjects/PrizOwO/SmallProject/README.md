@@ -1,5 +1,5 @@
 ---
-description: 这些是栗子写的一些可以即拿即用的小项目
+description: These are some plug-and-play small projects written by Priz
 ---
 
-# 栗子的kubejs小项目分享
+# Priz's KubeJS Small Project Showcase

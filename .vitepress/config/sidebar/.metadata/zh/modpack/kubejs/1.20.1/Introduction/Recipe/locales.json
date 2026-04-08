@@ -1,7 +1,7 @@
 {
   "_self_": {
-    "valueHash": "aef6ec2224f7ef3c74b4942b0e7f2969",
-    "isUserSet": false,
+    "valueHash": "a2e1331c7001371a1ff5b57447059239",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247315960
   },
@@ -14,7 +14,7 @@
   "Catalogue.md": {
     "valueHash": "767fa455bb6826f4b550c21a6bca7182",
     "isUserSet": true,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749254447382
   },
   "DeleteRecipe.md": {

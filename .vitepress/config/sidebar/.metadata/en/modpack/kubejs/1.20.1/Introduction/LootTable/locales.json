@@ -1,8 +1,18 @@
 {
   "_self_": {
-    "valueHash": "cb0accb44044808bdfd2d47da458b0e7",
-    "isUserSet": false,
+    "valueHash": "a6b3945ee69dcede4d69d53794b2f63d",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749252345322
+  },
+  "Vanilla/": {
+    "valueHash": "7d3cf600bf044a1aaf9324807bd8d13e",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "BasicKnowledge/": {
+    "valueHash": "d5b4ad9785feb5ce42b103fa7aea4100",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

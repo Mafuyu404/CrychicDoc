@@ -4,9 +4,9 @@ authors: ['Gu-meng']
 
 
 :::: center
-# KubeJS教程-1.20.1
+# KubeJS Tutorial - 1.20.1
 
-这是1.20.1的kubejs内容分享，包括一些教程和项目
+This is a KubeJS 1.20.1 content collection, including tutorials and projects.
 
 
   <div class="responsive-container">
@@ -14,13 +14,13 @@ authors: ['Gu-meng']
   </div>
 
 
-直接访问该项目[gitbook网页](https://gumeng.gitbook.io/kubejs-jiao-cheng-1.20.1)
+Direct link to this project on [GitBook](https://gumeng.gitbook.io/kubejs-jiao-cheng-1.20.1)
 
-该项目的[开源地址Gitee](https://gitee.com/gumengmengs/kubejs-course)
+Project source on [Gitee](https://gitee.com/gumengmengs/kubejs-course)
 
-该项目的[开源地址GitHub](https://github.com/Gu-meng/kubejs-course) GitHub不支持内容提交
+Project source on [GitHub](https://github.com/Gu-meng/kubejs-course) (content submissions are not supported on GitHub)
 
-<!-- ::: info 仓库活动
+<!-- ::: info Repository activity
 <div style="display: flex; justify-content: center;">
 <commitsCounter
   username="Gu-meng"
@@ -30,35 +30,35 @@ authors: ['Gu-meng']
 </div>
 ::: -->
 
-项目[问题反馈](https://gitee.com/gumengmengs/kubejs-course/issues/new/choose)
+Project [issue feedback](https://gitee.com/gumengmengs/kubejs-course/issues/new/choose)
 
 ::::
 
-## 关于编写文档
-### 编写文档要求 
-1. 文件和文件夹首字母为大写
-2. 所有新建文件需要在SUMMARY内进行编写目录
-3. 文档内容必须明确主题，不要一会儿这个一会儿那个的
-4. 文档需要简单通俗易懂，如果有什么专有名词需要花大段去解释就放到题外话里
-### 关于文档文件夹
-* KubeJS-Basics 存放kubejs基础内容
-* KubeJSAdvanced 存放kubejs的进阶内容
-* KubeJSAddon 存放关于kubejs周边的联动模组内容
-* Digression 题外话——存放除了kubejs代码以外可能需要知道的内容
-* Texture 存放关于assets资源内容
-* KubeJSProjects 存放一些大家写的项目(对应的文件夹路径代表着对应的分享人)
-* imgs 存放着文档里出现的图片,对应的路径代表着出现的位置(使用绝对路径)
-* Code 存放着代码分享
-  * Projects是项目分享的代码
-  * This是教程中会涉及到的一些文件
-  * 你也可以自己新建文件夹作为分类,文件夹需和文档名称一样
-### 关于文档一些规则
-* 文档内表格存在三种类型`-` `~`和`?`, 其中`-`代表无, `~`代表待编辑, `?`代表不知道
-* 图片一定要使用**绝对路径**
-## 关于开源
-本项目遵循 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)
-您可以转载并使用但是请附上相应的参考文档链接
-**您不得将本项目内容用于商业目的**
+## About Writing Docs
+### Writing Requirements
+1. File and folder names should start with an uppercase letter.
+2. Every new file must be added to `SUMMARY`.
+3. Keep each document focused on a clear topic; avoid jumping between unrelated points.
+4. Keep wording simple and easy to understand. If a technical term needs a long explanation, put it in the Digression section.
+### About the Documentation Folders
+* `KubeJS-Basics`: Stores basic KubeJS content.
+* `KubeJSAdvanced`: Stores advanced KubeJS content.
+* `KubeJSAddon`: Stores KubeJS addon/integration mod content.
+* `Digression`: Stores useful topics outside of direct KubeJS code.
+* `Texture`: Stores `assets` resource content.
+* `KubeJSProjects`: Stores community project examples (folder path matches the contributor).
+* `imgs`: Stores images used in docs; paths map to where they are used (use absolute paths).
+* `Code`: Stores shared code.
+  * `Projects` contains project example code.
+  * `This` contains files used in tutorials.
+  * You can also create your own category folders; folder names should match document names.
+### Documentation Rules
+* Tables in docs use three markers: `-`, `~`, and `?`. Here, `-` means none, `~` means to be edited, and `?` means unknown.
+* Images must use **absolute paths**.
+## Open Source
+This project follows [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en).
+You may redistribute and use it, but please include the corresponding reference document link.
+**You may not use this project content for commercial purposes.**
 
 <script setup>
 import { VPTeamMembers } from 'vitepress/theme'
@@ -66,8 +66,8 @@ import { VPTeamMembers } from 'vitepress/theme'
 const members = [
   {
     avatar: 'https://www.github.com/Gu-meng.png',
-    name: '孤梦',
-    title: '原文档主要维护人',
+    name: 'Gu-meng',
+    title: 'Primary maintainer of the original docs',
     links: [
       { icon: 'github', link: 'https://github.com/Gu-meng' },
       { icon: {
@@ -81,7 +81,7 @@ const members = [
   {
     avatar: 'https://www.github.com/PickAID.png',
     name: 'PickAID',
-    title: '第三方文档主要维护团队',
+    title: 'Main maintenance team for third-party docs',
     links: [
       { icon: 'github', link: 'https://github.com/PickAID' },
       // { icon: {

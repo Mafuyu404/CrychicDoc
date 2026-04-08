@@ -1,12 +1,12 @@
 {
   "_self_": {
-    "valueHash": "0b79795d3efc95b9976c7c5b933afce2",
-    "isUserSet": false,
+    "valueHash": "1fa42afe88e8205372202517cf1dd43b",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247315834
   },
   "Addon/": {
-    "valueHash": "8ae0c912da6f0d61c221d5dd254b7e73",
+    "valueHash": "52f1b296f3749430e2ae52660de8f8df",
     "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447314
@@ -62,8 +62,7 @@
   "Network/": {
     "valueHash": "7ddbe15c845fa27a2bab496183042ca6",
     "isUserSet": true,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254447314
+    "isActiveInStructure": true
   },
   "PotionEffect/": {
     "valueHash": "4a01019084ebafcd915005449b79a710",
@@ -82,5 +81,10 @@
     "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447314
+  },
+  "Catalogue.md": {
+    "valueHash": "0b79795d3efc95b9976c7c5b933afce2",
+    "isUserSet": false,
+    "isActiveInStructure": false
   }
 }

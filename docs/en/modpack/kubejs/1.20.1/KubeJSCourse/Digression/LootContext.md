@@ -1,21 +1,23 @@
 ---
 authors: ['Gu-meng']
 ---
-# 战利品上下文
+# Loot Context
 ## this
-战利品生成的本身实体
+The entity that the loot is generated from.
 
 ## killer
-间接导致实体死亡或受伤的实体，如： 玩家使用弓箭、三叉戟投掷或投掷瞬间伤害药水击杀了生物，那么玩家则为killer
+The entity that indirectly caused death or damage.  
+For example, if a player kills a mob using a bow, a thrown trident, or an Instant Damage potion, the player is the `killer`.
 
 ## direct_killer
-直接导致实体死亡或受伤的实体，如： 玩家使用剑或者三叉戟直接攻击生物，那么玩家会被判定为direct_killer,
+The entity that directly caused death or damage.  
+For example, if a player directly attacks a mob with a sword or trident, the player is `direct_killer`.
 
-如果是弓射出去的箭击杀的生物，那么箭就会判定为direct_killer
+If the mob is killed by an arrow shot from a bow, the arrow is `direct_killer`.
 
-如果是投掷出去的三叉戟，那么三叉戟就会被判定为direct_killer
+If the mob is killed by a thrown trident, the trident is `direct_killer`.
 
-如果投掷瞬间伤害药水，那么瞬间伤害药水被判定为direct_killer
+If Instant Damage is applied by a thrown potion, that potion entity is `direct_killer`.
 
 ## killer_player
-直接导致实体死亡或受伤的为玩家
+The direct killer is a player.

@@ -1,16 +1,16 @@
 ---
 authors: ['Gu-meng']
 ---
-# sounds.json 结构
-**注：以下内容来自mcwiki**
+# `sounds.json` Structure
+**Note: the following content is adapted from mcwiki.**
 ```json
 {
-    "声音注册id": {
+    "sound_event_id": {
         "replace": (true / false),
-        "subtitle": "播放音乐",
+        "subtitle": "subtitle text",
         "sounds":[
             {
-                "name":"声音路径",
+                "name":"sound_path",
                 "volume": (0.0 ~ 1.0),
                 "pitch": 1.0,
                 "weight": 1,
@@ -23,26 +23,26 @@ authors: ['Gu-meng']
     }
 }
 ```
-声音注册id ： 一个声音事件。声音事件名通常是按照类别以点（.）分割的（例如entity.enderman.stare）。下方有表格列出了所有游戏自带的声音事件。（如果你想要为该声音事件设定minecraft以外的命名空间，应当把sounds.json文件放置在相应命名空间的目录下，而不是在这里定义。）
+`sound_event_id`: A sound event. Sound event names are usually dot-separated by category (for example: `entity.enderman.stare`). If you want a namespace other than `minecraft`, place `sounds.json` under that namespace folder instead of defining the namespace here.
 
-replace ：可选。如果设定为true，在sounds中定义的音效列表会替换掉优先级更低的资源包中为该声音事件定义的音效。设定为false则会补充到原来的音效列表中，而不是直接替换。如果不指定，默认为false。
+`replace`: Optional. If set to `true`, the sound list in `sounds` replaces sound definitions for that event from lower-priority resource packs. If set to `false`, it appends to the existing list instead of replacing it. Default is `false`.
 
-subtitle ： 可选。如果游戏中开启了“显示字幕”选项，游戏将会在该声音事件被播放时将该字符串翻译为声音字幕。
+`subtitle`: Optional. If "Show Subtitles" is enabled in-game, this string is translated and shown as subtitle text when the sound event plays.
 
-sounds ： 可选。该声音事件使用的音效文件列表。当该声音事件被触发时，游戏会从此列表定义的音效文件中随机选取一个播放。
+`sounds`: Optional. The list of sounds used by this event. When triggered, the game randomly selects one entry from this list.
 
-name ： 从assets/<命名空间>/sounds文件夹到此声音文件的路径，或者是另一个声音事件的命名空间ID。
+`name`: Path from `assets/<namespace>/sounds` to the sound file, or another sound event's namespaced ID.
 
-volume ： 播放此声音时的音量。值为0.0到1.0的小数。未定义时默认为1.0。
+`volume`: Playback volume. Decimal from `0.0` to `1.0`. Default is `1.0`.
 
-pitch ： 以确定的值播放音调。未定义时默认为1.0。可以调至更高或更低。
+`pitch`: Playback pitch. Default is `1.0`. Can be adjusted higher or lower.
 
-weight ：此声音事件触发时此声音被播放的相对权重。默认为1。例如，设为2相当于此文件在列表中出现两次。
+`weight`: Relative weight for this sound when the event triggers. Default is `1`. For example, setting `2` is equivalent to listing this sound twice.
 
-stream ：设置为true则此声音会以流式播放。当声音较长时最好设为true来避免卡顿。所有的music和record分类的音效（除了音符盒）都使用流式播放，因为它们的长度都达到一分多钟（最长达八分多钟）。未指定则默认为false。
+`stream`: If `true`, the sound is streamed. Recommended for long audio to avoid stutter. Most `music` and `record` sounds (except note block sounds) are streamed because they are long. Default is `false`.
 
-attenuation_distance ：基于距离的音效大小衰减率。用于传送门、信标和潮涌核心。默认为16。
+`attenuation_distance`: Distance-based attenuation distance for sound volume. Used by things like portals, beacons, and conduits. Default is `16`.
 
-preload ：若设置为true，则该音效文件会在加载资源包时就加载，而不是在播放音效的时候再加载。用于水下环境音效。默认为false。
+`preload`: If `true`, the sound file is loaded when the resource pack loads, instead of at play time. Used for cases like underwater ambient sounds. Default is `false`.
 
-type ：可选file或event。file表明name中定义的是文件名，event表明name中定义的是声音事件名。未指定则默认为file。
+`type`: Optional, `file` or `event`. `file` means `name` is a file path; `event` means `name` is a sound event ID. Default is `file`.

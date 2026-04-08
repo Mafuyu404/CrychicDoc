@@ -1,10 +1,10 @@
 ---
 title: 样式与插件
 description: CrychicDoc 中所有可用的 Markdown 扩展、容器和自定义组件的全面指南。
+hidden: false
+priority: 30
 progress: 95
 state: renovating
-priority: 30
-hidden: false
 ---
 
 *[HTML]: Hyper Text Markup Language

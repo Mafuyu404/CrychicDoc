@@ -1,7 +1,7 @@
 ---
 prev: false
 next: false
-title: navbar
+title: 导航栏建议
 hidden: false
 priority: 0
 ---

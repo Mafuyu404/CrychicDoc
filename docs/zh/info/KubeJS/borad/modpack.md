@@ -1,7 +1,7 @@
 ---
 prev: false
 next: false
-title: modpack
+title: 整合包交流
 hidden: false
 priority: 0
 ---

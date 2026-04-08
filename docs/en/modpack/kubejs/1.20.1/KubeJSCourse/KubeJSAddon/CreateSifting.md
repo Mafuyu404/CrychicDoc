@@ -1,10 +1,11 @@
 ---
 authors: ['Gu-meng']
 ---
-# 机械动力：筛子
-本章将会介绍如何使用kubejs来修改机械动力的筛子
+# Create: Sifting
+This chapter introduces how to use KubeJS to modify Create: Sifting.
 
-这里交代本章教程所用到的各个模组和forge的版本，如果版本不同导致报错，可能是作者进行代码更改:
+The tutorial below was tested with these mod/Forge versions.  
+If you get errors on different versions, the API may have changed:
 1. forge-47.3.7
 2. JEI-15.3.0.4
 3. rhino-2001.2.2-build.18
@@ -14,20 +15,21 @@ authors: ['Gu-meng']
 7. create-0.5.1f
 8. createsifter-1.20.1-1.8.1.e-22
 
-## 注册筛网
-机械动力：筛子提供了筛网的注册，我们只需要注册物品，并赋予材质(大概率可能是模型,孤梦这边没看官方怎么整的)和汉化就可以了
+## Register Mesh Items
+Create: Sifting supports mesh item registration directly.  
+You only need to register the item, assign textures/model data, and add localization.
 
 ```js
 StartupEvents.registry("item", (event) => {
-	// 普通筛网
+	// Basic mesh
 	event.create("meng:mesh", "createsifter:mesh")
-	// 高级筛网
+	// Advanced mesh
 	event.create("meng:advanced_mesh", "createsifter:advanced_mesh")
 })
 ```
 
-## 配方的修改
-机械动力：筛子 提供了一个修改筛子的配方
+## Recipe Changes
+Create: Sifting provides a recipe type for sieve processing:
 ```js
 ServerEvents.recipes((event) => {
 	const { createsifter } = event.recipes
@@ -35,64 +37,66 @@ ServerEvents.recipes((event) => {
 	createsifter.sifting(output[], input[], processingTime, isWater, minimumSpeed)
 })
 ```
-`output` : 输出物品 -- ***必须填写***
+`output` : output item(s) -- ***required***
 
-`input` : 输入物品 -- ***必须填写***
+`input` : input item(s) -- ***required***
 
-`processingTime` :  处理时间(tick为单位) -- **非必填** -- 默认为 `100`
+`processingTime` : processing time (in ticks) -- **optional** -- default `100`
 
-`isWater` ： 是否浸水处理 -- **非必填** -- 默认为`false`
+`isWater` : whether the process is waterlogged -- **optional** -- default `false`
 
-`minimumSpeed` ： 最小处理速度 -- **非必填** -- 默认为`1.0`
+`minimumSpeed` : minimum processing speed -- **optional** -- default `1.0`
 
-后三项都可以使用方法进行配置, 其中浸水为`.waterlogged()`, 默认为`true`
+The last three can also be configured via chained methods.  
+For waterlogged processing, use `.waterlogged()` (default `true` for that method).
 
-问题1:
+Question 1:
 
-筛网填写在哪里
+Where do I specify the mesh?
 
-答:
+Answer:
 
-我们可以看到output是一个数组，这里面一个参数为输入物品第二个参数则为筛网的物品id了
+`output` is an array-like structure in examples, and one of its parameters is the mesh item id.
 
-问题2:
+Question 2:
 
-两种筛子但是只有一个配方，我该怎么区分两种筛子配方
+There are two sieve types but only one recipe format. How do I separate them?
 
-答:
+Answer:
 
-在官方给的筛子中可以看到有高级黄铜筛网，如果将筛网填写为高级黄铜筛网或者你自己注册的物品类型为`advanced_mesh`，就会识别到黄铜筛子当中，其他的都会被识别到普通筛子当中
+The addon includes an advanced brass mesh.  
+If the mesh is `advanced_brass_mesh` (or your own item registered as `advanced_mesh`), it will be recognized by the brass/advanced sieve type. Other meshes are treated as normal.
 
-## 关于配方修改的简单轮子
+## Simple Helper Wrappers for Recipe Editing
 ```js
-// 线筛网
+// String mesh
 function stringMesh(output, input, time, isWater) {
 	sifting(output, [input, "createsifter:string_mesh"], time, isWater)
 }
 
-// 安山筛网
+// Andesite mesh
 function andesiteMesh(output, input, time, isWater) {
 	sifting(output, [input, "createsifter:andesite_mesh"], time, isWater)
 }
-// 锌筛网
+// Zinc mesh
 function zincMesh(output, input, time, isWater) {
 	sifting(output, [input, "createsifter:zinc_mesh"], time, isWater)
 }
-// 黄铜筛网
+// Brass mesh
 function brassMesh(output, input, time, isWater) {
 	sifting(output, [input, "createsifter:brass_mesh"], time, isWater)
 }
-// 高级黄铜筛网
+// Advanced brass mesh
 function advancedBrassMesh(output, input, time, isWater) {
 	sifting(output, [input, "createsifter:advanced_brass_mesh"], time, isWater)
 }
 
 /**
  * 
- * @param {*} output 输出
- * @param {*} input 输入
- * @param {*} time 不填写默认为5秒
- * @param {*} isWater 不填写默认为false
+ * @param {*} output output
+ * @param {*} input input
+ * @param {*} time defaults to 5 seconds when omitted
+ * @param {*} isWater defaults to false when omitted
  */
 function sifting(output, input, time, isWater) {
 	if (time == undefined) time = 5
@@ -103,22 +107,22 @@ function sifting(output, input, time, isWater) {
 	})
 }
 ```
-在使用时只需要调用stringMesh()
+When using this, you can just call `stringMesh()`
 
-就不用每次重复传入筛网了
+so you don’t need to pass the mesh id every time.
 
-## 关于筛网材质模型问题
-孤梦这边简单整了一个模型(当然大家也可以自己去把官方的模型)
+## Mesh Model/Texture Notes
+Here is a simple model example (you can also reuse the official model).
 
-模型需要放在`assets/modid/models/item/itemId.json`
+Place the model at `assets/modid/models/item/itemId.json`.
 
-这里的modid是你的模组id
+`modid` is your mod id.
 
-itemId是你的物品id
+`itemId` is your item id.
 
-这里简答说一下，如果直接更改的话
-1. 0代表中间网格使用的材质
-2. 1代表筛网边框使用的材质
+Briefly, if you edit textures directly:
+1. `0` is the center mesh texture.
+2. `1` is the sieve frame texture.
 ```json
 {
 	"textures": {

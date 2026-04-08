@@ -1,12 +1,16 @@
 ---
 root: true
-title: Custom Test
+title: Custom Content
+description: Custom-authored systems, internal tooling, and private mod project docs.
 Layout: doc
 prev: false
 next: false
 hidden: false
 priority: 9007199254740991
-collapsed: true
+collapsed: false
+maxDepth: 0
+viewControl:
+  mode: self
 ---
 
 This file stores sidebar metadata for this directory.

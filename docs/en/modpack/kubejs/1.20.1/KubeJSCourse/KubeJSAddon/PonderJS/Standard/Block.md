@@ -1,12 +1,12 @@
 ---
 authors: ['Gu-meng', 'Qi-Month']
 ---
-# 关于方块
-此处介绍其他关于方块的函数
+# About Blocks
+This page introduces additional block-related functions.
 
-## 放置方块(怎么又是你)
+## Place Blocks
 
-根据 [scene_world_function.md](../Internal/SceneWorldFunction) 我们可知放置方块有两种函数
+According to [scene_world_function.md](../Internal/SceneWorldFunction), there are two placement APIs:
 
 ```js
 setBlocks(arg0: Internal.Selection_, arg1: boolean_, arg2: Internal.BlockState_): void_;
@@ -16,74 +16,74 @@ setBlocks(arg0: Internal.Selection_, arg1: Internal.BlockState_, arg2: boolean_)
 setBlock(arg0: BlockPos_, arg1: Internal.BlockState_, arg2: boolean_): void_;
 ```
 
-**setBlocks** 已经于 [Ponder](../Ponder.md) 介绍过, 此处不多赘述, 此处着重介绍 **setBlock**
+**setBlocks** was already introduced in [Ponder](../Ponder.md), so this section focuses on **setBlock**.
 
-我们可以发现 **setBlocks** 与 **setBlock** 的第一个参数种类是不同的
+The first parameter type for **setBlocks** and **setBlock** is different.
 
-其差别在于 **setBlocks** 可以使用 [3, 1, 1, 1, 1, 3] 来一次性放置大量方块, **setBlock** 一次只能放置一个
+**setBlocks** can place many blocks at once using selections like `[3, 1, 1, 1, 1, 3]`, while **setBlock** places only one block at a time.
 
 ```js
-// 在 [2, 1, 2] 放置铁块方块, 若该位置原本有方块, 则破坏该原本方块
+// Place an iron block at [2, 1, 2]. If a block already exists there, destroy it first.
 scene.world.setBlock([2, 1, 2], "minecraft:iron_block", true);
 ```
 
-## 破坏方块
+## Destroy Blocks
 
-首先来看范例
+Example:
 
 ```js
-// 破坏在 [2, 1, 2] 的方块
+// Destroy the block at [2, 1, 2]
 scene.world.destroyBlock([2, 1, 2]);
 ```
-若是该位置无方块, 则不显示破坏方块时的粒子效果
+If there is no block at that position, no destroy particles will appear.
 
-> 以下代码节录自 [scene_world_function.md](../Internal/SceneWorldFunction)
+> The following code is excerpted from [scene_world_function.md](../Internal/SceneWorldFunction)
 
 ```js
 destroyBlock(arg0: BlockPos_): void_;
 ```
 
-我们可以看到第一个参数种类与 setBlock 相同, 即`只能填入单格, 不能范围破坏`
+The first parameter type is the same as `setBlock`, meaning `single position only; no range destroy`.
 
-## 替换方块
+## Replace Blocks
 
-首先来看范例
+Example:
 
 ```js
-// 将 [2, 1, 2] 的方块替换为铁块方块, 并显示破坏方块时的粒子效果
+// Replace the block at [2, 1, 2] with an iron block and show destroy particles
 scene.world.replaceBlocks([2, 1, 2], "minecraft:iron_block", true);
 
-// 将以 [2, 1, 3] 及 [3, 1, 3] 为对角组成的矩形区域内的方块全部替换为铁块方块, 并不显示破坏方块时的粒子效果
+// Replace all blocks in the rectangular area defined by [2, 1, 3] and [3, 1, 3] with iron blocks, without destroy particles
 scene.world.replaceBlocks([2, 1, 3, 3, 1, 3], "minecraft:iron_block", false);
 ```
-若是该位置无方块, 则不替换方块, 也不显示破坏方块时的粒子效果
+If there is no block in a target position, it will not be replaced and no destroy particles will appear.
 
-> 以下代码节录自 [scene_world_function.md](../Internal/SceneWorldFunction)
+> The following code is excerpted from [scene_world_function.md](../Internal/SceneWorldFunction)
 
 ```js
 replaceBlocks(arg0: Internal.Selection_, arg1: Internal.BlockState_, arg2: boolean_): void_;
 ```
 
-我们可以看到第一个参数种类与 setBlocks 相同, 即`可以范围替换`
+The first parameter type is the same as `setBlocks`, so it `supports range replacement`.
 
-## 设定方块状态
+## Set Block State
 
-首先来看范例
+Example:
 
 ```js
 scene.world.setBlocks([2, 1, 2], 'create:cogwheel', true);
 
-// 将 [2, 1, 2] 的方块 设定 axis 为 x, waterlogged 为 true, 并不显示破坏方块时的粒子效果
+// Set the block at [2, 1, 2] with axis=x and waterlogged=true, without destroy particles
 scene.world.modifyBlock([2, 1, 2], state => state.with("axis", "x").with("waterlogged", "true"), false);
 
-// 将 [2, 1, 2] 的方块 设定为橡木活板门, open 为 true, 并显示破坏方块时的粒子效果
+// Set the block at [2, 1, 2] to an oak trapdoor (open=true style), with destroy particles
 scene.world.modifyBlock([2, 1, 2], () => Block.id("minecraft:oak_trapdoor").with("type", "top"), true);
 
-// 将以 [2, 1, 3] 及 [3, 1, 3] 为对角组成的矩形区域内的方块 设定为橡木活板门, open 为 true, 并显示破坏方块时的粒子效果
+// Set all blocks in the rectangular area defined by [2, 1, 3] and [3, 1, 3] to oak trapdoors, with destroy particles
 scene.world.modifyBlocks([2, 1, 3, 3, 1, 3], () => Block.id("minecraft:oak_trapdoor").with("type", "top"), true);
 ```
 
-> 以下代码节录自 [scene_world_function.md](../Internal/SceneWorldFunction)
+> The following code is excerpted from [scene_world_function.md](../Internal/SceneWorldFunction)
 
 ```js
 modifyBlocks(arg0: Internal.Selection_, arg1: Internal.BlockStateFunction_, arg2: boolean_): void_;
@@ -93,32 +93,32 @@ modifyBlocks(arg0: Internal.Selection_, arg1: Internal.BlockStateFunction_): voi
 modifyBlock(arg0: BlockPos_, arg1: Internal.BlockStateFunction_, arg2: boolean_): void_;
 ```
 
-## 设定方块NBT
+## Set Block NBT
 
-首先来看范例
+Example:
 
 ```js
 scene.world.setBlocks([2, 1, 2], 'create:cogwheel', true);
 
-// 将 [2, 1, 2] 的方块的 NBT 中的 Speed 设定为 16
+// Set Speed=16 in the block NBT at [2, 1, 2]
 scene.world.modifyBlockEntityNBT([2, 1, 2], nbt => { nbt.Speed = 16 });
 
-// 同上, 目前第二个参数的用途不明
+// Same as above; the purpose of the second parameter is currently unclear
 scene.world.modifyBlockEntityNBT([2, 1, 2], true, nbt => { nbt.Speed = 16 });
 ```
 
-> 以下代码节录自 [scene_world_function.md](../Internal/SceneWorldFunction)
+> The following code is excerpted from [scene_world_function.md](../Internal/SceneWorldFunction)
 
 ```js
 modifyBlockEntityNBT(arg0: Internal.Selection_, arg1: boolean_, arg2: Internal.Consumer_<Internal.CompoundTag>): void_;
 modifyBlockEntityNBT(arg0: Internal.Selection_, arg1: Internal.Consumer_<Internal.CompoundTag>): void_;
 ```
 
-## 其余待做函数
+## Other Functions (To Be Documented)
 
-等待大佬编辑
+Waiting for future documentation updates.
 
-> 以下代码节录自 [scene_world_function.md](../Internal/SceneWorldFunction)
+> The following code is excerpted from [scene_world_function.md](../Internal/SceneWorldFunction)
 
 ```js
 modifyBlockEntity<T extends Internal.BlockEntity>(arg0: BlockPos_, arg1: T, arg2: Internal.Consumer_<T>): void_;

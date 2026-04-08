@@ -1,35 +1,35 @@
 ---
 authors: ['Gu-meng']
 ---
-# 注册药水
-kubejs的注册药水≠注册药水效果，药水是将药水效果进行装瓶，生物饮用后给予生物药水效果,[关于注册药水效果](./PotionRegistry.md)
+# Register Potions
+Registering a potion in KubeJS is not the same as registering a potion effect. A potion is a bottled set of effects applied when consumed. See [register potion effects](./PotionRegistry.md).
 ```js
 StartupEvents.registry("potion",event =>{
     event.create("meng:my_potion")
 })
 ```
-注册药水有一个比较常用的方法参数，就是给药水里添加药水效果`effect`
-## effect方法里的传参
-下面会为大家提供effect里参数的传递位数、是否必须填写、填写的类型
-| 参数位数 |         填写类型         | 填写示例 |            示例描述            |     是否必填     | 默认值 |
+One commonly used method is `effect`, which adds potion effects to the potion.
+## `effect` Parameters
+Below are the parameter positions, required status, and expected types for `effect`.
+| Position |            Type          |   Example  |         Description            |     Required      | Default |
 | :------: | :----------------------: | :------: | :----------------------------: | :--------------: | :----: |
-|  第一位  |        药水效果id        | "speed"  |         药水为速度效果         |        是        |   无   |
-|  第二位  |         持续时间         | 20 * 10  |         持续时间为10秒         |        否        | 1tick  |
-|  第三位  |         药水等级         |    1     |      药水等级2级，0为1级       |        否        |   0    |
-|  第四位  |      是否为信标加持      |   true   | 右上角图标有信标加持的蓝色框框 | 填写第三位必填填 | false  |
-|  第五位  | 是否能够看见药水粒子效果 |  false   |             不可见             |        否        |  true  |
-|  第六位  |   是否能够看见药水图标   |  false   |             不可见             |        否        |  true  |
+|  First   |      Effect id           | "speed"  | Potion has Speed effect        |        Yes        |  None  |
+|  Second  |      Duration            | 20 * 10  | Duration is 10 seconds         |        No         | 1 tick |
+|  Third   |      Amplifier           |    1     | Effect level II (`0` is level I)|       No         |   0    |
+|  Fourth  | Beacon effect flag       |   true   | Blue beacon border on icon     | Required if third is set | false  |
+|  Fifth   | Show effect particles    |  false   | Particles hidden               |        No         |  true  |
+|  Sixth   | Show effect icon         |  false   | Icon hidden                    |        No         |  true  |
 
-完整的写法是以下这样的
+The full syntax looks like this:
 ```js
 event.create("meng:my_potion")
     .effect(
-        "speed", //药水效果id - 1
-        20 * 10, //持续时间 - 2
-        20, //药水等级 - 3
-        true, //是否为信标加持 - 4
-        false, //是否能够看见药水粒子效果 - 5
-        false // 是否能够看见药水图标 - 6
+        "speed", // Effect id - 1
+        20 * 10, // Duration - 2
+        20, // Effect amplifier - 3
+        true, // Beacon effect flag - 4
+        false, // Show particles - 5
+        false // Show icon - 6
     )
 ```
-**需要注意的是第四位和第五位是同时传参的，其他的是可以根据需求选择传参**
+**Note: when passing later parameters, keep argument order consistent; omit only trailing ones as needed.**

@@ -1,5 +1,5 @@
 ---
 authors: ['Gu-meng']
 ---
-# 事件示例
-在这里将会分享一些使用事件写的小示例，也会简单标注事件可调用的参数
+# Event Examples
+This section shares small examples built with events, and briefly marks parameters you can access from each event.

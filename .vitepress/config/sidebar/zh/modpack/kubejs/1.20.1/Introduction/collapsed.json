@@ -10,5 +10,6 @@
   "Miscellaneous/": true,
   "PotionEffect/": true,
   "Recipe/": true,
-  "Tag/": true
+  "Tag/": true,
+  "Network/": true
 }

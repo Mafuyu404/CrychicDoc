@@ -1,7 +1,6 @@
 {
-  "_self_": "Recipe",
+  "_self_": "配方",
   "AddRecipe/": "添加配方",
-  "Catalogue.md": "目录",
   "DeleteRecipe.md": "删除配方",
   "ItemAndIngredient.md": "物品和原料",
   "ModifyRecipe.md": "修改配方",

@@ -1,20 +1,20 @@
 ---
 authors: ['Gu-meng']
 ---
-# 下落合成
-本章涉及内容：配方检测、物品实体、实体生成事件、世界tick事件
-涉及模组及版本:
+# Falling-Item Crafting
+Topics covered: recipe checks, item entities, entity spawn events, and level tick events.
+Mods and versions used:
 1. rhino-forge-2001.2.2-build.18
 2. architectury-9.2.14-forge
 3. kubejs-forge-2001.6.5-build.14
 4. probejs-6.0.1-forge
 
-## 完整代码
-下面是完整代码和部分注释解析,如需完整内容解析请在哔哩哔哩查看孤梦的视频
+## Full Code
+Below is the full code with partial comment explanations. For full walkthrough details, check Gu-meng's Bilibili video.
 ```js
-// 记录下落物品方块的数据
+// Record data for falling item entities
 let itemFallList = {};
-// 记录配方
+// Recipe list
 let fallItem = [
     {
         inputItem: "minecraft:cobblestone",
@@ -29,13 +29,13 @@ EntityEvents.spawned("item", event => {
      */
     let itemEntity = event.getEntity();
     fallItem.forEach(value => {
-        // 判断物品
+        // Check the input item
         if (itemEntity.getItem().getId() != value.inputItem) return;
-        // 设置物品可被捡起时间为32767主要用处为无法合并(副作用无法捡起)
+        // Set pickup delay to 32767 so it cannot merge (side effect: cannot be picked up)
         itemEntity.pickUpDelay = 32767;
-        // 记录实体掉落物的数量
+        // Record item count
         let count = itemEntity.getNbt().get("Item").getInt("Count")
-         // 传值
+         // Save values
         itemFallList[itemEntity.getUuid()] = {
             dimension: event.getLevel().getDimension(),
             y: itemEntity.getY(),
@@ -70,9 +70,9 @@ LevelEvents.tick(event => {
 })
 ```
 
-## 一些注意事项
-1. 该项目的配方检测全是字符串，并不是ItemStack所以无法检测nbt，如需请自行更改
-2. 该项目只是作为示例，很多地方并不是最优解，可自行进行解决
-3. 如果对该项目代码部分不满可以将修改好的代码上传至[gitee项目仓库](https://gitee.com/gumengmengs/kubejs-course)
-4. 代码复制过去可直接使用，如需添加配方只需要在数组fallItem里进行添加修改
-5. 如果是类似水流向上冲走物品实体然后从下掉下来这种，可以在leveltick里实时记录下来物品的最高y轴
+## Notes
+1. Recipe checks are string-based, not `ItemStack`, so NBT cannot be checked directly. Modify this if needed.
+2. This project is only an example; many parts are not necessarily optimal and can be improved.
+3. If you improve this project, you can upload your revised code to the [Gitee repository](https://gitee.com/gumengmengs/kubejs-course).
+4. You can copy and use this code directly. To add recipes, edit the `fallItem` array.
+5. For cases like water pushing items upward before they fall, you can track each item's highest `y` value in the level tick handler.

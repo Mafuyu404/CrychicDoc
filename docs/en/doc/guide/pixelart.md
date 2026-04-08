@@ -22,32 +22,32 @@ breadcrumb: false
   eyebrow="Guide Overview"
   :groups='[
   {
-    "title": "Minecraft常用网站",
+    "title": "Common Minecraft Websites",
     "items": [
       {
-        "title": "MC百科",
+        "title": "MC Encyclopedia",
         "link": "https://www.mcmod.cn/",
         "icon": "&lt;svg width=\"128\" height=\"128\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid meet\"&gt;&lt;g&gt;&lt;path id=\"svg_1\" d=\"m0.22811,8.42244l0,-2.67626c0,-0.13022 0.00485,-0.25928 0.01372,-0.38725l-0.01372,3.06353l0,0l0,-0.00002zm22.13572,-6.35785c0.87539,0.97663 1.40807,2.26682 1.40807,3.68159l0,12.50765c0,3.04754 -2.47054,5.51808 -5.51808,5.51808l-12.50765,0c-1.52088,0 -2.89798,-0.61536 -3.89611,-1.61059l20.51375,-20.09673l0,0l0.00002,0z\" fill=\"rgb(88, 182, 216)\" fill-rule=\"evenodd\" stroke=\"null\"/&gt;&lt;path id=\"svg_2\" d=\"m1.88786,22.19821c-1.02398,-1.00178 -1.65975,-2.39874 -1.65975,-3.94439l0,-12.50765c0,-3.04754 2.47054,-5.51808 5.51808,-5.51808l12.50765,0c1.66068,0 3.14985,0.7337 4.16147,1.89447l-20.52744,20.07565l-0.00001,0z\" fill=\"rgb(134, 193, 85)\" fill-rule=\"evenodd\" stroke=\"null\"/&gt;&lt;path id=\"svg_3\" d=\"m19.6569,9.39041l-2.886,0c-0.94354,0.19393 -0.81466,1.06567 -0.81466,1.06567l0,3.24521c0.10339,0.93088 1.00853,0.79334 1.00853,0.79334l4.57694,0l0,1.90834l-5.01086,0c-1.95265,-0.10849 -2.36748,-1.44849 -2.36748,-1.44849c-0.19389,-0.43958 -0.1609,-0.87369 -0.1609,-0.87369l0,-3.56376c0.01292,-2.52116 1.7239,-2.874 1.7239,-2.874c0.29728,-0.10345 1.24123,-0.13795 1.24123,-0.13795l4.62009,0l-1.93077,1.88535l0,0l-0.00002,-0.00002zm-8.4846,0.36788l-2.29919,6.5757l-2.09227,0l-2.43714,-6.5757l-0.02299,6.55271l-1.90834,0l0,-8.80594l3.10391,0l2.25321,6.02391l2.23022,-6.02391l3.17291,0l0,8.85193l-2.00031,0l0,-6.59869l0,0l-0.00001,-0.00001z\" fill=\"rgb(255, 255, 255)\" fill-rule=\"evenodd\" stroke=\"null\"/&gt;&lt;/svg&gt;"
       },
       {
-        "title": "modtinth",
+        "title": "Modrinth",
         "link": "https://modrinth.com/",
         "icon": "&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"128\" height=\"128\" viewBox=\"0 0 24 24\"&gt;&lt;path fill=\"#1bd96a\" d=\"M12.252.004a11.78 11.768 0 0 0-8.92 3.73a11 11 0 0 0-2.17 3.11a11.37 11.359 0 0 0-1.16 5.169c0 1.42.17 2.5.6 3.77c.24.759.77 1.899 1.17 2.529a12.3 12.298 0 0 0 8.85 5.639c.44.05 2.54.07 2.76.02c.2-.04.22.1-.26-1.7l-.36-1.37l-1.01-.06a8.5 8.489 0 0 1-5.18-1.8a5.3 5.3 0 0 1-1.3-1.26c0-.05.34-.28.74-.5a37.572 37.545 0 0 1 2.88-1.629c.03 0 .5.45 1.06.98l1 .97l2.07-.43l2.06-.43l1.47-1.47c.8-.8 1.48-1.5 1.48-1.52c0-.09-.42-1.63-.46-1.7c-.04-.06-.2-.03-1.02.18c-.53.13-1.2.3-1.45.4l-.48.15l-.53.53l-.53.53l-.93.1l-.93.07l-.52-.5a2.7 2.7 0 0 1-.96-1.7l-.13-.6l.43-.57c.68-.9.68-.9 1.46-1.1c.4-.1.65-.2.83-.33c.13-.099.65-.579 1.14-1.069l.9-.9l-.7-.7l-.7-.7l-1.95.54c-1.07.3-1.96.53-1.97.53c-.03 0-2.23 2.48-2.63 2.97l-.29.35l.28 1.03c.16.56.3 1.16.31 1.34l.03.3l-.34.23c-.37.23-2.22 1.3-2.84 1.63c-.36.2-.37.2-.44.1c-.08-.1-.23-.6-.32-1.03c-.18-.86-.17-2.75.02-3.73a8.84 8.84 0 0 1 7.9-6.93c.43-.03.77-.08.78-.1c.06-.17.5-2.999.47-3.039c-.01-.02-.1-.02-.2-.03Zm3.68.67c-.2 0-.3.1-.37.38c-.06.23-.46 2.42-.46 2.52c0 .04.1.11.22.16a8.51 8.499 0 0 1 2.99 2a8.38 8.379 0 0 1 2.16 3.449a6.9 6.9 0 0 1 .4 2.8c0 1.07 0 1.27-.1 1.73a9.4 9.4 0 0 1-1.76 3.769c-.32.4-.98 1.06-1.37 1.38c-.38.32-1.54 1.1-1.7 1.14c-.1.03-.1.06-.07.26c.03.18.64 2.56.7 2.78l.06.06a12.07 12.058 0 0 0 7.27-9.4c.13-.77.13-2.58 0-3.4a11.96 11.948 0 0 0-5.73-8.578c-.7-.42-2.05-1.06-2.25-1.06Z\"/&gt;&lt;/svg&gt;"
       },
       {
-        "title": "curseforge",
+        "title": "CurseForge",
         "link": "https://www.curseforge.com/",
         "icon": "&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"128\" height=\"128\" viewBox=\"0 0 24 24\"&gt;&lt;path fill=\"#f16436\" d=\"M18.326 9.215s4.9-.773 5.674-3.027h-7.507V4.4H0l2.032 2.358v2.415s5.127-.266 7.11 1.237c2.714 2.516-3.053 5.917-3.053 5.917l-.99 3.273c1.547-1.473 4.494-3.377 9.899-3.286c-2.057.65-4.125 1.665-5.735 3.286h10.925l-1.029-3.273s-7.918-4.668-.833-7.112\"/&gt;&lt;/svg&gt;"
       },
       {
-        "title": "我的世界中文维基",
+        "title": "Minecraft Wiki (Chinese)",
         "link": "https://zh.minecraft.wiki/",
         "icon": "https://zh.minecraft.wiki/images/Wiki.png"
       }
     ]
   },
   {
-    "title": "代码托管",
+    "title": "Code Hosting",
     "items": [
       {
         "title": "GitHub",
@@ -94,7 +94,7 @@ breadcrumb: false
     ]
   },
   {
-    "title": "AI工具",
+    "title": "AI Tools",
     "items": [
       {
         "title": "ChatGPT",
@@ -144,7 +144,7 @@ breadcrumb: false
     ]
   },
   {
-    "title": "实用网站",
+    "title": "Useful Websites",
     "items": [
       {
         "title": "Json.cn",
@@ -152,36 +152,36 @@ breadcrumb: false
         "icon": "https://static.json.cn/r/img/favicon/favicon.ico"
       },
       {
-        "title": "RGB与十六进制色码转换",
+        "title": "RGB and Hex Color Converter",
         "link": "https://www.sioe.cn/yingyong/yanse-rgb-16/",
         "icon": "&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"128\" height=\"128\" viewBox=\"0 0 512 512\"&gt;&lt;path fill=\"#E5AA6E\" d=\"M256.295 9.217C120.001 9.217 9.512 119.706 9.512 256c0 43.532 11.693 84.2 31.055 119.939c24.744 45.676 120.236-129.338 171.165-91.196S90.776 447.079 138.533 472.527c35.252 18.784 75.036 30.256 117.762 30.256c136.294 0 246.783-110.488 246.783-246.783S392.59 9.217 256.295 9.217\"/&gt;&lt;path fill=\"#FFF\" d=\"M274.829 451.585c-24.167 0-43.758-17.564-43.758-39.23s19.591-39.23 43.758-39.23s43.758 17.564 43.758 39.23s-19.591 39.23-43.758 39.23\"/&gt;&lt;path fill=\"#FFD469\" d=\"M435.954 299.272c12.708 19.521 5.991 46.425-15.003 60.092s-48.315 8.922-61.023-10.599s-5.991-46.425 15.004-60.092c20.993-13.668 48.314-8.922 61.022 10.599\"/&gt;&lt;path fill=\"#0074A8\" d=\"M443.193 159.103c1.598 23.238-17.366 43.469-42.358 45.188s-46.547-15.726-48.145-38.964s17.366-43.469 42.358-45.188s46.547 15.726 48.145 38.964\"/&gt;&lt;path fill=\"#FF473E\" d=\"M287.822 100.348c1.598 23.238-21.619 43.762-51.857 45.841s-56.046-15.073-57.644-38.311s21.619-43.762 51.857-45.841s56.046 15.073 57.644 38.311\"/&gt;&lt;path fill=\"#009B51\" d=\"M155.826 201.296c1.598 23.238-17.366 43.469-42.358 45.188s-46.547-15.726-48.145-38.964s17.366-43.469 42.358-45.188s46.547 15.726 48.145 38.964\"/&gt;&lt;/svg&gt;"
       },
       {
-        "title": "VSC代码片段生成器",
+        "title": "VSCode Snippet Generator",
         "link": "https://snippet-generator.app/",
         "icon": "&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"128\" height=\"128\" viewBox=\"0 0 128 128\"&gt;&lt;mask id=\"IconifyId191d5d48585f2379a4\" width=\"128\" height=\"128\" x=\"0\" y=\"0\" maskUnits=\"userSpaceOnUse\" style=\"mask-type:alpha\"&gt;&lt;path fill=\"#fff\" fill-rule=\"evenodd\" d=\"M90.767 127.126a7.97 7.97 0 0 0 6.35-.244l26.353-12.681a8 8 0 0 0 4.53-7.209V21.009a8 8 0 0 0-4.53-7.21L97.117 1.12a7.97 7.97 0 0 0-9.093 1.548l-50.45 46.026L15.6 32.013a5.33 5.33 0 0 0-6.807.302l-7.048 6.411a5.335 5.335 0 0 0-.006 7.888L20.796 64L1.74 81.387a5.336 5.336 0 0 0 .006 7.887l7.048 6.411a5.33 5.33 0 0 0 6.807.303l21.974-16.68l50.45 46.025a8 8 0 0 0 2.743 1.793Zm5.252-92.183L57.74 64l38.28 29.058V34.943Z\" clip-rule=\"evenodd\"/&gt;&lt;/mask&gt;&lt;g mask=\"url(#IconifyId191d5d48585f2379a4)\"&gt;&lt;path fill=\"#0065A9\" d=\"M123.471 13.82L97.097 1.12A7.97 7.97 0 0 0 88 2.668L1.662 81.387a5.333 5.333 0 0 0 .006 7.887l7.052 6.411a5.33 5.33 0 0 0 6.811.303l103.971-78.875c3.488-2.646 8.498-.158 8.498 4.22v-.306a8 8 0 0 0-4.529-7.208Z\"/&gt;&lt;g filter=\"url(#IconifyId191d5d48585f2379a5)\"&gt;&lt;path fill=\"#007ACC\" d=\"m123.471 114.181l-26.374 12.698A7.97 7.97 0 0 1 88 125.333L1.662 46.613a5.333 5.333 0 0 1 .006-7.887l7.052-6.411a5.33 5.33 0 0 1 6.811-.303l103.971 78.874c3.488 2.647 8.498.159 8.498-4.219v.306a8 8 0 0 1-4.529 7.208\"/&gt;&lt;/g&gt;&lt;g filter=\"url(#IconifyId191d5d48585f2379a6)\"&gt;&lt;path fill=\"#1F9CF0\" d=\"M97.098 126.882A7.98 7.98 0 0 1 88 125.333c2.952 2.952 8 .861 8-3.314V5.98c0-4.175-5.048-6.266-8-3.313a7.98 7.98 0 0 1 9.098-1.549L123.467 13.8A8 8 0 0 1 128 21.01v85.982a8 8 0 0 1-4.533 7.21z\"/&gt;&lt;/g&gt;&lt;path fill=\"url(#IconifyId191d5d48585f2379a7)\" fill-rule=\"evenodd\" d=\"M90.69 127.126a7.97 7.97 0 0 0 6.349-.244l26.353-12.681a8 8 0 0 0 4.53-7.21V21.009a8 8 0 0 0-4.53-7.21L97.039 1.12a7.97 7.97 0 0 0-9.093 1.548l-50.45 46.026l-21.974-16.68a5.33 5.33 0 0 0-6.807.302l-7.048 6.411a5.336 5.336 0 0 0-.006 7.888L20.718 64L1.662 81.386a5.335 5.335 0 0 0 .006 7.888l7.048 6.411a5.33 5.33 0 0 0 6.807.303l21.975-16.681l50.45 46.026a8 8 0 0 0 2.742 1.793m5.252-92.184L57.662 64l38.28 29.057z\" clip-rule=\"evenodd\" opacity=\".25\"/&gt;&lt;/g&gt;&lt;defs&gt;&lt;filter id=\"IconifyId191d5d48585f2379a5\" width=\"144.744\" height=\"113.408\" x=\"-8.411\" y=\"22.594\" color-interpolation-filters=\"sRGB\" filterUnits=\"userSpaceOnUse\"&gt;&lt;feFlood flood-opacity=\"0\" result=\"BackgroundImageFix\"/&gt;&lt;feColorMatrix in=\"SourceAlpha\" result=\"hardAlpha\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\"/&gt;&lt;feOffset/&gt;&lt;feGaussianBlur stdDeviation=\"4.167\"/&gt;&lt;feColorMatrix values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\"/&gt;&lt;feBlend in2=\"BackgroundImageFix\" mode=\"overlay\" result=\"effect1_dropShadow_1_36\"/&gt;&lt;feBlend in=\"SourceGraphic\" in2=\"effect1_dropShadow_1_36\" result=\"shape\"/&gt;&lt;/filter&gt;&lt;filter id=\"IconifyId191d5d48585f2379a6\" width=\"56.667\" height=\"144.007\" x=\"79.667\" y=\"-8.004\" color-interpolation-filters=\"sRGB\" filterUnits=\"userSpaceOnUse\"&gt;&lt;feFlood flood-opacity=\"0\" result=\"BackgroundImageFix\"/&gt;&lt;feColorMatrix in=\"SourceAlpha\" result=\"hardAlpha\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\"/&gt;&lt;feOffset/&gt;&lt;feGaussianBlur stdDeviation=\"4.167\"/&gt;&lt;feColorMatrix values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\"/&gt;&lt;feBlend in2=\"BackgroundImageFix\" mode=\"overlay\" result=\"effect1_dropShadow_1_36\"/&gt;&lt;feBlend in=\"SourceGraphic\" in2=\"effect1_dropShadow_1_36\" result=\"shape\"/&gt;&lt;/filter&gt;&lt;linearGradient id=\"IconifyId191d5d48585f2379a7\" x1=\"63.922\" x2=\"63.922\" y1=\".33\" y2=\"127.67\" gradientUnits=\"userSpaceOnUse\"&gt;&lt;stop stop-color=\"#fff\"/&gt;&lt;stop offset=\"1\" stop-color=\"#fff\" stop-opacity=\"0\"/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;/svg&gt;"
       },
       {
-        "title": "在线表格转换器",
+        "title": "Online Table Converter",
         "link": "https://tableconvert.com/zh-cn/",
         "icon": "https://tableconvert.com/images/favicon.png"
       },
       {
-        "title": "JS工具整合",
+        "title": "JS Tool Collection",
         "link": "https://js.wfuapp.com/",
         "icon": "&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"128\" height=\"128\" viewBox=\"0 0 256 256\"&gt;&lt;g fill=\"none\"&gt;&lt;rect width=\"256\" height=\"256\" fill=\"#F0DB4F\" rx=\"60\"/&gt;&lt;path fill=\"#323330\" d=\"m67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371c7.905 0 12.889-3.092 12.889-15.12v-81.798h24.058v82.138c0 24.917-14.606 36.259-35.916 36.259c-19.245 0-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607c9.969 0 16.325-4.984 16.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.579c-17.357-7.388-28.871-16.668-28.871-36.258c0-18.044 13.748-31.792 35.229-31.792c15.294 0 26.292 5.328 34.196 19.247l-18.731 12.029c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046 0-11.514 4.468-11.514 10.31c0 7.217 4.468 10.139 14.778 14.608l6.014 2.577c20.449 8.765 31.963 17.699 31.963 37.804c0 21.654-17.012 33.51-39.867 33.51c-22.339 0-36.774-10.654-43.819-24.574\"/&gt;&lt;/g&gt;&lt;/svg&gt;"
       }
     ]
   },
   {
-    "title": "像素艺术-工具",
+    "title": "Pixel Art - Tools",
     "items": [
       {
         "title": "Aseprite",
         "link": "https://community.aseprite.org/",
         "icon": "https://community.aseprite.org/uploads/default/optimized/1X/4c44ae432b7068d5c249db3aebb4d64d0a71324a_2_32x32.png",
         "badge": {
-          "text": "推荐",
+          "text": "Recommended",
           "type": "tip"
         }
       },
@@ -200,7 +200,7 @@ breadcrumb: false
         "link": "https://deakcor.itch.io/pixelover/",
         "icon": "https://img.itch.zone/aW1nLzQ4NDkxMzYucG5n/32x32%23/xzPqxt.png",
         "badge": {
-          "text": "付费",
+          "text": "Paid",
           "type": "warning"
         }
       },
@@ -208,14 +208,14 @@ breadcrumb: false
         "title": "Palette knife",
         "link": "https://zingot.itch.io/palette-knife/",
         "icon": "https://img.itch.zone/aW1hZ2UvNTQxMjE4LzQ1MTEyOTYucG5n/original/vKpGrU.png",
-        "badge": "可选付费"
+        "badge": "Optional Purchase"
       },
       {
         "title": "Pixelbasher",
         "link": "https://pixelbasher.dev/",
         "icon": "https://www.pixilart.com/favicon.ico",
         "badge": {
-          "text": "付费",
+          "text": "Paid",
           "type": "warning"
         }
       },
@@ -224,14 +224,14 @@ breadcrumb: false
         "link": "https://pixelbasher.dev/",
         "icon": "https://pixel-composer.com/src/banner.png",
         "badge": {
-          "text": "付费",
+          "text": "Paid",
           "type": "warning"
         }
       }
     ]
   },
   {
-    "title": "像素艺术-学习",
+    "title": "Pixel Art - Learning",
     "items": [
       {
         "title": "Pixel Gif",
@@ -261,7 +261,7 @@ breadcrumb: false
     ]
   },
   {
-    "title": "像素艺术-调色",
+    "title": "Pixel Art - Color",
     "items": [
       {
         "title": "Lospec",

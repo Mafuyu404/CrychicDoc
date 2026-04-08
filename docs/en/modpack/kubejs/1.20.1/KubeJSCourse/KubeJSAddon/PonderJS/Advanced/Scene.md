@@ -5,7 +5,7 @@ authors: ['Gu-meng', 'Qi-Month']
 >
 > `scene.encapsulateBounds(blockPos: BlockPos): void`
 >
-> 这个方法是 PonderJS 添加的工具方法, 其等效于
+> This is a utility method added by PonderJS. It is equivalent to:
 >
 > ```js
 > scene.addInstruction((ponderScene) => {
@@ -16,4 +16,4 @@ authors: ['Gu-meng', 'Qi-Month']
 > });
 > ```
 >
-> 作用是将`PonderWorld`的`BoundingBox`形变到与传入的方块坐标一致
+> It reshapes the `PonderWorld` `BoundingBox` to include the provided block position.

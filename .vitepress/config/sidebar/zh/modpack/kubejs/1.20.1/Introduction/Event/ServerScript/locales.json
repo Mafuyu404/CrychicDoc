@@ -1,4 +1,5 @@
 {
-  "_self_": "ServerScript",
-  "EventList.md": "事件列表"
+  "_self_": "服务端脚本",
+  "EventList.md": "事件列表",
+  "Example/": "示例"
 }

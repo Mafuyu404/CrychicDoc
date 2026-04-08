@@ -1,11 +1,11 @@
 ---
 prev: false
 next: false
-title: navbar
+title: Navigation Bar
 hidden: false
 priority: 0
 ---
 
-# 导航栏
+# Navigation Bar
 
-该页面用于讨论KubeJS文档的导航栏设置。
+Use this page to discuss navigation and structure changes for the KubeJS docs.

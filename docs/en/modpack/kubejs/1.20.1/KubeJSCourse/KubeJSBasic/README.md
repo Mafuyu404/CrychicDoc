@@ -4,8 +4,7 @@ authors: ['Gu-meng']
 
 
 ---
-description: 在这一章中将介绍KJS的基础使用
+description: This chapter introduces the basics of KJS
 ---
 
-# kjs基础
-
+# KJS Basics

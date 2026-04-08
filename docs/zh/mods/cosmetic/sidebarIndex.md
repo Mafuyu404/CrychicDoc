@@ -1,5 +1,5 @@
 ---
-title: cosmetic
+title: 装饰与外观
 hidden: false
 priority: 9007199254740991
 collapsed: true

@@ -1,13 +1,13 @@
-# 按键注册和使用
-本章涉及内容：按键注册、客户端向服务端发包、按键处理
-涉及模组及版本:
+# Key Registration and Usage
+Topics covered: key registration, client-to-server packets, and key handling.
+Mods and versions used:
 1. rhino-forge-2001.2.2-build.18
 2. architectury-9.2.14-forge
 3. kubejs-forge-2001.6.5-build.14
 4. probejs-6.0.1-forge
 
-## startup里的代码
-按键注册，**这里得注意一下，虽然是写在startup里，但是还是属于客户端的内容，在做成服务端打包时，需要删除该文件，打包服务端删除该文件不会对客户端有影响**
+## Code in `startup`
+Key registration. **Important: although this is written in `startup`, it is still client-side content. Remove this file when building a dedicated server package. Removing it for server packaging will not affect clients.**
 ```js
 const $KeyMappingRegistry = Java.loadClass("dev.architectury.registry.client.keymappings.KeyMappingRegistry");
 const $KeyMapping = Java.loadClass("net.minecraft.client.KeyMapping");
@@ -15,26 +15,26 @@ const $GLFWkey = Java.loadClass("org.lwjgl.glfw.GLFW");
 
 ClientEvents.init(() => {
     global.regKeyB = new $KeyMapping(
-        "key.meng.packsack", //按键的组名
+        "key.meng.packsack", // key category
         $GLFWkey.GLFW_KEY_B,
-        "key.keybinding.meng.packsack" //按键的名字
+        "key.keybinding.meng.packsack" // key name
     );
   $KeyMappingRegistry.register(global.regKeyB);
 });
 ```
-这里的按键组名和按键的名字是一个lang的key，就是需要在对应的lang文件里进行翻译，像下面这样
+The key category and key name are language keys, so they should be translated in the corresponding lang file, for example:
 
 ```json
 {
-    "key.meng.packsack":"背包",
-    "key.keybinding.meng.packsack":"打开饰品栏背包"
+    "key.meng.packsack":"Backpack",
+    "key.keybinding.meng.packsack":"Open Curios backpack"
 }
 ```
-就是说这里是可以自定义的
+These values are fully customizable.
 
-关于按键`$GLFWkey`的后面内容可以在该篇章的最下面查看
+You can find the `GLFWkey` key map table at the end of this page.
 
-## client里的代码
+## Code in `client`
 ```js
 ClientEvents.tick(event => {
     const key = global.regKeyB;
@@ -50,28 +50,28 @@ ClientEvents.tick(event => {
     }
 })
 ```
-这里是给服务器发包，告诉服务器玩家按下了这个按键，不然服务器是不知道玩家按下了，这里做了简单的判断，防止玩家一直长按，给服务器一直发包
+This sends a packet to the server to notify that the player pressed the key. Otherwise, the server cannot know the key state. A simple check is included to prevent continuous packet spam while holding the key.
 
-这个代码只会在玩家第一次按下才会发送一次包
+This code sends the packet only on the initial key press.
 
-## server里的代码
+## Code in `server`
 ```js
 NetworkEvents.dataReceived("openBackpack", event => {
     const player = event.player
-    // 你的处理逻辑代码
+    // Your handling logic here
 })
 ```
-在服务端这边只需要接受客户端发来的包，因为这里没有其他携带信息，所以只需要接受该内容
+On the server side, you only need to receive this packet, since no extra payload is sent.
 
-## 一些注意事项
-1. 该项目只是作为示例，很多地方并不是最优解，可自行进行解决
-2. 如果对该项目代码部分不满可以将修改好的代码上传至[gitee项目仓库](https://gitee.com/gumengmengs/kubejs-course)
-3. 一定要在做服务端时，在startup里删除该文件内的所有代码，包括loadclass的内容
+## Notes
+1. This project is only an example; many parts are not necessarily optimal and can be improved.
+2. If you improve this project, you can upload your revised code to the [Gitee repository](https://gitee.com/gumengmengs/kubejs-course).
+3. When building a dedicated server package, remove all code from this file in `startup`, including `loadClass` calls.
 
-## GLFWkey对应按键
-|        按键常量        |          对应按键          |
+## GLFWkey Mapping
+|      Key Constant       |         Mapped Key         |
 | :--------------------: | :------------------------: |
-|     GLFW_KEY_SPACE     |            空格            |
+|     GLFW_KEY_SPACE     |           Space            |
 |  GLFW_KEY_APOSTROPHE   |             '              |
 |     GLFW_KEY_COMMA     |             ,              |
 |     GLFW_KEY_MINUS     |             -              |
@@ -120,23 +120,23 @@ NetworkEvents.dataReceived("openBackpack", event => {
 | GLFW_KEY_RIGHT_BRACKET |             ]              |
 | GLFW_KEY_GRAVE_ACCENT  |             `              |
 |    GLFW_KEY_ESCAPE     |            ESC             |
-|     GLFW_KEY_ENTER     |        回车(Neter)         |
+|     GLFW_KEY_ENTER     |            Enter           |
 |      GLFW_KEY_TAB      |            Tab             |
-|   GLFW_KEY_BACKSPACE   |      退格(backSpace)       |
-|    GLFW_KEY_INSERT     |      插入(Insert/Ins)      |
-|    GLFW_KEY_DELETE     |      删除(Delete/Del)      |
-|     GLFW_KEY_RIGHT     |          方向右键          |
-|     GLFW_KEY_LEFT      |          方向左键          |
-|     GLFW_KEY_DOWN      |          方向下键          |
-|      GLFW_KEY_UP       |          方向上键          |
+|   GLFW_KEY_BACKSPACE   |         Backspace          |
+|    GLFW_KEY_INSERT     |           Insert           |
+|    GLFW_KEY_DELETE     |           Delete           |
+|     GLFW_KEY_RIGHT     |         Arrow Right        |
+|     GLFW_KEY_LEFT      |         Arrow Left         |
+|     GLFW_KEY_DOWN      |         Arrow Down         |
+|      GLFW_KEY_UP       |          Arrow Up          |
 |    GLFW_KEY_PAGE_UP    |        PageUp/PgUp         |
 |   GLFW_KEY_PAGE_DOWN   |       PageDown/PgOn        |
 |     GLFW_KEY_HOME      |            Home            |
 |      GLFW_KEY_END      |            End             |
-|   GLFW_KEY_CAPS_LOCK   |   锁定大小写(Caps Lock)    |
+|   GLFW_KEY_CAPS_LOCK   |         Caps Lock          |
 |  GLFW_KEY_SCROLL_LOCK  |      Scroll Lock/ScLk      |
-|   GLFW_KEY_NUM_LOCK    |    锁定数字(Num block)     |
-| GLFW_KEY_PRINT_SCREEN  |     截屏(Print Screen)     |
+|   GLFW_KEY_NUM_LOCK    |          Num Lock          |
+| GLFW_KEY_PRINT_SCREEN  |        Print Screen        |
 |     GLFW_KEY_PAUSE     |      Pause Break/PaBk      |
 |      GLFW_KEY_F1       |             F1             |
 |      GLFW_KEY_F2       |             F2             |
@@ -150,28 +150,28 @@ NetworkEvents.dataReceived("openBackpack", event => {
 |      GLFW_KEY_F10      |            F10             |
 |      GLFW_KEY_F11      |            F11             |
 |      GLFW_KEY_F12      |            F12             |
-|     GLFW_KEY_KP_0      |          数字区 0          |
-|     GLFW_KEY_KP_1      |          数字区 1          |
-|     GLFW_KEY_KP_2      |          数字区 2          |
-|     GLFW_KEY_KP_3      |          数字区 3          |
-|     GLFW_KEY_KP_4      |          数字区 4          |
-|     GLFW_KEY_KP_5      |          数字区 5          |
-|     GLFW_KEY_KP_6      |          数字区 6          |
-|     GLFW_KEY_KP_7      |          数字区 7          |
-|     GLFW_KEY_KP_8      |          数字区 8          |
-|     GLFW_KEY_KP_9      |          数字区 9          |
-|  GLFW_KEY_KP_DECIMAL   |          数字区 .          |
-|   GLFW_KEY_KP_DIVIDE   |          数字区 /          |
-|  GLFW_KEY_KP_MULTIPLY  |          数字区 *          |
-|  GLFW_KEY_KP_SUBTRACT  |          数字区 -          |
-|    GLFW_KEY_KP_ADD     |          数字区 +          |
-|   GLFW_KEY_KP_ENTER    |         数字区回车         |
-|   GLFW_KEY_KP_EQUAL    |          数字区 =          |
-|  GLFW_KEY_LEFT_SHIFT   |          左Shift           |
-| GLFW_KEY_LEFT_CONTROL  |           左Ctrl           |
-|   GLFW_KEY_LEFT_ALT    |           左Alt            |
-|  GLFW_KEY_LEFT_SUPER   | 左Windows键/左Command(Mac) |
-|  GLFW_KEY_RIGHT_SHIFT  |          右Shift           |
-| GLFW_KEY_RIGHT_CONTROL |           右Ctrl           |
-|   GLFW_KEY_RIGHT_ALT   |           右Alt            |
-|  GLFW_KEY_RIGHT_SUPER  | 右Windows键/右Command(Mac) |
+|     GLFW_KEY_KP_0      |         Numpad 0           |
+|     GLFW_KEY_KP_1      |         Numpad 1           |
+|     GLFW_KEY_KP_2      |         Numpad 2           |
+|     GLFW_KEY_KP_3      |         Numpad 3           |
+|     GLFW_KEY_KP_4      |         Numpad 4           |
+|     GLFW_KEY_KP_5      |         Numpad 5           |
+|     GLFW_KEY_KP_6      |         Numpad 6           |
+|     GLFW_KEY_KP_7      |         Numpad 7           |
+|     GLFW_KEY_KP_8      |         Numpad 8           |
+|     GLFW_KEY_KP_9      |         Numpad 9           |
+|  GLFW_KEY_KP_DECIMAL   |         Numpad .           |
+|   GLFW_KEY_KP_DIVIDE   |         Numpad /           |
+|  GLFW_KEY_KP_MULTIPLY  |         Numpad *           |
+|  GLFW_KEY_KP_SUBTRACT  |         Numpad -           |
+|    GLFW_KEY_KP_ADD     |         Numpad +           |
+|   GLFW_KEY_KP_ENTER    |        Numpad Enter        |
+|   GLFW_KEY_KP_EQUAL    |         Numpad =           |
+|  GLFW_KEY_LEFT_SHIFT   |        Left Shift          |
+| GLFW_KEY_LEFT_CONTROL  |        Left Ctrl           |
+|   GLFW_KEY_LEFT_ALT    |        Left Alt            |
+|  GLFW_KEY_LEFT_SUPER   | Left Windows / Left Command (Mac) |
+|  GLFW_KEY_RIGHT_SHIFT  |       Right Shift          |
+| GLFW_KEY_RIGHT_CONTROL |       Right Ctrl           |
+|   GLFW_KEY_RIGHT_ALT   |       Right Alt            |
+|  GLFW_KEY_RIGHT_SUPER  | Right Windows / Right Command (Mac) |

@@ -1,19 +1,19 @@
 ---
 authors: ['Gu-meng']
 ---
-# 饱食度和饱和度
-来自[mcwiki](https://zh.minecraft.wiki/w/%E9%A3%9F%E7%89%A9?variant=zh-cn#%E9%A5%A5%E9%A5%BF%E4%B8%8E%E9%A5%B1%E5%92%8C%E7%9A%84%E5%8C%BA%E5%88%AB)的外链
+# Hunger and Saturation
+External reference: [mcwiki](https://zh.minecraft.wiki/w/%E9%A3%9F%E7%89%A9?variant=zh-cn#%E9%A5%A5%E9%A5%BF%E4%B8%8E%E9%A5%B1%E5%92%8C%E7%9A%84%E5%8C%BA%E5%88%AB)
 
-下面是孤梦自己总结的的
+Summary from Gu-meng:
 
-饱食度是直接体现在ui上的 “鸡腿”
+Hunger is the visible "drumstick" value in the UI.
 
-饱和度是可以理解为食物的消耗速度
+Saturation can be understood as a buffer that controls how fast hunger is consumed.
 
-在玩家消耗饥饿值时，有限会消耗饱和度，不论是奔跑还是满饱食度回血
+When hunger is consumed, saturation is consumed first, whether from sprinting or natural regeneration at high hunger.
 
-在游戏里，金萝卜带来的饱食度虽然不多，但是饱和度较高，所以在游戏内食用金萝卜会更“抗饿”
+In-game, golden carrots do not add much hunger, but they provide high saturation, so they keep you full longer.
 
-**玩家的饱和度不会超过当前的饱食度**
+**A player's saturation cannot exceed current hunger.**
 
-当玩家的饱食度比较满，尤其在饱食度开始抖动时，应食用增加较多饱和度/增加较少饱食度的食物。若在饱食度低时食用增加较多饱和度的食物，增加的饱和度很可能会被浪费，因为饱和度不可能超过饥饿值。
+When hunger is already high (especially when the bar starts shaking), foods with higher saturation and lower hunger gain are more efficient. If hunger is low, eating high-saturation food may waste part of the saturation because saturation cannot exceed hunger.

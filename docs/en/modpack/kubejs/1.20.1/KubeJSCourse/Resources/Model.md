@@ -1,92 +1,92 @@
 ---
 authors: ['Gu-meng']
 ---
-# 模型介绍
+# Model Overview
 
-首先模型不仅仅适用于方块, 同样可以适用于物品, 在这篇文档不会教你怎么制作模型, 若想学习模型制作请前往[**另一个文档**](../Digression/BlockbenchBasic)
+Models apply to both blocks and items. This page does not teach you how to create models in a modeling tool. If you want to learn model creation, see [**Blockbench basics**](../Digression/BlockbenchBasic).
 
-这篇文档的作用主要就是简单讲解一下模型相关的内容, 包括模型文件的存放, 代码注册时的方法说明
+This page is a simple overview of models: where model files go, and which registration methods relate to models.
 
-# 正文
+# Main
 
-## 模型文件存放位置
-那么首先是模型的存放, 很简单
+## Where Model Files Go
+Model paths are simple:
 
-物品的模型存放于`assets/${modid}/models/item`
+Item models live under `assets/${modid}/models/item`.
 
-方块的模型存放于`assets/${modid}/models/block`
+Block models live under `assets/${modid}/models/block`.
 
-并且模型文件名必须和方块/物品的id一致, 其次文件格式**必须为**`.json`
+The model filename must match the block/item id, and the file extension **must be** `.json`.
 
-## 注册时的方法
+## Registration Methods
 
-首先是物品的注册方法`.model`, 这个方法根据直接填入模型的路径即可, 例如
+For items, you can use `.model(...)` and pass the model path directly. For example:
 
 ```js
 StartupEvents.registry("item", (event) => {
 	let MODID = "test_mod"
-	event.create(MODID + "test_item")
-		.model("test_mod:item/test_item")
+	event.create(`${MODID}:test_item`)
+		.model(`${MODID}:item/test_item`)
 })
 ```
 
-上面的`let MODID = "test_mod"`是自定义的modid(命名空间), 在指定模型的时候必须和这个一样, 如果不写那就是默认的`kubejs`
+Here `let MODID = "test_mod"` is your custom mod id (namespace). When specifying the model path, it must match this namespace. If you do not set your own namespace, the default is `kubejs`.
 
-接下来是方块的注册方法
+For blocks:
 
 ```js
 StartupEvents.registry("block", (event) => {
 	let MODID = "test_mod"
 	event.create("test_mod:test_block")
-		.model("test_mod:block/test_block")
+		.model(`${MODID}:block/test_block`)
 })
 ```
 
-和上面一样, `let MODID = "test_mod"`是自定义的modid(命名空间), 在指定模型的时候必须和这个一样, 如果不写那就是默认的`kubejs`
+Same idea: the namespace in the model path must match.
 
-## 简单的模型制作
+## Simple Model JSON Examples
 
-### 多面方块
+### Multi-face Block
 
-这里是一个简单的方块模型, 用不着blockbench
+This is a simple block model JSON example that does not require Blockbench.
 
-我们拿类似于原版熔炉这种几个面的方块参考
+We'll use a furnace-like model (different textures on different faces) as the reference.
 
-首先你需要准备`正面` `侧面`以及`顶面`的贴图
+First, prepare textures for the `front`, `side`, and `top`.
 
-在`models/block`下创建一个方块id的`json`文件, 然后里面首先写上(不要直接复制这个`json`文件, 真正的`json`文件是不允许注释的哦)
+Create a JSON file named after your block id under `models/block`. Start with this (do not copy the comments into a real JSON file; real JSON does not allow comments):
 
 ```json
 {
-	// 其实这个minecraft:可以不用写, 但是按照规范我选择写上
+	// You can omit the "minecraft:" namespace, but we include it for clarity
 	"parent": "minecraft:block/orientable"
 }
 ```
 
-首先这个是读取父模型, 也就是你的这个模型是基于这个的父模型来进行编写的
+This sets the parent model. Your model is based on that parent.
 
-然后到纹理, 继续写上
+Next, define textures:
 
 ```json
 {
-	// 其实这个minecraft:可以不用写, 但是按照规范我选择写上
+	// You can omit the "minecraft:" namespace, but we include it for clarity
 	"parent": "minecraft:block/orientable",
 	"textures": {
-		// 那么首先这里第一个是正面的纹理
+		// Front face
 		"front": "test_mod:block/front",
-		// 侧面
+		// Side faces
 		"side": "test_mod:block/side",
-		// 顶面
+		// Top face
 		"top": "test_mod:block/top"
 	}
 }
 ```
 
-这样一个简单的方块模型就写好了, 贴图只需要放在`assets/test_mod/textures/block`下即可
+That is enough for a basic block model. Put the textures under `assets/test_mod/textures/block`.
 
-### 物品
+### Item
 
-然后轮到物品, 物品更简单, 直接看源码
+Item models are even simpler:
 
 ```json
 {

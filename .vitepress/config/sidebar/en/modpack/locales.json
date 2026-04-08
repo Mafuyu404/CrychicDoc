@@ -1,3 +1,5 @@
 {
-  "_self_": "Modpack"
+  "_self_": "Modpacks",
+  "kubejs/": "KubeJS",
+  "recommendation/": "Recommendations"
 }

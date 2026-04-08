@@ -1,32 +1,32 @@
 ---
 authors: ['Gu-meng']
 ---
-# LoadClass使用
-> 孤梦注：千万不要玩Java.loadClass啊，这东西比较废人
+# Using `Java.loadClass`
+> Gu-meng note: `Java.loadClass` is powerful but can be difficult to work with.
 
-在使用Java.loadClass时，孤梦建议是你有一定的Java基础，至少得知道类、类路径、静态、对象、访问修饰符等概念
+Before using `Java.loadClass`, it helps to have basic Java knowledge: classes, class paths, static members, objects, and access modifiers.
 
-在绝大多数时候我们都用不到loadClass
+Most of the time, you will not need `loadClass`.
 
-loadclass就是kjs提供给我们用来加载java类的
+`loadClass` is KubeJS support for loading Java classes.
 
-这使得KubeJS的可玩性非常高，比如[注册AE存储元件和对应的组件](../KubeJSProjects/Meng/RegComponent&Storage.md)就使用到了非常多的loadClass
+It expands what KubeJS can do. For example, [registering AE storage components and related parts](../KubeJSProjects/Meng/RegComponent&Storage.md) uses `loadClass` heavily.
 
-## 关于使用
+## Usage
 ```js
-let class = Java.loadClass("类路径");
+let class = Java.loadClass("class.path");
 ```
-在使用ProbeJS时，在绝大多数时候都会为你补齐类路径，但是ProbeJS并不是所有的类都有对应的路径，所以这个时候你可以去翻一下对应模组的GitHub开源链接，查找到你需要的类，并将其路径复制过来
+When using ProbeJS, class paths are usually auto-completed. But not every class is indexed there, so in some cases you need to open the mod's GitHub source, find the class, and copy its full path.
 
-在你使用`Java.loadClass`class时候，你可以直接去调用到里面的`public static`的方法或者变量常量等
+After loading a class with `Java.loadClass`, you can directly call its `public static` methods, fields, and constants.
 
-但是有些内容调用不到，你就可以和写java一样去`new`这个类
+If what you need is not static, instantiate the class with `new`, just like in Java.
 
-沿用上面的内容
+Using the same example:
 ```js
 let newClass = new class();
 ```
-这里的`new class()`括号里可能会需要传参有的也不需要，这里根据对应类提供的源码来写
+`new class()` may or may not require constructor arguments. Follow the target class source.
 
-## 总结
-总的来说你如果需要更好的使用`Java.loadClass`你是需要有一定的Java基础，这不是靠一个篇章能说明白的事情
+## Summary
+To use `Java.loadClass` well, you need some Java foundation. This topic cannot be fully covered in one short chapter.

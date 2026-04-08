@@ -165,16 +165,16 @@ hero:
     actions:
         - theme: brand
           text: "KubeJS Docs"
-          link: /en/modpack/kubejs/
+          link: /en/modpack/kubejs/Catalogue
         - theme: brand
           text: "Mods Index"
-          link: /en/mods/
+          link: /en/mods/Catalogue
         - theme: alt
           text: "Development"
-          link: /en/develop/
+          link: /en/develop/Catalogue
         - theme: alt
           text: "Developer Docs"
-          link: /en/doc/
+          link: /en/doc/Catalogue
         - theme: outline
           text: "Plugins Guide"
           link: /en/doc/pluginsGuide
@@ -186,15 +186,15 @@ features:
     - icon: 🧪
       title: "KubeJS Path"
       details: "From introduction to advanced script patterns across versions."
-      link: /en/modpack/kubejs/
+      link: /en/modpack/kubejs/Catalogue
     - icon: 🧩
       title: "Mods Atlas"
       details: "Category-based mod references for server, tech, performance, and more."
-      link: /en/mods/
+      link: /en/mods/Catalogue
     - icon: 🛠️
       title: "Dev Guides"
       details: "Modding, plugins, datapacks, and resource pack workflows."
-      link: /en/develop/
+      link: /en/develop/Catalogue
     - icon: 📖
       title: "Plugins Guide"
       details: "Markdown/container/component capability guide used by this site."
@@ -202,23 +202,23 @@ features:
     - icon: 🧭
       title: "Developer Docs"
       details: "Framework workflow, extension architecture, and hero extension handbooks."
-      link: /en/doc/
+      link: /en/doc/Catalogue
     - icon: 📚
       title: "Info Index"
       details: "Community indexes, requests, and Q&A hubs."
-      link: /en/info/
+      link: /en/info/Catalogue
     - icon: 🤝
       title: "Contribution Rules"
       details: "Collaboration conventions and contribution checklist."
       link: /en/doc/rules
     - icon: 👥
-      title: "Team Spaces"
-      details: "Developer-specific areas and internal knowledge pages."
-      link: /en/developers/
+      title: "Site Catalogue"
+      details: "Open the English root catalogue for mods, modpacks, development, and info sections."
+      link: /en/Catalogue
     - icon: 📦
       title: "Modpack Docs"
       details: "Operational and recommendation documents for modpack maintenance."
-      link: /en/modpack/
+      link: /en/modpack/Catalogue
 
 gitChangelog: false
 ---

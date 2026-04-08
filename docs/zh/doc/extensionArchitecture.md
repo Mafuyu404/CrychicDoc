@@ -1,6 +1,7 @@
 ---
 title: 扩展架构说明
 description: CrychicDoc 中配置、运行时、组件、插件与样式的职责边界与落点规则。
+hidden: false
 ---
 
 # 扩展架构说明

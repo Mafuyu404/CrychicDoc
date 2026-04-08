@@ -1,28 +1,28 @@
 ---
 authors: ['Gu-meng']
 ---
-# 玩家库存改变事件
-该代码在server脚本里
+# Player Inventory Changed Event
+This code belongs in server scripts.
 
-玩家库存改变事件有两种调取方式
-1. `PlayerEvents.inventoryChanged(itemId, event => {})` 第一种是指定物品进入玩家库存捕捉获取事件
-2. `PlayerEvents.inventoryChanged(event => {})` 第二种是捕捉所有进入玩家库存事件
+There are two ways to use inventory-changed events:
+1. `PlayerEvents.inventoryChanged(itemId, event => {})` captures when a specific item enters player inventory.
+2. `PlayerEvents.inventoryChanged(event => {})` captures all inventory-change events.
 
-## 可被直接访问的方法
-|         方法名          |            方法用处            |    返回类型     | 直接调用值 |
+## Directly Accessible Methods
+|         Method          |             Purpose             |   Return Type   | Direct Value |
 | :---------------------: | :----------------------------: | :-------------: | :--------: |
-|       getEntity()       | 获取改变库存的实体，一般指玩家 |     Entity      |   entity   |
-|        getItem()        |     导致玩家库存改变的物品     |    ItemStack    |    item    |
-|       getLevel()        |     玩家库存改变所在的世界     |      Level      |   level    |
-|       getPlayer()       |         改变库存的玩家         |     Player      |   player   |
-|       getServer()       |      改变库存的玩家服务端      | MinecraftServer |   server   |
-|        getSlot()        |     玩家库存改变的所在位置     |     number      |    slot    |
-|  hasGameStage(String)   |           是否有阶段           |     boolean     |     -      |
-| removeGameStage(String) |            删除阶段            |      void       |     -      |
-|  addGameStage(String)   |            添加阶段            |      void       |     -      |
+|       getEntity()       | Get the entity whose inventory changed (usually a player) |     Entity      |   entity   |
+|        getItem()        | Get the item that caused the inventory change |    ItemStack    |    item    |
+|       getLevel()        | Get the world where the inventory changed |      Level      |   level    |
+|       getPlayer()       | Get the player whose inventory changed |     Player      |   player   |
+|       getServer()       | Get the relevant server instance | MinecraftServer |   server   |
+|        getSlot()        | Get the slot index that changed |     number      |    slot    |
+|  hasGameStage(String)   | Check whether a game stage exists |     boolean     |     -      |
+| removeGameStage(String) | Remove a game stage |      void       |     -      |
+|  addGameStage(String)   | Add a game stage |      void       |     -      |
 
-## 示例
-下方示例在玩家背包库存发生改变时，检测导致改变的物品是否为被禁用的物品，如果是则删除该物品
+## Example
+The example below checks whether the changed item is in a banned list. If it is, the item is removed.
 ```js
 const banItems = [
     'minecraft:nether_star',
@@ -35,16 +35,16 @@ PlayerEvents.inventoryChanged(event=>{
     let item = event.getItem()
     if (undefined != banItems.find(value=> value==item.id)){
         event.getPlayer().getInventory().clear(item)
-        event.player.tell("发现违禁品 " + item.displayName.getString() + " 已删除！！！")
+        event.player.tell("Contraband found: " + item.displayName.getString() + " removed!")
     }  
 })
 ```
-`const banItems = []` 定义一个数组，里面放上我们管控的物品id
+`const banItems = []` defines an array of controlled/banned item IDs.
 
-使用 `banItems.find(value=> value==item.id)` 来判断物品是否为管控物品，如果如果部位管控物品会返回`undefined`
+`banItems.find(value=> value==item.id)` checks whether the item is in that list. If not found, it returns `undefined`.
 
-所以这里只需要是否为`undefined`就可以判断物品是否是禁用的
+So you can determine whether the item is banned by checking whether the result is `undefined`.
 
-`event.getPlayer().getInventory().clear(item)` 这行代码代表清除该物品
+`event.getPlayer().getInventory().clear(item)` clears that item.
 
-并且使用 `event.player.tell()` 来给玩家发送信息提示告知玩家物品被清除了
+`event.player.tell()` sends a message to the player telling them the item was removed.

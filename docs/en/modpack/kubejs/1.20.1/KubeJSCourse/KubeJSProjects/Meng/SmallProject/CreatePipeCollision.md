@@ -1,11 +1,11 @@
 ---
 authors: ['Gu-meng']
 ---
-# 机械动力修改流体管道流体和流体产生块
-本章主要涉及内容：ForgeEvents、机械动力事件里的`PipeCollisionEvent.Spill`，本章所有代码部分都在`startup_scripts`里
+# Modify Create Pipe Fluid Collision Results
+Main topics in this chapter: `ForgeEvents` and Create's `PipeCollisionEvent.Spill`. All code in this chapter belongs in `startup_scripts`.
 
-关于`PipeCollisionEvent`的[参考位置](https://github.com/Creators-of-Create/Create/blob/mc1.20.1/dev/src/main/java/com/simibubi/create/api/event/PipeCollisionEvent.java):https://github.com/Creators-of-Create/Create/blob/mc1.20.1/dev/src/main/java/com/simibubi/create/api/event/PipeCollisionEvent.java
-## 完整代码
+Reference for `PipeCollisionEvent`: [https://github.com/Creators-of-Create/Create/blob/mc1.20.1/dev/src/main/java/com/simibubi/create/api/event/PipeCollisionEvent.java](https://github.com/Creators-of-Create/Create/blob/mc1.20.1/dev/src/main/java/com/simibubi/create/api/event/PipeCollisionEvent.java)
+## Full Code
 ```js
 const $PipeCollisionEvent = Java.loadClass("com.simibubi.create.api.event.PipeCollisionEvent")
 
@@ -16,4 +16,4 @@ ForgeEvents.onEvent($PipeCollisionEvent.Spill, event => {
     }
 })
 ```
-上面代码是在流体管道输出流体如果产生的方块为石头那么就将其重新设置为下界岩（地狱岩）
+The code above checks the block generated when fluid spills from a pipe. If the result is stone, it replaces it with netherrack.

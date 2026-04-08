@@ -1,23 +1,27 @@
 {
   "_self_": {
-    "valueHash": "4059b0251f66a18cb56f544728796875",
-    "isUserSet": false,
+    "valueHash": "ac129c0235f9d351816770386b797fa2",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247315643
   },
   "KubeJS/": {
     "valueHash": "a5b10124c73efb47be9e6410796d1e42",
     "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254446647
+    "isActiveInStructure": true
   },
   "doc/": {
-    "valueHash": "9a09b4dfda82e3e665e31092d1c3ec8d",
-    "isUserSet": false,
+    "valueHash": "f30a07a9abb57ec89d8f46e4f0658ba8",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254446647
   },
   "Description.md": {
+    "valueHash": "4059b0251f66a18cb56f544728796875",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
     "valueHash": "4059b0251f66a18cb56f544728796875",
     "isUserSet": false,
     "isActiveInStructure": false

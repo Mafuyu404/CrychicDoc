@@ -1,115 +1,120 @@
 ---
 authors: ['Gu-meng']
 ---
-# 添加自定义物品
-kubejs可以在startup_scripts文件夹内创建去创建物品，注意所有的添加自定义的操作都是无法热加载的，写完之后需要重启游戏后才会加载进游戏内
-## 基础写法
+# Add Custom Items
+KubeJS can register items in `startup_scripts`.
+Note: all custom registration changes are not hot-reloadable. Restart the game after editing.
+
+## Basic Syntax
 ```js
 StartupEvents.registry("item",event=>{
     event.create("meng:my_item","basic")
 })
 ```
-kjs创建物品是非常简单的，只需要一行就可以解决
+Creating an item is simple and can be done in one line.
 
-`create`里的第一个参数为物品id,这里如果写成"xxx:xxx"，冒号前面的是你的命名空间(类似于模组id),后面的才是你的物品id,如果你只是写成"xxx"并不加冒号也是可以的，kjs为默认为你创建在kubejs下,最后呈现形式就是"kubejs:xxx"
+In `create`, the first argument is the item id.
+If you write `"namespace:id"`, the part before `:` is your namespace (similar to mod id), and the part after `:` is the item id.
+If you only write `"id"` without a namespace, KubeJS defaults to `kubejs:id`.
 
-`create`里的第二个参数为物品类型，在下面会给大家列举出来他的物品类型和描述
+The second argument in `create` is the item type.
 
-## 物品类型
-|      类型参数       |   作用   |         描述         |                 示例                  |
-| :-----------------: | :------: | :------------------: | :-----------------------------------: |
-|       `basic`       | 基础物品 |          无          |                   -                   |
-|       `basic`       | 基础物品 |          -           |    [添加食物](./ItemType/food)    |
-|    `music_disc`     |   唱片   | 可以在唱片机里播放的 | [添加唱片](./ItemType/MusicDisc) |
-| `smithing_template` | 锻造模板 |          无          |                   -                   |
-|      `helmet`       |   头盔   |          无          |             [添加护甲]()              |
-|    `chestplate`     |   胸甲   |          无          |                 同上                  |
-|     `leggings`      |   护腿   |          无          |                 同上                  |
-|       `boots`       |   鞋子   |          无          |                 同上                  |
-|        `axe`        |   斧子   |          无          |             [添加工具](./ItemType/tools)              |
-|        `hoe`        |   锄头   |          无          |                 同上                  |
-|      `pickaxe`      |   镐子   |          无          |                 同上                  |
-|      `shovel`       |   铲子   |          无          |                 同上                  |
-|       `sword`       |    剑    |          无          |                 同上                  |
-|      `shears`       |   剪刀   |          无          |             [添加剪刀]()              |
-
-
-## 通用方法参数
-下面提供的方法为所有物品类型都可以调用到的参数,针对于护甲、工具等物品会在对应的章节提供专有的方法
-### 常用方法
-|                             方法调用                              | 传入参数 |                   用处                    | 返回类型 |
-| :---------------------------------------------------------------: | :------: | :---------------------------------------: | :------: |
-|                          maxDamage(int)                           |    -\>    |            设置物品的最大耐久             |   this   |
-|                   food(Consumer\<FoodBuilder\>)                    |    -\>    |   [设置物品为食物](./ItemType/food)   |   this   |
-|                         maxStackSize(int)                         |    -\>    | 设置物品的最大堆叠,虽然能超过64但是不建议 |   this   |
-|                        fireResistant(bool)                        |    -\>    |             设置物品是否防火              |   this   |
-|                        displayName(string)                        |    -\>    |  设置在没有配置lang文件时直接显示的名称   |   this   |
-|                       tag(ResourceLocation)                       |    -\>    |             设置物品的tag标签             |   this   |
-|                          texture(string)                          |    -\>    |             设置物品材质路径              |   this   |
-|                           unstackable()                           |    -     |            设置物品为不可堆叠             |   this   |
-|                           burnTime(int)                           |    -     | 设置物品的可燃烧tick(默认为0则是不可燃烧) |   this   |
-| modifyAttribute(ResourceLocation,string,double,AttributeModifier) |    ~     |              物品属性修饰符               |   this   |
-|                      createItemProperties()                       |    -     |              创建为物品属性               |   Item   |
+## Item Types
+|      Type Arg       |     Use     |              Description              |                  Example                  |
+| :-----------------: | :---------: | :-----------------------------------: | :---------------------------------------: |
+|       `basic`       | Basic item  | -                                     |                    -                      |
+|       `basic`       | Basic item  | -                                     |      [Add food](./ItemType/food)          |
+|    `music_disc`     | Music disc  | Playable in jukebox                   | [Add music disc](./ItemType/MusicDisc)    |
+| `smithing_template` | Smithing template | -                                |                    -                      |
+|      `helmet`       | Helmet      | -                                     |               [Add armor]()               |
+|    `chestplate`     | Chestplate  | -                                     |                 Same as above             |
+|     `leggings`      | Leggings    | -                                     |                 Same as above             |
+|       `boots`       | Boots       | -                                     |                 Same as above             |
+|        `axe`        | Axe         | -                                     |      [Add tools](./ItemType/tools)        |
+|        `hoe`        | Hoe         | -                                     |                 Same as above             |
+|      `pickaxe`      | Pickaxe     | -                                     |                 Same as above             |
+|      `shovel`       | Shovel      | -                                     |                 Same as above             |
+|       `sword`       | Sword       | -                                     |                 Same as above             |
+|      `shears`       | Shears      | -                                     |              [Add shears]()               |
 
 
-### 物品使用时调用的方法
-|                    方法调用                    | 传入参数 |                    用处                     | 返回类型 |
-| :--------------------------------------------: | :------: | :-----------------------------------------: | :------: |
-|          use(ItemBuilder$UseCallback)          |    -\>    |            物品开始被玩家使用时             |   this   |
-| releaseUsing(ItemBuilder$ReleaseUsingCallback) |    -\>    | 当玩家没有使用完物品但中途松开鼠标右键时(?) |   this   |
-|  finishUsing(ItemBuilder$FinishUsingCallback)  |    -\>    |             当玩家使用完物品时              |   this   |
-|     useDuration(ToIntFunction\<ItemStack\>)     |    ~     |             关于物品的使用时间?             |   this   |
-|             useAnimation(UseAnim)              |    ~     |             物品在使用时的动画              |   this   |
+## Common Methods
+The methods below are available to all item types.
+Armor/tools and other special categories may have extra methods in their own chapters.
+### Frequently Used Methods
+|                             Method Call                              |   Args   |                         Purpose                         | Return Type |
+| :------------------------------------------------------------------: | :------: | :-----------------------------------------------------: | :---------: |
+|                          maxDamage(int)                              |    ->    | Set max durability                                      |    this     |
+|                   food(Consumer\<FoodBuilder\>)                      |    ->    | [Set item as food](./ItemType/food)                     |    this     |
+|                         maxStackSize(int)                            |    ->    | Set max stack size (can exceed 64, usually not advised) |    this     |
+|                        fireResistant(bool)                           |    ->    | Set whether item is fire resistant                      |    this     |
+|                        displayName(string)                           |    ->    | Set display name when no lang entry exists              |    this     |
+|                       tag(ResourceLocation)                          |    ->    | Add item tag                                            |    this     |
+|                          texture(string)                             |    ->    | Set item texture path                                   |    this     |
+|                           unstackable()                              |    -     | Make item unstackable                                   |    this     |
+|                           burnTime(int)                              |    -     | Set burn time in ticks (`0` means not burnable)         |    this     |
+| modifyAttribute(ResourceLocation,string,double,AttributeModifier)    |    ~     | Apply attribute modifiers                               |    this     |
+|                      createItemProperties()                          |    -     | Create item properties object                           |    Item     |
 
-### 关于渲染的方法
-|               方法调用               | 传入参数 |                 用处                 | 返回类型 |
-| :----------------------------------: | :------: | :----------------------------------: | :------: |
-|        modelJson(JsonObject)         |    -\>    | 设置模型的json(虽然但是不建议这么干) |   this   |
-|         parentModel(string)          |    ~     |          设置模型的父模型?           |   this   |
-|       textureJson(JsonObject)        |    -\>    |        设置物品的材质json ??         |   this   |
-| barWidth(ToIntFunction\<ItemStack\>)  |    ~     |             关于耐久条?              |   this   |
-| barColor(Function\<ItemStack\>,Color) |    ~     |           关于耐久条颜色?            |   this   |
-|              glow(bool)              |    -\>    |        设置物品是否有附魔光效        |   this   |
-|          tooltip(Component)          |    -\>    |             物品提示内容             |   this   |
 
-### 其他方法
-|                       方法调用                        |              传入参数              |        用处        |    返回类型     |
-| :---------------------------------------------------: | :--------------------------------: | :----------------: | :-------------: |
-|        hurtEnemy(Predicate\<HurtEnemyContext\>)        |                 -\>                 | 物品攻击实体生物时 |      this       |
-|                    rarity(Rarity)                     | [稀有度](../../Digression/Rarity) |   设置物品稀有度   |      this       |
-|                   getRegistryType()                   |                 -                  |    获取注册类型    | RegistryInfo<T\> |
-|        generateAssetJsons(AssetJsonGenerator)         |                 ?                  |         ?          |        -        |
-|         generateDataJsons(DataJsonGenerator)          |                 ?                  |         ?          |        -        |
-|                  name(NameCallback)                   |                 ~                  | 动态设置物品名字?  |      this       |
-|              color(int,ItemTintFunction)              |                 ?                  |         ?          |      this       |
-|                color(ItemTintFunction)                |                 ?                  |         ?          |      this       |
-|                 transformObject(Item)                 |                 ~                  |         ~          |      this       |
-| subtypes(Function\<ItemStack,Collection\<ItemStack\>\>) |                 ~                  |         ?          |      this       |
-|            containerItem(ResourceLocation)            |                 ~                  | 设置物品为容器???  |      this       |
+### Methods Triggered While Using the Item
+|                    Method Call                    |   Args   |                         Purpose                          | Return Type |
+| :-----------------------------------------------: | :------: | :------------------------------------------------------: | :---------: |
+|          use(ItemBuilder$UseCallback)             |    ->    | Called when player starts using the item                |    this     |
+| releaseUsing(ItemBuilder$ReleaseUsingCallback)    |    ->    | Called when player releases right-click before finish   |    this     |
+|  finishUsing(ItemBuilder$FinishUsingCallback)     |    ->    | Called when item use completes                          |    this     |
+|     useDuration(ToIntFunction\<ItemStack\>)       |    ~     | Set/use item use duration                               |    this     |
+|             useAnimation(UseAnim)                 |    ~     | Set use animation                                       |    this     |
 
-## 简单的注册物品轮子
+### Rendering-Related Methods
+|               Method Call               |   Args   |                   Purpose                    | Return Type |
+| :-------------------------------------: | :------: | :------------------------------------------: | :---------: |
+|        modelJson(JsonObject)            |    ->    | Set model JSON (possible, but not recommended) |   this    |
+|         parentModel(string)             |    ~     | Set parent model                             |    this     |
+|       textureJson(JsonObject)           |    ->    | Set texture JSON                             |    this     |
+| barWidth(ToIntFunction\<ItemStack\>)    |    ~     | Durability bar width logic                   |    this     |
+| barColor(Function\<ItemStack\>,Color)   |    ~     | Durability bar color logic                   |    this     |
+|              glow(bool)                 |    ->    | Set enchanted glint effect                   |    this     |
+|          tooltip(Component)             |    ->    | Set item tooltip content                     |    this     |
 
-**注:以下内容根据个人习惯选择性使用和更改**
+### Other Methods
+|                       Method Call                         |                Args                 |           Purpose           |   Return Type    |
+| :-------------------------------------------------------: | :---------------------------------: | :-------------------------: | :--------------: |
+|        hurtEnemy(Predicate\<HurtEnemyContext\>)           |                 ->                  | Trigger when item hits mob  |       this       |
+|                    rarity(Rarity)                         | [Rarity](../../Digression/Rarity)  | Set item rarity             |       this       |
+|                   getRegistryType()                       |                  -                  | Get registry type           | RegistryInfo<T\> |
+|        generateAssetJsons(AssetJsonGenerator)             |                  ?                  | ?                           |        -         |
+|         generateDataJsons(DataJsonGenerator)              |                  ?                  | ?                           |        -         |
+|                  name(NameCallback)                       |                  ~                  | Dynamic item name           |       this       |
+|              color(int,ItemTintFunction)                  |                  ?                  | ?                           |       this       |
+|                color(ItemTintFunction)                    |                  ?                  | ?                           |       this       |
+|                 transformObject(Item)                     |                  ~                  | ~                           |       this       |
+| subtypes(Function\<ItemStack,Collection\<ItemStack\>\>)    |                  ~                  | ?                           |       this       |
+|            containerItem(ResourceLocation)                |                  ~                  | Set container item          |       this       |
+
+## Simple Item Registration Helper Pattern
+
+**Note: adapt this pattern based on your own style.**
 
 ```js
 StartupEvents.registry("item", (event) => {
-	// ModID声明如果选择不更改ModID(默认即"kubejs")直接把ModID这个变量取消
+	// ModID declaration. If you want default "kubejs", remove this variable.
 	const MODID = "meng:"
 
-	/* 
-	* 定义物品
-	* 在添加下一个物品时要记得在[]后加上逗号
-	* 并且一定要严格按照格式进行
-	* [物品id, 稀有度类型, 是否有附魔光效]
+	/*
+	* Define items
+	* Add a comma after each [] entry when adding more items
+	* Keep the format strict:
+	* [itemId, rarityType, hasGlow]
 	*/
 	let itemRegisters = [
 		["example_item", "common", false],
 	]
 	itemRegisters.forEach(([name, rarity, glow]) => {
-		event.create(MODID + name) // 声明id
-			.rarity(rarity) // 稀有度
-			.glow(glow) // 是否有附魔光效
-			.tag(MODID + "items") // 添加物品tag(可选)
+		event.create(MODID + name) // declare id
+			.rarity(rarity) // rarity
+			.glow(glow) // enchanted glint
+			.tag(MODID + "items") // add item tag (optional)
 	})
 })
 ```

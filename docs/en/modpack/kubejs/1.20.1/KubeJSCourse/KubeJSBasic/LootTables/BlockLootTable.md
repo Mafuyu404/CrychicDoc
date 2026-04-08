@@ -1,10 +1,10 @@
 ---
 authors: ['Gu-meng']
 ---
-# 方块掉落
-在mc中方块掉落也属于战利品，我们可以想到并不是在有的时候方块挖掘后并不是掉落它本身，甚至有的可以受到时运影响而掉落更多，因为它本质上就是战利品，方块掉落什么取决于战利品池里抽到什么
-## 覆盖方块掉落
-下面给大家写一个类似于幸运方块的随机物品掉落效果
+# Block Loot
+In Minecraft, block drops are also loot tables. A mined block does not always drop itself, and some drops can be affected by Fortune. What drops depends on what is rolled from the loot pool.
+## Override Block Loot
+The following example creates a Lucky-Block-like random item drop behavior:
 ```js
 ServerEvents.blockLootTables(e=>{
     Block.getTypeList().forEach(block=>{
@@ -18,10 +18,10 @@ ServerEvents.blockLootTables(e=>{
     })
 })
 ```
-在上面代码中我们将所有方块挖掘后的掉落全部改成了随机掉落我的世界中的物品
+In this example, all mined blocks are changed to drop random Minecraft items.
 
-## 在原有的里增加
-下面是在原本泥土的掉落物里增加物品，使其只会掉落泥土和增加的物品
+## Add to Existing Loot
+The following adds entries to dirt's original loot so it can drop dirt plus the added item:
 ```js
 ServerEvents.blockLootTables(e=>{
     e.modifyBlock('minecraft:dirt',loot=>{
@@ -34,4 +34,4 @@ ServerEvents.blockLootTables(e=>{
     })
 })
 ```
-在kubejs-forge-2001.6.5-build.14的版本中直接使用`JsonArray.add()`会报错,所以这里使用addAll,因为addAll需要传入一个数组，所以上面的物品json得再用[]包裹起来，这样就可以添加进去了
+In `kubejs-forge-2001.6.5-build.14`, using `JsonArray.add()` directly may throw an error. This example uses `addAll` instead. Since `addAll` needs an array, the entry JSON is wrapped in `[]`.

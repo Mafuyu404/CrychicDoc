@@ -1,7 +1,12 @@
 {
   "_self_": false,
   "Attribute.md": false,
-  "Catalogue.md": false,
   "PotionEffects.md": false,
-  "Spawn.md": false
+  "Spawn.md": false,
+  "Methods.md": false,
+  "Goal.md": false,
+  "Brain.md": false,
+  "Mob.md": false,
+  "LivingEntity.md": false,
+  "Player.md": false
 }

@@ -1,3 +1,9 @@
 {
-  "_self_": "Recipe"
+  "_self_": "Recipes",
+  "AddRecipe/": "AddRecipe",
+  "DeleteRecipe.md": "DeleteRecipe",
+  "ItemAndIngredient.md": "ItemAndIngredient",
+  "ModifyRecipe.md": "ModifyRecipe",
+  "RecipeFilter.md": "RecipeFilter",
+  "Vanilla.md": "Vanilla"
 }

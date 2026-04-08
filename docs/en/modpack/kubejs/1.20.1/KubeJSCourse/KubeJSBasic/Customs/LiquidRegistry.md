@@ -1,106 +1,106 @@
 ---
 authors: ['Gu-meng']
 ---
-# 注册流体
-在kubejs当中使用下面一行代码进行流体的添加注册
+# Register Fluids
+Use the following code in KubeJS to register a fluid:
 ```js
 StartupEvents.registry("fluid",event =>{
     event.create("meng:my_fluid")
 })
 ```
-在使用kubejs创建流体时，kubejs会默认为你注册一个流体桶
+When creating a fluid with KubeJS, a fluid bucket is registered by default.
 
-创建流体后我们可以为流体添加上以下属性
-## 属性方法
-|              方法名              |  方法参数  |                           参数描述                           |                   方法作用                   |          返回类型           | 测试是否成功 |
+After creating a fluid, you can set the following properties.
+## Property Methods
+|            Method Name           | Parameter  |                    Parameter Description                    |                     Usage                    |         Return Type         | Tested |
 | :------------------------------: | :--------: | :----------------------------------------------------------: | :------------------------------------------: | :-------------------------: | :----------: |
-|            gaseous()             |     -      |                              -                               |                设置流体为气态                |            this             |     ???      |
-|        rarity(arityType)         |   稀有度   |                              -                               | 设置[流体的稀有度](../../Digression/Rarity.md) |            this             |     ???      |
-|        getRegistryType()         |     -      |                              -                               |                获取注册表类型                |        RegistryInfo         |      -       |
-|           color(Color)           |    颜色    | 可以使用默认的字符串也可以使用16进制颜色代码(0Xffffff--白色) |                给流体设置颜色                |            this             |      -       |
-|          createObject()          |     -      |                              -                               |                      ?                       |            this             |     ???      |
-|           density(int)           |    整型    |                              -                               |            设置流体的粘稠度/密度             |            this             |     失败     |
-|          translucent()           |     -      |                              -                               |              设置流体为半透明的              |            this             |     失败     |
-|         luminosity(int)          |    整型    |                             亮度                             |                设置流体的亮度                |            this             |     失败     |
-|        bucketColor(Color)        |    颜色    |                             同上                             |                 设置桶的颜色                 |            this             |     成功     |
-|        builtinTextures()         |     -      |                              -                               |                      ?                       |            this             |     ???      |
-|        createAttributes()        |     -      |                              -                               |                 创建属性???                  | ArchitecturyFluidAttributes |     ???      |
-|            noBucket()            |     -      |                              -                               |                 不需要生成桶                 |            this             |     成功     |
-|            noBlock()             |     -      |                              -                               |               不需要生成流体块               |            this             |     成功     |
-|        thinTexture(Color)        |    颜色    |                             同上                             |    设置全局颜色包括桶和流体颜色(水的材质)    |            this             |     成功     |
-|       thickTexture(Color)        |    颜色    |                             同上                             |   设置全局颜色包括桶和流体颜色(岩浆的材质)   |            this             |     成功     |
-|  stillTexture(ResourceLocation)  | 材质路径id |                              -                               |             设置流体静止时的材质             |            this             |      -       |
-| flowingTexture(ResourceLocation) | 材质路径id |                              -                               |             设置流体流动时的材质             |            this             |      -       |
-|          viscosity(int)          |    整型    |                              -                               |      设置流体的粘性程度(类似于岩浆那种)      |            this             |     失败     |
-|         renderType(str)          |   字符串   |                              ?                               |                      ?                       |            this             |     ???      |
-|    createAdditionalObjects()     |     -      |                              -                               |                      ?                       |            this             |     ???      |
-|         temperature(int)         |    整型    |                              -                               |                设置流体的温度                |            this             |     失败     |
-|         displayName(str)         |   字符串   |                              -                               |      设置在没有lang文件时直接显示的名字      |            成功             |
-|           flowingFluid           |     -      |                         直接调用参数                         |                      ?                       |     FlowingFluidBuilder     |      -       |
-|            attributes            |     -      |                         直接调用参数                         |                      ?                       | ArchitecturyFluidAttributes |      -       |
-|              block               |     -      |                         直接调用参数                         |                   流体方块                   |      FluidBlockBuilder      |      -       |
-|            bucketItem            |     -      |                         直接调用参数                         |                  流体桶物品                  |   FluidBucketItemBuilder    |      -       |
+|            gaseous()             |     -      |                              -                               | Set fluid to gaseous                          |            this             |     ???      |
+|        rarity(arityType)         |   Rarity   |                              -                               | Set [fluid rarity](../../Digression/Rarity.md)|            this             |     ???      |
+|        getRegistryType()         |     -      |                              -                               | Get registry type                             |        RegistryInfo         |      -       |
+|           color(Color)           |    Color   | Use color string or hex code (`0Xffffff` = white)           | Set fluid color                               |            this             |      -       |
+|          createObject()          |     -      |                              -                               | ?                                             |            this             |     ???      |
+|           density(int)           |   Integer  |                              -                               | Set fluid thickness/density                   |            this             |     Failed   |
+|          translucent()           |     -      |                              -                               | Set fluid translucent                         |            this             |     Failed   |
+|         luminosity(int)          |   Integer  |                           Brightness                         | Set fluid luminosity                          |            this             |     Failed   |
+|        bucketColor(Color)        |    Color   |                          Same as above                       | Set bucket color                              |            this             |     Success  |
+|        builtinTextures()         |     -      |                              -                               | ?                                             |            this             |     ???      |
+|        createAttributes()        |     -      |                              -                               | Create attributes ???                         | ArchitecturyFluidAttributes |     ???      |
+|            noBucket()            |     -      |                              -                               | Do not generate a bucket                      |            this             |     Success  |
+|            noBlock()             |     -      |                              -                               | Do not generate a fluid block                 |            this             |     Success  |
+|        thinTexture(Color)        |    Color   |                          Same as above                       | Set global color for bucket+fluid (water type)|           this             |     Success  |
+|       thickTexture(Color)        |    Color   |                          Same as above                       | Set global color for bucket+fluid (lava type) |           this             |     Success  |
+|  stillTexture(ResourceLocation)  | Texture id |                              -                               | Set still fluid texture                       |            this             |      -       |
+| flowingTexture(ResourceLocation) | Texture id |                              -                               | Set flowing fluid texture                     |            this             |      -       |
+|          viscosity(int)          |   Integer  |                              -                               | Set fluid viscosity (similar to lava)         |            this             |     Failed   |
+|         renderType(str)          |   String   |                              ?                               | ?                                             |            this             |     ???      |
+|    createAdditionalObjects()     |     -      |                              -                               | ?                                             |            this             |     ???      |
+|         temperature(int)         |   Integer  |                              -                               | Set fluid temperature                         |            this             |     Failed   |
+|         displayName(str)         |   String   |                              -                               | Display name without lang file                |            Success          |
+|           flowingFluid           |     -      |                       Direct-access field                    | ?                                             |     FlowingFluidBuilder     |      -       |
+|            attributes            |     -      |                       Direct-access field                    | ?                                             | ArchitecturyFluidAttributes |      -       |
+|              block               |     -      |                       Direct-access field                    | Fluid block                                   |      FluidBlockBuilder      |      -       |
+|            bucketItem            |     -      |                       Direct-access field                    | Fluid bucket item                             |   FluidBucketItemBuilder    |      -       |
 
-以上属性可能不全，详细以probejs导出为例
+These properties may not be complete. Refer to ProbeJS exports for the full list.
 
-# 注册示例
+# Registration Examples
 ```js
 StartupEvents.registry("fluid", (event) =>{
-    //设置流体为熔岩的材质颜色为粉色
+    // Set lava-style texture color to pink
     event.create("meng:my_fluid")
 		.thickTexture(0Xff82e0)
-    //设置流体为水分材质颜色为粉色
+    // Set water-style texture color to pink
     event.create("meng:my_fluid2")
 		.thinTexture(0Xff82e0)
-    //设置流体为绿色不生成流体块
+    // Set fluid color to green and do not generate a fluid block
     event.create("meng:my_fluid4")
 		.thickTexture("GREEN")
 		.noBlock()
-    //设置流体为蓝色不生成桶
+    // Set fluid color to blue and do not generate a bucket
     event.create("meng:my_fluid5")
 		.thinTexture("BLUE")
 		.noBucket()
-    //设置流体为粉色但是桶的颜色为黄色
+    // Set fluid to pink but bucket color to yellow
     event.create("meng:my_fluid6")
 		.thickTexture(0Xff82e0)
 		.bucketColor("yellow")
 })
 ```
-## lang文件
+## Lang File
 ```json
 {
-    "fluid.meng.my_fluid": "孤梦的流体",
-    "item.meng.my_fluid_bucket": "孤梦的流体桶"
+    "fluid.meng.my_fluid": "GuMeng's Fluid",
+    "item.meng.my_fluid_bucket": "GuMeng's Fluid Bucket"
 }
 ```
 
-### 简单的注册流体轮子
+### Simple Fluid Registration Helper
 
-**注:以下内容根据个人习惯选择性使用和更改**
+**Note: The following is optional and can be adjusted to your own style.**
 
 ```js
 StartupEvents.registry("fluid", (event) => {
-	// ModID声明如果选择不更改ModID(默认即"kubejs")直接把ModID这个变量取消
+	// ModID declaration. If you keep the default ("kubejs"), remove this variable.
 	const MODID = "meng:"
-	// 路径常量
+	// Path constant
 	const PATH = "block/fluid/"
 	
 	/* 
-	* 定义流体
-	* 在添加下一种流体时要记得在[]后加上逗号
-	* 并且一定要严格按照格式进行
-	* [流体id, 颜色]
+	* Define fluids
+	* Add a comma after [] when adding the next fluid
+	* Keep the exact format:
+	* [fluid_id, color]
 	*/
 	let fluidRegisters = [
 		["example_fluid", 0x808080],
 	]
 	fluidRegisters.forEach(([name, color]) => {
-		event.create(MODID + name) // 声明id
-			.thickTexture(color) // 流体颜色
-			.bucketColor(color) // 桶内流体颜色
-			.flowingTexture(MODID + PATH + "flowing") // 读取本地流体贴图文件,可在(/Code/This/kubejs/assets/meng/textures/block/fluid)下载(.mcmeta文件也要一起下载!)
-			.stillTexture(MODID + PATH + "still") // 读取本地流体贴图文件,可在(/Code/This/kubejs/assets/meng/textures/block/fluid)下载(.mcmeta文件也要一起下载!)
-			.tag(MODID + "fluid") // 添加流体tag(可选)
+		event.create(MODID + name) // Declare id
+			.thickTexture(color) // Fluid color
+			.bucketColor(color) // Color of fluid inside bucket
+			.flowingTexture(MODID + PATH + "flowing") // Use local fluid texture (.mcmeta is also required)
+			.stillTexture(MODID + PATH + "still") // Use local fluid texture (.mcmeta is also required)
+			.tag(MODID + "fluid") // Add fluid tag (optional)
 	})
 })
 ```

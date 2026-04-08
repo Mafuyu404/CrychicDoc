@@ -1,164 +1,166 @@
 ---
 authors: ['Gu-meng']
 ---
-# 方块注册
-kubejs可以在startup_scripts文件夹内创建去创建方块，注意所有的添加自定义的操作都是无法热加载的，写完之后需要重启游戏后才会加载进游戏内
-## 基础写法
-在kubejs当中注册方块是一件很容易的事情,它只需要下面这一行代码就可以注册好方块
+# Block Registration
+KubeJS can register blocks from the `startup_scripts` folder. Note: custom registrations cannot be hot-reloaded. After writing registration code, you must restart the game for it to take effect.
+
+## Basic Syntax
+Registering a block in KubeJS is straightforward. The simplest form looks like:
 ```js
 StartupEvents.registry("block", (event) => {
-    //event.create(方块id, 方块类型)
+    // event.create(blockId, blockType)
     event.create("meng:my_block", "basic")
 })
 ```
-上面的代码中我们选择的是方块注册，将方块id设置为`"meng:my_block"`，这里前面的`meng`是[命名空间](../../Digression/NameSpace),主要关系到我们之后去添加[材质贴图](../../Resources/Texture)和[本地化(lang文件)](../../Resources/Lang.md)的路径
+In the code above, we register a block with id `"meng:my_block"`. The `meng` prefix is the [namespace](../../Digression/NameSpace). It matters for paths when you later add [textures](../../Resources/Texture) and [localization (lang files)](../../Resources/Lang.md).
 
-## 方块类型
-我们的方块类型设置的为`basic`也就是默认的、基本的方块类型，在kubejs中已经给我们提供了不少的方块类型，如下
-|       类型       |            描述            |  示例  |
+## Block Types
+Here we used the `basic` type (the default/basic block type). KubeJS provides multiple block types:
+|      Type      |          Description          | Example |
 | :--------------: | :------------------------: | :----: |
-|     `basic`      |          基础方块          | 待更新 |
-|     `carpet`     |            地毯            | 待更新 |
-|      `crop`      |           农作物           | [作物篇](./BlockType/CropReg.md) |
-|     `fence`      |            栅栏            | 待更新 |
-|   `fence_gate`   |           栅栏门           | 待更新 |
-| `pressure_plate` |           压力板           | 待更新 |
-|     `button`     |            按钮            | 待更新 |
-|      `slab`      |            台阶            | 待更新 |
-|     `stairs`     |            楼梯            | 待更新 |
-|      `wall`      |             墙             | 待更新 |
-|    `cardinal`    | 朝向方块(类似讲台、熔炉等) | 待更新 |
-|    `detector`    |         检测方块?          | 待更新 |
-|    `falling`     |      下落方块(类沙子)      | 待更新 |
+|     `basic`      | Basic block                 | TBD |
+|     `carpet`     | Carpet                      | TBD |
+|      `crop`      | Crop                        | [Crop registration](./BlockType/CropReg.md) |
+|     `fence`      | Fence                       | TBD |
+|   `fence_gate`   | Fence gate                  | TBD |
+| `pressure_plate` | Pressure plate              | TBD |
+|     `button`     | Button                      | TBD |
+|      `slab`      | Slab                        | TBD |
+|     `stairs`     | Stairs                      | TBD |
+|      `wall`      | Wall                        | TBD |
+|    `cardinal`    | Facing block (lectern, furnace, etc.) | TBD |
+|    `detector`    | Detector block?             | TBD |
+|    `falling`     | Falling block (sand-like)   | TBD |
 
-在kubejs中，你并不用为方块单独去注册物品，kubejs已经帮你把方块物品注册好了，所以你可以直接获取到方块的物品，且物品id和方块id是一样的，在准备材质时，只需要准备方块的材质就可以了，无需单独为方块物品准备材质
-## 通用方法参数
-通用方法参数指的是不管什么类型的方块都可以调用到下面的方法
+In KubeJS, you do not need to register the corresponding block item separately. KubeJS registers the block item for you automatically, and its item id matches the block id. When preparing textures, you generally only need the block textures, not separate block-item textures.
 
-### 常用
-|                       方法                        |              参数               |                      描述                      | 返回类型 |
+## Common Builder Methods
+These methods can be used for blocks of any type.
+
+### Common
+|                      Method                       |              Args               |                   Description                    | Return |
 | :-----------------------------------------------: | :-----------------------------: | :--------------------------------------------: | :------: |
-|   `randomTick(Consumer\<RandomTickCallbackJS>)`   |                -                |                  方块随机tick                  |   this   |
-|        `lootTable(Consumer\<LootBuilder>)`        |                -                |                 方块战利品构建                 |    ~     |
-|           `tagBlock(ResourceLocation)`            | [常用参数](#常用的tagblock参数) | 设置方块的标签(如可被挖掘的工具类型和挖掘等级) |   this   |
-|            `tagItem(ResourceLocation)`            |               ->                |               设置方块物品的tag                |   this   |
-|                    `noItem()`                     |                -                |                不生成对应的物品                |   this   |
-|             `displayName(Component)`              |               ->                |                  设置显示名字                  |   this   |
-|                `lightLevel(float)`                |               ->                |                  设置光照等级                  |   this   |
-|     `blockEntity(Consumer\<BlockEntityInfo>)`     |                -                |                 创建为方块实体                 |   this   |
-| `rightClick(Consumer\<BlockRightClickedEventJS>)` |                -                |                  方块右键事件                  |   this   |
-|                    `noDrops()`                    |                -                |                该方块的无掉落物                |   this   |
-|                 `hardness(float)`                 |               ->                |             设置方块硬度(默认1.5)              |   this   |
-|               `speedFactor(float)`                |               ->                |         设置方块速度(高于1会速度很快)          |   this   |
-|                `jumpFactor(float)`                |               ->                |                设置方块跳跃高度                |   this   |
-|               `noValidSpawns(bool)`               |               ->                |             该方块上是否会生成生物             |   this   |
-|                   `notSolid()`                    |                -                |                 使块不坚固???                  |   this   |
-|                  `unbreakable()`                  |                -                |                 使方块无法破坏                 |   this   |
-|                `resistance(float)`                |               ->                |          设置方块的耐爆炸性(默认为3)           |   this   |
-|                 `requiresTool()`                  |                -                |       设置方块需要对应的工具挖掘才会掉落       |   this   |
+|   `randomTick(Consumer\<RandomTickCallbackJS>)`   |                -                | Random tick callback                            |   this   |
+|        `lootTable(Consumer\<LootBuilder>)`        |                -                | Build a loot table for the block                |    ~     |
+|           `tagBlock(ResourceLocation)`            | [Common args](#common-tagblock-parameters) | Add block tags (mineable tool type, mining level, etc.) | this |
+|            `tagItem(ResourceLocation)`            |               ->                | Add tags to the block item                      |   this   |
+|                    `noItem()`                     |                -                | Do not generate the corresponding item          |   this   |
+|             `displayName(Component)`              |               ->                | Set display name                                |   this   |
+|                `lightLevel(float)`                |               ->                | Set light level                                 |   this   |
+|     `blockEntity(Consumer\<BlockEntityInfo>)`     |                -                | Create a block entity                           |   this   |
+| `rightClick(Consumer\<BlockRightClickedEventJS>)` |                -                | Right-click handler                             |   this   |
+|                    `noDrops()`                    |                -                | No drops when broken                            |   this   |
+|                 `hardness(float)`                 |               ->                | Set hardness (default 1.5)                      |   this   |
+|               `speedFactor(float)`                |               ->                | Set speed factor (greater than 1 is faster)     |   this   |
+|                `jumpFactor(float)`                |               ->                | Set jump factor                                 |   this   |
+|               `noValidSpawns(bool)`               |               ->                | Whether mobs can spawn on this block            |   this   |
+|                   `notSolid()`                    |                -                | Make the block non-solid (?)                    |   this   |
+|                  `unbreakable()`                  |                -                | Make the block unbreakable                      |   this   |
+|                `resistance(float)`                |               ->                | Explosion resistance (default 3)                |   this   |
+|                 `requiresTool()`                  |                -                | Require a proper tool for drops                 |   this   |
 
-#### 常用的tagBlock()参数
-* 挖掘需要的对应工具
+#### Common `tagBlock()` Parameters
+* Required tool tag
 
-> 如果方块没有requiresTool()，则使用对应工具可以加快挖掘速度
+> If a block does not use `requiresTool()`, using the right tool only speeds up mining.
 > 
-> 如果方块有requiresTool()，则需使用对应工具才可掉落
+> If a block uses `requiresTool()`, you must use the right tool to get drops.
 
-|              参数              | 对应工具类型 |
+|             Tag               | Tool |
 | :----------------------------: | :----------: |
-|  `"minecraft:mineable/sword"`  |      剑      |
-| `"minecraft:mineable/pickaxe"` |      镐      |
-|   `"minecraft:mineable/axe"`   |      斧      |
-| `"minecraft:mineable/shovel"`  |      锹      |
-|   `"minecraft:mineable/hoe"`   |      锄      |
+|  `"minecraft:mineable/sword"`  | Sword |
+| `"minecraft:mineable/pickaxe"` | Pickaxe |
+|   `"minecraft:mineable/axe"`   | Axe |
+| `"minecraft:mineable/shovel"`  | Shovel |
+|   `"minecraft:mineable/hoe"`   | Hoe |
 
-* 挖掘需要的工具品质
+* Required tool tier tag
 
-|               参数               |                需要的工具品质                |
+|              Tag               | Required tier |
 | :------------------------------: | :------------------------------------------: |
-| `"minecraft:needs_wooden_tool"`  |                      木                      |
-|  `"minecraft:needs_stone_tool"`  |                      石                      |
-|  `"minecraft:needs_iron_tool"`   |                      铁                      |
-| `"minecraft:needs_golden_tool"`  |                      金                      |
-| `"minecraft:needs_diamond_tool"` |                     钻石                     |
-|  `"forge:needs_netherite_tool"`  | 下界合金(由`Forge`提供的标签,fabric版本未知) |
+| `"minecraft:needs_wooden_tool"`  | Wooden |
+|  `"minecraft:needs_stone_tool"`  | Stone |
+|  `"minecraft:needs_iron_tool"`   | Iron |
+| `"minecraft:needs_golden_tool"`  | Golden |
+| `"minecraft:needs_diamond_tool"` | Diamond |
+|  `"forge:needs_netherite_tool"`  | Netherite (tag provided by `Forge`) |
 
-### 关于渲染相关
-|                            方法                             |                      参数                      |                描述                | 返回类型 |
+### Rendering / Collision
+|                           Method                            |                      Args                      |             Description            | Return |
 | :---------------------------------------------------------: | :--------------------------------------------: | :--------------------------------: | :------: |
 |    `box(double, double, double, double, double, double)`    |                       ~                        |                 ~                  |   this   |
 | `box(double, double, double, double, double, double, bool)` |                       ~                        |                 ~                  |   this   |
 |                      `defaultCutout()`                      |                       -                        |                 ~                  |   this   |
 |                   `defaultTranslucent()`                    |                       -                        |                 ~                  |   this   |
-|                     `transparent(bool)`                     |                       ->                       |            方块是否透明            |   this   |
-|                       `noCollision()`                       |                       -                        |          设置方块无碰撞箱          |   this   |
-|                    `renderType(string)`                     | "cutout"/"cutout_mipped"/"translucent"/"basic" |    选择渲染类型，一共就前面四种    |   this   |
-|                       `model(string)`                       |                       ->                       |           模型的位置路径           |   this   |
+|                     `transparent(bool)`                     |                       ->                       | Whether the block is transparent   |   this   |
+|                       `noCollision()`                       |                       -                        | No collision box                   |   this   |
+|                    `renderType(string)`                     | "cutout"/"cutout_mipped"/"translucent"/"basic" | Choose render type (these four)    |   this   |
+|                       `model(string)`                       |                       ->                       | Model path                         |   this   |
 |                    `viewBlocking(bool)`                     |                       ~                        |                 ~                  |   this   |
-|                      `fullBlock(bool)`                      |                       ->                       |       设置方块是否为完整的块       |   this   |
-|                       `opaque(bool)`                        |                       ->                       | 设置方块是否透明(光线是否能够穿过) |   this   |
+|                      `fullBlock(bool)`                      |                       ->                       | Whether this is a full cube        |   this   |
+|                       `opaque(bool)`                        |                       ->                       | Whether light can pass through     |   this   |
 |                     `material(string)`                      |                       ->                       |                 ?                  |   this   |
 
-### 声音类型
-|          方法          | 参数  |    描述    | 返回类型 |
+### Sound Types
+|          Method        | Args  | Description | Return |
 | :--------------------: | :---: | :--------: | :------: |
-|   `glassSoundType()`   |   -   |  玻璃音效  |   this   |
-|   `grassSoundType()`   |   -   |  草地音效  |   this   |
-|   `sandSoundType()`    |   -   |  沙子音效  |   this   |
-|   `stoneSoundType()`   |   -   |  石头音效  |   this   |
-|  `gravelSoundType()`   |   -   |  沙砾音效  |   this   |
-|   `cropSoundType()`    |   -   |  作物音效  |   this   |
-|   `woodSoundType()`    |   -   |  木头音效  |   this   |
-|    `noSoundType()`     |   -   |  没有音效  |   this   |
-| `soundType(SoundType)` |  ->   | 自定义音效 |   this   |
+|   `glassSoundType()`   |   -   | Glass sound |   this   |
+|   `grassSoundType()`   |   -   | Grass sound |   this   |
+|   `sandSoundType()`    |   -   | Sand sound  |   this   |
+|   `stoneSoundType()`   |   -   | Stone sound |   this   |
+|  `gravelSoundType()`   |   -   | Gravel sound |  this   |
+|   `cropSoundType()`    |   -   | Crop sound  |   this   |
+|   `woodSoundType()`    |   -   | Wood sound  |   this   |
+|    `noSoundType()`     |   -   | No sound    |   this   |
+| `soundType(SoundType)` |  ->   | Custom sound |  this   |
 
-### 其他
-|                               方法                               | 参数  |                 描述                 |         返回类型          |
+### Other
+|                               Method                              | Args  |              Description              | Return |
 | :--------------------------------------------------------------: | :---: | :----------------------------------: | :-----------------------: |
 |       `mirrorState(Consumer\<BlockStateMirrorCallbackJS>)`       |   ~   |                  ~                   |           this            |
 |       `rotateState(Consumer\<BlockStateRotateCallbackJS>)`       |   ~   |                  ~                   |           this            |
-|                       `bounciness(float)`                        |   ~   |             弹力？粘性？             |           this            |
-|       `canBeReplaced(Predicate\<CanBeReplacedCallbackJS>)`       |   ~   |          设置块是可以被替换          |           this            |
-| `placementState(Consumer\<BlockStateModifyPlacementCallbackJS>)` |   ~   |             放置方块事件             |           this            |
-|      `steppedOn(Consumer\<EntitySteppedOnBlockCallbackJS>)`      |   ~   |             方块踩踏事件             |           this            |
+|                       `bounciness(float)`                        |   ~   | Bounciness / elasticity              |           this            |
+|       `canBeReplaced(Predicate\<CanBeReplacedCallbackJS>)`       |   ~   | Whether this block can be replaced   |           this            |
+| `placementState(Consumer\<BlockStateModifyPlacementCallbackJS>)` |   ~   | Placement callback                   |           this            |
+|      `steppedOn(Consumer\<EntitySteppedOnBlockCallbackJS>)`      |   ~   | Entity stepped-on callback           |           this            |
 |  `afterFallenOn(Consumer\<AfterEntityFallenOnBlockCallbackJS>)`  |   -   |                  ~                   |           this            |
-|       `fallenOn(Consumer\<EntityFallenOnBlockCallbackJS>)`       |   -   |            方块下落时事件            |           this            |
+|       `fallenOn(Consumer\<EntityFallenOnBlockCallbackJS>)`       |   -   | Entity fell on block callback        |           this            |
 |                   `tagBoth(ResourceLocation)`                    |   ~   |                  ~                   |           this            |
-|      `defaultState(Consumer\<BlockStateModifyCallbackJS>)`       |   -   |            方块的默认状态            |           this            |
-|          `exploded(Consumer\<BlockExplodedCallbackJS>)`          |   ~   | 方块爆炸后的事件(此时方块已经被摧毁) |           this            |
-|                       `canBeWaterlogged()`                       |   -   |           方块是否被水淹没           |           bool            |
-|                 `textureSide(Direction,string)`                  |   ~   |           设置特定面的材质           |           this            |
-|                       `mapColor(MapColor)`                       |  ->   |        设置方块在地图上的颜色        |           this            |
-|                    `redstoneConductor(bool)`                     |  ->   |        设置方块是否是红石导体        |           this            |
-|                       `textureAll(string)`                       |  ->   |    用相同的纹理纹理块的所有方面?     |           this            |
-|                       `suffocating(bool)`                        |  ->   |       设置方块是否会让生物窒息       |           this            |
-|                      `slipperiness(float)`                       |   ~   |            设置块有多滑?             |           this            |
+|      `defaultState(Consumer\<BlockStateModifyCallbackJS>)`       |   -   | Default block state                  |           this            |
+|          `exploded(Consumer\<BlockExplodedCallbackJS>)`          |   ~   | Called after explosion (block already destroyed) | this |
+|                       `canBeWaterlogged()`                       |   -   | Whether this block can be waterlogged |          bool            |
+|                 `textureSide(Direction,string)`                  |   ~   | Set texture for a specific side      |           this            |
+|                       `mapColor(MapColor)`                       |  ->   | Map color                            |           this            |
+|                    `redstoneConductor(bool)`                     |  ->   | Whether this block is a redstone conductor | this |
+|                       `textureAll(string)`                       |  ->   | Use the same texture for all sides   |           this            |
+|                       `suffocating(bool)`                        |  ->   | Whether entities suffocate inside    |           this            |
+|                      `slipperiness(float)`                       |   ~   | How slippery the block is            |           this            |
 |                     `transformObject(Block)`                     |   ~   |                  ~                   |           Block           |
 |                     `texture(string,string)`                     |   ~   |                  ~                   |           this            |
-|                   `property(BlockProperties)`                    |  ->   |             设置方块属性             |           this            |
-|               `item(Consumer\<BlockItemBuilder>)`                |   -   |            方块的物品构建            |           this            |
-|                     `tag(ResourceLocation)`                      |  ->   |            设置方块的tag             |           this            |
-|                  `color(int,BlockTintFunction)`                  |   ~   |         设置块的特定层的颜色         |           this            |
+|                   `property(BlockProperties)`                    |  ->   | Set block properties                 |           this            |
+|               `item(Consumer\<BlockItemBuilder>)`                |   -   |            Block item builder            |           this            |
+|                     `tag(ResourceLocation)`                      |  ->   | Set block tags                       |           this            |
+|                  `color(int,BlockTintFunction)`                  |   ~   | Set tint color for a specific layer  |           this            |
 |                    `color(BlockTintFunction)`                    |   ~   |                  ~                   |           this            |
 |                       `createProperties()`                       |   -   |                  ?                   | BlockBehaviour$Properties |
 |              `generateDataJsons(DataJsonGenerator)`              |   ~   |                  ~                   |             -             |
 |             `generateAssetJsons(AssetJsonGenerator)`             |   ~   |                  ~                   |             -             |
 |                       `getRegistryType()`                        |   -   |                  ~                   |      RegistryInfo<>       |
-|                         `waterlogged()`                          |   -   |         设置块是可以被水淹没         |           this            |
-|                `instrument(NoteBlockInstrument)`                 |   ~   |             音符块乐器？             |           this            |
+|                         `waterlogged()`                          |   -   | Enable waterlogging                  |           this            |
+|                `instrument(NoteBlockInstrument)`                 |   ~   | Note block instrument?               |           this            |
 |                   `createAdditionalObjects()`                    |   -   |                  ~                   |             -             |
 
 
-### 简单的注册方块轮子
+### Simple Block Registration Helper
 
-**注:以下内容根据个人习惯选择性使用和更改**
+**Note: customize the snippet below to match your own preferences.**
 
 ```js
 StartupEvents.registry("block", (event) => {
-	// ModID声明如果选择不更改ModID(默认即"kubejs")直接把ModID这个变量取消
+	// ModID: if you do not want to change it (default is "kubejs"), remove this variable
 	const MODID = "meng:"
 
-	// 工具类型
+	// Tool tags
 	const toolType = {
 		sword: "minecraft:mineable/sword",
 		pickaxe: "minecraft:mineable/pickaxe",
@@ -167,7 +169,7 @@ StartupEvents.registry("block", (event) => {
 		hoe: "minecraft:mineable/hoe"
 	}
 
-	// 挖掘等级
+	// Mining tier tags
 	const miningLevel = {
 		wooden: "minecraft:needs_wooden_tool",
 		stone: "minecraft:needs_stone_tool",
@@ -178,25 +180,25 @@ StartupEvents.registry("block", (event) => {
 	}
 
 	/* 
-	* 定义方块
-	* 在添加下一个方块时要记得在[]后加上逗号
-	* 并且一定要严格按照格式进行
-	* [方块id, 声音类型, 硬度和爆炸抗性(这里我选择让他们共用一个数值), 工具类型, 挖掘等级]
+	* Block definitions
+	* When adding the next block, remember to add a comma after each array entry.
+	* Follow the format strictly:
+	* [blockName, soundType, hardnessAndResistance, toolTypeKey, miningTierKey]
 	*/
 	let blockRegisters = [
-		// 示例
+		// Example
 		["example_block", "stone", 3, "pickaxe", "wooden"],
 	]
 	blockRegisters.forEach(([name, soundType, hardness, tool, level]) => {
-		event.create(MODID + name) // 声明方块id
-			.soundType(soundType) // 声音类型
-			.hardness(hardness) // 硬度
-			.resistance(hardness) // 方块的耐爆炸性
-			.tagBlock(toolType[tool]) // 工具类型
-			.tagBlock(miningLevel[level])  // 挖掘等级
-			// .tagItem(MODID + "items") // 添加物品tag(可选)
-			// .tagItem(MODID + "blocks") // 添加物品tag(可选)
-			.requiresTool(true) // 必须要工具挖掘
+		event.create(MODID + name) // Block id
+			.soundType(soundType) // Sound type
+			.hardness(hardness) // Hardness
+			.resistance(hardness) // Explosion resistance
+			.tagBlock(toolType[tool]) // Tool type tag
+			.tagBlock(miningLevel[level])  // Mining tier tag
+			// .tagItem(MODID + "items") // Optional item tag
+			// .tagItem(MODID + "blocks") // Optional item tag
+			.requiresTool(true) // Require tool for drops
 	})
 })
 ```

@@ -1,6 +1,7 @@
 ---
 title: Hero 扩展手册
 description: 如何在 CrychicDoc 中扩展 Hero 排版、浮动元素、Shader、背景渲染器与导航搜索视觉。
+hidden: false
 ---
 
 # Hero 扩展手册

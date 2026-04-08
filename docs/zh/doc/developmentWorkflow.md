@@ -1,6 +1,7 @@
 ---
 title: 开发工作流
 description: CrychicDoc 框架层改动的推荐顺序、校验命令与同步规则。
+hidden: false
 ---
 
 # 开发工作流

@@ -1,7 +1,7 @@
 {
   "_self_": {
-    "valueHash": "a5b10124c73efb47be9e6410796d1e42",
-    "isUserSet": false,
+    "valueHash": "87180fd24367251e3efb506e90bb183c",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247315823
   },
@@ -11,13 +11,13 @@
     "isActiveInStructure": true
   },
   "Introduction/": {
-    "valueHash": "0796ba76b4b553687e5ffaeb78512ccb",
-    "isUserSet": false,
+    "valueHash": "1fa42afe88e8205372202517cf1dd43b",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "Upgrade/": {
-    "valueHash": "fa11f8c07c1629d5f0ab1cfecdf1f686",
-    "isUserSet": false,
+    "valueHash": "bdff74998729df2df34180108c8d4624",
+    "isUserSet": true,
     "isActiveInStructure": true
   },
   "kubejs-1.20.1/": {
@@ -72,6 +72,16 @@
   },
   "Description.md": {
     "valueHash": "36876a17fb93771f575eb20673de4be3",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "36876a17fb93771f575eb20673de4be3",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "KubeJSCourse/": {
+    "valueHash": "767fa455bb6826f4b550c21a6bca7182",
     "isUserSet": false,
     "isActiveInStructure": false
   }

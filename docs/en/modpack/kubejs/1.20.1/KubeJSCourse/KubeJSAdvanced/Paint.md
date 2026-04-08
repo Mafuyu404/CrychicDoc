@@ -1,4 +1,4 @@
 ---
 authors: ['Gu-meng']
 ---
-# 屏幕“绘画”
+# Screen "Painting"

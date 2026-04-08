@@ -1,6 +1,6 @@
 {
-  "_self_": "GlobalScope",
+  "_self_": "全局作用域",
   "Classes/": "类",
-  "ConstantsAndObjects/": "常量和对象",
+  "ConstantsAndObjects/": "常量与对象",
   "WrappedClasses/": "包装类"
 }

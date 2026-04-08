@@ -1,3 +1,11 @@
 {
-  "_self_": "模组"
+  "_self_": "模组",
+  "adventure/": "冒险模组",
+  "armor_tools/": "护甲与工具",
+  "cosmetic/": "装饰与外观",
+  "custom/": "定制内容",
+  "performance/": "性能优化",
+  "server/": "服务端模组",
+  "storages/": "存储与物流",
+  "tech/": "科技模组"
 }

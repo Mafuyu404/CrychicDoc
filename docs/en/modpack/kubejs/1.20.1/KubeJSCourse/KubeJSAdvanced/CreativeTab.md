@@ -1,44 +1,43 @@
 ---
 authors: ['Gu-meng']
 ---
-# 创造物品栏
-在创造模式下，玩家可以直接通过背包里的创造物品栏来选择拿去的物品类型或者一些模组会将物品放进自己的创造物品栏里，比如在原版内：活塞、按钮、拉杆等都是在红石的创造物品栏下方。
+# Creative Tabs
+In Creative mode, players can directly pick items from creative tabs in the inventory. Some mods also put items into their own tabs. For example, in vanilla Minecraft, pistons, buttons, and levers are in the Redstone tab.
 
-在本章中将会介绍如何去注册一个自己的创造物品栏和将物品添加挪动过去，以下代码都是在`startup_scripts`进行实现
+This chapter explains how to register your own creative tab and move/add items into it. All examples below are written in `startup_scripts`.
 
-## 注册创造物品栏
+## Register a Creative Tab
 ```js
 StartupEvents.registry("creative_mode_tab", (event) => {
-	// 注册创造物品栏，并给予创造物品栏id
+	// Register a creative tab and assign its ID
 	let tab = event.create("meng:items")
-	// 设置创造物品栏的图标,注意这里的物品一定要是存在的
+	// Set the creative tab icon (the item must exist)
 	tab.icon(() => Item.of("meng:hello_item"))
-	// 设置创造物品栏的显示名称,这里用的是本地化的键(在物品提示章节有提起过使用)
+	// Set the displayed name using a localization key
 	tab.displayName = Text.translatable("item_group.meng.items")
-	//往物品栏里添加物品
+	// Add items to the tab
 	tab.content(() => [
 		"meng:hello_item"
 	])
 })
 ```
 
-## 修改创造物品栏
-除了可以直接注册创造物品栏，然后将物品添加进去外，我们还可以直接修改创造物品栏
+## Modify a Creative Tab
+Besides registering your own tab and adding items, you can also modify an existing tab directly.
 ```js
-//第一个值填写的是创造物品栏的id(kjs的创造物品栏id为kubejs:tab)
+// The first argument is the creative tab ID (KubeJS tab ID is kubejs:tab)
 StartupEvents.modifyCreativeTab("meng:items", (event) => {
 	// code
 });
 ```
-### 修改创造物品栏提供的方法
-|              方法名              |         方法作用         |
+### Methods Available for Tab Modification
+|              Method              |        Description        |
 | :------------------------------: | :----------------------: |
-|     removeSearch(Ingredient)     |     匹配相符物品删除     |
-|        setIcon(ItemStack)        |   设置创造物品栏的图标   |
-| addBefore(ItemStack,ItemStack[]) |    在哪个物品之前添加    |
-|    removeDisplay(Ingredient)     |            -             |
-| addAfter(ItemStack,ItemStack[])  |    在哪个物品之后添加    |
-|    setDisplayName(Component)     | 设置创造物品栏的显示名称 |
-|          add(ItemStack)          |  添加物品进穿这个物品栏  |
-|        remove(Ingredient)        |  将物品从创造物品栏删除  |
-
+|     removeSearch(Ingredient)     | Remove matching items from search |
+|        setIcon(ItemStack)        | Set the creative tab icon |
+| addBefore(ItemStack,ItemStack[]) | Add before a specific item |
+|    removeDisplay(Ingredient)     | - |
+| addAfter(ItemStack,ItemStack[])  | Add after a specific item |
+|    setDisplayName(Component)     | Set the creative tab display name |
+|          add(ItemStack)          | Add items into this creative tab |
+|        remove(Ingredient)        | Remove items from the creative tab |

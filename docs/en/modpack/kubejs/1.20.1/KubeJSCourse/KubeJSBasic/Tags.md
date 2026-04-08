@@ -1,15 +1,16 @@
 ---
 authors: ['Gu-meng']
 ---
-# 添加和删除tag
+# Add and Remove Tags
 
-[关于tag介绍](../Digression/Tag.md)
+[Tag introduction](../Digression/Tag.md)
 
-在游戏内你将**橡木原木**拿在手中输入指令`/kjs hand`的时候会发现，除了物品id外还有其他的前面带 `#` 的id，这些就是tagId，我们可以将tag浅理解为“组”，比如**橡木原木**下面有一个tagid为`#minecraft:logs`，这个就是所有原木的“组”
+In-game, hold **oak log** and run `/kjs hand`. Besides the item id, you will also see ids that start with `#`. These are tag ids.
+You can think of tags as "groups". For example, `#minecraft:logs` is the group for all log items.
 
-常用的tag类型有：方块tag(block tag)，流体tag(fluid tag)和物品tag(item tag)
+Common tag types are block tags, fluid tags, and item tags.
 
-在游戏里我们可以这样修改已有物品的tag
+You can modify existing tags like this:
 ```js
 ServerEvents.tags("block",event=>{})
 
@@ -17,19 +18,19 @@ ServerEvents.tags("fluid",event=>{})
 
 ServerEvents.tags("item",event=>{})
 ```
-上面是常用的tag类型，在游戏里根据情况选择
+Choose the tag type based on your use case.
 
-## 示例
+## Example
 ```js
 ServerEvents.tags("item",event=>{
-    // 将橡木原木从原木的tag中去除
+    // Remove oak log from the logs tag
     event.remove("minecraft:logs",['minecraft:oak_log']);
-    // 删除所有木板的tag
+    // Remove all entries from the planks tag
     event.removeAll('minecraft:planks');
-    // 将基岩加入到原木的tag中
+    // Add bedrock to the logs tag
     event.add("minecraft:logs",['minecraft:bedrock']);
 })
 ```
-上方只演示了物品的tag的添加和删除
+The example above only shows item tag changes.
 
-在使用其他tag类型也是一样的，都是使用`remove` `removeAll` `add`这三个方法
+Other tag types work the same way, using `remove`, `removeAll`, and `add`.

@@ -1,11 +1,11 @@
 ---
 prev: false
 next: false
-title: publicServer
+title: Public Servers
 hidden: false
 priority: 0
 ---
 
-# 公益服
+# Public Servers
 
-该页面用于讨论KubeJS相关的公益服务器。
+Use this page to share and discuss public servers related to KubeJS.

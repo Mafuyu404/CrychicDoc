@@ -1,11 +1,11 @@
 ---
 prev: false
 next: false
-title: docError
+title: Documentation Errors
 hidden: false
 priority: 0
 ---
 
-# 文档纠错
+# Documentation Errors
 
-该页面用于报告和讨论KubeJS文档中的错误。
+Use this page to report and discuss issues in the KubeJS documentation.

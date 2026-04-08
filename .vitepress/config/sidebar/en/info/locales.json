@@ -1,4 +1,5 @@
 {
-  "_self_": "Info",
-  "doc/": "doc"
+  "_self_": "Info & Docs",
+  "doc/": "Doc Support",
+  "KubeJS/": "KubeJS"
 }

@@ -1,51 +1,53 @@
 ---
 authors: ['Gu-meng', 'Qi-Month']
 ---
-# 关于显示与隐藏
-此处介绍其他关于显示与隐藏方块的函数
+# About Showing and Hiding
+This page introduces additional functions for showing and hiding blocks.
  
-## 显示方块
+## Show Blocks
 
 ```js
-// 以从上面向下落的动画形式显示以 [2, 1, 1] 及 [1, 1, 2] 为对角组成的矩形区域内的方块
-// 并将该区域设置为 已显示状态
+// Show blocks in the rectangular area defined by [2, 1, 1] and [1, 1, 2],
+// using a top-down falling animation, and mark that area as shown
 scene.world.showSection([2, 1, 1, 1, 1, 2], Direction.down);
 
-// 以从上面向下落的动画形式显示 [2, 1, 1] 这一格的方块, 并将该格设置为 已显示状态
+// Show the block at [2, 1, 1] with a top-down falling animation,
+// and mark it as shown
 scene.world.showSection([2, 1, 1], Direction.down);
 
-// 同上
+// Same as above
 scene.world.showSection([2, 1, 1], Facing.down);
 
-// 同上
+// Same as above
 scene.world.showSection([2, 1, 1], 'down');
 ```
-关于方向 [Direction & Facing](../Internal/Facing.md)
+About directions: [Direction & Facing](../Internal/Facing.md)
 
-> 以下代码节录自 [scene_world_function.md](../Internal/SceneWorldFunction)
+> The following code is excerpted from [scene_world_function.md](../Internal/SceneWorldFunction)
 
 ```js
 showSection(arg0: Internal.Selection_, arg1: Internal.Direction_): void_;
 ```
 
-## 隐藏方块
+## Hide Blocks
 
 ```js
-// 以从上面向下落的动画形式隐藏 [2, 1, 1] 这一格的方块, 并将该格设置为 未显示状态
+// Hide the block at [2, 1, 1] with a top-down falling animation
+// and mark it as hidden
 scene.world.hideSection([2, 1, 1], 'down');
 ```
 
-> 以下代码节录自 [scene_world_function.md](../Internal/SceneWorldFunction)
+> The following code is excerpted from [scene_world_function.md](../Internal/SceneWorldFunction)
 
 ```js
 hideSection(arg0: Internal.Selection_, arg1: Internal.Direction_): void_;
 ```
 
-## 其余待做函数
+## Other Functions (To Be Documented)
 
-等待大佬编辑
+Waiting for future documentation updates.
 
-> 以下代码节录自 [scene_world_function.md](../Internal/SceneWorldFunction)
+> The following code is excerpted from [scene_world_function.md](../Internal/SceneWorldFunction)
 
 ```js
 hideIndependentSection(arg0: Internal.ElementLink_<Internal.WorldSectionElement>, arg1: Internal.Direction_, arg2: number): void_;

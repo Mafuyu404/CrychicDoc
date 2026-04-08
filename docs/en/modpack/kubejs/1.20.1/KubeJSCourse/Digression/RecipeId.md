@@ -1,22 +1,22 @@
 ---
 authors: ['Gu-meng']
 ---
-# 配方ID
+# Recipe ID
 
-* **关于Recipe ID(配方ID)**
-  * 配方ID往往是配方文件的所在目录,在开发中用于查看配方类型以及写法时显得尤为重要
-  * 常见的例子有删除配方,覆盖配方还有使用`custom`
-  * 在添加`JEI`后游戏内`F3+H`开启`高级提示框`后便可查看\
+* **About Recipe ID**
+  * A recipe ID usually corresponds to the recipe file path. It is very useful when checking recipe type and format during development.
+  * Common use cases include removing recipes, overriding recipes, and using `custom`.
+  * After installing `JEI`, enable advanced tooltips with `F3+H` and you can view recipe IDs in-game.\
     ![debug.png](/imgs/RecipeId/debug.png)
-  * 在JEI内随便打开一个配方文件将光标放在输出上便可查看\
+  * In JEI, open any recipe and hover the output to view the recipe ID.\
     ![id-view.png](/imgs/RecipeId/id-view.png)
-  * 根据上图浇筑铁锭的配方所示,根据配方ID我们可以得知配方文件就是 `ModFile.jar/data/tconstruct/recipes/smeltery/casting/metal/iron/ingot_gold_cast.json`
-  * JEI给我们提供了复制配方ID的按键,我们自行配置即可(默认没有绑定任何按键,按照自己的习惯绑定即可)\
+  * From the iron casting example above, the recipe ID tells us the file is `ModFile.jar/data/tconstruct/recipes/smeltery/casting/metal/iron/ingot_gold_cast.json`.
+  * JEI provides a keybind for copying recipe IDs. Configure it yourself (no default key is bound).\
     ![key-binding.png](/imgs/RecipeId/key-binding.png)
-  * `REI`和`EMI`其实也可以,但是本教程只教`JEI`,使用`REI`或`EMI`的朋友请自行在Mod设置内寻找相关按键
+  * `REI` and `EMI` can do similar things, but this tutorial only covers `JEI`. If you use `REI`/`EMI`, check mod settings for their keybinds.
 
 * **Example**
-    * 在写配方时后面加上`.id`方法时如果填入了原配方的ID会将原配方直接覆盖
+    * When writing a recipe, if you append `.id()` with an existing recipe ID, it will directly override the original recipe.
     ```js
     ServerEvents.recipes((event) => {
 		const { kubejs } = event.recipes
@@ -30,12 +30,12 @@ authors: ['Gu-meng']
 		}).id('tconstruct:common/materials/queens_slime_block_from_ingots')
 	})
     ```
-	修改前\
+	Before\
 	![contrast-1](/imgs/RecipeId/contrast-1.png)
-	修改后\
+	After\
 	![contrast-2](/imgs/RecipeId/contrast-2.png)
 
-    * 如果每个配方都写一个json会很麻烦且不好管理,所以同时也可以根据配方ID找到配方文件后直接复制里面的内容供`ServerEvents.recipes`事件的`custom`使用,典型的例子就是
+    * Writing every recipe as a separate JSON can be tedious and hard to manage. You can also find the recipe file by ID, then copy its JSON content into `ServerEvents.recipes` with `custom`, for example:
 
     ```js
     ServerEvents.recipes((event) => {
@@ -50,5 +50,5 @@ authors: ['Gu-meng']
         })
     })
     ```
-	* **注意在复制配方文件时一定要把前后的`{}`也一并复制上!**
-    * 提一嘴`custom`也可以使用配方ID进行配方覆盖,和上面一样,后面加个`.id`方法
+	* **When copying a recipe JSON, make sure to include the outer `{}` as well.**
+    * Also, `custom` can override by recipe ID too, same as above, by appending `.id()`.

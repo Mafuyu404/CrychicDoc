@@ -16,16 +16,16 @@ hero:
       link: /zh/doc/rules
     - theme: brand
       text: KubeJS
-      link: /zh/modpack/kubejs/
+      link: /zh/modpack/kubejs/Catalogue
     - theme: brand
       text: 模组
-      link: /zh/mods/
+      link: /zh/mods/Catalogue
     - theme: brand
       text: 整合包
-      link: /zh/modpack/
+      link: /zh/modpack/Catalogue
     - theme: brand
       text: 开发
-      link: /zh/develop/
+      link: /zh/develop/Catalogue
 
 features:
   - icon : 

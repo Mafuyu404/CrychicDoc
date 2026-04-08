@@ -3,7 +3,6 @@
   "AABB.md": "AABB",
   "Block.md": "方块类（Block）",
   "BlockStatePredicate.md": "方块状态谓词类（BlockStatePredicate）",
-  "Catalogue.md": "全局类",
   "Color.md": "颜色类（Color）",
   "Direction.md": "方向类（Direction）",
   "Facing.md": "面类（Facing）",

@@ -1,136 +1,136 @@
 ---
 authors: ['Gu-meng']
 ---
-# lang文件命名对照表
+# Language File Naming Chart
 
-|         **语言**         | **文件名** |
-| :----------------------: | :--------: |
-|       `南非荷兰语`       |  `af_za`   |
-|        `阿拉伯语`        |  `ar_sa`   |
-|     `阿斯图里亚斯语`     |  `ast_es`  |
-|       `阿塞拜疆语`       |  `az_az`   |
-|       `巴什基尔语`       |  `ba_ru`   |
-|       `巴伐利亚语`       |   `bar`    |
-|       `白俄罗斯语`       |  `be_by`   |
-|       `保加利亚语`       |  `bg_bg`   |
-|       `布列塔尼语`       |  `br_fr`   |
-|       `布拉邦特语`       |   `brb`    |
-|       `波斯尼亚语`       |  `bs_ba`   |
-|      `加泰罗尼亚语`      |  `ca_es`   |
-|         `捷克语`         |  `cs_cz`   |
-|        `威尔士语`        |  `cy_gb`   |
-|         `丹麦语`         |  `da_dk`   |
-|       `奥地利德语`       |  `de_at`   |
-|        `瑞士德语`        |  `de_ch`   |
-|          `德语`          |  `de_de`   |
-|         `希腊语`         |  `el_gr`   |
-|      `澳大利亚英语`      |  `en_au`   |
-|       `加拿大英语`       |  `en_ca`   |
-|        `英式英语`        |  `en_gb`   |
-|       `新西兰英语`       |  `en_nz`   |
-|        `海盗英语`        |  `en_pt`   |
-|        `颠倒英语`        |  `en_ud`   |
-|        `美式英语`        |  `en_us`   |
-|        `纯粹英语`        |   `enp`    |
-|    `莎士比亚风格英语`    |   `enws`   |
-|         `世界语`         |  `eo_uy`   |
-|     `阿根廷西班牙语`     |  `es_ar`   |
-|      `智利西班牙语`      |  `es_cl`   |
-|    `厄瓜多尔西班牙语`    |  `es_ec`   |
-|        `西班牙语`        |  `es_es`   |
-|     `墨西哥西班牙语`     |  `es_mx`   |
-|     `乌拉圭西班牙语`     |  `es_uy`   |
-|    `委内瑞拉西班牙语`    |  `es_ve`   |
-|      `安达卢西亚语`      |   `esan`   |
-|       `爱沙尼亚语`       |  `et_ee`   |
-|        `巴斯克语`        |  `eu_es`   |
-|         `波斯语`         |  `fa_ir`   |
-|         `芬兰语`         |  `fi_fi`   |
-|        `菲律宾语`        |  `fil_ph`  |
-|         `法罗语`         |  `fo_fo`   |
-|       `加拿大法语`       |  `fr_ca`   |
-|          `法语`          |  `fr_fr`   |
-|       `东法兰克语`       |  `fra_de`  |
-|        `弗留利语`        |  `fur_it`  |
-|       `弗里斯兰语`       |  `fy_nl`   |
-|        `爱尔兰语`        |  `ga_ie`   |
-|      `苏格兰盖尔语`      |  `gd_gb`   |
-|       `加利西亚语`       |  `gl_es`   |
-|        `夏威夷语`        |  `haw_us`  |
-|        `希伯来语`        |  `he_il`   |
-|         `印地语`         |  `hi_in`   |
-|       `克罗地亚语`       |  `hr_hr`   |
-|        `匈牙利语`        |  `hu_hu`   |
-|       `亚美尼亚语`       |  `hy_am`   |
-|         `印尼语`         |  `id_id`   |
-|         `伊博语`         |  `ig_ng`   |
-|         `伊多语`         |  `io_en`   |
-|         `冰岛语`         |  `is_is`   |
-|      `斯拉夫共通语`      |   `isv`    |
-|        `意大利语`        |  `it_it`   |
-|          `日语`          |  `ja_jp`   |
-|         `逻辑语`         |  `jbo_en`  |
-|       `格鲁吉亚语`       |  `ka_ge`   |
-|        `哈萨克语`        |  `kk_kz`   |
-|        `卡纳达语`        |  `kn_in`   |
-|      `韩语/朝鲜语`       |  `ko_kr`   |
-|   `科隆语/利普里安语`    |   `ksh`    |
-|        `康沃尔语`        |  `kw_gb`   |
-|         `拉丁语`         |  `la_la`   |
-|        `卢森堡语`        |  `lb_lu`   |
-|         `林堡语`         |  `li_li`   |
-|        `伦巴第语`        |   `lmo`    |
-|         `老挝语`         |  `lo_la`   |
-|       `小猫皮钦语`       |  `lol_us`  |
-|        `立陶宛语`        |  `lt_lt`   |
-|       `拉脱维亚语`       |  `lv_lv`   |
-|         `文言文`         |   `lzh`    |
-|        `马其顿语`        |  `mk_mk`   |
-|         `蒙古语`         |  `mn_mn`   |
-|         `马来语`         |  `ms_my`   |
-|        `马耳他语`        |  `mt_mt`   |
-|       `纳瓦特尔语`       |   `nah`    |
-|        `低地德语`        |  `nds_de`  |
-|        `弗拉芒语`        |  `nl_be`   |
-|         `荷兰语`         |  `nl_nl`   |
-|     `挪威尼诺斯克语`     |  `nn_no`   |
-|      `巴克摩挪威语`      |  `no_no`   |
-|         `奥克语`         |  `oc_fr`   |
-|      `艾尔夫达伦语`      |   `ovd`    |
-|         `波兰语`         |  `pl_pl`   |
-|      `巴西葡萄牙语`      |  `pt_br`   |
-|        `葡萄牙语`        |  `pt_pt`   |
-|         `昆雅语`         |  `qya_aa`  |
-|       `罗马尼亚语`       |  `ro_ro`   |
-|      `俄语(革命前)`      |   `rpr`    |
-|          `俄语`          |  `ru_ru`   |
-|       `卢森尼亚语`       |  `ry_ua`   |
-|        `雅库特语`        | `sah_sah`  |
-|        `北萨米语`        |  `se_no`   |
-|       `斯洛伐克语`       |  `sk_sk`   |
-|      `斯洛文尼亚语`      |  `sl_si`   |
-|        `索马里语`        |  `so_so`   |
-|      `阿尔巴尼亚语`      |  `sq_al`   |
-|  `塞尔维亚语(拉丁字母)`  |  `sr_cs`   |
-| `塞尔维亚语(西里尔字母)` |  `sr_sp`   |
-|         `瑞典语`         |  `sv_se`   |
-|      `上萨克森德语`      |   `sxu`    |
-|       `西里西亚语`       |   `szl`    |
-|        `泰米尔语`        |  `ta_in`   |
-|          `泰语`          |  `th_th`   |
-|        `他加禄语`        |  `tl_ph`   |
-|        `克林贡语`        |  `tlh_aa`  |
-|         `道本语`         |   `tok`    |
-|        `土耳其语`        |  `tr_tr`   |
-|         `鞑靼语`         |  `tt_ru`   |
-|        `乌克兰语`        |  `uk_ua`   |
-|       `瓦伦西亚语`       |  `val_es`  |
-|        `威尼斯语`        |  `vec_it`  |
-|         `越南语`         |  `vi_vn`   |
-|        `维奥沙语`        |  `vp_vl`   |
-|        `意第绪语`        |  `yi_de`   |
-|        `约鲁巴语`        |  `yo_ng`   |
-|        `简体中文`        |  `zh_cn`   |
-|     `繁体中文(香港)`     |  `zh_hk`   |
-|     `繁体中文(台湾)`     |  `zh_tw`   |
-|     `马来语(爪夷文)`     | `zlm_arab` |
+|            **Language**            | **File Name** |
+| :--------------------------------: | :-----------: |
+|            `Afrikaans`             |    `af_za`    |
+|             `Arabic`               |    `ar_sa`    |
+|            `Asturian`              |   `ast_es`    |
+|           `Azerbaijani`            |    `az_az`    |
+|             `Bashkir`              |    `ba_ru`    |
+|             `Bavarian`             |     `bar`     |
+|            `Belarusian`            |    `be_by`    |
+|             `Bulgarian`            |    `bg_bg`    |
+|              `Breton`              |    `br_fr`    |
+|            `Brabantian`            |     `brb`     |
+|             `Bosnian`              |    `bs_ba`    |
+|             `Catalan`              |    `ca_es`    |
+|              `Czech`               |    `cs_cz`    |
+|              `Welsh`               |    `cy_gb`    |
+|              `Danish`              |    `da_dk`    |
+|         `German (Austria)`         |    `de_at`    |
+|        `German (Switzerland)`      |    `de_ch`    |
+|              `German`              |    `de_de`    |
+|              `Greek`               |    `el_gr`    |
+|         `English (Australia)`      |    `en_au`    |
+|          `English (Canada)`        |    `en_ca`    |
+|        `English (United Kingdom)`  |    `en_gb`    |
+|        `English (New Zealand)`     |    `en_nz`    |
+|           `Pirate English`         |    `en_pt`    |
+|         `Upside-Down English`      |    `en_ud`    |
+|          `English (United States)` |    `en_us`    |
+|         `Puristic English`         |     `enp`     |
+|        `Shakespearean English`     |    `enws`     |
+|             `Esperanto`            |    `eo_uy`    |
+|         `Spanish (Argentina)`      |    `es_ar`    |
+|           `Spanish (Chile)`        |    `es_cl`    |
+|          `Spanish (Ecuador)`       |    `es_ec`    |
+|              `Spanish`             |    `es_es`    |
+|          `Spanish (Mexico)`        |    `es_mx`    |
+|          `Spanish (Uruguay)`       |    `es_uy`    |
+|         `Spanish (Venezuela)`      |    `es_ve`    |
+|            `Andalusian`            |    `esan`     |
+|             `Estonian`             |    `et_ee`    |
+|              `Basque`              |    `eu_es`    |
+|              `Persian`             |    `fa_ir`    |
+|              `Finnish`             |    `fi_fi`    |
+|             `Filipino`             |   `fil_ph`    |
+|              `Faroese`             |    `fo_fo`    |
+|          `French (Canada)`         |    `fr_ca`    |
+|              `French`              |    `fr_fr`    |
+|          `East Franconian`         |   `fra_de`    |
+|              `Friulian`            |   `fur_it`    |
+|              `Frisian`             |    `fy_nl`    |
+|              `Irish`               |    `ga_ie`    |
+|          `Scottish Gaelic`         |    `gd_gb`    |
+|             `Galician`             |    `gl_es`    |
+|             `Hawaiian`             |   `haw_us`    |
+|              `Hebrew`              |    `he_il`    |
+|               `Hindi`              |    `hi_in`    |
+|             `Croatian`             |    `hr_hr`    |
+|             `Hungarian`            |    `hu_hu`    |
+|             `Armenian`             |    `hy_am`    |
+|             `Indonesian`           |    `id_id`    |
+|               `Igbo`               |    `ig_ng`    |
+|               `Ido`                |    `io_en`    |
+|             `Icelandic`            |    `is_is`    |
+|            `Interslavic`           |     `isv`     |
+|             `Italian`              |    `it_it`    |
+|             `Japanese`             |    `ja_jp`    |
+|              `Lojban`              |   `jbo_en`    |
+|             `Georgian`             |    `ka_ge`    |
+|              `Kazakh`              |    `kk_kz`    |
+|              `Kannada`             |    `kn_in`    |
+|              `Korean`              |    `ko_kr`    |
+|         `Kölsch / Ripuarian`       |     `ksh`     |
+|             `Cornish`              |    `kw_gb`    |
+|               `Latin`              |    `la_la`    |
+|            `Luxembourgish`         |    `lb_lu`    |
+|             `Limburgish`           |    `li_li`    |
+|              `Lombard`             |     `lmo`     |
+|                `Lao`               |    `lo_la`    |
+|              `LOLCAT`              |   `lol_us`    |
+|            `Lithuanian`            |    `lt_lt`    |
+|              `Latvian`             |    `lv_lv`    |
+|         `Classical Chinese`        |     `lzh`     |
+|            `Macedonian`            |    `mk_mk`    |
+|             `Mongolian`            |    `mn_mn`    |
+|               `Malay`              |    `ms_my`    |
+|              `Maltese`             |    `mt_mt`    |
+|              `Nahuatl`             |     `nah`     |
+|             `Low German`           |   `nds_de`    |
+|              `Flemish`             |    `nl_be`    |
+|               `Dutch`              |    `nl_nl`    |
+|         `Norwegian Nynorsk`        |    `nn_no`    |
+|          `Norwegian Bokmål`        |    `no_no`    |
+|              `Occitan`             |    `oc_fr`    |
+|             `Elfdalian`            |     `ovd`     |
+|               `Polish`             |    `pl_pl`    |
+|         `Portuguese (Brazil)`      |    `pt_br`    |
+|            `Portuguese`            |    `pt_pt`    |
+|              `Quenya`              |   `qya_aa`    |
+|             `Romanian`             |    `ro_ro`    |
+|      `Russian (Pre-reform)`        |     `rpr`     |
+|              `Russian`             |    `ru_ru`    |
+|               `Rusyn`              |    `ry_ua`    |
+|               `Yakut`              |   `sah_sah`   |
+|            `Northern Sami`         |    `se_no`    |
+|              `Slovak`              |    `sk_sk`    |
+|             `Slovenian`            |    `sl_si`    |
+|              `Somali`              |    `so_so`    |
+|             `Albanian`             |    `sq_al`    |
+|         `Serbian (Latin)`          |    `sr_cs`    |
+|        `Serbian (Cyrillic)`        |    `sr_sp`    |
+|              `Swedish`             |    `sv_se`    |
+|          `Upper Saxon German`      |     `sxu`     |
+|             `Silesian`             |     `szl`     |
+|               `Tamil`              |    `ta_in`    |
+|                `Thai`              |    `th_th`    |
+|              `Tagalog`             |    `tl_ph`    |
+|              `Klingon`             |   `tlh_aa`    |
+|             `Toki Pona`            |     `tok`     |
+|              `Turkish`             |    `tr_tr`    |
+|               `Tatar`              |    `tt_ru`    |
+|             `Ukrainian`            |    `uk_ua`    |
+|             `Valencian`            |   `val_es`    |
+|             `Venetian`             |   `vec_it`    |
+|             `Vietnamese`           |    `vi_vn`    |
+|              `Viossa`              |    `vp_vl`    |
+|              `Yiddish`             |    `yi_de`    |
+|              `Yoruba`              |    `yo_ng`    |
+|       `Chinese (Simplified)`       |    `zh_cn`    |
+|  `Chinese (Traditional, Hong Kong)`|    `zh_hk`    |
+|   `Chinese (Traditional, Taiwan)`  |    `zh_tw`    |
+|            `Malay (Jawi)`          |  `zlm_arab`   |

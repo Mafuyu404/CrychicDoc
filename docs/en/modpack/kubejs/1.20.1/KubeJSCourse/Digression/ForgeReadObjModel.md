@@ -1,11 +1,11 @@
 ---
 authors: ['Gu-meng']
 ---
-# `obj`模型
-* `obj`模型是在制作上相比于`Minecraft`原版模型更为自由的模型,例如[**沉浸工程**](https://www.mcmod.cn/class/463.html)的[**电弧炉**](https://www.mcmod.cn/item/36383.html)和[**斗轮式挖掘机**](https://www.mcmod.cn/item/36550.html)等
-  * ### 建立`obj`模型
-    * 首先建立一个`Obj`模型,可以使用很多软件,例如市面上典型的[**`3DS Max`**](https://www.autodesk.com.cn/products/3ds-max) [**`Blender`**](https://www.blender.org/) [**`BlockBench`**](https://www.blockbench.net)等软件
-    这里提供一个例子
+# `obj` Model
+* Compared with vanilla `Minecraft` JSON models, `obj` models are much more flexible for authoring. For example, [**Immersive Engineering**](https://www.mcmod.cn/class/463.html) uses them for blocks like the [**Arc Furnace**](https://www.mcmod.cn/item/36383.html) and [**Bucket-Wheel Excavator**](https://www.mcmod.cn/item/36550.html).
+  * ### Build an `obj` Model
+    * First create an `obj` model. You can use many tools, such as [**`3DS Max`**](https://www.autodesk.com.cn/products/3ds-max), [**`Blender`**](https://www.blender.org/), and [**`BlockBench`**](https://www.blockbench.net).
+    Example:
 	  ```
 	  # Made in Blockbench 4.8.3
 	  mtllib qqqqoo.mtl
@@ -44,7 +44,7 @@ authors: ['Gu-meng']
 	  f 1/11/4 4/12/4 5/13/4
 	  f 4/14/5 3/15/5 5/16/5
 	  ```
-	  同时导出时会自动生成一个`mtl`文件和一个`png`文件
+	  Exporting also generates an `mtl` file and a `png` texture file:
 	  ```
 	  # Made in Blockbench 4.8.3
 	  newmtl m_c5b90dae-3a75-90c1-2280-8a6b9dc0fba2
@@ -52,12 +52,12 @@ authors: ['Gu-meng']
 	  newmtl none
 	  ```
 
-	  注意`obj`里面的`usemtl m_c5b90dae-3a75-90c1-2280-8a6b9dc0fba2`要与`mtl`文件里面的`newmtl m_c5b90dae-3a75-90c1-2280-8a6b9dc0fba2`对应上
-	  `obj`的`mtllib qqqqoo.mtl`是确定mtl文件的,这里默认同级就行\
-	  `mtl`里面的`map_Kd`则是要指定贴图的路径\
-	  贴图和原版模型一样,放在`assets/${modid}/textures/block`下(因为这次的教程属于方  块,所以放在`block`下,制作物品时记得`item`下)
-  * ### 指向`Obj`文件
-    * 因为`Minecraft`原版并不能直接读取`obj`模型文件,因此需要一个`json`模型来指向`obj`文件
+	  Make sure `usemtl m_c5b90dae-3a75-90c1-2280-8a6b9dc0fba2` in `obj` matches `newmtl m_c5b90dae-3a75-90c1-2280-8a6b9dc0fba2` in `mtl`.
+	  `mtllib qqqqoo.mtl` in `obj` points to the mtl file; keeping them at the same level is fine by default.\
+	  `map_Kd` in `mtl` specifies the texture path.\
+	  Like vanilla models, place textures in `assets/${modid}/textures/block` (this tutorial uses a block example, so it is under `block`; for items, use `item`).
+  * ### Point to the `obj` File
+    * Vanilla `Minecraft` cannot load `obj` files directly, so you need a `json` model file that points to the `obj` file.
       ```json
 	  {
 	      "loader": "forge:obj",
@@ -68,13 +68,13 @@ authors: ['Gu-meng']
 	      }
       }
 	  ```
-      `loader`表示要加载的类型,这里指定obj模型\
-	  `model`表示要加载的Obj模型路径\
-	  `flip_v`表示是否翻转贴图,因为`obj`模型贴图相对于MC来说是倒着的,所以要`true`\
-	  `textures`表示要加载的贴图,这里指定`particle`贴图来确定粒子
+      `loader` specifies the model loader type; here it is set to `obj`.\
+	  `model` specifies the path to the `obj` model.\
+	  `flip_v` controls texture flipping. Since `obj` UVs are vertically inverted relative to MC, set it to `true`.\
+	  `textures` specifies textures to load; `particle` is used here for particle texture.
 
-  * ### 确定`blockstate`
-    * 在加载`obj`模型时,需要确定`blockstate`,因为`blockstate`在加载`Obj`时不会自动生成的,因此会导致无法让方块确定模型
+  * ### Define `blockstate`
+    * When loading an `obj` model, you must provide a `blockstate`. It is not auto-generated for `obj`, so without it the block cannot resolve its model.
       ```json
 	  {
 	      "variants": {
@@ -104,13 +104,13 @@ authors: ['Gu-meng']
 	      }
       }
 	  ```
-	* ### 检查路径
-      `mtl`和`obj`指向`obj`模型的`json`文件放在`assets/${modid}/models/block`下\
-	  `png`则放在`assets/${modid}/textures/block`下\
-	  确定`blockstate`的`json`文件需要放在`assets/${modid}/blockstate`下\
-	  同时要该文件命名都为方块注册名\
-	  注意导出模型在游戏里面有所偏移,在制作模型时修改即可
+	* ### Check Paths
+      Place the `mtl`, `obj`, and the `json` model that points to the `obj` in `assets/${modid}/models/block`.\
+	  Place the `png` texture in `assets/${modid}/textures/block`.\
+	  The `blockstate` `json` file should be in `assets/${modid}/blockstate`.\
+	  These files should be named after the block registry name.\
+	  If the exported model appears offset in-game, adjust it in the modeling tool.
 
-	# 参考自
-	[[我的世界 1.20.4 NeoForge 最新模组教程]18 加载OBJ模型](https://www.bilibili.com/video/BV1jm421J7UR)\
+	# References
+	[[Minecraft 1.20.4 NeoForge Modding Tutorial] 18 Load OBJ Models](https://www.bilibili.com/video/BV1jm421J7UR)\
 	[[Boson 1.16 Modding Tutorial] - Obj](https://boson.v2mcdev.com/specialmodel/obj.html)

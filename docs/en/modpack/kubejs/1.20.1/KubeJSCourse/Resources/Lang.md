@@ -1,30 +1,30 @@
 ---
 authors: ['Gu-meng']
 ---
-# 本地化lang(语言文件)
-这章主要是教会大家如何添加以及修改别的Mod的本地化文件(语言文件)
+# Localization (lang files)
+This chapter explains how to add and modify localization (language) files, including overriding other mods' translations.
 
-* ### 文件路径
-  `lang`文件主要存储于`assets/${modid}/lang`,不同的国家也有着不同的文件名称,具体请查看[**Wiki**](https://zh.minecraft.wiki/w/语言)或者文档[内部链接](../Digression/LangFileNamingChart.md),而各文件都以`json`作为后缀,例如`en_us.json` `zh_cn.json` `zh_tw.json`等 
+* ### File path
+  `lang` files are stored under `assets/${modid}/lang`. Different locales use different filenames. See the [Minecraft Wiki: Language](https://minecraft.wiki/w/Language) or the in-doc page [Lang file naming chart](../Digression/LangFileNamingChart.md). Files use the `.json` extension, for example `en_us.json`, `zh_cn.json`, `zh_tw.json`, etc.
 
-  `minecraft:sand` `minecraft`是`modid`
+  For `minecraft:sand`, `minecraft` is the `modid`.
 
-* ### 写法
-  * `lang`主要由本地化键名和文本组成,例如
+* ### Format
+  * A `lang` file is a JSON object that maps localization keys to text, for example:
 ```json
 {
-    "item.kubejs.test_item": "测试物品",
-    "block.kubejs.test_block": "测试物品",
-    "fluid.kubejs.test_fluid": "测试流体"
+    "item.kubejs.test_item": "Test Item",
+    "block.kubejs.test_block": "Test Block",
+    "fluid.kubejs.test_fluid": "Test Fluid"
 }
 ```
-  在写`lang`的时候最后一行**千万不可以加逗号**作为结尾,也**不可以不写逗号就写下一行,更不可以写注释!**
-  * 而本地化键名(**key**)主要由`type.modid.id`组成
-  `type`指的是类型,例如:
-  流体是`fluid`
-  物品是`item`
-  方块是`block`
-  * 而在写代码的时候也可以自己添加一串自定义的`key`,例如给石头添加`Tooltip`,举个简单的例子
+  When editing `lang` JSON, the last line **must not end with a trailing comma**. You also **cannot omit commas between entries**, and you **cannot add comments**.
+  * Localization keys are typically `type.modid.id`.
+  `type` is the category, for example:
+  Fluids use `fluid`
+  Items use `item`
+  Blocks use `block`
+  * In scripts you can also use your own custom keys. For example, add a tooltip translation for stone:
 
 ```js
 ItemEvents.tooltip((event) => {
@@ -34,72 +34,71 @@ ItemEvents.tooltip((event) => {
 
 ```json
 {
-    "tip.mc.stone": "我是一块石头"
+    "tip.mc.stone": "I am a stone."
 }
 ```
-  同时在写`lang`的时候也可以给文本添加`颜色`或者使用`转义字符`
+  You can also use Minecraft formatting codes (colors) or escape sequences in lang values.
 
-* ### 修改 & 本地化
-  * 在修改别的Mod的`lang`文件时需要先创建一个资源包,具体教程请看[**Wiki**](https://zh.minecraft.wiki/w/Tutorial:制作资源包)
-  随后在`assets`文件夹下创建一个和`Modid`相同的文件夹
+* ### Overriding Other Mods
+  * To modify another mod's `lang` file, you generally need to create a resource pack. See [Minecraft Wiki: Creating a resource pack](https://minecraft.wiki/w/Tutorial:Creating_a_resource_pack).
+  Then create a folder under `assets` with the same name as the target `modid`.
   
-  * 这种本地化资源包建议直接内置, 所以和前面说的一样, 需要一个Mod来进行资源包的内置加载[**Json Things**](https://www.mcmod.cn/class/7734.html)
+  * It is recommended to ship this localization resource pack as part of the modpack. As mentioned earlier, you may need a mod that can load built-in packs, such as [Json Things](https://www.mcmod.cn/class/7734.html).
 
-  * 你也可以复制`ModFile.jar/assets`下的文件夹名称,然后自己创建一个文件夹,随后和开头所说的一样,`${modid}`下再创建一个`lang`文件,随后把需要修改的`lang`文件解压进去便是
-  * 如果是汉化Mod文本也一样,把原先的`lang`文件解压出来后改名为`zh_cn.json`**(请严格确保不是`zh_cn.json.txt`或`zh_cn.txt.json`)**
+  * You can also look inside `ModFile.jar/assets/` to find the correct folder names, then recreate the structure yourself. Under `${modid}`, create a `lang` folder and put the `lang` JSON you want to override inside it.
+  * For Chinese translations, extract the original `lang` file and rename it to `zh_cn.json`. **Make sure the filename is exactly `zh_cn.json` (not `zh_cn.json.txt` or `zh_cn.txt.json`).**
 
-  **一切的Modid只能由`小写字母,数字和下划线(a-z,0-9和_)`组成**
+  **All mod ids should consist only of `lowercase letters, numbers, and underscores (a-z, 0-9, _)`.**
 
-* ### 快捷编写语言文件(仅限于你自己注册的新东西)
-  * 在KubeJS 6中有一个`ClientEvents.lang`事件, 相对完整的格式是
+* ### Faster Lang Authoring (for your own registrations only)
+  * In KubeJS 6 there is a `ClientEvents.lang` event. A basic example:
 ```js
 ClientEvents.lang("zh_cn", (event) => {
-	event.add("item.kubejs.test_item", "科比吉斯测试物品")
-	event.add("block.kubejs.test_block", "科比吉斯测试方块")
-	event.add("fluid.kubejs.test_fluid", "科比吉斯测试流体")
+	event.add("item.kubejs.test_item", "KubeJS Test Item")
+	event.add("block.kubejs.test_block", "KubeJS Test Block")
+	event.add("fluid.kubejs.test_fluid", "KubeJS Test Fluid")
 })
 ```
-  * 不难看出`ClientEvents.lang`后的第一个参数为上面所提到的语言代码, 而下面的写法和Json的几乎一样
-  * 或许有人会问  **"誒那和Json有什么大的区别呢?"**
-  * 首先Json本质上不属于编程语言, 按理说是属于存储数据的东西, 自然也不存在各种奇怪的语法(**不代表Json没有语法需求**), 但是这是JavaScript, JavaScript可是有着循环功能的, 有编程基础的朋友可能已经明白我在说什么了,我也废话不多说, 直接上代码!
+  * The first argument to `ClientEvents.lang` is the locale code. The `event.add(...)` calls are similar to JSON entries.
+  * You might ask: **"So what is the difference from JSON?"**
+  * JSON is data, not a programming language. JavaScript is a programming language, so you can use loops to generate many keys quickly. Example:
 ```js
 ClientEvents.lang("zh_cn", (event) => {
 	const MODID = "kubejs"
 
-	// 物品翻译
+	// Item translations
 	let itemResourceLang = [
-		["test_item_1", "科比吉斯测试物品1"],
-		["test_item_2", "科比吉斯测试物品2"]
+		["test_item_1", "KubeJS Test Item 1"],
+		["test_item_2", "KubeJS Test Item 2"]
 	]
 	itemResourceLang.forEach(([key, text]) => {
 		event.add(`item.${MODID}.${key}`, text)
 	})
 
-	// 方块翻译
+	// Block translations
 	let blockResourceLang = [
-		["test_block_1", "科比吉斯测试方块1"],
-		["test_block_2", "科比吉斯测试方块2"]
+		["test_block_1", "KubeJS Test Block 1"],
+		["test_block_2", "KubeJS Test Block 2"]
 	]
 	blockResourceLang.forEach(([key, text]) => {
 		event.add(`block.${MODID}.${key}`, text)
 	})
 
-	// 流体翻译
+	// Fluid translations
 	let fluidResourceLang = [
-		["test_fluid_1", "科比吉斯测试流体1"],
-		["test_fluid_2", "科比吉斯测试流体2"]
+		["test_fluid_1", "KubeJS Test Fluid 1"],
+		["test_fluid_2", "KubeJS Test Fluid 2"]
 	]
 	fluidResourceLang.forEach(([key, text]) => {
 		/*
-		 * 由于流体在不同的地方显示的类型不同
-		 * 因此需要为不同的环境配方单独的lang
-		 * JEI显示的是fluid
-		 * 大世界显示的block
-		 * 而桶显示的是item,由于id后面带桶,因此需要加上_bucket和桶
+		 * Fluids appear under different key types depending on where they are shown:
+		 * JEI uses "fluid"
+		 * In-world blocks use "block"
+		 * Buckets use "item". Since the id ends with "_bucket", we add that suffix.
 		 */
 		event.add(`fluid.${MODID}.${key}`, text)
 		event.add(`block.${MODID}.${key}`, text)
-		event.add(`item.${MODID}.${key}_bucket`, `${text}桶`)
+		event.add(`item.${MODID}.${key}_bucket`, `${text} Bucket`)
 	})
 })
 ```

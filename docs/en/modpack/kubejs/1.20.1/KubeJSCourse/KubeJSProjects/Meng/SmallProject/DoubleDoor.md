@@ -1,14 +1,14 @@
-# 双开门
-本章主要涉及内容：方块右键事件、修改方块状态，本章所有代码部分都在`server_scripts`里
+# Double Door Sync
+Main topics in this chapter: block right-click events and changing block states. All code in this chapter belongs in `server_scripts`.
 
-涉及模组及版本:
+Mods and versions used:
 1. jei-1.20.1-forge-15.3.0.4
 2. rhino-forge-2001.2.2-build.18
 3. architectury-9.2.14-forge
 4. kubejs-forge-2001.6.5-build.14
 5. probejs-6.0.1-forge
 
-## 完整代码
+## Full Code
 ```js
 const $DoorBlock = Java.loadClass("net.minecraft.world.level.block.DoorBlock");
 const $Boolean = Java.loadClass("java.lang.Boolean");
@@ -40,6 +40,6 @@ BlockEvents.rightClicked(event => {
     }
 })
 ```
-该内容是玩家在打开和关闭门时，如果是双开门则会一起被打开或关闭
+This script makes paired doors open and close together when the player interacts with one door.
 
-如果玩家蹲下来开门或关门则不会触发双开门事件
+If the player is sneaking while opening or closing a door, the double-door sync will not trigger.

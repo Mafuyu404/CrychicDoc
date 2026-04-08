@@ -8,8 +8,7 @@
   "KubeJS/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749253126648
+    "isActiveInStructure": true
   },
   "doc/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
@@ -18,6 +17,11 @@
     "lastSeen": 1749253126648
   },
   "Description.md": {
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
     "isActiveInStructure": false

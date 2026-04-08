@@ -1,7 +1,7 @@
 {
   "_self_": {
-    "valueHash": "1a434befae3f49ae09347ded52032f6f",
-    "isUserSet": false,
+    "valueHash": "ea995898864fb0ea509106539758c905",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749252345313
   },
@@ -14,7 +14,7 @@
   "Catalogue.md": {
     "valueHash": "a8567ec8887eb41c7870b3a624524a46",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749252345899
   },
   "PotionEffects.md": {
@@ -28,5 +28,35 @@
     "isUserSet": false,
     "isActiveInStructure": true,
     "lastSeen": 1749252345899
+  },
+  "Methods.md": {
+    "valueHash": "45d1565195e4c9297eb607d49dcdb8d6",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "Goal.md": {
+    "valueHash": "d7b628bd60e4d593b3ea46fc0b7bb574",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "Brain.md": {
+    "valueHash": "0751c834160ea16f0c4ac6dbf774fad2",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "Mob.md": {
+    "valueHash": "3acbc0615d8073a495640e96b329971e",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "LivingEntity.md": {
+    "valueHash": "8c3327e81d025e0f01650fad0751d409",
+    "isUserSet": false,
+    "isActiveInStructure": true
+  },
+  "Player.md": {
+    "valueHash": "636da1d35e805b00eae0fcd8333f9234",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

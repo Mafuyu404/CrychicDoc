@@ -1,6 +1,6 @@
 {
-  "_self_": true,
-  "Classes/": true,
-  "ConstantsAndObjects/": true,
-  "WrappedClasses/": true
+  "_self_": false,
+  "Classes/": false,
+  "ConstantsAndObjects/": false,
+  "WrappedClasses/": false
 }

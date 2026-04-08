@@ -1,17 +1,17 @@
 ---
 authors: ['Gu-meng', 'LitterWolf-fufu']
 ---
-# 工作台物品附魔
+# Enchant Items on the Crafting Table
 
 ```js
 ServerEvents.recipes((event) => {
-    // 使铁剑可以在工作台上附魔
+    // Allow iron swords to be enchanted on the crafting table
     enchantCrafting('iron_sword', event)
 })
 /**  
- * 附魔书附魔物品配方注册
- * @param {$ItemStack_} enchanted_item - 被附魔物品的ItemStack
- * @param {$RecipesEventJS_} event - 配方事件
+ * Register a recipe that applies enchanted-book enchantments to an item.
+ * @param {$ItemStack_} enchanted_item - ItemStack of the item to enchant
+ * @param {$RecipesEventJS_} event - Recipe event
  */  
 const enchantCrafting = (enchanted_item, event) => { 
     event.shapeless(enchanted_item, [enchanted_item, 'minecraft:enchanted_book'])  
@@ -19,27 +19,27 @@ const enchantCrafting = (enchanted_item, event) => {
             item = grid.find(enchanted_item)    
 
             let addition = grid.find('minecraft:enchanted_book').enchantments
-            if (addition.isEmpty()) { // 附魔书附魔为空，返回原物品
+            if (addition.isEmpty()) { // If the book has no enchantments, return the original item
                 return item.withCount(1)
             }
 
             let origin = item.enchantments
-            if (origin.isEmpty()) {  // 原物品附魔为空，返回带有附魔书所有附魔的同物品
+            if (origin.isEmpty()) {  // If the original item has no enchantments, apply all from the book
                 return item.enchant(addition).withCount(1)
             }
 
-            // 二者都不为空
-            let combinedOrgin = origin   // 拷贝原物品的附魔作为模板 
+            // Neither side is empty
+            let combinedOrgin = origin   // Copy original item enchantments as the base
             item.enchantments.clear()
-            addition.forEach((id, lvl) => { // 遍历附魔书的附魔
-                // 检查附魔书和原物品是否有相同的附魔ID
+            addition.forEach((id, lvl) => { // Iterate over enchanted-book enchantments
+                // Check whether both have the same enchantment ID
                 if (origin.containsKey(id)) {
                     if (lvl > origin.get(id)) {
-                        // 附魔书的附魔等级高，附魔书的附魔替换原有附魔
+                        // If the book level is higher, replace the original level
                         combinedOrgin.replace(id, lvl)
                     }
                 } else {
-                    // 被附魔物品不存在相同ID附魔，附魔书的附魔合并到被附魔物品的附魔中
+                    // If the item does not have this enchantment, merge it in
                     combinedOrgin.put(id, lvl)
                 }
             })

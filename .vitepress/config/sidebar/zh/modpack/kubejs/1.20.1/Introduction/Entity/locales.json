@@ -1,7 +1,6 @@
 {
-  "_self_": "Entity",
+  "_self_": "实体",
   "Attribute.md": "实体属性",
-  "Catalogue.md": "目录",
   "PotionEffects.md": "药水效果",
   "Spawn.md": "生成实体",
   "Brain.md": "Brain",

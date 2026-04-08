@@ -1,11 +1,11 @@
 ---
 authors: ['Gu-meng', 'Qi-Month']
 ---
-> 调用 picon 使用 `PonderIcons.你要的PonderIcons` 即可
+> To use picon, call `PonderIcons.<YourPonderIcon>`
 >
-> 例如 : PonderIcons.I_WHITELIST_AND
+> Example: `PonderIcons.I_WHITELIST_AND`
 
-# 以下代码节录自 globals.d.ts
+# The following code is excerpted from `globals.d.ts`
 
 ```ts
 declare class PonderIcons implements Internal.ScreenElement {

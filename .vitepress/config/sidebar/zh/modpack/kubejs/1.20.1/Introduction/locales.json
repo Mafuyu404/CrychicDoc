@@ -1,6 +1,6 @@
 {
-  "_self_": "Introduction",
-  "Addon/": "附属",
+  "_self_": "入门",
+  "Addon/": "附属模组",
   "Block/": "方块",
   "Entity/": "实体",
   "Event/": "事件",
@@ -10,5 +10,6 @@
   "Miscellaneous/": "杂项",
   "PotionEffect/": "药水效果",
   "Recipe/": "配方",
-  "Tag/": "标签"
+  "Tag/": "标签",
+  "Network/": "网络"
 }

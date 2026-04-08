@@ -8,6 +8,11 @@
   "Description.md": {
     "valueHash": "5259ae4afb5996ff48788b2fa720114c",
     "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "5259ae4afb5996ff48788b2fa720114c",
+    "isUserSet": false,
     "isActiveInStructure": true
   }
 }

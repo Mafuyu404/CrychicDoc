@@ -6,18 +6,23 @@
     "lastSeen": 1749247315244
   },
   "config.md": {
-    "valueHash": "fa535ffb25e1fd20341652f9be21e06e",
-    "isUserSet": false,
+    "valueHash": "254f642527b45bc260048e30704edb39",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749253127060
   },
   "wiki.md": {
-    "valueHash": "bf111e3622a72a3b5dc784b5903983ca",
-    "isUserSet": false,
+    "valueHash": "3b878279a04dc47d60932cb294d96259",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749253127060
   },
   "Description.md": {
+    "valueHash": "a516bd1828d49ea00c811b337450e9c9",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
     "valueHash": "a516bd1828d49ea00c811b337450e9c9",
     "isUserSet": false,
     "isActiveInStructure": false

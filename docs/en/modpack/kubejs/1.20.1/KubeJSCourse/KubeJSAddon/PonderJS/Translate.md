@@ -1,83 +1,84 @@
 ---
 authors: ['Gu-meng', 'Qi-Month']
 ---
-# 关于翻译
+# Translation
 
-> 在构筑代码的时候, 你可能会为了将内容翻译成其他语种而烦恼, 不过不用担心, Ponder 会自动建立翻译文件
+> While writing scenes, you may worry about translating content into other languages.  
+> Don’t worry: Ponder automatically generates translation files.
 >
-> 只要知道你的代码与其的对应关系便可进行档案的修改了
+> Once you know how keys map to your code, you can edit the files directly.
 
-# 开始之前
+# Before You Start
 
-当你完成代码并启动游戏时, Ponder 会自动生成对应的名为 [en_us.json](https://gitee.com/gumengmengs/kubejs-course/tree/main/Code/Ponder/kubejs/assets/ponderjs_generated/lang/en_us.json) 的翻译文件 **（即使你的代码内对应的描述并非英文）**, 其档案路径为
+After you finish your code and launch the game, Ponder will auto-generate an [en_us.json](https://gitee.com/gumengmengs/kubejs-course/tree/main/Code/Ponder/kubejs/assets/ponderjs_generated/lang/en_us.json) translation file **(even if your text is not English)**.
 
-> 注意 : 每次启动游戏都会根据你的代码重置 `en_us.json` 的内容
+> Note: Every game launch regenerates `en_us.json` from your code.
 
-此处只举两个简单的例子：
+Only two simple examples are shown here:
 
-> `en_us.json` 对应英文
+> `en_us.json` is English
 >
-> `zh_cn.json` 对应简体中文
+> `zh_cn.json` is Simplified Chinese
 
-关于更多语言的文件命名:[链接](../..../Digression/LangFileNamingChart.md)
+For more language file naming conventions: [link](../..../Digression/LangFileNamingChart.md)
 
-# 开始
+# Start
 
-以 [iron_golem.js](https://gitee.com/gumengmengs/kubejs-course/tree/main/Code/Ponder/kubejs/client_scripts/Ponder/iron_golem.js) 的部分代码为例
+Using part of [iron_golem.js](https://gitee.com/gumengmengs/kubejs-course/tree/main/Code/Ponder/kubejs/client_scripts/Ponder/iron_golem.js) as an example:
 
-# PonderTag 的部分
+# PonderTag Section
 
 ```js
 Ponder.tags((event) => {
   event.createTag(
     "kubejs:iron_golem",
     "minecraft:iron_block",
-    "铁傀儡",
-    "铁傀儡是高大强壮的友好生物，用于保护玩家和村民。"
+    "Iron Golem",
+    "Iron golems are large, strong friendly mobs that protect players and villagers."
   );
 });
 ```
 
-此时应会在对应的 `en_us.json` 生成
+This generates the following entries in `en_us.json`:
 
 ```json
 {
-  "kubejs.ponder.tag.iron_golem": "铁傀儡",
-  "kubejs.ponder.tag.iron_golem.description": "铁傀儡是高大强壮的友好生物，用于保护玩家和村民。"
+  "kubejs.ponder.tag.iron_golem": "Iron Golem",
+  "kubejs.ponder.tag.iron_golem.description": "Iron golems are large, strong friendly mobs that protect players and villagers."
 }
 ```
 
-> `kubejs` 对应 PonderTag 的 id 的命名空间（namespace）
+> `kubejs` maps to the namespace in the PonderTag id
 >
-> `ponder.tag` 代表其对应 tag 部分
+> `ponder.tag` indicates this is a tag entry
 >
-> `iron_golem` 对应 PonderTag 的 id 的路径（path）
+> `iron_golem` maps to the path part of the PonderTag id
 
-# Ponder 的部分
+# Ponder Section
 
 ```js
 Ponder.registry(event => {
     event.create("minecraft:iron_block")
         .tag("kubejs:iron_golem")
-        .scene("kubejs:iron_golem_1", "召唤铁傀儡", (scene, util) => {
-            scene.text(25, '想要召唤铁傀儡\n首先, 你需要将四个铁块以 §bT§r 字摆放');
-            scene.text(20, '注意 : §4这四个位置必须是空气方块§r\n任何非空气方块（包括雪、高草和水）在这四个位置时都会阻碍铁傀儡的生成');
+        .scene("kubejs:iron_golem_1", "Summon an Iron Golem", (scene, util) => {
+            scene.text(25, 'To summon an Iron Golem,\nfirst place four iron blocks in a §bT§r shape');
+            scene.text(20, 'Note: §4these four positions must be air blocks§r\nAny non-air block (including snow, tall grass, and water) in these positions will prevent spawning');
        });
 });
 ```
 
-此时应会在对应的 `en_us.json` 生成
+This generates the following entries in `en_us.json`:
 
 ```json
 {
-  "kubejs.ponder.iron_golem_1.header": "召唤铁傀儡",
-  "kubejs.ponder.iron_golem_1.text_1": "想要召唤铁傀儡\n首先, 你需要将四个铁块以 §bT§r 字摆放",
-  "kubejs.ponder.iron_golem_1.text_2": "注意 : §4这四个位置必须是空气方块§r\n任何非空气方块（包括雪、高草和水）在这四个位置时都会阻碍铁傀儡的生成"
+  "kubejs.ponder.iron_golem_1.header": "Summon an Iron Golem",
+  "kubejs.ponder.iron_golem_1.text_1": "To summon an Iron Golem,\nfirst place four iron blocks in a §bT§r shape",
+  "kubejs.ponder.iron_golem_1.text_2": "Note: §4these four positions must be air blocks§r\nAny non-air block (including snow, tall grass, and water) in these positions will prevent spawning"
 }
 ```
 
-> `kubejs.ponder.iron_golem_1` 对应 Ponder 的 id
+> `kubejs.ponder.iron_golem_1` maps to the Ponder id
 >
-> `header` 对应 Ponder 的标题
+> `header` maps to the Ponder title
 >
-> `text_1` 依照显示的顺序依序生成 text_1 ~ text_n
+> `text_1` ... `text_n` are generated in display order

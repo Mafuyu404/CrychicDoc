@@ -1,21 +1,24 @@
 ---
 authors: ['Gu-meng']
 ---
-# 通用配方修改
-在本章中将会介绍如何去修改基本上所有的配方，无论该模组是否和kjs联动，我们都可以进行修改，当然前提是他是一个标准配方
+# Generic Recipe Editing
+This chapter explains how to modify almost any recipe.
+Whether or not a mod has direct KJS integration, you can still edit recipes as long as they are standard data-driven recipes.
 
-## 找配方
-在本章节中使用的是虚无世界3(AoA3)里的聚合台进行添加配方
+## Find a Recipe
+This example uses the Infusion table recipe from Advent of Ascension 3 (`AoA3`).
 
-首先在游戏内使用 **F3+H** 打开高级提示框，然后进入聚合台的配房里，可以看到物品下面有一个**配方ID**
+First, press **F3+H** in-game to enable advanced tooltips. Then open the relevant recipe screen and note the **Recipe ID** shown for the item.
 
-之后我们进入到`mods`文件夹下，找到我们需要添加配方的模组，这里我们是`AoA3`所以，这里使用解压软件打开jar文件(这里也可以将jar文件复制一份，然后将.jar后缀改称为.zip文件然后打开)
+Next, go to the `mods` folder and find the target mod jar (`AoA3` here). Open it with an archive tool.
+You can also copy the jar and rename `.jar` to `.zip` to open it.
 
-打开压缩包后进入文件路径`data\modid\recipes`文件夹路径下，这里我的modid是`aoa3`所以路径是`data\aoa3\recipes`
+Inside the archive, open `data\modid\recipes`.
+For this example, the path is `data\aoa3\recipes`.
 
-然后我们随便找一个聚合台的配方,查看配方id,然后在`data\modid\recipes`找到该配方id点进去
+Find any infusion recipe, check its recipe id, then open the matching JSON file in that folder.
 
-这里我的是aoa3里的`infusion_crystallis_helmet.json`文件,打开后是下面这样的
+Example file: `infusion_crystallis_helmet.json`
 
 ```json
 {
@@ -52,8 +55,8 @@ authors: ['Gu-meng']
 }
 ```
 
-## 添加配方
-在上面我们找到了聚合台的配方添加写法，kjs提供了数据包的添加配方方式，这样我们就可以照葫芦画瓢的写一个配方
+## Add a Recipe
+Now that we know the target JSON format, we can create the same structure in KJS using `event.custom(...)`.
 
 ```js
 ServerEvents.recipes(e => {
@@ -83,7 +86,7 @@ ServerEvents.recipes(e => {
 })
 ```
 
-## 总结
-其实通用配方和自己手写数据包添加或修改配方是一样的
+## Summary
+Generic recipe editing in KJS is essentially the same as writing datapack recipe JSON by hand.
 
-但是kjs可以将他写成一个方法(函数/function)这样就可以重复的复用(该内容不在本章节中)
+The main advantage is that KJS lets you wrap these patterns into reusable methods/functions (not covered in this chapter).

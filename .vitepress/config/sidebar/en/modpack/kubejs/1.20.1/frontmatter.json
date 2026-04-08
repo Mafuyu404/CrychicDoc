@@ -1,0 +1,11 @@
+{
+  "title": "KubeJS",
+  "hidden": false,
+  "collapsed": false,
+  "root": true,
+  "maxDepth": 4,
+  "priority": 9007199254740991,
+  "viewControl": {
+    "mode": "self"
+  }
+}

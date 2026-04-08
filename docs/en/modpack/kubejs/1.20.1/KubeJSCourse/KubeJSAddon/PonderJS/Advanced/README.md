@@ -2,7 +2,7 @@
 authors: ['Gu-meng', 'Qi-Month']
 ---
 ---
-description: 该章节中的内容需要有一定的基础才能看得明白
+description: The content in this section assumes some prior basics.
 ---
 
-# Ponder for KubeJS 进阶
+# Ponder for KubeJS Advanced

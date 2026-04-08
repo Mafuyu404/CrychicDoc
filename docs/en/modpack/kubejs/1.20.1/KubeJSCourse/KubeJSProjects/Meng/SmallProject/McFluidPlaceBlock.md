@@ -1,10 +1,10 @@
 ---
 authors: ['Gu-meng']
 ---
-# 原版修改流体对撞产生块
-本章主要涉及内容：ForgeEvents、forge事件里的`BlockEvent.FluidPlaceBlockEvent`，本章所有代码部分都在`startup_scripts`里
+# Change Vanilla Fluid Collision Block Result
+Main topics in this chapter: `ForgeEvents` and Forge's `BlockEvent.FluidPlaceBlockEvent`. All code in this chapter belongs in `startup_scripts`.
 
-## 完整代码
+## Full Code
 ```js
 let $BlockEvent = Java.loadClass("net.minecraftforge.event.level.BlockEvent")
 
@@ -15,4 +15,4 @@ ForgeEvents.onEvent($BlockEvent.FluidPlaceBlockEvent,event=>{
     }
 })
 ```
-上面代码是在岩浆和水对撞后产生石头，将其重新设置成为地狱岩（下界岩）
+The code above changes the result of lava-water collision from stone to netherrack.

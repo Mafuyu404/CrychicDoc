@@ -1,16 +1,15 @@
 {
   "_self_": "Introduction",
-  "Addon/": "Addon",
-  "Block/": "Block",
-  "Description.md": "Description",
-  "Entity/": "Entity",
-  "Event/": "Event",
-  "GlobalScope/": "GlobalScope",
-  "Item/": "Item",
-  "LootTable/": "LootTable",
+  "Addon/": "Addons",
+  "Block/": "Blocks",
+  "Entity/": "Entities",
+  "Event/": "Events",
+  "GlobalScope/": "Global Scope",
+  "Item/": "Items",
+  "LootTable/": "Loot Tables",
   "Miscellaneous/": "Miscellaneous",
-  "Network/": "Network",
-  "PotionEffect/": "PotionEffect",
-  "Recipe/": "Recipe",
-  "Tag/": "Tag"
+  "Network/": "Networking",
+  "PotionEffect/": "Potion Effects",
+  "Recipe/": "Recipes",
+  "Tag/": "Tags"
 }

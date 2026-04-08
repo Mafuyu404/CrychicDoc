@@ -1,6 +1,5 @@
 {
-  "_self_": "Custom Test",
-  "Catalogue.md": "Multiblock2",
-  "SingleBlockBasic.md": "SingleBlockBasic",
-  "SingleBlockBasicSettings.md": "SingleBlockBasicSettings"
+  "_self_": "MBD2",
+  "SingleBlockBasic.md": "Single-Block Machine Basics",
+  "SingleBlockBasicSettings.md": "Single-Block Machine Settings"
 }

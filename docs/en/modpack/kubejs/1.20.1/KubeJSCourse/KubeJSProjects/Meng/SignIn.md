@@ -1,18 +1,18 @@
 ---
 authors: ['Gu-meng']
 ---
-# 服务器签到
-本章涉及内容：玩家聊天事件、指令注册、JsonIO，本章所有代码部分都在`server_scripts`里
+# Server Daily Sign-In
+Topics covered: player chat events, command registration, and `JsonIO`. All code in this chapter belongs in `server_scripts`.
 
-本章使用模组:
+Mods and versions used:
 1. jei-1.20.1-forge-15.3.0.4
 2. rhino-forge-2001.2.2-build.18
 3. architectury-9.2.14-forge
 4. kubejs-forge-2001.6.5-build.14
 5. probejs-7.0.1-forge
 
-## 完整代码
-这里得提前在对应的游戏文件路径下创建`meng`文件夹，然后创建一个空的`qd.json`
+## Full Code
+Create a `meng` folder in the game directory first, then create an empty `qd.json` file.
 ```js
 ServerEvents.commandRegistry(event =>{
     const { commands: Commands, arguments: Arguments } = event
@@ -35,9 +35,9 @@ ServerEvents.commandRegistry(event =>{
                         player.addProperty("qdDay",newQdDay)
                         player.addProperty("endQdTime",new Date().getTime().toString())
                         let strDay = newQdDay.toString().split(".")[0]
-                        Utils.server.tell("玩家 " + username + "在" + timeF + "签到成功，已经成功签到 " + strDay + "天")
+                        Utils.server.tell("Player " + username + " signed in successfully on " + timeF + ". Total sign-in days: " + strDay)
                     }else{
-                        value.source.getPlayer().tell("你已经在今天签到过了，无需重复签到")
+                        value.source.getPlayer().tell("You have already signed in today. No need to sign in again.")
                     }
                     i = 1
                     break
@@ -45,7 +45,7 @@ ServerEvents.commandRegistry(event =>{
             }
             if(i == 0){
                 players["add(com.google.gson.JsonElement)"]({name:username,qdDay:"1.0",endQdTime:new Date().getTime().toString()})
-                Utils.server.tell("玩家 " + username + "在" + timeF + "签到成功，已经成功签到 1 天" )
+                Utils.server.tell("Player " + username + " signed in successfully on " + timeF + ". Total sign-in days: 1")
             }
             JsonIO.write("./meng/qd.json",qdJson)
             return 1
@@ -56,7 +56,7 @@ ServerEvents.commandRegistry(event =>{
 
 function getTime(str) {
     let currentTime = new Date(Number(str))
-    return currentTime.getFullYear() + "年" + (currentTime.getMonth() + 1) + "月" + currentTime.getDate() + "日"
+    return currentTime.getFullYear() + "-" + (currentTime.getMonth() + 1) + "-" + currentTime.getDate()
 }
 
 function timeCompare(str){
@@ -68,6 +68,6 @@ function timeCompare(str){
 }
 ```
 
-## 注意事项
-1. 该项目只是作为示例，很多地方并不是最优解，可自行进行解决
-2. 如果对该项目代码部分不满可以将修改好的代码上传至[gitee项目仓库](https://gitee.com/gumengmengs/kubejs-course)
+## Notes
+1. This project is only an example; many parts are not necessarily optimal and can be improved.
+2. If you improve this project, you can upload your revised code to the [Gitee repository](https://gitee.com/gumengmengs/kubejs-course).

@@ -1,11 +1,16 @@
 {
   "_self_": {
-    "valueHash": "68b8f3f33d56774b438e4a794ac3c4d9",
-    "isUserSet": false,
+    "valueHash": "112960d790cfd86aa3c16630e110c7c7",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749249393668
   },
   "Description.md": {
+    "valueHash": "68b8f3f33d56774b438e4a794ac3c4d9",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
     "valueHash": "68b8f3f33d56774b438e4a794ac3c4d9",
     "isUserSet": false,
     "isActiveInStructure": true

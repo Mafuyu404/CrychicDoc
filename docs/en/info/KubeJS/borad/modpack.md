@@ -1,11 +1,11 @@
 ---
 prev: false
 next: false
-title: modpack
+title: Modpacks
 hidden: false
 priority: 0
 ---
 
-# 整合包
+# Modpacks
 
-该页面用于讨论KubeJS相关的整合包。 
+Use this page to discuss modpacks related to KubeJS.

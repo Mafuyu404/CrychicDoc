@@ -1,10 +1,10 @@
 ---
 authors: ['Gu-meng']
 ---
-# 钓鱼战利品
-本章中将会举例简单的钓鱼战利品原生kubejs写法
-## 基础写法
-下面代码中使用`addFishing`覆盖掉原来的战利品列表(如果只想在原来的战利品表里添加使用)
+# Fishing Loot
+This chapter provides simple native KubeJS examples for fishing loot.
+## Basic Syntax
+In the code below, `addFishing` overrides the original loot table (use `modify` if you only want to add to the existing table):
 ```js
 ServerEvents.fishingLootTables(event=>{
     event.addFishing("minecraft:fish",loot=>{
@@ -17,8 +17,8 @@ ServerEvents.fishingLootTables(event=>{
 })
 ```
 
-## 删除战利品
-有时候我们并不是需要添加或者修改战利品，而是从奖池中进行删除，我们就可以像下面这样写
+## Remove Loot Entries
+Sometimes you do not want to add or modify loot, but remove entries from a pool:
 ```js
 ServerEvents.fishingLootTables(event=>{
     event.modify("treasure",loot=>{
@@ -34,4 +34,4 @@ ServerEvents.fishingLootTables(event=>{
     })
 })
 ```
-在上面的案例中将钓鱼宝箱奖池的弓删掉了
+In the example above, the bow is removed from the fishing treasure pool.

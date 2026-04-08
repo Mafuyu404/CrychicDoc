@@ -1,10 +1,10 @@
 {
-  "_self_": "Q&A",
-  "API.md": "API",
-  "error.md": "error",
-  "event_interaction.md": "event_interaction",
+  "_self_": "问答",
+  "API.md": "类与方法",
+  "error.md": "报错",
+  "event_interaction.md": "事件与交互",
   "forgeEvents.md": "forgeEvents",
-  "loadClass.md": "loadClass",
-  "other.md": "other",
-  "register.md": "register"
+  "loadClass.md": "反射",
+  "other.md": "其他",
+  "register.md": "注册"
 }

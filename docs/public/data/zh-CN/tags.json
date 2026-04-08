@@ -1769,7 +1769,7 @@
     },
     "KubeJS": {
       "name": "KubeJS",
-      "count": 17,
+      "count": 16,
       "pages": [
         {
           "title": "实体属性",
@@ -1794,17 +1794,6 @@
             "AI"
           ],
           "progress": 85,
-          "language": "zh-CN"
-        },
-        {
-          "title": "目录",
-          "description": "KubeJS 实体系统相关文档导航与索引",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
-          "tags": [
-            "KubeJS",
-            "Entity"
-          ],
-          "progress": 70,
           "language": "zh-CN"
         },
         {
@@ -2096,19 +2085,8 @@
     },
     "Entity": {
       "name": "Entity",
-      "count": 7,
+      "count": 6,
       "pages": [
-        {
-          "title": "目录",
-          "description": "KubeJS 实体系统相关文档导航与索引",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
-          "tags": [
-            "KubeJS",
-            "Entity"
-          ],
-          "progress": 70,
-          "language": "zh-CN"
-        },
         {
           "title": "Goal",
           "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
@@ -4407,7 +4385,7 @@
     },
     {
       "name": "KubeJS",
-      "count": 17,
+      "count": 16,
       "pages": [
         {
           "title": "实体属性",
@@ -4432,17 +4410,6 @@
             "AI"
           ],
           "progress": 85,
-          "language": "zh-CN"
-        },
-        {
-          "title": "目录",
-          "description": "KubeJS 实体系统相关文档导航与索引",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
-          "tags": [
-            "KubeJS",
-            "Entity"
-          ],
-          "progress": 70,
           "language": "zh-CN"
         },
         {
@@ -4617,19 +4584,8 @@
     },
     {
       "name": "Entity",
-      "count": 7,
+      "count": 6,
       "pages": [
-        {
-          "title": "目录",
-          "description": "KubeJS 实体系统相关文档导航与索引",
-          "path": "/zh/modpack/kubejs/1.20.1/Introduction/Entity/Catalogue",
-          "tags": [
-            "KubeJS",
-            "Entity"
-          ],
-          "progress": 70,
-          "language": "zh-CN"
-        },
         {
           "title": "Goal",
           "description": "KubeJS 实体 AI 目标（Goal）系统 API 参考与用法说明",
@@ -5276,7 +5232,7 @@
     }
   ],
   "totalTags": 31,
-  "totalPages": 217,
+  "totalPages": 215,
   "language": "zh-CN",
-  "generatedAt": "2026-03-04T15:13:43.084Z"
+  "generatedAt": "2026-04-07T05:18:38.910Z"
 }

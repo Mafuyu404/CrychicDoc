@@ -1,70 +1,69 @@
 ---
 authors: ['Gu-meng']
 ---
-# BlockBench基础使用
-## 一、关于Blockbench
+# Basic Blockbench Usage
+## 1. About Blockbench
 
-* [**Blockbench**](https://www.blockbench.net)可以说是Minecraft界的建模神器了,你们所见到的奇奇怪怪的方块基本都是Blockbench做的(但也有少数[`obj`](../Digression/ForgeReadObjModel)格式的进阶模型),例如这个锻造台\
+* [**Blockbench**](https://www.blockbench.net) is one of the most popular modeling tools in Minecraft modding. Most custom-looking blocks you see are made with Blockbench (though some advanced models use [`obj`](../Digression/ForgeReadObjModel) format), for example this smithing table:\
   ![smithing\_table_1.png](/imgs/Blockbench/smithing_table_1.png)![smithing\_table_2.png](/imgs/Blockbench/smithing_table_2.png)
-* **文件路径**
-  * 模型文件往往存放于`assets/${modid}/models`
-  * 和`textures`文件夹一样,`models`文件夹内一般分为`block`和`item`两个文件夹
-  * 取决于你做的模型类型如果是方块就放入`block`内,如果是物品就放入`item`内
-  * **保存时一定得是`json`格式的模型文件**
-  * 而贴图则是置于`assets/${modid}/textures`内,和上面一样,方块放`block`,物品放`item`,可以的话最好和模型存放于一个`${modid}`下
+* **File paths**
+  * Model files are usually stored in `assets/${modid}/models`.
+  * Like the `textures` folder, `models` is usually split into `block` and `item`.
+  * Put block models in `block` and item models in `item`.
+  * **Make sure the exported model file is in `json` format.**
+  * Textures go in `assets/${modid}/textures`; similarly, blocks in `block`, items in `item`. If possible, keep models and textures under the same `${modid}`.
 
-## 二、使用
+## 2. Usage
 
-(本教程只教最简单的部分,惊喜的部分请自己另找教程)
+(This tutorial only covers the basics. For advanced workflows, check other guides.)
 
-### **1、创建项目**
+### **1. Create a Project**
 
-* 首先在选择模型时请选择他已经给出的Java版模型,这个类型所导出的模型都是json格式,也正好是Minecraft所需要的格式\
+* When selecting a model preset, choose the provided Java Edition type. It exports `json`, which is exactly what Minecraft needs.\
   ![menu.png](/imgs/Blockbench/menu.png)
-* 选择模型后他会还有一个弹窗,文件名写你的物品或方块ID即可,其它不用管\
+* After selecting the type, a popup appears. Set the filename to your item/block ID and leave the rest as default.\
   ![project.png](/imgs/Blockbench/project.png)
 
-### **2、创建第一个模型**
+### **2. Create Your First Model**
 
-* 在进入工作区后我们会看到下面的UI,通过下图来了解一下工作区最常用的几个按钮所相对应的功能(块其实就是模型)\
+* After entering the workspace, you will see the UI below. This image highlights the most commonly used buttons (a cube here means a model element).\
   ![ui.png](/imgs/Blockbench/ui.png)
-* 我们先一顿操作猛如虎随便搞个模型出来\
+* Create any quick test model first.\
   ![model\_1.png](/imgs/Blockbench/model_1.png)
-* 随后我们保存模型,保存到上面所说的`assets/${modid}/models/block`\
+* Then save it to `assets/${modid}/models/block` as mentioned above.\
   ![model\_2.png](/imgs/Blockbench/save.png)\
-  写代码...
+  Write code...
 ```js
 StartupEvents.registry("block", (event) => {
-	// 方块ID要和模型文件名一样
+	// The block ID should match the model filename
     event.create("test_block")
 })
 ```
 
-### **3、为模型设置贴图**
+### **3. Set Textures for the Model**
 
-* 这个时候如果注册进游戏显示的将会是下图...紫黑块,并且手上的模型和物品栏模型的方向以及大小看起来和别的方块很不一样...\
+* If you register it in-game now, you will likely get the classic purple-black missing texture, and the in-hand/inventory transform will also look wrong.\
   ![model\_1.png](/imgs/Blockbench/game/model_1.png)
-* 我们先来解决一下贴图的问题,我们将贴图放在上面提到的`assets/${modid}/textures/block`中,然后打开blockbench点击左下方的导入纹理(也可以导入多个纹理),或是自己创建一个纹理(这里不教)\
+* First, fix textures. Put texture files in `assets/${modid}/textures/block`, then in Blockbench click import texture at the lower-left (you can import multiple textures), or create one yourself (not covered here).\
   ![textures\_1.png](/imgs/Blockbench/textures/textures_1.png)![textures\_2.png](/imgs/Blockbench/textures/textures_2.png)
-* 导入纹理后我们还要给模型贴上贴图,有两种方式
-  * 第一种是直接将贴图给拖到模型上\
+* After importing, apply textures to the model. There are two ways:
+  * Drag a texture directly onto the model.\
     ![textures\_3.png](/imgs/Blockbench/textures/textures_3.png)
-  * 第二种是右键模型`选择纹理`\
+  * Right-click the model and choose `Select Texture`.\
     ![textures\_4.png](/imgs/Blockbench/textures/textures_4.png)
-  * 有时候贴上贴图后会有下面这奇怪的现象\
+  * Sometimes you may get strange UV results after applying textures:\
     ![textures\_5.png](/imgs/Blockbench/textures/textures_5.png)
-  * 把视角放到左上角的贴图处理的地方,这里的贴图处理可以选择贴图的所选位置,在这里进行选取的贴图区域在模型上也会同步展示
-  * 至于下面那一排按钮...为什么不自己动手试试呢? Ciallo ～(∠·ω< )⌒☆\
+  * Use the UV editor in the top-left. Selecting a region there updates the mapped area on the model in real time.
+  * As for the row of buttons below, try them out yourself and see what each does.\
     ![textures\_6.png](/imgs/Blockbench/textures/textures_6.png)
-  * 一个模型一共有6个面,每个面都可以是不同的贴图,而每个模型都可以使用不同的贴图,还是一顿操作猛如虎我们把纹理都处理好后保存,然后启动游戏(如果开着游戏`F3+T`也可以)\
-    ![model\_2.png](/imgs/Blockbench/model_2.png) 
-	**嘿咻嘿咻~ 游戏启动中\~**
-  * 如果你的贴图成功加载出来了那恭喜你成功了
-  * 现在!去楼下小卖部给自己买一根5块钱以上的雪糕好好犒劳一下自己
+  * A model has 6 faces, each face can use different texture regions, and each model can use different textures. After finishing UV/textures, save and start the game (or use `F3+T` if the game is already running).\
+    ![model\_2.png](/imgs/Blockbench/model_2.png)
+	**Launching the game...**
+  * If the texture loads correctly, you did it.
   * ![model\_2.png](/imgs/Blockbench/model_2.png)
-**物品栏模型**
-  * 不难看到我们物品栏中的和手上的模型看起来非常奇怪,这个也很简单,我们点开工作区右上角的显示调整,然后点击左上角的3条横,选择`默认方块/三个点/应用于所有槽位`,保存!(当然你也可以选择自己调整)\
+**Inventory Model**
+  * You will notice the inventory and in-hand model can still look odd. Open Display Settings (top-right in workspace), click the three-line menu at the top-left, choose `Apply Preset -> Default Block -> Apply to all slots`, then save (or tune it manually).\
     ![display\_1.png](/imgs/Blockbench/display_1.png) ![display\_2.png](/imgs/Blockbench/display_2.png)
-  * 和刚才一样的步骤,`F3+T`重载一下 ![model\_3.png](/imgs/Blockbench/game/model_3.png)
-  * 可以看到物品栏中和手上的模型都和正常的方块一样了
-  * 如果在破坏方块时他的粒子效果也是紫黑色,可以右键你需要的纹理,然后选择`作为粒子纹理`
+  * Reload with `F3+T` like before. ![model\_3.png](/imgs/Blockbench/game/model_3.png)
+  * Now the inventory and in-hand model should look like a normal block.
+  * If block break particles are still purple-black, right-click the texture and choose `Use as Particle Texture`.

@@ -1,6 +1,7 @@
 ---
 Layout: doc
-title: Performance mod
+title: Performance
+description: Client and server optimization notes, tuning, and compatibility guidance.
 SidebarFolder: true
 sidebarorder:
   server: 1

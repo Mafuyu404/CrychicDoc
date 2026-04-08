@@ -1,11 +1,11 @@
 ---
 authors: ['Gu-meng', 'Qi-Month']
 ---
-> 调用函数使用 `scene.world.你要的函数` 即可
+> Call functions as `scene.world.<functionName>`
 >
-> 例如 : scene.world.setBlocks([2, 1, 1], "create:encased_fan");
+> Example: `scene.world.setBlocks([2, 1, 1], "create:encased_fan");`
 
-# 以下代码节录自 internal_46.d.ts
+# The following code is excerpted from `internal_46.d.ts`
 
 ```ts
 class ExtendedSceneBuilder$ExtendedWorldInstructions extends Internal.SceneBuilder$WorldInstructions {
@@ -76,7 +76,7 @@ type ExtendedSceneBuilder$ExtendedWorldInstructions_ =
   ExtendedSceneBuilder$ExtendedWorldInstructions;
 ```
 
-# 以下代码节录自 internal_26.d.ts
+# The following code is excerpted from `internal_26.d.ts`
 
 ```ts
 class SceneBuilder$WorldInstructions {

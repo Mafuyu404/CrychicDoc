@@ -25,22 +25,22 @@ breadcrumb: false
     "title": "Minecraft Useful Links",
     "items": [
       {
-        "title": "Minecraft wiki",
-        "link": "https://https://minecraft.wiki/",
-        "icon": "https://https://minecraft.wiki/images/Wiki.png"
+        "title": "Minecraft Wiki",
+        "link": "https://minecraft.wiki/",
+        "icon": "https://minecraft.wiki/images/Wiki.png"
       },
       {
-        "title": "modtinth",
+        "title": "Modrinth",
         "link": "https://modrinth.com/",
         "icon": "&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"128\" height=\"128\" viewBox=\"0 0 24 24\"&gt;&lt;path fill=\"#1bd96a\" d=\"M12.252.004a11.78 11.768 0 0 0-8.92 3.73a11 11 0 0 0-2.17 3.11a11.37 11.359 0 0 0-1.16 5.169c0 1.42.17 2.5.6 3.77c.24.759.77 1.899 1.17 2.529a12.3 12.298 0 0 0 8.85 5.639c.44.05 2.54.07 2.76.02c.2-.04.22.1-.26-1.7l-.36-1.37l-1.01-.06a8.5 8.489 0 0 1-5.18-1.8a5.3 5.3 0 0 1-1.3-1.26c0-.05.34-.28.74-.5a37.572 37.545 0 0 1 2.88-1.629c.03 0 .5.45 1.06.98l1 .97l2.07-.43l2.06-.43l1.47-1.47c.8-.8 1.48-1.5 1.48-1.52c0-.09-.42-1.63-.46-1.7c-.04-.06-.2-.03-1.02.18c-.53.13-1.2.3-1.45.4l-.48.15l-.53.53l-.53.53l-.93.1l-.93.07l-.52-.5a2.7 2.7 0 0 1-.96-1.7l-.13-.6l.43-.57c.68-.9.68-.9 1.46-1.1c.4-.1.65-.2.83-.33c.13-.099.65-.579 1.14-1.069l.9-.9l-.7-.7l-.7-.7l-1.95.54c-1.07.3-1.96.53-1.97.53c-.03 0-2.23 2.48-2.63 2.97l-.29.35l.28 1.03c.16.56.3 1.16.31 1.34l.03.3l-.34.23c-.37.23-2.22 1.3-2.84 1.63c-.36.2-.37.2-.44.1c-.08-.1-.23-.6-.32-1.03c-.18-.86-.17-2.75.02-3.73a8.84 8.84 0 0 1 7.9-6.93c.43-.03.77-.08.78-.1c.06-.17.5-2.999.47-3.039c-.01-.02-.1-.02-.2-.03Zm3.68.67c-.2 0-.3.1-.37.38c-.06.23-.46 2.42-.46 2.52c0 .04.1.11.22.16a8.51 8.499 0 0 1 2.99 2a8.38 8.379 0 0 1 2.16 3.449a6.9 6.9 0 0 1 .4 2.8c0 1.07 0 1.27-.1 1.73a9.4 9.4 0 0 1-1.76 3.769c-.32.4-.98 1.06-1.37 1.38c-.38.32-1.54 1.1-1.7 1.14c-.1.03-.1.06-.07.26c.03.18.64 2.56.7 2.78l.06.06a12.07 12.058 0 0 0 7.27-9.4c.13-.77.13-2.58 0-3.4a11.96 11.948 0 0 0-5.73-8.578c-.7-.42-2.05-1.06-2.25-1.06Z\"/&gt;&lt;/svg&gt;"
       },
       {
-        "title": "curseforge",
+        "title": "CurseForge",
         "link": "https://www.curseforge.com/",
         "icon": "&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"128\" height=\"128\" viewBox=\"0 0 24 24\"&gt;&lt;path fill=\"#f16436\" d=\"M18.326 9.215s4.9-.773 5.674-3.027h-7.507V4.4H0l2.032 2.358v2.415s5.127-.266 7.11 1.237c2.714 2.516-3.053 5.917-3.053 5.917l-.99 3.273c1.547-1.473 4.494-3.377 9.899-3.286c-2.057.65-4.125 1.665-5.735 3.286h10.925l-1.029-3.273s-7.918-4.668-.833-7.112\"/&gt;&lt;/svg&gt;"
       },
       {
-        "title": "Fandom wiki",
+        "title": "Fandom Wiki",
         "link": "https://minecraft-mods.fandom.com/wiki/Special:Search?query=minecraft&amp;scope=internal&amp;navigationSearch=true/",
         "icon": "https://minecraft-mods.fandom.com/favicon.ico"
       },
@@ -50,7 +50,7 @@ breadcrumb: false
         "icon": "https://www.planetminecraft.com/favicon.ico"
       },
       {
-        "title": "MINECRAFT EARTH MAP",
+        "title": "Minecraft Earth Map",
         "link": "https://earth.motfe.net/",
         "icon": "https://earth.motfe.net/"
       }
@@ -162,16 +162,16 @@ breadcrumb: false
         "icon": "&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"128\" height=\"128\" viewBox=\"0 0 128 128\"&gt;&lt;mask id=\"IconifyId191d5d48585f2379a4\" width=\"128\" height=\"128\" x=\"0\" y=\"0\" maskUnits=\"userSpaceOnUse\" style=\"mask-type:alpha\"&gt;&lt;path fill=\"#fff\" fill-rule=\"evenodd\" d=\"M90.767 127.126a7.97 7.97 0 0 0 6.35-.244l26.353-12.681a8 8 0 0 0 4.53-7.209V21.009a8 8 0 0 0-4.53-7.21L97.117 1.12a7.97 7.97 0 0 0-9.093 1.548l-50.45 46.026L15.6 32.013a5.33 5.33 0 0 0-6.807.302l-7.048 6.411a5.335 5.335 0 0 0-.006 7.888L20.796 64L1.74 81.387a5.336 5.336 0 0 0 .006 7.887l7.048 6.411a5.33 5.33 0 0 0 6.807.303l21.974-16.68l50.45 46.025a8 8 0 0 0 2.743 1.793Zm5.252-92.183L57.74 64l38.28 29.058V34.943Z\" clip-rule=\"evenodd\"/&gt;&lt;/mask&gt;&lt;g mask=\"url(#IconifyId191d5d48585f2379a4)\"&gt;&lt;path fill=\"#0065A9\" d=\"M123.471 13.82L97.097 1.12A7.97 7.97 0 0 0 88 2.668L1.662 81.387a5.333 5.333 0 0 0 .006 7.887l7.052 6.411a5.33 5.33 0 0 0 6.811.303l103.971-78.875c3.488-2.646 8.498-.158 8.498 4.22v-.306a8 8 0 0 0-4.529-7.208Z\"/&gt;&lt;g filter=\"url(#IconifyId191d5d48585f2379a5)\"&gt;&lt;path fill=\"#007ACC\" d=\"m123.471 114.181l-26.374 12.698A7.97 7.97 0 0 1 88 125.333L1.662 46.613a5.333 5.333 0 0 1 .006-7.887l7.052-6.411a5.33 5.33 0 0 1 6.811-.303l103.971 78.874c3.488 2.647 8.498.159 8.498-4.219v.306a8 8 0 0 1-4.529 7.208\"/&gt;&lt;/g&gt;&lt;g filter=\"url(#IconifyId191d5d48585f2379a6)\"&gt;&lt;path fill=\"#1F9CF0\" d=\"M97.098 126.882A7.98 7.98 0 0 1 88 125.333c2.952 2.952 8 .861 8-3.314V5.98c0-4.175-5.048-6.266-8-3.313a7.98 7.98 0 0 1 9.098-1.549L123.467 13.8A8 8 0 0 1 128 21.01v85.982a8 8 0 0 1-4.533 7.21z\"/&gt;&lt;/g&gt;&lt;path fill=\"url(#IconifyId191d5d48585f2379a7)\" fill-rule=\"evenodd\" d=\"M90.69 127.126a7.97 7.97 0 0 0 6.349-.244l26.353-12.681a8 8 0 0 0 4.53-7.21V21.009a8 8 0 0 0-4.53-7.21L97.039 1.12a7.97 7.97 0 0 0-9.093 1.548l-50.45 46.026l-21.974-16.68a5.33 5.33 0 0 0-6.807.302l-7.048 6.411a5.336 5.336 0 0 0-.006 7.888L20.718 64L1.662 81.386a5.335 5.335 0 0 0 .006 7.888l7.048 6.411a5.33 5.33 0 0 0 6.807.303l21.975-16.681l50.45 46.026a8 8 0 0 0 2.742 1.793m5.252-92.184L57.662 64l38.28 29.057z\" clip-rule=\"evenodd\" opacity=\".25\"/&gt;&lt;/g&gt;&lt;defs&gt;&lt;filter id=\"IconifyId191d5d48585f2379a5\" width=\"144.744\" height=\"113.408\" x=\"-8.411\" y=\"22.594\" color-interpolation-filters=\"sRGB\" filterUnits=\"userSpaceOnUse\"&gt;&lt;feFlood flood-opacity=\"0\" result=\"BackgroundImageFix\"/&gt;&lt;feColorMatrix in=\"SourceAlpha\" result=\"hardAlpha\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\"/&gt;&lt;feOffset/&gt;&lt;feGaussianBlur stdDeviation=\"4.167\"/&gt;&lt;feColorMatrix values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\"/&gt;&lt;feBlend in2=\"BackgroundImageFix\" mode=\"overlay\" result=\"effect1_dropShadow_1_36\"/&gt;&lt;feBlend in=\"SourceGraphic\" in2=\"effect1_dropShadow_1_36\" result=\"shape\"/&gt;&lt;/filter&gt;&lt;filter id=\"IconifyId191d5d48585f2379a6\" width=\"56.667\" height=\"144.007\" x=\"79.667\" y=\"-8.004\" color-interpolation-filters=\"sRGB\" filterUnits=\"userSpaceOnUse\"&gt;&lt;feFlood flood-opacity=\"0\" result=\"BackgroundImageFix\"/&gt;&lt;feColorMatrix in=\"SourceAlpha\" result=\"hardAlpha\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\"/&gt;&lt;feOffset/&gt;&lt;feGaussianBlur stdDeviation=\"4.167\"/&gt;&lt;feColorMatrix values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\"/&gt;&lt;feBlend in2=\"BackgroundImageFix\" mode=\"overlay\" result=\"effect1_dropShadow_1_36\"/&gt;&lt;feBlend in=\"SourceGraphic\" in2=\"effect1_dropShadow_1_36\" result=\"shape\"/&gt;&lt;/filter&gt;&lt;linearGradient id=\"IconifyId191d5d48585f2379a7\" x1=\"63.922\" x2=\"63.922\" y1=\".33\" y2=\"127.67\" gradientUnits=\"userSpaceOnUse\"&gt;&lt;stop stop-color=\"#fff\"/&gt;&lt;stop offset=\"1\" stop-color=\"#fff\" stop-opacity=\"0\"/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;/svg&gt;"
       },
       {
-        "title": "Online Table Tool",
+        "title": "Online Table Converter",
         "link": "https://tableconvert.com/",
         "icon": "https://tableconvert.com/images/favicon.png"
       },
       {
-        "title": "JS Tools",
+        "title": "JS Tool Collection",
         "link": "https://js.wfuapp.com/",
         "icon": "&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"128\" height=\"128\" viewBox=\"0 0 256 256\"&gt;&lt;g fill=\"none\"&gt;&lt;rect width=\"256\" height=\"256\" fill=\"#F0DB4F\" rx=\"60\"/&gt;&lt;path fill=\"#323330\" d=\"m67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371c7.905 0 12.889-3.092 12.889-15.12v-81.798h24.058v82.138c0 24.917-14.606 36.259-35.916 36.259c-19.245 0-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607c9.969 0 16.325-4.984 16.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.579c-17.357-7.388-28.871-16.668-28.871-36.258c0-18.044 13.748-31.792 35.229-31.792c15.294 0 26.292 5.328 34.196 19.247l-18.731 12.029c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046 0-11.514 4.468-11.514 10.31c0 7.217 4.468 10.139 14.778 14.608l6.014 2.577c20.449 8.765 31.963 17.699 31.963 37.804c0 21.654-17.012 33.51-39.867 33.51c-22.339 0-36.774-10.654-43.819-24.574\"/&gt;&lt;/g&gt;&lt;/svg&gt;",
         "badge": {
-          "text": "Google Translate Needed",
+          "text": "Translation May Be Needed",
           "type": "tip"
         }
       }

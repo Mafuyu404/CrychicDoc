@@ -1,12 +1,15 @@
 ---
 root: true
 title: 模组
-description: Minecraft模组使用文档，生存辅助、冒险、装饰、性能优化、技术型模组安装配置指南
-details: 收录各类精选模组的使用说明，包括生存辅助(Trinkets/Emotecraft)、冒险模组、性能优化(Client/Server)、技术模组、储物模组等
+description: 按主题整理当前维护的模组文档，覆盖冒险、装备、装饰、性能、服务端、存储与科技方向。
+details: 收录当前站内正在维护的模组说明，便于按用途快速进入对应分区。
 prev: false
 next: false
 hidden: false
-collapsed: true
+collapsed: false
+maxDepth: 0
+viewControl:
+  mode: self
 ---
 
 This file stores sidebar metadata for this directory.

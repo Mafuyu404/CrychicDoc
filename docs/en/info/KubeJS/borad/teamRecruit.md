@@ -1,11 +1,11 @@
 ---
 prev: false
 next: false
-title: teamRecruit
+title: Team Recruitment
 hidden: false
 priority: 0
 ---
 
-# 团队招募
+# Team Recruitment
 
-该页面用于发布和讨论KubeJS相关的团队招募信息。
+Use this page to post and discuss recruitment and collaboration topics related to KubeJS.

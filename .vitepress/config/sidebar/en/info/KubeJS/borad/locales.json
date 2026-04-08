@@ -1,10 +1,10 @@
 {
-  "_self_": "Borad",
-  "code.md": "code",
-  "docError.md": "docError",
-  "modRecommend.md": "modRecommend",
-  "modpack.md": "modpack",
-  "navbar.md": "navbar",
-  "publicServer.md": "publicServer",
-  "teamRecruit.md": "teamRecruit"
+  "_self_": "Board",
+  "code.md": "Code Share",
+  "docError.md": "Documentation Errors",
+  "modRecommend.md": "Mod Recommendations",
+  "modpack.md": "Modpacks",
+  "navbar.md": "Navigation Bar",
+  "publicServer.md": "Public Servers",
+  "teamRecruit.md": "Team Recruitment"
 }

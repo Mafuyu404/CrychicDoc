@@ -8,25 +8,22 @@
   "1.20.1/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749253126720
+    "isActiveInStructure": true
   },
   "1.20.4/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749253126720
+    "isActiveInStructure": true
   },
   "1.21/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749253126720
+    "isActiveInStructure": true
   },
   "Mixin/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": false
+    "isActiveInStructure": true
   },
   "Description.md": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
@@ -36,6 +33,11 @@
   "modding/": {
     "valueHash": "68934a3e9455fa72420237eb05902327",
     "isUserSet": false,
-    "isActiveInStructure": true
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
+    "valueHash": "68934a3e9455fa72420237eb05902327",
+    "isUserSet": false,
+    "isActiveInStructure": false
   }
 }

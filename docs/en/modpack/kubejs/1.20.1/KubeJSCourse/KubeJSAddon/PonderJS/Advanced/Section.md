@@ -1,13 +1,13 @@
 ---
 authors: ['Gu-meng', 'Qi-Month']
 ---
-## Section进阶用法(建议先把基础学好了再回来看这个)
+## Advanced Section Usage (recommended after learning the basics)
 
 > ### showIndependentSection
 >
 > `scene.world.showIndependentSection(selection: Selection, fadeInDirection: Direction): ElementLink<WorldSectionElement>`
 >
-> 该方法用于显示一个区域, 并返回指代该区域的`ElementLink`(此方法的动画同样持续 15 tick)
+> Shows a section and returns an `ElementLink` pointing to that section (animation lasts 15 ticks).
 >
 > ```js
 > const example_link = scene.world.showIndependentSection(
@@ -20,78 +20,78 @@ authors: ['Gu-meng', 'Qi-Month']
 >
 > `scene.world.showIndependentSection(selection: Selection, fadeInDirection: Direction, fadeInDuration: number): ElementLink<WorldSectionElement>`
 >
-> 此方法相较与上面的方法, 多了一个`fadeInDuration`参数
+> Compared with the method above, this one adds a `fadeInDuration` parameter.
 >
-> 该参数接受一个整数, 用于修改动画持续时间
+> This parameter is an integer used to change animation duration.
 
 > ### showIndependentSectionImmediately
 >
 > `scene.world.showIndependentSectionImmediately(selection: Selection): ElementLink<WorldSectionElement>`
 >
-> 此方法是上述两个方法的简化版, 作用是立刻显示一个区域, 并且返回该区域的`ElementLink`
+> A simplified version of the two methods above. It shows a section immediately and returns its `ElementLink`.
 >
-> 作为简化的代价, 该方法的默认`fadeInDirection`为`Direction.down`
+> As a tradeoff, the default `fadeInDirection` is `Direction.down`.
 
 > ### showSectionAndMerge
 >
 > `scene.world.showSectionAndMerge(selection: Selection, fadeInDirection: Direction, link: ElementLink<WorldSectionElement>): void`
 >
-> 还记得我们刚刚创建的`example_link`吗?
+> Remember the `example_link` created above?
 >
-> 便是此方法接受的`link`参数
+> That is exactly the `link` parameter accepted here.
 >
-> 该方法用于显示一个区域, 并将显示的区域合并到`link`所指代的区域中(此方法的动画同样持续 15 tick)
+> This method shows a section and merges it into the section referenced by `link` (animation lasts 15 ticks).
 
 > ### glueBlockOnto
 >
 > `scene.world.glueBlockOnto(blockPos: BlockPos, fadeInDirection: Direction, link: ElementLink<WorldSectionElement>): void`
 >
-> 这个方法是为了方便 Java 开发者而写的
+> This method exists mainly for Java developer convenience.
 >
-> 在 JavaScript 中, 它与上述方法的区别仅有第一个参数:
+> In JavaScript, the only difference from the previous method is the first parameter:
 >
-> - 该方法只能传入一个方块坐标
+> - This method only accepts one block position.
 >
-> - 而上述方法支持一个方块坐标或一个区域
+> - The method above supports either one block position or a region.
 
 > ### hideSection
 >
 > `scene.world.hideSection(selection: Selection, fadeOutDirection: Direction): void`
 >
-> 通过传入的`link`参数, 将该`link`所指代的区域隐藏
+> Hides the selected section.
 >
-> 该方法的隐藏动画持续15 tick
+> Hide animation duration is 15 ticks.
 
 > ### hideIndependentSection
 >
 > `scene.world.hideIndependentSection(link: ElementLink<WorldSectionElement>, fadeOutDirection: Direction, fadeOutDuration: number): void`
 >
-> 通过传入的`link`参数, 将该`link`所指代的区域隐藏
+> Hides the section referenced by the provided `link`.
 
 > ### hideIndependentSectionImmediately
 >
 > `scene.world.showIndependentSectionImmediately(link: ElementLink<WorldSectionElement>): void`
 >
-> 通过传入的`link`参数, 将该`link`所指代的区域立刻隐藏
+> Immediately hides the section referenced by `link`.
 >
-> 隐藏方向默认为`Direction.down`
+> Default hide direction is `Direction.down`.
 
 > ### rotateSection
 >
 > `scene.world.rotateSection(link: ElementLink<WorldSectionElement>, xRotation: number, yRotation: number, zRotation: number, duration: number)`
 >
-> 该方法接受一个`link`, 用于对该`link`所指代的区域进行旋转操作(比如`showSectionAndMerge`所合并的区域)
+> Accepts a `link` and rotates the section it references (for example, one merged via `showSectionAndMerge`).
 >
-> 后面四个参数分别接受`double`, `double`, `double`, `int`类型
+> The last four parameters are `double`, `double`, `double`, and `int`.
 
 > ### makeSectionIndependent
 >
 > `scene.world.makeSectionIndependent(selection: Selection): ElementLink<WorldSectionElement>`
 >
-> 将该`selection`选中的区域从`baseWorldSection`独立出去
+> Splits the selected region out from `baseWorldSection` as an independent section.
 
 > ### moveSection
 >
 > `scene.world.moveSection(link: ElementLink<WorldSectionElement>, offset: Vec3, duration: number): void`
 >
-> 移动`link`所指代的区域, 第二个参数可接受一个形似`[x, y, z]`的数组
+> Moves the section referenced by `link`. The second parameter can be an array like `[x, y, z]`.

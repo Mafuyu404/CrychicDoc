@@ -1,3 +1,6 @@
 {
-  "_self_": "Event"
+  "_self_": "Events",
+  "StartupScript/": "StartupScript",
+  "ServerScript/": "ServerScript",
+  "ClientScript/": "ClientScript"
 }

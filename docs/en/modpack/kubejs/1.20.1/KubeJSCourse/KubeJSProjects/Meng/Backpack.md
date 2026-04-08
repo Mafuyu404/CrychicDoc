@@ -1,20 +1,20 @@
-# 注册背包
-本章涉及内容：物品注册、nbt操作，饰品处理，按键注册
-涉及模组及版本:
+# Register a Backpack
+Topics covered: item registration, NBT operations, Curios handling, and keybinding registration.
+Mods and versions used:
 1. rhino-forge-2001.2.3-build.6
 2. architectury-9.2.14-forge
 3. kubejs-forge-2001.6.5-build.16
 4. probejs-6.0.1-forge
 5. curios-forge-5.10.0+1.20.1
 
-## startup_scripts 代码
-### 注册物品
+## `startup_scripts` Code
+### Register Item
 ```js
 event.create("meng:backpack")
     .maxStackSize(1)
-    .tag("curios:back"); // 这一行是饰品，如果不需要可以删掉
+    .tag("curios:back"); // This line adds the Curios slot tag; remove it if not needed
 ```
-### 注册按键
+### Register Keybinding
 ```js
 ClientEvents.init(() => {
   global.regKeyB = new $KeyMapping(
@@ -26,7 +26,7 @@ ClientEvents.init(() => {
 }); 
 ```
 
-### 按键处理 client_scripts
+### Key Handling in `client_scripts`
 ```js
 ClientEvents.tick(event => {
     const key = global.regKeyB;
@@ -43,8 +43,8 @@ ClientEvents.tick(event => {
 })
 ```
 
-## server_scripts 代码
-### 打开背包和背包关闭时的方法
+## `server_scripts` Code
+### Methods for Opening and Closing the Backpack
 ```js
 // priority: 5
 
@@ -52,7 +52,7 @@ const backpack = "meng:backpack";
 const dataBackpack = "backpack";
 const dataBackpackItem = dataBackpack + "Item";
 /**
- * 背包关闭，将背包里的物品写入到背包nbt
+ * On backpack close, write backpack inventory items into backpack NBT.
  * @param {*} inventoryContainer 
  * @param {Internal.ItemStack} backpackItem 
  */
@@ -68,7 +68,7 @@ function backpackFunc(inventoryContainer,backpackItem) {
     backpackItem.nbt.merge({ "items": list })
 }
 /**
- * 打开背包的函数
+ * Open-backpack function
  *
  */
 function openBackpackFunc(player, item) {
@@ -88,7 +88,7 @@ function openBackpackFunc(player, item) {
     }, Text.of(item.displayName).yellow()))
 }
 ```
-### 打开背包的代码
+### Open Backpack Logic
 ```js
 ItemEvents.firstRightClicked(backpack, event => {
     let { player, item } = event
@@ -112,7 +112,7 @@ NetworkEvents.dataReceived("openBackpack", event => {
     }
 })
 ```
-### 关闭背包的代码
+### Close Backpack Logic
 ```js
 PlayerEvents.chestClosed(event => {
     let { player, inventoryContainer } = event
@@ -137,7 +137,7 @@ PlayerEvents.chestClosed(event => {
 })
 ```
 
-## 一些注意事项
-1. 该项目只是作为示例，很多地方并不是最优解，可自行进行解决
-2. 如果对该项目代码部分不满可以将修改好的代码上传至[gitee项目仓库](https://gitee.com/gumengmengs/kubejs-course)
-3. 注册按键不要打包给服务器(具体看关于按键注册的注释)
+## Notes
+1. This project is only an example; many parts are not necessarily optimal and can be improved.
+2. If you improve this project, you can upload your revised code to the [Gitee repository](https://gitee.com/gumengmengs/kubejs-course).
+3. Do not include client keybinding registration in server deployment (see the keybinding comments).

@@ -1,3 +1,5 @@
 {
-  "_self_": "Vanilla"
+  "_self_": "Vanilla Content",
+  "datapack/": "Data Packs",
+  "resourcepack/": "Resource Packs"
 }

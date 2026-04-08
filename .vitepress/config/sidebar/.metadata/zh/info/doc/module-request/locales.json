@@ -1,53 +1,58 @@
 {
   "_self_": {
-    "valueHash": "90cbb629743ad609c2fd993070085b47",
-    "isUserSet": false,
+    "valueHash": "e36ad06e87ed78351b4e09582fd8dd9e",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247316241
   },
   "beautify.md": {
-    "valueHash": "b7c2cb7a4faaa56bc18c6ea74144b435",
-    "isUserSet": false,
+    "valueHash": "370f36550d9654627b411a8f4a228cfd",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447273
   },
   "codeShare.md": {
-    "valueHash": "113f9589ffba2671830413608e96cbc1",
-    "isUserSet": false,
+    "valueHash": "fee8b611f48310555b0b0b2ff0d07f88",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447273
   },
   "component.md": {
-    "valueHash": "700c216fb376666eaeda0c892e8bdc09",
-    "isUserSet": false,
+    "valueHash": "bb79667f37035e9562ec6bcffd6cf8ef",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447273
   },
   "kubejs.md": {
-    "valueHash": "a691613ab49fe4bb60744a404b434769",
-    "isUserSet": false,
+    "valueHash": "a5b10124c73efb47be9e6410796d1e42",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447273
   },
   "mod.md": {
-    "valueHash": "ad148a3ca8bd0ef3b48c52454c493ec5",
-    "isUserSet": false,
+    "valueHash": "8edf9fd34b93de4b5595e30a2135d7e8",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447273
   },
   "modPlugin.md": {
-    "valueHash": "d0533a08d3e3e0a64690183a6978a385",
-    "isUserSet": false,
+    "valueHash": "f1463f488d81c5eea335a2da64ac3a1a",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447273
   },
   "newSection.md": {
-    "valueHash": "aaa9b5850ed409b46a3ce6ce02d3708b",
-    "isUserSet": false,
+    "valueHash": "c8d8bd5945c84bb363f19d17009f6f2d",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749254447273
   },
   "Description.md": {
+    "valueHash": "90cbb629743ad609c2fd993070085b47",
+    "isUserSet": false,
+    "isActiveInStructure": false
+  },
+  "Catalogue.md": {
     "valueHash": "90cbb629743ad609c2fd993070085b47",
     "isUserSet": false,
     "isActiveInStructure": false

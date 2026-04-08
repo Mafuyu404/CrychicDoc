@@ -1,14 +1,14 @@
 {
   "_self_": {
-    "valueHash": "7d74f3b92b19da5e606d737d339a9679",
-    "isUserSet": false,
+    "valueHash": "1a96c7061fe4ac19e10edefe930fa1eb",
+    "isUserSet": true,
     "isActiveInStructure": true,
     "lastSeen": 1749247315908
   },
   "Catalogue.md": {
     "valueHash": "767fa455bb6826f4b550c21a6bca7182",
     "isUserSet": true,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749254447351
   },
   "Register/": {

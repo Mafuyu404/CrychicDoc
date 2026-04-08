@@ -8,6 +8,9 @@ collapsed: false
 state: unfinished
 progress: 15
 hidden: false
+maxDepth: 1
+viewControl:
+  mode: self
 ---
 
 This file stores sidebar metadata for this directory.

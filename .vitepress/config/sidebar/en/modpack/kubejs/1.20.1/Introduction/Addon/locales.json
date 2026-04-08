@@ -1,3 +1,5 @@
 {
-  "_self_": "Addon"
+  "_self_": "Addons",
+  "ProbeJS/": "目录",
+  "LootJs/": "LootJS"
 }

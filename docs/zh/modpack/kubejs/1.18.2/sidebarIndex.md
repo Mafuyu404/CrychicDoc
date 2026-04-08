@@ -1,8 +1,8 @@
 ---
 title: 1.18.2
 hidden: false
-priority: 9007199254740991
 collapsed: true
+priority: 20
 ---
 
 This file stores sidebar metadata for this directory.
