@@ -1,6 +1,6 @@
 # Archived Directory: doc
 
-**Archive Date**: 2026-04-09T06:11:55.523Z
+**Archive Date**: 2026-04-09T08:50:11.071Z
 **Original Location**: doc/doc
 **Reason**: Physical directory no longer exists in docs structure
 
