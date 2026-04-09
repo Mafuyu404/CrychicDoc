@@ -192,7 +192,6 @@ When a directory needs a clickable landing page, the system looks for these file
 
 - `index.md`
 - `Catalogue.md`
-- `Description.md`
 - `README.md`
 
 This keeps first-party sections free to use `Catalogue.md`, while mirrored third-party docs can rely on their existing `README.md` instead of carrying an extra `Catalogue.md`.

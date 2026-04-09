@@ -160,6 +160,7 @@ json=data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5
 - **`authors`** (`string[]`) - 页面作者列表
 - **`progress`** (`number`) - 文档完成进度 (0-100)
 - **`state`** (`string`) - 文档状态
+- **`metadata`** (`boolean | string | object`) - 元数据布局控制。支持 `doc`、`kubejs`、`modding`、`mod`，或直接设为 `false`
 - **`hidden`** (`boolean`) - 隐藏页面
 :::
 
@@ -174,9 +175,59 @@ priority: 10
 authors: ["张三", "李四"]
 progress: 85
 state: preliminary
+metadata: doc
 ---
 ```
 :::
+
+::: details Metadata 模式示例
+```yaml
+---
+metadata:
+  mode: kubejs
+  current:
+    label: 1.20.1
+    value: kubejs-2001.6.5-build.7
+  requiredMods:
+    - name: ProbeJS
+      version: probejs-6.0.1
+  routes:
+    - server_scripts
+---
+```
+
+```yaml
+---
+metadata:
+  mode: modding
+  current:
+    label: 1.20.4
+    value: NeoForge 20.4.x
+  stack:
+    - name: NeoGradle
+      version: userdev 7.0.124
+  routes:
+    - datagen
+    - registry
+---
+```
+
+```yaml
+---
+metadata:
+  mode: mod
+  side: both
+  latest: 1.21.x
+  supported: [1.21.x, 1.20.1, 1.19.2, 1.18.2]
+  loaders: [Forge, NeoForge]
+  sources:
+    curseforge: https://www.curseforge.com/minecraft/mc-mods/example
+    modrinth: https://modrinth.com/mod/example
+---
+```
+:::
+
+当 `metadata.mode: mod` 时，`side` 可写为 `server`、`client` 或 `both`。
 
 ### 标题与锚点 {#headings-anchors}
 

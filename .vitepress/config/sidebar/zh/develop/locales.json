@@ -2,5 +2,6 @@
   "_self_": "开发",
   "modding/": "模组开发",
   "plugin/": "插件开发",
-  "vanilla/": "原版开发"
+  "vanilla/": "原版开发",
+  "Catalogue.md": "目录"
 }

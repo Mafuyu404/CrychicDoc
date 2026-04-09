@@ -12,10 +12,9 @@
     "lastSeen": 1749252345899
   },
   "Catalogue.md": {
-    "valueHash": "a8567ec8887eb41c7870b3a624524a46",
+    "valueHash": "767fa455bb6826f4b550c21a6bca7182",
     "isUserSet": false,
-    "isActiveInStructure": false,
-    "lastSeen": 1749252345899
+    "isActiveInStructure": true
   },
   "PotionEffects.md": {
     "valueHash": "f3585d5ce0046854eedc2e76c4e9ca29",

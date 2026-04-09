@@ -2,5 +2,6 @@
   "_self_": false,
   "modding/": false,
   "plugin/": false,
-  "vanilla/": false
+  "vanilla/": false,
+  "Catalogue.md": false
 }

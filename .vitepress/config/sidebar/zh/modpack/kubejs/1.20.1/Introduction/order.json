@@ -10,5 +10,6 @@
   "PotionEffect/": 350,
   "Recipe/": 60,
   "Tag/": 70,
-  "Network/": 500
+  "Network/": 500,
+  "Catalogue.md": -1000000
 }

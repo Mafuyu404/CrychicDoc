@@ -11,5 +11,6 @@
   "Network/": false,
   "PotionEffect/": false,
   "Recipe/": false,
-  "Tag/": false
+  "Tag/": false,
+  "Catalogue.md": false
 }

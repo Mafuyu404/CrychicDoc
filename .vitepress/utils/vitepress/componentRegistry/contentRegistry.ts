@@ -13,3 +13,4 @@ export { default as ResponsibleEditor } from "@components/content/ResponsibleEdi
 export { default as MarkMapView } from "@components/content/MarkMapView.vue";
 export { default as VChart } from "@components/content/VChart.vue";
 export { default as ShaderEffectBlock } from "@components/content/ShaderEffectBlock.vue";
+export { default as DamageChart } from "@components/content/DamageChart.vue";

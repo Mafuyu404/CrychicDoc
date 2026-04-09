@@ -202,7 +202,6 @@ viewControl:
 
 - `index.md`
 - `Catalogue.md`
-- `Description.md`
 - `README.md`
 
 这意味着第一方文档仍然可以继续用 `Catalogue.md` 作为目录页，而站内整理的第三方文档如果本身已经有 `README.md`，就不需要再额外补一个 `Catalogue.md`。

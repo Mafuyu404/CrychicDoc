@@ -6,5 +6,6 @@
   "performance/": 5,
   "server/": 6,
   "storages/": 7,
-  "tech/": 8
+  "tech/": 8,
+  "Catalogue.md": -1000000
 }

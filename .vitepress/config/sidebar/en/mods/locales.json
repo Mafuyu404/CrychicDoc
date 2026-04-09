@@ -7,5 +7,6 @@
   "performance/": "Performance",
   "server/": "Server Mods",
   "storages/": "Storage Mods",
-  "tech/": "Tech Mods"
+  "tech/": "Tech Mods",
+  "Catalogue.md": "目录"
 }

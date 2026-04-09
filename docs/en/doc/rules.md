@@ -160,6 +160,7 @@ Each Markdown file should include a `frontmatter` block to configure page metada
 - **`authors`** (`string[]`) - List of page authors
 - **`progress`** (`number`) - Document completion progress (0-100)
 - **`state`** (`string`) - Document status
+- **`metadata`** (`boolean | string | object`) - Metadata layout control. Supports `doc`, `kubejs`, `modding`, `mod`, or `false`
 - **`hidden`** (`boolean`) - Hide page
 :::
 
@@ -174,9 +175,59 @@ priority: 10
 authors: ["Zhang San", "Li Si"]
 progress: 85
 state: preliminary
+metadata: doc
 ---
 ```
 :::
+
+::: details Metadata Mode Examples
+```yaml
+---
+metadata:
+  mode: kubejs
+  current:
+    label: 1.20.1
+    value: kubejs-2001.6.5-build.7
+  requiredMods:
+    - name: ProbeJS
+      version: probejs-6.0.1
+  routes:
+    - server_scripts
+---
+```
+
+```yaml
+---
+metadata:
+  mode: modding
+  current:
+    label: 1.20.4
+    value: NeoForge 20.4.x
+  stack:
+    - name: NeoGradle
+      version: userdev 7.0.124
+  routes:
+    - datagen
+    - registry
+---
+```
+
+```yaml
+---
+metadata:
+  mode: mod
+  side: both
+  latest: 1.21.x
+  supported: [1.21.x, 1.20.1, 1.19.2, 1.18.2]
+  loaders: [Forge, NeoForge]
+  sources:
+    curseforge: https://www.curseforge.com/minecraft/mc-mods/example
+    modrinth: https://modrinth.com/mod/example
+---
+```
+:::
+
+For `metadata.mode: mod`, `side` accepts `server`, `client`, or `both`.
 
 ### Titles and Anchors {#headings-anchors}
 

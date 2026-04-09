@@ -22,8 +22,6 @@ function normalizeRoutePath(value) {
     result = result.replace(/\/{2,}/g, "/");
     result = result.replace(/\/index\.html$/i, "/");
     result = result.replace(/\/index\.md$/i, "/");
-    result = result.replace(/\/Description\.html$/i, "/");
-    result = result.replace(/\/Description\.md$/i, "/");
     if (!result.startsWith("/")) {
         result = `/${result}`;
     }
@@ -48,8 +46,6 @@ function buildPathVariants(value) {
     if (route.endsWith("/")) {
         variants.add(`${route}index.md`);
         variants.add(`${route}index.html`);
-        variants.add(`${route}Description.md`);
-        variants.add(`${route}Description.html`);
     }
     return Array.from(variants);
 }
@@ -101,10 +97,7 @@ function toDocFilePath(docsRoot, routePath) {
     if (relativePath.endsWith(".html")) {
         relativePath = relativePath.replace(/\.html$/i, ".md");
     } else if (relativePath.endsWith("/")) {
-        const descriptionPath = path.join(docsRoot, relativePath, "Description.md");
-        relativePath = existsSync(descriptionPath)
-            ? `${relativePath}Description.md`
-            : `${relativePath}index.md`;
+        relativePath = `${relativePath}index.md`;
     } else if (!relativePath.endsWith(".md")) {
         relativePath = `${relativePath}.md`;
     }

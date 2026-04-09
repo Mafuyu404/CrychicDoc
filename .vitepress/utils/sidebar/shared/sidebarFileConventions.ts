@@ -18,7 +18,6 @@ export const SIDEBAR_ITEM_EXCLUDED_FILE_CANDIDATES = [
 export const DIRECTORY_LANDING_FILE_CANDIDATES = [
     "index.md",
     "Catalogue.md",
-    "Description.md",
     "README.md",
 ] as const;
 

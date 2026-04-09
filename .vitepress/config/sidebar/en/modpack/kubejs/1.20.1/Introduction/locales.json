@@ -11,5 +11,6 @@
   "Network/": "Networking",
   "PotionEffect/": "Potion Effects",
   "Recipe/": "Recipes",
-  "Tag/": "Tags"
+  "Tag/": "Tags",
+  "Catalogue.md": "目录"
 }

@@ -1,5 +1,6 @@
 {
   "_self_": "Info & Docs",
   "doc/": "Doc Support",
-  "KubeJS/": "KubeJS"
+  "KubeJS/": "KubeJS",
+  "Catalogue.md": "目录"
 }

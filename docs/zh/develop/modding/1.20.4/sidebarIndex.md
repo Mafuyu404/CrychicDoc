@@ -9,6 +9,7 @@ collapsed: false
 maxDepth: 0
 viewControl:
   mode: self
+  controlledByParent: false
 ---
 
 This file stores sidebar metadata for this directory.

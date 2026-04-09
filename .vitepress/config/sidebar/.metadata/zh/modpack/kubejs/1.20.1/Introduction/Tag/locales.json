@@ -19,9 +19,8 @@
   },
   "Catalogue.md": {
     "valueHash": "767fa455bb6826f4b550c21a6bca7182",
-    "isUserSet": true,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254447392
+    "isUserSet": false,
+    "isActiveInStructure": true
   },
   "Description.md": {
     "valueHash": "3bdd08adab6ea90b9164b20a0e4151ac",

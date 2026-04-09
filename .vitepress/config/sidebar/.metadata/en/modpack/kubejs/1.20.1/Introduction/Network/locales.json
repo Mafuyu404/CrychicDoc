@@ -8,7 +8,12 @@
   "Description.md": {
     "valueHash": "b5a7adde1af5c87d7fd797b6245c2a39",
     "isUserSet": false,
-    "isActiveInStructure": true,
+    "isActiveInStructure": false,
     "lastSeen": 1749252345914
+  },
+  "Catalogue.md": {
+    "valueHash": "767fa455bb6826f4b550c21a6bca7182",
+    "isUserSet": false,
+    "isActiveInStructure": true
   }
 }

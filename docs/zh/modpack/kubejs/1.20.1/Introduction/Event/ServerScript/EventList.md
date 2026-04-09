@@ -2,6 +2,18 @@
 title: 事件列表
 hidden: false
 priority: 0
+metadata:
+  mode: kubejs
+  current:
+    label: 1.20.1
+    value: kubejs-2001.6.5-build.7
+  requiredMods:
+    - name: ProbeJS
+      version: probejs-6.0.1
+    - name: Rhino
+      version: rhino-2001.2.2-build.18
+  routes:
+    - server_scripts
 ---
 
 # 服务端脚本事件列表

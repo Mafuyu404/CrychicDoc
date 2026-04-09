@@ -13,6 +13,7 @@ import {
     MarkMapView,
     VChart,
     ShaderEffectBlock,
+    DamageChart,
 } from "@utils/vitepress/componentRegistry/contentRegistry";
 import {
     YoutubeVideo,
@@ -79,7 +80,8 @@ const baseComponents: ComponentRegistry = {
     VPTeamMembers,
     VPTeamPage,
     VPTeamPageTitle,
-    VPTeamPageSection
+    VPTeamPageSection,
+    DamageChart
 };
 
 const localRegistryModules = import.meta.glob(

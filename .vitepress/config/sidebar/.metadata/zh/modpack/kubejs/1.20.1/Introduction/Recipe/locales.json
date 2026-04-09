@@ -13,9 +13,8 @@
   },
   "Catalogue.md": {
     "valueHash": "767fa455bb6826f4b550c21a6bca7182",
-    "isUserSet": true,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254447382
+    "isUserSet": false,
+    "isActiveInStructure": true
   },
   "DeleteRecipe.md": {
     "valueHash": "06b6f98fb336f6b486da6b61b6550b60",

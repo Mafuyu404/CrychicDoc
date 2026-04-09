@@ -1,5 +1,6 @@
 {
   "_self_": "原版开发",
   "datapack/": "数据包",
-  "resourcepack/": "资源包"
+  "resourcepack/": "资源包",
+  "Catalogue.md": "目录"
 }

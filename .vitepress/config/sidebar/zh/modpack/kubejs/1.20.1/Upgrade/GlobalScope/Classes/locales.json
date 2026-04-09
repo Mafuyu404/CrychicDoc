@@ -17,5 +17,6 @@
   "ResourceLocation.md": "资源位置类（ResourceLocation）",
   "Text.md": "文本类（Text）",
   "Utils.md": "实用工具类（Utils）",
-  "Uuid.md": "通用唯一标识符类（UUID）"
+  "Uuid.md": "通用唯一标识符类（UUID）",
+  "Catalogue.md": "目录"
 }

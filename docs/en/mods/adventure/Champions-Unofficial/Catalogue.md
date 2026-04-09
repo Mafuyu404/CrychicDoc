@@ -1,5 +1,5 @@
 ---
-title: 目录
+title: Catalogue
 description: Catalogue for Champions Unofficial overview, configuration, and balance references.
 hidden: false
 priority: -1000000

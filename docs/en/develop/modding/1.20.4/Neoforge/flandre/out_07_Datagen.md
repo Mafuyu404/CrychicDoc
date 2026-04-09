@@ -11,6 +11,19 @@ category: Minecraft1_20_4_NeoForge_Tutorial
 draft: false
 hidden: false
 priority: 0
+metadata:
+  mode: modding
+  current:
+    label: 1.20.4
+    value: NeoForge 20.4.x
+  stack:
+    - name: NeoGradle
+      version: userdev 7.0.124
+    - name: NeoForge
+      version: 20.4.x line
+  routes:
+    - datagen
+    - registry
 ---
 # Data Generators
 

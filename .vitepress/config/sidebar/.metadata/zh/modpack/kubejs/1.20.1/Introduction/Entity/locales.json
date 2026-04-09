@@ -13,9 +13,8 @@
   },
   "Catalogue.md": {
     "valueHash": "767fa455bb6826f4b550c21a6bca7182",
-    "isUserSet": true,
-    "isActiveInStructure": false,
-    "lastSeen": 1749254447333
+    "isUserSet": false,
+    "isActiveInStructure": true
   },
   "PotionEffects.md": {
     "valueHash": "4a01019084ebafcd915005449b79a710",
