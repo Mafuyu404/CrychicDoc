@@ -7,8 +7,6 @@ hidden: false
 collapsed: false
 maxDepth: 0
 priority: 9007199254740991
-viewControl:
-  mode: self
 ---
 
 This file stores sidebar metadata for this directory.

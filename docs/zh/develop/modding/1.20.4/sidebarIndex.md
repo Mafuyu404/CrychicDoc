@@ -7,9 +7,6 @@ details: 涵盖Minecraft 1.20.4版本的模组开发，包括Forge、Neoforge、
 hidden: false
 collapsed: false
 maxDepth: 0
-viewControl:
-  mode: self
-  controlledByParent: false
 ---
 
 This file stores sidebar metadata for this directory.

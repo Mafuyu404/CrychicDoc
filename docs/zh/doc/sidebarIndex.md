@@ -6,9 +6,6 @@ root: true
 hidden: false
 collapsed: false
 maxDepth: 0
-viewControl:
-  mode: children
-  controlledByParent: false
 groups: []
 externalLinks: []
 ---

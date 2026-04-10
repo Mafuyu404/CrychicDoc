@@ -5,8 +5,6 @@ hidden: false
 collapsed: false
 maxDepth: 1
 priority: 1
-viewControl:
-  mode: self
 Layout: doc
 backPath: ../
 metadata:

@@ -6,8 +6,6 @@ hidden: false
 collapsed: false
 maxDepth: 0
 priority: -1
-viewControl:
-  mode: self
 Layout: doc
 prev: false
 next: false

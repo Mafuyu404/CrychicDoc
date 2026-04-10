@@ -29,8 +29,7 @@ CrychicDoc 的侧边栏系统通过读取您在 Markdown 文件中设置的 `fro
 | `maxDepth` | `number` | 控制当前目录视图向下展开的层级深度。 |
 | `hidden` | `boolean` | 如果为 `true`，则此页面或目录不会显示在侧边栏中。 |
 | `externalLinks` | `object[]`| 在 `root` 节点中添加指向外部网站的链接。 |
-| `collapseControl` | `object` | 控制当前 sidebar 视图里子目录 / 子 root 默认折叠还是展开。 |
-| `viewControl` | `object` | 高级项。只在少数 nested-root 场景下决定当前生成时由谁接管遍历控制。 |
+| `useChildrenCollapsed` | `object` | 只控制当前生成树里子目录项如何折叠或展开，不改写子项自己的 frontmatter。 |
 
 ## 实践教程：配置一个新文档区 {#tutorial}
 
@@ -123,23 +122,24 @@ externalLinks:
 如果一个文件同时在 `itemOrder` 中被定义，并且**自身**的 frontmatter 中也有一个 `priority` 字段，那么**文件自身的 `priority` 字段会胜出**。因此，我们推荐直接在文件内使用 `priority` 来进行明确的排序。!!文件多起来用itemOrder就有点m了!!
 :::
 
-### 使用 `collapseControl` 管理 root 视图折叠 {#tip-view-control}
+### 使用 `useChildrenCollapsed` 管理当前树里的子项折叠 {#tip-view-control}
 
-如果你的目标只是让大 root 决定“当前 sidebar 里哪些子目录 / 子 root 默认折叠、哪些默认展开”，优先使用 `collapseControl`。这是现在推荐的主配置。
+如果你的目标只是让当前 root 决定“这一棵 sidebar 里子目录项默认折叠、跟随自己、还是默认展开”，现在只使用 `useChildrenCollapsed`。
 
-#### `collapseControl` 的字段约定
+#### `useChildrenCollapsed` 的字段约定
 
 | 字段路径 | 类型 | 默认行为 | 作用 |
 |:---|:---|:---|:---|
-| `collapseControl` | `object` | 不写则不覆盖子项本地 `collapsed` | 当前 sidebar 视图里的折叠控制块。 |
-| `collapseControl.default` | `boolean` | 不写 | 为当前视图里的所有子目录项提供默认折叠状态。 |
-| `collapseControl.paths` | `Record<string, boolean>` | 空对象 | 对某些相对路径单独指定折叠状态。 |
+| `useChildrenCollapsed` | `object` | 不写则保持每个子项自己的 `collapsed` | 当前生成树里的子项折叠规则。 |
+| `useChildrenCollapsed.mode` | `"children" \| "self" \| "collapsed" \| "open"` | `children` | 子项是沿用自己、跟随当前目录、强制折叠，还是强制展开。 |
+| `useChildrenCollapsed.depth` | `number` | `1` | 影响深度。`1` 只影响直接子项，`2` 继续影响孙级。 |
 
-这个配置只影响**当前这次 sidebar 生成里的目录项显示状态**：
+这个配置只影响**当前这次 sidebar 生成树里的显示状态**：
 
-- 不会改写子 root 自己的 `collapsed`
-- 不会改写子 root 自己的 `maxDepth`
-- 不会改写子文档自己的 frontmatter
+- 不会改写子目录自己的 `collapsed`
+- 不会改写子目录自己的 `maxDepth`
+- 不会改写任何子文档 frontmatter
+- 不会接管遍历控制，也不会替代 `root`
 
 最小示例：
 
@@ -147,54 +147,27 @@ externalLinks:
 ---
 root: true
 title: "Modpack"
-collapsed: false
-collapseControl:
-  default: true
+useChildrenCollapsed:
+  mode: collapsed
+  depth: 1
 ---
 ```
 
-这表示当前 root 自己默认展开，但它视图里的子目录项默认折叠。
+这表示当前 root 在这棵树里把直接子目录项默认显示为折叠。
 
-如果需要对某个 path 单独放开：
+如果你想让子项跟随当前目录自己的 `collapsed`：
 
 ```yaml
 ---
 root: true
-title: "Modpack"
-collapseControl:
-  default: true
-  paths:
-    "kubejs/1.20.1": false
-    "kubejs/1.21": false
+collapsed: true
+useChildrenCollapsed:
+  mode: self
+  depth: 2
 ---
 ```
 
-这里的 path 总是**相对当前 sidebar 视图根目录**来写，不是相对站点根目录，也不是相对当前 Markdown 文件。
-
-#### `viewControl` 现在只保留给高级 nested-root 场景
-
-`viewControl` 仍然存在，但现在只负责“当前这轮生成时由谁作为遍历控制器”。它不应该再被拿来做日常折叠管理，也不应该被理解成“给所有子 root 套同一个 `maxDepth`”。
-
-大多数目录只需要写：
-
-```yaml
----
-root: true
-hidden: false
-collapsed: false
-maxDepth: 0
----
-```
-
-只有当你真的需要让某个 nested root 在当前生成里强制继续跟随父级，或者强制脱离父级时，再去补 `viewControl`：
-
-```yaml
----
-title: "1.20.1"
-viewControl:
-  controlledByParent: false
----
-```
+这会让子项和孙级子项在当前树里都跟随当前目录的折叠状态。
 
 ### 目录落地页文件约定 {#tip-directory-landing}
 
@@ -205,23 +178,3 @@ viewControl:
 - `README.md`
 
 这意味着第一方文档仍然可以继续用 `Catalogue.md` 作为目录页，而站内整理的第三方文档如果本身已经有 `README.md`，就不需要再额外补一个 `Catalogue.md`。
-
-#### 高级覆盖：子目录显式声明是否继续跟随父级
-
-如果你确实在用 nested-root ownership，再按需写这两个高级覆盖：
-
-```yaml
----
-title: "1.20.1"
-viewControl:
-  controlledByParent: false
----
-```
-
-```yaml
----
-title: "API"
-viewControl:
-  controlledByParent: true
----
-```
