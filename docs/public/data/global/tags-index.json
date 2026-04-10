@@ -23,11 +23,11 @@
       "dataPath": "/data/en-US/tags.json"
     }
   ],
-  "generatedAt": "2026-04-07T05:18:38.968Z",
+  "generatedAt": "2026-04-10T12:01:41.600Z",
   "summary": {
     "zh-CN": {
       "totalTags": 31,
-      "totalPages": 215,
+      "totalPages": 286,
       "language": "zh-CN",
       "dataPath": "/data/zh-CN/tags.json"
     },

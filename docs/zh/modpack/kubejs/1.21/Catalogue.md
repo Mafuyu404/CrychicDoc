@@ -1,14 +1,8 @@
 ---
-title: 目录
-description: KubeJS 目录页，汇总当前目录的文档、子分区与外部参考。
+title: 须知
+description: KubeJS-1.21.1 目录页，汇总当前目录的文档、子分区与外部参考。
 hidden: false
-priority: -1000000
+priority: 10
 ---
-# KubeJS
 
-## 子分区
-
-| 分区 | 说明 |
-| --- | --- |
-| [介绍](./Introduction/Catalogue) | 进入该子目录的目录页 |
-| [codeshare](./codeshare/Catalogue) | 进入该子目录的目录页 |
+# KubeJS-1.21.1

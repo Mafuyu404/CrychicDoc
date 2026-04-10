@@ -1,8 +1,8 @@
 ---
 title: Upgrade
-hidden: false
-priority: 500000
+hidden: true
 collapsed: true
+priority: 70
 ---
 
 This file stores sidebar metadata for this directory.

@@ -107,7 +107,7 @@ const kubeNav = createDropdownNavItem(
                 createNavGroup("主要维护版本", [
                     createNavLink(
                         "1.21",
-                        "/modpack/kubejs/1.21/Introduction/Catalogue",
+                        "/modpack/kubejs/1.21/Catalogue",
                         {
                             desc: "当前优先维护分支",
                             badge: createNavBadge("推荐", "new", {
@@ -117,7 +117,7 @@ const kubeNav = createDropdownNavItem(
                     ),
                     createNavLink(
                         "1.20.1",
-                        "/modpack/kubejs/1.20.1/Introduction/Catalogue",
+                        "/modpack/kubejs/1.20.1/Catalogue",
                         {
                             desc: "目前内容最完整的主干",
                             badge: createNavBadge("完整", "info"),

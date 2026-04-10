@@ -1,8 +1,8 @@
 ---
 title: CodeShare
 hidden: false
-priority: 9007199254740991
 collapsed: true
+priority: 120
 ---
 
 This file stores sidebar metadata for this directory.

@@ -1,5 +1,5 @@
 ---
-title: 目录
+title: 起步
 description: Introduction 目录页，汇总当前目录的文档、子分区与外部参考。
 hidden: false
 priority: -1000000
