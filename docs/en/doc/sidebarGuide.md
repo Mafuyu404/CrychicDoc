@@ -112,15 +112,6 @@ externalLinks:
 ---
 ```
 
-### Using `itemOrder` to Implicitly Set Priority {#tip-item-order}
-
-::: v-info Tip
-`itemOrder` is essentially an alternative way of writing `priority`. The index position of items in `itemOrder` will be read by the script and assigned to the corresponding item's `priority`.
-:::
-
-::: v-warning Warning: `priority` Takes Precedence
-If a file is defined in `itemOrder` and also has a `priority` field in **its own** frontmatter, then **the file's own `priority` field will win**. Therefore, we recommend directly using `priority` in files for explicit sorting. !!When there are many files, using itemOrder becomes a bit messy!!
-:::
 
 ### Using `useChildrenCollapsed` for Current-Tree Folding {#tip-view-control}
 

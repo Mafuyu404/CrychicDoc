@@ -6,7 +6,7 @@ hidden: false
 collapsed: false
 maxDepth: 0
 details: 包含KubeJS脚本编程、模组配置、整合包优化、资源管理、性能调优等整合包开发的核心内容
-Layout: doc
+layout: doc
 prev: false
 next: false
 ---

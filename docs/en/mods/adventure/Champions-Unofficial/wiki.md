@@ -1,5 +1,5 @@
 ---
-Layout: doc
+layout: doc
 title: Wiki
 prev:
   text: Introduction

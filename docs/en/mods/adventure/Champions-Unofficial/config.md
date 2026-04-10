@@ -1,5 +1,5 @@
 ---
-Layout: doc
+layout: doc
 title: Config
 order: 2
 prev:

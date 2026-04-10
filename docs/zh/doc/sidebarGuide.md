@@ -112,15 +112,6 @@ externalLinks:
 ---
 ```
 
-### 使用 `itemOrder` 隐式设置优先级 {#tip-item-order}
-
-::: v-info 提示
-`itemOrder` 本质上是 `priority` 的一种替代写法。`itemOrder` 中项目的索引位置会被脚本读取并赋值给对应项目的 `priority`。
-:::
-
-::: v-warning 警告：`priority` 优先
-如果一个文件同时在 `itemOrder` 中被定义，并且**自身**的 frontmatter 中也有一个 `priority` 字段，那么**文件自身的 `priority` 字段会胜出**。因此，我们推荐直接在文件内使用 `priority` 来进行明确的排序。!!文件多起来用itemOrder就有点m了!!
-:::
 
 ### 使用 `useChildrenCollapsed` 管理当前树里的子项折叠 {#tip-view-control}
 

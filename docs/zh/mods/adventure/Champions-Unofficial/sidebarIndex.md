@@ -5,7 +5,7 @@ hidden: false
 collapsed: false
 maxDepth: 1
 priority: 1
-Layout: doc
+layout: doc
 backPath: ../
 metadata:
   mode: mod

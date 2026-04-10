@@ -1,7 +1,7 @@
 ---
 root: true
 title: Modpack
-Layout: doc
+layout: doc
 prev: false
 next: false
 hidden: false

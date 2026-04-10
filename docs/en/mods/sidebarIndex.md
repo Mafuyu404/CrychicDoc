@@ -3,7 +3,7 @@ root: true
 title: Mods
 description: Maintained mod docs grouped by theme and gameplay purpose.
 details: Adventure, equipment, cosmetic, custom, performance, server, storage, and tech mod references.
-Layout: doc
+layout: doc
 prev: false
 next: false
 hidden: false

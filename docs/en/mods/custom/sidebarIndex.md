@@ -2,7 +2,7 @@
 root: true
 title: Custom Content
 description: Custom-authored systems, internal tooling, and private mod project docs.
-Layout: doc
+layout: doc
 prev: false
 next: false
 hidden: false

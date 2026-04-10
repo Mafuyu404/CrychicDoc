@@ -2,7 +2,7 @@
 root: true
 title: Adventure Mods
 description: Combat, elite mobs, difficulty scaling, and adventure-oriented mod docs.
-Layout: doc
+layout: doc
 prev: false
 next: false
 hidden: false

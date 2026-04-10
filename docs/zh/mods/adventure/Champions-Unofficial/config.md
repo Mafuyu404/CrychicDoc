@@ -1,5 +1,5 @@
 ---
-Layout: doc
+layout: doc
 title: 配置
 backPath: ../
 prev:

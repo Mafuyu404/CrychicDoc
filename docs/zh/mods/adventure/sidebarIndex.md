@@ -6,7 +6,7 @@ hidden: false
 collapsed: false
 maxDepth: 0
 priority: -1
-Layout: doc
+layout: doc
 prev: false
 next: false
 ---
