@@ -39,16 +39,14 @@
     },
     "scripts": {
         "docs:dev": "tsx --tsconfig tsconfig.json ./node_modules/vitepress/dist/node/cli.js dev",
-        "docs:build": "tsx .vitepress/scripts/locale-key-sync.mjs && tsx .vitepress/scripts/build-sidebar.mjs && tsx .vitepress/scripts/generate-tag-data.mjs && tsx --tsconfig tsconfig.json ./node_modules/vitepress/dist/node/cli.js build",
-        "docs:sidebar": "tsx .vitepress/scripts/build-sidebar.mjs",
+        "docs:build": "tsx .vitepress/scripts/locale-key-sync.mjs && tsx .vitepress/scripts/generate-tag-data.mjs && tsx --tsconfig tsconfig.json ./node_modules/vitepress/dist/node/cli.js build",
         "docs:tags": "tsx .vitepress/scripts/generate-tag-data.mjs",
         "docs:preview": "tsx --tsconfig tsconfig.json ./node_modules/vitepress/dist/node/cli.js preview",
         "locale": "tsx .vitepress/scripts/locale-key-sync.mjs",
         "frontmatter": "tsx .vitepress/scripts/update-frontmatter.mjs",
         "dev": "tsx --tsconfig tsconfig.json ./node_modules/vitepress/dist/node/cli.js dev",
-        "build": "yarn locale && tsx .vitepress/scripts/build-sidebar.mjs && tsx .vitepress/scripts/generate-tag-data.mjs && tsx --tsconfig tsconfig.json ./node_modules/vitepress/dist/node/cli.js build",
+        "build": "yarn locale && tsx .vitepress/scripts/generate-tag-data.mjs && tsx --tsconfig tsconfig.json ./node_modules/vitepress/dist/node/cli.js build",
         "preview": "tsx --tsconfig tsconfig.json ./node_modules/vitepress/dist/node/cli.js preview",
-        "sidebar": "tsx .vitepress/scripts/build-sidebar.mjs",
         "tags": "tsx .vitepress/scripts/generate-tag-data.mjs",
         "title": "notsxde .vitepress/scripts/update-index-titles.mjs"
     },
