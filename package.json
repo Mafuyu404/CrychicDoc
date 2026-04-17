@@ -43,7 +43,6 @@
         "docs:tags": "tsx .vitepress/scripts/generate-tag-data.mjs",
         "docs:preview": "tsx --tsconfig tsconfig.json ./node_modules/vitepress/dist/node/cli.js preview",
         "locale": "tsx .vitepress/scripts/locale-key-sync.mjs",
-        "frontmatter": "tsx .vitepress/scripts/update-frontmatter.mjs",
         "dev": "tsx --tsconfig tsconfig.json ./node_modules/vitepress/dist/node/cli.js dev",
         "build": "yarn locale && tsx .vitepress/scripts/generate-tag-data.mjs && tsx --tsconfig tsconfig.json ./node_modules/vitepress/dist/node/cli.js build",
         "preview": "tsx --tsconfig tsconfig.json ./node_modules/vitepress/dist/node/cli.js preview",

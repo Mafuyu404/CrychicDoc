@@ -34,6 +34,16 @@ export interface BuildBreadcrumbItemsOptions {
     navTree?: BreadcrumbNavNode[];
     localeCodes?: Iterable<string>;
     resolveLinkPath?: (path: string) => string;
+    resolveItemLink?: (
+        path: string,
+        fallbackLink: string | undefined,
+        isLast: boolean,
+    ) => string | undefined;
+    resolveItemText?: (
+        path: string,
+        fallbackText: string,
+        isLast: boolean,
+    ) => string | undefined;
 }
 
 const EXTERNAL_OR_PASSTHROUGH_PATTERN =
@@ -196,6 +206,8 @@ export function buildBreadcrumbItems({
     navTree,
     localeCodes,
     resolveLinkPath,
+    resolveItemLink,
+    resolveItemText,
 }: BuildBreadcrumbItemsOptions): BreadcrumbItem[] {
     const normalizedHomeLink = normalizeRoutePath(homeLink);
     const knownRoutes = normalizeRouteSet(
@@ -235,19 +247,24 @@ export function buildBreadcrumbItems({
             : currentPath;
 
         const isLast = index === contentParts.length - 1;
-        const resolvedText =
+        const fallbackText =
             linkMap.get(resolvedCurrentPath) ||
             linkMap.get(currentPath) ||
             (isLast && pageTitle ? pageTitle : humanizeSegment(part));
+        const fallbackLink =
+            isLast ||
+            knownRoutes.has(resolvedCurrentPath) ||
+            knownRoutes.has(currentPath)
+                ? resolvedCurrentPath
+                : undefined;
+        const resolvedText =
+            resolveItemText?.(currentPath, fallbackText, isLast) || fallbackText;
+        const resolvedLink =
+            resolveItemLink?.(currentPath, fallbackLink, isLast) ?? fallbackLink;
 
         items.push({
             text: resolvedText,
-            link:
-                isLast ||
-                knownRoutes.has(resolvedCurrentPath) ||
-                knownRoutes.has(currentPath)
-                    ? resolvedCurrentPath
-                    : undefined,
+            link: resolvedLink,
         });
     });
 
