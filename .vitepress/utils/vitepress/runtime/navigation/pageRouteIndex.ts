@@ -86,6 +86,11 @@ export function buildKnownPagePathSetFromSidebar(sidebarConfig: unknown) {
         set.add(normalizeKnownRoutePath(trimmed));
     };
 
+    if (Array.isArray(sidebarConfig)) {
+        collectSidebarLinks(sidebarConfig, addPath);
+        return set;
+    }
+
     for (const [basePath, entries] of Object.entries(
         sidebarConfig as Record<string, unknown>,
     )) {

@@ -14,6 +14,7 @@ import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css";
 
 import { getProjectInfo, isFeatureEnabled } from "@config/project-config";
 import { useDirectoryLandingRouteSync } from "@utils/sidebar/runtime";
+import { installDirectoryRouteCacheRuntime } from "@utils/vitepress/api/frontmatter/metadata/DirectoryRouteCacheRuntime";
 import {
 	comment,
 	PageTags,
@@ -58,6 +59,66 @@ function syncVuetifyTheme(isDark: boolean) {
 	}
 }
 
+type DerivedDocsHotUpdatePayload = {
+	filePaths?: string[];
+};
+
+const metadataOnlyDerivedSourceFileNames = new Set([
+	".sidebarrc.yml",
+	"root.md",
+	"sidebarindex.md",
+]);
+
+function installM1honoTemplateDerivedDocsHotSync(router: ReturnType<typeof useRouter>) {
+	if (!import.meta.hot || !inBrowser) {
+		return;
+	}
+
+	let syncing = false;
+	let pendingRefresh = false;
+
+	const refreshCurrentPage = async () => {
+		if (syncing) {
+			pendingRefresh = true;
+			return;
+		}
+
+		syncing = true;
+		try {
+			await router.go(window.location.href);
+		} finally {
+			syncing = false;
+			if (pendingRefresh) {
+				pendingRefresh = false;
+				queueMicrotask(() => {
+					void refreshCurrentPage();
+				});
+			}
+		}
+	};
+
+	import.meta.hot.on(
+		"m1honoTemplate:derived-docs-updated",
+		async (payload: DerivedDocsHotUpdatePayload) => {
+			const shouldForceRefresh = (payload?.filePaths ?? []).some((filePath) => {
+				const fileName = filePath.split("/").pop()?.trim().toLowerCase();
+				return Boolean(fileName && metadataOnlyDerivedSourceFileNames.has(fileName));
+			});
+
+			if (!shouldForceRefresh) {
+				return;
+			}
+
+			if (syncing) {
+				pendingRefresh = true;
+				return;
+			}
+
+			await refreshCurrentPage();
+		},
+	);
+}
+
 export default {
 	extends: DefaultTheme,
 	Layout: () => {
@@ -85,7 +146,7 @@ export default {
 	},
 
 	enhanceApp(ctx) {
-		enhanceThemeApp(ctx);
+		return enhanceThemeApp(ctx);
 	},
 
 	setup() {
@@ -110,14 +171,14 @@ export default {
 			frontmatter as unknown as Ref<Record<string, unknown>>,
 			effectiveDark,
 		);
+		installDirectoryRouteCacheRuntime();
+		installM1honoTemplateDerivedDocsHotSync(router);
 		useDirectoryLandingRouteSync(route, router);
 		installThemeSiteBootstraps({
 			route,
 			projectInfo,
 			mermaidEnabled: isFeatureEnabled("mermaid"),
-			initSiteStats: () => {
-				utils.vitepress.initBusuanzi();
-			},
+			initSiteStats: () => utils.vitepress.initBusuanzi(),
 		});
 	},
 } satisfies Theme;

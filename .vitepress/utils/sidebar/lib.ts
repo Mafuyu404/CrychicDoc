@@ -391,6 +391,23 @@ export function getSidebarSync(lang: string): any {
     );
 }
 
+export function getSidebarSnapshotSync(lang: string): SidebarMap {
+    ensureConfigured();
+
+    try {
+        validateLanguage(lang);
+    } catch {
+        return {};
+    }
+
+    const freshSnapshot = readMemoryCache(lang);
+    if (freshSnapshot) {
+        return freshSnapshot;
+    }
+
+    return memoryCache.get(getCacheKey(lang))?.data ?? {};
+}
+
 export async function getSidebar(lang: string): Promise<SidebarMap> {
     ensureConfigured();
     validateLanguage(lang);
