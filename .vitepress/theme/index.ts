@@ -178,7 +178,6 @@ export default {
 			route,
 			projectInfo,
 			mermaidEnabled: isFeatureEnabled("mermaid"),
-			initSiteStats: () => utils.vitepress.initBusuanzi(),
 		});
 	},
 } satisfies Theme;
