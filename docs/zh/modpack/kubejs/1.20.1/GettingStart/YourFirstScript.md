@@ -6,4 +6,3 @@ layout: doc
 ---
 
 # Events {#Introduction}
-
