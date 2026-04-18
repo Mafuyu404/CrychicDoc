@@ -48,6 +48,12 @@ interface DialogStateCore extends StateCore {
     tokens: Token[];
 }
 
+function isLikelyDialogPageTitle(line: string): boolean {
+    if (!line) return false;
+
+    return !/^(?:#{1,6}\s|>\s?|[-+*]\s|\d+[.)]\s|\[|`{3,}|~{3,}|\||<|:::+|@@@)/.test(line);
+}
+
 function parseDialogPages(content: string, md: any, env: any): Array<{
     title?: string;
     content: string;
@@ -66,7 +72,7 @@ function parseDialogPages(content: string, md: any, env: any): Array<{
 
         // Check if first line is a title
         const firstLine = pageLines[0].trim();
-        if (firstLine && !firstLine.match(/^[:#>*+-\[]/) && pageLines.length > 1) {
+        if (pageLines.length > 1 && isLikelyDialogPageTitle(firstLine)) {
             title = firstLine;
             content = pageLines.slice(1).join('\n').trim();
         } else {
