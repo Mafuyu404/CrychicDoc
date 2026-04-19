@@ -70,7 +70,7 @@ export const footerConfig: FooterConfig = {
             [
                 createLinkConfig(
                     '1.20.1',
-                    '/en/modpack/kubejs/1.20.1/',
+                    '/en/modpack/kubejs/1.20.1/Catalogue',
                     '/svg/kubejs.svg',
                     {
                         iconColors: { 
@@ -81,7 +81,7 @@ export const footerConfig: FooterConfig = {
                 ),
                 createLinkConfig(
                     '1.21.1',
-                    '/en/modpack/kubejs/1.21/',
+                    '/en/modpack/kubejs/1.21.1/Catalogue',
                     '/svg/kubejs.svg',
                     {
                         iconColors: { 
