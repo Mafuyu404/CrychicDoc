@@ -180,7 +180,7 @@ hero:
           link: /zh/doc/pluginsGuide
         - theme: ghost
           text: "协作规范"
-          link: /zh/doc/rules
+          link: /zh/doc/Catalogue
 
 features:
     - icon: 🧪
@@ -210,7 +210,7 @@ features:
     - icon: 🤝
       title: "协作规范"
       details: "贡献流程、命名约定与文档协作规则。"
-      link: /zh/doc/rules
+      link: /zh/doc/Catalogue
     - icon: 👥
       title: "总站目录"
       details: "进入中文总站目录，按模块浏览模组、整合包、开发与信息索引。"

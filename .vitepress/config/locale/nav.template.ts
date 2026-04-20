@@ -103,11 +103,6 @@ class NavTemplateBuilder {
                                         desc: "High-level engineering rules and extension standards.",
                                     },
                                     {
-                                        text: "Development Workflow",
-                                        link: "/doc/developmentWorkflow",
-                                        desc: "Recommended change order and verification flow.",
-                                    },
-                                    {
                                         text: "Extension Architecture",
                                         link: "/doc/extensionArchitecture",
                                         desc: "Placement guide for components, runtime, config, and styles.",

@@ -1,16 +1,17 @@
 ---
 title: 扩展架构说明
-description: CrychicDoc 中配置、运行时、组件、插件与样式的职责边界与落点规则。
+description: CrychicDoc 中配置、运行时、组件、插件与样式分别该放在哪里。
 hidden: false
+priority: 90
 ---
 
 # 扩展架构说明
 
-本页说明 CrychicDoc 的框架代码应该放在哪里，以及如何保持契约、运行时与渲染层职责清晰。
+当改动开始影响共享行为，而不再只是单个页面内容时，就需要先确认代码落点。配置、运行时、组件、插件与文档示例在仓库中各有固定位置，本页按这套划分整理说明。
 
-## 架构分层规则
+## 分层规则
 
-- `api` 负责契约事实来源
+- `api` 负责字段定义、默认值整理和注册入口
 - `runtime` 负责共享状态与生命周期
 - `theme/components` 负责渲染
 - `config` 负责项目默认值与注册接线
@@ -32,7 +33,7 @@ description: 这页讲什么。
 ```
 
 3. 只有在页面需要从导航、文档入口页或首页被发现时，才补这些入口。
-4. 如果页面引入了新的契约或工作流，也要同步更新对应开发文档。
+4. 如果页面引入了新的字段约定或工作流，也要同步更新对应开发文档。
 
 ## 创建首页或 Hero 页面
 
@@ -50,8 +51,8 @@ hero:
   tagline: Runtime、frontmatter、plugin 与内容注册
   actions:
     - theme: brand
-      text: Development Workflow
-      link: /en/doc/developmentWorkflow
+      text: 文档编写规范
+      link: /zh/doc/Catalogue
 ---
 ```
 
@@ -66,7 +67,7 @@ hero:
 4. 组件有 UI 文案时补充 locale 资源。
 5. 保持组件 ID 与 i18n 映射一致。
 
-## 深入说明：注册新的内容组件
+## 内容组件接入
 
 当组件属于内容层，并会出现在 markdown 页面或文档壳层时，按这条链路处理：
 
@@ -96,7 +97,7 @@ hero:
 
 - 主题同步：`.vitepress/utils/vitepress/runtime/theme/**`
 - Hero 导航自适应：`.vitepress/utils/vitepress/runtime/hero/navAdaptiveState.ts`
-- Frontmatter 契约规范化：`.vitepress/utils/vitepress/api/frontmatter/hero/HeroFrontmatterApi.ts`
+- Frontmatter 字段整理：`.vitepress/utils/vitepress/api/frontmatter/hero/HeroFrontmatterApi.ts`
 
 ## 配置扩展
 
@@ -113,7 +114,7 @@ hero:
 2. 在 API 层完成规范化。
 3. 运行时与视图层只消费规范化后的值。
 4. 立即补充文档示例。
-5. 若生成的元数据依赖该变更，执行 `yarn sync-config` 与 `yarn frontmatter`。
+5. 若生成的元数据依赖该变更，直接执行 `yarn docs:build`，确认最终生成结果正确。
 
 ## 样式扩展
 
@@ -279,6 +280,5 @@ import { registerShaderTemplate } from "@config/shaders"; // ❌ 无法解析
 ## 相关页面
 
 - [框架可维护性指南](./frameworkMaintainability) — 主题同步规范、尺寸监听规范与完整扩展 API 参考。
-- [开发工作流](./developmentWorkflow) — 改动顺序、校验命令与上游同步规则。
 - [Hero 扩展手册](./heroExtension) — 排版、浮动元素、Shader、背景渲染器与导航搜索视觉。
 - [样式与插件指南](./pluginsGuide) — 所有可用 Markdown 插件与自定义 Vue 组件。

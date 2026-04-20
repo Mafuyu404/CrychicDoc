@@ -45,17 +45,17 @@ const supportPreviewMedia = createScreenshotMedia(
 );
 
 const supportDocsGroup = createNavGroup("站点文档", [
-    createNavLink("总览", "/doc/Catalogue", {
-        desc: "站点结构与写作规范",
-    }),
-    createNavLink("协作规则", "/doc/rules", {
-        desc: "编辑与协作约定",
+    createNavLink("文档规范", "/doc/Catalogue", {
+        desc: "协作流程、结构约定与写作边界",
     }),
     createNavLink("侧边栏指南", "/doc/sidebarGuide", {
         desc: "目录、排序与落地页规则",
     }),
-    createNavLink("开发工作流", "/doc/developmentWorkflow", {
-        desc: "改动流程与同步要求",
+    createNavLink("样式与插件", "/doc/pluginsGuide", {
+        desc: "Markdown 扩展、容器与自定义组件",
+    }),
+    createNavLink("LiteTree组件", "/doc/litetreeGuide", {
+        desc: "文档树形结构的写法与展示方式",
     }),
 ]);
 
@@ -424,7 +424,7 @@ const supportNav = createDropdownNavItem(
                 "站点文档与信息支持共用一列，Guide 导览独立一列，结构更紧凑但仍然分工明确。",
                 `| 分栏 | 内容定位 |
 | --- | --- |
-| 文档与信息列 | 结构规则、问答、讨论看板与模块请求 |
+| 文档与信息列 | 文档规范、侧边栏与插件指南、问答、讨论看板与模块请求 |
 | Guide 导览列 | 社区链接、资源工具与专题入口 |`,
                 supportPreviewMedia,
                 { link: "/doc/Catalogue" },

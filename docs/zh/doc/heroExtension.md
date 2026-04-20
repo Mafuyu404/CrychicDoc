@@ -2,11 +2,12 @@
 title: Hero 扩展手册
 description: 如何在 CrychicDoc 中扩展 Hero 排版、浮动元素、Shader、背景渲染器与导航搜索视觉。
 hidden: false
+priority: 100
 ---
 
 # Hero 扩展手册
 
-Hero 相关能力必须从契约层开始，再向下流向运行时与渲染层。
+Hero 相关改动不要一上来就进组件。先把 frontmatter 字段、默认值和注册入口定下来，再补运行时，最后再动渲染。
 
 ## Hero 关键扩展点
 
@@ -69,7 +70,7 @@ layout: home
 hero:
   name: Developer Docs
   text: Extend Hero, Runtime, and Nav
-  tagline: Contract-first configuration with shared runtime behavior
+  tagline: Shared runtime behavior with clean frontmatter
   typography:
     type: floating-tilt
   actions:
@@ -103,7 +104,7 @@ floatingElementRegistry.registerType({
 
 1. 先在 `.vitepress/utils/vitepress/api/frontmatter/hero/HeroFrontmatterApi.ts` 中新增字段并做规范化。
 2. 如果它需要共享状态、定时、observer 或 viewport 逻辑，在 `.vitepress/utils/vitepress/runtime/hero/**` 中新增或扩展运行时模块。
-3. 契约形状稳定后，再在对应 Hero 组件中渲染它。
+3. 字段和默认值定下来后，再在对应 Hero 组件中渲染它。
 4. 在中英文文档树中补真实示例。
 5. 如果它会影响首页 Hero actions 或命名链接，也要同步更新相关导航/首页文档。
 
@@ -137,7 +138,7 @@ floatingElementRegistry.registerType({
 4. 英中两套文档已同步。
 5. `yarn build` 通过后再同步到其他仓库。
 
-## 注册表详解：HeroTypographyRegistry
+## HeroTypographyRegistry 如何工作
 
 **源文件**：`.vitepress/utils/vitepress/api/frontmatter/hero/HeroTypographyRegistryApi.ts`
 **单例导入**：`import { heroTypographyRegistry } from "@utils/vitepress/api/frontmatter/hero";`
@@ -232,7 +233,7 @@ heroTypographyRegistry.listStyleTypes(); // ["floating-tilt", "grouped-float", "
 
 ---
 
-## 注册表详解：FloatingElementRegistry
+## FloatingElementRegistry 如何工作
 
 **源文件**：`.vitepress/utils/vitepress/api/frontmatter/hero/FloatingElementRegistryApi.ts`
 **单例导入**：`import { floatingElementRegistry } from "@utils/vitepress/api/frontmatter/hero";`
@@ -310,7 +311,7 @@ floatingElementRegistry.listRegisteredTypes();
 
 ---
 
-## 注册表详解：Shader Registry
+## Shader Registry 如何工作
 
 **源文件**：`.vitepress/config/shaders/index.ts`
 **导入路径**：`.vitepress/config/` 没有对应的别名。需从你的文件位置使用相对导入（如从 hero 目录下的组件使用 `'../../../../config/shaders'`）。
@@ -387,5 +388,4 @@ hero:
 
 - [框架可维护性指南](./frameworkMaintainability) — 主题同步规范、尺寸监听规范与完整扩展 API 参考。
 - [扩展架构说明](./extensionArchitecture) — 文件职责规则、导入别名参考与分层放置指南。
-- [开发工作流](./developmentWorkflow) — 改动顺序、校验命令与上游同步规则。
 - [样式与插件指南](./pluginsGuide) — 所有可用 Markdown 插件，包括 shader-effect 容器。

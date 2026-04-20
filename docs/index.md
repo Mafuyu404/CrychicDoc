@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: alt
       text: 合作
-      link: /zh/doc/rules
+      link: /zh/doc/Catalogue
     - theme: brand
       text: KubeJS
       link: /zh/modpack/kubejs/Catalogue

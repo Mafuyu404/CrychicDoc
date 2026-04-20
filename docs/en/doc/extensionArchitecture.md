@@ -1,23 +1,25 @@
 ---
 title: Extension Architecture
-description: Source-of-truth directories and placement rules for configuration, runtime, components, plugins, and styles.
+description: Where configuration, runtime logic, components, plugins, and styles should live in CrychicDoc.
+hidden: false
+priority: 90
 ---
 
 # Extension Architecture
 
-This page explains where framework code belongs in CrychicDoc and how to keep contracts, runtime logic, and rendering concerns separated.
+Once a change starts affecting shared behavior rather than a single page, code placement needs to be decided first. Configuration, runtime logic, components, plugins, and documentation examples each have a fixed home in this repository, and this page documents that split.
 
-## Architectural Rule
+## Layering Rules
 
 Use this split consistently:
 
-- `api` owns contract truth
+- `api` owns field definitions, default values, and shaping logic
 - `runtime` owns shared state and lifecycle
 - `theme/components` owns rendering
 - `config` owns project defaults and registration wiring
 - `docs/**` owns examples, user guides, and developer-facing documentation
 
-## Create a Standard Page
+## Standard Pages
 
 For a normal documentation page:
 
@@ -33,14 +35,14 @@ description: What this page covers.
 ```
 
 3. Add nav, docs-hub, or home-page entry points only if the page must be discoverable from those surfaces.
-4. If the page introduces a new contract or workflow, update the related developer doc in the same change.
+4. If the page introduces a new field convention or workflow, update the related developer doc in the same change.
 
-## Create a Home or Hero Page
+## Home and Hero Pages
 
 For a landing page or developer hub page:
 
 1. Use `layout: home`.
-2. Define the hero contract before adding view-specific styling:
+2. Define the hero fields before adding view-specific styling:
 
 ```yaml
 ---
@@ -51,8 +53,8 @@ hero:
   tagline: Runtime, frontmatter, plugins, and content registration
   actions:
     - theme: brand
-      text: Development Workflow
-      link: /en/doc/developmentWorkflow
+      text: Documentation Writing Standards
+      link: /en/doc/Catalogue
 ---
 ```
 
@@ -69,7 +71,7 @@ When adding a new component:
 4. Add locale resources if the component renders UI text.
 5. Keep component IDs and i18n mapping synchronized.
 
-## Register New Content
+## Content Component Integration
 
 For content-style components that appear inside markdown pages or document chrome:
 
@@ -101,7 +103,7 @@ Strong examples already in the repo:
 
 - Theme sync: `.vitepress/utils/vitepress/runtime/theme/**`
 - Hero nav adaptation: `.vitepress/utils/vitepress/runtime/hero/navAdaptiveState.ts`
-- Frontmatter contract normalization: `.vitepress/utils/vitepress/api/frontmatter/hero/HeroFrontmatterApi.ts`
+- Frontmatter field shaping: `.vitepress/utils/vitepress/api/frontmatter/hero/HeroFrontmatterApi.ts`
 
 ## Configuration Extension
 
@@ -118,7 +120,7 @@ Checklist:
 2. Normalize it in the API layer.
 3. Consume only normalized values in runtime or views.
 4. Add docs examples immediately.
-5. Run `yarn sync-config` and `yarn frontmatter` when generated metadata depends on the change.
+5. If generated metadata depends on the change, run `yarn docs:build` and verify the final output.
 
 ## Style Extension
 
@@ -128,7 +130,7 @@ Follow the import layering in `.vitepress/theme/styles/index.css`.
 - Global CSS under `.vitepress/theme/styles/**`: shared tokens, plugin skinning, cross-component selectors
 - Frontmatter/config-backed CSS variables: theme-sensitive or runtime-sensitive values
 
-## Create a New Markdown Plugin
+## Markdown Plugin Integration
 
 ### Quick Start with Plugin Factories
 
@@ -284,6 +286,5 @@ import { registerShaderTemplate } from "@config/shaders"; // ❌ Will not resolv
 ## Related Pages
 
 - [Framework Maintainability Guide](./frameworkMaintainability) — Theme sync standard, resize standard, and full extension API reference.
-- [Development Workflow](./developmentWorkflow) — Change ordering, verification commands, and upstream sync rules.
 - [Hero Extension Playbook](./heroExtension) — Typography, floating elements, shaders, backgrounds, and nav/search visuals.
 - [Styles & Plugins Guide](./pluginsGuide) — All available Markdown plugins and custom Vue components.

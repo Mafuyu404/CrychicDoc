@@ -2,7 +2,7 @@
 title: LiteTree组件
 description: 在 VitePress 中使用 LiteTree 创建优雅、信息丰富的树形结构的完整指南。
 hidden: false
-priority: 40
+priority: 30
 layout: doc
 ---
 
@@ -220,6 +220,25 @@ file=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd
 </LiteTree>
 :::
 
+### 使用空白图标模拟双行 {#two-line-with-blank-icon}
+
+当一个条目需要写成“标题 + 次行说明”时，可以给第二行使用一个透明的占位图标。这样第二行仍会占住图标宽度，视觉上就会更接近双行条目。
+
+::: demo 双行条目
+<LiteTree>
+file=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTE0IDJINmEyIDIgMCAwIDAtMiAydjE2YTIgMiAwIDAgMCAyIDJoMTJhMiAyIDAgMCAwIDItMlY4bC02LTZtNCA5VjlsNCA0aC00WiIvPjwvc3ZnPg==
+blank=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTYgMTYiPjxyZWN0IHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0idHJhbnNwYXJlbnQiLz48L3N2Zz4=
+---
+文档入口
+    [file] sidebarGuide.md
+    [blank] 目录、排序与落地页规则
+    [file] pluginsGuide.md
+    [blank] Markdown 扩展、容器与自定义组件
+</LiteTree>
+:::
+
+这种写法适合目录页中的简短说明。需要注意的是，第二行本质上仍然是一个独立节点；如果需要真正的多行排版或更复杂的说明结构，仍然应使用普通段落或其他组件。
+
 ## 完整示例 {#full-example}
 
 :::demo 完整示例
@@ -420,68 +439,5 @@ LiteTree 支持任意深度的嵌套，适合表示复杂的层级结构。
             吴十                  // {#junior}初级开发
         数据库团队                //!    关键项目
             郑一                  // {#senior}高级开发
-</LiteTree>
-:::
-
-## VSCode 代码片段 {#vscode-snippets}
-
-项目包含 LiteTree 的完整 VSCode 代码片段，帮助您快速创建各种树形结构。
-
-### 基础片段 {#basic-snippets}
-
-::: alert {"type": "info", "title": "使用方法"}
-在 Markdown 文件中输入片段前缀（如 `@file-tree`），然后按 `Tab` 键即可插入对应的代码模板。
-:::
-
-| 片段前缀 | 描述 | 用途 |
-|:---|:---|:---|
-| `@file-tree` | 基础树结构 | 创建简单的文件目录树 |
-| `@file-tree-advanced` | 高级树结构 | 包含变量定义和样式的完整树 |
-| `@lite-tree-with-tags` | 带标签的树 | 展示标签功能的树结构 |
-| `@lite-tree-with-comments` | 带注释的树 | 展示注释功能的树结构 |
-
-### 变量定义片段 {#variable-snippets}
-
-| 片段前缀 | 描述 | 生成内容 |
-|:---|:---|:---|
-| `@lite-style-var` | 样式变量定义 | `#name=color:value;background:value;` |
-| `@lite-class-var` | 类变量定义 | `.name=color:value;font-weight:value;` |
-| `@lite-icon-var` | 图标变量定义 | `name=data:image/svg+xml;base64,...` |
-
-### 预设图标片段 {#icon-snippets}
-
-| 片段前缀 | 图标类型 | Base64编码 |
-|:---|:---|:---|
-| `@icon-folder` | 文件夹图标 | 蓝色文件夹SVG |
-| `@icon-file` | 文件图标 | 通用文件SVG |
-| `@icon-js` | JavaScript图标 | JS文件类型图标 |
-| `@icon-ts` | TypeScript图标 | TS文件类型图标 |
-| `@icon-vue` | Vue.js图标 | Vue组件图标 |
-| `@icon-github` | GitHub图标 | GitHub品牌图标 |
-| `@icon-star` | 星标图标 | 金色星形图标 |
-
-### 预设样式片段 {#preset-style-snippets}
-
-| 片段前缀 | 描述 | 包含样式 |
-|:---|:---|:---|
-| `@lite-status-styles` | 状态样式集 | 成功、警告、错误、信息状态样式 |
-| `@lite-filetype-styles` | 文件类型样式 | 文件夹、文件、配置文件样式 |
-| `@lite-priority-styles` | 优先级样式 | 高、中、低优先级标签样式 |
-
-### 完整示例片段 {#example-snippets}
-
-::: demo 使用代码片段创建的树结构
-<LiteTree>
-// 通过 @lite-status-styles 生成的样式
-#success=color:white;background:#4caf50;padding:2px 6px;border-radius:3px;font-size:12px;
-#warning=color:white;background:#ff9800;padding:2px 6px;border-radius:3px;font-size:12px;
-#error=color:white;background:#f44336;padding:2px 6px;border-radius:3px;font-size:12px;
-// 通过 @icon-folder 等生成的图标
-folder=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTEwIDRIOGEyIDIgMCAwIDAtMiAydjEyYTIgMiAwIDAgMCAyIDJoOGEyIDIgMCAwIDAgMi0yVjhhMiAyIDAgMCAwLTItMmgtM2wtMi0yWiIvPjwvc3ZnPg==
----
-[folder] 项目根目录                        // {#success}代码片段演示
-    src                                  // 源代码目录
-        components({#warning}Vue,React)   // 组件库
-        utils                            // {#error}工具函数
 </LiteTree>
 :::

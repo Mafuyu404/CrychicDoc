@@ -1,19 +1,19 @@
 ---
 title: 框架可维护性指南
-description: 面向组件扩展、i18n、导航布局、浮动元素与 Markdown 插件的工程化维护规范。
+description: 面向组件扩展、i18n、导航布局、浮动元素与 Markdown 插件的维护规范。
 hidden: false
+priority: 110
 ---
 
 # 框架可维护性指南
 
-## 目标与边界
+## 概述
 
-本指南用于定义该 VitePress 框架的可扩展工程体系。  
-核心原则是通过配置与注册 API 扩展功能，而不是修改系统内核代码。
+本页整理 CrychicDoc 框架层的维护约定。改动一旦涉及共享字段、运行时行为、组件结构或 Markdown 插件，就应先处理字段定义、默认值与整理逻辑，再进入运行时与视图层。  
+共享问题应在共享层解决，不应以页面级补丁代替结构性修改。
 
-## 详细页面
+## 相关页面
 
-- [开发工作流](./developmentWorkflow)
 - [扩展架构说明](./extensionArchitecture)
 - [Hero 扩展手册](./heroExtension)
 
@@ -171,7 +171,7 @@ const { t } = useSafeI18n("my-component", {
 3. 使用 `getThemeRuntime(isDark)`，并基于 `effectiveDark`、`themeReady`、`version` 做主题分支，保证首次进入、刷新与运行时切换都一致。
 4. Hero 子组件中统一使用 `useHeroTheme()`，优先读取 `isDarkRef.value` 与 `resolveThemeValueByMode(...)`（或其兄弟方法 `resolveThemeColorByMode` / `resolveThemeSourceByMode`）。
 5. 对首屏敏感的 Hero 视觉层，必须通过 `themeReady` 控制渲染，避免 light/dark 闪烁。
-6. 禁止自动从 dark 回退到 light，或从 light 回退到 dark。共享解析器（`resolveThemeValueByMode`、`resolveThemeColorByMode`、`resolveThemeSourceByMode`）遵循 `dark ?? value` 与 `light ?? value` 契约。
+6. 禁止自动从 dark 回退到 light，或从 light 回退到 dark。共享解析器（`resolveThemeValueByMode`、`resolveThemeColorByMode`、`resolveThemeSourceByMode`）统一遵循同一条取值规则：优先读取对应主题值，没有时才回退到通用 `value`。
 7. 组件目录只保留视图渲染。若主题同步需要 observer、调度或共享生命周期，必须移动到 `.vitepress/utils/vitepress/runtime/theme/**`。
 
 相关 API：
@@ -216,10 +216,10 @@ const { reobserve } = createElementResizeState(
 
 ## 日常开发流程
 
-修改框架能力时，建议按以下顺序推进，避免契约与实现脱节：
+修改框架能力时，建议按以下顺序推进，避免字段定义、运行时与组件各写各的：
 
-1. 先改契约层。
-   在 `.vitepress/utils/vitepress/api/**` 更新类型、schema、规范化逻辑。
+1. 先改定义与整理层。
+   在 `.vitepress/utils/vitepress/api/**` 更新类型、schema、整理逻辑。
 2. 再改共享运行时。
    主题同步、尺寸监听、Hero 自适应、DOM 观察等状态逻辑统一放到 `.vitepress/utils/vitepress/runtime/**`。
 3. 最后改视图组件。
@@ -232,17 +232,11 @@ const { reobserve } = createElementResizeState(
 
 ```bash
 yarn locale
-yarn sidebar
 yarn tags
-yarn build
+yarn docs:build
 ```
 
-若修改了配置或 frontmatter 契约，还应执行：
-
-```bash
-yarn sync-config
-yarn frontmatter
-```
+侧边栏会随开发与构建流程自动生成，通常不需要额外的独立维护步骤。
 
 ## 代码放置规则
 
@@ -263,7 +257,7 @@ yarn frontmatter
 - `.vitepress/theme/styles/**`
   全局样式层、变量、插件皮肤、共享组件样式。
 - `.vitepress/utils/vitepress/api/**`
-  契约类型、规范化逻辑、注册表、扩展 API。
+  字段定义、整理逻辑、注册表、扩展入口。
 - `.vitepress/utils/vitepress/runtime/**`
   有状态域：主题同步、尺寸同步、Hero 行为、媒体观察等。
 - `.vitepress/utils/vitepress/componentRegistry/**`
@@ -271,7 +265,7 @@ yarn frontmatter
 - `.vitepress/utils/vitepress/components.ts`
   markdown / 运行时全局组件注册。
 
-判断原则：
+判断时可以这样分：
 
 - 负责解析、规范化、校验配置的，放 `api`。
 - 负责生命周期、DOM 协调、观察器的，放 `runtime`。
@@ -281,7 +275,7 @@ yarn frontmatter
 
 新增函数、composable、service、controller 时：
 
-1. 纯函数与契约辅助逻辑放在 `api`，不要塞进组件。
+1. 纯函数与字段整理辅助逻辑放在 `api`，不要塞进组件。
 2. 有状态控制器放在 `runtime`，生命周期复杂时优先采用小粒度类式 API。
 3. 新增公共能力要从最近的 `index.ts` barrel 导出。
 4. 共享或时序敏感逻辑不要在多个组件里重复直接读取 DOM。
@@ -320,7 +314,7 @@ yarn frontmatter
 
 1. 更新 `.vitepress/config/project-config.ts`。
 2. 若涉及标签或搜索 locale，同步更新 `.vitepress/config/lang/**`。
-3. 若配置需要向文档元数据或生成内容传播，执行 `yarn sync-config` 与 `yarn frontmatter`。
+3. 若配置需要向文档元数据或生成内容传播，直接执行 `yarn docs:build`，确认最终生成结果符合预期。
 
 ## 样式扩展规范
 
@@ -340,7 +334,7 @@ yarn frontmatter
 - frontmatter / config 驱动的 CSS 变量：
   处理运行时主题值，尤其是 hero/background/nav/search 颜色。
 
-若一个问题可以通过 CSS 变量契约或 scoped 样式解决，就不要新增全局 ad-hoc 选择器。
+若一个问题可以通过 CSS 变量规则或 scoped 样式解决，就不要新增全局 ad-hoc 选择器。
 
 ## Hero 扩展手册
 
@@ -361,9 +355,8 @@ yarn frontmatter
 最低验证要求：
 
 - `yarn locale`
-- `yarn sidebar`
 - `yarn tags`
-- `yarn build`
+- `yarn docs:build`
 
 ## 维护规范
 

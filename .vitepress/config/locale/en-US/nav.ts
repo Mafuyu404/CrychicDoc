@@ -45,22 +45,18 @@ const supportPreviewMedia = createScreenshotMedia(
 );
 
 const supportDocsGroup = createNavGroup("Site Docs", [
-    createNavLink("Overview", "/doc/Catalogue", {
-        desc: "Structure and writing rules",
-    }),
-    createNavLink("Rules", "/doc/rules", {
-        desc: "Editing and collaboration rules",
+    createNavLink("Writing Standards", "/doc/Catalogue", {
+        desc: "Collaboration flow, structure, and writing boundaries",
     }),
     createNavLink("Sidebar Guide", "/doc/sidebarGuide", {
         desc: "Directory, ordering, and landing-page rules",
     }),
-    createNavLink(
-        "Development Workflow",
-        "/doc/developmentWorkflow",
-        {
-            desc: "Change order and sync expectations",
-        },
-    ),
+    createNavLink("Styles & Plugins", "/doc/pluginsGuide", {
+        desc: "Markdown extensions, containers, and custom components",
+    }),
+    createNavLink("LiteTree Component", "/doc/litetreeGuide", {
+        desc: "Tree structures used in guides and reference pages",
+    }),
 ]);
 
 const supportGuideGroup = createNavGroup("Guide Hubs", [
@@ -420,7 +416,7 @@ const supportNav = createDropdownNavItem(
                 "Site docs and support flows share one column, while guide hubs stay in a separate column for clearer scanning.",
                 `| Column | Description |
 | --- | --- |
-| Docs & Info | structure, rules, Q&A, board topics, and module requests |
+| Docs & Info | writing standards, sidebar and plugin guides, Q&A, board topics, and module requests |
 | Guide Hubs | community links, tools, and topical gateways |`,
                 supportPreviewMedia,
                 { link: "/doc/Catalogue" },

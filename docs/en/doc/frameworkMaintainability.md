@@ -1,18 +1,19 @@
 ---
 title: Framework Maintainability Guide
 description: Engineering guide for extending components, i18n, navigation layouts, floating elements, and markdown plugins without changing core system code.
+hidden: false
+priority: 110
 ---
 
 # Framework Maintainability Guide
 
-## Scope and Objective
+## Overview
 
-This guide defines the extension-first engineering model for this VitePress framework.  
-The primary objective is to allow feature growth through configuration and registration APIs, not core rewrites.
+This page records the maintenance rules for CrychicDoc's framework layer. When a change touches shared fields, runtime behavior, component structure, or Markdown plugins, field definitions, defaults, and shaping logic should be updated before runtime and views.  
+Shared problems should be solved in shared layers instead of being patched at page level.
 
-## Detailed Pages
+## Related Pages
 
-- [Development Workflow](./developmentWorkflow)
 - [Extension Architecture](./extensionArchitecture)
 - [Hero Extension Playbook](./heroExtension)
 
@@ -145,7 +146,7 @@ const { t } = useSafeI18n("my-component", {
 </template>
 ```
 
-## i18n System Contract
+## i18n System Rules
 
 - `useSafeI18n` now resolves locale reactively from VitePress language state.
 - Translation buckets are cached per `componentId@locale`.
@@ -171,7 +172,7 @@ Use this standard for every component that has theme-sensitive visuals (hero bac
 3. Use `getThemeRuntime(isDark)` and consume `effectiveDark`, `themeReady`, and `version` for visual decisions that must be stable on first enter, reload, and runtime toggle.
 4. Inside hero descendants, use `useHeroTheme()` and prefer `isDarkRef.value` plus `resolveThemeValueByMode(...)` (or the sibling helpers `resolveThemeColorByMode` / `resolveThemeSourceByMode`).
 5. For first-paint-sensitive hero parts, gate rendering with `themeReady` in `VPHero` to avoid light/dark flash.
-6. Never fall back from dark to light or light to dark automatically. Shared resolvers (`resolveThemeValueByMode`, `resolveThemeColorByMode`, `resolveThemeSourceByMode`) follow the `dark ?? value` and `light ?? value` contract.
+6. Never fall back from dark to light or light to dark automatically. Shared resolvers (`resolveThemeValueByMode`, `resolveThemeColorByMode`, `resolveThemeSourceByMode`) follow one rule: prefer the theme-specific value, and only then fall back to the shared `value`.
 7. Component folders stay view-only. If theme sync needs observers, scheduling, or shared lifecycle, move that logic into `.vitepress/utils/vitepress/runtime/theme/**`.
 
 Reference APIs:
@@ -214,12 +215,12 @@ const { reobserve } = createElementResizeState(
 );
 ```
 
-## Day-to-Day Development Workflow
+## Day-to-Day Change Sequence
 
-Use this order when changing framework behavior so contracts stay synchronized:
+Use this order when changing framework behavior so field definitions, runtime logic, and components do not drift apart:
 
-1. Change the contract first.
-   Update schema, types, and normalization in `.vitepress/utils/vitepress/api/**`.
+1. Change definitions and shaping first.
+   Update schema, types, and shaping logic in `.vitepress/utils/vitepress/api/**`.
 2. Change shared runtime second.
    Put stateful lifecycle, DOM observation, viewport sync, theme sync, or adaptive logic in `.vitepress/utils/vitepress/runtime/**`.
 3. Change view components third.
@@ -232,17 +233,11 @@ Recommended command sequence from repo root:
 
 ```bash
 yarn locale
-yarn sidebar
 yarn tags
-yarn build
+yarn docs:build
 ```
 
-When config or frontmatter contracts changed, also run:
-
-```bash
-yarn sync-config
-yarn frontmatter
-```
+The sidebar is generated as part of development and build. It does not need its own separate maintenance command.
 
 ## Code Placement Guide
 
@@ -263,7 +258,7 @@ Use these directories as the primary source of truth:
 - `.vitepress/theme/styles/**`
   Global style layers, variables, plugin styles, shared component CSS.
 - `.vitepress/utils/vitepress/api/**`
-  Schemas, normalization, registries, contract types, extension APIs.
+  Schemas, shaping logic, registries, field types, extension entry points.
 - `.vitepress/utils/vitepress/runtime/**`
   Stateful domains such as theme sync, viewport sync, hero behavior, media/runtime observers.
 - `.vitepress/utils/vitepress/componentRegistry/**`
@@ -281,7 +276,7 @@ Rule of thumb:
 
 When adding a new function, composable, service, or controller:
 
-1. Put pure contract helpers in `api`, not `theme/components`.
+1. Put pure field-shaping helpers in `api`, not `theme/components`.
 2. Put stateful controllers in `runtime`, preferably as small class-based modules when lifecycle is non-trivial.
 3. Export new public APIs from the nearest `index.ts` barrel.
 4. Avoid direct DOM reads in feature components when the behavior is shared or timing-sensitive.
@@ -320,7 +315,7 @@ For site-level feature changes:
 
 1. Update `.vitepress/config/project-config.ts`.
 2. Update locale config under `.vitepress/config/lang/**` if labels or search locales change.
-3. Run `yarn sync-config` and `yarn frontmatter` when the configuration must propagate into docs metadata or generated content.
+3. Run `yarn docs:build` when the change needs to propagate into generated metadata or output.
 
 ## Style Extension Playbook
 
@@ -340,7 +335,7 @@ Use the right style vehicle for the job:
 - CSS variables via frontmatter/config:
   Use for runtime-themable values, especially hero/background/nav/search colors.
 
-Do not introduce ad-hoc global selectors when a CSS variable contract or scoped rule is enough.
+Do not introduce ad-hoc global selectors when a CSS variable rule or scoped style is enough.
 
 ## Hero Extension Playbook
 
@@ -361,9 +356,8 @@ Every framework-facing extension should ship with:
 Minimum verification for framework work:
 
 - `yarn locale`
-- `yarn sidebar`
 - `yarn tags`
-- `yarn build`
+- `yarn docs:build`
 
 ## Maintenance Rules
 

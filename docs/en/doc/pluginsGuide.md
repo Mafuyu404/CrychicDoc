@@ -3,7 +3,7 @@ title: Styles & Plugins
 description: A comprehensive guide to all available Markdown extensions, containers, and custom components in CrychicDoc.
 progress: 95
 state: renovating
-priority: 30
+priority: 20
 hidden: false
 ---
 

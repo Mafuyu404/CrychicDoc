@@ -2,7 +2,7 @@
 title: LiteTree Component
 description: A complete guide to using LiteTree to create elegant and informative tree structures in VitePress.
 layout: doc
-priority: 40
+priority: 30
 hidden: false
 ---
 
@@ -220,6 +220,25 @@ file=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd
 </LiteTree>
 :::
 
+### Simulating Two-Line Entries with a Blank Icon {#two-line-with-blank-icon}
+
+When an item needs a title line and a second descriptive line, you can give the second line a transparent placeholder icon. This keeps the icon column occupied, so the result reads more like a two-line entry.
+
+::: demo Two-Line Entry
+<LiteTree>
+file=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTE0IDJINmEyIDIgMCAwIDAtMiAydjE2YTIgMiAwIDAgMCAyIDJoMTJhMiAyIDAgMCAwIDItMlY4bC02LTZtNCA5VjlsNCA0aC00WiIvPjwvc3ZnPg==
+blank=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTYgMTYiPjxyZWN0IHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0idHJhbnNwYXJlbnQiLz48L3N2Zz4=
+---
+Documentation Pages
+    [file] sidebarGuide.md
+    [blank] Directory, ordering, and landing-page rules
+    [file] pluginsGuide.md
+    [blank] Markdown extensions, containers, and custom components
+</LiteTree>
+:::
+
+This pattern works well for short explanations in directory pages. The second line is still a separate node, so if you need true multiline layout or more complex text structure, use regular paragraphs or a different component.
+
 ## Complete Example {#full-example}
 
 :::demo Complete Example
@@ -423,50 +442,6 @@ Development Team
 </LiteTree>
 :::
 
-## VSCode Code Snippets {#vscode-snippets}
-
-The project includes complete VSCode code snippets for LiteTree to help you quickly create various tree structures.
-
-### Basic Snippets {#basic-snippets}
-
-::: alert {"type": "info", "title": "Usage"}
-In Markdown files, type the snippet prefix (like `@file-tree`) and press `Tab` to insert the corresponding code template.
-:::
-
-| Snippet Prefix | Description | Purpose |
-|:---|:---|:---|
-| `@file-tree` | Basic tree structure | Create simple file directory trees |
-| `@file-tree-advanced` | Advanced tree structure | Complete tree with variable definitions and styles |
-| `@lite-tree-with-tags` | Tree with tags | Tree structure showing tag functionality |
-| `@lite-tree-with-comments` | Tree with comments | Tree structure showing comment functionality |
-
-### Variable Definition Snippets {#variable-snippets}
-
-| Snippet Prefix | Description | Generated Content |
-|:---|:---|:---|
-| `@lite-style-var` | Style variable definition | `#name=color:value;background:value;` |
-| `@lite-class-var` | Class variable definition | `.name=color:value;font-weight:value;` |
-| `@lite-icon-var` | Icon variable definition | `name=data:image/svg+xml;base64,...` |
-
-### Preset Icon Snippets {#icon-snippets}
-
-| Snippet Prefix | Icon Type | Base64 Encoding |
-|:---|:---|:---|
-| `@icon-folder` | Folder icon | Blue folder SVG |
-| `@icon-file` | File icon | Generic file SVG |
-| `@icon-js` | JavaScript icon | JS file type icon |
-| `@icon-ts` | TypeScript icon | TS file type icon |
-| `@icon-vue` | Vue.js icon | Vue component icon |
-| `@icon-github` | GitHub icon | GitHub brand icon |
-| `@icon-star` | Star icon | Gold star icon |
-
-### Preset Style Snippets {#preset-style-snippets}
-
-| Snippet Prefix | Description | Included Styles |
-|:---|:---|:---|
-| `@lite-status-styles` | Status style set | Success, warning, error, info status styles |
-| `@lite-filetype-styles` | File type styles | Folder, file, configuration file styles |
-| `@lite-priority-styles` | Priority styles | High, medium, low priority tag styles |
 
 ### Complete Example Snippets {#example-snippets}
 

@@ -1,11 +1,13 @@
 ---
 title: Hero Extension Playbook
 description: How to extend hero typography, floating items, shaders, background renderers, and nav/search visuals in CrychicDoc.
+hidden: false
+priority: 100
 ---
 
 # Hero Extension Playbook
 
-Hero work should start from the contract layer and flow downward into runtime and rendering.
+Do not start hero work inside components. Define the frontmatter fields, defaults, and registry entry points first, then update runtime, and only then touch rendering.
 
 ## Core Hero Extension Points
 
@@ -68,7 +70,7 @@ layout: home
 hero:
   name: Developer Docs
   text: Extend Hero, Runtime, and Nav
-  tagline: Contract-first configuration with shared runtime behavior
+  tagline: Shared runtime behavior with clean frontmatter
   typography:
     type: floating-tilt
   actions:
@@ -102,7 +104,7 @@ When the feature is author-facing and reusable:
 
 1. Add the field to `.vitepress/utils/vitepress/api/frontmatter/hero/HeroFrontmatterApi.ts` and normalize it there.
 2. If it needs shared state, timing, observers, or viewport logic, add or extend `.vitepress/utils/vitepress/runtime/hero/**`.
-3. Render the feature only after the contract shape is stable.
+3. Render the feature only after the fields and defaults are stable.
 4. Add real examples in both locale trees.
 5. If it changes home hero actions or named links, update the related nav/home docs at the same time.
 
@@ -136,7 +138,7 @@ When the feature is author-facing and reusable:
 4. The change is documented in both `docs/en` and `docs/zh`.
 5. `yarn build` passes before syncing the change elsewhere.
 
-## Registry Deep Dive: HeroTypographyRegistry
+## How HeroTypographyRegistry Works
 
 **Source file**: `.vitepress/utils/vitepress/api/frontmatter/hero/HeroTypographyRegistryApi.ts`
 **Singleton import**: `import { heroTypographyRegistry } from "@utils/vitepress/api/frontmatter/hero";`
@@ -231,7 +233,7 @@ heroTypographyRegistry.listStyleTypes(); // ["floating-tilt", "grouped-float", "
 
 ---
 
-## Registry Deep Dive: FloatingElementRegistry
+## How FloatingElementRegistry Works
 
 **Source file**: `.vitepress/utils/vitepress/api/frontmatter/hero/FloatingElementRegistryApi.ts`
 **Singleton import**: `import { floatingElementRegistry } from "@utils/vitepress/api/frontmatter/hero";`
@@ -309,7 +311,7 @@ floatingElementRegistry.listRegisteredTypes();
 
 ---
 
-## Registry Deep Dive: Shader Registry
+## How the Shader Registry Works
 
 **Source file**: `.vitepress/config/shaders/index.ts`
 **Import path**: No alias exists for `.vitepress/config/`. Use relative imports from your file location (e.g., `'../../../../config/shaders'` from a component in the hero directory).
@@ -386,5 +388,4 @@ The runtime reads `hero.background.shader.preset`, calls `getShaderTemplate("sil
 
 - [Framework Maintainability Guide](./frameworkMaintainability) — Theme sync standard, resize standard, and full extension API reference.
 - [Extension Architecture](./extensionArchitecture) — File ownership rules, import alias reference, and layer placement guide.
-- [Development Workflow](./developmentWorkflow) — Change ordering, verification commands, and upstream sync rules.
 - [Styles & Plugins Guide](./pluginsGuide) — All available Markdown plugins including shader-effect containers.

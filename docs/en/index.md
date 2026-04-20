@@ -180,7 +180,7 @@ hero:
           link: /en/doc/pluginsGuide
         - theme: ghost
           text: "Collaboration Rules"
-          link: /en/doc/rules
+          link: /en/doc/Catalogue
 
 features:
     - icon: 🧪
@@ -210,7 +210,7 @@ features:
     - icon: 🤝
       title: "Contribution Rules"
       details: "Collaboration conventions and contribution checklist."
-      link: /en/doc/rules
+      link: /en/doc/Catalogue
     - icon: 👥
       title: "Site Catalogue"
       details: "Open the English root catalogue for mods, modpacks, development, and info sections."
