@@ -30,6 +30,12 @@ const shouldForceOptimizeDeps =
     process.env.M1HONO_FORCE_OPTIMIZE_DEPS === "true";
 const shouldDebugTemplateWatchers =
     process.env.M1HONO_DEBUG_WATCHERS === "1";
+const shouldForceGitChangelog =
+    process.env.M1HONO_FORCE_GIT_CHANGELOG === "1" ||
+    process.env.M1HONO_FORCE_GIT_CHANGELOG === "true";
+const shouldDisableGitChangelog =
+    process.env.M1HONO_DISABLE_GIT_CHANGELOG === "1" ||
+    process.env.M1HONO_DISABLE_GIT_CHANGELOG === "true";
 const currentNodeMajorVersion = Number.parseInt(
     process.versions.node.split(".")[0] ?? "0",
     10,
@@ -183,6 +189,69 @@ const llmsReorganizePlugin = createLlmsReorganizePlugin();
 const shouldEnableLlmsPluginInCurrentMode =
     isFeatureEnabled("llms") && resolveViteCacheMode() === "build";
 const isViteDevMode = resolveViteCacheMode() === "dev";
+
+function formatGitProbeError(error: unknown) {
+    if (error instanceof Error) {
+        return error.message;
+    }
+
+    return String(error);
+}
+
+function canEnableGitChangelogPlugin() {
+    if (!isFeatureEnabled("gitChangelog") || shouldDisableGitChangelog) {
+        return false;
+    }
+
+    if (!shouldForceGitChangelog) {
+        console.warn(
+            "[m1hono] Git changelog plugin is disabled by default in this repo. Set M1HONO_FORCE_GIT_CHANGELOG=1 to opt in after verifying git path history lookups are stable.",
+        );
+        return false;
+    }
+
+    const probeDir = resolve(
+        projectPaths.root,
+        "docs/zh/modpack/kubejs/1.20.1/GettingStart",
+    );
+    const probeFiles = ["Catalogue.md", "Debugging.md"];
+
+    for (const probeFile of probeFiles) {
+        const probePath = resolve(probeDir, probeFile);
+
+        if (!existsSync(probePath)) {
+            continue;
+        }
+
+        try {
+            execFileSync(
+                "git",
+                [
+                    "log",
+                    "--max-count=10",
+                    "--format=%H",
+                    "--follow",
+                    "--",
+                    probeFile,
+                ],
+                {
+                    cwd: probeDir,
+                    stdio: "pipe",
+                    timeout: 3000,
+                },
+            );
+        } catch (error) {
+            console.warn(
+                `[m1hono] Disabled git changelog plugin because path-scoped git history lookup failed for ${probePath}: ${formatGitProbeError(error)}`,
+            );
+            return false;
+        }
+    }
+
+    return true;
+}
+
+const shouldEnableGitChangelogPlugin = canEnableGitChangelogPlugin();
 
 export const commonConfig: UserConfig<DefaultTheme.Config> = {
     title: projectInfo.name,
@@ -396,6 +465,7 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
             exclude: [
                 "@nolebase/vitepress-plugin-enhanced-readabilities",
                 "@nolebase/vitepress-plugin-inline-link-preview",
+                "@nolebase/vitepress-plugin-git-changelog/client",
                 "shiki-magic-move",
             ],
             include: [
@@ -450,10 +520,10 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                 isViteDevMode,
             __VUE_OPTIONS_API__: true,
             __VUE_PROD_DEVTOOLS__: false,
-            __GIT_CHANGELOG_ENABLED__: isFeatureEnabled("gitChangelog"),
+            __GIT_CHANGELOG_ENABLED__: shouldEnableGitChangelogPlugin,
         },
         plugins: [
-            ...(isFeatureEnabled("gitChangelog")
+            ...(shouldEnableGitChangelogPlugin
                 ? [
                       (async () => {
                           const { GitChangelog, GitChangelogMarkdownSection } =
@@ -470,6 +540,7 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                                       ...author,
                                       avatar: generateAvatarUrl(author.avatar),
                                   })),
+                                  maxGitLogCount: 50,
                               }),
                               // @ts-ignore
                               GitChangelogMarkdownSection(),
