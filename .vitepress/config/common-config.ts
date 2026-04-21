@@ -463,8 +463,10 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
         },
         optimizeDeps: {
             exclude: [
+                "@nolebase/ui",
                 "@nolebase/vitepress-plugin-enhanced-readabilities",
                 "@nolebase/vitepress-plugin-inline-link-preview",
+                "@nolebase/vitepress-plugin-git-changelog",
                 "@nolebase/vitepress-plugin-git-changelog/client",
                 "shiki-magic-move",
             ],
@@ -486,12 +488,17 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
             minify: "esbuild",
         },
         ssr: {
+            // Nolebase ships client entries that still reference `.vue` files in `dist`.
+            // Keep them inside Vite's SSR pipeline instead of letting Node import them directly.
             noExternal: [
                 "vuetify",
+                "@nolebase/ui",
                 "@nolebase/vitepress-plugin-enhanced-readabilities",
                 "@nolebase/vitepress-plugin-inline-link-preview",
                 "@nolebase/markdown-it-bi-directional-links",
                 "@nolebase/vitepress-plugin-highlight-targeted-heading",
+                "@nolebase/vitepress-plugin-git-changelog",
+                "@nolebase/vitepress-plugin-git-changelog/client",
                 "vitepress-plugin-tabs",
                 "shiki-magic-move",
                 "markdown-it-multiple-choice",
@@ -505,7 +512,6 @@ export const commonConfig: UserConfig<DefaultTheme.Config> = {
                 "fs",
                 "fast-glob",
                 "gray-matter",
-                "@nolebase/vitepress-plugin-git-changelog",
             ],
         },
         css: {
