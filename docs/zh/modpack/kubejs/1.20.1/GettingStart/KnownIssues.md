@@ -9,10 +9,25 @@ layout: doc
 
 `1.20.1` 的 KubeJS 能处理大量整合包逻辑，但它既不是完整的现代 JavaScript 运行时，也不是无条件开放的 Java 反射环境。很多看起来像“脚本写错了”的问题，实际是运行时边界、版本限制或 Java 互操作规则所致。
 
-本页将这些边界分成两类：
+:::: alert {"type":"info","title":"这页怎么用","variant":"outlined","border":"start"}
+本页用于判断“这是不是 KubeJS 1.20.1 的默认边界”。先根据现象定位，再跳到对应小节；如果整合包额外引入了会扩展 Rhino / KubeJS 的附属模组，则应重新判断前提。
+::::
 
-- 前半部分可以直接对应到仓库文档、KubeJS 源码或 Rhino 实现。
-- 后半部分更适合作为兼容性提醒，使用时应结合具体环境再确认。
+## 查阅顺序 {#LookupOrder}
+
+::: steps
+@tab 先确认现象属于哪一类
+
+先判断问题更像语法不能解析、类无法加载、参数解析异常，还是某个事件或功能本身没有效果。
+
+@tab 再对照本页的对应条目
+
+`Java.loadClass(...)` 先看 `class filter`；`candidate methods` 先看重载歧义；`number` 异常先看 `TypeWrapper`；世界生成完全无效先看 `WorldgenEvents.add()`。
+
+@tab 最后回到具体环境
+
+本页描述的是原生 KubeJS 1.20.1 的默认能力。如果整合包额外引入 `ClassJS`、`Kubeloader` 或其他附属模组，应结合它们的行为重新判断。
+:::
 
 ## 常见表现 {#QuickIndex}
 
@@ -28,6 +43,12 @@ layout: doc
 | 世界生成脚本完全没有效果                                            | `WorldgenEvents.add()` 在 `1.20.1` 尚未支持 |
 
 ## 文档与源码可直接对应的限制 {#SourceBackedLimits}
+
+### 类加载与语法边界 {#RuntimeBoundaryGroup}
+
+:::: alert {"type":"warning","title":"先排除这一组问题","variant":"tonal"}
+如果类根本无法加载，或语法本身不能被当前运行时接受，继续修改后续业务逻辑通常没有意义。
+::::
 
 ### `Java.loadClass(...)` 会受到 `class filter` 限制 {#ClassFilter}
 
@@ -69,9 +90,17 @@ if (allowStrong.contains(s)) {
 
 ### 当前语法环境不能按完整现代 JavaScript 理解 {#RhinoBoundary}
 
-原生 KubeJS 使用的是定制 Rhino。它支持一部分较新的语法特性，但不能按浏览器或 Node.js 的完整现代 JavaScript 能力来预设行为。
+原生 KubeJS 使用的是定制 Rhino。它支持一部分较新的语法特性，但不能按浏览器或 Node.js 的完整现代 JavaScript 能力来预设行为。对起步阶段来说，更直接的理解是：不要把现代 JavaScript 语法默认视为全部可用。
 
-例如，Rhino 的 token 常量里把 `class` 归到了 `RESERVED`：
+#### `class` 语法不可用，但 ES5 构造函数可用 {#ClassSyntaxBoundary}
+
+在原生 `1.20.1` 中，脚本侧的 `class` 语法不应作为默认可用前提。例如：
+
+```js
+class Foo {}
+```
+
+Rhino 的 token 常量里把 `class` 归到了 `RESERVED`：
 
 ```text
 public static final int RESERVED;
@@ -87,19 +116,7 @@ ConstantValue: int 128
 1396: sipush        128
 ```
 
-这意味着下面这类写法不应当默认可用：
-
-```js
-class Foo {}
-function x(arg = 1) {}
-function y(...args) {}
-```
-
-其中有三件事需要分开理解：
-
-- `class` 是语法层面的限制。
-- 默认参数与 `...args` 属于另一组语法能力。
-- Java 类能否调用，则属于后面的 Java 互操作问题。
+这段源码说明的是：`class` 在当前运行时里不是可以直接按现代 JavaScript 方式使用的语法入口。
 
 但这并不影响 ES5 风格的构造函数写法。例如：
 
@@ -111,15 +128,34 @@ function Foo(name) {
 const foo = new Foo("example");
 ```
 
-这类 `function + new` 的构造方式，与 `class Foo {}` 并不是同一套语法。
+这类 `function + new` 的构造方式，与 `class Foo {}` 不是同一套语法，因此应分开理解。
+
+#### 默认参数与 `...args` 不可用 {#FunctionSyntaxBoundary}
+
+对于函数语法，也不要把默认参数和 rest 参数当成当前运行时的默认能力。例如：
+
+```js
+function x(arg = 1) {}
+function y(...args) {}
+```
+
+这里需要直接记住的结论是：
+
+- 默认参数不能按现代 JavaScript 写法使用。
+- `...args` 这类 rest 参数不能按现代 JavaScript 写法使用。
+
+如果脚本需要兼容这一环境，应改写成 ES5 风格的参数处理方式，而不要继续沿用浏览器或 Node.js 中常见的现代写法。
+
+### Java 互操作与参数解析 {#InteropBoundaryGroup}
+
+:::: alert {"type":"info","title":"这一组问题的共性","variant":"outlined","border":"start"}
+很多“明明有这个方法，为什么还是报错”的问题，实质上发生在 JS 值到 Java 参数的映射过程中。
+::::
 
 ### `class`、ES5 构造函数、继承与 Java 类不是同一件事 {#ClassAndExtends}
 
-仓库内的 [Java 文档](../Introduction/GlobalScope/Classes/Java) 已明确说明：
-
-```md
 KubeJS内无法继承（extends）类，无法实现（implements）接口。
-```
+
 
 这条限制说的是“不能在脚本里按 Java 的继承 / 实现模型继续写下去”，并不等于“不能使用已经拿到的 Java 类”。
 
@@ -147,13 +183,34 @@ new (Java.loadClass("net.minecraft.world.entity.ExperienceOrb"))(
 - 不能使用 ES5 风格的构造函数。
 - 不能 `new` 已成功加载的 Java 类。
 
-真正受限的是脚本侧的 `class` 语法，以及 Java 风格的 `extends / implements`。
+但这不等于“可以在 `new` 的同时顺手定义子类并覆写方法”。
 
-### 把 JS 函数直接当成 Java 接口实现并不总是可行 {#InterfaceAdapter}
+像“先 `new` 一个 Java 类，再在构造时附带覆写体”的思路，本质上仍然是在脚本侧创建匿名子类并重写方法，而不是普通的构造函数调用；因此同样不支持。换句话说：
 
-这里先解释一下“函数转 Java 接口”是什么意思。
+- `new 已成功加载的 Java 类(...)` 这种普通实例化可以成立。
+- `new 已成功加载的 Java 类(...)` 后再附带覆写逻辑，这类匿名子类 / override 思路不支持。
 
-某些 Java API 需要的参数并不是普通值，而是一个接口实例。脚本里有时会直接写一个函数，Rhino 再尝试把这个函数临时转换成 Java 接口。示意写法大致如下：
+很多人会误以为下面这种写法等于“先创建对象，再覆写 Java 方法”：
+
+```js
+const ExperienceOrb = Java.loadClass("net.minecraft.world.entity.ExperienceOrb");
+
+const orb = new ExperienceOrb(level, x, y, z, 10);
+
+orb.tick = function () {
+    console.info("custom tick");
+};
+```
+
+但这不会生成一个覆写了 `tick()` 的 Java 子类。它只是试图在脚本侧给这个对象挂一个同名属性，而不是按 Java 的方式重写原方法。
+
+真正受限的是脚本侧的 `class` 语法，以及 Java 风格的 `extends / implements`；而“构造时直接 override”本质上也属于同一类限制。
+
+### 单个 JS 函数只适合少数回调接口 {#InterfaceAdapter}
+
+这里说的不是“把函数传给任何 Java 参数都行”，而是 Rhino 会在少数情况下，把一个 JS 函数临时适配成一个 Java 接口实例。
+
+示意写法如下：
 
 ```js
 someJavaApi(function (value) {
@@ -161,7 +218,9 @@ someJavaApi(function (value) {
 });
 ```
 
-这并不是把“任何 JS 函数”都变成“任何 Java 接口”。Rhino 允许部分函数式接口适配，但这条路径有明确边界。`InterfaceAdapter.create(...)` 中直接给出了两种失败条件：
+这类写法成立的前提，是 `someJavaApi` 对应的那个参数，本来就要求一个“回调型接口”。这里先把它理解成：**Java 侧等的，本来就是一个回调位。**
+
+`InterfaceAdapter.create(...)` 里的判断可以把边界说明得更清楚：
 
 ```java
 if (methods.length == 0) {
@@ -180,16 +239,31 @@ msg.no.function.interface.conversion=
     Cannot convert function to interface {0} since it contains methods with different names
 ```
 
-这说明“传一个 JS 函数给 Java 接口”并不是通用方案。空接口不行，多个抽象方法名称不一致的接口也不行。
+:::: alert {"type":"info","title":"这一节目前主要依据源码整理","variant":"outlined","border":"start"}
+这里的结论目前主要来自 `InterfaceAdapter` 的源码判断，还没有把所有相关接口形态都在 KubeJS 环境里逐项做独立实测。因此，这一节更适合作为边界说明，而不是已经覆盖全部场景的实验结论。
+::::
 
-更直接地说：
+按这段逻辑，先可以确定下面几件事：
 
-- 如果 Java 侧期望的是“只有一个明确抽象方法”的接口，自动转换才有成立的可能。
-- 如果接口里有多个抽象方法，或这些方法名称彼此不同，Rhino 就无法判断这个函数到底要实现哪一个方法。
+- 接口没有方法时，不能把 JS 函数转换进去。
+- 接口里有多个不同名字的方法时，不能把 JS 函数转换进去。
+- 只有当接口里需要适配的方法都叫同一个名字时，Rhino 才会继续尝试转换。
 
-这类报错出现后，问题通常不在函数体本身，而在“目标参数其实不是一个能被单个函数安全表示的接口”。
+对初学者来说，更好记的说法是：**单个 JS 函数只适合那种“Java 侧本来就在等一个回调”的接口。**
 
-这一点在 `ItemEvents.modification` 里尤其容易被误判。
+所以，文档里说“这类写法可能成立”，指的其实就是下面这类情况：
+
+- Java 参数本来就是回调接口。
+- 这个接口通常只有一个需要实现的方法。
+- 少数情况下，即使有多个签名，只要方法名相同，Rhino 也可能继续尝试适配，但这一点目前仍缺少源码外的独立实测确认。
+
+相反，下面这些情况不属于这条路：
+
+- 空接口。
+- 有多个不同方法名的接口。
+- 把函数赋给一个已经存在的 Java 对象，指望它变成方法覆写。
+
+这一点在 `ItemEvents.modification` 里尤其容易误判，因为这里拿到的 `item` 不是“等待你实现的接口参数”，而是“已经创建好的 Java 对象”。
 
 很多人在看到 `item` 是一个 Java 物品对象后，会自然地写出类似下面这种代码，试图直接覆写某个 Java 方法：
 
@@ -203,18 +277,26 @@ ItemEvents.modification((event) => {
 });
 ```
 
-这类写法通常不可行。原因不是箭头函数本身特殊，而是这里真正想做的事情，其实是“在脚本里直接覆写一个 Java 方法”。`ItemEvents.modification` 给你的，是一个已经存在的 Java 对象；KubeJS 不会因为你写了 `item.someMethod = ...`，就替你生成新的 Java 子类，也不会把这段函数自动变成一次合法的方法覆写。这也是为什么如果想定制注册项的功能制作 KubeJS Addon 是必要的。!!该文档应该不会提供真的能实现这一套逻辑的巨魔科技!!
+这类写法不可行。原因不是箭头函数本身特殊，而是这里真正想做的事情，其实是“在脚本里直接覆写一个 Java 方法”。`ItemEvents.modification` 给你的，是一个已经存在的 Java 对象；KubeJS 不会因为你写了 `item.someMethod = ...`，就替你生成新的 Java 子类，也不会把这段函数自动变成一次合法的方法覆写。如果确实需要定制这类底层行为，通常需要转向 KubeJS Addon 层面的实现。
 
-因此，这里需要分清两种完全不同的操作：
+这里要分清两件事：
 
 - 修改 KubeJS 已经暴露出来、允许改动的字段或属性。
 - 直接覆写原有 Java 方法。
 
 前者在 `ItemEvents.modification` 中经常可以做到；后者通常做不到。即使把箭头函数换成 `function () {}`，结论也不会改变。
 
-### `number` 的问题首先来自 `TypeWrapper` {#NumberAndTypeWrappers}
+### `number` 是高频问题，普通数值参数和 `TypeWrapper` 都会牵涉进来 {#NumberAndTypeWrappers}
 
-这里的 `TypeWrapper`，可以理解为 KubeJS 在“脚本值”与“Java 参数类型”之间加的一层转换器。某些 API 看上去接收的是 Java 类型，但脚本里传入的 `number` 会先经过这层转换，而不是直接按 `int / long / double` 处理。
+:::: alert {"type":"warning","title":"这一类问题很常见，而且没有统一解法","variant":"tonal"}
+`number` 在 KubeJS 里不是边角问题。它出现得很频繁，很多时候也不是改一个参数就能处理干净。
+::::
+
+先不要把 `number` 只理解成 `TypeWrapper` 的问题。实际写脚本时，更常见的情况其实更朴素：脚本里的 `number` 会直接去匹配 Java 的 `int`、`float`、`double`、`long` 这类数值参数，而这一层本身就已经很容易出问题。
+
+如果目标参数又刚好不是普通数字，而是 `IntProvider`、`NumberProvider` 这一类会被 KubeJS 接管的类型，情况就会再复杂一层。
+
+这里的 `TypeWrapper`，可以理解为 KubeJS 放在“脚本值”和“Java 参数类型”之间的一层转换器。麻烦就在这里：脚本里看上去只是一个普通 `number`，传到 Java 之前却未必还是普通数字。
 
 Rhino 在做 Java 转换时，会先检查目标类型是否存在可用的 wrapper：
 
@@ -226,7 +308,7 @@ if (context.hasTypeWrappers()) {
 }
 ```
 
-而 KubeJS 本体确实注册了多种 wrapper：
+而 KubeJS 本体确实注册了多种 wrapper，其中就包括和数字高度相关的类型：
 
 ```java
 typeWrappers.registerSimple(IntProvider.class, UtilsJS::intProviderOf);
@@ -234,12 +316,48 @@ typeWrappers.registerSimple(NumberProvider.class, UtilsJS::numberProviderOf);
 typeWrappers.registerSimple(TemporalAmount.class, UtilsJS::getTemporalAmount);
 ```
 
-因此，`number` 相关问题首先要考虑的是：
+更关键的是，这两个 wrapper 自己还会继续改写传入的值：
+
+```java
+public static IntProvider intProviderOf(Object o) {
+    if (o instanceof Number n) {
+        return ConstantInt.m_146483_(n.intValue());
+    }
+    ...
+    return ConstantInt.m_146483_(0);
+}
+
+public static NumberProvider numberProviderOf(Object o) {
+    if (o instanceof Number n) {
+        var f = n.floatValue();
+        return UniformGenerator.m_165780_(f, f);
+    }
+    ...
+    return ConstantValue.m_165692_(0);
+}
+```
+
+所以 `number` 这一类问题，至少要分成两层来看：
+
+- 最常见的一层，是 JS 的 `number` 直接去匹配 Java 的数值参数。
+- 更复杂的一层，是目标参数本身会触发 `TypeWrapper`，把这个 `number` 再改写成别的类型。
+
+也正因为这样，`number` 的问题往往不只是“重载选错了”，而是前面还夹着别的转换：
+
+- 同一个脚本里的 `number`，可能先被改写成 `IntProvider` 或 `NumberProvider`。
+- 转换过程中可能发生 `intValue()`、`floatValue()` 这类收窄或改型。
+- 解析失败时，部分路径会直接回退成 `0`，而不是立刻给出一个足够明确的错误。
+
+这也是为什么同样写一个 `1`，放在不同 API 里，最后走到 Java 侧时可能已经不是同一种东西。
+
+遇到这类问题时，比较实用的判断顺序是：
 
 - 当前 API 的目标类型是什么。
 - 这个目标类型是否被 `TypeWrapper` 接管。
+- 这里的 `number` 最终会被转成普通 Java 数字，还是被转成某种 provider。
+- 是否还叠加了同名重载，导致 Rhino 继续猜测该选哪一个方法。
 
-这一步之后，才谈得上 Java 重载最终选中了哪一个方法。
+这部分源码最后指向的结论其实很朴素：`number` 是 KubeJS 里最容易反复遇到、也最难靠单一技巧稳定解决的问题之一。下文的显式签名调用、改传 `[min, max]` 或 `{min, max}`、改用更明确的整数或浮点字面量，这些都值得试，但更像排查手段，暂时还不能当成通用解法，也暂时还无法提供真正的通用解法。
 
 ### 出现 `candidate methods` 时，应先检查重载歧义 {#OverloadAndCandidates}
 
@@ -278,9 +396,33 @@ event.hand["compareTo(net.minecraft.world.InteractionHand)"](arg)
 
 构造函数也适用同样的判断逻辑。若日志里出现 `candidate constructors`，应把它视为与方法重载同类的问题。
 
+### 数据入口与版本行为 {#BehaviorBoundaryGroup}
+
+:::: alert {"type":"warning","title":"这一组不要直接套用其他平台经验","variant":"tonal"}
+这类混淆在 KubeJS 里很常见，因为很多名称本来就经过了 `RemapForJS` 处理。比如实体源码里 `setDeltaMovement(...)` 暴露给脚本时会变成 `setMotion(...)`，所以文档里常写 `motion`，而不是 Minecraft 原名 `deltaMovement`。
+
+也正因为这种改名很普遍，看见熟悉名词时不要直接按 Forge / NeoForge 原文档去套。这里最容易让人困惑的一点是：很多原生方法名都会被改成更贴近脚本习惯的名字，但轮到 KubeJS 自己维护的数据入口时，却又用了一个很容易和 Forge 含义撞上的 `persistentData` 名称，为此还修改了Forge原本的persistenData的函数名映射。理解时必须看它最后接的是哪套实现，不能只看名字；某些事件在 `1.20.1` 里也只提供部分能力。
+::::
+
 ### `persistentData` 不是 Forge / NeoForge 的持久化附件 {#PersistentData}
 
 仓库文档已经说明，`persistentData` 是 KubeJS 提供的自定义数据存储系统，**不是 NBT 数据，也不是 Forge / NeoForge 的附件体系**。
+
+这里之所以容易让人看混，一个原因就是 KubeJS 里大量 API 名称都不是直接照搬 Minecraft / Forge 原名，而是经过了脚本侧重命名。实体相关源码里就能直接看到：
+
+```java
+@RemapForJS("setMotion")
+public abstract void setDeltaMovement(double x, double y, double z);
+```
+
+Forge 侧实体原本的 `getPersistentData()`，在脚本里也没有直接保留原名，而是另外映射成了：
+
+```java
+@RemapForJS("getForgePersistentData")
+public abstract CompoundTag getPersistentData();
+```
+
+所以这里真正需要记住的不是“名字像不像”，而是“它最后接的是哪一套数据入口”。这一节里的 `persistentData`，说的是 KubeJS 自己维护的那一套。单从命名策略来看，这一点确实有些别扭，也正因为如此，更不能仅凭名字去判断它和 Forge 的 `persistentData` 是否是同一个东西。
 
 源码中也可以看到，KubeJS 自己维护了独立字段。以实体为例：
 
@@ -316,6 +458,25 @@ public float getDamage() {
 
 这里只有 `getDamage()`，没有对应的 setter。因此，在 `EntityEvents.hurt` 中能读到伤害值，并不表示这一层也能直接改写伤害。
 
+如果目的是改伤害，而不是只读取伤害，那么在 `1.20.1` 里应改用 Forge 事件总线上的 `LivingHurtEvent`。Forge 源码里这个事件本身提供了 `setAmount(float)`：
+
+```java
+public float getAmount() { return amount; }
+
+public void setAmount(float amount) { this.amount = amount; }
+```
+
+最小示意可以写成：
+
+```js
+// startup_scripts/example_hurt.js
+ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", event => {
+    event.setAmount(event.getAmount() * 0.5);
+});
+```
+
+这里只做简单示例。进阶内容将留到以后；如果好奇可以先去问社区。
+
 ### `WorldgenEvents.add()` 在 `1.20.1` 中本身就未完成 {#WorldgenUnsupported}
 
 这一条可以直接在 `AddWorldgenEventJS` 中看到：
@@ -330,7 +491,9 @@ ConsoleJS.STARTUP.error(
 
 ## 兼容性提醒 {#ExperienceNotes}
 
-下面几项更适合作为兼容性提醒。它们在实际编写中很常见，但不像前文那样都有单一、直接的源码入口可供引用。
+:::: alert {"type":"info","title":"这一节的定位","variant":"outlined","border":"start"}
+下面几项在实际编写中很常见，但不像前文那样都有单一、直接的源码入口。使用时应结合整合包、附属模组与运行环境再确认。
+::::
 
 ### `Proxy` 不可用 {#Proxy}
 

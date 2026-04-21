@@ -39,24 +39,10 @@ PlayerEvents.loggedIn((event) => {
 
 如果其中任意一层没有得到确认，就不应继续向下推断。
 
-## 日志文件 {#LogFiles}
+## 排查步骤 {#Workflow}
 
-| 文件                      | 适用场景                                               |
-| :------------------------ | :----------------------------------------------------- |
-| `logs/kubejs/startup.log` | 排查 `startup_scripts`，或怀疑启动阶段脚本根本未加载   |
-| `logs/kubejs/server.log`  | 排查 `server_scripts` 的事件、配方与服务端逻辑         |
-| `logs/kubejs/client.log`  | 排查 `client_scripts` 的界面、本地提示与客户端表现     |
-| `logs/latest.log`         | 需要查看更完整的报错栈，或交叉确认整个游戏日志         |
-
-如果本页示例放在 `server_scripts` 中，优先查看：
-
-```text
-logs/kubejs/server.log
-```
-
-## 基础排查顺序 {#Workflow}
-
-### 1. 先确认文件已加载
+::: steps
+@tab 先确认文件已加载
 
 顶层输出用于判断脚本文件本身是否被 KubeJS 读取：
 
@@ -70,7 +56,7 @@ console.info("[hello.js] script loaded");
 - 当前实例是否读取到了你正在编辑的这份文件。
 - 脚本是否存在语法错误，导致文件在加载前就失败。
 
-### 2. 再确认事件确实触发
+@tab 再确认事件确实触发
 
 事件回调内的输出，用于确认触发条件已经成立：
 
@@ -80,9 +66,9 @@ PlayerEvents.loggedIn((event) => {
 });
 ```
 
-如果文件已加载而事件输出没有出现，问题通常不在后续 API，而在触发条件本身。例如，只执行 `/reload` 并不会替代“重新登录世界”这一触发过程。
+如果文件已加载而事件输出没有出现，问题通常不在后续 API，而在触发条件本身。例如，即使执行了 `/kubejs reload server_scripts` 或 `/reload`，也不会替代“重新登录世界”这一触发过程。
 
-### 3. 在使用对象前先确认对象本身
+@tab 再确认关键对象已经拿到
 
 对 `event.player`、`event.level`、`event.block` 这类关键对象，先确认是否已经拿到，再继续编写后续逻辑：
 
@@ -94,7 +80,7 @@ PlayerEvents.loggedIn((event) => {
 
 这里需要确认的不是“没有报错”，而是“当前对象确实存在，并且类型与预期一致”。
 
-### 4. 分支与返回语句前后需要标记
+@tab 最后缩小到具体失败位置
 
 一旦脚本开始包含 `if`、`return` 或多段条件分支，就应在关键位置保留最少量的输出：
 
@@ -109,7 +95,25 @@ if (!event.player) {
 console.info("[hello.js] after player check");
 ```
 
-这能帮助你判断执行路径究竟停在何处，而不是只看到“脚本没有效果”这一笼统现象。
+这能帮助你判断执行路径究竟停在何处，而不是只看到“脚本没有效果”这一笼统现象。确认失败位置后，再决定是否需要局部 `try / catch`。
+:::
+
+## 日志文件 {#LogFiles}
+
+| 文件                      | 适用场景                                               |
+| :------------------------ | :----------------------------------------------------- |
+| `logs/kubejs/startup.log` | 排查 `startup_scripts`，或怀疑启动阶段脚本根本未加载   |
+| `logs/kubejs/server.log`  | 排查 `server_scripts` 的事件、配方与服务端逻辑         |
+| `logs/kubejs/client.log`  | 排查 `client_scripts` 的界面、本地提示与客户端表现     |
+| `logs/latest.log`         | 需要查看更完整的报错栈，或交叉确认整个游戏日志         |
+
+:::: alert {"type":"info","title":"如果示例放在 server_scripts","variant":"outlined","border":"start"}
+优先查看 `logs/kubejs/server.log`。
+::::
+
+:::: alert {"type":"info","title":"关于 `server_scripts` 的重载方式","variant":"outlined","border":"start"}
+只改 `server_scripts` 脚本时，优先使用 `/kubejs reload server_scripts`。只有在需要连同服务端数据一起重载时，才使用 `/reload`。
+::::
 
 ## `console` 的常见用途 {#Console}
 
@@ -126,17 +130,18 @@ console.info("[hello.js] after player check");
 
 `try / catch` 只处理一件事：**捕获已经进入执行流程的那一小段代码中抛出的运行期异常。**
 
+:::: alert {"type":"warning","title":"它抓不到这些问题","variant":"tonal"}
+
+- 脚本语法错误。
+- 文件根本没有被加载。
+- 事件根本没有触发。
+::::
+
 它通常适合处理下面这类问题：
 
 - Java 调用过程中抛出的异常。
 - 访问字段或方法时发生的运行期错误。
 - 你已经确认事件触发、对象存在后，某一小段逻辑的失败点。
-
-它不能解决下面这些问题：
-
-- 脚本语法错误。
-- 文件根本没有被加载。
-- 事件根本没有触发。
 
 因此，`try / catch` 应放在已经确认会被执行、且确实存在风险的那一小段代码周围。
 
@@ -176,11 +181,6 @@ try {
 
 ## 调试输出应及时清理 {#Cleanup}
 
-本页示例刻意保留了较多 `console` 输出，因为它的目标是帮助你先确认执行路径。但在问题已经定位、逻辑已经稳定之后，这些输出通常就没有继续保留的必要了。
-
-更常见的做法是：
-
-- 删除已经完成任务的临时输出。
-- 或先将其注释掉，等再次排查时再恢复。
-
-这样可以避免日志被无关信息淹没，也更容易在下一次出错时看见真正需要关注的内容。
+:::: alert {"type":"info","title":"调试完成后","variant":"outlined","border":"start"}
+问题已定位、逻辑已稳定后，临时 `console` 输出通常应删除，或先注释掉，避免日志被无关信息淹没。
+::::
