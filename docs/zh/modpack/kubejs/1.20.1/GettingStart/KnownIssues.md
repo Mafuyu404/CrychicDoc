@@ -9,8 +9,8 @@ layout: doc
 
 `1.20.1` 的 KubeJS 能实现许多逻辑，但它既没有完整的现代 JavaScript 框架，也被人为规定了许多限制。很多看起来像“脚本写错了”的问题，实际是其限制与问题所导致的。
 
-:::: alert {"type":"info","title":"这页怎么用","variant":"outlined","border":"start"}
-本页用于让你在遇到某些难以判断的错误时，可以供你参考“这错误是不是 KubeJS 1.20.1 的引擎、行为规范或语法支持度的限制”。
+:::: alert {"type":"info","title":"注意","variant":"outlined","border":"start"}
+本页用于让你在遇到某些难以判断的错误时，可以供你判断“它是不是 KubeJS 1.20.1 的引擎、行为规范或语法支持度的限制”。
 ::::
 
 ## 查阅顺序 {#LookupOrder}
@@ -35,6 +35,7 @@ layout: doc
 | :--- | :--- |
 | `Java.loadClass(...)` 报错，或 `Java.tryLoadClass(...)` 返回 `null` | 类不存在，或被 `class filter` 拦截 |
 | `class Foo {}`、默认参数、`...args` 等语法不能正常使用 | 当前 Rhino 语法边界 |
+| 日志里出现 `redeclaration of const`，或反复遇到 `duplicate const` 一类问题 | 尽量避免把 `const` 当成起步阶段的默认写法 |
 | 某个参数明明传了 `number`，结果行为仍然异常，或者某个需要int的参数传入init，却仍旧显示传入了 `number`的错误 | `TypeWrapper` 转换 |
 | 日志里出现 `candidate methods` 或 `candidate constructors` | Java 方法或构造函数的重载歧义 |
 | 传一个 JS 函数给 Java 接口时直接报错 | 接口适配限制 |
@@ -46,8 +47,8 @@ layout: doc
 
 ### 类加载与语法边界 {#RuntimeBoundaryGroup}
 
-:::: alert {"type":"warning","title":"先排除这一组问题","variant":"tonal"}
-如果类根本无法加载，或语法本身不能被当前运行时接受，继续修改后续业务逻辑通常没有意义。
+:::: alert {"type":"warning","title":"","variant":"tonal"}
+如果类根本无法加载，或语法本身不能被 Rhino 理解或接受，那更多的讨论都没有意义。
 ::::
 
 ### `Java.loadClass(...)` 会受到 `class filter` 限制 {#ClassFilter}
@@ -150,7 +151,22 @@ function y(...args) {}
 
 如果脚本需要兼容这一环境，应改写成 ES5 风格的参数处理方式，而不能沿用浏览器或 Node.js 中常见的现代写法。
 
-### Java 互操作与参数解析 {#InteropBoundaryGroup}
+#### 尽量不要使用 `const` {#ConstRedeclare}
+
+你可以注意到很多教程包括本文档都使用了 `const` 来定义常量，所以此处要说的并非是const本身无法使用，而是其存在一个很常见、也很烦人的问题。
+
+Rhino 的报错文本里本身就有这一条：
+
+```text
+msg.const.redecl=
+    TypeError: redeclaration of const {0}.
+```
+
+实际写脚本时，`const` 有时会触发你并不预期的重复声明报错，尤其是涉及函数的循环时，所以一般来说用 `let` 会更稳妥。真遇到 `redeclaration of const`、`duplicate const` 这类错误时，优先先把相关声明改成 `let` 或再继续排查。
+
+但不必因为这个问题而过于敏感，不涉及函数循环时可以顺着直觉先使用 `const` 定义常量。
+
+### Java类 操作与参数解析 {#InteropBoundaryGroup}
 
 :::: alert {"type":"info","title":"这一组问题的共性","variant":"outlined","border":"start"}
 很多“明明有这个方法，为什么还是报错”的问题，实质上发生在 JS 值到 Java 参数的映射过程中。
@@ -200,9 +216,9 @@ const ExperienceOrb = Java.loadClass("net.minecraft.world.entity.ExperienceOrb")
 
 const orb = new ExperienceOrb(level, x, y, z, 10); // [!code ++]
 
-orb.tick = function () {
+orb.tick = function () { // [!code error]
     console.info("custom tick"); // [!code error]
-};
+}; // [!code error]
 ```
 
 但这不会生成一个覆写了 `tick()` 的 Java 子类。它只是试图在脚本侧给这个对象挂一个同名属性，而不是按 Java 的方式重写原方法，且会直接报错。
@@ -491,12 +507,16 @@ public void setAmount(float amount) { this.amount = amount; }
 
 如果只是不熟悉 Forge 事件总线本身，可以先对照 Forge 官方的 [Events](https://docs.minecraftforge.net/en/1.20.x/concepts/events/) 页面。
 
-最小示意可以写成：
+最小示例是：
 
 ```js
 // startup_scripts/example_hurt.js
 ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", event => {
-    event.setAmount(event.getAmount() * 0.5);
+    /**
+     * @type {Internal.livingHurtEvent} // [!code ++] ForgeEvents如果不标注类型的话会没有正常补全。
+     */
+    const livingHurtEvent = event;
+    livingHurtEvent.setAmount(livingHurtEvent.getAmount() * 0.5);
 });
 ```
 
