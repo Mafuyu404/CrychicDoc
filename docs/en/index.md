@@ -123,7 +123,7 @@ hero:
                   light: "/imgs/screenshots/kubejs.png"
                   dark: "/imgs/screenshots/kubejsDark.png"
               alt: "KubeJS documentation preview"
-              width: "720px"
+              width: "clamp(520px, 50vw, 720px)"
               borderRadius: 16px
               shadow: "0 20px 40px rgba(0,0,0,0.3)"
               x: "5%"
@@ -133,7 +133,7 @@ hero:
                   light: "/imgs/screenshots/develop.png"
                   dark: "/imgs/screenshots/developDark.png"
               alt: "Development documentation preview"
-              width: "480px"
+              width: "clamp(360px, 33.333vw, 480px)"
               borderRadius: 16px
               shadow: "0 20px 40px rgba(0,0,0,0.3)"
               x: "75%"
@@ -143,7 +143,7 @@ hero:
                   light: "/imgs/screenshots/rules.png"
                   dark: "/imgs/screenshots/rulesDark.png"
               alt: "Collaboration rules preview"
-              width: "360px"
+              width: "clamp(280px, 25vw, 360px)"
               borderRadius: 12px
               shadow: "0 10px 20px rgba(0,0,0,0.2)"
               x: "82%"
