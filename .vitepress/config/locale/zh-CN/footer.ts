@@ -58,6 +58,11 @@ export const footerConfig: FooterConfig = {
                         },
                     }
                 ),
+                createLinkConfig(
+                    '隐私政策',
+                    '/zh/privacy-policy',
+                    'mdi:shield-lock',
+                ),
             ],
             'bx:link',
             { 
